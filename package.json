@@ -10,6 +10,7 @@
     "build": "gulp build --prod",
     "build:dev": "gulp build",
     "coveralls": "nyc report -r text-lcov | coveralls",
+    "docker:smoke": "tools/docker/smoke-test.sh",
     "gulp": "gulp build",
     "lint-diff": "lint-diff",
     "lint": "eslint src/assets/scripts/client/**",

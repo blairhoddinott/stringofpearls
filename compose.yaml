@@ -1,0 +1,37 @@
+services:
+  app:
+    build:
+      context: .
+      target: runtime
+    image: stringofpearls:local
+    init: true
+    ports:
+      - "${PORT:-3003}:8080"
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    restart: unless-stopped
+
+  dev:
+    profiles:
+      - development
+    build:
+      context: .
+      target: development
+    image: stringofpearls:development
+    init: true
+    ports:
+      - "127.0.0.1:${DEV_PORT:-3003}:3003"
+    volumes:
+      - .:/workspace
+      - dependencies:/workspace/node_modules
+    environment:
+      NODE_ENV: development
+      PORT: 3003
+
+volumes:
+  dependencies:

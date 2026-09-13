@@ -4,7 +4,7 @@ Thanks for helping improve String of Pearls. Keep changes focused and explain wh
 
 ## Set up the project
 
-Docker is the supported development path while the JavaScript toolchain is being modernized:
+Docker is the supported isolated development path:
 
 ```sh
 git clone https://github.com/blairhoddinott/stringofpearls.git
@@ -35,10 +35,15 @@ Draft pull requests are fine for early feedback. Mark the pull request ready onl
 
 ## Quality checks
 
-Run the checks relevant to your change. The current baseline includes legacy tooling, so consult the [modernization audit](documentation/development/modernization-audit.md) before assuming every old command works on a current Node release.
+Run the checks relevant to your change. The build, unit-test, and validation commands use Node 24; the legacy coverage and lint limitations are documented in the [modernization audit](documentation/development/modernization-audit.md).
 
 ```sh
+npm run build:test
+npm test
+npm run validator:test
+npm run validate:assets
 npm run docker:smoke
+npm run browser:smoke
 ```
 
 Airport and aircraft data changes must follow the documented schemas and file standards.

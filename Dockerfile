@@ -10,7 +10,7 @@ RUN npm ci --ignore-scripts --no-audit --no-fund
 
 FROM dependencies AS build
 COPY . .
-RUN node node_modules/gulp/bin/gulp.js build --prod
+RUN npm run build
 
 FROM dependencies AS development
 ENV NODE_ENV=development
@@ -18,7 +18,7 @@ COPY --chown=node:node . .
 RUN chown node:node /workspace
 USER node
 EXPOSE 3003
-CMD ["sh", "-c", "node node_modules/gulp/bin/gulp.js build && exec node public/assets/scripts/server/index.js"]
+CMD ["sh", "-c", "npm run build:dev && exec npm run start"]
 
 FROM nginxinc/nginx-unprivileged:${NGINX_VERSION} AS runtime
 LABEL org.opencontainers.image.title="String of Pearls" \

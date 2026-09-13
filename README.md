@@ -9,7 +9,7 @@ The project is being modernized from the openScope codebase. Existing simulation
 
 ## Run with Docker
 
-Docker is the supported development and deployment path while the JavaScript toolchain is modernized.
+Docker is the supported production-like and isolated development path. Local development uses Node.js 24 and npm 11.
 
 ```sh
 git clone https://github.com/blairhoddinott/stringofpearls.git
@@ -32,11 +32,21 @@ For the source-mounted development image, runtime hardening details, health chec
 
 ## Development
 
-The repository currently carries a legacy Node 11 test harness and Gulp build pipeline. The production container builds the application with Node 24 and serves the generated static site from unprivileged NGINX. This keeps local development and deployment reproducible while the underlying toolchain is replaced.
+The repository builds and runs its inherited unit suite on Node 24 with a small repository-owned pipeline based on esbuild and `fs/promises`. The generated URL layout remains compatible with the inherited static site, while the production container serves it from unprivileged NGINX. NYC 14 coverage instrumentation remains a documented Node 11 compatibility gate until its separate Phase 2 migration.
 
 Useful commands:
 
 ```sh
+# Exact local install and production build
+npm ci --ignore-scripts --no-audit --no-fund
+npm run build
+
+# Generated-output contract
+npm run build:test
+
+# Inherited unit suite on Node 24
+npm test
+
 # Production-like container
 docker compose up --build app
 
@@ -66,7 +76,8 @@ The canonical roadmap lives at [documentation/development/roadmap.md](documentat
 - [x] Add development and production container workflows
 - [x] Add deterministic aviation asset validation
 - [x] Add an automated browser startup and airport-selection smoke test
-- [ ] Modernize the JavaScript toolchain and application architecture
+- [x] Replace the legacy JavaScript build toolchain and adopt Node 24
+- [ ] Modernize the application architecture
 - [ ] Resume feature development on the modernized foundation
 
 ### Simulation and realism

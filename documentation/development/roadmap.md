@@ -8,7 +8,8 @@ This roadmap tracks the current direction of the project. The order may change a
 - [x] Establish reproducible development and production container workflows.
 - [x] Replace broken asset validation with deterministic repository-owned checks.
 - [x] Add an automated browser startup, render, and airport-selection smoke test.
-- [ ] Modernize the JavaScript toolchain and application architecture
+- [x] Replace the Gulp/Browserify build chain with a deterministic Node 24 and esbuild pipeline.
+- [ ] Modernize the application architecture
 - [ ] Resume feature development on the modernized foundation
 
 ## Simulation and realism

@@ -2,7 +2,7 @@
 
 The repository provides separate container targets for development and runtime use:
 
-- `development` contains Node.js, the legacy build toolchain, and the source tree.
+- `development` contains Node.js 24, the repository-owned build toolchain, and the source tree.
 - `build` compiles the production assets and is not shipped.
 - `runtime` contains only the generated static site and unprivileged NGINX.
 
@@ -64,16 +64,19 @@ The development service:
 - performs a complete development build on startup
 - serves the generated application with the existing Express development server
 
-The legacy Gulp watcher covers only JavaScript and LESS. The container therefore does not pretend to provide complete hot reload: restart the `dev` service after changing templates, airport data, guides, or other copied assets.
+The service performs one complete development build at startup. To rebuild all code, styles, templates, data, guides, changelog content, and package metadata on change, run `npm run watch` in a second development-container shell. The project rebuilds generated files but does not inject browser hot reload; apparently pressing refresh remains survivable.
 
 Run repository commands in an isolated development container:
 
 ```sh
+docker compose --profile development run --rm dev npm run build
+docker compose --profile development run --rm dev npm run build:test
 docker compose --profile development run --rm dev npm test
-docker compose --profile development run --rm dev npm run lint
+docker compose --profile development run --rm dev npm run validator:test
+docker compose --profile development run --rm dev npm run validate:assets
 ```
 
-The current AVA test harness is not compatible with Node 24 and will fail until the test-tooling modernization is complete. The container is still useful for dependency installation, builds, and targeted development commands.
+The unchanged AVA suite passes on Node 24 with 1,320 passing, 17 skipped, and 14 todo. NYC 14 coverage instrumentation remains incompatible with Node 24 and is available only through the documented `npm run test:coverage:legacy` bridge until Phase 2; see [`tools/README.md`](../../tools/README.md). `npm run lint` executes on Node 24 but retains the measured 49-error/12-warning baseline assigned to Phase 2.
 
 Remove the dependency volume after changing the lockfile or if the installation becomes stale:
 
@@ -149,14 +152,16 @@ docker compose config --quiet
 
 CI/CD provider and runner decisions are intentionally deferred. Whatever automation is selected later can invoke the same repository-owned checks used locally:
 
-1. run `docker build --check .`;
-2. run `npm run docker:smoke`;
-3. run `npm run validator:test` and `npm run validate:assets`;
-4. run `npm run browser:smoke`;
-5. build the `runtime` target with an immutable commit tag;
-6. scan the final image;
-7. publish only after tests and scanning pass.
+1. install the npm 11 lockfile with `npm ci --ignore-scripts --no-audit --no-fund`;
+2. run `npm run build:test`;
+3. run `docker build --check .`;
+4. run `npm run docker:smoke`;
+5. run `npm run validator:test` and `npm run validate:assets`;
+6. run `npm run browser:smoke`;
+7. build the `runtime` target with an immutable commit tag;
+8. scan the final image;
+9. publish only after tests and scanning pass.
 
 Both base images are pinned by digest in `Dockerfile`. Update the human-readable tag and digest together. The tags document intent; the digests determine what is actually built.
 
-The old npm dependency graph remains a build-time risk and emits deprecation warnings. It is excluded from the final NGINX image, but containerization does not magically make obsolete dependencies healthy. That work remains in the modernization roadmap.
+The production build chain is current, but the inherited test, lint, and application dependency graph still emits deprecation and security warnings. It is excluded from the final NGINX image, but containerization does not magically make obsolete dependencies healthy. That work remains in Phase 2 of the modernization roadmap.

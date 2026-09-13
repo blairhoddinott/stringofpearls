@@ -24,6 +24,8 @@ Branch: `modernization`
 - Chromium loaded the application, rendered two canvases, selected the Seattle TRACON scenario, and reported no captured runtime or unhandled-promise errors during an eight-second startup smoke test.
 - At the time of the audit, the generated page still used the original openScope name and branding. Phase 0 subsequently replaced the visible identity while preserving historical attribution.
 
+Phase 1 replaced those declarations with Node 24.21.0 and npm 11.19.0, regenerated the root lockfile as lockfile version 3, and replaced Gulp/Browserify/Babelify/Uglify/Vinyl with `tools/build.js`. The production build now completes in approximately two seconds in the pinned Node container.
+
 ### Tests and coverage
 
 The legacy suite was executed successfully on Node 11.3.0:
@@ -44,7 +46,9 @@ The coverage headline is optimistic. NYC is configured with `all: false`; 62 of 
 - `src/assets/scripts/client/canvas/CanvasController.js`
 - `src/assets/scripts/server/index.js`
 
-The AVA 1 test harness fails before running tests on Node 26 because its legacy `esm` loader is incompatible with the current runtime.
+The original NYC-wrapped AVA command fails before running tests on Node 26 because legacy instrumentation dependencies are incompatible with the current runtime.
+
+Phase 1 isolated that failure to NYC 14. AVA 1 itself still executes the unchanged suite on Node 24.21.0 with 1,320 passing, 17 skipped, and 14 todo. `npm test` therefore runs AVA directly on Node 24, while the historical coverage path is retained as `npm run test:coverage:legacy` for Node 11. Migrating AVA/NYC and restoring honest Node 24 coverage remain separate Phase 2 work.
 
 ### Lint and validation
 
@@ -79,6 +83,8 @@ Direct vulnerable production dependencies are:
 
 These counts are triage signals rather than proof of exploitability in this application. The production dependencies should nevertheless be upgraded before public deployment.
 
+After Phase 1 removed the obsolete build graph, `npm audit` reports 70 vulnerable packages overall (9 critical, 35 high, 18 moderate, and 8 low). Production remains unchanged at 11 vulnerable packages (3 critical, 5 high, and 3 low), because production dependency upgrades remain the first focused step in Phase 2.
+
 ## Codebase shape
 
 The repository contains 1,467 tracked files. A deterministic extension-based scan found:
@@ -99,7 +105,7 @@ The application is effectively browser-only:
 - Composition: `src/assets/scripts/client/App.js` and `AppController.js`
 - Server entry: `src/assets/scripts/server/index.js`
 - Markup: `src/index.hbs` and `src/templates/layout.hbs`
-- Build: `Gulpfile.js` and `tools/tasks/*`
+- Build: `tools/build.js`
 
 The Node server is a 19-line Express static-file server. Simulation, timing, spawning, commands, scoring, airport loading, and canvas rendering all execute in the browser. There is no application API or authoritative server-side game state.
 
@@ -157,21 +163,23 @@ Exit condition: **met**. The existing game builds in the pinned production conta
 
 Target Node 24 LTS for production and local development. Node's release policy recommends Active or Maintenance LTS for production; Node 26 is Current rather than LTS as of this audit.[1]
 
-- Replace the Node 11 and npm 6 pins.
-- Regenerate the lockfile with a supported npm version.
-- Keep every direct dependency pinned; the `@openscope/validator: latest` exception was removed in Phase 0.
-- Replace Browserify/Gulp/Babel/Uglify/Vinyl bundling with Vite or a small esbuild-based pipeline.
-- Preserve current generated asset URLs and static-host output during the migration.
-- Convert custom build tasks to explicit scripts using `fs/promises` and propagate asynchronous failures.
+- [x] Replace the Node 11 and npm 6 development pins with Node 24.21.0 and npm 11.19.0.
+- [x] Regenerate the lockfile as npm lockfile version 3.
+- [x] Keep every direct dependency pinned; the `@openscope/validator: latest` exception was removed in Phase 0.
+- [x] Replace Browserify/Gulp/Babelify/Uglify/Vinyl bundling with a small esbuild-based pipeline.
+- [x] Preserve generated asset URLs and static-host output during the migration.
+- [x] Convert custom build tasks to explicit scripts using `fs/promises` and propagate asynchronous failures.
 
-Exit condition: install, lint, test, build, and smoke-test pass locally on Node 24 LTS and in the documented containers.
+The output contract test verifies all 278 generated paths, copied bytes, airport JSON semantics, aggregate data, markup references, source maps, and repeat-build determinism. Compared with a frozen Gulp production build, 273 files are byte-identical. The only changed files are the client bundle, stylesheet, their source maps, and the timestamped `index.html`; after normalizing the timestamp, the HTML is byte-identical. The digest-pinned browser test also passes startup, rendering, and airport selection with zero uncaught errors.
+
+Exit condition: **met for the Phase 1 scope**. npm 11 installation, the unchanged 1,320/17/14 unit suite, production/development builds, the output contract, asset validation, Docker acceptance, and browser acceptance pass on Node 24. The inherited ESLint command retains its measured 49-error/12-warning baseline, and NYC coverage remains a Node 11-only compatibility path. Requiring clean lint and modern coverage here would duplicate the explicitly separate Phase 2 migrations; the earlier wording of this exit condition incorrectly conflated those quality repairs with verifying their existing baselines.
 
 CI workflow changes are explicitly deferred until the project chooses an execution model, acceptable GitHub Actions usage, and operating budget. Phase 1 must produce commands that a future CI system can invoke, but it will not select or configure that system.
 
 ### Phase 2 — Repair security and quality gates
 
 - Upgrade Express, Handlebars, and Lodash first.
-- Remove unused/deprecated packages such as the direct `path` polyfill, old Babel proposal plugins, React preset/plugins where no JSX exists, and obsolete Gulp adapters.
+- Remove unused/deprecated packages such as old Babel proposal plugins and React preset/plugins where no JSX exists.
 - Replace AVA 1, NYC 14, and the synthetic browser harness with Vitest plus jsdom, or modern AVA if migration cost proves lower.
 - Replace ESLint 5 and `babel-eslint` with current ESLint flat configuration.
 - Establish a clean full-repository lint baseline.
@@ -220,16 +228,14 @@ Exit condition: multiple isolated simulations can be created and advanced determ
 
 Exit condition: UI work no longer requires editing multi-thousand-line controllers or reaching into simulation globals.
 
-## First implementation slice
+## Next implementation slice
 
-The next change should be a narrow bootstrap PR/commit series:
+Phase 2 should begin with the test runner now that production output parity is demonstrated:
 
-1. Rebrand package metadata and visible application title without changing behavior.
-2. Add a modern Node 24 toolchain declaration while retaining a documented way to run the legacy test baseline.
-3. Replace the client build pipeline while preserving output paths.
-4. Migrate the unit-test runner only after production output parity is demonstrated.
-
-This order gives us a browser-visible safety net before replacing the machinery that produces the browser bundle.
+1. replace AVA 1/NYC 14 while retaining the now-reproduced 1,320/17/14 Node 24 behavioral baseline;
+2. measure honest coverage with all eligible modules included;
+3. replace ESLint 5 and establish a clean baseline without mixing application refactors into configuration churn; and
+4. upgrade vulnerable production dependencies with focused compatibility tests.
 
 ## Explicit non-goals for the first phases
 

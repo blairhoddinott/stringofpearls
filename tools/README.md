@@ -1,80 +1,90 @@
 [node]: https://nodejs.org/
-[gulp-cli]: https://www.npmjs.com/package/gulp-cli
-[gulp-command-not-found-error-after-installing-gulp]: http://stackoverflow.com/questions/24027551/gulp-command-not-found-error-after-installing-gulp
 [ava]: https://github.com/avajs/ava
 [nyc]: https://github.com/istanbuljs/nyc
 [express]: https://expressjs.com/
 
-# Tools
+# Development tools
 
-## Local Dependencies
+The repository targets Node.js 24 and npm 11. The exact versions used by the pinned container are recorded in `.nvmrc` and `package.json`; no global build tools are required.
 
-_If you haven't done so already, please install the following:_
+## Installation
 
-- [Node][node]
-- [Gulp CLI][gulp-cli] via `npm` with `npm install -g gulp-cli`
-
-_If you are a Windows user and are having issues running `gulp` commands, please see here: [http://stackoverflow.com/questions/24027551/gulp-command-not-found-error-after-installing-gulp][gulp-command-not-found-error-after-installing-gulp]_
-
-### Project Installation
-
-After you have node installed, in a terminal window (command line) navigate to the project folder and run `npm install && npm run build`.  This will install the project dependencies and run the build tasks for the css and javascript.
-
-### Folder Structure
-
-Folders are organized with the following main folders:
-
-```txt
-- assets
-- documentation
-- public
-- src
-- test
-- tools
-Gulpfile.js
+```sh
+npm ci --ignore-scripts --no-audit --no-fund
 ```
 
-- `assets/`
+`npm ci` consumes the npm 11 lockfile exactly. Direct dependencies remain pinned to exact versions. The install still reports deprecations from the inherited AVA, NYC, Babel, and ESLint graph; those packages are deliberately assigned to Phase 2 rather than mixed into the build migration.
 
-Contains JSON files for airports, airlines, and aircraft.  Individual files are named with the ICAO identifier that describes them.  So an airport with an ICAO of `KSFO` will have an airport JSON file named `ksfo.json`, and so on.  If you are a content creator, one who is adding Airports, Airlines or Aircraft, your `.json`/`.geojson` files should be added here.  When running a build, the aircraft and airline json files will be combined and minified into `aircraft.json` and `airlines.json` and output to the `public` directory.  Additionally, each airport and airport.geojson file runs through minification before getting output to the `public` directory.
+## Source and generated output
 
-- `public/`
+- `assets/` contains source aviation data, fonts, images, tutorial content, and autocomplete configuration.
+- `documentation/airport-guides/` contains Markdown airport guides.
+- `src/assets/scripts/client/` contains browser application source.
+- `src/assets/scripts/server/` contains the development-only Express server.
+- `src/assets/style/` contains LESS source.
+- `src/index.hbs` and `src/templates/` contain page templates.
+- `public/` is generated and ignored by Git. Never edit it directly.
+- `tools/build.js` is the build entry point.
+- `tools/build.test.js` is the generated-output contract test.
 
-This is where the code that runs the application lives and when this application is deployed, it is these files that are used. This folder contains generated files as a result of build commands and thus is not in source control. _Any changes made to files in this folder will be overwritten the next time a build command is run.  If you need to edit CSS or Javascript files, please edit the files in the `src` folder_.
+The build retains the historical public URL layout:
 
-- `src/`
+```text
+public/
+├── index.html
+└── assets/
+    ├── aircraft/aircraft.json
+    ├── airlines/airlines.json
+    ├── airports/
+    ├── autocomplete/
+    ├── fonts/
+    ├── guides/guides.json
+    ├── images/
+    ├── scripts/client/bundle.min.js
+    ├── scripts/server/index.js
+    ├── style/main.min.css
+    ├── tutorial/
+    └── changelog.json
+```
 
-The application's CSS and Javascript source files.  If you are developing Javascript or CSS, the files you want to edit live in this folder.
+The Node build uses `fs/promises` for filesystem operations, esbuild for the browser bundle, Less/PostCSS/Autoprefixer/CleanCSS for styles, Handlebars for markup, and Showdown for Markdown conversion. Builds are process-serialized with the kernel-backed `flock` command supplied by util-linux; it is present in the supported Node 24 container. The ignored `.public-build.lock` pathname may persist between builds, but ownership exists only while the kernel advisory lock is held, so a killed process cannot leave stale ownership behind. Each build writes to an isolated staging directory. Source/compile failures leave the previous `public/` intact; publication failures roll it back, and a simultaneous promotion/rollback failure reports the recoverable backup path for restoration on the next build. Backup-cleanup failures are warnings after successful publication rather than false build failures. Errors no longer escape through unawaited callbacks, which was a charming feature of the old tasks.
 
-- `test/`
+Set `SOURCE_DATE_EPOCH` to a Unix timestamp to make the build timestamp reproducible:
 
-Application test files.  The folder structure here should mirror that of the `src` folder.  For example, if you want to write some tests for the `src/assets/scripts/math/circle.js` file, it should live in `test/math/circle.spec.js`.  If you are writing any new tests, they should go here.  Any test file should have a `**/*.spec.js` file extension.  Test files are run by folder then globbing pattern, so if you have a support file it should have just a `.js` extension.  Testing is run via [ava][ava] with coverage reporting generated by [nyc][nyc].  There are full HTML coverage reports available to view in the `coverage/lcov-report` folder.
+```sh
+SOURCE_DATE_EPOCH=0 npm run build
+```
 
-- `tools/`
+## Commands
 
-Any `gulp` task is defined in one of the files in this folder.
+```sh
+npm run build          # production bundle and static output
+npm run build:dev      # readable development bundle at the same URLs
+npm run build:test     # 278-file URL, data, source-map, and determinism contract
+npm run watch          # rebuild all source/data/template inputs on change
+npm run start          # serve the generated public/ directory on port 3003
+npm run validator:test # validator fixture tests
+npm run validate:assets
+npm run docker:smoke
+npm run browser:smoke
+```
 
-- `Gulpfile.js`
+`npm run watch` rebuilds the complete output tree when client/server code, styles, templates, source assets, airport guides, the changelog, or package metadata changes. Run `npm run start` in a second terminal to serve it.
 
-This is the entry point for all `gulp` tasks.  There should never be a process defined in this file, just references to a tasks defined in the `tools/tasks` folder.  The only exception to this is for root tasks like `build`, `lint`, `watch`, etc.  These root tasks are just wrappers for a collections of other tasks.
+## Legacy unit and lint gates
 
----
+The application tests still use [AVA 1][ava], [NYC 14][nyc], and Babel register. AVA itself executes the unchanged suite on Node 24:
 
-### NPM Commands
+```sh
+npm test
+```
 
-Available `npm` commands:
+That path retains the measured baseline of 1,320 passing, 17 skipped, and 14 todo tests. NYC 14's legacy instrumentation dependencies are the incompatible layer. The historical coverage command remains available as a Node 11-only compatibility bridge:
 
-- `npm run start` Will spool up an [Express][express] server.  Once the server starts successfully, you can view the app at `localhost:3003` in your web browser.
-- `npm run build` - Used for generating files for use in production
-- `npm run build:dev` - Used for generating files for use in development
-- `npm run test`-  Will run the `ava` test suite and output a coverage report to the terminal window.
-- `npm run report` - Will generate a coverage report from the last test run.  If only a specific subset of files was tested, the coverage report will reflect that.  ex: `npm run test -- test/math/` will run all the tests in the `test/math/` directory and generate coverage for only the files tested.  Any other file that is not related to the files being tested will be ignored in the coverage report.
-- `npm run coverage` - Runs the entire test suite _and_ generates a coverage report.
+```sh
+nvm exec 11.3.0 npm run test:coverage:legacy
+```
 
-### Gulp commands
+`npm run lint` executes on Node 24 but currently reports the inherited baseline of 49 errors and 12 warnings. Modernizing AVA/NYC and ESLint, repairing the full lint baseline, and correcting coverage accounting are Phase 2 work.
 
-All the `gulp` commands defined in the Gulpfile are combined tasks, meaning they actually call other tasks defined in the `tools/tasks` folder.  The main `gulp` commands defined in this file are:
-
-- `gulp build` - Concat, minify autoprefix CSS to `assets/styles/main.min.css` with sourcemaps, transpile and browserify javascript to `assets/scripts/bundle.js` with sourcemaps
-- `gulp dist` - Everything `gulp build` does plus run `eslint` and output a per-file report of errors and warnings.
-- `gulp watch` - Watches for changes for css and javascript files and runs an associated compilation task if a change is detected.
+The generated application may also be served by the inherited [Express][express] server for local development. Production uses the unprivileged NGINX runtime described in [`documentation/development/containers.md`](../documentation/development/containers.md).

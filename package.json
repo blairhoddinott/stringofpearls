@@ -9,6 +9,7 @@
   "scripts": {
     "build": "gulp build --prod",
     "build:dev": "gulp build",
+    "browser:smoke": "tools/browser-smoke/run.sh",
     "coveralls": "nyc report -r text-lcov | coveralls",
     "docker:smoke": "tools/docker/smoke-test.sh",
     "gulp": "gulp build",
@@ -19,7 +20,9 @@
     "server": "npm run start",
     "start": "node public/assets/scripts/server/index.js",
     "test": "nyc ava --concurrency=5",
-    "validator": "validator -a"
+    "validator": "npm run validate:assets",
+    "validator:test": "node tools/validate-assets.test.js",
+    "validate:assets": "node tools/validate-assets.js"
   },
   "repository": {
     "type": "git",
@@ -92,7 +95,6 @@
     "@babel/preset-env": "7.4.4",
     "@babel/preset-react": "7.0.0",
     "@babel/register": "7.4.4",
-    "@openscope/validator": "latest",
     "ava": "1.4.1",
     "babel-eslint": "10.0.1",
     "babelify": "10.0.0",

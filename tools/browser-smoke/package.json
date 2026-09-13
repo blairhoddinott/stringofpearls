@@ -1,0 +1,10 @@
+{
+  "name": "stringofpearls-browser-smoke",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Isolated browser acceptance test for String of Pearls",
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "1.63.0"
+  }
+}

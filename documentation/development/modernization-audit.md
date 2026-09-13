@@ -22,7 +22,7 @@ Branch: `modernization`
 - Invoking the locked Gulp executable directly completed a production build on Node 26 in approximately 21 seconds.
 - The generated server returned HTTP 200.
 - Chromium loaded the application, rendered two canvases, selected the Seattle TRACON scenario, and reported no captured runtime or unhandled-promise errors during an eight-second startup smoke test.
-- The generated page still uses the original openScope name and branding.
+- At the time of the audit, the generated page still used the original openScope name and branding. Phase 0 subsequently replaced the visible identity while preserving historical attribution.
 
 ### Tests and coverage
 
@@ -55,7 +55,7 @@ Full client lint currently reports:
 
 Notable classes of findings include undefined globals, import cycles, unreachable code, restricted global APIs, and style issues. The existing CI only lints changed lines, so the repository has no clean full-lint baseline.
 
-The asset validator is also broken because `@openscope/validator` cannot resolve one of its own modules. It is declared as `latest`, making installs non-reproducible.
+At audit time, the asset validator was broken because `@openscope/validator` could not resolve one of its own modules. It was also declared as `latest`, making installs non-reproducible. Phase 0 replaced it with repository-owned validation.
 
 ### Dependency security
 
@@ -143,29 +143,30 @@ Known import cycles exist between math and unit conversion, airport model/contro
 
 ### Phase 0 — Establish ownership and baseline
 
-- Complete product/package rebranding while preserving required attribution and license notices.
-- Document supported browsers and deployment model.
-- Capture the legacy Node 11 test result as a historical baseline.
-- Add a minimal browser smoke test for startup, airport selection, one render frame, and absence of uncaught errors.
-- Repair or replace asset validation before modifying aviation data.
+- [x] Complete product/package rebranding while preserving required attribution and license notices.
+- [x] Document the [supported browsers](supported-browsers.md) and [deployment model](containers.md).
+- [x] Capture the legacy Node 11 test result as a historical baseline: 1,320 passing, 17 skipped, and 14 todo.
+- [x] Add a digest-pinned Playwright smoke test for startup, airport selection, one render frame, and absence of uncaught errors.
+- [x] Replace the broken external asset validator with a repository-owned, fail-closed validator and tests.
 
-Exit condition: the existing game can be built and smoke-tested reproducibly from a documented environment.
+Phase 0 also corrected the KOKC default runway references (`36R`/`36L`) to the defined `35R`/`35L` runway pair after the new validator exposed them.
+
+Exit condition: **met**. The existing game builds in the pinned production container, validates 964 JSON/GeoJSON assets representing 104 airports, and passes the automated Chromium startup and airport-selection smoke test from a documented environment.
 
 ### Phase 1 — Replace development infrastructure
 
-Target Node 24 LTS for production and CI. Node's release policy recommends Active or Maintenance LTS for production; Node 26 is Current rather than LTS as of this audit.[1]
+Target Node 24 LTS for production and local development. Node's release policy recommends Active or Maintenance LTS for production; Node 26 is Current rather than LTS as of this audit.[1]
 
 - Replace the Node 11 and npm 6 pins.
 - Regenerate the lockfile with a supported npm version.
-- Pin every direct dependency; remove `@openscope/validator: latest`.
-- Consolidate duplicated GitHub workflows.
-- Upgrade `actions/checkout` and `actions/setup-node` from obsolete versions.
-- Use `npm ci`, dependency caching, explicit permissions, timeouts, and concurrency cancellation.
+- Keep every direct dependency pinned; the `@openscope/validator: latest` exception was removed in Phase 0.
 - Replace Browserify/Gulp/Babel/Uglify/Vinyl bundling with Vite or a small esbuild-based pipeline.
 - Preserve current generated asset URLs and static-host output during the migration.
 - Convert custom build tasks to explicit scripts using `fs/promises` and propagate asynchronous failures.
 
-Exit condition: install, lint, test, build, and smoke-test pass on Node 24 LTS in CI and locally.
+Exit condition: install, lint, test, build, and smoke-test pass locally on Node 24 LTS and in the documented containers.
+
+CI workflow changes are explicitly deferred until the project chooses an execution model, acceptable GitHub Actions usage, and operating budget. Phase 1 must produce commands that a future CI system can invoke, but it will not select or configure that system.
 
 ### Phase 2 — Repair security and quality gates
 
@@ -224,10 +225,9 @@ Exit condition: UI work no longer requires editing multi-thousand-line controlle
 The next change should be a narrow bootstrap PR/commit series:
 
 1. Rebrand package metadata and visible application title without changing behavior.
-2. Add a modern Node 24 toolchain declaration and CI matrix while retaining a temporary legacy test job.
-3. Add a Playwright startup smoke test against the generated production build.
-4. Replace the client build pipeline while preserving output paths.
-5. Migrate the unit-test runner only after production output parity is demonstrated.
+2. Add a modern Node 24 toolchain declaration while retaining a documented way to run the legacy test baseline.
+3. Replace the client build pipeline while preserving output paths.
+4. Migrate the unit-test runner only after production output parity is demonstrated.
 
 This order gives us a browser-visible safety net before replacing the machinery that produces the browser bundle.
 
@@ -238,6 +238,7 @@ This order gives us a browser-visible safety net before replacing the machinery 
 - No multiplayer/backend architecture.
 - No airport-data format redesign.
 - No large simulation refactor before characterization coverage exists.
+- No CI provider, runner topology, or GitHub Actions redesign until the project makes that decision separately.
 
 ## Sources
 

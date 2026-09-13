@@ -4,9 +4,10 @@ This roadmap tracks the current direction of the project. The order may change a
 
 ## Foundations
 
-- [x] Rename the project to String of Pearls
-- [x] Add development and production container workflows
-- [ ] Set up CI/CD on a self-hosted GitHub Actions runner
+- [x] Rename the project to String of Pearls.
+- [x] Establish reproducible development and production container workflows.
+- [x] Replace broken asset validation with deterministic repository-owned checks.
+- [x] Add an automated browser startup, render, and airport-selection smoke test.
 - [ ] Modernize the JavaScript toolchain and application architecture
 - [ ] Resume feature development on the modernized foundation
 
@@ -31,4 +32,8 @@ This roadmap tracks the current direction of the project. The order may change a
 
 - [ ] Update the display to resemble the Raytheon STARS 6191 scope using the available manual
 - [ ] Create a maintainable submission and review process for new airports
-- [ ] Evaluate a leaderboard or other scoring system without turning the simulator into an arcade cabinet
+- [ ] Evaluate a leaderboard or other scoring system without turning the simulator into an arcade cabinet.
+
+## Deferred platform decisions
+
+- [ ] Choose a CI/CD execution model, provider, and budget after the local toolchain is stable.

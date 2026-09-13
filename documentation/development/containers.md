@@ -118,7 +118,15 @@ The script verifies that:
 5. representative airport JSON is served; and
 6. the configured security header is present.
 
-The test automatically uses passwordless `sudo` when the current account cannot access the Docker daemon directly.
+The script automatically uses passwordless `sudo` when the current account cannot access the Docker daemon directly.
+
+Run the browser acceptance test:
+
+```sh
+npm run browser:smoke
+```
+
+This starts the production image on an isolated Compose network and runs a digest-pinned Playwright container against it. The test covers completed startup, a render frame, canvas initialization, airport selection, and uncaught browser errors. See [Supported browsers](supported-browsers.md) for the exact contract.
 
 Validate only the Compose model:
 
@@ -137,15 +145,17 @@ docker compose config --quiet
 - generated assets use a cache lifetime of 512,000 seconds.
 - `.geojson` files are served as `application/json`.
 
-## CI/CD use
+## Future automation contract
 
-A container pipeline should perform these stages:
+CI/CD provider and runner decisions are intentionally deferred. Whatever automation is selected later can invoke the same repository-owned checks used locally:
 
 1. run `docker build --check .`;
 2. run `npm run docker:smoke`;
-3. build the `runtime` target with an immutable commit tag;
-4. scan the final image;
-5. publish only after tests and scanning pass.
+3. run `npm run validator:test` and `npm run validate:assets`;
+4. run `npm run browser:smoke`;
+5. build the `runtime` target with an immutable commit tag;
+6. scan the final image;
+7. publish only after tests and scanning pass.
 
 Both base images are pinned by digest in `Dockerfile`. Update the human-readable tag and digest together. The tags document intent; the digests determine what is actually built.
 

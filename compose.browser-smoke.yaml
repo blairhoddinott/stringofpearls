@@ -1,0 +1,35 @@
+services:
+  simulator:
+    build:
+      context: .
+      target: runtime
+    image: stringofpearls:browser-smoke-app
+    init: true
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+  browser-smoke:
+    build:
+      context: .
+      dockerfile: docker/browser-smoke.Dockerfile
+    image: stringofpearls:browser-smoke-runner
+    init: true
+    depends_on:
+      simulator:
+        condition: service_healthy
+    environment:
+      BASE_URL: http://simulator:8080
+      TARGET_AIRPORT: kpdx
+    read_only: true
+    tmpfs:
+      - /tmp
+    shm_size: 1gb
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL

@@ -72,7 +72,7 @@ EDDM offers a variety of standard terminal arrival routes that lead to one of th
 
 Detached from reality, the airport file has been modified: Aircraft do not enter the published hold at the arrival gate since users might not have enough time in high-traffic situations to clear the aircraft for the transition due to airspace structure. 
 
-### Sectors Available in openScope
+### Sectors Available in String of Pearls
 
 The sim features a combination of the following sectors:  
 

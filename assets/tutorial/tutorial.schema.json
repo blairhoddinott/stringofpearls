@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2019-09/schema",
   "$id": "http://openscope.io/assets/tutorial/tutorial.schema.json",
-  "title": "Openscope ATC simulator tutorial configuration schema",
+  "title": "String of Pearls ATC simulator tutorial configuration schema",
   "type": "array",
   "items": {
     "$ref": "#tutorialStep"

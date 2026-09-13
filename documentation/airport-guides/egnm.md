@@ -90,14 +90,14 @@ VFR pilots should enter/exit using the following Visual Reference Points, howeve
 | Harrogate (HGT), 535930N 0013136W       | POL 055°, 25nm |
 | Keighley (KLY), 535200N 0015436W        | POL 044°, 10nm |
 
-### Sectors Available in openScope
+### Sectors Available in String of Pearls
 ```
 Leeds Radar
 Leeds Approach
 ```
 
 ### Restricted Airspace
-The only restricted airspace within the Leeds Bradford Control Area/Zone is EG R321 Wakefield, a circle of radius 1.3nm centred on 534057N 0013034W. This is **not** available in openScope as this restricted area only applies to helicopters, with exception of any helicopter operated by or on behalf of a police force for any area of the United Kingdom. The upper limit is 1,600ft and the lower limit is the surface.
+The only restricted airspace within the Leeds Bradford Control Area/Zone is EG R321 Wakefield, a circle of radius 1.3nm centred on 534057N 0013034W. This is **not** available in String of Pearls as this restricted area only applies to helicopters, with exception of any helicopter operated by or on behalf of a police force for any area of the United Kingdom. The upper limit is 1,600ft and the lower limit is the surface.
 
 ### Videomap
 Provided with the videomap is a top down view of the airport's taxiways and runway. Each horizontal line on the extended centreline represents one (1) nautical mile, with each vertical line representing four (4) nautical miles.

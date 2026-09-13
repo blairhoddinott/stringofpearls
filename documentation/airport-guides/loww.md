@@ -42,7 +42,7 @@ Aircraft descending into Vienna are funneled onto the Approach by RNAV transitio
 | N      | 34                 |
 | U      | 29 RNAV            |
 
-### Sectors Available in openScope
+### Sectors Available in String of Pearls
 ```
 Wien Radar (Approach & Departure)
 Wien Director (Final Approach)

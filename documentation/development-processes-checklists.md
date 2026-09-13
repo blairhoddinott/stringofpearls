@@ -4,8 +4,8 @@
 
 **Note**: In order to complete all of the steps below a user will need:
 
-- to be a member of the `openscope-admins` team within the openScope team on GitHub
-- have access to the openScope pipeline on Heroku
+- to be a member of the `openscope-admins` team within the String of Pearls team on GitHub
+- have access to the String of Pearls pipeline on Heroku
 
 Each sprint is considered to progress through these three phases. Further details about each phase can be found in the sections below. The development phase lasts the majority of the sprint, with the first two days of the sprint being reserved to the initialization phase, and the last three being reserved to the testing phase.
 
@@ -73,7 +73,7 @@ At least three days prior to the end of the sprint, we will create a `release` b
     - Include a title of the version number, eg 'v#.#.#'.
     - Include a description of copied from the `CHANGELOG`.
 1. On Heroku, change staging app to point to this new release branch.
-1. Broadcast publishing of testing app and seek feedback and/or bug reports. Any bugs should be reported to the `#bugs` room in slack and will be triaged from there.
+1. Publish the testing application and request feedback. File bugs as GitHub issues for triage.
 1. Merge any applicable bugfix branches into `release/#.#.#`.
     - Include summary of `Merge bugfix/ (#[PRNumber])`
     - Then on `develop`, run `git merge release/#.#.#` (results in a FF) and push.
@@ -94,7 +94,7 @@ _Only bugfix branches may be merged (to `release/#.#.# --> develop`) during this
 1. Checkout `master`.
 1. Create and push a new version tag.
     - `git tag v#.#.#` and `git push origin v#.#.#`
-1. On the repository's [tags](https://github.com/openscope/openscope/tags) page, find the newly created tag and add release notes.
+1. On the repository's [tags](https://github.com/blairhoddinott/stringofpearls/tags) page, find the newly created tag and add release notes.
     - Include title of the version number, eg `v#.#.#`.
     - Include a description copied from the `CHANGELOG`.
 1. On Heroku, change staging app to maintenance mode.

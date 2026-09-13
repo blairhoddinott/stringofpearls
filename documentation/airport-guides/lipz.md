@@ -19,7 +19,7 @@ It extends up to about 43 nm from the airport. Venice Radar also provides ATS to
 ### Runways
 The airport consists of two runways, headed 040° (magnetic): 04R/22L (3300x45m) and 04L/22R (2738x45m).
 Runway 04R is the preferential runway for both ARR and DEP. Runway 04L is used as a taxiway, identified by T code.
-This is the configuration used in openscope. 04L/22R and 22L are not active in the current version.
+This is the configuration used in String of Pearls. 04L/22R and 22L are not active in the current version.
 
 ### Instrument Procedures
 Venice Marco Polo Airport has an appreciable quantity of SIDs and STARs, both RNAV and non-RNAV.

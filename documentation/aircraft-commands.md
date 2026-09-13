@@ -463,7 +463,7 @@ _Syntax -_ `AAL123 squawk ###`
 
 ## System Commands
 
-openScope has a number of commands that do not change simulation mechanics, known as _system commands_. While most are able to be executed via various menus, they can be entered in the command bar if one so desires.
+String of Pearls has a number of commands that do not change simulation mechanics, known as _system commands_. While most are able to be executed via various menus, they can be entered in the command bar if one so desires.
 
 ### Airport
 

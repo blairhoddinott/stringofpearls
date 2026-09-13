@@ -1,12 +1,12 @@
 # Airport Load List
 
-[airportLoadList.json](https://github.com/openscope/openscope/blob/develop/assets/airports/airportLoadList.json)
+[airportLoadList.json](https://github.com/blairhoddinott/stringofpearls/blob/master/assets/airports/airportLoadList.json)
 contains the list of airports to be loaded by the app, in alphabetical order of
 their ICAO airport identifier.
 
 If you are adding a new airport to the simulator, be sure to include:
 
-- the [airport JSON file](https://github.com/openscope/openscope/blob/develop/documentation/airport-format.md)
+- the [airport JSON file](https://github.com/blairhoddinott/stringofpearls/blob/master/documentation/airport-format.md)
 in `assets/airports/AIRPORT_NAME.json` where `AIRPORT_NAME` is the lowercase
 ICAO airport identifier. (ex: KSFO would be `assets/airports/ksfo.json`)
 - the terrain geojson file (if one exists) in `assets/airports/terrain/AIRPORT_NAME.geojson`
@@ -14,7 +14,7 @@ where `AIRPORT_NAME` is the lowercase ICAO airport identifier. (ex: KSFO would
 be `assets/airports/terrain/ksfo.geojson`)
 
 Then, add a new data block (in alphabetical order) to
-[airportLoadList.json](https://github.com/openscope/openscope/blob/develop/assets/airports/airportLoadList.json)
+[airportLoadList.json](https://github.com/blairhoddinott/stringofpearls/blob/master/assets/airports/airportLoadList.json)
 in the shape of:
 
 ```json
@@ -50,5 +50,5 @@ false`.
 
 The `disabled` property is not intended for use with airports that are still a
 "work in progress". New airports or redevelopments should meet the [standards
-set out in the documentation](https://github.com/openscope/openscope/blob/develop/documentation/airport-file-standards.md)
+set out in the documentation](https://github.com/blairhoddinott/stringofpearls/blob/master/documentation/airport-file-standards.md)
 before being added.

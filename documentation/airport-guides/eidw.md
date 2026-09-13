@@ -14,7 +14,7 @@ The airport was initially know as Collinstown Aerodrome when it opened in 1917 a
 The Shannon Area Control Centre is operated by the Irish Aviation Authority (IAA) and controls most of the air traffic over the Republic of Ireland between FL75 and FL245. The centre is located in Ballycasey, County Clare in the West of Ireland. In addition, the centre handles over 90% of all air traffic over the North Atlantic, via Shanwick Oceanic Control.
 
 ### Dublin CTA
-A large area around Dublin and the province of Leinster is available for your contol within openScope as well as a few areas over the Irish Sea, outside of the Shannon FIR, which are delegated to Dublin Control for arrivals into Dublin. These include:
+A large area around Dublin and the province of Leinster is available for your contol within String of Pearls as well as a few areas over the Irish Sea, outside of the Shannon FIR, which are delegated to Dublin Control for arrivals into Dublin. These include:
 
 Withing the Shannon FIR:
 | Name | Lower Limit | Upper Limit |

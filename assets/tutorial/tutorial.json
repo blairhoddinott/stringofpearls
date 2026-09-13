@@ -1,7 +1,7 @@
 [
   {
     "title": "Welcome!",
-    "text": "Welcome to the tutorial for the openScope Air Traffic Control Simulator. You can show/hide this tutorial at any time by expanding the \"?\" icon at the bottom right.",
+    "text": "Welcome to the String of Pearls Air Traffic Control Simulator tutorial. You can show or hide this tutorial at any time by expanding the \"?\" icon at the bottom right.",
     "position": [
       0.1,
       0.85
@@ -58,7 +58,7 @@
   },
   {
     "title": "Departures",
-    "text": "Let's look at departures. The selected aircraft, ({CALLSIGN}) has already been given enroute, taxi, takeoff and initial climb clearance. You can manually control these clearances by changing \"Settings\" -> \"Tower Control\" to \"User Controlled\" -- though this setting may be removed in a future release. But be careful: if you switch to user tower control your departures will not depart until you clear them, causing them to stack up. For enroute and taxi clearance refer to <a title=\"openScope Command Reference\" href=\"https://github.com/openscope/openscope/blob/develop/documentation/commands.md\" target=\"_blank\">the full list of commands</a>.",
+    "text": "Let's look at departures. The selected aircraft, ({CALLSIGN}) has already been given enroute, taxi, takeoff and initial climb clearance. You can manually control these clearances by changing \"Settings\" -> \"Tower Control\" to \"User Controlled\" -- though this setting may be removed in a future release. But be careful: if you switch to user tower control your departures will not depart until you clear them, causing them to stack up. For enroute and taxi clearance refer to <a title=\"String of Pearls Command Reference\" href=\"https://github.com/blairhoddinott/stringofpearls/blob/master/documentation/commands.md\" target=\"_blank\">the full list of commands</a>.",
     "replace": [
       {
         "findWhat": "{CALLSIGN}",
@@ -235,7 +235,7 @@
   },
   {
     "title": "Airport Guides & Command Reference",
-    "text": "For further help on how any particular airport or command works, check out the airport guide (through the \"?\" menu), or see the <a title=\"openScope Command Reference\" href=\"https://github.com/openscope/openscope/blob/develop/documentation/commands.md\" target=\"_blank\">openScope Command Reference</a> for a comprehensive list of the available aircraft and scope commands.",
+    "text": "For help with a particular airport or command, check the airport guide through the \"?\" menu or see the <a title=\"String of Pearls Command Reference\" href=\"https://github.com/blairhoddinott/stringofpearls/blob/master/documentation/commands.md\" target=\"_blank\">String of Pearls command reference</a>.",
     "side": "left",
     "position": [
       0.1,

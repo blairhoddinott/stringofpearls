@@ -42,14 +42,14 @@ The instrument procedures are as of AIRAC 2007.
 DCA has very strict noise restrictions, however security is the number one priority. The areas around the National Mall and US Naval Observatory are both prohibited airspace with a ceiling of 18,000ft. This means that aircraft departing to the North must climb quickly and sharply turn left.
 
 ##### Departures
-DCA has various instrument departures which are all available for usage in openScope. The only departure which is not assigned automatically is the National Seven (NATNL7) departure as it is used much less frequently than the others.
+DCA has various instrument departures which are all available for usage in String of Pearls. The only departure which is not assigned automatically is the National Seven (NATNL7) departure as it is used much less frequently than the others.
 
 ##### Arrivals
 There are 9 Standard Terminal Arrival Routes (STARs) into Washington National.
 
 Pilots are expected to descend to meet certain altitude and speed restrictions when they are cleared to "descend via the STAR".
 
-Unfortunately it isn't possible to simulate the RIVER 3 approach for runway 19; runway 01 is preferred for departure and arrival in openScope.
+Unfortunately it isn't possible to simulate the RIVER 3 approach for runway 19; runway 01 is preferred for departure and arrival in String of Pearls.
 
 It's also worth looking at fix names for a few of the STARs such as the FRDMM#, NUMMY# and TRUPS# arrivals which were introduced to honour those who died in the September 11th attacks.
 
@@ -74,7 +74,7 @@ DCA is home to three runways:
 |4/22|5,000|150|Asphalt/grooved|
 
 
-### Sectors Available in openScope
+### Sectors Available in String of Pearls
 ```
 Potomac Approach (OJAAY Sector, feeder)
 Potomac Approach (DCA East Arrival)

@@ -7,7 +7,7 @@ Located just 10 minutes away from Downtown Cincinnati, Covington and Newport, an
 ### Airspace
 The CVG airspace is made up of a rough square with sides approximately 60nm long, centered on the Cincinnati Int'l Airport (KCVG), which covers all of Cincinnati and its surrounding areas. There is also Class B airspace around the CVG airport to prevent conflicts with VFR traffic.
 
-### Sectors Available in openScope
+### Sectors Available in String of Pearls
 It is very difficult to find accurate and up-to-date information on the sectorization of the airspace, so the information below may not be perfectly accurate.
 ```
 F  - Final
@@ -16,7 +16,7 @@ AS - Arrival South
 DE - Departure East
 DW - Departure West
 ```
-The airspace available in openscope is a combination of all the above sectors.
+The airspace available in String of Pearls is a combination of all the above sectors.
 
 ### Airports of Interest
 
@@ -30,7 +30,7 @@ Serving the Greater Cincinnati metropolitan area, CVG is the fastest-growing car
 Most procedures at CVG are heavily automated, so controllers should focus mainly on the separation between departing and arriving aircraft, as well as providing vectors and descent clearances for aircraft on approach.
 
 ##### Runway Configuration
-KCVG has 4 lengthy runways; 3 parallel North-South runways (18L/C/R - 36/L/C/R), and 1 crosswind East-West runway (9-27). Despite its four long runways, Cincinnati often uses just one or two for both arrivals and departures, due its low traffic numbers. If necessary however, Cincinnati is able to support triple simultaneous approaches on its parallel runways. In openScope, KCVG is running a south configuration, meaning that runway 18L is the primary runway for arrivals and departures, with the occasional use of runway 18C mainly for arrivals from the West.
+KCVG has 4 lengthy runways; 3 parallel North-South runways (18L/C/R - 36/L/C/R), and 1 crosswind East-West runway (9-27). Despite its four long runways, Cincinnati often uses just one or two for both arrivals and departures, due its low traffic numbers. If necessary however, Cincinnati is able to support triple simultaneous approaches on its parallel runways. In String of Pearls, KCVG is running a south configuration, meaning that runway 18L is the primary runway for arrivals and departures, with the occasional use of runway 18C mainly for arrivals from the West.
 
 #### KLUK
 Cincinnati Municipal Airport – Lunken Field  

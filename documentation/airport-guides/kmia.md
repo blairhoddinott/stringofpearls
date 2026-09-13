@@ -115,7 +115,7 @@ Boca Raton
 88,269 annual operations
 36.2nm north-northeast of KMIA
 
-Boca is pictured on the Miami video map, and is right along the northern perimeter depicted in openScope. However, due to the actual stratification of the airspace, altitudes 4,000 and down over the Boca Raton airport are controlled by Palm Beach TRACON, meaning Miami TRACON will be handing aircraft off to Palm Beach rather than directly providing approach and departure services at this airport.
+Boca is pictured on the Miami video map, and is right along the northern perimeter depicted in String of Pearls. However, due to the actual stratification of the airspace, altitudes 4,000 and down over the Boca Raton airport are controlled by Palm Beach TRACON, meaning Miami TRACON will be handing aircraft off to Palm Beach rather than directly providing approach and departure services at this airport.
 
 ### Additional Resources
 <a href="https://www.youtube.com/watch?v=zb5nvUY6IRY" target="_blank">Miami Approach (Final) footage</a>

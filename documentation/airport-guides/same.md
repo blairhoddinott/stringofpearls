@@ -9,7 +9,7 @@ The Mendoza Terminal Maneuvering Area controls a very large area surrounding the
 ## Instrument Procedures
 Like most airports in Argentina, departure procedures take aircraft around an arc around the Mendoza VOR (DOZ) to the outbound radials to their departure waypoints. In recent years however, RNAV procedures have been introduced which omit the arc as it is not necessary for most departures. Due to the extremely challenging terrain West of Mendoza, all departures to the West first fly East to gain some altitude before turning back around, flying over the airport and onwards over the Andes. All STARs are RNAV and guide aircraft around restricted airspace and terrain to the initial approach fixes. Aircraft are then usually cleared to the RNAV approach for the appropriate runway.
 
-## Sectors Available in openScope
+## Sectors Available in String of Pearls
 
 `Mendoza TMA` from the surface up to FL245
 

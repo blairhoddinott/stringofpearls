@@ -54,7 +54,7 @@ Opened in 1931 as the Haneda Airfield with a less than 1000ft long runway, the a
 
 ## Airspace
 
-There are four radar positions in the Tokyo Approach Control Area (ACA) — Depature, Approach, Radar, and TCA, with each being divided into smaller sectors. The Tokyo ACA covers both Tokyo Int'l (RJTT) and Narita Int'l (RJAA); however, due to the nature of openScope, aircraft will only be arriving and departing from Tokyo Int'l.
+There are four radar positions in the Tokyo Approach Control Area (ACA) — Depature, Approach, Radar, and TCA, with each being divided into smaller sectors. The Tokyo ACA covers both Tokyo Int'l (RJTT) and Narita Int'l (RJAA); however, due to the nature of String of Pearls, aircraft will only be arriving and departing from Tokyo Int'l.
 
 As the name suggests, the Departure and Approach positions are for departing and arriving aircraft in the Tokyo ACA.
 
@@ -83,7 +83,7 @@ Departing aircraft will be assigned their SID based on their destination, as the
 
 SEKIYADO (SYE), VADAR, and ISOGO departures are not used for scheduled commercial flights.
 
-Note: Due to technical limitations in openScope, BRUCE transition of the ROVER departures are named AGRIS transitions instead.
+Note: Due to technical limitations in String of Pearls, BRUCE transition of the ROVER departures are named AGRIS transitions instead.
 
 Departure runway assigned for flights are based on its flight direction. Below shows the assignment in different operation scenarios.
 
@@ -113,7 +113,7 @@ After handed off from Tokyo Control, Tokyo Approach is responsible for:
 
 The wind settings in the simulator will allow for the "North Wind Operation", which uses RWY34L/R for arrival. When the two runways both use ILS approaches, they will be the ILS Z RWY34L/R approaches. In this case, aircraft should cross CAMEL at 4000ft for RWY34R to intercept the glideslope at CACAO; they should cross ARLON at 5000' for RWY34L to intercept the glideslope at APOLO.
 
-## Sectors Available in openScope
+## Sectors Available in String of Pearls
 ```
 Tokyo Depature
 Tokyo Approach

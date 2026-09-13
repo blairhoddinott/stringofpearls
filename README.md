@@ -1,62 +1,98 @@
-[![openScope Current Release](https://img.shields.io/github/v/release/openscope/openscope.svg)](https://github.com/openscope/openscope/releases)
-[![Production Build State](https://img.shields.io/github/actions/workflow/status/openscope/openscope/push.yml?branch=master)](https://github.com/openscope/openscope/tree/master)
-[![Coverage Status](https://coveralls.io/repos/github/openscope/openscope/badge.svg?branch=develop)](https://coveralls.io/github/openscope/openscope?branch=develop)
-[![Slack Status](https://img.shields.io/badge/slack-join-yellow)](https://join.slack.com/t/openscopeatc/shared_invite/zt-g9wq2mch-B7Z9IltlgxgCBC2dBYPjiw)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md)
+# String of Pearls
 
-# openScope Air Traffic Control Simulator
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
+[![Docker ready](https://img.shields.io/badge/Docker-ready-2496ED?logo=docker&logoColor=white)](documentation/development/containers.md)
 
-Visit http://openscope.io to begin playing now!
+String of Pearls is a browser-based air traffic control simulator. Work traffic on realistic scopes, issue clearances, manage arrivals and departures, and try not to manufacture an FAA incident report.
 
-If you're just getting started, try the tutorial and see the [command reference](documentation/commands.md) for a full list of commands you can use. For information on each airport, see the [airport guide](documentation/airport-guides/airport-guide-directory.md).
+The project is being modernized from the openScope codebase. Existing simulation behavior and airport data remain useful; the obsolete build system, runtime assumptions, and global architecture are being replaced incrementally.
 
-Feel free to [join us on slack](https://join.slack.com/t/openscopeatc/shared_invite/zt-g9wq2mch-B7Z9IltlgxgCBC2dBYPjiw) if you have questions, comments or would like to contribute to the project. We can then add you to the organization so you can begin committing to this repo.
+## Run with Docker
 
----
+Docker is the supported development and deployment path while the JavaScript toolchain is modernized.
 
-## Developer Quick Start
-
-_Prerequisites: In order to successfully complete this quick start, you will need to have the following installed locally:_
-
-- [Git](https://git-scm.com/downloads)
-- [Node](https://nodejs.org/en/download/)
-
-_Installation directions are beyond the scope of this document.  Instead, search the [Google](http://google.com).  Installing these two packages has been written about ad-nauseum._
-
-From a terminal (or GitBash for Windows users), run the following commands:
-
-1. `git clone https://github.com/openscope/openscope.git`
-1. `cd openscope`
-1. `npm install`
-1. `npm run build`
-1. `npm run start`
-
-Once that finishes doing its thing, you should see something close to the following in the terminal:
-
-```bash
-> node ./public/assets/scripts/server/index.js
-
-Listening on PORT 3003
+```sh
+git clone https://github.com/blairhoddinott/stringofpearls.git
+cd stringofpearls
+docker compose up --build app
 ```
 
-Success!!
+Open http://localhost:3003.
 
-You you do not see this message and are having trouble getting set up, please join us on [Slack](https://join.slack.com/t/openscopeatc/shared_invite/zt-g9wq2mch-B7Z9IltlgxgCBC2dBYPjiw) and someone will be able to troubleshoot with you.
+For the source-mounted development image, runtime hardening details, health checks, and CI usage, see [Container development and deployment](documentation/development/containers.md).
 
-For more information on the available tools, please view the [Tools Readme](tools/README.md).
+## Simulator documentation
+
+- [Command reference](documentation/commands.md)
+- [Airport guides](documentation/airport-guides/airport-guide-directory.md)
+- [Airport format](documentation/airport-format.md)
+- [Airport file standards](documentation/airport-file-standards.md)
+- [Event tracking and privacy](documentation/event-tracking.md)
+
+## Development
+
+The repository currently carries a legacy Node 11 test harness and Gulp build pipeline. The production container builds the application with Node 24 and serves the generated static site from unprivileged NGINX. This keeps local development and deployment reproducible while the underlying toolchain is replaced.
+
+Useful commands:
+
+```sh
+# Production-like container
+docker compose up --build app
+
+# Source-mounted development container
+docker compose --profile development up --build dev
+
+# Container acceptance test
+npm run docker:smoke
+```
+
+Read the [modernization audit](documentation/development/modernization-audit.md) for the technical baseline and migration sequence.
+
+## Roadmap
+
+The canonical roadmap lives at [documentation/development/roadmap.md](documentation/development/roadmap.md). This is the current working plan.
+
+### Foundations
+
+- [x] Rename the project to String of Pearls
+- [x] Add development and production container workflows
+- [ ] Set up CI/CD on a self-hosted GitHub Actions runner
+- [ ] Modernize the JavaScript toolchain and application architecture
+- [ ] Resume feature development on the modernized foundation
+
+### Simulation and realism
+
+- [ ] Use real-world traffic schedules
+- [ ] Use real-world weather
+- [ ] Simulate handoffs from center controllers
+- [ ] Model service to smaller airports in the surrounding area
+- [ ] Add operational holding instructions
+- [ ] Divide airspace into sectors and allow users to work selected sectors where the model makes sense
+- [ ] Separate arrival and departure positions so users can work either position or combine both
+
+### Voice and interaction
+
+- [ ] Add speech-to-text command input
+- [ ] Improve text-to-speech for aircraft responses
+- [ ] Allow users to reposition data tags to reduce overlap
+- [ ] Add more realistic information to flight progress strips
+
+### Scope and community
+
+- [ ] Update the display to resemble the Raytheon STARS 6191 scope using the available manual
+- [ ] Create a maintainable submission and review process for new airports
+- [ ] Evaluate a leaderboard or other scoring system without turning the simulator into an arcade cabinet
 
 ## Contributing
 
-We do not use forks. Instead, we add to add all contributors to the openScope organization. This way, we can keep all branches local to the organization, and use testing integrations on pull requests. If you are interested in contributing, _please message Erik Quinn or Nate Geslin on slack_ so you can be added to the organization.
+Issues and pull requests are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) before starting work. Keep changes focused, include tests where the current harness permits them, and document behavior that affects airport authors or operators.
 
-We use the [GitFlow Branching Model](http://nvie.com/posts/a-successful-git-branching-model) for managing branches.  If you would like to contribute, you will be expected to use appropriate branch names based on this methodology (and we can help if you have questions).
+## Privacy
 
-Don't know Javascript?  That's cool, we're always looking for beta testers and/or airport contributors.  If you would like to add a new airport, or help update existing airports, please read the [Airport Format Documentation](documentation/airport-format.md) and [Airport File Standards Documentation](documentation/airport-file-standards.md) to get up to speed on what is expected in that file.
+The inherited client currently includes Google Analytics event tracking. See [Event tracking and privacy](documentation/event-tracking.md) for details. Removing or replacing that integration is part of the modernization work.
 
-## Privacy Disclosures
+## License and attribution
 
-We use Google Analytics for gathering data about how our app is used. See [Event Tracking](documentation/event-tracking.md) for more information.
+String of Pearls is distributed under the [MIT License](LICENSE.md).
 
-## License
-
-[MIT License](LICENSE.md)
+The simulator is derived from the openScope project and retains its copyright and license history. Historical references in the changelog and modernization audit are preserved where they describe the original project.

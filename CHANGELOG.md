@@ -17,7 +17,7 @@
 - <a href="https://github.com/openscope/openscope/issues/1787" target="_blank">#1787</a> - Standardize JSON schemas
 - <a href="https://github.com/openscope/openscope/issues/1912" target="_blank">#1912</a> - Update tutorial for auto-departure feature
 - <a href="https://github.com/openscope/openscope/issues/2030" target="_blank">#2030</a> - Implement 'tw' alias for 'timewarp' command
-- <a href="https://github.com/openscope/openscope/issues/2042" target="_blank">#2042</a> - Update readme badges and slack links
+- <a href="https://github.com/openscope/openscope/issues/2042" target="_blank">#2042</a> - Update README badges and community links
 - <a href="https://github.com/openscope/openscope/issues/2052" target="_blank">#2052</a> - Fix script minification issues in build process
 - <a href="https://github.com/openscope/openscope/issues/2045" target="_blank">#2045</a> - Assorted code cleanup and optimizations
 - <a href="https://github.com/openscope/openscope/issues/1916" target="_blank">#1916</a> - Fix KORD
@@ -192,7 +192,7 @@
 # 6.18.0 (July 1, 2020)
 ### New Features
 - <a href="https://github.com/openscope/openscope/issues/1523" target="_blank">#1523</a> - Re-introduce Washington Dulles International Airport (KIAD); add Mountain Air Cargo (MTN) and CommutAir (UCA)
-- <a href="https://github.com/openscope/openscope/issues/1568" target="_blank">#1568</a> - Add command reference and slack links to help menu
+- <a href="https://github.com/openscope/openscope/issues/1568" target="_blank">#1568</a> - Add command reference and community links to help menu
 
 ### Bugfixes
 - <a href="https://github.com/openscope/openscope/issues/39" target="_blank">#39</a> - Fix misaligned compass headings around scope border

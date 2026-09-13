@@ -29,7 +29,7 @@ The airspace is mainly a circle with a radius of 35nm situated around the Václa
 
 ###### Runway usage
 
-The Václav Havel Airport is very specific with its runway usage. RWY04/22 is permanently out of operation and serves as a taxiway for oversized aircraft such as the Antonov AN-225. It is also for this reason not at all included in openScope. RWY24 is the only runway approved for ILS CAT II/III operations, runways 06, 12 and 30 are ILS CAT I certified.
+The Václav Havel Airport is very specific with its runway usage. RWY04/22 is permanently out of operation and serves as a taxiway for oversized aircraft such as the Antonov AN-225. It is also for this reason not at all included in String of Pearls. RWY24 is the only runway approved for ILS CAT II/III operations, runways 06, 12 and 30 are ILS CAT I certified.
 
 The monopoly in CAT III certification and winds coming mostly from the west mean RWY24 is the preferred RWY and is used for approximately 80% of all operations. RWY12 is the second most commonly used runway and RWYs 06 and 30 are used very seldom. RWYs 06/24 and 12/30 are **never** used simultaneously.
 

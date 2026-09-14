@@ -18,8 +18,15 @@ import {
 import { SELECTORS } from '../../constants/selectors';
 import { AUTOCOMPLETE_COMMAND_TEMPLATE } from './AutocompleteCommandTemplate';
 import { AUTOCOMPLETE_ARGUMENT_TEMPLATE } from './AutocompleteArgumentTemplate';
+import { formatAssetLoadError } from '../../platform/AssetLoader';
 
 const Handlebars = require('handlebars');
+
+const reportAsyncError = (error) => {
+    setTimeout(() => {
+        throw error;
+    }, 0);
+};
 
 /**
  * @class AutocompleteController
@@ -30,9 +37,13 @@ export default class AutocompleteController {
      * @param $element {JQuery|HTML Element}
      * @param inputController {InputController}
      * @param aircraftController {AircraftController}
+     * @param assetLoader {AssetLoader}
+     * @param reportError {Function}
      */
-    constructor($element, inputController, aircraftController) {
+    constructor($element, inputController, aircraftController, assetLoader, reportError = reportAsyncError) {
         this.$element = $element;
+        this._assetLoader = assetLoader;
+        this._reportError = reportError;
         this.$autocomplete = null;
         this.$autocompleteInput = null;
         this.$autocompleteOutput = null;
@@ -99,9 +110,16 @@ export default class AutocompleteController {
      * @private
      */
     _fetchConfig() {
-        $.getJSON('assets/autocomplete/commandAutocompleteConfig.json')
-            .done((response) => this.onConfigFetchedHandler(response))
-            .fail((jqXHR) => console.error(`Failed to load autocomplete configuration: ${jqXHR.status}: ${jqXHR.statusText}`));
+        return this._assetLoader.loadJson('assets/autocomplete/commandAutocompleteConfig.json')
+            .then((response) => {
+                try {
+                    return this.onConfigFetchedHandler(response);
+                } catch (error) {
+                    return this._reportError(error);
+                }
+            }, (error) => {
+                console.error(`Failed to load autocomplete configuration: ${formatAssetLoadError(error)}`);
+            });
     }
 
     /**

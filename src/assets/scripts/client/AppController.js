@@ -191,7 +191,7 @@ export default class AppController {
 
         this.canvasController = new CanvasController(this.$canvasesElement, this.aircraftController, this.scopeModel);
 
-        this.inputController = new InputController(this.$element, this.aircraftController, this.scopeModel);
+        this.inputController = new InputController(this.$element, this.aircraftController, this.scopeModel, this._assetLoader);
         this.airportInfoController = new AirportInfoController(this.$element);
         this.airportGuideController = new AirportGuideViewController(this.$element, airportGuideData, initialAirportData.icao);
         this.changelogController = new ChangelogController(this.contentQueue);

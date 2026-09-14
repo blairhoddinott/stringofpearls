@@ -40,8 +40,9 @@ export default class InputController {
      * @param $element {JQuery|HTML Element}
      * @param aircraftController {AircraftController}
      * @param scopeModel {ScopeModel}
+     * @param assetLoader {AssetLoader} composition-root JSON transport, injected into AutocompleteController
      */
-    constructor($element, aircraftController, scopeModel) {
+    constructor($element, aircraftController, scopeModel, assetLoader) {
         this.$element = $element;
         this.$body = null;
         this.$window = null;
@@ -51,7 +52,8 @@ export default class InputController {
         this._eventBus = EventBus;
         this._aircraftController = aircraftController;
         this._scopeModel = scopeModel;
-        this._autocompleteController = new AutocompleteController(this.$element, this, this._aircraftController);
+        this._assetLoader = assetLoader;
+        this._autocompleteController = new AutocompleteController(this.$element, this, this._aircraftController, this._assetLoader);
 
         prop.input = input;
         this.input = input;

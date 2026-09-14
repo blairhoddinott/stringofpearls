@@ -212,6 +212,10 @@ Replace direct `$.getJSON`, `window`, `localStorage`, and analytics access behin
 
 Exit condition: core services can run in tests without fabricated global browser state.
 
+Phase 3 began with `AssetLoader` and `StartupAssetLoader` boundaries injected at the `App` composition root. The airport list, selected/default airport, airline definitions, aircraft definitions, and airport guides now load through those boundaries as standard Promises rather than direct `$.getJSON`/`$.when` calls. Eight focused tests characterize transport success and failure, normalized diagnostics and airport paths, selected-airport fallback, named startup payloads, concurrent definition requests, and downstream-failure propagation without importing the browser composition graph. The complete suite reports 1,328 passing, 17 skipped, and 14 todo tests; all 117 eligible source files appear in coverage, and the 278-file build contract and KPDX browser smoke test remain green.
+
+This is partial progress, not the Phase 3 exit condition. `ContentQueue`, autocomplete, terrain/tutorial consumers, storage, timing, randomness, analytics, speech, clipboard, visibility, and fabricated global browser state remain to be addressed incrementally.
+
 ### Phase 4 — Establish a simulation context
 
 Introduce a per-session `SimulationContext` containing:
@@ -236,9 +240,9 @@ Exit condition: multiple isolated simulations can be created and advanced determ
 
 Exit condition: UI work no longer requires editing multi-thousand-line controllers or reaching into simulation globals.
 
-## Next implementation slice
+## Current implementation slice
 
-Phase 3 should begin with one browser/platform boundary backed by characterization tests. Asset loading is the best first seam because airport, airline, terrain, and navigation loading currently depend on fabricated globals in tests; extract an adapter without changing asset formats or introducing a framework.
+Phase 3 is proceeding through asset loading first because airport, airline, terrain, tutorial, autocomplete, and navigation startup currently depend on browser globals or jQuery-specific deferred values. The first tracer routes `App` startup through an injected adapter without changing asset formats or introducing a framework. The next tracer should migrate `ContentQueue` and autocomplete, then replace the global `zlsa.atc.loadAsset` bridge only after its terrain, airport, and tutorial callers have explicit dependencies.
 
 ## Explicit non-goals for the first phases
 

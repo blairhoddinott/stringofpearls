@@ -2,6 +2,8 @@ import $ from 'jquery';
 import _isNil from 'lodash/isNil';
 import _lowerCase from 'lodash/lowerCase';
 import AppController from './AppController';
+import AssetLoader, { formatAssetLoadError } from './platform/AssetLoader';
+import StartupAssetLoader from './platform/StartupAssetLoader';
 import EventBus from './lib/EventBus';
 import TimeKeeper from './engine/TimeKeeper';
 import { DEFAULT_AIRPORT_ICAO } from './constants/airportConstants';
@@ -31,8 +33,9 @@ export default class App {
     /**
      * @constructor
      * @param $element {HTML Element|null}
+     * @param assetLoader {AssetLoader}
      */
-    constructor(element) {
+    constructor(element, assetLoader = new AssetLoader((url) => $.getJSON(url))) {
         /**
          * Root DOM element.
          *
@@ -41,6 +44,7 @@ export default class App {
          * @default body
          */
         this.$element = $(element);
+        this._startupAssetLoader = new StartupAssetLoader(assetLoader);
         this._appController = new AppController(this.$element);
         this.eventBus = EventBus;
 
@@ -62,9 +66,9 @@ export default class App {
      * @method _fetchAirportLoadList
      */
     _fetchAirportLoadList() {
-        $.getJSON('assets/airports/airportLoadList.json')
-            .done((response) => this.onAirportLoadListFetchedHandler(response))
-            .fail((jqXHR) => console.error(`Unable to load airport list: ${jqXHR.status}: ${jqXHR.statusText}`));
+        return this._startupAssetLoader.loadAirportList()
+            .then((response) => this.onAirportLoadListFetchedHandler(response))
+            .catch((error) => console.error(`Unable to load application assets: ${formatAssetLoadError(error)}`));
     }
 
     /**
@@ -78,7 +82,7 @@ export default class App {
         // ICAO id of the initial airport. may be the default or a stored airport
         const initialAirportToLoad = this._getInitialAirport(airportLoadList);
 
-        this.loadInitialAirport(airportLoadList, initialAirportToLoad);
+        return this.loadInitialAirport(airportLoadList, initialAirportToLoad);
     }
 
     /**
@@ -121,8 +125,6 @@ export default class App {
      */
     setupHandlers() {
         this.onAirportLoadListFetchedHandler = this._onAirportLoadListFetched.bind(this);
-        this.loadDefaultAiportAfterStorageIcaoFailureHandler = this.loadDefaultAiportAfterStorageIcaoFailure.bind(this);
-        this.loadAirlinesAndAircraftHandler = this.loadAirlinesAndAircraft.bind(this);
         this.setupChildrenHandler = this.setupChildren.bind(this);
         this.onPauseHandler = this._onPause.bind(this);
         this.onUpdateHandler = this.update.bind(this);
@@ -146,60 +148,15 @@ export default class App {
      * @param airportLoadList {array<object>}  List of airports to load
      */
     loadInitialAirport(airportLoadList, initialAirportToLoad) {
-        const initialAirportIcao = initialAirportToLoad.toLowerCase();
-
-        $.getJSON(`assets/airports/${initialAirportIcao}.json`)
-            .then((response) => this.loadAirlinesAndAircraftHandler(airportLoadList, initialAirportIcao, response))
-            .catch((error) => this.loadDefaultAiportAfterStorageIcaoFailureHandler(airportLoadList));
-    }
-
-    /**
-     * Used only when an attempt to load airport data with an icao in localStorage fails.
-     * In this case we attempt to load the default airport with this method
-     *
-     * Lifecycle method. Should be called only once on initialization
-     *
-     * @for App
-     * @method onLoadDefaultAirportAfterStorageIcaoFailure
-     * @param {array<object>} airportLoadList
-     */
-    loadDefaultAiportAfterStorageIcaoFailure(airportLoadList) {
-        $.getJSON(`assets/airports/${DEFAULT_AIRPORT_ICAO}.json`)
-            .then((defaultAirportResponse) => this.loadAirlinesAndAircraftHandler(
-                airportLoadList,
-                DEFAULT_AIRPORT_ICAO,
-                defaultAirportResponse
-            ));
-    }
-
-    /**
-     * Handler method called after data has loaded for the airline and aircraftTypeDefinitions datasets.
-     *
-     * Lifecycle method. Should be called only once on initialization
-     *
-     * @for App
-     * @method loadAirlinesAndAircraft
-     * @param {array>object>} airportLoadList
-     * @param {string} initialAirportIcao
-     * @param {object<string>} initialAirportResponse
-     */
-    loadAirlinesAndAircraft(airportLoadList, initialAirportIcao, initialAirportResponse) {
-        const airlineListPromise = $.getJSON('assets/airlines/airlines.json');
-        const aircraftListPromise = $.getJSON('assets/aircraft/aircraft.json');
-        const airportGuideListPromise = $.getJSON('assets/guides/guides.json');
-
-        // This is provides a way to get async data from several sources in the app before anything else runs
-        // we need to resolve data from two sources before the app can proceede. This data should always
-        // exist, if it doesn't, something has gone terribly wrong.
-        $.when(airlineListPromise, aircraftListPromise, airportGuideListPromise)
-            .done((airlineResponse, aircraftResponse, airportGuideResponse) => {
+        return this._startupAssetLoader.loadInitialAssets(initialAirportToLoad, DEFAULT_AIRPORT_ICAO)
+            .then(({ aircraft, airlines, airport, guides, icao }) => {
                 this.setupChildrenHandler(
                     airportLoadList,
-                    initialAirportIcao,
-                    initialAirportResponse,
-                    airlineResponse[0].airlines,
-                    aircraftResponse[0].aircraft,
-                    airportGuideResponse[0]
+                    icao,
+                    airport,
+                    airlines,
+                    aircraft,
+                    guides
                 );
             });
     }

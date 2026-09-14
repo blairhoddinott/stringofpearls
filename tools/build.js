@@ -357,110 +357,81 @@ async function replacePublicDirectory(stagedDirectory, options = {}) {
     }
 }
 
-async function acquireBuildLock(options = {}) {
-    const rootDirectory = options.rootDirectory || ROOT;
-    const lockFilename = path.join(rootDirectory, '.public-build.lock');
-    const holderScript = "process.stdout.write('locked\\n'); process.stdin.resume();";
-    const holder = spawn('flock', [
+async function runLockedBuild(options = {}) {
+    const lockFilename = path.join(ROOT, '.public-build.lock');
+    const arguments_ = [
+        '--exclusive',
         '--nonblock',
+        '--conflict-exit-code',
+        '75',
+        '--no-fork',
         lockFilename,
         process.execPath,
-        '-e',
-        holderScript
-    ], {
-        stdio: ['pipe', 'pipe', 'pipe']
+        __filename,
+        '--internal-build'
+    ];
+
+    if (options.production === true) {
+        arguments_.push('--production');
+    }
+
+    const worker = spawn('flock', arguments_, {
+        cwd: ROOT,
+        env: process.env,
+        stdio: ['pipe', 'inherit', 'inherit']
     });
+    worker.stdin.on('error', () => {});
 
-    await new Promise((resolve, reject) => {
-        let stderr = '';
-        const onError = (error) => reject(error);
-        const onExit = (status) => {
-            const message = status === 1
-                ? 'another build is already running'
-                : `could not acquire build lock with flock (exit ${status}${stderr ? `: ${stderr.trim()}` : ''})`;
-            reject(new Error(message));
-        };
-        const onData = (chunk) => {
-            if (!chunk.toString().includes('locked')) {
-                return;
-            }
-
-            holder.removeListener('error', onError);
-            holder.removeListener('exit', onExit);
-            resolve();
-        };
-
-        holder.stderr.on('data', (chunk) => { stderr += chunk; });
-        holder.once('error', onError);
-        holder.once('exit', onExit);
-        holder.stdout.on('data', onData);
-    }).catch(async (error) => {
-        holder.stdin.destroy();
-        await new Promise((resolve) => {
-            if (holder.exitCode !== null || holder.signalCode !== null) {
-                resolve();
-                return;
-            }
-
-            holder.once('close', resolve);
-        });
-        throw error;
-    });
-
-    let released = false;
-
-    return async () => {
-        if (released) {
-            throw new Error('build lock was already released');
-        }
-
-        released = true;
-        const result = holder.exitCode !== null || holder.signalCode !== null
-            ? { signal: holder.signalCode, status: holder.exitCode }
-            : await new Promise((resolve) => {
-                holder.once('exit', (status, signal) => resolve({ signal, status }));
-                holder.stdin.end();
-            });
-
-        if (holder.stdin.writable) {
-            holder.stdin.end();
-        }
-
-        if (result.status !== 0) {
-            throw new Error(`build lock holder exited abnormally (${result.signal || result.status})`);
+    const forwardSignal = (signal) => {
+        if (worker.exitCode === null && worker.signalCode === null) {
+            worker.kill(signal);
         }
     };
-}
+    const forwardInterrupt = () => forwardSignal('SIGINT');
+    const forwardTermination = () => forwardSignal('SIGTERM');
+    process.once('SIGINT', forwardInterrupt);
+    process.once('SIGTERM', forwardTermination);
 
-async function cleanupAfterBuild(stagedDirectory, releaseBuildLock, filesystem = fsp) {
-    const operations = [];
+    let result;
 
-    if (stagedDirectory) {
-        operations.push(
-            filesystem.rm(stagedDirectory, { force: true, recursive: true })
-                .catch((error) => { throw new Error(`staging cleanup failed: ${error.message}`, { cause: error }); })
-        );
+    try {
+        result = await new Promise((resolve, reject) => {
+            worker.once('error', reject);
+            worker.once('close', (status, signal) => resolve({ signal, status }));
+        });
+    } finally {
+        process.removeListener('SIGINT', forwardInterrupt);
+        process.removeListener('SIGTERM', forwardTermination);
+
+        if (worker.stdin.writable) {
+            worker.stdin.end();
+        }
     }
 
-    operations.push(
-        releaseBuildLock()
-            .catch((error) => { throw new Error(`lock release failed: ${error.message}`, { cause: error }); })
-    );
+    if (result.status === 75) {
+        throw new Error('another build is already running');
+    }
 
-    const results = await Promise.allSettled(operations);
-    const failures = results
-        .filter((result) => result.status === 'rejected')
-        .map((result) => result.reason);
-
-    if (failures.length > 0) {
-        throw new AggregateError(failures, 'build cleanup failed');
+    if (result.status !== 0) {
+        throw new Error(`locked build worker failed (${result.signal || result.status})`);
     }
 }
 
-async function build(options = {}) {
+async function cleanupAfterBuild(stagedDirectory, filesystem = fsp) {
+    if (!stagedDirectory) {
+        return;
+    }
+
+    try {
+        await filesystem.rm(stagedDirectory, { force: true, recursive: true });
+    } catch (error) {
+        throw new Error(`staging cleanup failed: ${error.message}`, { cause: error });
+    }
+}
+
+async function buildUnlocked(options = {}) {
     const production = options.production === true;
     const startedAt = Date.now();
-    const releaseBuildLock = await acquireBuildLock();
     let buildError;
     let stagedDirectory;
 
@@ -493,10 +464,10 @@ async function build(options = {}) {
     }
 
     try {
-        await cleanupAfterBuild(stagedDirectory, releaseBuildLock);
+        await cleanupAfterBuild(stagedDirectory);
     } catch (cleanupError) {
         if (buildError) {
-            throw new AggregateError([buildError, ...cleanupError.errors], 'build and cleanup failed');
+            throw new AggregateError([buildError, cleanupError], 'build and cleanup failed');
         }
 
         throw cleanupError;
@@ -507,6 +478,10 @@ async function build(options = {}) {
     }
 
     console.log(`built public/ in ${Date.now() - startedAt}ms (${production ? 'production' : 'development'})`);
+}
+
+async function build(options = {}) {
+    await runLockedBuild(options);
 }
 
 function parseArguments(argv) {
@@ -587,8 +562,89 @@ async function watch(options) {
     await new Promise(() => {});
 }
 
+function linuxDeviceIdentifier(device) {
+    const major = ((device >> 8n) & 0xfffn) | ((device >> 32n) & ~0xfffn);
+    const minor = (device & 0xffn) | ((device >> 12n) & ~0xffn);
+
+    return `${major.toString(16).padStart(2, '0')}:${minor.toString(16).padStart(2, '0')}`;
+}
+
+async function assertInternalBuildLockOwned() {
+    if (process.platform !== 'linux') {
+        throw new Error('native builds require Linux util-linux flock; use the supported container');
+    }
+
+    const lockFilename = path.join(ROOT, '.public-build.lock');
+    const lockStat = await fsp.stat(lockFilename, { bigint: true });
+    const descriptors = await fsp.readdir('/proc/self/fd');
+    let inheritedLockDescriptor = false;
+
+    for (const descriptor of descriptors) {
+        try {
+            const descriptorStat = await fsp.stat(`/proc/self/fd/${descriptor}`, { bigint: true });
+
+            if (descriptorStat.dev === lockStat.dev && descriptorStat.ino === lockStat.ino) {
+                inheritedLockDescriptor = true;
+                break;
+            }
+        } catch (error) {
+            if (error.code !== 'ENOENT') {
+                throw error;
+            }
+        }
+    }
+
+    const expectedLockTarget = `${linuxDeviceIdentifier(lockStat.dev)}:${lockStat.ino}`;
+    const ownsKernelLock = (await fsp.readFile('/proc/locks', 'utf8'))
+        .split('\n')
+        .some((line) => {
+            const fields = line.trim().split(/\s+/);
+
+            return fields[1] === 'FLOCK' &&
+                fields[3] === 'WRITE' &&
+                fields[4] === String(process.pid) &&
+                fields[5] === expectedLockTarget;
+        });
+
+    if (!inheritedLockDescriptor || !ownsKernelLock) {
+        throw new Error('internal build worker does not own the build lock');
+    }
+}
+
+async function runInternalBuild(argv) {
+    await assertInternalBuildLockOwned();
+    let completed = false;
+    const abortIfWrapperExited = () => {
+        if (!completed) {
+            process.exit(1);
+        }
+    };
+
+    process.stdin.once('end', abortIfWrapperExited);
+    process.stdin.once('close', abortIfWrapperExited);
+    process.stdin.once('error', abortIfWrapperExited);
+    process.stdin.resume();
+
+    try {
+        await buildUnlocked(parseArguments(argv));
+    } finally {
+        completed = true;
+        process.stdin.removeListener('end', abortIfWrapperExited);
+        process.stdin.removeListener('close', abortIfWrapperExited);
+        process.stdin.removeListener('error', abortIfWrapperExited);
+        process.stdin.destroy();
+    }
+}
+
 async function main() {
-    const options = parseArguments(process.argv.slice(2));
+    const argv = process.argv.slice(2);
+
+    if (argv[0] === '--internal-build') {
+        await runInternalBuild(argv.slice(1));
+        return;
+    }
+
+    const options = parseArguments(argv);
 
     if (options.watch) {
         await watch(options);
@@ -605,7 +661,6 @@ if (require.main === module) {
 }
 
 module.exports = {
-    acquireBuildLock,
     build,
     cleanupAfterBuild,
     getBuildDate,

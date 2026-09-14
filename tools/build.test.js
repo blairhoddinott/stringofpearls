@@ -10,7 +10,6 @@ const { spawn, spawnSync } = require('child_process');
 const { SourceMapConsumer } = require('source-map');
 const showdown = require('showdown');
 const {
-    acquireBuildLock,
     cleanupAfterBuild,
     recoverBuildDirectories,
     replacePublicDirectory
@@ -433,9 +432,9 @@ async function assertFailedBuildPreservesPreviousOutput() {
     }
 }
 
-function runBuildAsync() {
+function runBuildArgumentsAsync(arguments_) {
     return new Promise((resolve) => {
-        const child = spawn(process.execPath, [BUILD_SCRIPT, '--production'], {
+        const child = spawn(process.execPath, [BUILD_SCRIPT, ...arguments_], {
             cwd: ROOT,
             env: { ...process.env, SOURCE_DATE_EPOCH: FIXED_BUILD_EPOCH }
         });
@@ -446,6 +445,10 @@ function runBuildAsync() {
         child.stdout.on('data', (chunk) => { stdout += chunk; });
         child.on('close', (status, signal) => resolve({ signal, status, stderr, stdout }));
     });
+}
+
+function runBuildAsync() {
+    return runBuildArgumentsAsync(['--production']);
 }
 
 async function assertWatchQueuesInitialChanges() {
@@ -481,8 +484,10 @@ async function assertWatchQueuesInitialChanges() {
             });
         });
     } finally {
-        child.kill('SIGTERM');
-        await new Promise((resolve) => child.once('close', resolve));
+        if (child.exitCode === null && child.signalCode === null) {
+            child.kill('SIGKILL');
+        }
+        await waitForChildExit(child).catch(() => {});
     }
 
     assert.ok(touched, 'watch never reported registered source watchers');
@@ -492,17 +497,96 @@ async function assertWatchQueuesInitialChanges() {
     );
 }
 
-async function assertBuildLockSerializesProcesses() {
-    const lockFilename = path.join(ROOT, '.public-build.lock');
-    const release = await acquireBuildLock({ rootDirectory: ROOT });
+async function waitForChildExit(child, timeoutMilliseconds = 5000) {
+    if (child.exitCode !== null || child.signalCode !== null) {
+        return { signal: child.signalCode, status: child.exitCode };
+    }
+
+    return Promise.race([
+        new Promise((resolve) => child.once('close', (status, signal) => resolve({ signal, status }))),
+        new Promise((resolve, reject) => setTimeout(() => reject(new Error('child process did not exit')), timeoutMilliseconds))
+    ]);
+}
+
+async function findInternalBuildWorker(parent) {
+    for (let attempt = 0; attempt < 500; attempt += 1) {
+        if (parent.exitCode !== null || parent.signalCode !== null) {
+            throw new Error('locked build exited before starting an internal worker');
+        }
+
+        const childrenFilename = `/proc/${parent.pid}/task/${parent.pid}/children`;
+        const contents = await fsp.readFile(childrenFilename, 'utf8').catch(() => '');
+
+        for (const processId of contents.trim().split(/\s+/).filter(Boolean)) {
+            const commandLine = await fsp.readFile(`/proc/${processId}/cmdline`, 'utf8').catch(() => '');
+
+            if (commandLine.replace(/\0/g, ' ').includes('--internal-build')) {
+                return Number(processId);
+            }
+        }
+
+        await new Promise((resolve) => setTimeout(resolve, 10));
+    }
+
+    throw new Error('locked build did not start an internal worker');
+}
+
+async function findWorkerStagingDirectory(workerProcessId) {
+    const prefix = `.public-build-${workerProcessId}-`;
+
+    for (let attempt = 0; attempt < 500; attempt += 1) {
+        const match = (await fsp.readdir(ROOT)).find((filename) => filename.startsWith(prefix));
+
+        if (match) {
+            return path.join(ROOT, match);
+        }
+
+        await new Promise((resolve) => setTimeout(resolve, 10));
+    }
+
+    throw new Error('internal build worker did not create staging output');
+}
+
+async function assertInternalWorkerRequiresKernelLock() {
+    const result = await runBuildArgumentsAsync(['--internal-build', '--production']);
+    assert.notStrictEqual(result.status, 0, 'internal build worker ran without owning the kernel lock');
+    assert.match(result.stderr, /does not own the build lock/);
+}
+
+async function assertActualBuildWorkerOwnsLock() {
+    const child = spawn(process.execPath, [BUILD_SCRIPT, '--production'], {
+        cwd: ROOT,
+        detached: true,
+        env: { ...process.env, SOURCE_DATE_EPOCH: FIXED_BUILD_EPOCH },
+        stdio: ['ignore', 'pipe', 'pipe']
+    });
+    let stderr = '';
+
+    child.stderr.on('data', (chunk) => { stderr += chunk; });
 
     try {
-        const activeLockResult = await runBuildAsync();
-        assert.notStrictEqual(activeLockResult.status, 0, 'concurrent build unexpectedly ignored active lock');
-        assert.match(activeLockResult.stderr, /another build is already running/);
+        const workerProcessId = await findInternalBuildWorker(child);
+        const stagingDirectory = await findWorkerStagingDirectory(workerProcessId);
+        process.kill(workerProcessId, 'SIGKILL');
+        const result = await waitForChildExit(child);
+        assert.notStrictEqual(result.status, 0, 'wrapper reported success after its locked build worker died');
+        assert.strictEqual(fs.existsSync(stagingDirectory), true, 'worker death did not preserve the interrupted staging fixture');
+
+        const contender = await runBuildAsync();
+        assert.strictEqual(contender.status, 0, `contender failed after locked worker died: ${contender.stderr}`);
+        const leakedBuildDirectories = (await fsp.readdir(ROOT))
+            .filter((filename) => filename.startsWith('.public-build-'));
+        assert.deepStrictEqual(leakedBuildDirectories, [], 'killed worker left unrecovered staging output');
     } finally {
-        await release();
+        if (child.exitCode === null && child.signalCode === null) {
+            process.kill(-child.pid, 'SIGKILL');
+            await waitForChildExit(child).catch(() => {});
+        }
     }
+}
+
+async function assertBuildLockSerializesProcesses() {
+    const lockFilename = path.join(ROOT, '.public-build.lock');
 
     await fsp.writeFile(lockFilename, 'stale pathname data is not lock ownership');
 
@@ -516,32 +600,15 @@ async function assertBuildLockSerializesProcesses() {
     assert.strictEqual(fs.existsSync(lockFilename), true, 'advisory lock inode unexpectedly disappeared');
 }
 
-async function assertCleanupAlwaysReleasesLock() {
-    let releaseCalled = false;
+async function assertStagingCleanupFailureIsReported() {
     await assert.rejects(
-        cleanupAfterBuild('/injected-staging-directory', async () => {
-            releaseCalled = true;
-        }, {
+        cleanupAfterBuild('/injected-staging-directory', {
             async rm() {
                 throw new Error('injected staging cleanup failure');
             }
         }),
-        (error) => error instanceof AggregateError && /staging cleanup/.test(error.errors[0].message)
+        /staging cleanup failed: injected staging cleanup failure/
     );
-    assert.strictEqual(releaseCalled, true, 'staging cleanup failure skipped lock release');
-
-    let stagingCleanupCalled = false;
-    await assert.rejects(
-        cleanupAfterBuild('/injected-staging-directory', async () => {
-            throw new Error('injected lock release failure');
-        }, {
-            async rm() {
-                stagingCleanupCalled = true;
-            }
-        }),
-        (error) => error instanceof AggregateError && /lock release/.test(error.errors[0].message)
-    );
-    assert.strictEqual(stagingCleanupCalled, true, 'lock release failure skipped staging cleanup');
 }
 
 async function assertRecoveryChoosesNewestBackup() {
@@ -607,8 +674,10 @@ async function main() {
     await assertPublicationFailureSemantics();
     await assertRecoveryChoosesNewestBackup();
     await assertFailedBuildPreservesPreviousOutput();
-    await assertCleanupAlwaysReleasesLock();
+    await assertStagingCleanupFailureIsReported();
     await assertWatchQueuesInitialChanges();
+    await assertInternalWorkerRequiresKernelLock();
+    await assertActualBuildWorkerOwnsLock();
     await assertBuildLockSerializesProcesses();
 
     const firstHashes = await hashOutput();

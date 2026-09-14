@@ -35,7 +35,7 @@ Draft pull requests are fine for early feedback. Mark the pull request ready onl
 
 ## Quality checks
 
-Run the checks relevant to your change. The build, unit-test, and validation commands use Node 24; the legacy coverage and lint limitations are documented in the [modernization audit](documentation/development/modernization-audit.md).
+Run the checks relevant to your change. The build, unit-test, and validation commands use Node 24. Native build and watch execution requires Linux with `/proc` and util-linux `flock`; use the supported container workflow on macOS or Windows. The legacy coverage and lint limitations are documented in the [modernization audit](documentation/development/modernization-audit.md).
 
 ```sh
 npm run build:test

@@ -1,6 +1,6 @@
 [node]: https://nodejs.org/
 [ava]: https://github.com/avajs/ava
-[nyc]: https://github.com/istanbuljs/nyc
+[c8]: https://github.com/bcoe/c8
 [express]: https://expressjs.com/
 
 # Development tools
@@ -13,7 +13,7 @@ The repository targets Node.js 24 and npm 11. The exact versions used by the pin
 npm ci --ignore-scripts --no-audit --no-fund
 ```
 
-`npm ci` consumes the npm 11 lockfile exactly. Direct dependencies remain pinned to exact versions. The install still reports deprecations from the inherited AVA, NYC, Babel, and ESLint graph; those packages are deliberately assigned to Phase 2 rather than mixed into the build migration.
+`npm ci` consumes the npm 11 lockfile exactly. Direct dependencies remain pinned to exact versions. Remaining install warnings belong to the inherited lint and application dependency graph; do not "fix" them with an unreviewed forced audit upgrade.
 
 ## Source and generated output
 
@@ -73,20 +73,22 @@ npm run browser:smoke
 
 `npm run watch` rebuilds the complete output tree when client/server code, styles, templates, source assets, airport guides, the changelog, or package metadata changes. Run `npm run start` in a second terminal to serve it.
 
-## Legacy unit and lint gates
+## Unit, coverage, and lint gates
 
-The application tests still use [AVA 1][ava], [NYC 14][nyc], and Babel register. AVA itself executes the unchanged suite on Node 24:
+The application tests use [AVA 6][ava] with Babel 7 register on Node 24:
 
 ```sh
 npm test
 ```
 
-That path retains the measured baseline of 1,320 passing, 17 skipped, and 14 todo tests. NYC 14's legacy instrumentation dependencies are the incompatible layer. The historical coverage command remains available as a Node 11-only compatibility bridge:
+That path retains the measured baseline of 1,320 passing, 17 skipped, and 14 todo tests. [c8][c8] provides Node 24 coverage:
 
 ```sh
-nvm exec 11.3.0 npm run test:coverage:legacy
+npm run test:coverage
 ```
 
-`npm run lint` executes on Node 24 but currently reports the inherited baseline of 49 errors and 12 warnings. Modernizing AVA/NYC and ESLint, repairing the full lint baseline, and correcting coverage accounting are Phase 2 work.
+Coverage runs with `all: true`, verifies that all 115 eligible source modules appear under their real repository paths, and enforces regression floors of 68% statements/lines, 70% functions, and 90% branches. The measured migration baseline is 68.95% statements/lines, 70.92% functions, and 92.09% branches. Generated reports are written to `coverage/`.
+
+`npm run lint` executes on Node 24 but currently reports the inherited baseline of 49 errors and 12 warnings. Modernizing ESLint and repairing that baseline remain Phase 2 work.
 
 The generated application may also be served by the inherited [Express][express] server for local development. Production uses the unprivileged NGINX runtime described in [`documentation/development/containers.md`](../documentation/development/containers.md).

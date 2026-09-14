@@ -72,11 +72,12 @@ Run repository commands in an isolated development container:
 docker compose --profile development run --rm dev npm run build
 docker compose --profile development run --rm dev npm run build:test
 docker compose --profile development run --rm dev npm test
+docker compose --profile development run --rm dev npm run test:coverage
 docker compose --profile development run --rm dev npm run validator:test
 docker compose --profile development run --rm dev npm run validate:assets
 ```
 
-The unchanged AVA suite passes on Node 24 with 1,320 passing, 17 skipped, and 14 todo. NYC 14 coverage instrumentation remains incompatible with Node 24 and is available only through the documented `npm run test:coverage:legacy` bridge until Phase 2; see [`tools/README.md`](../../tools/README.md). `npm run lint` executes on Node 24 but retains the measured 49-error/12-warning baseline assigned to Phase 2.
+AVA 6 passes the unchanged suite on Node 24 with 1,320 passing, 17 skipped, and 14 todo. `npm run test:coverage` uses c8, includes all 115 eligible source modules, and enforces measured regression floors; see [`tools/README.md`](../../tools/README.md). `npm run lint` retains the measured 49-error/12-warning baseline assigned to the next Phase 2 slice.
 
 Remove the dependency volume after changing the lockfile or if the installation becomes stale:
 

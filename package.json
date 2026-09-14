@@ -12,14 +12,13 @@
     "build:dev": "node tools/build.js",
     "build:test": "node tools/build.test.js",
     "browser:smoke": "tools/browser-smoke/run.sh",
-    "coveralls": "nyc report -r text-lcov | coveralls",
+    "coverage:test": "node tools/coverage.test.js",
     "docker:smoke": "tools/docker/smoke-test.sh",
     "lint": "eslint src/assets/scripts/client/**",
-    "report": "nyc report --reporter=cobertura --reporter=lcov",
     "server": "npm run start",
     "start": "node public/assets/scripts/server/index.js",
     "test": "ava --concurrency=5",
-    "test:coverage:legacy": "nyc ava --concurrency=5",
+    "test:coverage": "c8 ava --concurrency=5 && npm run coverage:test",
     "validator": "npm run validate:assets",
     "validator:test": "node tools/validate-assets.test.js",
     "validate:assets": "node tools/validate-assets.js",
@@ -58,14 +57,17 @@
     ],
     "verbose": true,
     "require": [
-      "@babel/register",
+      "./test/testHelpers/registerBabel.js",
       "./test/testHelpers/globalProps.js",
       "./test/testHelpers/localStorage.js",
       "./test/testHelpers/setupBrowserEnv.js"
     ]
   },
-  "nyc": {
-    "all": false,
+  "c8": {
+    "all": true,
+    "check-coverage": true,
+    "branches": 90,
+    "functions": 70,
     "include": [
       "src/assets/scripts/**/*.js",
       "!src/assets/scripts/client/constants/**/*.js",
@@ -73,7 +75,14 @@
       "!**/fixtures/**",
       "!**/testHelpers/**",
       "!**/public/**"
-    ]
+    ],
+    "reporter": [
+      "text",
+      "json-summary",
+      "lcov"
+    ],
+    "lines": 68,
+    "statements": 68
   },
   "dependencies": {
     "ansi-colors": "3.2.4",
@@ -84,32 +93,23 @@
     "raf": "3.4.1"
   },
   "devDependencies": {
-    "@babel/core": "7.4.4",
-    "@babel/plugin-proposal-class-properties": "7.4.4",
-    "@babel/plugin-proposal-json-strings": "7.2.0",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "7.12.1",
-    "@babel/plugin-proposal-object-rest-spread": "7.4.4",
-    "@babel/plugin-proposal-optional-chaining": "7.2.0",
-    "@babel/plugin-syntax-dynamic-import": "7.2.0",
-    "@babel/plugin-syntax-import-meta": "7.2.0",
-    "@babel/preset-env": "7.4.4",
-    "@babel/preset-react": "7.0.0",
-    "@babel/register": "7.4.4",
+    "@babel/core": "7.29.7",
+    "@babel/preset-env": "7.29.7",
+    "@babel/register": "7.29.7",
     "autoprefixer": "10.6.0",
-    "ava": "1.4.1",
+    "ava": "6.4.1",
     "babel-eslint": "10.0.1",
     "browser-env": "3.3.0",
+    "c8": "12.0.0",
     "clean-css": "5.3.3",
-    "coveralls": "3.0.3",
+    "esbuild": "0.28.2",
     "eslint": "5.16.0",
     "eslint-config-airbnb": "17.1.0",
     "eslint-plugin-import": "2.17.2",
     "eslint-plugin-jsx-a11y": "6.2.1",
     "eslint-plugin-react": "7.12.4",
-    "esbuild": "0.28.2",
     "handlebars-layouts": "3.1.4",
     "less": "4.9.1",
-    "nyc": "14.1.0",
     "postcss": "8.5.8",
     "showdown": "1.9.1",
     "sinon": "7.3.2",

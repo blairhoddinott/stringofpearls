@@ -32,7 +32,7 @@ For the source-mounted development image, runtime hardening details, health chec
 
 ## Development
 
-The repository builds and runs its inherited unit suite on Node 24 with a small repository-owned pipeline based on esbuild and `fs/promises`. Native build and watch execution requires Linux with `/proc` and util-linux `flock`; macOS and Windows contributors should use the supported container workflow. The generated URL layout remains compatible with the inherited static site, while the production container serves it from unprivileged NGINX. NYC 14 coverage instrumentation remains a documented Node 11 compatibility gate until its separate Phase 2 migration.
+The repository builds, tests, and measures coverage on Node 24 with a small repository-owned pipeline based on esbuild, `fs/promises`, AVA 6, and c8. Native build and watch execution requires Linux with `/proc` and util-linux `flock`; macOS and Windows contributors should use the supported container workflow. The generated URL layout remains compatible with the inherited static site, while the production container serves it from unprivileged NGINX.
 
 Useful commands:
 
@@ -46,6 +46,9 @@ npm run build:test
 
 # Inherited unit suite on Node 24
 npm test
+
+# All-module coverage with regression floors
+npm run test:coverage
 
 # Production-like container
 docker compose up --build app

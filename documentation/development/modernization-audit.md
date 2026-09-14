@@ -48,7 +48,9 @@ The coverage headline is optimistic. NYC is configured with `all: false`; 62 of 
 
 The original NYC-wrapped AVA command fails before running tests on Node 26 because legacy instrumentation dependencies are incompatible with the current runtime.
 
-Phase 1 isolated that failure to NYC 14. AVA 1 itself still executes the unchanged suite on Node 24.21.0 with 1,320 passing, 17 skipped, and 14 todo. `npm test` therefore runs AVA directly on Node 24, while the historical coverage path is retained as `npm run test:coverage:legacy` for Node 11. Migrating AVA/NYC and restoring honest Node 24 coverage remain separate Phase 2 work.
+Phase 1 isolated that failure to NYC 14. The first Phase 2 slice replaced AVA 1 and NYC 14 with AVA 6.4.1 and c8 12, and updated the test-only Babel 7 stack. The unchanged Node 24 suite still reports 1,320 passing, 17 skipped, and 14 todo tests.
+
+`npm run test:coverage` now uses `all: true` and a repository-owned manifest gate to prove that all 115 eligible source modules appear under their real paths. The measured baseline is 68.95% statements/lines, 70.92% functions, and 92.09% branches; enforced regression floors are 68%, 70%, and 90% respectively. This replaces the optimistic legacy report that omitted unvisited modules.
 
 ### Lint and validation
 
@@ -83,7 +85,7 @@ Direct vulnerable production dependencies are:
 
 These counts are triage signals rather than proof of exploitability in this application. The production dependencies should nevertheless be upgraded before public deployment.
 
-After Phase 1 removed the obsolete build graph, `npm audit` reports 70 vulnerable packages overall (9 critical, 35 high, 18 moderate, and 8 low). Production remains unchanged at 11 vulnerable packages (3 critical, 5 high, and 3 low), because production dependency upgrades remain the first focused step in Phase 2.
+After Phase 1 removed the obsolete build graph, `npm audit` reported 70 vulnerable packages overall (9 critical, 35 high, 18 moderate, and 8 low). The first Phase 2 test-toolchain slice reduced that to 39 vulnerable packages overall (6 critical, 17 high, 9 moderate, and 7 low). Production remains unchanged at 11 vulnerable packages (3 critical, 5 high, and 3 low), because production dependency upgrades are a separate focused Phase 2 slice.
 
 ## Codebase shape
 

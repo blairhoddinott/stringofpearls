@@ -13,6 +13,8 @@ import MapCollection from './MapCollection';
 import RunwayCollection from './runway/RunwayCollection';
 import StaticPositionModel from '../base/StaticPositionModel';
 import TimeKeeper from '../engine/TimeKeeper';
+import reportAsyncError from '../platform/reportAsyncError';
+import { AssetLoadError, formatAssetLoadError } from '../platform/AssetLoader';
 import { isValidGpsCoordinatePair } from '../base/positionModelHelpers';
 import { degreesToRadians, parseElevation } from '../utilities/unitConverters';
 import {
@@ -54,12 +56,36 @@ export default class AirportModel {
      * @param options {object}
      */
     // istanbul ignore next
-    constructor(options = {}) {
+    constructor(options = {}, contentQueue = null, reportError = reportAsyncError) {
         /**
          * @property EventBus
          * @type {EventBus}
          */
         this.eventBus = EventBus;
+
+        /**
+         * Shared asset-loading queue used to fetch airport and terrain data.
+         *
+         * Injected by `AirportController` so every flyweight shares the single
+         * app-wide `ContentQueue`. When absent (e.g. a model constructed
+         * directly from full in-memory airport JSON), the network load paths
+         * are skipped rather than embedding a queue or transport here.
+         *
+         * @property _contentQueue
+         * @type {ContentQueue}
+         * @default null
+         */
+        this._contentQueue = contentQueue;
+
+        /**
+         * Surfaces exceptions thrown while processing a successful load on the
+         * browser's uncaught-error channel.
+         *
+         * @property _reportError
+         * @type {Function}
+         * @default reportAsyncError
+         */
+        this._reportError = reportError;
 
         /**
          * cache of airport json data
@@ -798,28 +824,36 @@ export default class AirportModel {
      * @method loadTerrain
      */
     loadTerrain() {
-        if (!this.has_terrain) {
+        if (!this.has_terrain || !this._contentQueue) {
             return;
         }
 
-        zlsa.atc.loadAsset({
+        return this._contentQueue.addPromise({
             url: `assets/airports/terrain/${this.icao.toLowerCase()}.geojson`,
             immediate: true
-        }).done((data) => { // TODO: change to onSuccess and onError handler abstractions
-            try {
+        }).then(
+            (data) => { // TODO: change to onSuccess and onError handler abstractions
+                // Guard payload parsing separately from the transport failure path so a
+                // throwing parse surfaces on the browser uncaught-error channel instead
+                // of being mislabeled as a load failure or leaking as an unhandled rejection.
+                try {
+                    this.parseTerrain(data);
+                } catch (e) {
+                    // Preserve the historical browser-facing error shape.
+                    this._reportError(new Error(e.message));
+                }
+            },
+            (error) => {
+                const textStatus = error instanceof AssetLoadError
+                    ? error.textStatus
+                    : formatAssetLoadError(error);
 
-                this.parseTerrain(data);
-            } catch (e) {
-                // Preserve the historical browser-facing error shape.
-                // eslint-disable-next-line preserve-caught-error
-                throw new Error(e.message);
+                console.error(`Unable to load airport/terrain/${this.icao}: ${textStatus}`);
+
+                this.loading = false;
+                AirportController.current.set();
             }
-        }).fail((jqXHR, textStatus) => {
-            console.error(`Unable to load airport/terrain/${this.icao}: ${textStatus}`);
-
-            this.loading = false;
-            AirportController.current.set();
-        });
+        );
     }
 
     /**
@@ -834,20 +868,37 @@ export default class AirportModel {
             return;
         }
 
+        const hasInitialAirportData = airportJson && airportJson.icao.toLowerCase() === this.icao;
+
+        if (!hasInitialAirportData && !this._contentQueue) {
+            return;
+        }
+
         this.loading = true;
         this.eventBus.trigger(EVENT.PAUSE_UPDATE_LOOP, false);
 
-        if (airportJson && airportJson.icao.toLowerCase() === this.icao) {
+        if (hasInitialAirportData) {
             this.onLoadIntialAirportFromJson(airportJson);
 
             return;
         }
 
-        zlsa.atc.loadAsset({
+        return this._contentQueue.addPromise({
             url: `assets/airports/${this.icao.toLowerCase()}.json`,
             immediate: true
-        }).done((response) => this.onLoadAirportSuccess(response))
-            .fail((...args) => this.onLoadAirportError(...args));
+        }).then(
+            (response) => {
+                // Guard payload processing separately from the transport failure path so a
+                // throwing initialization surfaces on the browser uncaught-error channel
+                // instead of being mislabeled as a load failure or leaking as an unhandled rejection.
+                try {
+                    this.onLoadAirportSuccess(response);
+                } catch (error) {
+                    this._reportError(error);
+                }
+            },
+            (error) => this.onLoadAirportError(error)
+        );
     }
 
     /**
@@ -870,7 +921,11 @@ export default class AirportModel {
      * @method onLoadAirportError
      * @param textStatus {string}
      */
-    onLoadAirportError = ({ textStatus }) => {
+    onLoadAirportError = (error) => {
+        const textStatus = error instanceof AssetLoadError
+            ? error.textStatus
+            : formatAssetLoadError(error);
+
         console.error(`Unable to load airport/${this.icao}: ${textStatus}`);
 
         this.loading = false;

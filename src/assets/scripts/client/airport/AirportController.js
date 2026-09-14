@@ -34,6 +34,17 @@ class AirportController {
         this._airportListToLoad = [];
 
         /**
+         * Shared asset-loading queue injected in `init` and passed into every
+         * `AirportModel` this controller creates, so all flyweights share the
+         * single app-wide `ContentQueue` instance.
+         *
+         * @property _contentQueue
+         * @type {ContentQueue}
+         * @default null
+         */
+        this._contentQueue = null;
+
+        /**
          * Dictionary of available airports
          *
          * @property airports
@@ -65,8 +76,10 @@ class AirportController {
      * @param InitialAirportIcao {string}
      * @param initialAirportData {object}
      * @param airportLoadList {array<object>}  List of airports to load
+     * @param contentQueue {ContentQueue}  Shared asset-loading queue
      */
-    init(initialAirportIcao, initialAirportData, airportLoadList) {
+    init(initialAirportIcao, initialAirportData, airportLoadList, contentQueue) {
+        this._contentQueue = contentQueue;
         this._airportListToLoad = airportLoadList;
 
         for (let i = 0; i < this._airportListToLoad.length; i++) {
@@ -101,7 +114,7 @@ class AirportController {
             return null;
         }
 
-        const airportModel = new AirportModel({ icao, level, name });
+        const airportModel = new AirportModel({ icao, level, name }, this._contentQueue);
 
         this.airport_add(airportModel);
     }
@@ -127,6 +140,7 @@ class AirportController {
      */
     reset() {
         this._eventBus = EventBus;
+        this._contentQueue = null;
         this._airportListToLoad = [];
         this.airports = {};
         this.current = null;

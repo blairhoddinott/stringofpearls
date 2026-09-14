@@ -76,3 +76,55 @@ ava.serial('.load() reports exceptions from Deferred success consumers without r
     t.true(reportError.calledOnceWithExactly(consumerError));
     t.false('assets/example.json' in queue.queuedContent);
 });
+
+ava.serial('.addPromise() resolves the same payload through the queued asset boundary', async (t) => {
+    const expectedPayload = { tutorial: 'ready' };
+    const assetLoader = { loadJson: sinon.stub().resolves(expectedPayload) };
+    const queue = new ContentQueue({}, assetLoader);
+
+    const payload = await queue.addPromise({ url: 'assets/tutorial/tutorial.json', immediate: true });
+
+    t.true(assetLoader.loadJson.calledOnceWithExactly('assets/tutorial/tutorial.json'));
+    t.is(payload, expectedPayload);
+    t.false('assets/tutorial/tutorial.json' in queue.queuedContent);
+});
+
+ava.serial('.addPromise() reconstructs an AssetLoadError carrying jQuery failure metadata', async (t) => {
+    const request = { status: 500, statusText: 'Server Error' };
+    const thrown = new Error('invalid JSON');
+    const assetError = new AssetLoadError(request, 'parsererror', thrown);
+    const assetLoader = { loadJson: sinon.stub().rejects(assetError) };
+    const queue = new ContentQueue({}, assetLoader);
+
+    const rejection = await t.throwsAsync(queue.addPromise({ url: 'assets/broken.json' }));
+
+    t.true(rejection instanceof AssetLoadError);
+    t.is(rejection.request, request);
+    t.is(rejection.textStatus, 'parsererror');
+    t.is(rejection.errorThrown, thrown);
+    t.false('assets/broken.json' in queue.queuedContent);
+});
+
+ava.serial('.addPromise() passes through an ordinary single-error rejection unchanged', async (t) => {
+    const ordinaryError = new Error('offline');
+    const assetLoader = { loadJson: sinon.stub().rejects(ordinaryError) };
+    const queue = new ContentQueue({}, assetLoader);
+
+    const rejection = await t.throwsAsync(queue.addPromise({ url: 'assets/offline.json' }));
+
+    t.is(rejection, ordinaryError);
+});
+
+ava.serial('.addPromise() adapts an already-settled Deferred returned from the shared add() path', async (t) => {
+    const expectedPayload = { tutorial: 'cached' };
+    const assetLoader = { loadJson: sinon.stub() };
+    const queue = new ContentQueue({}, assetLoader);
+    const options = { url: 'assets/tutorial/tutorial.json', immediate: true };
+    const settled = $.Deferred().resolve(expectedPayload).promise();
+    const addStub = sinon.stub(queue, 'add').returns(settled);
+
+    const payload = await queue.addPromise(options);
+
+    t.true(addStub.calledOnceWithExactly(options));
+    t.is(payload, expectedPayload);
+});

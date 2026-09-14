@@ -344,10 +344,11 @@ class UiController {
      * @for UiController
      * @method init
      * @param $element {jQuery Element}
+     * @param contentQueue {ContentQueue}
      */
-    init($element) {
+    init($element, contentQueue) {
         this._eventBus = EventBus;
-        this.tutorialView = new TutorialView($element);
+        this.tutorialView = new TutorialView($element, contentQueue);
         this.settingsController = new SettingsController($element);
         this.trafficRateController = new TrafficRateController($element);
         this.videoMapController = new VideoMapController($element);

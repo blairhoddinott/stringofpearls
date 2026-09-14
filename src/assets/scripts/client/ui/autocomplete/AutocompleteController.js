@@ -19,14 +19,9 @@ import { SELECTORS } from '../../constants/selectors';
 import { AUTOCOMPLETE_COMMAND_TEMPLATE } from './AutocompleteCommandTemplate';
 import { AUTOCOMPLETE_ARGUMENT_TEMPLATE } from './AutocompleteArgumentTemplate';
 import { formatAssetLoadError } from '../../platform/AssetLoader';
+import reportAsyncError from '../../platform/reportAsyncError';
 
 const Handlebars = require('handlebars');
-
-const reportAsyncError = (error) => {
-    setTimeout(() => {
-        throw error;
-    }, 0);
-};
 
 /**
  * @class AutocompleteController

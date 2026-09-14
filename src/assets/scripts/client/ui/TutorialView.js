@@ -11,6 +11,8 @@ import { EVENT } from '../constants/eventNames';
 import { STORAGE_KEY } from '../constants/storageKeys';
 import { SELECTORS } from '../constants/selectors';
 import { TRACKABLE_EVENT } from '../constants/trackableEvents';
+import { AssetLoadError, formatAssetLoadError } from '../platform/AssetLoader';
+import reportAsyncError from '../platform/reportAsyncError';
 
 const tutorial = {};
 
@@ -29,7 +31,7 @@ export default class TutorialView {
     /**
      * @constructor
      */
-    constructor($element = null) {
+    constructor($element = null, contentQueue = null, reportError = reportAsyncError) {
         /**
          * @property EventBus
          * @type {EventBus}
@@ -37,6 +39,26 @@ export default class TutorialView {
          * @private
          */
         this._eventBus = EventBus;
+
+        /**
+         * Native-Promise asset boundary used to load tutorial content.
+         *
+         * @property _contentQueue
+         * @type {ContentQueue}
+         * @default contentQueue
+         * @private
+         */
+        this._contentQueue = contentQueue;
+
+        /**
+         * Reporter used to surface exceptions on the browser uncaught-error channel.
+         *
+         * @property _reportError
+         * @type {Function}
+         * @default reportAsyncError
+         * @private
+         */
+        this._reportError = reportError;
 
         /**
          * @property tutorial
@@ -250,16 +272,43 @@ export default class TutorialView {
             }
         };
 
-        zlsa.atc.loadAsset({ url: 'assets/tutorial/tutorial.json', immediate: true })
-            .done((response) => {
-                response.forEach((step) => {
-                    this._loadTutorialStep(step);
-                });
-            })
-            .fail((jqxhr, textStatus, error) => {
-                console.error(`Failed to load tutorial data: ${textStatus}, ${error}`);
-                this.tutorial_step({ title: 'Error', text: `The tutorial failed to load: ${textStatus}, ${error}` });
+        return this._contentQueue.addPromise({ url: 'assets/tutorial/tutorial.json', immediate: true })
+            .then((response) => {
+                // Guard payload processing separately from the transport failure
+                // path so a throwing step loader surfaces on the browser
+                // uncaught-error channel instead of being mislabeled as a load
+                // failure or leaking as an unhandled rejection.
+                try {
+                    response.forEach((step) => {
+                        this._loadTutorialStep(step);
+                    });
+                } catch (error) {
+                    this._reportError(error);
+                }
+            }, (error) => {
+                this._renderTutorialLoadError(error);
             });
+    }
+
+    /**
+     * Render the tutorial error step for a failed content load.
+     *
+     * Preserves the historical jQuery-style diagnostic text for
+     * `AssetLoadError` transport failures, and produces an intelligible
+     * message for ordinary `Error` rejections.
+     *
+     * @for TutorialView
+     * @method _renderTutorialLoadError
+     * @param error {Error}
+     * @private
+     */
+    _renderTutorialLoadError(error) {
+        const message = error instanceof AssetLoadError
+            ? `${error.textStatus}, ${error.errorThrown}`
+            : formatAssetLoadError(error);
+
+        console.error(`Failed to load tutorial data: ${message}`);
+        this.tutorial_step({ title: 'Error', text: `The tutorial failed to load: ${message}` });
     }
 
     /**

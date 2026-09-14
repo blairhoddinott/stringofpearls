@@ -1,12 +1,7 @@
 import $ from 'jquery';
 import LoadableContentModel from './LoadableContentModel';
 import AssetLoader, { AssetLoadError } from '../platform/AssetLoader';
-
-const reportAsyncError = (error) => {
-    setTimeout(() => {
-        throw error;
-    }, 0);
-};
+import reportAsyncError from '../platform/reportAsyncError';
 
 /**
  * Asynchronous JSON asset loading framework.
@@ -20,9 +15,9 @@ const reportAsyncError = (error) => {
  *   stopLoading - When the last asset in the queue is downloaded
  *
  * Example:
- *  var promise = zlsa.atc.loadAsset({url: 'assets/aircraft/b747.json'});
+ *  const promise = contentQueue.addPromise({ url: 'assets/aircraft/b747.json' });
  *
- * @module zlsa.atc.loadAsset
+ * @module ContentQueue
  */
 /**
 * Implementation of the queueing
@@ -46,7 +41,7 @@ export default class ContentQueueClass {
      * @for ContentQueue
      * @method add
      * @param options {object}
-     * @return {Promise}
+     * @return {JQuery.Promise}
      */
     add(options) {
         let c = new LoadableContentModel(options);
@@ -76,6 +71,38 @@ export default class ContentQueueClass {
         }
 
         return c.deferred.promise();
+    }
+
+    /**
+     * Native-Promise compatibility wrapper around {@link ContentQueue#add}.
+     *
+     * Shares the same queued request and deduplication path as `add`, but
+     * adapts the resulting jQuery Deferred into a native Promise. jQuery
+     * multi-argument failures (`jqXHR`, `textStatus`, `errorThrown`) are
+     * reconstructed into an `AssetLoadError`; ordinary single-error failures
+     * are rejected unchanged.
+     *
+     * @for ContentQueue
+     * @method addPromise
+     * @param options {object}
+     * @return {Promise}
+     */
+    addPromise(options) {
+        return new Promise((resolve, reject) => {
+            this.add(options)
+                .done((data) => resolve(data))
+                .fail((...failureArgs) => {
+                    if (failureArgs.length > 1) {
+                        const [request, textStatus, errorThrown] = failureArgs;
+
+                        reject(new AssetLoadError(request, textStatus, errorThrown));
+
+                        return;
+                    }
+
+                    reject(failureArgs[0]);
+                });
+        });
     }
 
     /**

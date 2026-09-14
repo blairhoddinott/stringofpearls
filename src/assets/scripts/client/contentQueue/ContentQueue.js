@@ -1,5 +1,12 @@
 import $ from 'jquery';
 import LoadableContentModel from './LoadableContentModel';
+import AssetLoader, { AssetLoadError } from '../platform/AssetLoader';
+
+const reportAsyncError = (error) => {
+    setTimeout(() => {
+        throw error;
+    }, 0);
+};
 
 /**
  * Asynchronous JSON asset loading framework.
@@ -21,8 +28,10 @@ import LoadableContentModel from './LoadableContentModel';
 * Implementation of the queueing
 */
 export default class ContentQueueClass {
-    constructor(loadingView) {
+    constructor(loadingView, assetLoader = new AssetLoader((url) => $.getJSON(url)), reportError = reportAsyncError) {
         this.loadingView = loadingView;
+        this._assetLoader = assetLoader;
+        this._reportError = reportError;
         this.isLoading = false;
         this.lowPriorityQueue = [];
         this.highPriorityQueue = [];
@@ -97,15 +106,39 @@ export default class ContentQueueClass {
     load(url) {
         const c = this.queuedContent[url];
 
-        $.getJSON(c.url)
-            .done((data, textStatus, jqXHR) => {
-                c.deferred.resolve(data, textStatus, jqXHR);
-            })
-            .fail((jqXHR, textStatus, errorThrown) => {
-                c.deferred.reject(jqXHR, textStatus, errorThrown);
-            })
-            .always(() => {
-                delete this.queuedContent[c.url];
-            });
+        return this._assetLoader.loadJson(c.url).then(
+            (data) => {
+                try {
+                    this._settleDeferred(() => c.deferred.resolve(data));
+                } finally {
+                    delete this.queuedContent[c.url];
+                }
+            },
+            (error) => {
+                try {
+                    if (error instanceof AssetLoadError) {
+                        this._settleDeferred(() => c.deferred.reject(
+                            error.request,
+                            error.textStatus,
+                            error.errorThrown
+                        ));
+
+                        return;
+                    }
+
+                    this._settleDeferred(() => c.deferred.reject(error));
+                } finally {
+                    delete this.queuedContent[c.url];
+                }
+            }
+        );
+    }
+
+    _settleDeferred(settle) {
+        try {
+            settle();
+        } catch (error) {
+            this._reportError(error);
+        }
     }
 }

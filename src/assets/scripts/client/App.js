@@ -45,7 +45,7 @@ export default class App {
          */
         this.$element = $(element);
         this._startupAssetLoader = new StartupAssetLoader(assetLoader);
-        this._appController = new AppController(this.$element);
+        this._appController = new AppController(this.$element, assetLoader);
         this.eventBus = EventBus;
 
         window.prop = prop;

@@ -36,8 +36,9 @@ export default class AppController {
     /**
      * @constructor
      * @param element {jQuery|HTML Element}
+     * @param assetLoader {AssetLoader}
      */
-    constructor(element) {
+    constructor(element, assetLoader) {
         /**
          * Root DOM element.
          *
@@ -46,6 +47,7 @@ export default class AppController {
          * @default body
          */
         this.$element = $(element);
+        this._assetLoader = assetLoader;
 
         this.$canvasesElement = null;
         this._eventBus = EventBus;
@@ -118,6 +120,7 @@ export default class AppController {
     destroy() {
         // TODO: add static class.destroy() here
         this.$element = null;
+        this._assetLoader = null;
         this.$canvasesElement = null;
         this._eventBus = null;
         this.loadingView = null;
@@ -160,7 +163,7 @@ export default class AppController {
         // get things working in a more cohesive manner. soon, all this instantiation should happen
         // in a different class and the window methods should disappear.
         this.loadingView = new LoadingView();
-        this.contentQueue = new ContentQueue(this.loadingView);
+        this.contentQueue = new ContentQueue(this.loadingView, this._assetLoader);
         zlsa.atc.loadAsset = (options) => this.contentQueue.add(options);
 
         // IMPORTANT:

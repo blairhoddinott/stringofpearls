@@ -13,7 +13,7 @@ This roadmap tracks the current direction of the project. The order may change a
 - [x] Modernize ESLint and establish a clean full-repository lint baseline.
 - [x] Upgrade vulnerable production dependencies behind focused compatibility tests.
 - [ ] Modernize the application architecture
-  - [ ] Introduce explicit platform boundaries; application startup asset loading now uses an injected adapter.
+  - [ ] Introduce explicit platform boundaries; application startup and `ContentQueue` asset loading now use an injected adapter.
 - [ ] Resume feature development on the modernized foundation
 
 ## Simulation and realism

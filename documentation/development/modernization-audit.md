@@ -212,9 +212,9 @@ Replace direct `$.getJSON`, `window`, `localStorage`, and analytics access behin
 
 Exit condition: core services can run in tests without fabricated global browser state.
 
-Phase 3 began with `AssetLoader` and `StartupAssetLoader` boundaries injected at the `App` composition root. The airport list, selected/default airport, airline definitions, aircraft definitions, and airport guides now load through those boundaries as standard Promises rather than direct `$.getJSON`/`$.when` calls. Eight focused tests characterize transport success and failure, normalized diagnostics and airport paths, selected-airport fallback, named startup payloads, concurrent definition requests, and downstream-failure propagation without importing the browser composition graph. The complete suite reports 1,328 passing, 17 skipped, and 14 todo tests; all 117 eligible source files appear in coverage, and the 278-file build contract and KPDX browser smoke test remain green.
+Phase 3 began with `AssetLoader` and `StartupAssetLoader` boundaries injected at the `App` composition root. The airport list, selected/default airport, airline definitions, aircraft definitions, and airport guides now load through those boundaries as standard Promises rather than direct `$.getJSON`/`$.when` calls. The same `AssetLoader` instance now flows through `AppController` into `ContentQueue`, replacing its direct request transport while temporarily retaining its public jQuery Deferred contract for existing terrain, airport, tutorial, and changelog consumers. Focused tests characterize transport success and failure, jQuery rejection metadata, normalized diagnostics and airport paths, selected-airport fallback, named startup payloads, concurrent definition requests, downstream-failure propagation, queue resolution/rejection, cleanup, and legacy uncaught-error reporting for Deferred consumer exceptions without importing the browser composition graph. The complete suite reports 1,332 passing, 17 skipped, and 14 todo tests; all 117 eligible source files appear in coverage, and the 278-file build contract remains green.
 
-This is partial progress, not the Phase 3 exit condition. `ContentQueue`, autocomplete, terrain/tutorial consumers, storage, timing, randomness, analytics, speech, clipboard, visibility, and fabricated global browser state remain to be addressed incrementally.
+This is partial progress, not the Phase 3 exit condition. The global `zlsa.atc.loadAsset` bridge, `ContentQueue`'s Deferred-facing API, autocomplete, terrain/tutorial consumers, storage, timing, randomness, analytics, speech, clipboard, visibility, and fabricated global browser state remain to be addressed incrementally.
 
 ### Phase 4 — Establish a simulation context
 
@@ -242,7 +242,7 @@ Exit condition: UI work no longer requires editing multi-thousand-line controlle
 
 ## Current implementation slice
 
-Phase 3 is proceeding through asset loading first because airport, airline, terrain, tutorial, autocomplete, and navigation startup currently depend on browser globals or jQuery-specific deferred values. The first tracer routes `App` startup through an injected adapter without changing asset formats or introducing a framework. The next tracer should migrate `ContentQueue` and autocomplete, then replace the global `zlsa.atc.loadAsset` bridge only after its terrain, airport, and tutorial callers have explicit dependencies.
+Phase 3 is proceeding through asset loading first because airport, airline, terrain, tutorial, autocomplete, and navigation startup currently depend on browser globals or jQuery-specific deferred values. `App` startup and the internal `ContentQueue` transport now use the injected adapter without changing asset formats or scheduling behavior. The next tracer should migrate autocomplete, then convert queue consumers from Deferred callbacks to native Promises before replacing the global `zlsa.atc.loadAsset` bridge with explicit dependencies.
 
 ## Explicit non-goals for the first phases
 

@@ -54,12 +54,16 @@ Phase 1 isolated that failure to NYC 14. The first Phase 2 slice replaced AVA 1 
 
 ### Lint and validation
 
-Full client lint currently reports:
+The inherited full-client lint baseline reported:
 
 - 49 errors
 - 12 warnings
 
-Notable classes of findings include undefined globals, import cycles, unreachable code, restricted global APIs, and style issues. The existing CI only lints changed lines, so the repository has no clean full-lint baseline.
+Notable classes of findings included undefined globals, import cycles, unreachable code, restricted global APIs, and style issues. The existing CI only linted changed lines, so the repository had no clean full-lint baseline.
+
+The dependency graph currently contains two 2-module cycles (`circle`/`unitConverters` and `AirportController`/`AirportModel`) plus one 13-module model/navigation/traffic cycle. Those are explicit architecture debt rather than lint-toolchain work; the Phase 2 flat configuration does not pretend a linter can safely untangle them.
+
+The second Phase 2 slice replaced ESLint 5, Babel-ESLint, and the React-oriented Airbnb graph with ESLint 10, native parsing, and maintained flat configuration. `npm run lint` now checks all 272 maintained JavaScript files in `src/`, `test/`, and `tools/`, plus `eslint.config.js`, with zero errors and zero warnings. The migration removed obsolete suppressions and dead statements without changing the established application test or 278-file build contracts.
 
 At audit time, the asset validator was broken because `@openscope/validator` could not resolve one of its own modules. It was also declared as `latest`, making installs non-reproducible. Phase 0 replaced it with repository-owned validation.
 
@@ -85,7 +89,7 @@ Direct vulnerable production dependencies are:
 
 These counts are triage signals rather than proof of exploitability in this application. The production dependencies should nevertheless be upgraded before public deployment.
 
-After Phase 1 removed the obsolete build graph, `npm audit` reported 70 vulnerable packages overall (9 critical, 35 high, 18 moderate, and 8 low). The first Phase 2 test-toolchain slice reduced that to 39 vulnerable packages overall (6 critical, 17 high, 9 moderate, and 7 low). Production remains unchanged at 11 vulnerable packages (3 critical, 5 high, and 3 low), because production dependency upgrades are a separate focused Phase 2 slice.
+After Phase 1 removed the obsolete build graph, `npm audit` reported 70 vulnerable packages overall (9 critical, 35 high, 18 moderate, and 8 low). The Phase 2 test/coverage slice reduced that to 39, and the lint slice reduced it again to 26 vulnerable packages overall (5 critical, 9 high, 8 moderate, and 4 low). Production remains unchanged at 11 vulnerable packages (3 critical, 5 high, and 3 low), because production dependency upgrades are a separate focused Phase 2 slice.
 
 ## Codebase shape
 

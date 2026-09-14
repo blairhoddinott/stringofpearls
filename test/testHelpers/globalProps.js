@@ -4,8 +4,8 @@ global.done = _noop;
 global.fail = _noop;
 global.zlsa = {
     atc: {
-        loadAsset: (...args) => ({
-            done: (failArgs) => ({
+        loadAsset: () => ({
+            done: () => ({
                 fail: _noop
             })
         })

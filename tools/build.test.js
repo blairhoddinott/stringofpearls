@@ -560,10 +560,6 @@ async function assertActualBuildWorkerOwnsLock() {
         env: { ...process.env, SOURCE_DATE_EPOCH: FIXED_BUILD_EPOCH },
         stdio: ['ignore', 'pipe', 'pipe']
     });
-    let stderr = '';
-
-    child.stderr.on('data', (chunk) => { stderr += chunk; });
-
     try {
         const workerProcessId = await findInternalBuildWorker(child);
         const stagingDirectory = await findWorkerStagingDirectory(workerProcessId);

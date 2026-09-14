@@ -84,7 +84,7 @@ export default class AircraftCommander {
                 response.push(retval[1]);
 
                 if (retval[2]) {
-                    // eslint-disable-next-line prefer-destructuring
+
                     response_end = retval[2];
                 }
             }

@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies, arrow-parens */
 import ava from 'ava';
 
 import {

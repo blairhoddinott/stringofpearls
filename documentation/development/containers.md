@@ -73,11 +73,12 @@ docker compose --profile development run --rm dev npm run build
 docker compose --profile development run --rm dev npm run build:test
 docker compose --profile development run --rm dev npm test
 docker compose --profile development run --rm dev npm run test:coverage
+docker compose --profile development run --rm dev npm run lint
 docker compose --profile development run --rm dev npm run validator:test
 docker compose --profile development run --rm dev npm run validate:assets
 ```
 
-AVA 6 passes the unchanged suite on Node 24 with 1,320 passing, 17 skipped, and 14 todo. `npm run test:coverage` uses c8, includes all 115 eligible source modules, and enforces measured regression floors; see [`tools/README.md`](../../tools/README.md). `npm run lint` retains the measured 49-error/12-warning baseline assigned to the next Phase 2 slice.
+AVA 6 passes the unchanged suite on Node 24 with 1,320 passing, 17 skipped, and 14 todo. `npm run test:coverage` uses c8, includes all 115 eligible source modules, and enforces measured regression floors; see [`tools/README.md`](../../tools/README.md). `npm run lint` checks all 272 maintained JavaScript files with a zero-error, zero-warning baseline.
 
 Remove the dependency volume after changing the lockfile or if the installation becomes stale:
 

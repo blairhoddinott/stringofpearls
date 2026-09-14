@@ -321,7 +321,7 @@ export default class StripViewController {
      * @param event {JQueryEventObject}
      * @private
      */
-    // eslint-disable-next-line no-unused-vars
+
     _onStripListToggle = (event) => {
         this.$stripView.toggleClass(SELECTORS.CLASSNAMES.STRIP_VIEW_IS_HIDDEN);
     };
@@ -335,7 +335,7 @@ export default class StripViewController {
      * @param event {JQueryEventObject}
      * @private
      */
-    // eslint-disable-next-line no-unused-vars
+
     _onStripListClickOutsideStripViewModel = (event) => this.findAndDeselectActiveStripView();
 
     /**

@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import _ceil from 'lodash/ceil';
 import _chunk from 'lodash/chunk';
 import _clamp from 'lodash/clamp';
@@ -803,18 +802,19 @@ export default class AirportModel {
             return;
         }
 
-        // eslint-disable-next-line no-undef
         zlsa.atc.loadAsset({
             url: `assets/airports/terrain/${this.icao.toLowerCase()}.geojson`,
             immediate: true
         }).done((data) => { // TODO: change to onSuccess and onError handler abstractions
             try {
-                // eslint-disable-next-line no-undef
+
                 this.parseTerrain(data);
             } catch (e) {
+                // Preserve the historical browser-facing error shape.
+                // eslint-disable-next-line preserve-caught-error
                 throw new Error(e.message);
             }
-        }).fail((jqXHR, textStatus, errorThrown) => {
+        }).fail((jqXHR, textStatus) => {
             console.error(`Unable to load airport/terrain/${this.icao}: ${textStatus}`);
 
             this.loading = false;
@@ -843,7 +843,6 @@ export default class AirportModel {
             return;
         }
 
-        // eslint-disable-next-line no-undef
         zlsa.atc.loadAsset({
             url: `assets/airports/${this.icao.toLowerCase()}.json`,
             immediate: true

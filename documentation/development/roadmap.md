@@ -10,7 +10,7 @@ This roadmap tracks the current direction of the project. The order may change a
 - [x] Add an automated browser startup, render, and airport-selection smoke test.
 - [x] Replace the Gulp/Browserify build chain with a deterministic Node 24 and esbuild pipeline.
 - [x] Replace AVA 1 and NYC 14 with Node 24-compatible tests and all-module coverage floors.
-- [ ] Modernize ESLint and establish a clean full-repository lint baseline.
+- [x] Modernize ESLint and establish a clean full-repository lint baseline.
 - [ ] Upgrade vulnerable production dependencies behind focused compatibility tests.
 - [ ] Modernize the application architecture
 - [ ] Resume feature development on the modernized foundation

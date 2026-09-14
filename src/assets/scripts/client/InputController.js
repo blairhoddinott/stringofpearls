@@ -1,4 +1,3 @@
-/* eslint-disable camelcase, no-mixed-operators, object-shorthand, expected-return */
 import $ from 'jquery';
 import _has from 'lodash/has';
 import _includes from 'lodash/includes';
@@ -463,7 +462,6 @@ export default class InputController {
 
         const currentCommandInputValue = this.$commandInput.val();
 
-
         if (code == null) {
             // fallback for legacy browsers like IE/Edge
             code = event.originalEvent.keyCode;
@@ -607,7 +605,7 @@ export default class InputController {
 
                 break;
             case KEY_CODES.ESCAPE:
-            case LEGACY_KEY_CODES.ESCAPE:
+            case LEGACY_KEY_CODES.ESCAPE: {
                 // TODO: Probably should have its own cancel button
                 this._resetMeasuring();
 
@@ -626,11 +624,11 @@ export default class InputController {
                 this.$commandInput.val(`${this.input.callsign} `);
 
                 break;
+            }
             default:
                 this.$commandInput.focus();
         }
     }
-
 
     /**
      * @for InputController
@@ -877,7 +875,7 @@ export default class InputController {
 
                 return true;
 
-            case PARSED_COMMAND_NAME.TIMEWARP:
+            case PARSED_COMMAND_NAME.TIMEWARP: {
                 let nextTimewarpValue = 0;
 
                 if (parsedCommand.args) {
@@ -889,6 +887,7 @@ export default class InputController {
                 EventTracker.recordEvent(TRACKABLE_EVENT.OPTIONS, 'timewarp-maunal-entry', `${nextTimewarpValue}`);
 
                 return true;
+            }
 
             case PARSED_COMMAND_NAME.CLEAR:
                 localStorage.clear();

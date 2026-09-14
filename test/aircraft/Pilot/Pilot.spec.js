@@ -65,7 +65,7 @@ function buildPilotWithComplexRoute() {
 }
 
 let sandbox;
-/* eslint-disable no-unused-vars, no-undef */
+
 ava.beforeEach(() => {
     sandbox = sinon.createSandbox();
 });
@@ -73,7 +73,6 @@ ava.beforeEach(() => {
 ava.afterEach(() => {
     sandbox.restore();
 });
-/* eslint-enable no-unused-vars, no-undef */
 
 ava('throws when instantiated without parameters', (t) => {
     t.throws(() => new Pilot());

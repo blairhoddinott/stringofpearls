@@ -207,12 +207,11 @@ ava('._calculateNextCyclicDelayPeriod() returns 360 when gameTime is 0', (t) => 
     t.true(result === 360);
 });
 
-ava.skip('._calculateNextWaveDelayPeriod()', (t) => {
+ava.skip('._calculateNextWaveDelayPeriod()', () => {
     const gameTimeMock = 3320;
     const model = new SpawnPatternModel(ARRIVAL_PATTERN_WAVE_MOCK);
-    const result = model._calculateNextWaveDelayPeriod(gameTimeMock);
 
-    // t.true(result === 360);
+    model._calculateNextWaveDelayPeriod(gameTimeMock);
 });
 
 ava('._setMinMaxAltitude() sets _minimumAltitude and _maximumAltitude when an array of numbers is passed ', (t) => {

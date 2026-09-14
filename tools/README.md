@@ -13,7 +13,7 @@ The repository targets Node.js 24 and npm 11. The exact versions used by the pin
 npm ci --ignore-scripts --no-audit --no-fund
 ```
 
-`npm ci` consumes the npm 11 lockfile exactly. Direct dependencies remain pinned to exact versions. Remaining install warnings belong to the inherited lint and application dependency graph; do not "fix" them with an unreviewed forced audit upgrade.
+`npm ci` consumes the npm 11 lockfile exactly. Direct dependencies remain pinned to exact versions. Remaining install warnings belong to the inherited browser-emulation, test-double, and application dependency graph; do not "fix" them with an unreviewed forced audit upgrade.
 
 ## Source and generated output
 
@@ -89,6 +89,6 @@ npm run test:coverage
 
 Coverage runs with `all: true`, verifies that all 115 eligible source modules appear under their real repository paths, and enforces regression floors of 68% statements/lines, 70% functions, and 90% branches. The measured migration baseline is 68.95% statements/lines, 70.92% functions, and 92.09% branches. Generated reports are written to `coverage/`.
 
-`npm run lint` executes on Node 24 but currently reports the inherited baseline of 49 errors and 12 warnings. Modernizing ESLint and repairing that baseline remain Phase 2 work.
+`npm run lint` uses ESLint 10 flat configuration and checks all 272 maintained JavaScript files in `src/`, `test/`, and `tools/`, plus the lint configuration itself. The gate has a clean baseline with zero errors and zero warnings. Existing dependency cycles are documented architecture debt and are intentionally outside this toolchain slice.
 
 The generated application may also be served by the inherited [Express][express] server for local development. Production uses the unprivileged NGINX runtime described in [`documentation/development/containers.md`](../documentation/development/containers.md).

@@ -1,4 +1,4 @@
-/* eslint-disable no-underscore-dangle, no-unused-vars, no-undef, global-require */
+/* eslint-disable no-unused-vars */
 import $ from 'jquery';
 import _get from 'lodash/get';
 import _has from 'lodash/has';

@@ -67,7 +67,7 @@ export default class CommandParser {
     constructor(rawCommandWithArgs = '') {
         if (!_isString(rawCommandWithArgs)) {
             // istanbul ignore next
-            // eslint-disable-next-line max-len
+
             throw new TypeError(`Invalid parameter. AircraftCommandParser expects a string but received ${typeof rawCommandWithArgs}`);
         }
 

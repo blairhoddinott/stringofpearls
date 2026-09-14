@@ -105,7 +105,6 @@ class UiController {
          */
         this.$airportGuideDialog = null;
 
-
         /**
          * Element of the airport search bar
          *
@@ -674,12 +673,10 @@ class UiController {
         this.$airportDialogBody.empty();
 
         const airports = _keys(AirportController.airports).sort();
-        let difficulty = '';
 
         for (let i = 0; i < airports.length; i++) {
             const { name, icao, level } = AirportController.airports[airports[i]];
-
-            difficulty = this._buildAirportListIconForDifficultyLevel(level);
+            const difficulty = this._buildAirportListIconForDifficultyLevel(level);
             const $airportListItem = $(this._buildAirportListItemTemplate(icao, difficulty, name));
 
             // TODO: replace with an onClick() handler
@@ -772,7 +769,6 @@ class UiController {
 
         this.$switchAirport.addClass(SELECTORS.CLASSNAMES.ACTIVE);
     }
-
 
     /**
      * @for UiController

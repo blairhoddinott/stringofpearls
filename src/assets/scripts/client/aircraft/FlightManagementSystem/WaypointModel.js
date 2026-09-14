@@ -141,7 +141,7 @@ export default class WaypointModel {
      */
     get holdParameters() {
         if (!this._isHoldWaypoint) {
-            return;
+            return undefined;
         }
 
         return this._holdParameters;
@@ -216,7 +216,7 @@ export default class WaypointModel {
      */
     get relativePosition() {
         if (this.isVectorWaypoint) {
-            return;
+            return undefined;
         }
 
         return this._positionModel.relativePosition;

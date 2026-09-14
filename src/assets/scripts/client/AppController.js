@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import $ from 'jquery';
 import AircraftController from './aircraft/AircraftController';
 import AirlineController from './airline/AirlineController';
@@ -266,7 +265,6 @@ export default class AppController {
         this.canvasController.canvasUpdatePost();
         this.aircraftController.updateAircraftStrips();
     }
-
 
     /**
      * `onChange` callback fired from within the `AirportModel` when an airport is changed.

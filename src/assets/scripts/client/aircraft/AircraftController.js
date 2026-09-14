@@ -1,4 +1,3 @@
-/* eslint-disable no-continue */
 import _find from 'lodash/find';
 import _get from 'lodash/get';
 import _isNil from 'lodash/isNil';

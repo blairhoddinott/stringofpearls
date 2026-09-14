@@ -8,7 +8,6 @@ import { ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK } from '../aircraft/_mocks/aircraftMoc
 
 let sandbox; // using the sinon sandbox ensures stubs are restored after each test
 
-/* eslint-disable no-unused-vars, no-undef */
 ava.beforeEach(() => {
     sandbox = sinon.createSandbox();
 });
@@ -16,7 +15,6 @@ ava.beforeEach(() => {
 ava.afterEach.always(() => {
     sandbox.restore();
 });
-/* eslint-enable no-unused-vars, no-undef */
 
 ava('._penalizeLocalizerInterceptAltitude() records an event and notifies the user of their error when above the glideslope', (t) => {
     const scoreController = new ScoreController();

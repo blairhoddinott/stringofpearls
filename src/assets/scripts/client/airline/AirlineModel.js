@@ -151,7 +151,7 @@ export default class AirlineModel extends BaseModel {
         // TODO: these _get() lines are likely redundant and could be removed only after proper testing
         this.icao = _get(airlineDefinition, 'icao', this.icao).toLowerCase();
         this.radioName = _get(airlineDefinition, 'callsign.name', this.radioName);
-        this.flightNumberGeneration.callsignFormats = _get(airlineDefinition, 'callsign.callsignFormats', this.flightNumberGeneration.callsignFormats); // eslint-disable-line max-len
+        this.flightNumberGeneration.callsignFormats = _get(airlineDefinition, 'callsign.callsignFormats', this.flightNumberGeneration.callsignFormats);
         this.fleets = _get(airlineDefinition, 'fleets');
 
         this._transformFleetNamesToLowerCase();
@@ -250,7 +250,7 @@ export default class AirlineModel extends BaseModel {
     _getRandomAircraftTypeFromFleet(fleetName) {
         // if we want to be uber defensive here we would lowercase the `fleetName` param
         if (!this._hasFleet(fleetName)) {
-            // eslint-disable-next-line max-len
+
             throw new Error(`Invalid fleetName passed to AirlineModel. ${fleetName} is not a fleet defined in ${this.icao}`);
         }
 

@@ -669,7 +669,7 @@ export default class AutocompleteController {
         const matches = {};
         for (const command of this.commandDefs[this.commandType]) {
             for (const variant of command.variants) {
-                /* eslint-disable max-len, no-multi-spaces */
+
                 for (const alias of variant.aliases) {
                     if (alias.startsWith(prefix) &&
                         (typeof matches[command.id] === 'undefined' ||        // has not been matched yet
@@ -698,7 +698,6 @@ export default class AutocompleteController {
 
         return matches;
     }
-
 
     /**
      * @for AutocompleteController

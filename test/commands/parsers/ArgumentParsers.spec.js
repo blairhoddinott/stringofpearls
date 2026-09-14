@@ -1,4 +1,3 @@
-/* eslint-disable arrow-parens, max-len, import/no-extraneous-dependencies */
 import ava from 'ava';
 
 import {
@@ -231,7 +230,6 @@ ava('.timewarpParser() returns an array with 50 as a value when provided as an a
 
     t.true(result[0] === 50);
 });
-
 
 ava('.crossingParser() returns an array with the correct values when provided all args', (t) => {
     const result = crossingParser(['LEMDY', 'a50', 's210']);

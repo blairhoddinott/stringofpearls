@@ -1,4 +1,3 @@
-/* eslint-disable max-len, indent, no-undef, prefer-destructuring */
 import $ from 'jquery';
 import _has from 'lodash/has';
 import _flow from 'lodash/flow';
@@ -81,7 +80,6 @@ export default class TutorialView {
          * @default `.next`
          */
         this.$tutorialNext = null;
-
 
         /**
          * Command bar button to toggle the tutorial on/off

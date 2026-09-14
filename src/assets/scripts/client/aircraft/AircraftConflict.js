@@ -178,13 +178,12 @@ export default class AircraftConflict {
             return;
         }
 
-        let conflict = false;
-        let violation = false;
+        let conflict;
+        let violation;
         let disableNotices = false;
         const a1 = this.aircraft[0];
         const a2 = this.aircraft[1];
         let applicableLatSepMin = SEPARATION.STANDARD_LATERAL_KM;
-
 
         // Established on precision guided approaches && both are following different instrument approaches
         if ((a1.isEstablishedOnCourse() && a2.isEstablishedOnCourse()) &&

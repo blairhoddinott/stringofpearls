@@ -8,6 +8,7 @@
   },
   "packageManager": "npm@11.19.0",
   "scripts": {
+    "audit:production": "npm audit --omit=dev --audit-level=low",
     "build": "node tools/build.js --production",
     "build:dev": "node tools/build.js",
     "build:test": "node tools/build.test.js",
@@ -16,6 +17,7 @@
     "docker:smoke": "tools/docker/smoke-test.sh",
     "lint": "eslint src test tools eslint.config.js",
     "server": "npm run start",
+    "server:test": "npm run build && node tools/server.test.js",
     "start": "node public/assets/scripts/server/index.js",
     "test": "ava --concurrency=5",
     "test:coverage": "c8 ava --concurrency=5 && npm run coverage:test",
@@ -86,10 +88,10 @@
   },
   "dependencies": {
     "ansi-colors": "3.2.4",
-    "express": "4.16.4",
-    "handlebars": "4.1.2",
+    "express": "4.22.3",
+    "handlebars": "4.7.9",
     "jquery": "3.5.0",
-    "lodash": "4.17.21",
+    "lodash": "4.18.1",
     "raf": "3.4.1"
   },
   "devDependencies": {
@@ -99,7 +101,6 @@
     "@eslint/js": "10.0.1",
     "autoprefixer": "10.6.0",
     "ava": "6.4.1",
-    "browser-env": "3.3.0",
     "c8": "12.0.0",
     "clean-css": "5.3.3",
     "esbuild": "0.28.2",
@@ -107,10 +108,11 @@
     "eslint-plugin-import-x": "4.17.1",
     "globals": "17.12.0",
     "handlebars-layouts": "3.1.4",
+    "jsdom": "29.0.0",
     "less": "4.9.1",
-    "postcss": "8.5.8",
+    "postcss": "8.5.28",
     "showdown": "1.9.1",
-    "sinon": "7.3.2",
+    "sinon": "22.1.0",
     "source-map": "0.5.7"
   }
 }

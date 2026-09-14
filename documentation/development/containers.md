@@ -74,8 +74,10 @@ docker compose --profile development run --rm dev npm run build:test
 docker compose --profile development run --rm dev npm test
 docker compose --profile development run --rm dev npm run test:coverage
 docker compose --profile development run --rm dev npm run lint
+docker compose --profile development run --rm dev npm run server:test
 docker compose --profile development run --rm dev npm run validator:test
 docker compose --profile development run --rm dev npm run validate:assets
+docker compose --profile development run --rm dev npm run audit:production
 ```
 
 AVA 6 passes the unchanged suite on Node 24 with 1,320 passing, 17 skipped, and 14 todo. `npm run test:coverage` uses c8, includes all 115 eligible source modules, and enforces measured regression floors; see [`tools/README.md`](../../tools/README.md). `npm run lint` checks all 272 maintained JavaScript files with a zero-error, zero-warning baseline.
@@ -159,11 +161,12 @@ CI/CD provider and runner decisions are intentionally deferred. Whatever automat
 3. run `docker build --check .`;
 4. run `npm run docker:smoke`;
 5. run `npm run validator:test` and `npm run validate:assets`;
-6. run `npm run browser:smoke`;
-7. build the `runtime` target with an immutable commit tag;
-8. scan the final image;
-9. publish only after tests and scanning pass.
+6. run `npm run server:test` and `npm run audit:production`;
+7. run `npm run browser:smoke`;
+8. build the `runtime` target with an immutable commit tag;
+9. scan the final image;
+10. publish only after tests and scanning pass.
 
 Both base images are pinned by digest in `Dockerfile`. Update the human-readable tag and digest together. The tags document intent; the digests determine what is actually built.
 
-The production build chain is current, but the inherited test, lint, and application dependency graph still emits deprecation and security warnings. It is excluded from the final NGINX image, but containerization does not magically make obsolete dependencies healthy. That work remains in Phase 2 of the modernization roadmap.
+The Phase 2 production dependency audit is clean. A full development audit retains one moderately vulnerable Showdown package affected by three advisories, with no fixed release; its input is repository-controlled Markdown. Containerization does not magically remove dependency risk, so both audit scopes remain documented even though only the production gate is fail-closed.

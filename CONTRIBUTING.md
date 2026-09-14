@@ -42,8 +42,10 @@ npm run build:test
 npm test
 npm run test:coverage
 npm run lint
+npm run server:test
 npm run validator:test
 npm run validate:assets
+npm run audit:production
 npm run docker:smoke
 npm run browser:smoke
 ```

@@ -50,7 +50,7 @@ The original NYC-wrapped AVA command fails before running tests on Node 26 becau
 
 Phase 1 isolated that failure to NYC 14. The first Phase 2 slice replaced AVA 1 and NYC 14 with AVA 6.4.1 and c8 12, and updated the test-only Babel 7 stack. The unchanged Node 24 suite still reports 1,320 passing, 17 skipped, and 14 todo tests.
 
-`npm run test:coverage` now uses `all: true` and a repository-owned manifest gate to prove that all 115 eligible source modules appear under their real paths. The measured baseline is 68.95% statements/lines, 70.92% functions, and 92.09% branches; enforced regression floors are 68%, 70%, and 90% respectively. This replaces the optimistic legacy report that omitted unvisited modules.
+`npm run test:coverage` now uses `all: true` and a repository-owned manifest gate to prove that all 115 eligible source modules appear under their real paths. The measured baseline is 68.96% statements/lines, 70.92% functions, and 92.27% branches; enforced regression floors are 68%, 70%, and 90% respectively. This replaces the optimistic legacy report that omitted unvisited modules.
 
 ### Lint and validation
 
@@ -69,7 +69,7 @@ At audit time, the asset validator was broken because `@openscope/validator` cou
 
 ### Dependency security
 
-Under npm 11, `npm audit` reports:
+The inherited npm 11 baseline reported:
 
 - All dependencies: 98 vulnerable packages
   - 14 critical
@@ -81,15 +81,17 @@ Under npm 11, `npm audit` reports:
   - 5 high
   - 3 low
 
-Direct vulnerable production dependencies are:
+The direct vulnerable production dependencies were:
 
 - `handlebars` — critical
 - `express` — high
 - `lodash` — high
 
-These counts are triage signals rather than proof of exploitability in this application. The production dependencies should nevertheless be upgraded before public deployment.
+These counts were triage signals rather than proof of exploitability in this application. The production dependencies nevertheless required upgrades before public deployment.
 
-After Phase 1 removed the obsolete build graph, `npm audit` reported 70 vulnerable packages overall (9 critical, 35 high, 18 moderate, and 8 low). The Phase 2 test/coverage slice reduced that to 39, and the lint slice reduced it again to 26 vulnerable packages overall (5 critical, 9 high, 8 moderate, and 4 low). Production remains unchanged at 11 vulnerable packages (3 critical, 5 high, and 3 low), because production dependency upgrades are a separate focused Phase 2 slice.
+After Phase 1 removed the obsolete build graph, `npm audit` reported 70 vulnerable packages overall (9 critical, 35 high, 18 moderate, and 8 low). The Phase 2 test/coverage slice reduced that to 39, and the lint slice reduced it again to 26.
+
+The final Phase 2 dependency slice upgraded Handlebars to 4.7.9, Express to 4.22.3, and Lodash to 4.18.1 behind build, application, browser, and local-server contracts. It also replaced the abandoned `browser-env`/`window` harness with jsdom 29, upgraded PostCSS to 8.5.28 and Sinon to 22.1.0, and refreshed vulnerable transitive resolutions within their declared ranges. `npm run audit:production` now reports zero vulnerabilities and exits successfully. Full `npm audit` reports one moderately vulnerable development-only Showdown package affected by three advisories, with no fixed release; Showdown receives repository-controlled Markdown during the build rather than user input.
 
 ## Codebase shape
 
@@ -184,15 +186,15 @@ CI workflow changes are explicitly deferred until the project chooses an executi
 
 ### Phase 2 — Repair security and quality gates
 
-- Upgrade Express, Handlebars, and Lodash first.
-- Remove unused/deprecated packages such as old Babel proposal plugins and React preset/plugins where no JSX exists.
-- Replace AVA 1, NYC 14, and the synthetic browser harness with Vitest plus jsdom, or modern AVA if migration cost proves lower.
-- Replace ESLint 5 and `babel-eslint` with current ESLint flat configuration.
-- Establish a clean full-repository lint baseline.
-- Enable honest coverage collection for all eligible modules and introduce ratcheted thresholds from the resulting baseline.
-- Add dependency review or audit policy to CI without blindly treating every dev-only advisory as production exposure.
+- [x] Upgrade Express, Handlebars, and Lodash behind focused compatibility tests.
+- [x] Remove unused/deprecated Babel proposal and React packages where no JSX exists.
+- [x] Replace AVA 1, NYC 14, and the synthetic browser harness with modern AVA, c8, and jsdom.
+- [x] Replace ESLint 5 and `babel-eslint` with current ESLint flat configuration.
+- [x] Establish a clean full-repository lint baseline.
+- [x] Enable honest coverage collection for all eligible modules and introduce ratcheted thresholds from the resulting baseline.
+- [x] Add a provider-neutral, fail-closed production audit command without treating the remaining dev-only advisory as production exposure.
 
-Exit condition: zero known critical/high production advisories, clean lint, meaningful coverage, and green CI.
+Exit condition: **met for the repository-controlled Phase 2 scope**. Production audit is clean, lint reports zero errors and warnings across 272 maintained JavaScript files, all 115 eligible source modules appear in coverage with enforced floors, and the unchanged application/build/browser contracts pass. CI provider, runner topology, acceptable GitHub Actions usage, and budget remain a separate deferred decision; requiring “green CI” before that decision would contradict the explicit non-goal below.
 
 ### Phase 3 — Introduce platform boundaries
 
@@ -236,12 +238,7 @@ Exit condition: UI work no longer requires editing multi-thousand-line controlle
 
 ## Next implementation slice
 
-Phase 2 should begin with the test runner now that production output parity is demonstrated:
-
-1. replace AVA 1/NYC 14 while retaining the now-reproduced 1,320/17/14 Node 24 behavioral baseline;
-2. measure honest coverage with all eligible modules included;
-3. replace ESLint 5 and establish a clean baseline without mixing application refactors into configuration churn; and
-4. upgrade vulnerable production dependencies with focused compatibility tests.
+Phase 3 should begin with one browser/platform boundary backed by characterization tests. Asset loading is the best first seam because airport, airline, terrain, and navigation loading currently depend on fabricated globals in tests; extract an adapter without changing asset formats or introducing a framework.
 
 ## Explicit non-goals for the first phases
 

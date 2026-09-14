@@ -87,8 +87,10 @@ That path retains the measured baseline of 1,320 passing, 17 skipped, and 14 tod
 npm run test:coverage
 ```
 
-Coverage runs with `all: true`, verifies that all 115 eligible source modules appear under their real repository paths, and enforces regression floors of 68% statements/lines, 70% functions, and 90% branches. The measured migration baseline is 68.95% statements/lines, 70.92% functions, and 92.09% branches. Generated reports are written to `coverage/`.
+Coverage runs with `all: true`, verifies that all 115 eligible source modules appear under their real repository paths, and enforces regression floors of 68% statements/lines, 70% functions, and 90% branches. The measured migration baseline is 68.96% statements/lines, 70.92% functions, and 92.27% branches. Generated reports are written to `coverage/`.
 
 `npm run lint` uses ESLint 10 flat configuration and checks all 272 maintained JavaScript files in `src/`, `test/`, and `tools/`, plus the lint configuration itself. The gate has a clean baseline with zero errors and zero warnings. Existing dependency cycles are documented architecture debt and are intentionally outside this toolchain slice.
 
-The generated application may also be served by the inherited [Express][express] server for local development. Production uses the unprivileged NGINX runtime described in [`documentation/development/containers.md`](../documentation/development/containers.md).
+The generated application may also be served by the inherited [Express][express] server for local development. `npm run server:test` builds the application and verifies root/static-asset responses, missing paths, encoded traversal rejection, and clean server shutdown. Production uses the unprivileged NGINX runtime described in [`documentation/development/containers.md`](../documentation/development/containers.md).
+
+`npm run audit:production` is the fail-closed dependency-security gate. The Phase 2 baseline is zero production vulnerabilities. A full `npm audit` retains one moderately vulnerable Showdown package affected by three advisories, with no fixed release; Showdown processes repository-controlled Markdown during builds and is not exposed to user input.

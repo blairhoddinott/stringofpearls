@@ -7,6 +7,7 @@ import StartupStorage from './platform/StartupStorage';
 import ClearStorageAndReload from './platform/ClearStorageAndReload';
 import ClockAdapter from './platform/ClockAdapter';
 import FrameScheduler from './platform/FrameScheduler';
+import DelayScheduler from './platform/DelayScheduler';
 import EventBus from './lib/EventBus';
 import TimeKeeper from './engine/TimeKeeper';
 import { DEFAULT_AIRPORT_ICAO } from './constants/airportConstants';
@@ -40,6 +41,7 @@ export default class App {
      * @param reload {Function} composition-root page-reload callable composed into the CLEAR ClearStorageAndReload service
      * @param clockAdapter {ClockAdapter} composition-root current-time boundary backed by `() => new Date()`
      * @param frameScheduler {FrameScheduler} composition-root animation-frame boundary backed by `(callback) => window.requestAnimationFrame(callback)`
+     * @param delayScheduler {DelayScheduler} composition-root delayed-callback boundary backed by `(callback, delay) => window.setTimeout(callback, delay)`
      */
     constructor(
         element,
@@ -47,7 +49,8 @@ export default class App {
         storageAdapter = new StorageAdapter(window.localStorage),
         reload = () => window.location.reload(),
         clockAdapter = new ClockAdapter(() => new Date()),
-        frameScheduler = new FrameScheduler((callback) => window.requestAnimationFrame(callback))
+        frameScheduler = new FrameScheduler((callback) => window.requestAnimationFrame(callback)),
+        delayScheduler = new DelayScheduler((callback, delay) => window.setTimeout(callback, delay))
     ) {
         /**
          * Root DOM element.
@@ -75,7 +78,8 @@ export default class App {
             assetLoader,
             storageAdapter,
             new ClearStorageAndReload(storageAdapter, reload),
-            clockAdapter
+            clockAdapter,
+            delayScheduler
         );
         this.eventBus = EventBus;
 

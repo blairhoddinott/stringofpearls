@@ -25,8 +25,9 @@ const CID_UPPER_BOUND = 999;
 export default class StripViewController {
     /**
      * @constructor
+     * @param delayScheduler {DelayScheduler} delayed-callback boundary; optional
      */
-    constructor() {
+    constructor(delayScheduler) {
         /**
          * Collection class used to manage instances of `StripViewModel`s
          *
@@ -75,6 +76,8 @@ export default class StripViewController {
          * @private
          */
         this._cidNumbersInUse = [];
+
+        this._delayScheduler = delayScheduler ?? null;
 
         return this._init()
             .enable();
@@ -240,9 +243,11 @@ export default class StripViewController {
         if (this.$stripView.hasClass(SELECTORS.CLASSNAMES.STRIP_VIEW_IS_HIDDEN)) {
             this.$stripView.removeClass(SELECTORS.CLASSNAMES.STRIP_VIEW_IS_HIDDEN);
             // wait 0.3s for strip view drawer slide out transition to complete
-            setTimeout(() => {
-                stripModel.scrollIntoView();
-            }, 300);
+            if (this._delayScheduler) {
+                this._delayScheduler.schedule(() => {
+                    stripModel.scrollIntoView();
+                }, 300);
+            }
         } else {
             stripModel.scrollIntoView();
         }

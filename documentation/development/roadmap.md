@@ -13,7 +13,7 @@ This roadmap tracks the current direction of the project. The order may change a
 - [x] Modernize ESLint and establish a clean full-repository lint baseline.
 - [x] Upgrade vulnerable production dependencies behind focused compatibility tests.
 - [ ] Modernize the application architecture
-  - [ ] Introduce explicit platform boundaries; asset loading uses injected native-Promise adapters throughout, the storage front is complete, wall-clock acquisition now uses a shared injected clock adapter, and animation-frame scheduling now uses a shared injected frame scheduler, while delayed-callback scheduling, randomness, analytics, speech synthesis, clipboard/page visibility, and the final browser-free proof still require migration.
+  - [ ] Introduce explicit platform boundaries; asset loading uses injected native-Promise adapters throughout, the storage front is complete, wall-clock acquisition uses a shared injected clock adapter, animation-frame scheduling uses a shared injected frame scheduler, and UI/render delays use a shared injected delay scheduler. Async-error delivery remains the final direct delayed-callback consumer; randomness, analytics, speech synthesis, clipboard/page visibility, and the final browser-free proof still require migration.
 - [ ] Resume feature development on the modernized foundation
 
 ## Simulation and realism

@@ -40,8 +40,9 @@ export default class AppController {
      * @param storageAdapter {StorageAdapter}
      * @param clearStorageAndReload {ClearStorageAndReload} composition-root clear/reload service threaded to InputController for the CLEAR command
      * @param clockAdapter {ClockAdapter} composition-root current-time boundary threaded to AirportInfoController for the sim clock
+     * @param delayScheduler {DelayScheduler} composition-root delayed-callback boundary threaded to UI/render consumers
      */
-    constructor(element, assetLoader, storageAdapter, clearStorageAndReload, clockAdapter) {
+    constructor(element, assetLoader, storageAdapter, clearStorageAndReload, clockAdapter, delayScheduler) {
         /**
          * Root DOM element.
          *
@@ -78,6 +79,7 @@ export default class AppController {
          * @type {ClockAdapter}
          */
         this._clockAdapter = clockAdapter;
+        this._delayScheduler = delayScheduler;
 
         this.$canvasesElement = null;
         this._eventBus = EventBus;
@@ -192,7 +194,7 @@ export default class AppController {
         // TODO: this entire method needs to be re-written. this is a temporary implemenation used to
         // get things working in a more cohesive manner. soon, all this instantiation should happen
         // in a different class and the window methods should disappear.
-        this.loadingView = new LoadingView();
+        this.loadingView = new LoadingView(this._delayScheduler);
         this.contentQueue = new ContentQueue(this.loadingView, this._assetLoader);
 
         // Configure the `GameController` option-persistence boundary at the
@@ -211,7 +213,12 @@ export default class AppController {
 
         this.airlineController = new AirlineController(airlineList);
         this.scopeModel = new ScopeModel();
-        this.aircraftController = new AircraftController(aircraftTypeDefinitionList, this.airlineController, this.scopeModel);
+        this.aircraftController = new AircraftController(
+            aircraftTypeDefinitionList,
+            this.airlineController,
+            this.scopeModel,
+            this._delayScheduler
+        );
         this.scoreController = new ScoreController(this.aircraftController);
 
         SpawnScheduler.init(this.aircraftController);
@@ -222,13 +229,14 @@ export default class AppController {
         // explicit instance parameters easier.
         window.aircraftController = this.aircraftController;
 
-        UiController.init(this.$element, this.contentQueue, this._storageAdapter);
+        UiController.init(this.$element, this.contentQueue, this._storageAdapter, this._delayScheduler);
 
         this.canvasController = new CanvasController(
             this.$canvasesElement,
             this.aircraftController,
             this.scopeModel,
-            this._storageAdapter
+            this._storageAdapter,
+            this._delayScheduler
         );
 
         this.inputController = new InputController(

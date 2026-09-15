@@ -42,9 +42,9 @@ export default class AircraftController {
      * @param aircraftTypeDefinitionList {array<object>}
      * @param airlineController {AirlineController}
      * @param scopeModel {ScopeModel}
-     * @param aircraftCommander {AircraftCommander}
+     * @param delayScheduler {DelayScheduler} delayed-callback boundary forwarded to StripViewController
      */
-    constructor(aircraftTypeDefinitionList, airlineController, scopeModel) {
+    constructor(aircraftTypeDefinitionList, airlineController, scopeModel, delayScheduler) {
         if (_isNil(aircraftTypeDefinitionList) || _isNil(airlineController) || _isNil(scopeModel)) {
             throw new TypeError('Invalid parameter(s) passed to AircraftController constructor. ' +
                 'Expected aircraftTypeDefinitionList, airlineController and scopeModel to be defined, ' +
@@ -146,7 +146,7 @@ export default class AircraftController {
          * @type {StripViewController}
          * @private
          */
-        this._stripViewController = new StripViewController();
+        this._stripViewController = new StripViewController(delayScheduler);
 
         return this.init()
             ._setupHandlers()

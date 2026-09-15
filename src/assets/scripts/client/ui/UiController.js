@@ -34,6 +34,20 @@ class UiController {
         this._eventBus = null;
 
         /**
+         * Delayed-callback boundary used to defer removal of a faded log entry.
+         *
+         * Nullish/omitted normalizes to canonical null so a hidden log entry is
+         * left in place rather than reaching for a browser global to remove it.
+         *
+         * @for UiController
+         * @property _delayScheduler
+         * @type {DelayScheduler|null}
+         * @default null
+         * @private
+         */
+        this._delayScheduler = null;
+
+        /**
          * @for UiController
          * @property tutorialView
          * @type {TutorialView}
@@ -346,9 +360,11 @@ class UiController {
      * @param $element {jQuery Element}
      * @param contentQueue {ContentQueue}
      * @param storageAdapter {StorageAdapter}
+     * @param delayScheduler {DelayScheduler} delayed-callback boundary; nullish/omitted normalizes to null
      */
-    init($element, contentQueue, storageAdapter) {
+    init($element, contentQueue, storageAdapter, delayScheduler) {
         this._eventBus = EventBus;
+        this._delayScheduler = delayScheduler ?? null;
         this.tutorialView = new TutorialView($element, contentQueue, storageAdapter);
         this.settingsController = new SettingsController($element);
         this.trafficRateController = new TrafficRateController($element);
@@ -548,7 +564,11 @@ class UiController {
         GameController.game_timeout((uiLogView) => {
             uiLogView.addClass(SELECTORS.CLASSNAMES.HIDDEN);
 
-            setTimeout(() => {
+            if (!this._delayScheduler) {
+                return;
+            }
+
+            this._delayScheduler.schedule(() => {
                 uiLogView.remove();
             }, 10000);
         }, this.chatLogDuration, window, html);

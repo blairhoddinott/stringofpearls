@@ -57,8 +57,9 @@ export default class CanvasController {
      * @param aircraftController {AircraftController}
      * @param scopeModel {ScopeModel}
      * @param storageAdapter {StorageAdapter}
+     * @param delayScheduler {DelayScheduler} delayed-callback boundary; nullish/omitted normalizes to null
      */
-    constructor($element, aircraftController, scopeModel, storageAdapter) {
+    constructor($element, aircraftController, scopeModel, storageAdapter, delayScheduler) {
         /**
          * Reference to the `window` object
          *
@@ -212,6 +213,18 @@ export default class CanvasController {
          */
         this.theme = null;
 
+        /**
+         * Delayed-callback boundary used to defer the initial deep render.
+         *
+         * Nullish/omitted normalizes to canonical null so `canvas_complete()`
+         * becomes a safe no-op rather than reaching for a browser global.
+         *
+         * @property _delayScheduler
+         * @type {DelayScheduler|null}
+         * @private
+         */
+        this._delayScheduler = delayScheduler ?? null;
+
         // Configure the shared `CanvasStageModel` persistence boundary at the
         // composition root, before any normal canvas behavior, so it rehydrates
         // the zoom level without reaching for a browser global itself.
@@ -359,7 +372,11 @@ export default class CanvasController {
      */
     canvas_complete() {
         // TODO: not sure what the rationale is here. this should be removed/reworked if possible
-        setTimeout(() => {
+        if (!this._delayScheduler) {
+            return;
+        }
+
+        this._delayScheduler.schedule(() => {
             this._markDeepRender();
         }, 500);
     }

@@ -10,8 +10,9 @@ export default class LoadingView {
     /**
      * @for LoadingView
      * @constructor
+     * @param delayScheduler {DelayScheduler} delayed-callback boundary; nullish/omitted normalizes to null
      */
-    constructor() {
+    constructor(delayScheduler) {
         /**
          * Root DOM element
          *
@@ -19,6 +20,18 @@ export default class LoadingView {
          * @type {jquery|null}
          */
         this.$element = null;
+
+        /**
+         * Delayed-callback boundary used to defer the loading-view fade out.
+         *
+         * Nullish/omitted normalizes to canonical null so the fade out becomes a
+         * safe no-op rather than reaching for a browser global.
+         *
+         * @property _delayScheduler
+         * @type {DelayScheduler|null}
+         * @private
+         */
+        this._delayScheduler = delayScheduler ?? null;
 
         return this._setupChildren();
     }
@@ -56,7 +69,11 @@ export default class LoadingView {
      * @method complete
      */
     complete() {
-        global.setTimeout(() => {
+        if (!this._delayScheduler) {
+            return;
+        }
+
+        this._delayScheduler.schedule(() => {
             this.$element.fadeOut(1000);
             this.$element.css('pointerEvents', 'none');
         }, 1500);

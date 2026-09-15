@@ -43,8 +43,9 @@ export default class InputController {
      * @param assetLoader {AssetLoader} composition-root JSON transport, injected into AutocompleteController
      * @param clearStorageAndReload {ClearStorageAndReload} clear/reload service invoked by the CLEAR system command; optional
      * @param reportError {Function} async error reporter forwarded to AutocompleteController
+     * @param clipboardAdapter {ClipboardAdapter} clipboard boundary used by the copy-coordinates command; optional
      */
-    constructor($element, aircraftController, scopeModel, assetLoader, clearStorageAndReload, reportError) {
+    constructor($element, aircraftController, scopeModel, assetLoader, clearStorageAndReload, reportError, clipboardAdapter) {
         this.$element = $element;
         this.$body = null;
         this.$window = null;
@@ -65,6 +66,16 @@ export default class InputController {
          * @type {ClearStorageAndReload|null}
          */
         this._clearStorageAndReload = clearStorageAndReload ?? null;
+
+        /**
+         * Clipboard boundary forwarded from the composition root and used only by
+         * the copy-coordinates command. Nullish when omitted so older/shorter
+         * constructor calls stay free of browser globals for this capability.
+         *
+         * @property _clipboardAdapter
+         * @type {ClipboardAdapter|null}
+         */
+        this._clipboardAdapter = clipboardAdapter ?? null;
         this._autocompleteController = new AutocompleteController(
             this.$element,
             this,
@@ -1049,7 +1060,17 @@ export default class InputController {
     _logAndCopyCoordinates(latLonCoordinates) {
         const coordinateText = latLonCoordinates.map((coord) => coord.toFixed(9)).join(', ');
 
-        window.navigator.clipboard.writeText(coordinateText).then(() => {
+        if (this._clipboardAdapter === null) {
+            return undefined;
+        }
+
+        const writeResult = this._clipboardAdapter.writeText(coordinateText);
+
+        if (writeResult == null) {
+            return undefined;
+        }
+
+        writeResult.then(() => {
             console.log(coordinateText);
             UiController.ui_log(`Clicked coordinates: ${coordinateText} (logged to console and copied to clipboard!)`, true);
         });

@@ -13,7 +13,7 @@ This roadmap tracks the current direction of the project. The order may change a
 - [x] Modernize ESLint and establish a clean full-repository lint baseline.
 - [x] Upgrade vulnerable production dependencies behind focused compatibility tests.
 - [ ] Modernize the application architecture
-  - [ ] Introduce explicit platform boundaries; asset loading, storage, clock/timers, randomness, analytics, and speech synthesis are complete behind injected adapters and services. Clipboard/page visibility and the final browser-free proof still require migration.
+  - [ ] Introduce explicit platform boundaries; asset loading, storage, clock/timers, randomness, analytics, speech synthesis, clipboard, and page visibility are complete behind injected adapters and services. The final browser-free proof remains.
 - [ ] Resume feature development on the modernized foundation
 
 ## Simulation and realism

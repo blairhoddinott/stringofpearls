@@ -129,6 +129,22 @@ class GameController {
          */
         this._storageAdapter = null;
 
+        /**
+         * Page focus/visibility boundary used to register the pause/resume
+         * listeners.
+         *
+         * Remains `null` until the composition root configures it through
+         * `initPageVisibility()`, so import-time construction and `enable()`
+         * never touch a browser global. Retained across `destroy()` so a rebuilt
+         * lifecycle keeps its focus/visibility wiring.
+         *
+         * @property _pageVisibilityAdapter
+         * @type {PageVisibilityAdapter}
+         * @default null
+         * @private
+         */
+        this._pageVisibilityAdapter = null;
+
         this._eventBus = EventBus;
     }
 
@@ -149,6 +165,27 @@ class GameController {
         this._storageAdapter = storageAdapter == null ? null : storageAdapter;
 
         this.game.option.initStorage(this._storageAdapter);
+
+        return this;
+    }
+
+    /**
+     * Configure the page focus/visibility boundary used by `enable()` to register
+     * the pause/resume listeners.
+     *
+     * Called by `AppController.setupChildren()` at the composition root, before
+     * `init_pre` calls `enable()`, so the browser `window`/`document` references
+     * live only in the composition root rather than inside this controller. A
+     * nullish adapter is normalized to canonical `null`, in which case `enable()`
+     * stays a safe, browser-free no-op for this capability.
+     *
+     * @for GameController
+     * @method initPageVisibility
+     * @param pageVisibilityAdapter {PageVisibilityAdapter} [optional]  boundary exposing `subscribe(onHidden, onVisible)`
+     * @chainable
+     */
+    initPageVisibility(pageVisibilityAdapter = null) {
+        this._pageVisibilityAdapter = pageVisibilityAdapter == null ? null : pageVisibilityAdapter;
 
         return this;
     }
@@ -199,16 +236,13 @@ class GameController {
     enable() {
         this._eventBus.on(EVENT.SET_THEME, this._setTheme);
 
-        window.addEventListener('blur', this._onWindowBlurHandler);
-        window.addEventListener('focus', this._onWindowFocusHandler);
-        // for when the browser window receives or looses focus
-        document.addEventListener('visibilitychange', () => {
-            if (document.visibilityState === 'hidden') {
-                return this._onWindowBlurHandler();
-            }
-
-            return this._onWindowFocusHandler();
-        });
+        // Register the window blur/focus and document visibilitychange listeners
+        // (for when the browser window receives or looses focus) through the
+        // injected boundary so no browser global is touched here. Remains a safe
+        // no-op when no adapter was configured.
+        if (this._pageVisibilityAdapter !== null) {
+            this._pageVisibilityAdapter.subscribe(this._onWindowBlurHandler, this._onWindowFocusHandler);
+        }
 
         return this.initializeEventCount();
     }

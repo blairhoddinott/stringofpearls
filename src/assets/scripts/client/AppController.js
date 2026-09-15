@@ -44,6 +44,8 @@ export default class AppController {
      * @param asyncErrorReporter {Function} composition-root async error reporter threaded to asset consumers
      * @param randomSource {RandomSource} composition-root randomness boundary threaded to class consumers
      * @param speechSynthesisAdapter {SpeechSynthesisAdapter|null} composition-root speech boundary threaded to `speech_init` in `init`
+     * @param clipboardAdapter {ClipboardAdapter|null} composition-root clipboard boundary threaded to `InputController` for the copy-coordinates command
+     * @param pageVisibilityAdapter {PageVisibilityAdapter|null} composition-root page focus/visibility boundary threaded to `GameController` for pause/resume
      */
     constructor(
         element,
@@ -54,7 +56,9 @@ export default class AppController {
         delayScheduler,
         asyncErrorReporter,
         randomSource,
-        speechSynthesisAdapter
+        speechSynthesisAdapter,
+        clipboardAdapter,
+        pageVisibilityAdapter
     ) {
         /**
          * Root DOM element.
@@ -105,6 +109,26 @@ export default class AppController {
          * @type {SpeechSynthesisAdapter|null}
          */
         this._speechSynthesisAdapter = speechSynthesisAdapter ?? null;
+
+        /**
+         * Clipboard boundary injected from the composition root and forwarded to
+         * `InputController` for the copy-coordinates command, or canonical `null`
+         * when no browser clipboard backend is available.
+         *
+         * @property _clipboardAdapter
+         * @type {ClipboardAdapter|null}
+         */
+        this._clipboardAdapter = clipboardAdapter ?? null;
+
+        /**
+         * Page focus/visibility boundary injected from the composition root and
+         * forwarded to `GameController` for pause/resume, or canonical `null`
+         * when no browser registration seams are available.
+         *
+         * @property _pageVisibilityAdapter
+         * @type {PageVisibilityAdapter|null}
+         */
+        this._pageVisibilityAdapter = pageVisibilityAdapter ?? null;
 
         this.$canvasesElement = null;
         this._eventBus = EventBus;
@@ -228,6 +252,12 @@ export default class AppController {
         // reads a value, so persisted settings are rehydrated first.
         GameController.initStorage(this._storageAdapter);
 
+        // Configure the `GameController` page focus/visibility boundary at the
+        // composition root, before `init_pre` calls `enable()` and registers the
+        // pause/resume listeners, so the browser `window`/`document` references
+        // live only in this composition root rather than inside the controller.
+        GameController.initPageVisibility(this._pageVisibilityAdapter);
+
         // IMPORTANT:
         // The order in which the following classes are instantiated is extremely important. Changing
         // this order could break a lot of things. This interdependency is something we should
@@ -286,7 +316,8 @@ export default class AppController {
             this.scopeModel,
             this._assetLoader,
             this._clearStorageAndReload,
-            this._asyncErrorReporter
+            this._asyncErrorReporter,
+            this._clipboardAdapter
         );
         this.airportInfoController = new AirportInfoController(
             this.$element,

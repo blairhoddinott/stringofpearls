@@ -10,10 +10,18 @@ const buildStorageAdapter = ({ storedValue = null } = {}) => ({
     set: sinon.stub()
 });
 
+// Build a page focus/visibility boundary stub exposing only the
+// `subscribe(onHidden, onVisible)` contract, so the registration seam is
+// exercised without a global `window`/`document` backend.
+const buildPageVisibilityAdapter = () => ({
+    subscribe: sinon.stub()
+});
+
 // `GameController` is an import-time singleton, so each test restores it to the
 // browser-global-free default configuration after mutating it.
 ava.afterEach.always(() => {
     GameController.initStorage(null);
+    GameController.initPageVisibility(null);
 });
 
 ava.serial('.initStorage() retains the exact adapter identity on the singleton', (t) => {
@@ -63,4 +71,57 @@ ava.serial('.destroy() rebuilds GameOptions while retaining the configured adapt
     t.is(GameController._storageAdapter, storageAdapter);
     t.is(GameController.game.option._storageAdapter, storageAdapter);
     t.is(GameController.getGameOption('theme'), 'CELESTIAL');
+});
+
+ava.serial('.initPageVisibility() retains the exact adapter identity on the singleton', (t) => {
+    const pageVisibilityAdapter = buildPageVisibilityAdapter();
+
+    GameController.initPageVisibility(pageVisibilityAdapter);
+
+    t.is(GameController._pageVisibilityAdapter, pageVisibilityAdapter);
+});
+
+ava.serial('.initPageVisibility() normalizes a nullish adapter to canonical null', (t) => {
+    GameController.initPageVisibility(buildPageVisibilityAdapter());
+
+    GameController.initPageVisibility(undefined);
+
+    t.is(GameController._pageVisibilityAdapter, null);
+});
+
+ava.serial('.initPageVisibility() defaults an omitted adapter to canonical null', (t) => {
+    GameController.initPageVisibility(buildPageVisibilityAdapter());
+
+    GameController.initPageVisibility();
+
+    t.is(GameController._pageVisibilityAdapter, null);
+});
+
+ava.serial('.destroy() retains the configured page-visibility adapter', (t) => {
+    const pageVisibilityAdapter = buildPageVisibilityAdapter();
+
+    GameController.initPageVisibility(pageVisibilityAdapter);
+    GameController.destroy();
+
+    t.is(GameController._pageVisibilityAdapter, pageVisibilityAdapter);
+});
+
+ava.serial('.enable() subscribes with the exact bound blur/focus handler identities', (t) => {
+    const pageVisibilityAdapter = buildPageVisibilityAdapter();
+
+    GameController.initPageVisibility(pageVisibilityAdapter);
+    GameController.setupHandlers();
+    GameController.enable();
+
+    t.true(pageVisibilityAdapter.subscribe.calledOnceWithExactly(
+        GameController._onWindowBlurHandler,
+        GameController._onWindowFocusHandler
+    ));
+});
+
+ava.serial('.enable() is a safe, browser-free no-op when no page-visibility adapter is configured', (t) => {
+    GameController.initPageVisibility(null);
+    GameController.setupHandlers();
+
+    t.notThrows(() => GameController.enable());
 });

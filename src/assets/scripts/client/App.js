@@ -12,6 +12,8 @@ import DelayScheduler from './platform/DelayScheduler';
 import RandomSource from './platform/RandomSource';
 import AnalyticsAdapter from './platform/AnalyticsAdapter';
 import SpeechSynthesisAdapter from './platform/SpeechSynthesisAdapter';
+import ClipboardAdapter from './platform/ClipboardAdapter';
+import PageVisibilityAdapter from './platform/PageVisibilityAdapter';
 import createAsyncErrorReporter from './platform/reportAsyncError';
 import EventBus from './lib/EventBus';
 import EventTracker from './EventTracker';
@@ -54,6 +56,8 @@ export default class App {
      * @param randomSource {RandomSource} composition-root randomness boundary backed by `Math.random` and Lodash `random`
      * @param analyticsAdapter {AnalyticsAdapter} composition-root analytics boundary backed by `window.gtag` when present
      * @param speechSynthesisAdapter {SpeechSynthesisAdapter|null} composition-root speech boundary backed by `window.speechSynthesis` and `SpeechSynthesisUtterance` when both are available, otherwise `null`
+     * @param clipboardAdapter {ClipboardAdapter|null} composition-root clipboard boundary backed by a receiver-preserving wrapper around `window.navigator.clipboard.writeText` when callable, otherwise `null`
+     * @param pageVisibilityAdapter {PageVisibilityAdapter} composition-root page focus/visibility boundary backed by wrappers around `window.addEventListener`, `document.addEventListener`, and `document.visibilityState`
      */
     constructor(
         element,
@@ -74,7 +78,15 @@ export default class App {
                 window.speechSynthesis,
                 (text) => new window.SpeechSynthesisUtterance(text)
             )
-            : null
+            : null,
+        clipboardAdapter = typeof window.navigator?.clipboard?.writeText === 'function'
+            ? new ClipboardAdapter((text) => window.navigator.clipboard.writeText(text))
+            : null,
+        pageVisibilityAdapter = new PageVisibilityAdapter(
+            (type, listener) => window.addEventListener(type, listener),
+            (type, listener) => document.addEventListener(type, listener),
+            () => document.visibilityState
+        )
     ) {
         /**
          * Root DOM element.
@@ -128,7 +140,9 @@ export default class App {
             delayScheduler,
             asyncErrorReporter,
             randomSource,
-            speechSynthesisAdapter
+            speechSynthesisAdapter,
+            clipboardAdapter,
+            pageVisibilityAdapter
         );
         this.eventBus = EventBus;
 

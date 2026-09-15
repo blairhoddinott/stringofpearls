@@ -198,7 +198,12 @@ export default class AppController {
 
         UiController.init(this.$element, this.contentQueue, this._storageAdapter);
 
-        this.canvasController = new CanvasController(this.$canvasesElement, this.aircraftController, this.scopeModel);
+        this.canvasController = new CanvasController(
+            this.$canvasesElement,
+            this.aircraftController,
+            this.scopeModel,
+            this._storageAdapter
+        );
 
         this.inputController = new InputController(this.$element, this.aircraftController, this.scopeModel, this._assetLoader);
         this.airportInfoController = new AirportInfoController(this.$element);

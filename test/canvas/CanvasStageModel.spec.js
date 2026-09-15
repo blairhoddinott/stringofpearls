@@ -2,6 +2,15 @@ import ava from 'ava';
 import sinon from 'sinon';
 import CanvasStageModel from '../../src/assets/scripts/client/canvas/CanvasStageModel';
 import { SCALE } from '../../src/assets/scripts/client/constants/canvasConstants';
+import { STORAGE_KEY } from '../../src/assets/scripts/client/constants/storageKeys';
+
+// Build a storage adapter stub exposing only the `get(key)`/`set(key, value)`
+// contract, so the zoom-persistence boundary is exercised without a global
+// `localStorage` backend.
+const buildStorageAdapter = ({ storedValue = null } = {}) => ({
+    get: sinon.stub().returns(storedValue),
+    set: sinon.stub()
+});
 
 ava.beforeEach(() => {
     CanvasStageModel._init();
@@ -145,4 +154,76 @@ ava('.zoomIn() calls ._eventBus.trigger()', (t) => {
     t.true(_eventBusTrigger.callCount === 2);
 
     _eventBusTrigger.restore();
+});
+
+ava('._retrieveZoomLevelFromStorageOrDefault() returns numeric SCALE.DEFAULT when no adapter is configured', (t) => {
+    const result = CanvasStageModel._retrieveZoomLevelFromStorageOrDefault();
+
+    t.is(result, SCALE.DEFAULT);
+});
+
+ava('.initStorage() treats an omitted adapter as unconfigured and rehydrates the numeric default', (t) => {
+    t.notThrows(() => CanvasStageModel.initStorage());
+    t.is(CanvasStageModel._scale, SCALE.DEFAULT);
+});
+
+ava('.initStorage() stores the exact adapter instance and reads exactly STORAGE_KEY.ZOOM_LEVEL', (t) => {
+    const storageAdapter = buildStorageAdapter();
+
+    CanvasStageModel.initStorage(storageAdapter);
+
+    t.is(CanvasStageModel._storageAdapter, storageAdapter);
+    t.true(storageAdapter.get.calledOnceWithExactly(STORAGE_KEY.ZOOM_LEVEL));
+});
+
+ava('._retrieveZoomLevelFromStorageOrDefault() returns numeric SCALE.DEFAULT when the adapter returns null', (t) => {
+    CanvasStageModel.initStorage(buildStorageAdapter({ storedValue: null }));
+
+    t.is(CanvasStageModel._retrieveZoomLevelFromStorageOrDefault(), SCALE.DEFAULT);
+});
+
+ava('._retrieveZoomLevelFromStorageOrDefault() returns numeric SCALE.DEFAULT when the adapter returns undefined', (t) => {
+    CanvasStageModel.initStorage(buildStorageAdapter({ storedValue: undefined }));
+
+    t.is(CanvasStageModel._retrieveZoomLevelFromStorageOrDefault(), SCALE.DEFAULT);
+});
+
+ava('._retrieveZoomLevelFromStorageOrDefault() preserves a falsy-but-present raw value verbatim', (t) => {
+    CanvasStageModel.initStorage(buildStorageAdapter({ storedValue: '0' }));
+
+    t.is(CanvasStageModel._retrieveZoomLevelFromStorageOrDefault(), '0');
+});
+
+ava('._retrieveZoomLevelFromStorageOrDefault() returns a present raw numeric string verbatim', (t) => {
+    CanvasStageModel.initStorage(buildStorageAdapter({ storedValue: '7.5' }));
+
+    t.is(CanvasStageModel._retrieveZoomLevelFromStorageOrDefault(), '7.5');
+});
+
+ava('.initStorage() rehydrates #_scale from the stored raw value', (t) => {
+    CanvasStageModel.initStorage(buildStorageAdapter({ storedValue: '7.5' }));
+
+    t.is(CanvasStageModel._scale, '7.5');
+});
+
+ava('._storeZoomLevel() forwards the raw scale under STORAGE_KEY.ZOOM_LEVEL exactly once', (t) => {
+    const storageAdapter = buildStorageAdapter();
+
+    CanvasStageModel.initStorage(storageAdapter);
+    CanvasStageModel._scale = 0.05;
+    CanvasStageModel._storeZoomLevel();
+
+    t.true(storageAdapter.set.calledOnceWithExactly(STORAGE_KEY.ZOOM_LEVEL, 0.05));
+});
+
+ava('._storeZoomLevel() is a no-op and touches no browser globals when no adapter is configured', (t) => {
+    t.notThrows(() => CanvasStageModel._storeZoomLevel());
+});
+
+ava('.reset() clears the configured storage adapter', (t) => {
+    CanvasStageModel.initStorage(buildStorageAdapter());
+
+    CanvasStageModel.reset();
+
+    t.is(CanvasStageModel._storageAdapter, null);
 });

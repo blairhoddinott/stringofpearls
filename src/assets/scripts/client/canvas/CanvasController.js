@@ -56,8 +56,9 @@ export default class CanvasController {
      * @param $element {JQuery|HTML Element}
      * @param aircraftController {AircraftController}
      * @param scopeModel {ScopeModel}
+     * @param storageAdapter {StorageAdapter}
      */
-    constructor($element, aircraftController, scopeModel) {
+    constructor($element, aircraftController, scopeModel, storageAdapter) {
         /**
          * Reference to the `window` object
          *
@@ -210,6 +211,11 @@ export default class CanvasController {
          * @default null
          */
         this.theme = null;
+
+        // Configure the shared `CanvasStageModel` persistence boundary at the
+        // composition root, before any normal canvas behavior, so it rehydrates
+        // the zoom level without reaching for a browser global itself.
+        CanvasStageModel.initStorage(storageAdapter);
 
         return this._init()
             ._setupHandlers()

@@ -252,6 +252,84 @@ ava('buildPreSpawnAircraft() does not throw when passed valid parameters', (t) =
     t.notThrows(() => buildPreSpawnAircraft(ARRIVAL_PATTERN_MOCK, airportModelFixture));
 });
 
+ava('_calculateIdealSpawnAltitudeAtOffset() draws integral altitude-thousands with inclusive integer semantics', (t) => {
+    const altitudesAtOffsets = [
+        [18.958610430426404, 19000],
+        [41.52033243401482, 12000],
+        [60.46996764011041, 10000],
+        [70.68723901280046, 8000]
+    ];
+    const spawnAltitudeMock = [23000, 24000];
+    const airspaceCeilingMock = 11000;
+    const spawnSpeedMock = 250;
+    const totalDistanceMock = 85;
+    const offsetDistanceMock = 0;
+    const randomSourceStub = { integer: sandbox.stub().returns(23) };
+    const result = _calculateIdealSpawnAltitudeAtOffset(
+        altitudesAtOffsets,
+        offsetDistanceMock,
+        spawnSpeedMock,
+        spawnAltitudeMock,
+        totalDistanceMock,
+        airspaceCeilingMock,
+        randomSourceStub
+    );
+
+    t.true(randomSourceStub.integer.calledOnceWithExactly(23, 24));
+    t.is(result, 23000);
+});
+
+ava('_calculateIdealSpawnAltitudeAtOffset() draws fractional altitude-thousands with real semantics', (t) => {
+    const randomSourceStub = { real: sandbox.stub().returns(23.25) };
+    const result = _calculateIdealSpawnAltitudeAtOffset(
+        [[18.958610430426404, 20000]],
+        0,
+        250,
+        [23000, 23456],
+        85,
+        11000,
+        randomSourceStub
+    );
+
+    t.true(randomSourceStub.real.calledOnceWithExactly(23, 23.456));
+    t.is(result, 23250);
+});
+
+ava('_calculateIdealSpawnAltitudeAtOffset() uses the lower array altitude bound when no randomSource is injected', (t) => {
+    const altitudesAtOffsets = [
+        [18.958610430426404, 19000],
+        [41.52033243401482, 12000],
+        [60.46996764011041, 10000],
+        [70.68723901280046, 8000]
+    ];
+    const spawnAltitudeMock = [23000, 23456];
+    const airspaceCeilingMock = 11000;
+    const spawnSpeedMock = 250;
+    const totalDistanceMock = 85;
+    const offsetDistanceMock = 0;
+    const result = _calculateIdealSpawnAltitudeAtOffset(
+        altitudesAtOffsets,
+        offsetDistanceMock,
+        spawnSpeedMock,
+        spawnAltitudeMock,
+        totalDistanceMock,
+        airspaceCeilingMock
+    );
+
+    t.is(result, 23000);
+});
+
+ava('buildPreSpawnAircraft() forwards the injected randomSource through the spawn calculation chain', (t) => {
+    const randomSourceStub = {
+        integer: sandbox.stub().returns(30),
+        real: sandbox.stub().returns(20)
+    };
+
+    buildPreSpawnAircraft(ARRIVAL_PATTERN_MOCK, airportModelFixture, randomSourceStub);
+
+    t.true(randomSourceStub.real.called);
+});
+
 // ava('buildPreSpawnAircraft() returns an array of objects with correct keys', (t) => {
 //     const results = buildPreSpawnAircraft(ARRIVAL_PATTERN_MOCK, airportModelFixture);
 //

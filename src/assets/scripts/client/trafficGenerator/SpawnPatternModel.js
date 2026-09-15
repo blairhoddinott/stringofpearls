@@ -3,7 +3,6 @@ import _get from 'lodash/get';
 import _map from 'lodash/map';
 import _isArray from 'lodash/isArray';
 import _isEmpty from 'lodash/isEmpty';
-import _random from 'lodash/random';
 import _round from 'lodash/round';
 import RouteModel from '../aircraft/FlightManagementSystem/RouteModel';
 import AirportController from '../airport/AirportController';
@@ -92,10 +91,23 @@ export default class SpawnPatternModel extends BaseModel {
      * @constructor
      * @for SpawnPatternModel
      * @param spawnPatternJson {object}
+     * @param randomSource {RandomSource} composition-root randomness boundary used for spawn draws; optional
      */
     // istanbul ignore next
-    constructor(spawnPatternJson) {
+    constructor(spawnPatternJson, randomSource) {
         super('spawnPatternModel');
+
+        /**
+         * Randomness boundary injected from the composition root, used for altitude,
+         * delay and index draws. When omitted, each draw deterministically returns
+         * its lower bound so the model stays usable without an injected source.
+         *
+         * @property _randomSource
+         * @type {RandomSource}
+         * @default null
+         * @private
+         */
+        this._randomSource = randomSource ?? null;
 
         /**
          * Schedule reference id
@@ -451,7 +463,9 @@ export default class SpawnPatternModel extends BaseModel {
      * @return {number}
      */
     get altitude() {
-        const altitude = _random(this._minimumAltitude, this._maximumAltitude);
+        const altitude = this._randomSource
+            ? this._randomSource.integer(this._minimumAltitude, this._maximumAltitude)
+            : this._minimumAltitude;
 
         return _round(altitude, -3);
     }
@@ -806,7 +820,7 @@ export default class SpawnPatternModel extends BaseModel {
         const delayVariation = averageDelay - minimumDelay;
         const maximumDelay = averageDelay + delayVariation;
 
-        return _random(minimumDelay, maximumDelay);
+        return this._randomSource ? this._randomSource.integer(minimumDelay, maximumDelay) : minimumDelay;
     }
 
     /**
@@ -983,7 +997,7 @@ export default class SpawnPatternModel extends BaseModel {
      * @private
      */
     _findRandomIndexForList(list) {
-        return _random(0, list.length - 1);
+        return this._randomSource ? this._randomSource.integer(0, list.length - 1) : 0;
     }
 
     /**
@@ -1068,7 +1082,8 @@ export default class SpawnPatternModel extends BaseModel {
 
         const preSpawnArrivalAircraftList = buildPreSpawnAircraft(
             spawnPatternJson,
-            AirportController.current
+            AirportController.current,
+            this._randomSource
         );
 
         return preSpawnArrivalAircraftList;

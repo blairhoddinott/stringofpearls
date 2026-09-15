@@ -230,6 +230,7 @@ export default class AppController {
         );
         NavigationLibrary.initRandomSource(this._randomSource);
         NavigationLibrary.init(initialAirportData);
+        SpawnPatternCollection.initRandomSource(this._randomSource);
         SpawnPatternCollection.init(initialAirportData);
 
         this.airlineController = new AirlineController(airlineList, this._randomSource);

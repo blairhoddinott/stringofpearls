@@ -10,7 +10,12 @@ import {
     resetNavigationLibraryFixture
 } from '../fixtures/navigationLibraryFixtures';
 import { spawnPatternModelArrivalFixture, spawnPatternModelDepartureFixture } from '../fixtures/trafficGeneratorFixtures';
-import { AIRPORT_JSON_FOR_SPAWN_MOCK } from './_mocks/spawnPatternMocks';
+import SpawnPatternModel from '../../src/assets/scripts/client/trafficGenerator/SpawnPatternModel';
+import { FLIGHT_CATEGORY } from '../../src/assets/scripts/client/constants/aircraftConstants';
+import {
+    AIRPORT_JSON_FOR_SPAWN_MOCK,
+    SPAWN_PATTERN_MODEL_FOR_DEPARTURE_FIXTURE
+} from './_mocks/spawnPatternMocks';
 
 let sandbox; // using the sinon sandbox ensures stubs are restored after each test
 
@@ -27,6 +32,8 @@ ava.afterEach.always(() => {
     resetNavigationLibraryFixture();
     resetAirportControllerFixture();
     SpawnPatternCollection.reset();
+    // `.reset()` deliberately retains the app-level source, so clear it explicitly
+    SpawnPatternCollection.initRandomSource();
 });
 
 ava('.init() throws when the provided airport JSON data is empty or invalid', (t) => {
@@ -131,4 +138,79 @@ ava('.findSpawnPatternsByCategory() returns all SpawnPatternModels in the collec
     const result = SpawnPatternCollection.findSpawnPatternsByCategory(categoryMock);
 
     t.true(result.every((spawnPatternModel) => spawnPatternModel.category === categoryMock));
+});
+
+ava.serial('.initRandomSource() normalizes a nullish source to null', (t) => {
+    SpawnPatternCollection.initRandomSource(undefined);
+    t.is(SpawnPatternCollection._randomSource, null);
+
+    SpawnPatternCollection.initRandomSource(null);
+    t.is(SpawnPatternCollection._randomSource, null);
+});
+
+ava.serial('.init() threads the configured randomSource by identity to every SpawnPatternModel it builds', (t) => {
+    const randomSourceStub = { integer: (lower) => lower, real: (lower) => lower };
+    SpawnPatternCollection.initRandomSource(randomSourceStub);
+    SpawnPatternCollection.init(AIRPORT_JSON_FOR_SPAWN_MOCK);
+
+    t.true(SpawnPatternCollection.spawnPatternModels.length > 0);
+    SpawnPatternCollection.spawnPatternModels.forEach((spawnPatternModel) => {
+        t.is(spawnPatternModel._randomSource, randomSourceStub);
+    });
+});
+
+ava.serial('.reset() retains the configured randomSource for subsequent airport rebuilds', (t) => {
+    const randomSourceStub = { integer: (lower) => lower, real: (lower) => lower };
+    SpawnPatternCollection.initRandomSource(randomSourceStub);
+    SpawnPatternCollection.init(AIRPORT_JSON_FOR_SPAWN_MOCK);
+
+    SpawnPatternCollection.reset();
+
+    t.is(SpawnPatternCollection._randomSource, randomSourceStub);
+
+    // rebuild without re-supplying the source
+    SpawnPatternCollection.init(AIRPORT_JSON_FOR_SPAWN_MOCK);
+    const [spawnPatternModel] = SpawnPatternCollection.spawnPatternModels;
+
+    t.is(spawnPatternModel._randomSource, randomSourceStub);
+});
+
+ava.serial('.getDepartureModelsForPreSpawn() draws the weighted position with real(0, rateTotal)', (t) => {
+    const randomSourceStub = { real: sandbox.stub().returns(0) };
+    const departureModel = new SpawnPatternModel();
+    departureModel.category = FLIGHT_CATEGORY.DEPARTURE;
+    departureModel.rate = 5;
+    departureModel.routeString = 'KSEA16L.TEST';
+    SpawnPatternCollection.initRandomSource(randomSourceStub);
+    SpawnPatternCollection.addItems([departureModel]);
+
+    const result = SpawnPatternCollection.getDepartureModelsForPreSpawn();
+
+    t.true(randomSourceStub.real.calledOnceWithExactly(0, departureModel.rate));
+    t.is(result[0], departureModel);
+});
+
+ava.serial('.getDepartureModelsForPreSpawn() selects the pattern at the <= boundary of the weighted range', (t) => {
+    const firstPattern = new SpawnPatternModel(Object.assign({}, SPAWN_PATTERN_MODEL_FOR_DEPARTURE_FIXTURE, { rate: 3 }));
+    const secondPattern = new SpawnPatternModel(Object.assign({}, SPAWN_PATTERN_MODEL_FOR_DEPARTURE_FIXTURE, { rate: 7 }));
+    const randomSourceStub = { real: sandbox.stub().returns(3) };
+    SpawnPatternCollection.initRandomSource(randomSourceStub);
+    SpawnPatternCollection.addItems([firstPattern, secondPattern]);
+
+    const result = SpawnPatternCollection.getDepartureModelsForPreSpawn();
+
+    t.true(randomSourceStub.real.calledOnceWithExactly(0, 10));
+    t.is(result[0], firstPattern);
+});
+
+ava.serial('.getDepartureModelsForPreSpawn() treats the weighted position as 0 when no randomSource is injected', (t) => {
+    const departureModel = new SpawnPatternModel();
+    departureModel.category = FLIGHT_CATEGORY.DEPARTURE;
+    departureModel.rate = 5;
+    departureModel.routeString = 'KSEA16L.TEST';
+    SpawnPatternCollection.addItems([departureModel]);
+
+    const result = SpawnPatternCollection.getDepartureModelsForPreSpawn();
+
+    t.is(result[0], departureModel);
 });

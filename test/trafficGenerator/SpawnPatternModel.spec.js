@@ -297,3 +297,77 @@ ava('._calculateSpawnHeading() returns bearing between route\'s first and second
 
     t.true(result === expectedResult);
 });
+
+ava('stores the injected randomSource by identity', (t) => {
+    const randomSourceStub = { integer: (lower) => lower, real: (lower) => lower };
+    const model = new SpawnPatternModel(ARRIVAL_PATTERN_MOCK, randomSourceStub);
+
+    t.is(model._randomSource, randomSourceStub);
+});
+
+ava('defaults _randomSource to null when none is injected', (t) => {
+    const model = new SpawnPatternModel(ARRIVAL_PATTERN_MOCK);
+
+    t.is(model._randomSource, null);
+});
+
+ava('#altitude draws an inclusive integer from the injected randomSource across the min/max altitude', (t) => {
+    const randomSourceStub = { integer: sinon.stub().returns(34000) };
+    const model = new SpawnPatternModel(ARRIVAL_PATTERN_MOCK);
+    model._randomSource = randomSourceStub;
+
+    const result = model.altitude;
+
+    t.true(randomSourceStub.integer.calledOnceWithExactly(model._minimumAltitude, model._maximumAltitude));
+    t.is(result, _round(34000, -3));
+});
+
+ava('#altitude returns the minimum altitude when no randomSource is injected', (t) => {
+    const model = new SpawnPatternModel(ARRIVAL_PATTERN_MOCK);
+
+    const result = model.altitude;
+
+    t.is(result, _round(model._minimumAltitude, -3));
+});
+
+ava('._calculateRandomDelayPeriod() draws an inclusive integer from the injected randomSource whose lower bound is the minimum delay', (t) => {
+    const randomSourceStub = { integer: sinon.stub().returns(123) };
+    const model = new SpawnPatternModel(ARRIVAL_PATTERN_MOCK);
+    model.method = 'random';
+    model._randomSource = randomSourceStub;
+
+    const result = model._calculateRandomDelayPeriod();
+
+    t.true(randomSourceStub.integer.calledOnce);
+    t.is(randomSourceStub.integer.firstCall.args[0], model._calculateMinimumDelayFromSpeed());
+    t.is(result, 123);
+});
+
+ava('._calculateRandomDelayPeriod() returns the minimum delay when no randomSource is injected', (t) => {
+    const model = new SpawnPatternModel(ARRIVAL_PATTERN_MOCK);
+    model.method = 'random';
+
+    const result = model._calculateRandomDelayPeriod();
+
+    t.is(result, model._calculateMinimumDelayFromSpeed());
+});
+
+ava('._findRandomIndexForList() draws an inclusive index across the full list from the injected randomSource', (t) => {
+    const randomSourceStub = { integer: sinon.stub().returns(2) };
+    const model = new SpawnPatternModel(ARRIVAL_PATTERN_MOCK);
+    model._randomSource = randomSourceStub;
+    const listMock = ['a', 'b', 'c'];
+
+    const result = model._findRandomIndexForList(listMock);
+
+    t.true(randomSourceStub.integer.calledOnceWithExactly(0, listMock.length - 1));
+    t.is(result, 2);
+});
+
+ava('._findRandomIndexForList() returns 0 when no randomSource is injected', (t) => {
+    const model = new SpawnPatternModel(ARRIVAL_PATTERN_MOCK);
+
+    const result = model._findRandomIndexForList(['a', 'b', 'c']);
+
+    t.is(result, 0);
+});

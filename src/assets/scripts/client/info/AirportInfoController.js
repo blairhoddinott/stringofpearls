@@ -35,9 +35,10 @@ export default class AirportInfoController {
     /**
      * @for AirportInfoController
      * @constructor
-     * @param {jQuery|HTML element}
+     * @param $element {jQuery|HTML element}
+     * @param clockAdapter {ClockAdapter} composition-root current-time boundary forwarded to `SimClockController`
      */
-    constructor($element) {
+    constructor($element, clockAdapter) {
         /**
          * Root DOM element
          *
@@ -46,6 +47,16 @@ export default class AirportInfoController {
          * @type {jQuery|HTML element}
          */
         this.$element = $element;
+
+        /**
+         * Current-time boundary injected from the composition root and forwarded
+         * to `SimClockController`.
+         *
+         * @for AirportInfoController
+         * @property _clockAdapter
+         * @type {ClockAdapter}
+         */
+        this._clockAdapter = clockAdapter;
 
         /**
          * Information div
@@ -158,7 +169,7 @@ export default class AirportInfoController {
         this.altimeter = INVALID_NUMBER;
         this.elevation = '';
         this.icao = '';
-        this.simClockController = new SimClockController();
+        this.simClockController = new SimClockController(this._clockAdapter);
         this.wind = '';
         this._eventBus = EventBus;
 

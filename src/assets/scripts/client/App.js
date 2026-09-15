@@ -5,6 +5,7 @@ import StartupAssetLoader from './platform/StartupAssetLoader';
 import StorageAdapter from './platform/StorageAdapter';
 import StartupStorage from './platform/StartupStorage';
 import ClearStorageAndReload from './platform/ClearStorageAndReload';
+import ClockAdapter from './platform/ClockAdapter';
 import EventBus from './lib/EventBus';
 import TimeKeeper from './engine/TimeKeeper';
 import { DEFAULT_AIRPORT_ICAO } from './constants/airportConstants';
@@ -36,12 +37,14 @@ export default class App {
      * @param assetLoader {AssetLoader}
      * @param storageAdapter {StorageAdapter}
      * @param reload {Function} composition-root page-reload callable composed into the CLEAR ClearStorageAndReload service
+     * @param clockAdapter {ClockAdapter} composition-root current-time boundary backed by `() => new Date()`
      */
     constructor(
         element,
         assetLoader = new AssetLoader((url) => $.getJSON(url)),
         storageAdapter = new StorageAdapter(window.localStorage),
-        reload = () => window.location.reload()
+        reload = () => window.location.reload(),
+        clockAdapter = new ClockAdapter(() => new Date())
     ) {
         /**
          * Root DOM element.
@@ -51,13 +54,20 @@ export default class App {
          * @default body
          */
         this.$element = $(element);
+
+        // Configure the import-time `TimeKeeper` singleton with the injected
+        // current-time boundary early, before any runtime update/init reads
+        // game time, so the wall clock is never a hidden browser global.
+        TimeKeeper.initClock(clockAdapter);
+
         this._startupAssetLoader = new StartupAssetLoader(assetLoader);
         this._startupStorage = new StartupStorage(storageAdapter);
         this._appController = new AppController(
             this.$element,
             assetLoader,
             storageAdapter,
-            new ClearStorageAndReload(storageAdapter, reload)
+            new ClearStorageAndReload(storageAdapter, reload),
+            clockAdapter
         );
         this.eventBus = EventBus;
 

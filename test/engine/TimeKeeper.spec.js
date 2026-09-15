@@ -1,5 +1,22 @@
 import ava from 'ava';
+import sinon from 'sinon';
 import TimeKeeper from '../../src/assets/scripts/client/engine/TimeKeeper';
+import ClockAdapter from '../../src/assets/scripts/client/platform/ClockAdapter';
+import { TIME } from '../../src/assets/scripts/client/constants/globalConstants';
+
+// Fixed wall-clock instant (2017-07-14T02:40:00Z) used so the frame-timing
+// tests that read the clock behave deterministically.
+const FIXED_TIMESTAMP_MILLISECONDS = 1500000000000;
+
+// Build a clock adapter stub exposing only the `now()` contract so the
+// time-source boundary is exercised without a real `Date`/`window` clock.
+const buildClockAdapter = ({ currentDate = new Date(FIXED_TIMESTAMP_MILLISECONDS) } = {}) => ({
+    now: sinon.stub().returns(currentDate)
+});
+
+ava.beforeEach(() => {
+    TimeKeeper.initClock(new ClockAdapter(() => new Date(FIXED_TIMESTAMP_MILLISECONDS)));
+});
 
 ava.afterEach(() => {
     TimeKeeper.reset();
@@ -205,4 +222,64 @@ ava.serial('._isReturningFromPauseAndNotFutureTrack() returns true only when all
     TimeKeeper._futureTrackDeltaTimeCache = -1;
 
     t.true(TimeKeeper._isReturningFromPauseAndNotFutureTrack());
+});
+
+ava.serial('.initClock() stores the exact clock adapter instance', (t) => {
+    const clockAdapter = buildClockAdapter();
+
+    TimeKeeper.initClock(clockAdapter);
+
+    t.is(TimeKeeper._clockAdapter, clockAdapter);
+});
+
+ava.serial('.initClock() normalizes an omitted adapter to canonical null', (t) => {
+    TimeKeeper.initClock();
+
+    t.is(TimeKeeper._clockAdapter, null);
+});
+
+ava.serial('.initClock() normalizes a null adapter to canonical null', (t) => {
+    TimeKeeper.initClock(null);
+
+    t.is(TimeKeeper._clockAdapter, null);
+});
+
+ava.serial('#gameTimeMilliseconds returns the configured clock getTime from exactly one read', (t) => {
+    const clockAdapter = buildClockAdapter({ currentDate: new Date(FIXED_TIMESTAMP_MILLISECONDS) });
+    TimeKeeper.initClock(clockAdapter);
+
+    const result = TimeKeeper.gameTimeMilliseconds;
+
+    t.is(result, FIXED_TIMESTAMP_MILLISECONDS);
+    t.true(clockAdapter.now.calledOnceWithExactly());
+});
+
+ava.serial('#gameTimeSeconds is the configured clock getTime scaled to seconds from exactly one read', (t) => {
+    const clockAdapter = buildClockAdapter({ currentDate: new Date(FIXED_TIMESTAMP_MILLISECONDS) });
+    TimeKeeper.initClock(clockAdapter);
+
+    const result = TimeKeeper.gameTimeSeconds;
+
+    t.is(result, FIXED_TIMESTAMP_MILLISECONDS * TIME.ONE_MILLISECOND_IN_SECONDS);
+    t.true(clockAdapter.now.calledOnceWithExactly());
+});
+
+ava.serial('#gameTimeMilliseconds returns 0 when no clock is configured', (t) => {
+    TimeKeeper.initClock(null);
+
+    t.is(TimeKeeper.gameTimeMilliseconds, 0);
+});
+
+ava.serial('#gameTimeSeconds returns 0 when no clock is configured', (t) => {
+    TimeKeeper.initClock(null);
+
+    t.is(TimeKeeper.gameTimeSeconds, 0);
+});
+
+ava.serial('.reset() clears the configured clock adapter', (t) => {
+    TimeKeeper.initClock(buildClockAdapter());
+
+    TimeKeeper.reset();
+
+    t.is(TimeKeeper._clockAdapter, null);
 });

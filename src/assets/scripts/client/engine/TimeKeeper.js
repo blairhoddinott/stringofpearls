@@ -174,6 +174,21 @@ class TimeKeeper {
          */
         this._simulationRate = 1;
 
+        /**
+         * Current-time boundary used to read the real-world wall clock.
+         *
+         * Remains `null` until a composition root configures it through
+         * `initClock()`, so import-time construction never touches a browser
+         * global. While unconfigured, the game-time getters return a safe,
+         * deterministic `0` rather than fabricating a `Date`.
+         *
+         * @property _clockAdapter
+         * @type {ClockAdapter}
+         * @default null
+         * @private
+         */
+        this._clockAdapter = null;
+
         return this._init();
     }
 
@@ -198,7 +213,11 @@ class TimeKeeper {
      * @return {number}
      */
     get gameTimeMilliseconds() {
-        return (new Date()).getTime();
+        if (this._clockAdapter === null) {
+            return 0;
+        }
+
+        return this._clockAdapter.now().getTime();
     }
 
     /**
@@ -208,7 +227,11 @@ class TimeKeeper {
      * @return {number}
      */
     get gameTimeSeconds() {
-        return (new Date()).getTime() * TIME.ONE_MILLISECOND_IN_SECONDS;
+        if (this._clockAdapter === null) {
+            return 0;
+        }
+
+        return this._clockAdapter.now().getTime() * TIME.ONE_MILLISECOND_IN_SECONDS;
     }
 
     /**
@@ -262,6 +285,22 @@ class TimeKeeper {
     }
 
     /**
+     * Configure the current-time boundary used to read the wall clock.
+     *
+     * Called by `App` at the composition root, early in construction, before
+     * any runtime `update()`/game-time read. Storing the adapter is the only
+     * way this singleton reaches the real-world clock; before this runs it
+     * stays browser-global-free and the game-time getters return `0`.
+     *
+     * @for TimeKeeper
+     * @method initClock
+     * @param clockAdapter {ClockAdapter}  boundary exposing `now()`
+     */
+    initClock(clockAdapter) {
+        this._clockAdapter = clockAdapter == null ? null : clockAdapter;
+    }
+
+    /**
      * Reset model properties
      *
      * @for TimeKeeper
@@ -278,6 +317,7 @@ class TimeKeeper {
         this._previousFrameTimestamp = 0;
         this._startTimestamp = 0;
         this._simulationRate = 1;
+        this._clockAdapter = null;
     }
 
     /**

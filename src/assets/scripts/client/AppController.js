@@ -39,8 +39,9 @@ export default class AppController {
      * @param assetLoader {AssetLoader}
      * @param storageAdapter {StorageAdapter}
      * @param clearStorageAndReload {ClearStorageAndReload} composition-root clear/reload service threaded to InputController for the CLEAR command
+     * @param clockAdapter {ClockAdapter} composition-root current-time boundary threaded to AirportInfoController for the sim clock
      */
-    constructor(element, assetLoader, storageAdapter, clearStorageAndReload) {
+    constructor(element, assetLoader, storageAdapter, clearStorageAndReload, clockAdapter) {
         /**
          * Root DOM element.
          *
@@ -68,6 +69,15 @@ export default class AppController {
          * @type {ClearStorageAndReload}
          */
         this._clearStorageAndReload = clearStorageAndReload;
+
+        /**
+         * Current-time boundary injected from the composition root and forwarded
+         * to `AirportInfoController` for the sim clock.
+         *
+         * @property _clockAdapter
+         * @type {ClockAdapter}
+         */
+        this._clockAdapter = clockAdapter;
 
         this.$canvasesElement = null;
         this._eventBus = EventBus;
@@ -228,7 +238,7 @@ export default class AppController {
             this._assetLoader,
             this._clearStorageAndReload
         );
-        this.airportInfoController = new AirportInfoController(this.$element);
+        this.airportInfoController = new AirportInfoController(this.$element, this._clockAdapter);
         this.airportGuideController = new AirportGuideViewController(this.$element, airportGuideData, initialAirportData.icao);
         this.changelogController = new ChangelogController(this.contentQueue, this._storageAdapter);
 

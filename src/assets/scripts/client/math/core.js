@@ -1,6 +1,65 @@
 import _isNumber from 'lodash/isNumber';
-import _random from 'lodash/random';
 import { leftPad } from '../utilities/generalUtilities';
+
+/**
+ * Shared randomness boundary retained across calls into this module.
+ *
+ * Remains `null` until a composition root configures it through
+ * `initRandomSource()`, so importing this module never touches a global
+ * `Math.random` or a lodash random backend. While unconfigured, `fraction()`
+ * reads resolve to a deterministic `0` and `integer(lower, upper)` reads
+ * resolve to the `lower` bound, so `randint` returns its low bound and
+ * `generateRandomOctalWithLength` returns all-zero digits.
+ *
+ * @property _randomSource
+ * @type {RandomSource|null}
+ */
+let _randomSource = null;
+
+/**
+ * Configure the shared randomness boundary used by this module.
+ *
+ * Called by `App` at the composition root before any consumer runs. Storing the
+ * source is the only way this module reaches real randomness; before this runs
+ * it stays global-free with the deterministic reads described above.
+ *
+ * @function initRandomSource
+ * @param randomSource {RandomSource} [optional]  boundary exposing `fraction()`/`integer(lower, upper)`
+ */
+export function initRandomSource(randomSource = null) {
+    _randomSource = randomSource == null ? null : randomSource;
+}
+
+/**
+ * Read a fractional value in `[0, 1)` from the configured boundary.
+ *
+ * Resolves to a deterministic `0` while unconfigured so callers never touch a
+ * global `Math.random`.
+ *
+ * @function _fraction
+ * @return {number}
+ * @private
+ */
+function _fraction() {
+    return _randomSource === null ? 0 : _randomSource.fraction();
+}
+
+/**
+ * Read an inclusive integer between `lower` and `upper` from the configured
+ * boundary.
+ *
+ * Resolves to the `lower` bound while unconfigured so callers never touch a
+ * lodash random backend.
+ *
+ * @function _integer
+ * @param lower {number}
+ * @param upper {number}
+ * @return {number}
+ * @private
+ */
+function _integer(lower, upper) {
+    return _randomSource === null ? lower : _randomSource.integer(lower, upper);
+}
 
 /**
  * @function round
@@ -66,7 +125,7 @@ export function fl(n, number = 1) {
  * @return {number}
  */
 export function randint(low, high) {
-    return Math.floor(Math.random() * (high - low + 1)) + low;
+    return Math.floor(_fraction() * (high - low + 1)) + low;
 }
 
 // TODO: rename to pluralize
@@ -261,7 +320,7 @@ export function generateRandomOctalWithLength(length = 1) {
     const value = [];
 
     for (let i = 0; i < length; i++) {
-        const randomOctal = _random(0, 7);
+        const randomOctal = _integer(0, 7);
 
         value.push(randomOctal);
     }

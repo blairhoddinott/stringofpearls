@@ -1,10 +1,33 @@
 import ava from 'ava';
 import sinon from 'sinon';
-import { speech_init, speech_toggle } from '../src/assets/scripts/client/speech';
+import {
+    speech_init,
+    speech_toggle,
+    randomizePilotVoice,
+    randomizePilotVoice_init
+} from '../src/assets/scripts/client/speech';
 import EventTracker from '../src/assets/scripts/client/EventTracker';
 import { STORAGE_KEY } from '../src/assets/scripts/client/constants/storageKeys';
 import { SELECTORS } from '../src/assets/scripts/client/constants/selectors';
 import { TRACKABLE_EVENT } from '../src/assets/scripts/client/constants/trackableEvents';
+import { VOICES } from '../src/assets/scripts/client/constants/speechConstants';
+
+// Build a random source stub exposing only the `fraction()` contract used by
+// `randomizePilotVoice`, so the randomness boundary is exercised without a
+// global `Math.random` backend and without touching speech synthesis.
+const buildRandomSource = (...fractionValues) => {
+    const fraction = sinon.stub();
+
+    fractionValues.forEach((value, index) => {
+        fraction.onCall(index).returns(value);
+    });
+
+    return {
+        fraction,
+        integer: sinon.stub(),
+        real: sinon.stub()
+    };
+};
 
 // Build a storage adapter stub exposing only the `get(key)`/`set(key, value)`
 // contract, so the speech-preference boundary is exercised without a global
@@ -42,8 +65,34 @@ const stubSynthesis = () => {
 ava.afterEach.always(() => {
     // Clear retained module adapter configuration so no test leaks into the next.
     speech_init();
+    randomizePilotVoice_init();
     prop.speech = undefined;
     window.document.body.innerHTML = '';
+});
+
+ava.serial('randomizePilotVoice() draws fraction three times in voice/pitch/rate order through the source', (t) => {
+    // floor(0.5 * 6) === 3 → VOICES[3]; pitch endpoint at fraction 0; rate at fraction 1
+    const randomSource = buildRandomSource(0.5, 0, 1);
+    randomizePilotVoice_init(randomSource);
+
+    const result = randomizePilotVoice();
+
+    t.is(randomSource.fraction.callCount, 3);
+    t.deepEqual(result, {
+        voice: VOICES[3],
+        pitch: '1.1',
+        rate: '1.000'
+    });
+});
+
+ava.serial('randomizePilotVoice() without a configured source returns the first voice and formula endpoints', (t) => {
+    const result = randomizePilotVoice();
+
+    t.deepEqual(result, {
+        voice: VOICES[0],
+        pitch: '1.1',
+        rate: '1.125'
+    });
 });
 
 ava.serial('speech_init() reads exactly STORAGE_KEY.ATC_SPEECH_ENABLED once through the adapter', (t) => {

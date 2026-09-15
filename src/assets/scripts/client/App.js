@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import _random from 'lodash/random';
 import AppController from './AppController';
 import AssetLoader, { formatAssetLoadError } from './platform/AssetLoader';
 import StartupAssetLoader from './platform/StartupAssetLoader';
@@ -8,9 +9,13 @@ import ClearStorageAndReload from './platform/ClearStorageAndReload';
 import ClockAdapter from './platform/ClockAdapter';
 import FrameScheduler from './platform/FrameScheduler';
 import DelayScheduler from './platform/DelayScheduler';
+import RandomSource from './platform/RandomSource';
 import createAsyncErrorReporter from './platform/reportAsyncError';
 import EventBus from './lib/EventBus';
 import TimeKeeper from './engine/TimeKeeper';
+import { initRandomSource as initGeneralUtilitiesRandomSource } from './utilities/generalUtilities';
+import { initRandomSource as initMathCoreRandomSource } from './math/core';
+import { randomizePilotVoice_init } from './speech';
 import { DEFAULT_AIRPORT_ICAO } from './constants/airportConstants';
 import { EVENT } from './constants/eventNames';
 import { LOG } from './constants/logLevel';
@@ -43,6 +48,7 @@ export default class App {
      * @param clockAdapter {ClockAdapter} composition-root current-time boundary backed by `() => new Date()`
      * @param frameScheduler {FrameScheduler} composition-root animation-frame boundary backed by `(callback) => window.requestAnimationFrame(callback)`
      * @param delayScheduler {DelayScheduler} composition-root delayed-callback boundary backed by `(callback, delay) => window.setTimeout(callback, delay)`
+     * @param randomSource {RandomSource} composition-root randomness boundary backed by `Math.random` and Lodash `random`
      */
     constructor(
         element,
@@ -51,7 +57,12 @@ export default class App {
         reload = () => window.location.reload(),
         clockAdapter = new ClockAdapter(() => new Date()),
         frameScheduler = new FrameScheduler((callback) => window.requestAnimationFrame(callback)),
-        delayScheduler = new DelayScheduler((callback, delay) => window.setTimeout(callback, delay))
+        delayScheduler = new DelayScheduler((callback, delay) => window.setTimeout(callback, delay)),
+        randomSource = new RandomSource(
+            () => Math.random(),
+            (lower, upper) => _random(lower, upper),
+            (lower, upper) => _random(lower, upper, true)
+        )
     ) {
         /**
          * Root DOM element.
@@ -66,6 +77,15 @@ export default class App {
         // current-time boundary early, before any runtime update/init reads
         // game time, so the wall clock is never a hidden browser global.
         TimeKeeper.initClock(clockAdapter);
+
+        // Configure the shared function-module randomness boundary early, before
+        // any runtime consumer draws, so `Math.random`/Lodash `random` live only
+        // in this composition root rather than inside each module. Only these
+        // direct/shared consumers are migrated in this slice; several class
+        // consumers still hold their own Lodash `random` draws.
+        initGeneralUtilitiesRandomSource(randomSource);
+        initMathCoreRandomSource(randomSource);
+        randomizePilotVoice_init(randomSource);
 
         // Animation-frame scheduling boundary; the browser
         // `requestAnimationFrame` reference lives only in the constructor

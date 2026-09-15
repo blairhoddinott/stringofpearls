@@ -24,6 +24,47 @@ import { TRACKABLE_EVENT } from './constants/trackableEvents';
 let _storageAdapter = null;
 
 /**
+ * Shared randomness boundary retained for `randomizePilotVoice()`.
+ *
+ * Kept separate from `speech_init()` so voice randomization never couples to
+ * speech synthesis configuration. Remains `null` until a composition root
+ * configures it through `randomizePilotVoice_init()`, so importing this module
+ * never touches a global `Math.random`. While unconfigured, `fraction()` reads
+ * resolve to a deterministic `0`, selecting the first voice and the pitch/rate
+ * formula endpoints.
+ *
+ * @property _randomSource
+ * @type {RandomSource|null}
+ */
+let _randomSource = null;
+
+/**
+ * Configure the randomness boundary used by `randomizePilotVoice()`.
+ *
+ * Called by `App` at the composition root before any consumer runs. Storing the
+ * source is the only way voice randomization reaches real randomness; before
+ * this runs it stays global-free and fraction reads resolve to `0`.
+ *
+ * @function randomizePilotVoice_init
+ * @param randomSource {RandomSource} [optional]  boundary exposing `fraction()`
+ */
+export const randomizePilotVoice_init = (randomSource = null) => {
+    _randomSource = randomSource == null ? null : randomSource;
+};
+
+/**
+ * Read a fractional value in `[0, 1)` from the configured boundary.
+ *
+ * Resolves to a deterministic `0` while unconfigured so callers never touch a
+ * global `Math.random`.
+ *
+ * @function _fraction
+ * @return {number}
+ * @private
+ */
+const _fraction = () => (_randomSource === null ? 0 : _randomSource.fraction());
+
+/**
  *
  * @function speech_init
  * @param storageAdapter {StorageAdapter} [optional]  boundary exposing `get(key)`/`set(key, value)`
@@ -46,9 +87,9 @@ export const speech_init = (storageAdapter = null) => {
  * @function randomizePilotVoice
  */
 export const randomizePilotVoice = () => {
-    const voice = VOICES[Math.floor(Math.random() * VOICES.length)];
-    const pitch = (Math.random() * (LOWER_PITCH - HIGHER_PITCH) + HIGHER_PITCH).toFixed(1);
-    const rate = (Math.random() * (NORMAL_SPEED - FASTER_SPEED) + FASTER_SPEED).toFixed(3);
+    const voice = VOICES[Math.floor(_fraction() * VOICES.length)];
+    const pitch = (_fraction() * (LOWER_PITCH - HIGHER_PITCH) + HIGHER_PITCH).toFixed(1);
+    const rate = (_fraction() * (NORMAL_SPEED - FASTER_SPEED) + FASTER_SPEED).toFixed(3);
 
     return {
         voice,

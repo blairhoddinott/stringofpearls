@@ -6,6 +6,7 @@ import StorageAdapter from './platform/StorageAdapter';
 import StartupStorage from './platform/StartupStorage';
 import ClearStorageAndReload from './platform/ClearStorageAndReload';
 import ClockAdapter from './platform/ClockAdapter';
+import FrameScheduler from './platform/FrameScheduler';
 import EventBus from './lib/EventBus';
 import TimeKeeper from './engine/TimeKeeper';
 import { DEFAULT_AIRPORT_ICAO } from './constants/airportConstants';
@@ -38,13 +39,15 @@ export default class App {
      * @param storageAdapter {StorageAdapter}
      * @param reload {Function} composition-root page-reload callable composed into the CLEAR ClearStorageAndReload service
      * @param clockAdapter {ClockAdapter} composition-root current-time boundary backed by `() => new Date()`
+     * @param frameScheduler {FrameScheduler} composition-root animation-frame boundary backed by `(callback) => window.requestAnimationFrame(callback)`
      */
     constructor(
         element,
         assetLoader = new AssetLoader((url) => $.getJSON(url)),
         storageAdapter = new StorageAdapter(window.localStorage),
         reload = () => window.location.reload(),
-        clockAdapter = new ClockAdapter(() => new Date())
+        clockAdapter = new ClockAdapter(() => new Date()),
+        frameScheduler = new FrameScheduler((callback) => window.requestAnimationFrame(callback))
     ) {
         /**
          * Root DOM element.
@@ -59,6 +62,11 @@ export default class App {
         // current-time boundary early, before any runtime update/init reads
         // game time, so the wall clock is never a hidden browser global.
         TimeKeeper.initClock(clockAdapter);
+
+        // Animation-frame scheduling boundary; the browser
+        // `requestAnimationFrame` reference lives only in the constructor
+        // default so runtime update/pause loops never touch a browser global.
+        this._frameScheduler = frameScheduler;
 
         this._startupAssetLoader = new StartupAssetLoader(assetLoader);
         this._startupStorage = new StartupStorage(storageAdapter);
@@ -286,7 +294,7 @@ export default class App {
         this.prop.loaded = true;
 
         if (UPDATE) {
-            requestAnimationFrame(this.onUpdateHandler);
+            this._frameScheduler.requestFrame(this.onUpdateHandler);
         }
 
         return this;
@@ -337,7 +345,7 @@ export default class App {
             return this;
         }
 
-        requestAnimationFrame(this.onUpdateHandler);
+        this._frameScheduler.requestFrame(this.onUpdateHandler);
 
         this.updatePre();
         this.updatePost();
@@ -353,7 +361,7 @@ export default class App {
      */
     _onPause(shouldUpdate) {
         if (!UPDATE && shouldUpdate) {
-            requestAnimationFrame(this.onUpdateHandler);
+            this._frameScheduler.requestFrame(this.onUpdateHandler);
         }
 
         UPDATE = shouldUpdate;

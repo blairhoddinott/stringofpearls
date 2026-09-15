@@ -1,7 +1,5 @@
 import $ from 'jquery';
-import LoadableContentModel from './LoadableContentModel';
-import AssetLoader, { AssetLoadError } from '../platform/AssetLoader';
-import reportAsyncError from '../platform/reportAsyncError';
+import AssetLoader from '../platform/AssetLoader';
 
 /**
  * Asynchronous JSON asset loading framework.
@@ -23,10 +21,9 @@ import reportAsyncError from '../platform/reportAsyncError';
 * Implementation of the queueing
 */
 export default class ContentQueueClass {
-    constructor(loadingView, assetLoader = new AssetLoader((url) => $.getJSON(url)), reportError = reportAsyncError) {
+    constructor(loadingView, assetLoader = new AssetLoader((url) => $.getJSON(url))) {
         this.loadingView = loadingView;
         this._assetLoader = assetLoader;
-        this._reportError = reportError;
         this.isLoading = false;
         this.lowPriorityQueue = [];
         this.highPriorityQueue = [];
@@ -34,53 +31,13 @@ export default class ContentQueueClass {
     }
 
     /**
-     * Adds or updates a piece of content
+     * Adds or updates a queued piece of content, returning a native Promise
+     * that settles with the loaded asset.
      *
-     * Supports a url becoming an `immediate` load
-     *
-     * @for ContentQueue
-     * @method add
-     * @param options {object}
-     * @return {JQuery.Promise}
-     */
-    add(options) {
-        let c = new LoadableContentModel(options);
-
-        if (c.url in this.queuedContent) {
-            c = this.queuedContent[c.url];
-
-            if (c.immediate && (!this.queuedContent[c.url].immediate)) {
-                const idx = $.inArray(c.url, this.lowPriorityQueue);
-
-                if (idx > -1) {
-                    this.highPriorityQueue.push(this.lowPriorityQueue.splice(idx, 1));
-                }
-            }
-        } else {
-            this.queuedContent[c.url] = c;
-
-            if (c.immediate) {
-                this.highPriorityQueue.push(c.url);
-            } else {
-                this.lowPriorityQueue.push(c.url);
-            }
-        }
-
-        if (!this.isLoading) {
-            this.startLoad();
-        }
-
-        return c.deferred.promise();
-    }
-
-    /**
-     * Native-Promise compatibility wrapper around {@link ContentQueue#add}.
-     *
-     * Shares the same queued request and deduplication path as `add`, but
-     * adapts the resulting jQuery Deferred into a native Promise. jQuery
-     * multi-argument failures (`jqXHR`, `textStatus`, `errorThrown`) are
-     * reconstructed into an `AssetLoadError`; ordinary single-error failures
-     * are rejected unchanged.
+     * Requests for a url already in flight share the same Promise and issue a
+     * single transport request. A duplicate request may upgrade a pending
+     * low-priority url to `immediate`, promoting it into the high-priority
+     * queue exactly once while retaining the original Promise.
      *
      * @for ContentQueue
      * @method addPromise
@@ -88,21 +45,52 @@ export default class ContentQueueClass {
      * @return {Promise}
      */
     addPromise(options) {
-        return new Promise((resolve, reject) => {
-            this.add(options)
-                .done((data) => resolve(data))
-                .fail((...failureArgs) => {
-                    if (failureArgs.length > 1) {
-                        const [request, textStatus, errorThrown] = failureArgs;
+        const { url } = options;
+        const immediate = Boolean(options.immediate);
 
-                        reject(new AssetLoadError(request, textStatus, errorThrown));
+        if (url in this.queuedContent) {
+            const existing = this.queuedContent[url];
 
-                        return;
-                    }
+            if (immediate && !existing.immediate) {
+                const idx = this.lowPriorityQueue.indexOf(url);
 
-                    reject(failureArgs[0]);
-                });
+                if (idx > -1) {
+                    this.lowPriorityQueue.splice(idx, 1);
+                    this.highPriorityQueue.push(url);
+                }
+
+                existing.immediate = true;
+            }
+
+            return existing.promise;
+        }
+
+        let resolveEntry;
+        let rejectEntry;
+        const promise = new Promise((resolve, reject) => {
+            resolveEntry = resolve;
+            rejectEntry = reject;
         });
+
+        this.queuedContent[url] = {
+            url,
+            immediate,
+            promise,
+            resolve: resolveEntry,
+            reject: rejectEntry
+        };
+
+        if (immediate) {
+            this.highPriorityQueue.push(url);
+        } else {
+            this.lowPriorityQueue.push(url);
+        }
+
+        if (!this.isLoading) {
+            this.startLoad();
+        }
+
+        return promise;
     }
 
     /**
@@ -131,41 +119,17 @@ export default class ContentQueueClass {
      * @return {Promise}
      */
     load(url) {
-        const c = this.queuedContent[url];
+        const entry = this.queuedContent[url];
 
-        return this._assetLoader.loadJson(c.url).then(
+        return this._assetLoader.loadJson(entry.url).then(
             (data) => {
-                try {
-                    this._settleDeferred(() => c.deferred.resolve(data));
-                } finally {
-                    delete this.queuedContent[c.url];
-                }
+                delete this.queuedContent[entry.url];
+                entry.resolve(data);
             },
             (error) => {
-                try {
-                    if (error instanceof AssetLoadError) {
-                        this._settleDeferred(() => c.deferred.reject(
-                            error.request,
-                            error.textStatus,
-                            error.errorThrown
-                        ));
-
-                        return;
-                    }
-
-                    this._settleDeferred(() => c.deferred.reject(error));
-                } finally {
-                    delete this.queuedContent[c.url];
-                }
+                delete this.queuedContent[entry.url];
+                entry.reject(error);
             }
         );
-    }
-
-    _settleDeferred(settle) {
-        try {
-            settle();
-        } catch (error) {
-            this._reportError(error);
-        }
     }
 }

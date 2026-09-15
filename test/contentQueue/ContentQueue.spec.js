@@ -4,38 +4,14 @@ import sinon from 'sinon';
 import ContentQueue from '../../src/assets/scripts/client/contentQueue/ContentQueue';
 import { AssetLoadError } from '../../src/assets/scripts/client/platform/AssetLoader';
 
-const waitForDeferred = (deferred, timeoutMs = 100) => new Promise((resolve, reject) => {
-    const timeout = setTimeout(() => reject(new Error('content queue did not settle')), timeoutMs);
-
-    deferred.done((value) => {
-        clearTimeout(timeout);
-        resolve(value);
-    });
-    deferred.fail((error) => {
-        clearTimeout(timeout);
-        reject(error);
-    });
-});
-
-const waitForDeferredFailure = (deferred, timeoutMs = 100) => new Promise((resolve, reject) => {
-    const timeout = setTimeout(() => reject(new Error('content queue did not reject')), timeoutMs);
-
-    deferred.fail((...args) => {
-        clearTimeout(timeout);
-        resolve(args);
-    });
-});
-
-ava.serial('.add() loads through the injected asset boundary and resolves its Deferred', async (t) => {
+ava.serial('addPromise loads through the injected asset boundary and resolves the exact payload', async (t) => {
     const expectedPayload = { changelog: 'ready' };
     const assetLoader = { loadJson: sinon.stub().resolves(expectedPayload) };
-    const legacyRequest = $.Deferred();
-    const getJsonStub = sinon.stub($, 'getJSON').returns(legacyRequest.promise());
+    const getJsonStub = sinon.stub($, 'getJSON');
     const queue = new ContentQueue({}, assetLoader);
 
     try {
-        const deferred = queue.add({ url: 'assets/changelog.json' });
-        const payload = await waitForDeferred(deferred);
+        const payload = await queue.addPromise({ url: 'assets/changelog.json', immediate: true });
 
         t.true(assetLoader.loadJson.calledOnceWithExactly('assets/changelog.json'));
         t.is(payload, expectedPayload);
@@ -46,66 +22,19 @@ ava.serial('.add() loads through the injected asset boundary and resolves its De
     }
 });
 
-ava.serial('.add() preserves jQuery failure arguments from the asset boundary', async (t) => {
+ava.serial('addPromise rejects with the exact original AssetLoadError and cleans queuedContent', async (t) => {
     const request = { status: 500, statusText: 'Server Error' };
-    const thrown = new Error('invalid JSON');
-    const assetError = new AssetLoadError(request, 'parsererror', thrown);
-    const assetLoader = { loadJson: sinon.stub().rejects(assetError) };
-    const queue = new ContentQueue({}, assetLoader);
-
-    const deferred = queue.add({ url: 'assets/broken.json' });
-    const failureArgs = await waitForDeferredFailure(deferred);
-
-    t.deepEqual(failureArgs, [request, 'parsererror', thrown]);
-    t.false('assets/broken.json' in queue.queuedContent);
-});
-
-ava.serial('.load() reports exceptions from Deferred success consumers without rejecting internally', async (t) => {
-    const consumerError = new Error('consumer boom');
-    const assetLoader = { loadJson: sinon.stub().resolves({ ready: true }) };
-    const reportError = sinon.stub();
-    const queue = new ContentQueue({}, assetLoader, reportError);
-
-    queue.isLoading = true;
-    const deferred = queue.add({ url: 'assets/example.json' });
-    deferred.done(() => {
-        throw consumerError;
-    });
-
-    await t.notThrowsAsync(queue.load('assets/example.json'));
-    t.true(reportError.calledOnceWithExactly(consumerError));
-    t.false('assets/example.json' in queue.queuedContent);
-});
-
-ava.serial('.addPromise() resolves the same payload through the queued asset boundary', async (t) => {
-    const expectedPayload = { tutorial: 'ready' };
-    const assetLoader = { loadJson: sinon.stub().resolves(expectedPayload) };
-    const queue = new ContentQueue({}, assetLoader);
-
-    const payload = await queue.addPromise({ url: 'assets/tutorial/tutorial.json', immediate: true });
-
-    t.true(assetLoader.loadJson.calledOnceWithExactly('assets/tutorial/tutorial.json'));
-    t.is(payload, expectedPayload);
-    t.false('assets/tutorial/tutorial.json' in queue.queuedContent);
-});
-
-ava.serial('.addPromise() reconstructs an AssetLoadError carrying jQuery failure metadata', async (t) => {
-    const request = { status: 500, statusText: 'Server Error' };
-    const thrown = new Error('invalid JSON');
-    const assetError = new AssetLoadError(request, 'parsererror', thrown);
+    const assetError = new AssetLoadError(request, 'parsererror', new Error('invalid JSON'));
     const assetLoader = { loadJson: sinon.stub().rejects(assetError) };
     const queue = new ContentQueue({}, assetLoader);
 
     const rejection = await t.throwsAsync(queue.addPromise({ url: 'assets/broken.json' }));
 
-    t.true(rejection instanceof AssetLoadError);
-    t.is(rejection.request, request);
-    t.is(rejection.textStatus, 'parsererror');
-    t.is(rejection.errorThrown, thrown);
+    t.is(rejection, assetError);
     t.false('assets/broken.json' in queue.queuedContent);
 });
 
-ava.serial('.addPromise() passes through an ordinary single-error rejection unchanged', async (t) => {
+ava.serial('addPromise passes through an ordinary single-error rejection unchanged', async (t) => {
     const ordinaryError = new Error('offline');
     const assetLoader = { loadJson: sinon.stub().rejects(ordinaryError) };
     const queue = new ContentQueue({}, assetLoader);
@@ -113,18 +42,69 @@ ava.serial('.addPromise() passes through an ordinary single-error rejection unch
     const rejection = await t.throwsAsync(queue.addPromise({ url: 'assets/offline.json' }));
 
     t.is(rejection, ordinaryError);
+    t.false('assets/offline.json' in queue.queuedContent);
 });
 
-ava.serial('.addPromise() adapts an already-settled Deferred returned from the shared add() path', async (t) => {
-    const expectedPayload = { tutorial: 'cached' };
-    const assetLoader = { loadJson: sinon.stub() };
+ava.serial('addPromise de-duplicates in-flight requests to a single transport call and shared promise', async (t) => {
+    const expectedPayload = { ok: true };
+    let resolveLoad;
+    const pending = new Promise((resolve) => {
+        resolveLoad = resolve;
+    });
+    const assetLoader = { loadJson: sinon.stub().returns(pending) };
     const queue = new ContentQueue({}, assetLoader);
-    const options = { url: 'assets/tutorial/tutorial.json', immediate: true };
-    const settled = $.Deferred().resolve(expectedPayload).promise();
-    const addStub = sinon.stub(queue, 'add').returns(settled);
 
-    const payload = await queue.addPromise(options);
+    const first = queue.addPromise({ url: 'assets/dup.json' });
+    const second = queue.addPromise({ url: 'assets/dup.json' });
 
-    t.true(addStub.calledOnceWithExactly(options));
-    t.is(payload, expectedPayload);
+    t.is(first, second);
+    t.true(assetLoader.loadJson.calledOnce);
+
+    resolveLoad(expectedPayload);
+
+    t.is(await first, expectedPayload);
+    t.is(await second, expectedPayload);
+});
+
+ava.serial('a duplicate request upgraded to immediate promotes its url from low to high priority exactly once', (t) => {
+    const assetLoader = { loadJson: sinon.stub().returns(new Promise(() => {})) };
+    const queue = new ContentQueue({}, assetLoader);
+    // isLoading keeps the queues inspectable by preventing an automatic startLoad
+    queue.isLoading = true;
+
+    const first = queue.addPromise({ url: 'assets/late.json' });
+
+    t.deepEqual(queue.lowPriorityQueue, ['assets/late.json']);
+    t.deepEqual(queue.highPriorityQueue, []);
+
+    const second = queue.addPromise({ url: 'assets/late.json', immediate: true });
+
+    t.is(second, first);
+    t.deepEqual(queue.lowPriorityQueue, []);
+    t.deepEqual(queue.highPriorityQueue, ['assets/late.json']);
+
+    const third = queue.addPromise({ url: 'assets/late.json', immediate: true });
+
+    t.is(third, first);
+    t.deepEqual(queue.highPriorityQueue, ['assets/late.json']);
+    t.true(assetLoader.loadJson.notCalled);
+});
+
+ava.serial('startLoad and load can be driven manually while isLoading is true', async (t) => {
+    const expectedPayload = { ready: true };
+    const assetLoader = { loadJson: sinon.stub().resolves(expectedPayload) };
+    const queue = new ContentQueue({}, assetLoader);
+    queue.isLoading = true;
+
+    const promise = queue.addPromise({ url: 'assets/manual.json', immediate: true });
+
+    t.true(assetLoader.loadJson.notCalled);
+    t.deepEqual(queue.highPriorityQueue, ['assets/manual.json']);
+
+    t.true(queue.startLoad());
+    t.true(assetLoader.loadJson.calledOnceWithExactly('assets/manual.json'));
+
+    t.is(await promise, expectedPayload);
+    t.false('assets/manual.json' in queue.queuedContent);
+    t.deepEqual(queue.highPriorityQueue, []);
 });

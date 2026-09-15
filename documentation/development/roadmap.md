@@ -13,7 +13,7 @@ This roadmap tracks the current direction of the project. The order may change a
 - [x] Modernize ESLint and establish a clean full-repository lint baseline.
 - [x] Upgrade vulnerable production dependencies behind focused compatibility tests.
 - [ ] Modernize the application architecture
-  - [ ] Introduce explicit platform boundaries; the asset-loading boundary is now injected through application startup, `ContentQueue`, autocomplete, tutorials, airports, and terrain, while the remaining browser services still require migration.
+  - [ ] Introduce explicit platform boundaries; asset loading now uses injected native-Promise adapters throughout, while storage and the remaining browser services still require migration.
 - [ ] Resume feature development on the modernized foundation
 
 ## Simulation and realism

@@ -233,7 +233,7 @@ export default class AppController {
      * @method init
      */
     init() {
-        speech_init();
+        speech_init(this._storageAdapter);
 
         this.canvasController.canvas_init();
         UiController.ui_init();

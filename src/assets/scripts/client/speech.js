@@ -1,7 +1,4 @@
-/* eslint-disable no-unused-vars */
 import $ from 'jquery';
-import _get from 'lodash/get';
-import _has from 'lodash/has';
 import EventTracker from './EventTracker';
 import { radio_heading, radio_altitude } from './utilities/radioUtilities';
 import { STORAGE_KEY } from './constants/storageKeys';
@@ -16,15 +13,29 @@ import {
 import { TRACKABLE_EVENT } from './constants/trackableEvents';
 
 /**
+ * Shared storage boundary retained across `speech_init()`/`speech_toggle()`.
+ *
+ * Normalized to canonical `null` when no adapter is configured so persistence
+ * becomes a deliberate no-op rather than a global `localStorage` access.
+ *
+ * @property _storageAdapter
+ * @type {StorageAdapter|null}
+ */
+let _storageAdapter = null;
+
+/**
  *
  * @function speech_init
+ * @param storageAdapter {StorageAdapter} [optional]  boundary exposing `get(key)`/`set(key, value)`
  */
-export const speech_init = () => {
+export const speech_init = (storageAdapter = null) => {
+    _storageAdapter = storageAdapter == null ? null : storageAdapter;
+
     prop.speech = {};
     prop.speech.synthesis = window.speechSynthesis;
     prop.speech.enabled = false;
 
-    if (_get(localStorage, STORAGE_KEY.ATC_SPEECH_ENABLED, false) === true) {
+    if (_storageAdapter !== null && _storageAdapter.get(STORAGE_KEY.ATC_SPEECH_ENABLED) === true) {
         prop.speech.enabled = true;
         $(SELECTORS.DOM_SELECTORS.TOGGLE_SPEECH).addClass(SELECTORS.CLASSNAMES.ACTIVE);
     }
@@ -104,7 +115,10 @@ export const speech_toggle = () => {
 
     $speechToggleElement.toggleClass(SELECTORS.CLASSNAMES.ACTIVE);
 
-    localStorage[STORAGE_KEY.ATC_SPEECH_ENABLED] = prop.speech.enabled;
+    if (_storageAdapter !== null) {
+        _storageAdapter.set(STORAGE_KEY.ATC_SPEECH_ENABLED, prop.speech.enabled);
+    }
+
     const hasClass = $speechToggleElement.hasClass(SELECTORS.CLASSNAMES.ACTIVE);
 
     EventTracker.recordEvent(TRACKABLE_EVENT.OPTIONS, 'speech', `${hasClass}`);

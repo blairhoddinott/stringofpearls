@@ -5,6 +5,11 @@ import { TRACKABLE_EVENT } from './constants/trackableEvents';
  *
  * Exported as a singleton
  *
+ * The analytics provider is not read from the window here. The composition root
+ * (`App`) constructs an `AnalyticsAdapter` around the browser transport and
+ * hands it to `initAnalytics()`, so this singleton stays browser-global-free
+ * and simply records `undefined` no-ops until it is configured.
+ *
  * @class EventTracker
  */
 class EventTracker {
@@ -13,13 +18,30 @@ class EventTracker {
      * @constructor
      */
     constructor() {
-        if (!this._isEnabled()) {
-            console.error('Event tracking is disabled because we couldn\'t find `gtag` on the window');
+        /**
+         * Configured analytics boundary, or `null` until `initAnalytics()` runs.
+         *
+         * @property _analyticsAdapter
+         * @type {AnalyticsAdapter|null}
+         * @private
+         */
+        this._analyticsAdapter = null;
+    }
 
-            return;
-        }
-
-        this._gtag = window.gtag;
+    /**
+     * Configure the analytics boundary used to record events.
+     *
+     * Called by `App` at the composition root, before `AppController` is built
+     * and before the initial-load event is recorded. A nullish adapter is
+     * normalized to `null`; otherwise the exact adapter identity is retained.
+     * Configuration itself is silent and never touches a browser global.
+     *
+     * @for EventTracker
+     * @method initAnalytics
+     * @param analyticsAdapter {AnalyticsAdapter|null} [optional]  boundary exposing `record(eventName, parameters)`
+     */
+    initAnalytics(analyticsAdapter = null) {
+        this._analyticsAdapter = analyticsAdapter == null ? null : analyticsAdapter;
     }
 
     // TODO: UiController.onToggleTerrain() and other toggle methods seem to be expecting a
@@ -52,7 +74,7 @@ class EventTracker {
             event.value = value;
         }
 
-        return this._gtag('event', event.event_category, event);
+        return this._analyticsAdapter.record(event.event_category, event);
     }
 
     /**
@@ -76,7 +98,7 @@ class EventTracker {
             transport_type: 'beacon'
         };
 
-        return this._gtag('event', 'click', event);
+        return this._analyticsAdapter.record('click', event);
     }
 
     /**
@@ -85,7 +107,7 @@ class EventTracker {
      * @returns {boolean}
      */
     _isEnabled() {
-        return typeof window.gtag !== 'undefined';
+        return this._analyticsAdapter !== null;
     }
 }
 

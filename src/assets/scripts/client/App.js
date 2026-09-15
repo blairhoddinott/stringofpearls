@@ -10,8 +10,10 @@ import ClockAdapter from './platform/ClockAdapter';
 import FrameScheduler from './platform/FrameScheduler';
 import DelayScheduler from './platform/DelayScheduler';
 import RandomSource from './platform/RandomSource';
+import AnalyticsAdapter from './platform/AnalyticsAdapter';
 import createAsyncErrorReporter from './platform/reportAsyncError';
 import EventBus from './lib/EventBus';
+import EventTracker from './EventTracker';
 import TimeKeeper from './engine/TimeKeeper';
 import { initRandomSource as initGeneralUtilitiesRandomSource } from './utilities/generalUtilities';
 import { initRandomSource as initMathCoreRandomSource } from './math/core';
@@ -49,6 +51,7 @@ export default class App {
      * @param frameScheduler {FrameScheduler} composition-root animation-frame boundary backed by `(callback) => window.requestAnimationFrame(callback)`
      * @param delayScheduler {DelayScheduler} composition-root delayed-callback boundary backed by `(callback, delay) => window.setTimeout(callback, delay)`
      * @param randomSource {RandomSource} composition-root randomness boundary backed by `Math.random` and Lodash `random`
+     * @param analyticsAdapter {AnalyticsAdapter} composition-root analytics boundary backed by `window.gtag` when present
      */
     constructor(
         element,
@@ -62,7 +65,8 @@ export default class App {
             () => Math.random(),
             (lower, upper) => _random(lower, upper),
             (lower, upper) => _random(lower, upper, true)
-        )
+        ),
+        analyticsAdapter = typeof window.gtag === 'function' ? new AnalyticsAdapter(window.gtag) : null
     ) {
         /**
          * Root DOM element.
@@ -97,6 +101,13 @@ export default class App {
         // through the injected timer rather than a browser global. Threaded by
         // identity through `AppController` to every reporter consumer.
         const asyncErrorReporter = createAsyncErrorReporter(delayScheduler);
+
+        // Configure the import-time `EventTracker` singleton with the injected
+        // analytics boundary early, before `AppController` is built and before
+        // the initial-load event is recorded, so the `window.gtag` provider
+        // reference lives only in this composition root rather than inside the
+        // tracker.
+        EventTracker.initAnalytics(analyticsAdapter);
 
         this._startupAssetLoader = new StartupAssetLoader(assetLoader);
         this._startupStorage = new StartupStorage(storageAdapter);

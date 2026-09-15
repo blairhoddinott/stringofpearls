@@ -196,7 +196,7 @@ export default class AppController {
         // explicit instance parameters easier.
         window.aircraftController = this.aircraftController;
 
-        UiController.init(this.$element, this.contentQueue);
+        UiController.init(this.$element, this.contentQueue, this._storageAdapter);
 
         this.canvasController = new CanvasController(this.$canvasesElement, this.aircraftController, this.scopeModel);
 

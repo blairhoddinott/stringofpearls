@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import _has from 'lodash/has';
 import _flow from 'lodash/flow';
 import AirportController from '../airport/AirportController';
 import EventBus from '../lib/EventBus';
@@ -31,7 +30,7 @@ export default class TutorialView {
     /**
      * @constructor
      */
-    constructor($element = null, contentQueue = null, reportError = reportAsyncError) {
+    constructor($element = null, contentQueue = null, storageAdapter = null, reportError = reportAsyncError) {
         /**
          * @property EventBus
          * @type {EventBus}
@@ -49,6 +48,16 @@ export default class TutorialView {
          * @private
          */
         this._contentQueue = contentQueue;
+
+        /**
+         * Persistence boundary used to read and write the first-run completion time.
+         *
+         * @property _storageAdapter
+         * @type {StorageAdapter}
+         * @default storageAdapter
+         * @private
+         */
+        this._storageAdapter = storageAdapter;
 
         /**
          * Reporter used to surface exceptions on the browser uncaught-error channel.
@@ -476,11 +485,17 @@ export default class TutorialView {
      * @method tutorial_complete
      */
     tutorial_complete() {
-        if (!_has(localStorage, STORAGE_KEY.FIRST_RUN_TIME)) {
+        const firstRunTime = this._storageAdapter.get(STORAGE_KEY.FIRST_RUN_TIME);
+
+        // Web Storage `getItem()` returns `null` for a missing key, whereas the
+        // legacy property-presence guard treated only a wholly absent property as
+        // missing. Treat both `null` and `undefined` as missing at this boundary
+        // so a stored falsy-but-present value still suppresses the first-run open.
+        if (firstRunTime == null) {
             this.tutorial_open();
         }
 
-        localStorage[STORAGE_KEY.FIRST_RUN_TIME] = TimeKeeper.gameTimeInSeconds;
+        this._storageAdapter.set(STORAGE_KEY.FIRST_RUN_TIME, TimeKeeper.gameTimeInSeconds);
     }
 
     /**

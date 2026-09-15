@@ -1,7 +1,9 @@
 import ava from 'ava';
 import sinon from 'sinon';
 import TutorialView from '../../src/assets/scripts/client/ui/TutorialView';
+import TimeKeeper from '../../src/assets/scripts/client/engine/TimeKeeper';
 import { AssetLoadError } from '../../src/assets/scripts/client/platform/AssetLoader';
+import { STORAGE_KEY } from '../../src/assets/scripts/client/constants/storageKeys';
 
 const TUTORIAL_URL = 'assets/tutorial/tutorial.json';
 
@@ -73,4 +75,52 @@ ava.serial('tutorial_init_pre reports a throwing step loader through the uncaugh
     } finally {
         consoleError.restore();
     }
+});
+
+// Build a browser-light instance targeting `tutorial_complete` with an injected
+// storage stub, so first-run persistence is exercised without touching a global
+// `localStorage` or the DOM/UI graph.
+const buildStorageInstance = ({ storedValue } = {}) => {
+    const instance = Object.create(TutorialView.prototype);
+
+    instance._storageAdapter = {
+        get: sinon.stub().returns(storedValue),
+        set: sinon.stub()
+    };
+    instance.tutorial_open = sinon.stub();
+
+    return instance;
+};
+
+ava.serial('tutorial_complete opens the tutorial before forwarding the inherited raw game-time value when no value is stored', (t) => {
+    const instance = buildStorageInstance({ storedValue: null });
+
+    instance.tutorial_complete();
+
+    t.true(instance._storageAdapter.get.calledOnceWithExactly(STORAGE_KEY.FIRST_RUN_TIME));
+    t.true(instance.tutorial_open.calledOnce);
+    t.true(instance._storageAdapter.set.calledOnceWithExactly(
+        STORAGE_KEY.FIRST_RUN_TIME,
+        TimeKeeper.gameTimeInSeconds
+    ));
+    t.is(TimeKeeper.gameTimeInSeconds, undefined);
+    t.true(instance.tutorial_open.calledBefore(instance._storageAdapter.set));
+});
+
+ava.serial('tutorial_complete treats an undefined stored value as missing and opens the tutorial before writing', (t) => {
+    const instance = buildStorageInstance({ storedValue: undefined });
+
+    instance.tutorial_complete();
+
+    t.true(instance.tutorial_open.calledOnce);
+    t.true(instance._storageAdapter.set.calledOnceWithExactly(STORAGE_KEY.FIRST_RUN_TIME, TimeKeeper.gameTimeInSeconds));
+});
+
+ava.serial('tutorial_complete leaves the tutorial closed for a falsy-but-present stored value yet still writes the game time', (t) => {
+    const instance = buildStorageInstance({ storedValue: '' });
+
+    instance.tutorial_complete();
+
+    t.false(instance.tutorial_open.called);
+    t.true(instance._storageAdapter.set.calledOnceWithExactly(STORAGE_KEY.FIRST_RUN_TIME, TimeKeeper.gameTimeInSeconds));
 });

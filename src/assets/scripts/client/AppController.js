@@ -179,7 +179,7 @@ export default class AppController {
         // The order in which the following classes are instantiated is extremely important. Changing
         // this order could break a lot of things. This interdependency is something we should
         // work on reducing in the future.
-        AirportController.init(initialAirportIcao, initialAirportData, airportLoadList, this.contentQueue);
+        AirportController.init(initialAirportIcao, initialAirportData, airportLoadList, this.contentQueue, this._storageAdapter);
         NavigationLibrary.init(initialAirportData);
         SpawnPatternCollection.init(initialAirportData);
 

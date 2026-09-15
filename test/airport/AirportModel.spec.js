@@ -6,6 +6,8 @@ import AirportModel from '../../src/assets/scripts/client/airport/AirportModel';
 import DynamicPositionModel from '../../src/assets/scripts/client/base/DynamicPositionModel';
 import { AssetLoadError } from '../../src/assets/scripts/client/platform/AssetLoader';
 import { FLIGHT_CATEGORY } from '../../src/assets/scripts/client/constants/aircraftConstants';
+import { EVENT } from '../../src/assets/scripts/client/constants/eventNames';
+import { STORAGE_KEY } from '../../src/assets/scripts/client/constants/storageKeys';
 import { AIRPORT_JSON_KLAS_MOCK } from './_mocks/airportJsonMock';
 
 const FLYWEIGHT_OPTIONS_MOCK = { icao: 'ksfo', level: 'medium', name: 'San Francisco International Airport' };
@@ -88,6 +90,40 @@ ava('.set() calls .load() when #lodaed is false', (t) => {
     model.set(AIRPORT_JSON_KLAS_MOCK);
 
     t.true(loadSpy.calledWithExactly(AIRPORT_JSON_KLAS_MOCK));
+});
+
+ava('.set() persists the current icao under the last-airport key through the injected adapter when loaded', (t) => {
+    const storageAdapterMock = { get: sinon.stub(), set: sinon.stub() };
+    const model = new AirportModel(FLYWEIGHT_OPTIONS_MOCK, null, storageAdapterMock);
+    model.loaded = true;
+    model.eventBus = { trigger: sinon.stub() };
+
+    model.set();
+
+    t.true(storageAdapterMock.set.calledOnceWithExactly(STORAGE_KEY.ATC_LAST_AIRPORT, model.icao));
+});
+
+ava('.set() delegates to .load() and does not write to storage when not loaded', (t) => {
+    const storageAdapterMock = { get: sinon.stub(), set: sinon.stub() };
+    const model = new AirportModel(FLYWEIGHT_OPTIONS_MOCK, null, storageAdapterMock);
+    model.loaded = false;
+    const loadSpy = sinon.spy(model, 'load');
+
+    model.set(AIRPORT_JSON_KLAS_MOCK);
+
+    t.true(loadSpy.calledWithExactly(AIRPORT_JSON_KLAS_MOCK));
+    t.false(storageAdapterMock.set.called);
+});
+
+ava('.set() continues the loaded path without throwing or touching browser storage when no adapter is injected', (t) => {
+    const model = new AirportModel(FLYWEIGHT_OPTIONS_MOCK);
+    model.loaded = true;
+    const triggerSpy = sinon.spy();
+    model.eventBus = { trigger: triggerSpy };
+
+    t.notThrows(() => model.set());
+
+    t.true(triggerSpy.calledWith(EVENT.PAUSE_UPDATE_LOOP, true));
 });
 
 ava('.loadTerrain() returns early when #has_terrain is false', (t) => {
@@ -243,7 +279,7 @@ ava.serial('.load() surfaces an exception thrown while processing a successful r
     const processingError = new Error('kaboom');
     const reportErrorSpy = sinon.spy();
     const contentQueueMock = { addPromise: sinon.stub().resolves({ icao: 'ksfo' }) };
-    const model = new AirportModel(FLYWEIGHT_OPTIONS_MOCK, contentQueueMock, reportErrorSpy);
+    const model = new AirportModel(FLYWEIGHT_OPTIONS_MOCK, contentQueueMock, null, reportErrorSpy);
     sinon.stub(model, 'onLoadAirportSuccess').throws(processingError);
 
     await t.notThrowsAsync(model.load());
@@ -296,7 +332,7 @@ ava.serial('.loadTerrain() reports a parse failure through the injected reporter
     const parseError = new Error('bad geojson');
     const reportErrorSpy = sinon.spy();
     const contentQueueMock = { addPromise: sinon.stub().resolves({ features: 'nope' }) };
-    const model = new AirportModel(FLYWEIGHT_OPTIONS_MOCK, contentQueueMock, reportErrorSpy);
+    const model = new AirportModel(FLYWEIGHT_OPTIONS_MOCK, contentQueueMock, null, reportErrorSpy);
     model.has_terrain = true;
     sinon.stub(model, 'parseTerrain').throws(parseError);
 

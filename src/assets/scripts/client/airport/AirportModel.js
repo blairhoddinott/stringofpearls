@@ -56,12 +56,27 @@ export default class AirportModel {
      * @param options {object}
      */
     // istanbul ignore next
-    constructor(options = {}, contentQueue = null, reportError = reportAsyncError) {
+    constructor(options = {}, contentQueue = null, storageAdapter = null, reportError = reportAsyncError) {
         /**
          * @property EventBus
          * @type {EventBus}
          */
         this.eventBus = EventBus;
+
+        /**
+         * Persistence boundary used to write the last-selected airport.
+         *
+         * Injected by `AirportController` so every flyweight persists through
+         * the single app-wide `StorageAdapter`. When absent (e.g. a model
+         * constructed directly from full in-memory airport JSON), the loaded
+         * `set()` path continues without persisting rather than reaching for a
+         * browser global.
+         *
+         * @property _storageAdapter
+         * @type {StorageAdapter}
+         * @default null
+         */
+        this._storageAdapter = storageAdapter;
 
         /**
          * Shared asset-loading queue used to fetch airport and terrain data.
@@ -571,7 +586,9 @@ export default class AirportModel {
             return;
         }
 
-        localStorage[STORAGE_KEY.ATC_LAST_AIRPORT] = this.icao;
+        if (this._storageAdapter) {
+            this._storageAdapter.set(STORAGE_KEY.ATC_LAST_AIRPORT, this.icao);
+        }
 
         // TODO: this should live elsewhere and be called by a higher level controller
         GameController.game_reset_score_and_events();

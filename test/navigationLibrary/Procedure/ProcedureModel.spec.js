@@ -1,5 +1,5 @@
 import ava from 'ava';
-import _every from 'lodash/every';
+import sinon from 'sinon';
 import _map from 'lodash/map';
 import _isArray from 'lodash/isArray';
 import ProcedureModel from '../../../src/assets/scripts/client/navigationLibrary/ProcedureModel';
@@ -123,20 +123,27 @@ ava('.getAllFixNamesInUse() returns all fix names that exist in any portion of t
     t.deepEqual(result, expectedResult);
 });
 
-ava('.getRandomExitPoint() returns different exit point names on successive calls', (t) => {
+ava('.getRandomExitPoint() returns the exit point at the inclusive index drawn from the injected randomSource', (t) => {
+    const integerStub = sinon.stub();
+    integerStub.onCall(0).returns(1);
+    integerStub.onCall(1).returns(0);
+    const randomSourceStub = { integer: integerStub };
+    const model = new ProcedureModel(PROCEDURE_TYPE.SID, SID_MOCK.BOACH6, randomSourceStub);
+    const exitNames = Object.keys(model._exitPoints);
+
+    const firstResult = model.getRandomExitPoint();
+    const secondResult = model.getRandomExitPoint();
+
+    t.true(integerStub.alwaysCalledWithExactly(0, exitNames.length - 1));
+    t.is(firstResult, exitNames[1]);
+    t.is(secondResult, exitNames[0]);
+});
+
+ava('.getRandomExitPoint() returns the first exit point when no randomSource is injected', (t) => {
     const model = new ProcedureModel(PROCEDURE_TYPE.SID, SID_MOCK.BOACH6);
-    // making call count high to prevent chance of erroneous failure
-    // callCount 15 yields 1 in 32k chance of failure on 2-exit SID (such as in this test)
-    const callCount = 15;
-    const randomlySelectedExitNames = [];
+    const exitNames = Object.keys(model._exitPoints);
 
-    for (let i = 0; i < callCount; i++) {
-        randomlySelectedExitNames.push(model.getRandomExitPoint());
-    }
-
-    const allExitsAreEqual = _every(randomlySelectedExitNames, (name) => name === randomlySelectedExitNames[0]);
-
-    t.false(allExitsAreEqual);
+    t.is(model.getRandomExitPoint(), exitNames[0]);
 });
 
 ava('.getWaypointModelsForEntryAndExit() returns early when specified entry point is invalid', (t) => {

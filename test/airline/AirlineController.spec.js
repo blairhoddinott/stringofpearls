@@ -95,6 +95,16 @@ ava('.removeFlightNumberFromList() calls .removeFlightNumber() on the found Airl
     t.true(removeFlightNumberSpy.calledWithExactly(callsignMock));
 });
 
+ava('threads the injected randomSource by identity to each AirlineModel in the collection', (t) => {
+    const randomSourceStub = { integer: sinon.stub() };
+    const controller = new AirlineController(AIRLINE_DEFINITION_LIST_FOR_FIXTURE, randomSourceStub);
+
+    t.true(controller.airlineCollection._items.length > 0);
+    controller.airlineCollection._items.forEach((airlineModel) => {
+        t.is(airlineModel._randomSource, randomSourceStub);
+    });
+});
+
 ava('._isActiveFlightNumber() returns true if a given flightNumber exists within any AirlineModel.activeFlightNumbers list', (t) => {
     const invalidFlightNumberMock = 'threeve';
     const validFlightNumberMock = '42';

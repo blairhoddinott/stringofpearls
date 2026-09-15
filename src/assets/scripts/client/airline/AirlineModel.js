@@ -3,7 +3,6 @@ import _has from 'lodash/has';
 import _head from 'lodash/head';
 import _forEach from 'lodash/forEach';
 import _map from 'lodash/map';
-import _random from 'lodash/random';
 import _uniq from 'lodash/uniq';
 import _without from 'lodash/without';
 import BaseModel from '../base/BaseModel';
@@ -26,15 +25,27 @@ export default class AirlineModel extends BaseModel {
      * @constructor
      * @for AirlineModel
      * @param airlineDefinition {object}
+     * @param randomSource {RandomSource} composition-root randomness boundary used to select aircraft types; optional
      */
     /* istanbul ignore next */
-    constructor(airlineDefinition) {
+    constructor(airlineDefinition, randomSource) {
         super();
 
         if (isEmptyOrNotObject(airlineDefinition)) {
             throw new TypeError('Invalid airlineDefinition passed to AirlineModel constructor. ' +
                 `Expected a non-empty object, but received ${typeof airlineDefinition}`);
         }
+
+        /**
+         * Randomness boundary injected from the composition root, used to draw an
+         * aircraft type index. When omitted, draws deterministically return the
+         * lower bound so the model stays usable without an injected source.
+         *
+         * @property _randomSource
+         * @type {RandomSource}
+         * @private
+         */
+        this._randomSource = randomSource ?? null;
 
         /**
          * ICAO airline designation
@@ -233,7 +244,8 @@ export default class AirlineModel extends BaseModel {
      * @return {AirlineModel}
      */
     _getRandomAircraftTypeFromAllFleets() {
-        const index = _random(0, this.aircraftList.length - 1);
+        const maxIndex = this.aircraftList.length - 1;
+        const index = this._randomSource ? this._randomSource.integer(0, maxIndex) : 0;
 
         return this.aircraftList[index];
     }
@@ -255,7 +267,7 @@ export default class AirlineModel extends BaseModel {
         }
 
         const fleet = this.fleets[fleetName];
-        const index = _random(0, fleet.length - 1);
+        const index = this._randomSource ? this._randomSource.integer(0, fleet.length - 1) : 0;
 
         // entries in `fleets[fleetName]` are of the shape `[TYPE, WEIGHT]` we only need the type here
         return _head(fleet[index]);

@@ -42,8 +42,18 @@ export default class AppController {
      * @param clockAdapter {ClockAdapter} composition-root current-time boundary threaded to AirportInfoController for the sim clock
      * @param delayScheduler {DelayScheduler} composition-root delayed-callback boundary threaded to UI/render consumers
      * @param asyncErrorReporter {Function} composition-root async error reporter threaded to asset consumers
+     * @param randomSource {RandomSource} composition-root randomness boundary threaded to class consumers
      */
-    constructor(element, assetLoader, storageAdapter, clearStorageAndReload, clockAdapter, delayScheduler, asyncErrorReporter) {
+    constructor(
+        element,
+        assetLoader,
+        storageAdapter,
+        clearStorageAndReload,
+        clockAdapter,
+        delayScheduler,
+        asyncErrorReporter,
+        randomSource
+    ) {
         /**
          * Root DOM element.
          *
@@ -82,6 +92,7 @@ export default class AppController {
         this._clockAdapter = clockAdapter;
         this._delayScheduler = delayScheduler;
         this._asyncErrorReporter = asyncErrorReporter ?? null;
+        this._randomSource = randomSource ?? null;
 
         this.$canvasesElement = null;
         this._eventBus = EventBus;
@@ -217,16 +228,18 @@ export default class AppController {
             this._storageAdapter,
             this._asyncErrorReporter
         );
+        NavigationLibrary.initRandomSource(this._randomSource);
         NavigationLibrary.init(initialAirportData);
         SpawnPatternCollection.init(initialAirportData);
 
-        this.airlineController = new AirlineController(airlineList);
+        this.airlineController = new AirlineController(airlineList, this._randomSource);
         this.scopeModel = new ScopeModel();
         this.aircraftController = new AircraftController(
             aircraftTypeDefinitionList,
             this.airlineController,
             this.scopeModel,
-            this._delayScheduler
+            this._delayScheduler,
+            this._randomSource
         );
         this.scoreController = new ScoreController(this.aircraftController);
 
@@ -262,7 +275,11 @@ export default class AppController {
             this._clearStorageAndReload,
             this._asyncErrorReporter
         );
-        this.airportInfoController = new AirportInfoController(this.$element, this._clockAdapter);
+        this.airportInfoController = new AirportInfoController(
+            this.$element,
+            this._clockAdapter,
+            this._randomSource
+        );
         this.airportGuideController = new AirportGuideViewController(this.$element, airportGuideData, initialAirportData.icao);
         this.changelogController = new ChangelogController(
             this.contentQueue,

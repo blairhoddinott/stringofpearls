@@ -37,8 +37,9 @@ export default class AirportInfoController {
      * @constructor
      * @param $element {jQuery|HTML element}
      * @param clockAdapter {ClockAdapter} composition-root current-time boundary forwarded to `SimClockController`
+     * @param randomSource {RandomSource} composition-root randomness boundary used for generated weather values
      */
-    constructor($element, clockAdapter) {
+    constructor($element, clockAdapter, randomSource) {
         /**
          * Root DOM element
          *
@@ -57,6 +58,7 @@ export default class AirportInfoController {
          * @type {ClockAdapter}
          */
         this._clockAdapter = clockAdapter;
+        this._randomSource = randomSource ?? null;
 
         /**
          * Information div
@@ -317,7 +319,7 @@ export default class AirportInfoController {
         const newAngle = leftPad((angle || 360), 3);
         const newSpeed = leftPad(speed, 2);
         // Creates a fake "gusting" speed
-        const gustStrength = speed * Math.random();
+        const gustStrength = speed * (this._randomSource ? this._randomSource.fraction() : 0);
         const gustSpeed = leftPad(Math.round(speed + gustStrength), 2);
 
         if (gustStrength < minGustStrength) {
@@ -337,7 +339,8 @@ export default class AirportInfoController {
      * @private
      */
     _generateHighAltimeterReading(windSpeed) {
-        const pressure = PERFORMANCE.DEFAULT_ALTIMETER_IN_INHG + (windSpeed * Math.random() / 100);
+        const fraction = this._randomSource ? this._randomSource.fraction() : 0;
+        const pressure = PERFORMANCE.DEFAULT_ALTIMETER_IN_INHG + (windSpeed * fraction / 100);
 
         return pressure.toFixed(2);
     }

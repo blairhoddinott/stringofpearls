@@ -159,3 +159,35 @@ ava('._isActiveFlightNumber() returns true if a given flightNumber is present in
 
     t.true(model._isActiveFlightNumber(flightNumberMock));
 });
+
+ava('._getRandomAircraftTypeFromAllFleets() draws an inclusive index from the injected randomSource across the full aircraftList', (t) => {
+    const randomSourceStub = { integer: sinon.stub().returns(1) };
+    const model = new AirlineModel(AIRLINE_DEFINITION_SIMPLE_FLEET_MOCK, randomSourceStub);
+    const result = model._getRandomAircraftTypeFromAllFleets();
+
+    t.true(randomSourceStub.integer.calledOnceWithExactly(0, model.aircraftList.length - 1));
+    t.is(result, model.aircraftList[1]);
+});
+
+ava('._getRandomAircraftTypeFromAllFleets() returns the first aircraft type when no randomSource is injected', (t) => {
+    const model = new AirlineModel(AIRLINE_DEFINITION_SIMPLE_FLEET_MOCK);
+    const result = model._getRandomAircraftTypeFromAllFleets();
+
+    t.is(result, model.aircraftList[0]);
+});
+
+ava('._getRandomAircraftTypeFromFleet() draws an inclusive index from the injected randomSource across the requested fleet', (t) => {
+    const randomSourceStub = { integer: sinon.stub().returns(1) };
+    const model = new AirlineModel(AIRLINE_DEFINITION_SIMPLE_FLEET_MOCK, randomSourceStub);
+    const result = model._getRandomAircraftTypeFromFleet('default');
+
+    t.true(randomSourceStub.integer.calledOnceWithExactly(0, model.fleets.default.length - 1));
+    t.is(result, model.fleets.default[1][0]);
+});
+
+ava('._getRandomAircraftTypeFromFleet() returns the first aircraft type in the fleet when no randomSource is injected', (t) => {
+    const model = new AirlineModel(AIRLINE_DEFINITION_SIMPLE_FLEET_MOCK);
+    const result = model._getRandomAircraftTypeFromFleet('default');
+
+    t.is(result, model.fleets.default[0][0]);
+});

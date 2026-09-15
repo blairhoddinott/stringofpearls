@@ -82,6 +82,21 @@ class NavigationLibrary {
          * @default {}
          */
         this._procedureLines = {};
+
+        /**
+         * Randomness boundary injected from the composition root and forwarded by
+         * identity to every `ProcedureModel`.
+         *
+         * The canonical singleton stores `null` until configured through `.init()`.
+         * Because it is configuration rather than airport session state, `.reset()`
+         * retains it across airport rebuilds so a subsequent `.init()` may omit it.
+         *
+         * @property _randomSource
+         * @type {RandomSource}
+         * @default null
+         * @private
+         */
+        this._randomSource = null;
     }
 
     /**
@@ -138,6 +153,7 @@ class NavigationLibrary {
      *
      * @for NavigationLibrary
      * @method init
+     * @param airportJson {object}
      */
     init(airportJson) {
         const {
@@ -152,6 +168,16 @@ class NavigationLibrary {
         this._initializeSidLines();
         this._initializeStarLines();
         this._showConsoleWarningForUndefinedFixes();
+    }
+
+    /**
+     * Configure the randomness boundary forwarded to ProcedureModel instances.
+     * Reset deliberately retains this app-level capability across airport changes.
+     *
+     * @param randomSource {RandomSource} [optional]
+     */
+    initRandomSource(randomSource = null) {
+        this._randomSource = randomSource ?? null;
     }
 
     /**
@@ -203,7 +229,7 @@ class NavigationLibrary {
                 throw new TypeError(`Expected single definition for '${sidId}' procedure, but received multiple`);
             }
 
-            this._procedureCollection[sidId] = new ProcedureModel(PROCEDURE_TYPE.SID, sid);
+            this._procedureCollection[sidId] = new ProcedureModel(PROCEDURE_TYPE.SID, sid, this._randomSource);
         });
 
         _forEach(stars, (star, starId) => {
@@ -211,7 +237,7 @@ class NavigationLibrary {
                 throw new TypeError(`Expected single definition for '${starId}' procedure, but received multiple`);
             }
 
-            this._procedureCollection[starId] = new ProcedureModel(PROCEDURE_TYPE.STAR, star);
+            this._procedureCollection[starId] = new ProcedureModel(PROCEDURE_TYPE.STAR, star, this._randomSource);
         });
     }
 

@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import _random from 'lodash/random';
 import _without from 'lodash/without';
 import StripViewCollection from './StripViewCollection';
 import StripViewModel from './StripViewModel';
@@ -26,8 +25,9 @@ export default class StripViewController {
     /**
      * @constructor
      * @param delayScheduler {DelayScheduler} delayed-callback boundary; optional
+     * @param randomSource {RandomSource} randomness boundary used for CID generation; optional
      */
-    constructor(delayScheduler) {
+    constructor(delayScheduler, randomSource) {
         /**
          * Collection class used to manage instances of `StripViewModel`s
          *
@@ -78,6 +78,7 @@ export default class StripViewController {
         this._cidNumbersInUse = [];
 
         this._delayScheduler = delayScheduler ?? null;
+        this._randomSource = randomSource ?? null;
 
         return this._init()
             .enable();
@@ -354,7 +355,19 @@ export default class StripViewController {
      * @private
      */
     _generateCidNumber() {
-        const nextCid = _random(1, CID_UPPER_BOUND);
+        if (!this._randomSource) {
+            for (let cid = 1; cid <= CID_UPPER_BOUND; cid++) {
+                if (this._cidNumbersInUse.indexOf(cid) === INVALID_INDEX) {
+                    this._cidNumbersInUse.push(cid);
+
+                    return cid;
+                }
+            }
+
+            return undefined;
+        }
+
+        const nextCid = this._randomSource.integer(1, CID_UPPER_BOUND);
 
         if (this._cidNumbersInUse.indexOf(nextCid) !== INVALID_INDEX) {
             return this._generateCidNumber();

@@ -130,6 +130,33 @@ ava('throws when called with invalid scopeModel', (t) => {
     });
 });
 
+ava('threads the randomSource by identity to StripViewController after the delay scheduler', (t) => {
+    const delayScheduler = { schedule: () => {} };
+    const randomSource = { integer: () => 1 };
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture,
+        delayScheduler,
+        randomSource
+    );
+
+    t.is(controller._stripViewController._delayScheduler, delayScheduler);
+    t.is(controller._stripViewController._randomSource, randomSource);
+});
+
+ava('generates distinct deterministic CIDs when randomSource is omitted', (t) => {
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture
+    );
+    const stripViewController = controller._stripViewController;
+
+    t.is(stripViewController._generateCidNumber(), 1);
+    t.is(stripViewController._generateCidNumber(), 2);
+});
+
 ava('does not throw when passed valid parameters', (t) => {
     t.notThrows(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, airlineControllerFixture, scopeModelFixture));
 });

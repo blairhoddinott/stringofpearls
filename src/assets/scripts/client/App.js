@@ -107,7 +107,8 @@ export default class App {
             new ClearStorageAndReload(storageAdapter, reload),
             clockAdapter,
             delayScheduler,
-            asyncErrorReporter
+            asyncErrorReporter,
+            randomSource
         );
         this.eventBus = EventBus;
 

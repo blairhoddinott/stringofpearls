@@ -11,6 +11,7 @@ import FrameScheduler from './platform/FrameScheduler';
 import DelayScheduler from './platform/DelayScheduler';
 import RandomSource from './platform/RandomSource';
 import AnalyticsAdapter from './platform/AnalyticsAdapter';
+import SpeechSynthesisAdapter from './platform/SpeechSynthesisAdapter';
 import createAsyncErrorReporter from './platform/reportAsyncError';
 import EventBus from './lib/EventBus';
 import EventTracker from './EventTracker';
@@ -52,6 +53,7 @@ export default class App {
      * @param delayScheduler {DelayScheduler} composition-root delayed-callback boundary backed by `(callback, delay) => window.setTimeout(callback, delay)`
      * @param randomSource {RandomSource} composition-root randomness boundary backed by `Math.random` and Lodash `random`
      * @param analyticsAdapter {AnalyticsAdapter} composition-root analytics boundary backed by `window.gtag` when present
+     * @param speechSynthesisAdapter {SpeechSynthesisAdapter|null} composition-root speech boundary backed by `window.speechSynthesis` and `SpeechSynthesisUtterance` when both are available, otherwise `null`
      */
     constructor(
         element,
@@ -66,7 +68,13 @@ export default class App {
             (lower, upper) => _random(lower, upper),
             (lower, upper) => _random(lower, upper, true)
         ),
-        analyticsAdapter = typeof window.gtag === 'function' ? new AnalyticsAdapter(window.gtag) : null
+        analyticsAdapter = typeof window.gtag === 'function' ? new AnalyticsAdapter(window.gtag) : null,
+        speechSynthesisAdapter = window.speechSynthesis != null && typeof window.SpeechSynthesisUtterance === 'function'
+            ? new SpeechSynthesisAdapter(
+                window.speechSynthesis,
+                (text) => new window.SpeechSynthesisUtterance(text)
+            )
+            : null
     ) {
         /**
          * Root DOM element.
@@ -119,7 +127,8 @@ export default class App {
             clockAdapter,
             delayScheduler,
             asyncErrorReporter,
-            randomSource
+            randomSource,
+            speechSynthesisAdapter
         );
         this.eventBus = EventBus;
 

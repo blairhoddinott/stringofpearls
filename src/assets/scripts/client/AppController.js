@@ -43,6 +43,7 @@ export default class AppController {
      * @param delayScheduler {DelayScheduler} composition-root delayed-callback boundary threaded to UI/render consumers
      * @param asyncErrorReporter {Function} composition-root async error reporter threaded to asset consumers
      * @param randomSource {RandomSource} composition-root randomness boundary threaded to class consumers
+     * @param speechSynthesisAdapter {SpeechSynthesisAdapter|null} composition-root speech boundary threaded to `speech_init` in `init`
      */
     constructor(
         element,
@@ -52,7 +53,8 @@ export default class AppController {
         clockAdapter,
         delayScheduler,
         asyncErrorReporter,
-        randomSource
+        randomSource,
+        speechSynthesisAdapter
     ) {
         /**
          * Root DOM element.
@@ -93,6 +95,16 @@ export default class AppController {
         this._delayScheduler = delayScheduler;
         this._asyncErrorReporter = asyncErrorReporter ?? null;
         this._randomSource = randomSource ?? null;
+
+        /**
+         * Speech-synthesis boundary injected from the composition root and
+         * forwarded to `speech_init` during `init`, or canonical `null` when no
+         * browser speech backend is available.
+         *
+         * @property _speechSynthesisAdapter
+         * @type {SpeechSynthesisAdapter|null}
+         */
+        this._speechSynthesisAdapter = speechSynthesisAdapter ?? null;
 
         this.$canvasesElement = null;
         this._eventBus = EventBus;
@@ -305,7 +317,7 @@ export default class AppController {
      * @method init
      */
     init() {
-        speech_init(this._storageAdapter);
+        speech_init(this._storageAdapter, this._speechSynthesisAdapter);
 
         this.canvasController.canvas_init();
         UiController.ui_init();

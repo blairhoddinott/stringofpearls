@@ -39,6 +39,21 @@ let _storageAdapter = null;
 let _randomSource = null;
 
 /**
+ * Shared speech-synthesis boundary retained across `speech_init()`,
+ * `speech_say()`, and `speech_toggle()`.
+ *
+ * Normalized to canonical `null` when no adapter is configured so speaking and
+ * cancelling become deliberate no-ops rather than global `speechSynthesis` /
+ * `SpeechSynthesisUtterance` access. Configured only through `speech_init()` at
+ * the composition root, so importing this module never touches a browser speech
+ * global.
+ *
+ * @property _speechSynthesisAdapter
+ * @type {SpeechSynthesisAdapter|null}
+ */
+let _speechSynthesisAdapter = null;
+
+/**
  * Configure the randomness boundary used by `randomizePilotVoice()`.
  *
  * Called by `App` at the composition root before any consumer runs. Storing the
@@ -68,12 +83,14 @@ const _fraction = () => (_randomSource === null ? 0 : _randomSource.fraction());
  *
  * @function speech_init
  * @param storageAdapter {StorageAdapter} [optional]  boundary exposing `get(key)`/`set(key, value)`
+ * @param speechSynthesisAdapter {SpeechSynthesisAdapter} [optional]  boundary exposing `speak(text, pilotVoice)`/`cancel()`
  */
-export const speech_init = (storageAdapter = null) => {
+export const speech_init = (storageAdapter = null, speechSynthesisAdapter = null) => {
     _storageAdapter = storageAdapter == null ? null : storageAdapter;
+    _speechSynthesisAdapter = speechSynthesisAdapter == null ? null : speechSynthesisAdapter;
 
     prop.speech = {};
-    prop.speech.synthesis = window.speechSynthesis;
+    prop.speech.synthesis = _speechSynthesisAdapter;
     prop.speech.enabled = false;
 
     if (_storageAdapter !== null && _storageAdapter.get(STORAGE_KEY.ATC_SPEECH_ENABLED) === true) {
@@ -104,7 +121,7 @@ export const randomizePilotVoice = () => {
  * @param sentence
  */
 export const speech_say = (sentence, pilotVoice) => {
-    if (prop.speech.synthesis != null && prop.speech.enabled) {
+    if (_speechSynthesisAdapter !== null && prop.speech.enabled) {
         let textToSay = '';
 
         for (let i = 0; i < sentence.length; i++) {
@@ -128,17 +145,9 @@ export const speech_say = (sentence, pilotVoice) => {
             }
         }
 
-        const utterance = new SpeechSynthesisUtterance(textToSay); // make the object
-        utterance.lang = 'en-US'; // set the language
-        utterance.voice = prop.speech.synthesis.getVoices().filter((voice) => {
-            // set the voice
-            return voice.name === pilotVoice.voice;
-        })[0];
-        utterance.rate = pilotVoice.rate;
-        utterance.pitch = pilotVoice.pitch;
-
-        // say the words
-        prop.speech.synthesis.speak(utterance);
+        // Delegate utterance construction, voice selection, and speaking to the
+        // synthesis boundary so no browser speech global is touched here.
+        _speechSynthesisAdapter.speak(textToSay, pilotVoice);
     }
 };
 
@@ -150,8 +159,8 @@ export const speech_toggle = () => {
     const $speechToggleElement = $(SELECTORS.DOM_SELECTORS.TOGGLE_SPEECH);
     prop.speech.enabled = !prop.speech.enabled;
 
-    if (!prop.speech.enabled) {
-        prop.speech.synthesis.cancel();
+    if (!prop.speech.enabled && _speechSynthesisAdapter !== null) {
+        _speechSynthesisAdapter.cancel();
     }
 
     $speechToggleElement.toggleClass(SELECTORS.CLASSNAMES.ACTIVE);

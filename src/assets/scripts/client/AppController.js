@@ -41,8 +41,9 @@ export default class AppController {
      * @param clearStorageAndReload {ClearStorageAndReload} composition-root clear/reload service threaded to InputController for the CLEAR command
      * @param clockAdapter {ClockAdapter} composition-root current-time boundary threaded to AirportInfoController for the sim clock
      * @param delayScheduler {DelayScheduler} composition-root delayed-callback boundary threaded to UI/render consumers
+     * @param asyncErrorReporter {Function} composition-root async error reporter threaded to asset consumers
      */
-    constructor(element, assetLoader, storageAdapter, clearStorageAndReload, clockAdapter, delayScheduler) {
+    constructor(element, assetLoader, storageAdapter, clearStorageAndReload, clockAdapter, delayScheduler, asyncErrorReporter) {
         /**
          * Root DOM element.
          *
@@ -80,6 +81,7 @@ export default class AppController {
          */
         this._clockAdapter = clockAdapter;
         this._delayScheduler = delayScheduler;
+        this._asyncErrorReporter = asyncErrorReporter ?? null;
 
         this.$canvasesElement = null;
         this._eventBus = EventBus;
@@ -207,7 +209,14 @@ export default class AppController {
         // The order in which the following classes are instantiated is extremely important. Changing
         // this order could break a lot of things. This interdependency is something we should
         // work on reducing in the future.
-        AirportController.init(initialAirportIcao, initialAirportData, airportLoadList, this.contentQueue, this._storageAdapter);
+        AirportController.init(
+            initialAirportIcao,
+            initialAirportData,
+            airportLoadList,
+            this.contentQueue,
+            this._storageAdapter,
+            this._asyncErrorReporter
+        );
         NavigationLibrary.init(initialAirportData);
         SpawnPatternCollection.init(initialAirportData);
 
@@ -229,7 +238,13 @@ export default class AppController {
         // explicit instance parameters easier.
         window.aircraftController = this.aircraftController;
 
-        UiController.init(this.$element, this.contentQueue, this._storageAdapter, this._delayScheduler);
+        UiController.init(
+            this.$element,
+            this.contentQueue,
+            this._storageAdapter,
+            this._delayScheduler,
+            this._asyncErrorReporter
+        );
 
         this.canvasController = new CanvasController(
             this.$canvasesElement,
@@ -244,11 +259,16 @@ export default class AppController {
             this.aircraftController,
             this.scopeModel,
             this._assetLoader,
-            this._clearStorageAndReload
+            this._clearStorageAndReload,
+            this._asyncErrorReporter
         );
         this.airportInfoController = new AirportInfoController(this.$element, this._clockAdapter);
         this.airportGuideController = new AirportGuideViewController(this.$element, airportGuideData, initialAirportData.icao);
-        this.changelogController = new ChangelogController(this.contentQueue, this._storageAdapter);
+        this.changelogController = new ChangelogController(
+            this.contentQueue,
+            this._storageAdapter,
+            this._asyncErrorReporter
+        );
 
         this.updateViewControls();
     }

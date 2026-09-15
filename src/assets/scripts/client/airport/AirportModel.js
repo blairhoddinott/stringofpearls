@@ -13,7 +13,6 @@ import MapCollection from './MapCollection';
 import RunwayCollection from './runway/RunwayCollection';
 import StaticPositionModel from '../base/StaticPositionModel';
 import TimeKeeper from '../engine/TimeKeeper';
-import reportAsyncError from '../platform/reportAsyncError';
 import { AssetLoadError, formatAssetLoadError } from '../platform/AssetLoader';
 import { isValidGpsCoordinatePair } from '../base/positionModelHelpers';
 import { degreesToRadians, parseElevation } from '../utilities/unitConverters';
@@ -56,7 +55,7 @@ export default class AirportModel {
      * @param options {object}
      */
     // istanbul ignore next
-    constructor(options = {}, contentQueue = null, storageAdapter = null, reportError = reportAsyncError) {
+    constructor(options = {}, contentQueue = null, storageAdapter = null, reportError = null) {
         /**
          * @property EventBus
          * @type {EventBus}
@@ -96,11 +95,16 @@ export default class AirportModel {
          * Surfaces exceptions thrown while processing a successful load on the
          * browser's uncaught-error channel.
          *
+         * Injected by `AirportController` from the single app-wide reporter.
+         * When absent (e.g. a model constructed directly from full in-memory
+         * airport JSON), nullish/omitted normalizes to canonical null and the
+         * report calls are guarded rather than reaching for a browser global.
+         *
          * @property _reportError
-         * @type {Function}
-         * @default reportAsyncError
+         * @type {Function|null}
+         * @default null
          */
-        this._reportError = reportError;
+        this._reportError = reportError ?? null;
 
         /**
          * cache of airport json data
@@ -857,7 +861,9 @@ export default class AirportModel {
                     this.parseTerrain(data);
                 } catch (e) {
                     // Preserve the historical browser-facing error shape.
-                    this._reportError(new Error(e.message));
+                    if (this._reportError) {
+                        this._reportError(new Error(e.message));
+                    }
                 }
             },
             (error) => {
@@ -911,7 +917,9 @@ export default class AirportModel {
                 try {
                     this.onLoadAirportSuccess(response);
                 } catch (error) {
-                    this._reportError(error);
+                    if (this._reportError) {
+                        this._reportError(error);
+                    }
                 }
             },
             (error) => this.onLoadAirportError(error)

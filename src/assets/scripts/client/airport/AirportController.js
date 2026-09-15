@@ -57,6 +57,15 @@ class AirportController {
         this._storageAdapter = null;
 
         /**
+         * Shared async error reporter forwarded to every AirportModel.
+         *
+         * @property _reportError
+         * @type {Function|null}
+         * @default null
+         */
+        this._reportError = null;
+
+        /**
          * Dictionary of available airports
          *
          * @property airports
@@ -90,10 +99,12 @@ class AirportController {
      * @param airportLoadList {array<object>}  List of airports to load
      * @param contentQueue {ContentQueue}  Shared asset-loading queue
      * @param storageAdapter {StorageAdapter}  Shared persistence boundary
+     * @param reportError {Function}  Shared async error reporter
      */
-    init(initialAirportIcao, initialAirportData, airportLoadList, contentQueue, storageAdapter) {
+    init(initialAirportIcao, initialAirportData, airportLoadList, contentQueue, storageAdapter, reportError) {
         this._contentQueue = contentQueue;
         this._storageAdapter = storageAdapter;
+        this._reportError = reportError ?? null;
         this._airportListToLoad = airportLoadList;
 
         for (let i = 0; i < this._airportListToLoad.length; i++) {
@@ -128,7 +139,12 @@ class AirportController {
             return null;
         }
 
-        const airportModel = new AirportModel({ icao, level, name }, this._contentQueue, this._storageAdapter);
+        const airportModel = new AirportModel(
+            { icao, level, name },
+            this._contentQueue,
+            this._storageAdapter,
+            this._reportError
+        );
 
         this.airport_add(airportModel);
     }
@@ -156,6 +172,7 @@ class AirportController {
         this._eventBus = EventBus;
         this._contentQueue = null;
         this._storageAdapter = null;
+        this._reportError = null;
         this._airportListToLoad = [];
         this.airports = {};
         this.current = null;

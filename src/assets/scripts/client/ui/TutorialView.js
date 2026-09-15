@@ -11,7 +11,6 @@ import { STORAGE_KEY } from '../constants/storageKeys';
 import { SELECTORS } from '../constants/selectors';
 import { TRACKABLE_EVENT } from '../constants/trackableEvents';
 import { AssetLoadError, formatAssetLoadError } from '../platform/AssetLoader';
-import reportAsyncError from '../platform/reportAsyncError';
 
 const tutorial = {};
 
@@ -30,7 +29,7 @@ export default class TutorialView {
     /**
      * @constructor
      */
-    constructor($element = null, contentQueue = null, storageAdapter = null, reportError = reportAsyncError) {
+    constructor($element = null, contentQueue = null, storageAdapter = null, reportError = null) {
         /**
          * @property EventBus
          * @type {EventBus}
@@ -62,12 +61,15 @@ export default class TutorialView {
         /**
          * Reporter used to surface exceptions on the browser uncaught-error channel.
          *
+         * Nullish/omitted normalizes to canonical null and the report call is
+         * guarded, so a shorter call stays free of a browser global.
+         *
          * @property _reportError
-         * @type {Function}
-         * @default reportAsyncError
+         * @type {Function|null}
+         * @default null
          * @private
          */
-        this._reportError = reportError;
+        this._reportError = reportError ?? null;
 
         /**
          * @property tutorial
@@ -292,7 +294,9 @@ export default class TutorialView {
                         this._loadTutorialStep(step);
                     });
                 } catch (error) {
-                    this._reportError(error);
+                    if (this._reportError) {
+                        this._reportError(error);
+                    }
                 }
             }, (error) => {
                 this._renderTutorialLoadError(error);

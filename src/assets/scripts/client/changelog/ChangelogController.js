@@ -1,6 +1,5 @@
 import $ from 'jquery';
 import EventBus from '../lib/EventBus';
-import reportAsyncError from '../platform/reportAsyncError';
 import { SELECTORS } from '../constants/selectors';
 import { STORAGE_KEY } from '../constants/storageKeys';
 import { EVENT } from '../constants/eventNames';
@@ -16,10 +15,12 @@ export default class ChangelogController {
      * @param {ContentQueue} contentQueue
      * @param {StorageAdapter} storageAdapter  persistence boundary for the
      *                                         last-played version
-     * @param {Function} [reportError] reporter for processing-time exceptions,
-     *                                 defaults to {@link reportAsyncError}
+     * @param {Function} [reportError] reporter for processing-time exceptions;
+     *                                 nullish/omitted normalizes to null so a
+     *                                 shorter call surfaces nothing rather than
+     *                                 reaching for a browser global
      */
-    constructor(contentQueue, storageAdapter, reportError = reportAsyncError) {
+    constructor(contentQueue, storageAdapter, reportError = null) {
         /**
          * Persistence boundary used to read and write the last-played version.
          *
@@ -32,11 +33,14 @@ export default class ChangelogController {
          * Reporter used to surface processing-time exceptions on the browser's
          * uncaught-error channel without leaking an unhandled rejection.
          *
+         * Nullish/omitted normalizes to canonical null and the report call is
+         * guarded, so a shorter call stays free of a browser global.
+         *
          * @property _reportError
-         * @type {Function}
-         * @default reportAsyncError
+         * @type {Function|null}
+         * @default null
          */
-        this._reportError = reportError;
+        this._reportError = reportError ?? null;
 
         /**
          * A string representation of the actual changelog.
@@ -219,7 +223,9 @@ export default class ChangelogController {
                     this.content = data.changelog;
                     this.onLoadComplete();
                 } catch (error) {
-                    this._reportError(error);
+                    if (this._reportError) {
+                        this._reportError(error);
+                    }
                 }
             },
             () => {

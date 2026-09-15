@@ -42,8 +42,9 @@ export default class InputController {
      * @param scopeModel {ScopeModel}
      * @param assetLoader {AssetLoader} composition-root JSON transport, injected into AutocompleteController
      * @param clearStorageAndReload {ClearStorageAndReload} clear/reload service invoked by the CLEAR system command; optional
+     * @param reportError {Function} async error reporter forwarded to AutocompleteController
      */
-    constructor($element, aircraftController, scopeModel, assetLoader, clearStorageAndReload) {
+    constructor($element, aircraftController, scopeModel, assetLoader, clearStorageAndReload, reportError) {
         this.$element = $element;
         this.$body = null;
         this.$window = null;
@@ -64,7 +65,13 @@ export default class InputController {
          * @type {ClearStorageAndReload|null}
          */
         this._clearStorageAndReload = clearStorageAndReload ?? null;
-        this._autocompleteController = new AutocompleteController(this.$element, this, this._aircraftController, this._assetLoader);
+        this._autocompleteController = new AutocompleteController(
+            this.$element,
+            this,
+            this._aircraftController,
+            this._assetLoader,
+            reportError
+        );
 
         prop.input = input;
         this.input = input;

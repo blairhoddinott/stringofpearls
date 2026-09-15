@@ -8,6 +8,7 @@ import ClearStorageAndReload from './platform/ClearStorageAndReload';
 import ClockAdapter from './platform/ClockAdapter';
 import FrameScheduler from './platform/FrameScheduler';
 import DelayScheduler from './platform/DelayScheduler';
+import createAsyncErrorReporter from './platform/reportAsyncError';
 import EventBus from './lib/EventBus';
 import TimeKeeper from './engine/TimeKeeper';
 import { DEFAULT_AIRPORT_ICAO } from './constants/airportConstants';
@@ -71,6 +72,12 @@ export default class App {
         // default so runtime update/pause loops never touch a browser global.
         this._frameScheduler = frameScheduler;
 
+        // Single app-wide async error reporter, composed from the same
+        // `DelayScheduler` boundary so the uncaught-error rethrow is scheduled
+        // through the injected timer rather than a browser global. Threaded by
+        // identity through `AppController` to every reporter consumer.
+        const asyncErrorReporter = createAsyncErrorReporter(delayScheduler);
+
         this._startupAssetLoader = new StartupAssetLoader(assetLoader);
         this._startupStorage = new StartupStorage(storageAdapter);
         this._appController = new AppController(
@@ -79,7 +86,8 @@ export default class App {
             storageAdapter,
             new ClearStorageAndReload(storageAdapter, reload),
             clockAdapter,
-            delayScheduler
+            delayScheduler,
+            asyncErrorReporter
         );
         this.eventBus = EventBus;
 

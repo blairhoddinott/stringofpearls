@@ -361,11 +361,12 @@ class UiController {
      * @param contentQueue {ContentQueue}
      * @param storageAdapter {StorageAdapter}
      * @param delayScheduler {DelayScheduler} delayed-callback boundary; nullish/omitted normalizes to null
+     * @param reportError {Function} async error reporter forwarded to TutorialView
      */
-    init($element, contentQueue, storageAdapter, delayScheduler) {
+    init($element, contentQueue, storageAdapter, delayScheduler, reportError) {
         this._eventBus = EventBus;
         this._delayScheduler = delayScheduler ?? null;
-        this.tutorialView = new TutorialView($element, contentQueue, storageAdapter);
+        this.tutorialView = new TutorialView($element, contentQueue, storageAdapter, reportError);
         this.settingsController = new SettingsController($element);
         this.trafficRateController = new TrafficRateController($element);
         this.videoMapController = new VideoMapController($element);

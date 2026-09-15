@@ -19,7 +19,6 @@ import { SELECTORS } from '../../constants/selectors';
 import { AUTOCOMPLETE_COMMAND_TEMPLATE } from './AutocompleteCommandTemplate';
 import { AUTOCOMPLETE_ARGUMENT_TEMPLATE } from './AutocompleteArgumentTemplate';
 import { formatAssetLoadError } from '../../platform/AssetLoader';
-import reportAsyncError from '../../platform/reportAsyncError';
 
 const Handlebars = require('handlebars');
 
@@ -33,12 +32,14 @@ export default class AutocompleteController {
      * @param inputController {InputController}
      * @param aircraftController {AircraftController}
      * @param assetLoader {AssetLoader}
-     * @param reportError {Function}
+     * @param reportError {Function} reporter for processing-time exceptions;
+     *                               nullish/omitted normalizes to null so a
+     *                               shorter call stays free of a browser global
      */
-    constructor($element, inputController, aircraftController, assetLoader, reportError = reportAsyncError) {
+    constructor($element, inputController, aircraftController, assetLoader, reportError = null) {
         this.$element = $element;
         this._assetLoader = assetLoader;
-        this._reportError = reportError;
+        this._reportError = reportError ?? null;
         this.$autocomplete = null;
         this.$autocompleteInput = null;
         this.$autocompleteOutput = null;
@@ -110,7 +111,11 @@ export default class AutocompleteController {
                 try {
                     return this.onConfigFetchedHandler(response);
                 } catch (error) {
-                    return this._reportError(error);
+                    if (this._reportError) {
+                        this._reportError(error);
+                    }
+
+                    return undefined;
                 }
             }, (error) => {
                 console.error(`Failed to load autocomplete configuration: ${formatAssetLoadError(error)}`);

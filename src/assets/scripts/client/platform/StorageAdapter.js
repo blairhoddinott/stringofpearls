@@ -1,8 +1,9 @@
 /**
  * A pure adapter around an injected Web Storage-compatible backend.
  *
- * The backend is anything exposing the standard Web Storage `getItem(key)` and
- * `setItem(key, value)` contract (for example `window.localStorage`). This
+ * The backend is anything exposing the standard Web Storage `getItem(key)`,
+ * `setItem(key, value)`, and `clear()` contract (for example
+ * `window.localStorage`). This
  * adapter intentionally references no browser globals so it stays trivially
  * testable with a fake backend.
  *
@@ -11,7 +12,7 @@
 export default class StorageAdapter {
     /**
      * @constructor
-     * @param backend {Storage}  Web Storage-compatible backend exposing `getItem(key)` and `setItem(key, value)`
+     * @param backend {Storage}  Web Storage-compatible backend exposing `getItem(key)`, `setItem(key, value)`, and `clear()`
      */
     constructor(backend) {
         this._backend = backend;
@@ -44,5 +45,18 @@ export default class StorageAdapter {
      */
     set(key, value) {
         this._backend.setItem(key, value);
+    }
+
+    /**
+     * Remove every key owned by the backend.
+     *
+     * Delegates exactly to the backend `clear()` and returns its result verbatim,
+     * letting any backend failure propagate unchanged.
+     *
+     * @for StorageAdapter
+     * @method clear
+     */
+    clear() {
+        return this._backend.clear();
     }
 }

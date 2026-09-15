@@ -41,8 +41,9 @@ export default class InputController {
      * @param aircraftController {AircraftController}
      * @param scopeModel {ScopeModel}
      * @param assetLoader {AssetLoader} composition-root JSON transport, injected into AutocompleteController
+     * @param clearStorageAndReload {ClearStorageAndReload} clear/reload service invoked by the CLEAR system command; optional
      */
-    constructor($element, aircraftController, scopeModel, assetLoader) {
+    constructor($element, aircraftController, scopeModel, assetLoader, clearStorageAndReload) {
         this.$element = $element;
         this.$body = null;
         this.$window = null;
@@ -53,6 +54,16 @@ export default class InputController {
         this._aircraftController = aircraftController;
         this._scopeModel = scopeModel;
         this._assetLoader = assetLoader;
+
+        /**
+         * Clear/reload service forwarded from the composition root and used only
+         * by the CLEAR system command. Nullish when omitted so older/shorter
+         * constructor calls stay free of browser globals for this capability.
+         *
+         * @property _clearStorageAndReload
+         * @type {ClearStorageAndReload|null}
+         */
+        this._clearStorageAndReload = clearStorageAndReload ?? null;
         this._autocompleteController = new AutocompleteController(this.$element, this, this._aircraftController, this._assetLoader);
 
         prop.input = input;
@@ -892,8 +903,9 @@ export default class InputController {
             }
 
             case PARSED_COMMAND_NAME.CLEAR:
-                localStorage.clear();
-                location.reload();
+                if (this._clearStorageAndReload != null) {
+                    this._clearStorageAndReload.execute();
+                }
 
                 break;
             case PARSED_COMMAND_NAME.AIRPORT: {

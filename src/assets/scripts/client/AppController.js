@@ -38,8 +38,9 @@ export default class AppController {
      * @param element {jQuery|HTML Element}
      * @param assetLoader {AssetLoader}
      * @param storageAdapter {StorageAdapter}
+     * @param clearStorageAndReload {ClearStorageAndReload} composition-root clear/reload service threaded to InputController for the CLEAR command
      */
-    constructor(element, assetLoader, storageAdapter) {
+    constructor(element, assetLoader, storageAdapter, clearStorageAndReload) {
         /**
          * Root DOM element.
          *
@@ -58,6 +59,15 @@ export default class AppController {
          * @type {StorageAdapter}
          */
         this._storageAdapter = storageAdapter;
+
+        /**
+         * Clear/reload service injected from the composition root and forwarded
+         * to `InputController` for the CLEAR system command.
+         *
+         * @property _clearStorageAndReload
+         * @type {ClearStorageAndReload}
+         */
+        this._clearStorageAndReload = clearStorageAndReload;
 
         this.$canvasesElement = null;
         this._eventBus = EventBus;
@@ -211,7 +221,13 @@ export default class AppController {
             this._storageAdapter
         );
 
-        this.inputController = new InputController(this.$element, this.aircraftController, this.scopeModel, this._assetLoader);
+        this.inputController = new InputController(
+            this.$element,
+            this.aircraftController,
+            this.scopeModel,
+            this._assetLoader,
+            this._clearStorageAndReload
+        );
         this.airportInfoController = new AirportInfoController(this.$element);
         this.airportGuideController = new AirportGuideViewController(this.$element, airportGuideData, initialAirportData.icao);
         this.changelogController = new ChangelogController(this.contentQueue, this._storageAdapter);

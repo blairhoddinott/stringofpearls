@@ -30,3 +30,24 @@ ava('.set() delegates to the backend setItem with the exact key and value', (t) 
 
     t.true(backend.setItem.calledOnceWithExactly('atc-last-version', '1.2.3'));
 });
+
+ava('.clear() delegates exactly to the backend clear with no arguments', (t) => {
+    const backendResult = { cleared: true };
+    const backend = { clear: sinon.stub().returns(backendResult) };
+    const storageAdapter = new StorageAdapter(backend);
+
+    const result = storageAdapter.clear();
+
+    t.true(backend.clear.calledOnceWithExactly());
+    t.is(result, backendResult);
+});
+
+ava('.clear() lets a backend clear failure propagate with the exact error', (t) => {
+    const failure = new Error('quota');
+    const backend = { clear: sinon.stub().throws(failure) };
+    const storageAdapter = new StorageAdapter(backend);
+
+    const thrown = t.throws(() => storageAdapter.clear());
+
+    t.is(thrown, failure);
+});

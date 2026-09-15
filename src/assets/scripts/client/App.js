@@ -4,6 +4,7 @@ import AssetLoader, { formatAssetLoadError } from './platform/AssetLoader';
 import StartupAssetLoader from './platform/StartupAssetLoader';
 import StorageAdapter from './platform/StorageAdapter';
 import StartupStorage from './platform/StartupStorage';
+import ClearStorageAndReload from './platform/ClearStorageAndReload';
 import EventBus from './lib/EventBus';
 import TimeKeeper from './engine/TimeKeeper';
 import { DEFAULT_AIRPORT_ICAO } from './constants/airportConstants';
@@ -34,11 +35,13 @@ export default class App {
      * @param $element {HTML Element|null}
      * @param assetLoader {AssetLoader}
      * @param storageAdapter {StorageAdapter}
+     * @param reload {Function} composition-root page-reload callable composed into the CLEAR ClearStorageAndReload service
      */
     constructor(
         element,
         assetLoader = new AssetLoader((url) => $.getJSON(url)),
-        storageAdapter = new StorageAdapter(window.localStorage)
+        storageAdapter = new StorageAdapter(window.localStorage),
+        reload = () => window.location.reload()
     ) {
         /**
          * Root DOM element.
@@ -50,7 +53,12 @@ export default class App {
         this.$element = $(element);
         this._startupAssetLoader = new StartupAssetLoader(assetLoader);
         this._startupStorage = new StartupStorage(storageAdapter);
-        this._appController = new AppController(this.$element, assetLoader, storageAdapter);
+        this._appController = new AppController(
+            this.$element,
+            assetLoader,
+            storageAdapter,
+            new ClearStorageAndReload(storageAdapter, reload)
+        );
         this.eventBus = EventBus;
 
         window.prop = prop;

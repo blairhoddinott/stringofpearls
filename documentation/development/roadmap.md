@@ -13,7 +13,7 @@ This roadmap tracks the current direction of the project. The order may change a
 - [x] Modernize ESLint and establish a clean full-repository lint baseline.
 - [x] Upgrade vulnerable production dependencies behind focused compatibility tests.
 - [ ] Modernize the application architecture
-  - [ ] Introduce explicit platform boundaries; asset loading uses injected native-Promise adapters throughout, and startup selection, airport persistence, changelog versioning, tutorial completion, canvas zoom, game options, and speech preference use the shared storage adapter while the remaining storage consumers (clear/reload) and browser services still require migration.
+  - [ ] Introduce explicit platform boundaries; asset loading uses injected native-Promise adapters throughout, and the storage front is complete — startup selection, airport persistence, changelog versioning, tutorial completion, canvas zoom, game options, speech preference, and the CLEAR system command all use the shared storage adapter — while the remaining browser-service boundaries (clock/timers, randomness, analytics, speech synthesis, clipboard/page visibility) and the final browser-free proof still require migration.
 - [ ] Resume feature development on the modernized foundation
 
 ## Simulation and realism

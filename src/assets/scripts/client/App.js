@@ -1,13 +1,12 @@
 import $ from 'jquery';
-import _isNil from 'lodash/isNil';
-import _lowerCase from 'lodash/lowerCase';
 import AppController from './AppController';
 import AssetLoader, { formatAssetLoadError } from './platform/AssetLoader';
 import StartupAssetLoader from './platform/StartupAssetLoader';
+import StorageAdapter from './platform/StorageAdapter';
+import StartupStorage from './platform/StartupStorage';
 import EventBus from './lib/EventBus';
 import TimeKeeper from './engine/TimeKeeper';
 import { DEFAULT_AIRPORT_ICAO } from './constants/airportConstants';
-import { STORAGE_KEY } from './constants/storageKeys';
 import { EVENT } from './constants/eventNames';
 import { LOG } from './constants/logLevel';
 
@@ -34,8 +33,13 @@ export default class App {
      * @constructor
      * @param $element {HTML Element|null}
      * @param assetLoader {AssetLoader}
+     * @param storageAdapter {StorageAdapter}
      */
-    constructor(element, assetLoader = new AssetLoader((url) => $.getJSON(url))) {
+    constructor(
+        element,
+        assetLoader = new AssetLoader((url) => $.getJSON(url)),
+        storageAdapter = new StorageAdapter(window.localStorage)
+    ) {
         /**
          * Root DOM element.
          *
@@ -45,6 +49,7 @@ export default class App {
          */
         this.$element = $(element);
         this._startupAssetLoader = new StartupAssetLoader(assetLoader);
+        this._startupStorage = new StartupStorage(storageAdapter);
         this._appController = new AppController(this.$element, assetLoader);
         this.eventBus = EventBus;
 
@@ -80,40 +85,9 @@ export default class App {
     _onAirportLoadListFetched(data) {
         const airportLoadList = data.filter((airport) => airport.disabled !== true);
         // ICAO id of the initial airport. may be the default or a stored airport
-        const initialAirportToLoad = this._getInitialAirport(airportLoadList);
+        const initialAirportToLoad = this._startupStorage.getInitialAirport(airportLoadList);
 
         return this.loadInitialAirport(airportLoadList, initialAirportToLoad);
-    }
-
-    /**
-     * Check if a given icao exists in the list of available airports
-     *
-     * @for App
-     * @method _isAirportIcaoInLoadList
-     * @param icao {string}  icao
-     * @param airportLoadList {array<object>}  List of available airports
-     */
-    _isAirportIcaoInLoadList(icao, airportLoadList) {
-        return !_isNil(icao) && airportLoadList.some((airport) => airport.icao === icao);
-    }
-
-    /**
-     * Obtain icao for the initial airport from localStorage if available
-     * otherwise use `DEFAULT_AIRPORT_ICAO`
-     *
-     * @for App
-     * @method _getInitialAirport
-     * @param airportLoadList {array<object>}  List of airports to load
-     */
-    _getInitialAirport(airportLoadList) {
-        let airportName = DEFAULT_AIRPORT_ICAO;
-        const previousAirportIcaoFromLocalStorage = localStorage[STORAGE_KEY.ATC_LAST_AIRPORT];
-
-        if (this._isAirportIcaoInLoadList(previousAirportIcaoFromLocalStorage, airportLoadList)) {
-            airportName = _lowerCase(localStorage[STORAGE_KEY.ATC_LAST_AIRPORT]);
-        }
-
-        return airportName;
     }
 
     /**
@@ -135,10 +109,10 @@ export default class App {
     }
 
     /**
-     * Used to load data for the initial airport using an icao from
-     * either localStorage or `DEFAULT_AIRPORT_ICAO`
+     * Used to load data for the initial airport using an icao chosen by
+     * `StartupStorage` (a stored airport or `DEFAULT_AIRPORT_ICAO`)
      *
-     * If a localStorage airport cannot be found, we will attempt
+     * If the selected airport cannot be found, we will attempt
      * to load the `DEFAULT_AIRPORT_ICAO`
      *
      * Lifecycle method. Should be called only once on initialization

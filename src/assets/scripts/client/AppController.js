@@ -37,8 +37,9 @@ export default class AppController {
      * @constructor
      * @param element {jQuery|HTML Element}
      * @param assetLoader {AssetLoader}
+     * @param storageAdapter {StorageAdapter}
      */
-    constructor(element, assetLoader) {
+    constructor(element, assetLoader, storageAdapter) {
         /**
          * Root DOM element.
          *
@@ -48,6 +49,15 @@ export default class AppController {
          */
         this.$element = $(element);
         this._assetLoader = assetLoader;
+
+        /**
+         * Persistence boundary injected from the composition root and forwarded
+         * to children that own persisted state.
+         *
+         * @property _storageAdapter
+         * @type {StorageAdapter}
+         */
+        this._storageAdapter = storageAdapter;
 
         this.$canvasesElement = null;
         this._eventBus = EventBus;
@@ -193,7 +203,7 @@ export default class AppController {
         this.inputController = new InputController(this.$element, this.aircraftController, this.scopeModel, this._assetLoader);
         this.airportInfoController = new AirportInfoController(this.$element);
         this.airportGuideController = new AirportGuideViewController(this.$element, airportGuideData, initialAirportData.icao);
-        this.changelogController = new ChangelogController(this.contentQueue);
+        this.changelogController = new ChangelogController(this.contentQueue, this._storageAdapter);
 
         this.updateViewControls();
     }

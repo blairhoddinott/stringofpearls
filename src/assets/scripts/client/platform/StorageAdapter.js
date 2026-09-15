@@ -1,17 +1,17 @@
 /**
  * A pure adapter around an injected Web Storage-compatible backend.
  *
- * The backend is anything exposing the standard Web Storage `getItem(key)`
- * contract (for example `window.localStorage`). This adapter intentionally
- * references no browser globals so it stays trivially testable with a fake
- * backend.
+ * The backend is anything exposing the standard Web Storage `getItem(key)` and
+ * `setItem(key, value)` contract (for example `window.localStorage`). This
+ * adapter intentionally references no browser globals so it stays trivially
+ * testable with a fake backend.
  *
  * @class StorageAdapter
  */
 export default class StorageAdapter {
     /**
      * @constructor
-     * @param backend {Storage}  Web Storage-compatible backend exposing `getItem(key)`
+     * @param backend {Storage}  Web Storage-compatible backend exposing `getItem(key)` and `setItem(key, value)`
      */
     constructor(backend) {
         this._backend = backend;
@@ -30,5 +30,19 @@ export default class StorageAdapter {
      */
     get(key) {
         return this._backend.getItem(key);
+    }
+
+    /**
+     * Write `value` under `key`.
+     *
+     * Delegates exactly to the backend `setItem(key, value)`.
+     *
+     * @for StorageAdapter
+     * @method set
+     * @param key {string}
+     * @param value {*}  Raw value forwarded to the backend for Web Storage coercion
+     */
+    set(key, value) {
+        this._backend.setItem(key, value);
     }
 }

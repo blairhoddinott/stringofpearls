@@ -2,6 +2,7 @@ import ava from 'ava';
 import sinon from 'sinon';
 import ChangelogController from '../../src/assets/scripts/client/changelog/ChangelogController';
 import { AssetLoadError } from '../../src/assets/scripts/client/platform/AssetLoader';
+import { STORAGE_KEY } from '../../src/assets/scripts/client/constants/storageKeys';
 
 const CHANGELOG_URL = 'assets/changelog.json';
 
@@ -54,4 +55,54 @@ ava.serial('loadChangelogContent reports a throwing onLoadComplete through the u
     await t.notThrowsAsync(instance.loadChangelogContent());
 
     t.true(instance._reportError.calledOnceWithExactly(processingError));
+});
+
+// Build a browser-light instance targeting `_shouldShowOnLoad` with an injected
+// storage stub, so version-gating is exercised without touching a global
+// `localStorage` or the DOM/UI graph.
+const buildVersionInstance = ({ storedVersion, version } = {}) => {
+    const instance = Object.create(ChangelogController.prototype);
+
+    instance._storageAdapter = {
+        get: sinon.stub().returns(storedVersion),
+        set: sinon.stub()
+    };
+    instance.version = version;
+
+    return instance;
+};
+
+ava('_shouldShowOnLoad returns false and does not write when the stored version matches the current version', (t) => {
+    const instance = buildVersionInstance({ storedVersion: '1.2.3', version: '1.2.3' });
+
+    const result = instance._shouldShowOnLoad();
+
+    t.false(result);
+    t.false(instance._storageAdapter.set.called);
+});
+
+ava('_shouldShowOnLoad returns true and writes the exact current version under the last-version key', (t) => {
+    const instance = buildVersionInstance({ storedVersion: '1.0.0', version: '2.0.0' });
+
+    const result = instance._shouldShowOnLoad();
+
+    t.true(result);
+    t.true(instance._storageAdapter.set.calledOnceWithExactly(STORAGE_KEY.ATC_LAST_VERSION, '2.0.0'));
+});
+
+ava('_shouldShowOnLoad normalizes a missing backend null to legacy undefined and does not write when the current version is also undefined', (t) => {
+    const instance = buildVersionInstance({ storedVersion: null, version: undefined });
+
+    const result = instance._shouldShowOnLoad();
+
+    t.false(result);
+    t.false(instance._storageAdapter.set.called);
+});
+
+ava('_shouldShowOnLoad reads the last-version key through the storage adapter', (t) => {
+    const instance = buildVersionInstance({ storedVersion: '1.2.3', version: '1.2.3' });
+
+    instance._shouldShowOnLoad();
+
+    t.true(instance._storageAdapter.get.calledOnceWithExactly(STORAGE_KEY.ATC_LAST_VERSION));
 });

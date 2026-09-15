@@ -14,10 +14,20 @@ export default class ChangelogController {
     /**
      * @constructor
      * @param {ContentQueue} contentQueue
+     * @param {StorageAdapter} storageAdapter  persistence boundary for the
+     *                                         last-played version
      * @param {Function} [reportError] reporter for processing-time exceptions,
      *                                 defaults to {@link reportAsyncError}
      */
-    constructor(contentQueue, reportError = reportAsyncError) {
+    constructor(contentQueue, storageAdapter, reportError = reportAsyncError) {
+        /**
+         * Persistence boundary used to read and write the last-played version.
+         *
+         * @property _storageAdapter
+         * @type {StorageAdapter}
+         */
+        this._storageAdapter = storageAdapter;
+
         /**
          * Reporter used to surface processing-time exceptions on the browser's
          * uncaught-error channel without leaking an unhandled rejection.
@@ -221,8 +231,8 @@ export default class ChangelogController {
     }
 
     /**
-     * Called when the changelog is loaded (the promise was resolved) as the
-     * callback from the deferred promise.
+     * Called when the changelog content has been loaded and the resolving
+     * promise from `loadChangelogContent` runs its success handler.
      *
      * @for ChangelogController
      * @method onLoadComplete
@@ -259,12 +269,17 @@ export default class ChangelogController {
      * @returns {Boolean} if the user has not played this version
      */
     _shouldShowOnLoad() {
-        const lastPlayedVersion = localStorage[STORAGE_KEY.ATC_LAST_VERSION];
+        const storedVersion = this._storageAdapter.get(STORAGE_KEY.ATC_LAST_VERSION);
+        // Web Storage `getItem()` returns `null` for a missing key, whereas the
+        // legacy `storage[key]` property access returned `undefined`. Normalize
+        // the missing case back to `undefined` so the comparison preserves the
+        // historical behavior when `this.version` is also undefined.
+        const lastPlayedVersion = storedVersion === null ? undefined : storedVersion;
         const currentVersion = this.version;
         const shouldDisplayChangelog = lastPlayedVersion !== currentVersion;
 
         if (shouldDisplayChangelog) {
-            localStorage[STORAGE_KEY.ATC_LAST_VERSION] = currentVersion;
+            this._storageAdapter.set(STORAGE_KEY.ATC_LAST_VERSION, currentVersion);
         }
 
         return shouldDisplayChangelog;

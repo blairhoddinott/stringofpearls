@@ -21,3 +21,12 @@ ava('.get() returns the backend missing-value sentinel unchanged', (t) => {
     t.true(backend.getItem.calledOnceWithExactly('missing-key'));
     t.is(value, null);
 });
+
+ava('.set() delegates to the backend setItem with the exact key and value', (t) => {
+    const backend = { setItem: sinon.stub() };
+    const storageAdapter = new StorageAdapter(backend);
+
+    storageAdapter.set('atc-last-version', '1.2.3');
+
+    t.true(backend.setItem.calledOnceWithExactly('atc-last-version', '1.2.3'));
+});

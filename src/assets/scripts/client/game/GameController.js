@@ -114,7 +114,43 @@ class GameController {
         this.game.option = new GameOptions();
         this.theme = THEME.DEFAULT;
 
+        /**
+         * Persistence boundary forwarded to the `GameOptions` instance.
+         *
+         * Remains `null` until the composition root configures it through
+         * `initStorage()`, so import-time construction never touches a browser
+         * global. Retained across `destroy()` so rebuilt options stay
+         * storage-backed.
+         *
+         * @property _storageAdapter
+         * @type {StorageAdapter}
+         * @default null
+         * @private
+         */
+        this._storageAdapter = null;
+
         this._eventBus = EventBus;
+    }
+
+    /**
+     * Configure the persistence boundary used by game options.
+     *
+     * Called by `AppController.setupChildren()` at the composition root, before
+     * any downstream UI/canvas consumer reads a game option, so persisted
+     * settings are rehydrated on the existing `GameOptions` instance rather than
+     * replacing it.
+     *
+     * @for GameController
+     * @method initStorage
+     * @param storageAdapter {StorageAdapter}  boundary exposing `get(key)`/`set(key, value)`
+     * @chainable
+     */
+    initStorage(storageAdapter) {
+        this._storageAdapter = storageAdapter == null ? null : storageAdapter;
+
+        this.game.option.initStorage(this._storageAdapter);
+
+        return this;
     }
 
     /**
@@ -210,6 +246,10 @@ class GameController {
         this.game.score = 0;
         this.game.option = new GameOptions();
         this.theme = THEME.DEFAULT;
+
+        // Retain any configured adapter so the rebuilt `GameOptions` instance
+        // stays storage-backed after lifecycle reconstruction.
+        this.game.option.initStorage(this._storageAdapter);
 
         return this;
     }

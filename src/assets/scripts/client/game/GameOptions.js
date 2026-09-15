@@ -31,6 +31,20 @@ export default class GameOptions {
         this._options = {};
 
         /**
+         * Persistence boundary used to read and write option values.
+         *
+         * Remains `null` until a composition root configures it through
+         * `initStorage()`, so import-time construction never touches a
+         * browser global and every option initializes from its default.
+         *
+         * @property _storageAdapter
+         * @type {StorageAdapter}
+         * @default null
+         * @private
+         */
+        this._storageAdapter = null;
+
+        /**
          * Model properties will be added for each game option
          * dynamically via `.addGameOptions()`
          *
@@ -39,6 +53,24 @@ export default class GameOptions {
          *
          * this[OPTION_NAME] = OPTION_VALUE;
          */
+
+        this.addGameOptions();
+    }
+
+    /**
+     * Configure the persistence boundary used for option values.
+     *
+     * Called by `GameController` during composition-root configuration, before
+     * any downstream UI/canvas consumer reads an option. Storing the adapter and
+     * rehydrating every known option from it is the only way this instance
+     * reaches storage; before this runs it stays browser-global-free.
+     *
+     * @for GameOptions
+     * @method initStorage
+     * @param storageAdapter {StorageAdapter}  boundary exposing `get(key)`/`set(key, value)`
+     */
+    initStorage(storageAdapter) {
+        this._storageAdapter = storageAdapter == null ? null : storageAdapter;
 
         this.addGameOptions();
     }
@@ -63,13 +95,19 @@ export default class GameOptions {
      * @param optionProps {object}
      */
     addOption(optionProps) {
-        const optionStorageKey = this.buildStorageName(optionProps.name);
-        const storedOptionValue = global.localStorage.getItem(optionStorageKey);
         this._options[optionProps.name] = optionProps;
         let optionValue = optionProps.defaultValue;
 
-        if (!_isNil(storedOptionValue)) {
-            optionValue = storedOptionValue;
+        // Only reach for storage once a composition root has configured the
+        // adapter. A present raw value (including falsy strings like `''` and
+        // `'0'`) is preserved verbatim; `null`/`undefined` mean missing.
+        if (this._storageAdapter !== null) {
+            const optionStorageKey = this.buildStorageName(optionProps.name);
+            const storedOptionValue = this._storageAdapter.get(optionStorageKey);
+
+            if (!_isNil(storedOptionValue)) {
+                optionValue = storedOptionValue;
+            }
         }
 
         this[optionProps.name] = optionValue;
@@ -110,7 +148,12 @@ export default class GameOptions {
         this[name] = value;
         const optionStorageKey = this.buildStorageName(name);
 
-        global.localStorage.setItem(optionStorageKey, value);
+        // Persist only when a composition root has configured the adapter; the
+        // instance stays usable (and browser-global-free) before that runs.
+        if (this._storageAdapter !== null) {
+            this._storageAdapter.set(optionStorageKey, value);
+        }
+
         EventTracker.recordEvent(TRACKABLE_EVENT.SETTINGS, name, value);
 
         if (this._options[name].onChangeEventHandler) {
@@ -121,7 +164,7 @@ export default class GameOptions {
     }
 
     /**
-     * Build a string that can be used as a key for localStorage data
+     * Build a string that can be used as a key for persisted option data
      *
      * @for GameOptions
      * @method buildStorageName

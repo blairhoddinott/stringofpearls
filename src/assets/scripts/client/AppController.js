@@ -175,6 +175,12 @@ export default class AppController {
         this.loadingView = new LoadingView();
         this.contentQueue = new ContentQueue(this.loadingView, this._assetLoader);
 
+        // Configure the `GameController` option-persistence boundary at the
+        // composition root, before any later option consumer (especially
+        // `UiController`/`SettingsController` and `CanvasController` theme setup)
+        // reads a value, so persisted settings are rehydrated first.
+        GameController.initStorage(this._storageAdapter);
+
         // IMPORTANT:
         // The order in which the following classes are instantiated is extremely important. Changing
         // this order could break a lot of things. This interdependency is something we should

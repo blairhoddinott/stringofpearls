@@ -238,9 +238,31 @@ ava('retains an injected navigation library by exact identity', (t) => {
     t.is(controller._navigationLibrary, navigationLibrary);
 });
 
-ava('creates aircraft with the exact injected navigation and airport owners', (t) => {
+ava('retains an injected clock by exact identity', (t) => {
+    const clock = {};
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture,
+        undefined,
+        undefined,
+        new AircraftCollection(),
+        new EventBusClass(),
+        undefined,
+        undefined,
+        clock
+    );
+
+    t.is(controller._clock, clock);
+});
+
+ava.serial('creates aircraft and conflicts with the exact injected service owners', (t) => {
     const navigationLibrary = new NavigationLibraryClass();
     navigationLibrary.init(AIRPORT_JSON_KLAS_MOCK);
+    const clock = {
+        accumulatedDeltaTime: 0
+    };
+    const eventBus = new EventBusClass();
     const airportController = {
         current: AirportController.current,
         airport_get: (...args) => AirportController.airport_get(...args)
@@ -253,16 +275,30 @@ ava('creates aircraft with the exact injected navigation and airport owners', (t
         undefined,
         undefined,
         aircraftCollection,
-        new EventBusClass(),
+        eventBus,
         airportController,
-        navigationLibrary
+        navigationLibrary,
+        clock
     );
+    const previousAircraftController = window.aircraftController;
+    window.aircraftController = controller;
+    t.teardown(() => {
+        window.aircraftController = previousAircraftController;
+    });
 
     controller._createAircraftWithInitializationProps(DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK);
+    controller._createAircraftWithInitializationProps(DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK);
+    controller.addConflict(aircraftCollection.list[0], aircraftCollection.list[1]);
 
-    t.is(aircraftCollection.list.length, 1);
+    t.is(aircraftCollection.list.length, 2);
     t.is(aircraftCollection.list[0].fms._navigationLibrary, navigationLibrary);
     t.is(aircraftCollection.list[0].fms._airportController, airportController);
+    t.is(aircraftCollection.list[0]._clock, clock);
+    t.is(aircraftCollection.list[0]._eventBus, eventBus);
+    t.is(controller.conflicts.length, 1);
+    t.is(controller.conflicts[0]._clock, clock);
+    t.is(controller.conflicts[0]._eventBus, eventBus);
+    t.is(controller.conflicts[0]._airportController, airportController);
 });
 
 ava('generates distinct deterministic CIDs when randomSource is omitted', (t) => {

@@ -39,6 +39,11 @@ export default class SimulationContext {
         aircraftController = null,
         spawnPatternCollection = null
     } = {}) {
+        if (clock != null && aircraftController?._clock != null &&
+            aircraftController._clock !== clock) {
+            throw new TypeError('aircraftController must own the supplied clock.');
+        }
+
         if (eventBus != null && aircraftController?._eventBus != null &&
             aircraftController._eventBus !== eventBus) {
             throw new TypeError('aircraftController must own the supplied eventBus.');
@@ -59,7 +64,7 @@ export default class SimulationContext {
             throw new TypeError('aircraftController must own the supplied aircraftCollection.');
         }
 
-        this._clock = clock ?? new SimulationClock();
+        this._clock = clock ?? aircraftController?._clock ?? new SimulationClock();
         this._timerQueue = new SimulationTimerQueue(this._clock);
         this._randomSource = randomSource;
         this._eventBus = eventBus ?? aircraftController?._eventBus ?? new EventBusClass();
@@ -136,6 +141,10 @@ export default class SimulationContext {
         const result = this._clock.tick(delta);
 
         this._timerQueue.update();
+
+        if (this._aircraftController) {
+            this._aircraftController.update();
+        }
 
         return result;
     }

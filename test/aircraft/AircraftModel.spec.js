@@ -6,6 +6,7 @@ import NavigationLibrary, {
     NavigationLibraryClass
 } from '../../src/assets/scripts/client/navigationLibrary/NavigationLibrary';
 import TimeKeeper from '../../src/assets/scripts/client/engine/TimeKeeper';
+import { EventBusClass } from '../../src/assets/scripts/client/lib/EventBus';
 import {
     createAirportControllerFixture,
     resetAirportControllerFixture,
@@ -83,6 +84,59 @@ ava('passes explicit navigation and airport owners to its FMS', (t) => {
 
     t.is(model.fms._navigationLibrary, navigationLibrary);
     t.is(model.fms._airportController, airportController);
+});
+
+ava('retains an explicit clock and uses its elapsed time during initialization', (t) => {
+    const clock = {
+        accumulatedDeltaTime: 123,
+        getDeltaTimeForGameStateAndTimewarp: () => 0.5
+    };
+    const model = new AircraftModel(
+        ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK,
+        NavigationLibrary,
+        AirportController,
+        clock
+    );
+
+    t.is(model._clock, clock);
+    t.is(model.takeoffTime, 123);
+});
+
+ava('retains an explicit event bus by exact identity', (t) => {
+    const eventBus = new EventBusClass();
+    const model = new AircraftModel(
+        DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK,
+        NavigationLibrary,
+        AirportController,
+        TimeKeeper,
+        eventBus
+    );
+
+    t.is(model._eventBus, eventBus);
+});
+
+ava('uses the explicit clock effective delta for aircraft turn physics', (t) => {
+    const getEffectiveDelta = sinon.stub().returns(2);
+    const clock = {
+        accumulatedDeltaTime: 0,
+        getDeltaTimeForGameStateAndTimewarp: getEffectiveDelta
+    };
+    const model = new AircraftModel(
+        DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK,
+        NavigationLibrary,
+        AirportController,
+        clock
+    );
+    model.setFlightPhase(FLIGHT_PHASE.CRUISE);
+    model.altitude = 10000;
+    model.heading = 0;
+    model.targetHeading = Math.PI / 2;
+    model.target.turn = 'right';
+
+    model.updateAircraftTurnPhysics();
+
+    t.true(getEffectiveDelta.calledOnceWithExactly());
+    t.is(model.heading, PERFORMANCE.TURN_RATE * 2);
 });
 
 ava('resolves departure initialization through the explicit airport owner', (t) => {

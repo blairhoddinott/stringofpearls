@@ -5,6 +5,7 @@ import _without from 'lodash/without';
 import AirlineController from '../airline/AirlineController';
 import AirportController from '../airport/AirportController';
 import NavigationLibrary from '../navigationLibrary/NavigationLibrary';
+import TimeKeeper from '../engine/TimeKeeper';
 import ScopeModel from '../scope/ScopeModel';
 import UiController from '../ui/UiController';
 import EventBus from '../lib/EventBus';
@@ -49,6 +50,7 @@ export default class AircraftController {
      * @param eventBus {EventBus} [optional] aircraft event dispatcher
      * @param airportController {AirportController} [optional] airport state owner
      * @param navigationLibrary {NavigationLibrary} [optional] navigation state owner
+     * @param clock {TimeKeeper|SimulationClock} [optional] simulation time owner
      */
     constructor(
         aircraftTypeDefinitionList,
@@ -59,7 +61,8 @@ export default class AircraftController {
         aircraftCollection,
         eventBus = EventBus,
         airportController = AirportController,
-        navigationLibrary = NavigationLibrary
+        navigationLibrary = NavigationLibrary,
+        clock = TimeKeeper
     ) {
         if (_isNil(aircraftTypeDefinitionList) || _isNil(airlineController) || _isNil(scopeModel)) {
             throw new TypeError('Invalid parameter(s) passed to AircraftController constructor. ' +
@@ -116,6 +119,7 @@ export default class AircraftController {
         this._eventBus = eventBus;
         this._airportController = airportController;
         this._navigationLibrary = navigationLibrary;
+        this._clock = clock;
 
         /**
          * Reference to an `AircraftTypeDefinitionCollection` instance
@@ -467,7 +471,13 @@ export default class AircraftController {
      * @param otherAircraft {AircraftModel}  aircraft 2
      */
     addConflict(aircraft, otherAircraft) {
-        const conflict = new AircraftConflict(aircraft, otherAircraft);
+        const conflict = new AircraftConflict(
+            aircraft,
+            otherAircraft,
+            this._eventBus,
+            this._airportController,
+            this._clock
+        );
 
         if (conflict.shouldBeRemoved()) {
             conflict.destroy();
@@ -588,7 +598,9 @@ export default class AircraftController {
         const aircraftModel = new AircraftModel(
             initializationProps,
             this._navigationLibrary,
-            this._airportController
+            this._airportController,
+            this._clock,
+            this._eventBus
         );
         const isDeparture = initializationProps.category === 'departure';
         const isArrival = initializationProps.category === 'arrival';
@@ -910,7 +922,7 @@ export default class AircraftController {
     _updateAircraftVisibility(aircraftModel) {
         // TODO: these next 3 logic blocks could use some cleaning/abstraction
         if (aircraftModel.isArrival() && aircraftModel.isStopped() && !aircraftModel.hit) {
-            EventBus.trigger(AIRCRAFT_EVENT.FULLSTOP, aircraftModel, aircraftModel.fms.arrivalRunwayModel);
+            this._eventBus.trigger(AIRCRAFT_EVENT.FULLSTOP, aircraftModel, aircraftModel.fms.arrivalRunwayModel);
 
             UiController.ui_log(`${aircraftModel.callsign} switching to ground, good day`);
             speech_say(

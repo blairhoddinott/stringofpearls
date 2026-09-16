@@ -1,6 +1,7 @@
 import ava from 'ava';
 import sinon from 'sinon';
 import SimulationContext from '../../src/assets/scripts/client/simulation/SimulationContext';
+import SimulationClock from '../../src/assets/scripts/client/simulation/SimulationClock';
 import { EventBusClass } from '../../src/assets/scripts/client/lib/EventBus';
 import { AirportControllerClass } from '../../src/assets/scripts/client/airport/AirportController';
 import { NavigationLibraryClass } from '../../src/assets/scripts/client/navigationLibrary/NavigationLibrary';
@@ -65,20 +66,35 @@ ava('uses an injected aircraft controller collection when no collection is suppl
 });
 
 ava('uses injected aircraft controller service owners when none are supplied', (t) => {
+    const clock = new SimulationClock();
     const eventBus = new EventBusClass();
     const airportController = new AirportControllerClass(new EventBusClass());
     const navigationLibrary = new NavigationLibraryClass();
     const aircraftController = {
         aircraft: { reset: () => {} },
+        _clock: clock,
         _eventBus: eventBus,
         _airportController: airportController,
         _navigationLibrary: navigationLibrary
     };
     const context = new SimulationContext({ aircraftController });
 
+    t.is(context.clock, clock);
     t.is(context.eventBus, eventBus);
     t.is(context.airportController, airportController);
     t.is(context.navigationLibrary, navigationLibrary);
+});
+
+ava('rejects a mismatched injected aircraft controller clock owner', (t) => {
+    const error = t.throws(() => new SimulationContext({
+        clock: {},
+        aircraftController: {
+            aircraft: { reset: () => {} },
+            _clock: {}
+        }
+    }), { instanceOf: TypeError });
+
+    t.is(error.message, 'aircraftController must own the supplied clock.');
 });
 
 ava('rejects mismatched injected aircraft controller and collection state', (t) => {
@@ -389,4 +405,38 @@ ava('tick advances the clock before updating only this session timer queue', (t)
     t.not(first.timerQueue, second.timerQueue);
     t.true(firstCallback.calledOnceWithExactly(undefined));
     t.false(secondCallback.called);
+});
+
+ava('tick updates aircraft after the clock and timer queue without changing its return value', (t) => {
+    const order = [];
+    const expectedResult = { advanced: true };
+    const clock = {
+        tick: sinon.stub().callsFake(() => {
+            order.push('clock');
+            return expectedResult;
+        })
+    };
+    const aircraftController = {
+        update: sinon.stub().callsFake(() => order.push('aircraft'))
+    };
+    const context = new SimulationContext({ clock, aircraftController });
+    sinon.stub(context.timerQueue, 'update').callsFake(() => order.push('timers'));
+
+    const result = context.tick(0.25);
+
+    t.deepEqual(order, ['clock', 'timers', 'aircraft']);
+    t.true(aircraftController.update.calledOnceWithExactly());
+    t.is(result, expectedResult);
+});
+
+ava('tick updates only this simulation session aircraft controller', (t) => {
+    const firstAircraftController = { update: sinon.stub() };
+    const secondAircraftController = { update: sinon.stub() };
+    const first = new SimulationContext({ aircraftController: firstAircraftController });
+    new SimulationContext({ aircraftController: secondAircraftController });
+
+    first.tick(0.5);
+
+    t.true(firstAircraftController.update.calledOnceWithExactly());
+    t.false(secondAircraftController.update.called);
 });

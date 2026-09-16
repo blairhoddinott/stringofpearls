@@ -21,6 +21,15 @@ ava('accumulatedDeltaTime exposes elapsed time for legacy consumer migration', (
     t.is(clock.accumulatedDeltaTime, 1.5);
 });
 
+ava('legacy effective-delta access returns the exact last deterministic tick result', (t) => {
+    const clock = new SimulationClock();
+    clock.updateSimulationRate(3);
+
+    const tickResult = clock.tick(0.5);
+
+    t.is(clock.getDeltaTimeForGameStateAndTimewarp(), tickResult);
+});
+
 ava('tick applies the simulation rate and returns the effective delta', (t) => {
     const clock = new SimulationClock();
 

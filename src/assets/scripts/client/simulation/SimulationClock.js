@@ -46,6 +46,10 @@ export default class SimulationClock {
         this._simulationRate = nextRate;
     }
 
+    getDeltaTimeForGameStateAndTimewarp() {
+        return this._deltaTime;
+    }
+
     tick(delta) {
         const effectiveDelta = this._isPaused ? 0 : Math.min(delta * this._simulationRate, 100);
 

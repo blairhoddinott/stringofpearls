@@ -144,6 +144,16 @@ async function main() {
     assert.notEqual(firstContext.aircraftCollection, secondContext.aircraftCollection);
     assert.deepEqual(firstContext.aircraftCollection.items, [aircraft]);
     assert.deepEqual(secondContext.aircraftCollection.items, []);
+    let firstAircraftUpdateCount = 0;
+    let secondAircraftUpdateCount = 0;
+    firstContext._aircraftController = {
+        update: () => { firstAircraftUpdateCount++; },
+        disable: () => {}
+    };
+    secondContext._aircraftController = {
+        update: () => { secondAircraftUpdateCount++; },
+        disable: () => {}
+    };
     let firstTimerCount = 0;
     firstContext.timerQueue.scheduleTimeout(() => { firstTimerCount++; }, 1);
     firstContext.tick(0.5);
@@ -153,6 +163,8 @@ async function main() {
     assert.equal(secondContext.timerQueue.timers.length, 0);
     assert.equal(firstContext.clock.elapsedTime, 1.75);
     assert.equal(secondContext.clock.elapsedTime, 0);
+    assert.equal(firstAircraftUpdateCount, 2);
+    assert.equal(secondAircraftUpdateCount, 0);
     let firstSpawnCount = 0;
     let secondSpawnCount = 0;
     const trafficPattern = { getNextDelayValue: () => 1, scheduleId: null };
@@ -166,6 +178,8 @@ async function main() {
     firstContext.tick(2);
     assert.equal(firstSpawnCount, 1);
     assert.equal(secondSpawnCount, 0);
+    assert.equal(firstAircraftUpdateCount, 3);
+    assert.equal(secondAircraftUpdateCount, 0);
     firstContext.destroy();
     assert.equal(firstContext.navigationLibrary.findFixByName('ALPHA'), null);
     assert.equal(firstContext.airportController.current, null);

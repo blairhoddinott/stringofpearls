@@ -1,6 +1,7 @@
 import ava from 'ava';
 import sinon from 'sinon';
-import GameController from '../../src/assets/scripts/client/game/GameController';
+import GameController, { GameControllerClass } from '../../src/assets/scripts/client/game/GameController';
+import SimulationContext from '../../src/assets/scripts/client/simulation/SimulationContext';
 
 // Build a storage adapter stub exposing only the `get(key)`/`set(key, value)`
 // contract, so the option-persistence seam is exercised without a global
@@ -63,11 +64,16 @@ ava.serial('.destroy() rebuilds GameOptions while retaining the configured adapt
     const storageAdapter = buildStorageAdapter({ storedValue: 'CELESTIAL' });
 
     GameController.initStorage(storageAdapter);
+    GameController.game_timeout(() => {}, 1);
     const originalGameOptions = GameController.game.option;
+    const originalTimers = GameController.game.timeouts;
 
     GameController.destroy();
 
     t.not(GameController.game.option, originalGameOptions);
+    t.not(GameController.game.timeouts, originalTimers);
+    t.is(GameController.game.timeouts, GameController._timerQueue.timers);
+    t.deepEqual(GameController.game.timeouts, []);
     t.is(GameController._storageAdapter, storageAdapter);
     t.is(GameController.game.option._storageAdapter, storageAdapter);
     t.is(GameController.getGameOption('theme'), 'CELESTIAL');
@@ -124,4 +130,23 @@ ava.serial('.enable() is a safe, browser-free no-op when no page-visibility adap
     GameController.setupHandlers();
 
     t.notThrows(() => GameController.enable());
+});
+
+ava('a constructible controller delegates legacy timeouts to a context-owned queue', (t) => {
+    const context = new SimulationContext();
+    const controller = new GameControllerClass(context.timerQueue);
+    const receiver = {};
+    const callback = sinon.spy();
+
+    const timer = controller.game_timeout(callback, 1, receiver, 'payload');
+
+    t.is(controller._timerQueue, context.timerQueue);
+    t.is(controller.game.timeouts, context.timerQueue.timers);
+    t.is(controller.game.timeouts[0], timer);
+
+    context.tick(1.01);
+
+    t.true(callback.calledOnceWithExactly('payload'));
+    t.is(callback.firstCall.thisValue, receiver);
+    t.deepEqual(controller.game.timeouts, []);
 });

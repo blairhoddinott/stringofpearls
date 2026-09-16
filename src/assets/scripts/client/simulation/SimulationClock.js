@@ -22,6 +22,10 @@ export default class SimulationClock {
         return this._elapsedTime;
     }
 
+    get accumulatedDeltaTime() {
+        return this._elapsedTime;
+    }
+
     get simulationRate() {
         return this._simulationRate;
     }

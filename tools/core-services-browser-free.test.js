@@ -107,8 +107,13 @@ async function main() {
     firstContext.eventBus.trigger('proof');
     assert.equal(firstEventCount, 1);
     assert.equal(secondEventCount, 0);
+    let firstTimerCount = 0;
+    firstContext.timerQueue.scheduleTimeout(() => { firstTimerCount++; }, 1);
     firstContext.tick(0.5);
     firstContext.tick(1.25);
+    assert.equal(firstTimerCount, 1);
+    assert.equal(firstContext.timerQueue.timers.length, 0);
+    assert.equal(secondContext.timerQueue.timers.length, 0);
     assert.equal(firstContext.clock.elapsedTime, 1.75);
     assert.equal(secondContext.clock.elapsedTime, 0);
     firstContext.destroy();

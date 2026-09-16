@@ -29,7 +29,7 @@ ava('retains the exact injected clock, random source, and event bus identities',
     t.is(context.eventBus, eventBus);
 });
 
-ava('destroy clears only this simulation session event bus', (t) => {
+ava('destroy clears only this simulation session observers and timers', (t) => {
     const first = new SimulationContext();
     const second = new SimulationContext();
     const firstObserver = sinon.stub();
@@ -37,12 +37,16 @@ ava('destroy clears only this simulation session event bus', (t) => {
 
     first.eventBus.on('proof', firstObserver);
     second.eventBus.on('proof', secondObserver);
+    first.timerQueue.scheduleTimeout(() => {}, 1);
+    second.timerQueue.scheduleTimeout(() => {}, 1);
     first.destroy();
     first.eventBus.trigger('proof');
     second.eventBus.trigger('proof');
 
     t.false(firstObserver.called);
     t.true(secondObserver.calledOnceWithExactly());
+    t.deepEqual(first.timerQueue.timers, []);
+    t.is(second.timerQueue.timers.length, 1);
 });
 
 ava('tick advances only this simulation session clock', (t) => {
@@ -68,4 +72,23 @@ ava('tick forwards the exact delta once and returns the clock result verbatim', 
 
     t.true(clock.tick.calledOnceWithExactly(0.125));
     t.is(result, expectedResult);
+});
+
+ava('tick advances the clock before updating only this session timer queue', (t) => {
+    const first = new SimulationContext();
+    const second = new SimulationContext();
+    const firstCallback = sinon.spy();
+    const secondCallback = sinon.spy();
+
+    first.timerQueue.scheduleTimeout(firstCallback, 1);
+    second.timerQueue.scheduleTimeout(secondCallback, 1);
+
+    first.tick(1);
+    t.false(firstCallback.called);
+
+    first.tick(0.01);
+
+    t.not(first.timerQueue, second.timerQueue);
+    t.true(firstCallback.calledOnceWithExactly(undefined));
+    t.false(secondCallback.called);
 });

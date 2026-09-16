@@ -13,6 +13,14 @@ ava('tick advances elapsed time by each explicit delta in order', (t) => {
     t.is(clock.elapsedTime, 1.75);
 });
 
+ava('accumulatedDeltaTime exposes elapsed time for legacy consumer migration', (t) => {
+    const clock = new SimulationClock();
+
+    clock.tick(1.5);
+
+    t.is(clock.accumulatedDeltaTime, 1.5);
+});
+
 ava('tick applies the simulation rate and returns the effective delta', (t) => {
     const clock = new SimulationClock();
 

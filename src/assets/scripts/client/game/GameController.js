@@ -5,6 +5,7 @@ import EventBus from '../lib/EventBus';
 import EventTracker from '../EventTracker';
 import GameOptions from './GameOptions';
 import TimeKeeper from '../engine/TimeKeeper';
+import SimulationTimerQueue from '../simulation/SimulationTimerQueue';
 import { round } from '../math/core';
 import { EVENT } from '../constants/eventNames';
 import { GAME_OPTION_NAMES } from '../constants/gameOptionConstants';
@@ -91,11 +92,13 @@ const GAME_EVENTS_DESCRIPTION = {
 /**
  * @class GameController
  */
-class GameController {
+export class GameControllerClass {
     /**
      * @constructor
      */
-    constructor() {
+    constructor(timerQueue = new SimulationTimerQueue(TimeKeeper)) {
+        this._timerQueue = timerQueue;
+
         // TODO: the below $elements _should_ be used instead of the inline vars currently in use but
         // take caution when implmenting these because it will break tests currently in place. This is
         // because of the use of $ within lifecycle methods and becuase this is a static class used
@@ -108,7 +111,7 @@ class GameController {
         this.game.focused = true;
         this.game.frequency = 1;
         this.game.events = {};
-        this.game.timeouts = [];
+        this.game.timeouts = this._timerQueue.timers;
         this.game.last_score = 0;
         this.game.score = 0;
         this.game.option = new GameOptions();
@@ -275,7 +278,8 @@ class GameController {
         // TODO: remove
         this.game.frequency = 1;
         this.game.events = {};
-        this.game.timeouts = [];
+        this._timerQueue.destroyTimers();
+        this.game.timeouts = this._timerQueue.timers;
         this.game.last_score = 0;
         this.game.score = 0;
         this.game.option = new GameOptions();
@@ -473,12 +477,7 @@ class GameController {
      * @return {array} gameTimeout
      */
     game_timeout(functionToCall, delay, that, data) {
-        const timerDelay = TimeKeeper.accumulatedDeltaTime + delay;
-        const gameTimeout = [functionToCall, timerDelay, data, delay, false, that];
-
-        this.game.timeouts.push(gameTimeout);
-
-        return gameTimeout;
+        return this._timerQueue.scheduleTimeout(functionToCall, delay, that, data);
     }
 
     /**
@@ -491,11 +490,7 @@ class GameController {
      * @return {array} to
      */
     game_interval(func, delay, that, data) {
-        const to = [func, TimeKeeper.accumulatedDeltaTime + delay, data, delay, true, that];
-
-        this.game.timeouts.push(to);
-
-        return to;
+        return this._timerQueue.scheduleInterval(func, delay, that, data);
     }
 
     /**
@@ -506,7 +501,7 @@ class GameController {
      * @param timer {array} the timer to destroy
      */
     destroyTimer(timer) {
-        this.game.timeouts.splice(this.game.timeouts.indexOf(timer), 1);
+        this._timerQueue.destroyTimer(timer);
     }
 
     /**
@@ -519,7 +514,8 @@ class GameController {
      * @method destroyTimers
      */
     destroyTimers() {
-        this.game.timeouts = [];
+        this._timerQueue.destroyTimers();
+        this.game.timeouts = this._timerQueue.timers;
     }
 
     /**
@@ -584,32 +580,7 @@ class GameController {
      * @method updateTimers
      */
     updateTimers() {
-        const currentGameTime = TimeKeeper.accumulatedDeltaTime;
-
-        for (let i = this.game.timeouts.length - 1; i >= 0; i--) {
-            let willRemoveTimerFromList = false;
-            const timeout = this.game.timeouts[i];
-            const callback = timeout[0];
-            const delayFireTime = timeout[1];
-            const callbackArguments = timeout[2];
-            const delayInterval = timeout[3];
-            const shouldRepeat = timeout[4];
-
-            if (currentGameTime > delayFireTime) {
-                callback.call(timeout[5], callbackArguments);
-                willRemoveTimerFromList = true;
-
-                if (shouldRepeat) {
-                    timeout[1] = delayFireTime + delayInterval;
-                    willRemoveTimerFromList = false;
-                }
-            }
-
-            if (willRemoveTimerFromList) {
-                this.game.timeouts.splice(i, 1);
-                i -= 1;
-            }
-        }
+        this._timerQueue.update();
     }
 
     /**
@@ -721,4 +692,4 @@ class GameController {
     };
 }
 
-export default new GameController();
+export default new GameControllerClass();

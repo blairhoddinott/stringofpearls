@@ -1,5 +1,6 @@
 import { EventBusClass } from '../lib/EventBus';
 import SimulationClock from './SimulationClock';
+import SimulationTimerQueue from './SimulationTimerQueue';
 
 /**
  * Owns the mutable domain services for one simulation session.
@@ -20,12 +21,17 @@ export default class SimulationContext {
      */
     constructor({ clock = null, randomSource = null, eventBus = null } = {}) {
         this._clock = clock ?? new SimulationClock();
+        this._timerQueue = new SimulationTimerQueue(this._clock);
         this._randomSource = randomSource;
         this._eventBus = eventBus ?? new EventBusClass();
     }
 
     get clock() {
         return this._clock;
+    }
+
+    get timerQueue() {
+        return this._timerQueue;
     }
 
     get randomSource() {
@@ -37,10 +43,15 @@ export default class SimulationContext {
     }
 
     tick(delta) {
-        return this._clock.tick(delta);
+        const result = this._clock.tick(delta);
+
+        this._timerQueue.update();
+
+        return result;
     }
 
     destroy() {
         this._eventBus.destroy();
+        this._timerQueue.destroyTimers();
     }
 }

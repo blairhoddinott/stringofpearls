@@ -1,6 +1,3 @@
-import $ from 'jquery';
-import AssetLoader from '../platform/AssetLoader';
-
 /**
  * Asynchronous JSON asset loading framework.
  *
@@ -21,9 +18,9 @@ import AssetLoader from '../platform/AssetLoader';
 * Implementation of the queueing
 */
 export default class ContentQueueClass {
-    constructor(loadingView, assetLoader = new AssetLoader((url) => $.getJSON(url))) {
+    constructor(loadingView, assetLoader = null) {
         this.loadingView = loadingView;
-        this._assetLoader = assetLoader;
+        this._assetLoader = assetLoader == null ? null : assetLoader;
         this.isLoading = false;
         this.lowPriorityQueue = [];
         this.highPriorityQueue = [];
@@ -47,6 +44,10 @@ export default class ContentQueueClass {
     addPromise(options) {
         const { url } = options;
         const immediate = Boolean(options.immediate);
+
+        if (this._assetLoader === null) {
+            return Promise.reject(new Error('ContentQueue requires an asset loader'));
+        }
 
         if (url in this.queuedContent) {
             const existing = this.queuedContent[url];

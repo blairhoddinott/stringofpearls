@@ -13,6 +13,7 @@
     "build:dev": "node tools/build.js",
     "build:test": "node tools/build.test.js",
     "browser:smoke": "tools/browser-smoke/run.sh",
+    "core:browser-free": "node tools/core-services-browser-free.test.js",
     "coverage:test": "node tools/coverage.test.js",
     "docker:smoke": "tools/docker/smoke-test.sh",
     "lint": "eslint src test tools eslint.config.js",

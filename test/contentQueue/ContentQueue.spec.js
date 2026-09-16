@@ -4,6 +4,18 @@ import sinon from 'sinon';
 import ContentQueue from '../../src/assets/scripts/client/contentQueue/ContentQueue';
 import { AssetLoadError } from '../../src/assets/scripts/client/platform/AssetLoader';
 
+ava.serial('addPromise rejects before mutating queue state when the asset loader is omitted', async (t) => {
+    const queue = new ContentQueue({});
+
+    const error = await t.throwsAsync(queue.addPromise({ url: 'assets/missing-loader.json' }));
+
+    t.is(error.message, 'ContentQueue requires an asset loader');
+    t.deepEqual(queue.queuedContent, {});
+    t.deepEqual(queue.lowPriorityQueue, []);
+    t.deepEqual(queue.highPriorityQueue, []);
+    t.false(queue.isLoading);
+});
+
 ava.serial('addPromise loads through the injected asset boundary and resolves the exact payload', async (t) => {
     const expectedPayload = { changelog: 'ready' };
     const assetLoader = { loadJson: sinon.stub().resolves(expectedPayload) };

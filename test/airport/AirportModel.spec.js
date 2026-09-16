@@ -1,7 +1,6 @@
 import ava from 'ava';
 import sinon from 'sinon';
 
-import AirportController from '../../src/assets/scripts/client/airport/AirportController';
 import AirportModel from '../../src/assets/scripts/client/airport/AirportModel';
 import DynamicPositionModel from '../../src/assets/scripts/client/base/DynamicPositionModel';
 import { AssetLoadError } from '../../src/assets/scripts/client/platform/AssetLoader';
@@ -251,25 +250,39 @@ ava.serial('.load() requests the airport json from the injected content queue wi
 });
 
 ava.serial('.load() logs the transport diagnostic and recovers when the content queue rejects with an AssetLoadError', async (t) => {
-    const previousCurrent = AirportController.current;
     const setSpy = sinon.spy();
     const consoleErrorStub = sinon.stub(console, 'error');
+    const airportControllerMock = { current: { set: setSpy } };
 
-    AirportController.current = { set: setSpy };
-    t.teardown(() => {
-        consoleErrorStub.restore();
-        AirportController.current = previousCurrent;
-    });
+    t.teardown(() => consoleErrorStub.restore());
 
     const assetLoadError = new AssetLoadError({ status: 404, statusText: 'Not Found' }, 'timeout');
     const contentQueueMock = { addPromise: sinon.stub().rejects(assetLoadError) };
-    const model = new AirportModel(FLYWEIGHT_OPTIONS_MOCK, contentQueueMock);
+    const model = new AirportModel(
+        FLYWEIGHT_OPTIONS_MOCK,
+        contentQueueMock,
+        null,
+        null,
+        undefined,
+        airportControllerMock
+    );
 
     await t.notThrowsAsync(model.load());
 
     t.true(consoleErrorStub.calledOnceWithExactly('Unable to load airport/ksfo: timeout'));
     t.is(model.loading, false);
     t.true(setSpy.calledOnce);
+});
+
+ava.serial('.onLoadAirportError() remains safe when no owning controller was injected', (t) => {
+    const consoleErrorStub = sinon.stub(console, 'error');
+    const model = new AirportModel(FLYWEIGHT_OPTIONS_MOCK);
+
+    t.teardown(() => consoleErrorStub.restore());
+
+    t.notThrows(() => model.onLoadAirportError(new Error('failed')));
+    t.true(consoleErrorStub.calledOnceWithExactly('Unable to load airport/ksfo: failed'));
+    t.is(model.loading, false);
 });
 
 ava.serial('.load() surfaces an exception thrown while processing a successful response through the injected reporter', async (t) => {
@@ -303,19 +316,22 @@ ava.serial('.loadTerrain() requests terrain geojson from the injected queue and 
 });
 
 ava.serial('.loadTerrain() logs the terrain transport diagnostic and recovers when the content queue rejects', async (t) => {
-    const previousCurrent = AirportController.current;
     const setSpy = sinon.spy();
     const consoleErrorStub = sinon.stub(console, 'error');
+    const airportControllerMock = { current: { set: setSpy } };
 
-    AirportController.current = { set: setSpy };
-    t.teardown(() => {
-        consoleErrorStub.restore();
-        AirportController.current = previousCurrent;
-    });
+    t.teardown(() => consoleErrorStub.restore());
 
     const assetLoadError = new AssetLoadError({ status: 500, statusText: 'Server Error' }, 'error');
     const contentQueueMock = { addPromise: sinon.stub().rejects(assetLoadError) };
-    const model = new AirportModel(FLYWEIGHT_OPTIONS_MOCK, contentQueueMock);
+    const model = new AirportModel(
+        FLYWEIGHT_OPTIONS_MOCK,
+        contentQueueMock,
+        null,
+        null,
+        undefined,
+        airportControllerMock
+    );
     model.has_terrain = true;
 
     await t.notThrowsAsync(model.loadTerrain());

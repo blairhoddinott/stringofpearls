@@ -1,4 +1,5 @@
 import { EventBusClass } from '../lib/EventBus';
+import { AirportControllerClass } from '../airport/AirportController';
 import { NavigationLibraryClass } from '../navigationLibrary/NavigationLibrary';
 import SimulationClock from './SimulationClock';
 import SimulationTimerQueue from './SimulationTimerQueue';
@@ -19,13 +20,21 @@ export default class SimulationContext {
      * @param options.clock {*} [optional] session clock
      * @param options.randomSource {RandomSource|null} [optional] session random source
      * @param options.eventBus {EventBus|null} [optional] session event bus; a fresh instance is created when nullish
+     * @param options.airportController {AirportController|null} [optional] session airport registry; a fresh instance is created when nullish
      * @param options.navigationLibrary {NavigationLibrary|null} [optional] session navigation state; a fresh instance is created when nullish
      */
-    constructor({ clock = null, randomSource = null, eventBus = null, navigationLibrary = null } = {}) {
+    constructor({
+        clock = null,
+        randomSource = null,
+        eventBus = null,
+        airportController = null,
+        navigationLibrary = null
+    } = {}) {
         this._clock = clock ?? new SimulationClock();
         this._timerQueue = new SimulationTimerQueue(this._clock);
         this._randomSource = randomSource;
         this._eventBus = eventBus ?? new EventBusClass();
+        this._airportController = airportController ?? new AirportControllerClass(this._eventBus);
         this._navigationLibrary = navigationLibrary ?? new NavigationLibraryClass();
 
         if (navigationLibrary == null) {
@@ -49,6 +58,10 @@ export default class SimulationContext {
         return this._eventBus;
     }
 
+    get airportController() {
+        return this._airportController;
+    }
+
     get navigationLibrary() {
         return this._navigationLibrary;
     }
@@ -64,6 +77,7 @@ export default class SimulationContext {
     destroy() {
         this._eventBus.destroy();
         this._timerQueue.destroyTimers();
+        this._airportController.reset();
         this._navigationLibrary.reset();
     }
 }

@@ -1,12 +1,81 @@
 import ava from 'ava';
 import sinon from 'sinon';
-import AirportController from '../../src/assets/scripts/client/airport/AirportController';
+import AirportController, {
+    AirportControllerClass
+} from '../../src/assets/scripts/client/airport/AirportController';
+import { EventBusClass } from '../../src/assets/scripts/client/lib/EventBus';
+import { EVENT } from '../../src/assets/scripts/client/constants/eventNames';
 import { STORAGE_KEY } from '../../src/assets/scripts/client/constants/storageKeys';
 import { AIRPORT_JSON_KLAS_MOCK } from '../airport/_mocks/airportJsonMock';
 import { AIRPORT_LOAD_LIST_MOCK } from '../airport/_mocks/airportLoadListMocks';
 
 ava('throws when called to instantiate', (t) => {
     t.throws(() => new AirportController());
+});
+
+ava('constructible controllers isolate airport selection and event dispatch', (t) => {
+    const firstEventBus = new EventBusClass();
+    const secondEventBus = new EventBusClass();
+    const first = new AirportControllerClass(firstEventBus);
+    const second = new AirportControllerClass(secondEventBus);
+    const firstAirport = {
+        icao: 'kaaa',
+        loaded: true,
+        data: { icao: 'kaaa' },
+        set: sinon.stub()
+    };
+    let firstEventCount = 0;
+    let secondEventCount = 0;
+
+    firstEventBus.on(EVENT.AIRPORT_CHANGE, () => { firstEventCount++; });
+    secondEventBus.on(EVENT.AIRPORT_CHANGE, () => { secondEventCount++; });
+    first.airport_add(firstAirport);
+    first.airport_set('kaaa');
+
+    t.is(first.current, firstAirport);
+    t.is(second.current, null);
+    t.is(firstEventCount, 1);
+    t.is(secondEventCount, 0);
+    t.true(firstAirport.set.calledOnceWithExactly(null));
+});
+
+ava('reset retains a constructible controller event bus for subsequent selections', (t) => {
+    const eventBus = new EventBusClass();
+    const controller = new AirportControllerClass(eventBus);
+    const airport = { icao: 'kaaa', loaded: true, data: {}, set: sinon.stub() };
+    const eventObserver = sinon.stub();
+
+    eventBus.on(EVENT.AIRPORT_CHANGE, eventObserver);
+    controller.reset();
+    controller.airport_add(airport);
+    controller.airport_set('kaaa');
+
+    t.true(eventObserver.calledOnceWithExactly(airport.data));
+});
+
+ava('constructible controllers give created airport models their exact event bus', (t) => {
+    const eventBus = new EventBusClass();
+    const controller = new AirportControllerClass(eventBus);
+    const airportDefinition = AIRPORT_LOAD_LIST_MOCK[0];
+
+    controller.airport_load(airportDefinition);
+
+    t.is(controller.airport_get(airportDefinition.icao).eventBus, eventBus);
+});
+
+ava.serial('created airport models recover load failures through their owning controller', (t) => {
+    const controller = new AirportControllerClass(new EventBusClass());
+    const airportDefinition = AIRPORT_LOAD_LIST_MOCK[0];
+    const retryCurrentAirport = { set: sinon.stub() };
+    const consoleErrorStub = sinon.stub(console, 'error');
+
+    t.teardown(() => consoleErrorStub.restore());
+
+    controller.airport_load(airportDefinition);
+    controller.current = retryCurrentAirport;
+    controller.airport_get(airportDefinition.icao).onLoadAirportError(new Error('failed'));
+
+    t.true(retryCurrentAirport.set.calledOnceWithExactly());
 });
 
 ava('does not throw when .init() is called with initialization props', (t) => {

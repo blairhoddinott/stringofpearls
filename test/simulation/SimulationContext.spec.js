@@ -27,6 +27,15 @@ ava('creates isolated navigation and fix state for each simulation session', (t)
     t.not(first.navigationLibrary.fixCollection, second.navigationLibrary.fixCollection);
 });
 
+ava('creates isolated airport controller state using each simulation session event bus', (t) => {
+    const first = new SimulationContext();
+    const second = new SimulationContext();
+
+    t.not(first.airportController, second.airportController);
+    t.is(first.airportController._eventBus, first.eventBus);
+    t.is(second.airportController._eventBus, second.eventBus);
+});
+
 ava('default navigation state uses this simulation session random source', (t) => {
     const randomSource = { integer: () => 0 };
     const context = new SimulationContext({ randomSource });
@@ -40,16 +49,24 @@ ava('default navigation state uses this simulation session random source', (t) =
     procedures.forEach((procedure) => t.is(procedure._randomSource, randomSource));
 });
 
-ava('retains exact injected clock, random source, event bus, and navigation identities', (t) => {
+ava('retains exact injected clock, random source, event bus, airport, and navigation identities', (t) => {
     const clock = { now: () => 123 };
     const randomSource = { fraction: () => 0.5 };
     const eventBus = new EventBusClass();
+    const airportController = { reset: () => {} };
     const navigationLibrary = { reset: () => {} };
-    const context = new SimulationContext({ clock, randomSource, eventBus, navigationLibrary });
+    const context = new SimulationContext({
+        clock,
+        randomSource,
+        eventBus,
+        airportController,
+        navigationLibrary
+    });
 
     t.is(context.clock, clock);
     t.is(context.randomSource, randomSource);
     t.is(context.eventBus, eventBus);
+    t.is(context.airportController, airportController);
     t.is(context.navigationLibrary, navigationLibrary);
 });
 
@@ -83,6 +100,24 @@ ava('destroy resets only this simulation session navigation state', (t) => {
 
     t.is(first.navigationLibrary.findFixByName('BAKRR'), null);
     t.truthy(second.navigationLibrary.findFixByName('BAKRR'));
+});
+
+ava('destroy resets only this simulation session airport controller state', (t) => {
+    const first = new SimulationContext();
+    const second = new SimulationContext();
+    const firstAirport = { icao: 'kaaa' };
+    const secondAirport = { icao: 'kbbb' };
+
+    first.airportController.airport_add(firstAirport);
+    second.airportController.airport_add(secondAirport);
+    first.airportController.current = firstAirport;
+    second.airportController.current = secondAirport;
+    first.destroy();
+
+    t.deepEqual(first.airportController.airports, {});
+    t.is(first.airportController.current, null);
+    t.is(second.airportController.airport_get('kbbb'), secondAirport);
+    t.is(second.airportController.current, secondAirport);
 });
 
 ava('tick advances only this simulation session clock', (t) => {

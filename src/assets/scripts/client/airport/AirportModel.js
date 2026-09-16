@@ -4,7 +4,6 @@ import _clamp from 'lodash/clamp';
 import _forEach from 'lodash/forEach';
 import _get from 'lodash/get';
 import _map from 'lodash/map';
-import AirportController from './AirportController';
 import AirspaceModel from './AirspaceModel';
 import DynamicPositionModel from '../base/DynamicPositionModel';
 import EventBus from '../lib/EventBus';
@@ -53,14 +52,27 @@ export default class AirportModel {
     /**
      * @constructor
      * @param options {object}
+     * @param contentQueue {ContentQueue|null} [optional]
+     * @param storageAdapter {StorageAdapter|null} [optional]
+     * @param reportError {Function|null} [optional]
+     * @param eventBus {EventBus} [optional]
+     * @param airportController {AirportController|null} [optional]
      */
     // istanbul ignore next
-    constructor(options = {}, contentQueue = null, storageAdapter = null, reportError = null) {
+    constructor(
+        options = {},
+        contentQueue = null,
+        storageAdapter = null,
+        reportError = null,
+        eventBus = EventBus,
+        airportController = null
+    ) {
         /**
          * @property EventBus
          * @type {EventBus}
          */
-        this.eventBus = EventBus;
+        this.eventBus = eventBus;
+        this._airportController = airportController;
 
         /**
          * Persistence boundary used to write the last-selected airport.
@@ -874,7 +886,9 @@ export default class AirportModel {
                 console.error(`Unable to load airport/terrain/${this.icao}: ${textStatus}`);
 
                 this.loading = false;
-                AirportController.current.set();
+                if (this._airportController && this._airportController.current) {
+                    this._airportController.current.set();
+                }
             }
         );
     }
@@ -954,7 +968,9 @@ export default class AirportModel {
         console.error(`Unable to load airport/${this.icao}: ${textStatus}`);
 
         this.loading = false;
-        AirportController.current.set();
+        if (this._airportController && this._airportController.current) {
+            this._airportController.current.set();
+        }
     }
 
     /**

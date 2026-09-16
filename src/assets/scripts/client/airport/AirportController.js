@@ -9,16 +9,16 @@ import { STORAGE_KEY } from '../constants/storageKeys';
  *
  * @class AirportController
  */
-class AirportController {
+export class AirportControllerClass {
     /**
      * @constructor
      */
-    constructor() {
+    constructor(eventBus = EventBus) {
         /**
          * @property _eventBus
          * @type {EventBus}
          */
-        this._eventBus = EventBus;
+        this._eventBus = eventBus;
 
         /**
          * Local reference to `window.AIRPORT_LOAD_LIST`
@@ -143,7 +143,9 @@ class AirportController {
             { icao, level, name },
             this._contentQueue,
             this._storageAdapter,
-            this._reportError
+            this._reportError,
+            this._eventBus,
+            this
         );
 
         this.airport_add(airportModel);
@@ -169,7 +171,6 @@ class AirportController {
      * @method reset
      */
     reset() {
-        this._eventBus = EventBus;
         this._contentQueue = null;
         this._storageAdapter = null;
         this._reportError = null;
@@ -304,4 +305,4 @@ class AirportController {
     }
 }
 
-export default new AirportController();
+export default new AirportControllerClass();

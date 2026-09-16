@@ -127,6 +127,17 @@ async function main() {
         firstContext.navigationLibrary.findFixByName('ALPHA').positionModel
     );
     assert.equal(secondContext.navigationLibrary.findFixByName('ALPHA'), null);
+    firstContext.airportController.airport_load({
+        icao: 'KAAA',
+        level: 'easy',
+        name: 'First Context Airport'
+    });
+    const firstAirport = firstContext.airportController.airport_get('kaaa');
+    assert.equal(firstAirport.eventBus, firstContext.eventBus);
+    assert.equal(firstAirport._airportController, firstContext.airportController);
+    firstContext.airportController.airport_set('kaaa');
+    assert.equal(firstContext.airportController.current, firstAirport);
+    assert.equal(secondContext.airportController.current, null);
     let firstTimerCount = 0;
     firstContext.timerQueue.scheduleTimeout(() => { firstTimerCount++; }, 1);
     firstContext.tick(0.5);
@@ -138,6 +149,8 @@ async function main() {
     assert.equal(secondContext.clock.elapsedTime, 0);
     firstContext.destroy();
     assert.equal(firstContext.navigationLibrary.findFixByName('ALPHA'), null);
+    assert.equal(firstContext.airportController.current, null);
+    assert.equal(firstContext.airportController.hasAirport('kaaa'), false);
     secondContext.destroy();
 
     process.stdout.write('core services browser-free proof passed\n');

@@ -10,6 +10,8 @@ export default class SimulationClock {
     constructor() {
         this._deltaTime = 0;
         this._elapsedTime = 0;
+        this._isPaused = false;
+        this._simulationRate = 1;
     }
 
     get deltaTime() {
@@ -20,8 +22,32 @@ export default class SimulationClock {
         return this._elapsedTime;
     }
 
+    get simulationRate() {
+        return this._simulationRate;
+    }
+
+    get isPaused() {
+        return this._isPaused;
+    }
+
+    setPause(nextPause) {
+        this._isPaused = nextPause;
+    }
+
+    updateSimulationRate(nextRate) {
+        if (nextRate < 0) {
+            return;
+        }
+
+        this._simulationRate = nextRate;
+    }
+
     tick(delta) {
-        this._deltaTime = delta;
-        this._elapsedTime += delta;
+        const effectiveDelta = this._isPaused ? 0 : Math.min(delta * this._simulationRate, 100);
+
+        this._deltaTime = effectiveDelta;
+        this._elapsedTime += effectiveDelta;
+
+        return effectiveDelta;
     }
 }

@@ -44,3 +44,28 @@ ava('destroy clears only this simulation session event bus', (t) => {
     t.false(firstObserver.called);
     t.true(secondObserver.calledOnceWithExactly());
 });
+
+ava('tick advances only this simulation session clock', (t) => {
+    const first = new SimulationContext();
+    const second = new SimulationContext();
+
+    first.tick(0.5);
+    first.tick(1.25);
+
+    t.not(first.clock, second.clock);
+    t.is(first.clock.deltaTime, 1.25);
+    t.is(first.clock.elapsedTime, 1.75);
+    t.is(second.clock.deltaTime, 0);
+    t.is(second.clock.elapsedTime, 0);
+});
+
+ava('tick forwards the exact delta once and returns the clock result verbatim', (t) => {
+    const expectedResult = { advanced: true };
+    const clock = { tick: sinon.stub().returns(expectedResult) };
+    const context = new SimulationContext({ clock });
+
+    const result = context.tick(0.125);
+
+    t.true(clock.tick.calledOnceWithExactly(0.125));
+    t.is(result, expectedResult);
+});

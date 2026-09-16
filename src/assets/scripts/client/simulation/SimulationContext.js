@@ -1,4 +1,5 @@
 import { EventBusClass } from '../lib/EventBus';
+import SimulationClock from './SimulationClock';
 
 /**
  * Owns the mutable domain services for one simulation session.
@@ -18,7 +19,7 @@ export default class SimulationContext {
      * @param options.eventBus {EventBus|null} [optional] session event bus; a fresh instance is created when nullish
      */
     constructor({ clock = null, randomSource = null, eventBus = null } = {}) {
-        this._clock = clock;
+        this._clock = clock ?? new SimulationClock();
         this._randomSource = randomSource;
         this._eventBus = eventBus ?? new EventBusClass();
     }
@@ -33,6 +34,10 @@ export default class SimulationContext {
 
     get eventBus() {
         return this._eventBus;
+    }
+
+    tick(delta) {
+        return this._clock.tick(delta);
     }
 
     destroy() {

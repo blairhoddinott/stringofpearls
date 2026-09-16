@@ -107,6 +107,10 @@ async function main() {
     firstContext.eventBus.trigger('proof');
     assert.equal(firstEventCount, 1);
     assert.equal(secondEventCount, 0);
+    firstContext.tick(0.5);
+    firstContext.tick(1.25);
+    assert.equal(firstContext.clock.elapsedTime, 1.75);
+    assert.equal(secondContext.clock.elapsedTime, 0);
     firstContext.destroy();
     secondContext.destroy();
 

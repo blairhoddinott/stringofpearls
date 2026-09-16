@@ -1,6 +1,8 @@
 import { EventBusClass } from '../lib/EventBus';
 import { AirportControllerClass } from '../airport/AirportController';
 import { NavigationLibraryClass } from '../navigationLibrary/NavigationLibrary';
+import { SpawnPatternCollectionClass } from '../trafficGenerator/SpawnPatternCollection';
+import { SpawnSchedulerClass } from '../trafficGenerator/SpawnScheduler';
 import SimulationClock from './SimulationClock';
 import SimulationTimerQueue from './SimulationTimerQueue';
 
@@ -22,13 +24,15 @@ export default class SimulationContext {
      * @param options.eventBus {EventBus|null} [optional] session event bus; a fresh instance is created when nullish
      * @param options.airportController {AirportController|null} [optional] session airport registry; a fresh instance is created when nullish
      * @param options.navigationLibrary {NavigationLibrary|null} [optional] session navigation state; a fresh instance is created when nullish
+     * @param options.spawnPatternCollection {SpawnPatternCollection|null} [optional] session traffic patterns
      */
     constructor({
         clock = null,
         randomSource = null,
         eventBus = null,
         airportController = null,
-        navigationLibrary = null
+        navigationLibrary = null,
+        spawnPatternCollection = null
     } = {}) {
         this._clock = clock ?? new SimulationClock();
         this._timerQueue = new SimulationTimerQueue(this._clock);
@@ -36,6 +40,20 @@ export default class SimulationContext {
         this._eventBus = eventBus ?? new EventBusClass();
         this._airportController = airportController ?? new AirportControllerClass(this._eventBus);
         this._navigationLibrary = navigationLibrary ?? new NavigationLibraryClass();
+        this._spawnPatternCollection = spawnPatternCollection ?? new SpawnPatternCollectionClass(
+            this._navigationLibrary,
+            this._airportController
+        );
+
+        if (spawnPatternCollection == null) {
+            this._spawnPatternCollection.initRandomSource(this._randomSource);
+        }
+
+        this._spawnScheduler = new SpawnSchedulerClass(
+            this._spawnPatternCollection,
+            this._clock,
+            this._timerQueue
+        );
 
         if (navigationLibrary == null) {
             this._navigationLibrary.initRandomSource(this._randomSource);
@@ -66,6 +84,14 @@ export default class SimulationContext {
         return this._navigationLibrary;
     }
 
+    get spawnPatternCollection() {
+        return this._spawnPatternCollection;
+    }
+
+    get spawnScheduler() {
+        return this._spawnScheduler;
+    }
+
     tick(delta) {
         const result = this._clock.tick(delta);
 
@@ -77,6 +103,7 @@ export default class SimulationContext {
     destroy() {
         this._eventBus.destroy();
         this._timerQueue.destroyTimers();
+        this._spawnPatternCollection.reset();
         this._airportController.reset();
         this._navigationLibrary.reset();
     }

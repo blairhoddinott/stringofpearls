@@ -147,6 +147,19 @@ async function main() {
     assert.equal(secondContext.timerQueue.timers.length, 0);
     assert.equal(firstContext.clock.elapsedTime, 1.75);
     assert.equal(secondContext.clock.elapsedTime, 0);
+    let firstSpawnCount = 0;
+    let secondSpawnCount = 0;
+    const trafficPattern = { getNextDelayValue: () => 1, scheduleId: null };
+    firstContext.spawnScheduler._aircraftController = {
+        createAircraftWithSpawnPatternModel: () => { firstSpawnCount++; }
+    };
+    secondContext.spawnScheduler._aircraftController = {
+        createAircraftWithSpawnPatternModel: () => { secondSpawnCount++; }
+    };
+    trafficPattern.scheduleId = firstContext.spawnScheduler.createNextSchedule(trafficPattern);
+    firstContext.tick(2);
+    assert.equal(firstSpawnCount, 1);
+    assert.equal(secondSpawnCount, 0);
     firstContext.destroy();
     assert.equal(firstContext.navigationLibrary.findFixByName('ALPHA'), null);
     assert.equal(firstContext.airportController.current, null);

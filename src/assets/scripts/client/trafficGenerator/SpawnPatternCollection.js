@@ -12,13 +12,16 @@ import { isEmptyOrNotObject } from '../utilities/validatorUtilities';
  * @class SpawnPatternCollection
  * @extends BaseCollection
  */
-class SpawnPatternCollection extends BaseCollection {
+export class SpawnPatternCollectionClass extends BaseCollection {
     /**
      * @constructor
      * @for SpawnPatternCollection
      */
-    constructor() {
+    constructor(navigationLibrary, airportController) {
         super();
+
+        this._navigationLibrary = navigationLibrary;
+        this._airportController = airportController;
 
         /**
          * Randomness boundary injected from the composition root and forwarded by
@@ -256,11 +259,16 @@ class SpawnPatternCollection extends BaseCollection {
      */
     _buildSpawnPatternModels(spawnPatterns) {
         _forEach(spawnPatterns, (spawnPattern) => {
-            const spawnPatternModel = new SpawnPatternModel(spawnPattern, this._randomSource);
+            const spawnPatternModel = new SpawnPatternModel(
+                spawnPattern,
+                this._randomSource,
+                this._navigationLibrary,
+                this._airportController
+            );
 
             this.addItem(spawnPatternModel);
         });
     }
 }
 
-export default new SpawnPatternCollection();
+export default new SpawnPatternCollectionClass();

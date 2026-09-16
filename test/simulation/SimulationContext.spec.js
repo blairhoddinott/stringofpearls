@@ -3,6 +3,11 @@ import sinon from 'sinon';
 import SimulationContext from '../../src/assets/scripts/client/simulation/SimulationContext';
 import { EventBusClass } from '../../src/assets/scripts/client/lib/EventBus';
 import { AIRPORT_JSON_KLAS_MOCK } from '../airport/_mocks/airportJsonMock';
+import {
+    ARRIVAL_PATTERN_MOCK,
+    DEPARTURE_PATTERN_MOCK
+} from '../trafficGenerator/_mocks/spawnPatternMocks';
+import SpawnPatternModel from '../../src/assets/scripts/client/trafficGenerator/SpawnPatternModel';
 
 ava('creates an isolated event bus for each simulation session', (t) => {
     const first = new SimulationContext();
@@ -49,18 +54,78 @@ ava('default navigation state uses this simulation session random source', (t) =
     procedures.forEach((procedure) => t.is(procedure._randomSource, randomSource));
 });
 
-ava('retains exact injected clock, random source, event bus, airport, and navigation identities', (t) => {
+ava('creates isolated spawn pattern state using this simulation session random source', (t) => {
+    const firstRandomSource = { integer: () => 0, real: () => 0 };
+    const secondRandomSource = { integer: () => 0, real: () => 0 };
+    const first = new SimulationContext({ randomSource: firstRandomSource });
+    const second = new SimulationContext({ randomSource: secondRandomSource });
+
+    first.navigationLibrary.init(AIRPORT_JSON_KLAS_MOCK);
+    first.airportController.airport_load({ icao: 'klas', level: 'easy', name: 'Las Vegas' });
+    first.airportController.current = first.airportController.airport_get('klas');
+    first.airportController.current._positionModel = first.navigationLibrary.findFixByName('BESSY').positionModel;
+    first.spawnPatternCollection.init({ spawnPatterns: [DEPARTURE_PATTERN_MOCK] });
+
+    t.true(first.spawnPatternCollection.spawnPatternModels.length > 0);
+    t.is(second.spawnPatternCollection.spawnPatternModels.length, 0);
+    first.spawnPatternCollection.spawnPatternModels.forEach((model) => {
+        t.is(model._randomSource, firstRandomSource);
+        t.is(model._airportController, first.airportController);
+    });
+});
+
+ava('arrival pre-spawn reuses this simulation session route', (t) => {
+    const context = new SimulationContext();
+
+    context.navigationLibrary.init(AIRPORT_JSON_KLAS_MOCK);
+    context.airportController.airport_load({ icao: 'klas', level: 'easy', name: 'Las Vegas' });
+    const airport = context.airportController.airport_get('klas');
+    airport.init(AIRPORT_JSON_KLAS_MOCK);
+    context.airportController.current = airport;
+
+    context.spawnPatternCollection.init({ spawnPatterns: [ARRIVAL_PATTERN_MOCK] });
+    const [pattern] = context.spawnPatternCollection.spawnPatternModels;
+
+    pattern._routeModel._legCollection.forEach((leg) => {
+        t.is(leg._navigationLibrary, context.navigationLibrary);
+    });
+    t.true(pattern.preSpawnAircraftList.length > 0);
+    pattern.preSpawnAircraftList.forEach((aircraft) => {
+        t.true(aircraft.altitude > 0);
+    });
+});
+
+ava('spawn pattern route mutations retain this simulation session navigation state', (t) => {
+    const context = new SimulationContext();
+
+    context.navigationLibrary.init(AIRPORT_JSON_KLAS_MOCK);
+    context.airportController.airport_load({ icao: 'klas', level: 'easy', name: 'Las Vegas' });
+    context.airportController.current = context.airportController.airport_get('klas');
+    context.airportController.current._positionModel = context.navigationLibrary.findFixByName('BESSY').positionModel;
+    context.spawnPatternCollection.init({ spawnPatterns: [DEPARTURE_PATTERN_MOCK] });
+    const [pattern] = context.spawnPatternCollection.spawnPatternModels;
+
+    t.true(pattern._routeModel.replaceArrivalProcedure('BETHL.GRNPA1.KLAS07R'));
+    t.true(pattern._routeModel.replaceDepartureProcedure('KLAS07L.COWBY6.GUP')[0]);
+    pattern._routeModel._legCollection.forEach((leg) => {
+        t.is(leg._navigationLibrary, context.navigationLibrary);
+    });
+});
+
+ava('retains exact injected service identities', (t) => {
     const clock = { now: () => 123 };
     const randomSource = { fraction: () => 0.5 };
     const eventBus = new EventBusClass();
     const airportController = { reset: () => {} };
     const navigationLibrary = { reset: () => {} };
+    const spawnPatternCollection = { reset: () => {} };
     const context = new SimulationContext({
         clock,
         randomSource,
         eventBus,
         airportController,
-        navigationLibrary
+        navigationLibrary,
+        spawnPatternCollection
     });
 
     t.is(context.clock, clock);
@@ -68,6 +133,7 @@ ava('retains exact injected clock, random source, event bus, airport, and naviga
     t.is(context.eventBus, eventBus);
     t.is(context.airportController, airportController);
     t.is(context.navigationLibrary, navigationLibrary);
+    t.is(context.spawnPatternCollection, spawnPatternCollection);
 });
 
 ava('destroy clears only this simulation session observers and timers', (t) => {
@@ -118,6 +184,45 @@ ava('destroy resets only this simulation session airport controller state', (t) 
     t.is(first.airportController.current, null);
     t.is(second.airportController.airport_get('kbbb'), secondAirport);
     t.is(second.airportController.current, secondAirport);
+});
+
+ava('destroy resets only this simulation session spawn pattern state', (t) => {
+    const first = new SimulationContext();
+    const second = new SimulationContext();
+    const firstPattern = { reset: sinon.stub() };
+    const secondPattern = { reset: sinon.stub() };
+
+    first.spawnPatternCollection._items = [firstPattern];
+    second.spawnPatternCollection._items = [secondPattern];
+
+    first.destroy();
+
+    t.true(firstPattern.reset.calledOnce);
+    t.is(first.spawnPatternCollection.spawnPatternModels.length, 0);
+    t.false(secondPattern.reset.called);
+    t.is(second.spawnPatternCollection.spawnPatternModels.length, 1);
+});
+
+ava('ticks only this simulation session traffic schedule', (t) => {
+    const first = new SimulationContext();
+    const second = new SimulationContext();
+    const firstAircraftController = {
+        createAircraftWithSpawnPatternModel: sinon.stub()
+    };
+    const secondAircraftController = {
+        createAircraftWithSpawnPatternModel: sinon.stub()
+    };
+    const pattern = new SpawnPatternModel();
+
+    sinon.stub(pattern, 'getNextDelayValue').returns(1);
+    first.spawnScheduler._aircraftController = firstAircraftController;
+    second.spawnScheduler._aircraftController = secondAircraftController;
+
+    pattern.scheduleId = first.spawnScheduler.createNextSchedule(pattern);
+    first.tick(2);
+
+    t.true(firstAircraftController.createAircraftWithSpawnPatternModel.calledOnceWithExactly(pattern));
+    t.false(secondAircraftController.createAircraftWithSpawnPatternModel.called);
 });
 
 ava('tick advances only this simulation session clock', (t) => {

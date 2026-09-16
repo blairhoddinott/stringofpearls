@@ -26,7 +26,8 @@ export default class LegModel {
      * @constructor
      * @param routeString {string}
      */
-    constructor(routeString) {
+    constructor(routeString, navigationLibrary = NavigationLibrary) {
+        this._navigationLibrary = navigationLibrary;
         /**
          * Reference to an instance of a `AirwayModel` object (if this is an airway leg)
          *
@@ -242,8 +243,8 @@ export default class LegModel {
 
         this._ensureRouteStringIsSingleSegment(routeString);
         this._legType = this._determineLegType(airwayOrProcedureName);
-        this._airwayModel = NavigationLibrary.getAirway(airwayOrProcedureName);
-        this._procedureModel = NavigationLibrary.getProcedure(airwayOrProcedureName);
+        this._airwayModel = this._navigationLibrary.getAirway(airwayOrProcedureName);
+        this._procedureModel = this._navigationLibrary.getProcedure(airwayOrProcedureName);
         this._waypointCollection = this._generateWaypointCollection(entryOrFixName, exit);
 
         return this;
@@ -282,11 +283,11 @@ export default class LegModel {
             return LEG_TYPE.DIRECT;
         }
 
-        if (NavigationLibrary.hasAirway(airwayOrProcedureName)) {
+        if (this._navigationLibrary.hasAirway(airwayOrProcedureName)) {
             return LEG_TYPE.AIRWAY;
         }
 
-        if (NavigationLibrary.hasProcedure(airwayOrProcedureName)) {
+        if (this._navigationLibrary.hasProcedure(airwayOrProcedureName)) {
             return LEG_TYPE.PROCEDURE;
         }
 
@@ -323,8 +324,8 @@ export default class LegModel {
      * @private
      */
     _generateWaypoint(data) {
-        const waypoint = new WaypointModel(data);
-        const holdParameters = NavigationLibrary.findHoldParametersByFix(waypoint.name);
+        const waypoint = new WaypointModel(data, this._navigationLibrary.fixCollection);
+        const holdParameters = this._navigationLibrary.findHoldParametersByFix(waypoint.name);
 
         if (holdParameters != null) {
             waypoint.setDefaultHoldParameters(holdParameters);

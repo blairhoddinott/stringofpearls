@@ -92,10 +92,15 @@ export default class SpawnPatternModel extends BaseModel {
      * @for SpawnPatternModel
      * @param spawnPatternJson {object}
      * @param randomSource {RandomSource} composition-root randomness boundary used for spawn draws; optional
+     * @param navigationLibrary {NavigationLibrary} navigation-session route resolver; optional
+     * @param airportController {AirportController} owning airport session; optional
      */
     // istanbul ignore next
-    constructor(spawnPatternJson, randomSource) {
+    constructor(spawnPatternJson, randomSource, navigationLibrary, airportController = AirportController) {
         super('spawnPatternModel');
+
+        this._navigationLibrary = navigationLibrary;
+        this._airportController = airportController;
 
         /**
          * Randomness boundary injected from the composition root, used for altitude,
@@ -525,13 +530,16 @@ export default class SpawnPatternModel extends BaseModel {
         this.defaultRate = this.rate;
         this.entrail = _get(spawnPatternJson, 'entrail', this.entrail);
 
-        this._routeModel = new RouteModel(spawnPatternJson.route);
+        this._routeModel = new RouteModel(spawnPatternJson.route, this._navigationLibrary);
         this.cycleStartTime = 0;
         this.period = TIME.ONE_HOUR_IN_SECONDS / 2;
         this._positionModel = this._generateSelfReferencedAirportPositionModel();
         this.airlines = this._assembleAirlineNamesAndFrequencyForSpawn(spawnPatternJson.airlines);
         this._weightedAirlineList = this._buildWeightedAirlineList();
-        this.preSpawnAircraftList = this._buildPreSpawnAircraft(spawnPatternJson);
+        this.preSpawnAircraftList = this._buildPreSpawnAircraft({
+            ...spawnPatternJson,
+            _routeModel: this._routeModel
+        });
 
         this._calculateSurgePatternInitialDelayValues(spawnPatternJson);
         this._setCyclePeriodAndOffset(spawnPatternJson);
@@ -1082,7 +1090,7 @@ export default class SpawnPatternModel extends BaseModel {
 
         const preSpawnArrivalAircraftList = buildPreSpawnAircraft(
             spawnPatternJson,
-            AirportController.current,
+            this._airportController.current,
             this._randomSource
         );
 
@@ -1132,7 +1140,7 @@ export default class SpawnPatternModel extends BaseModel {
      * @return {StaticPositionModel}
      */
     _generateSelfReferencedAirportPositionModel() {
-        const airportPosition = AirportController.airport_get().positionModel;
+        const airportPosition = this._airportController.airport_get().positionModel;
         const selfReferencingPosition = new StaticPositionModel(
             airportPosition.gps,
             airportPosition,

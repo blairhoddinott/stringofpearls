@@ -38,9 +38,12 @@ export default class RouteModel extends BaseModel {
      * @for RouteModel
      * @constructor
      * @param routeString {string}
+     * @param navigationLibrary {NavigationLibrary} navigation-session route resolver; optional
      */
-    constructor(routeString) {
+    constructor(routeString, navigationLibrary) {
         super();
+
+        this._navigationLibrary = navigationLibrary;
 
         /**
          * Array of `LegModel`s on the route
@@ -793,7 +796,7 @@ export default class RouteModel extends BaseModel {
         let starLegModel;
 
         try {
-            starLegModel = new LegModel(routeString);
+            starLegModel = new LegModel(routeString, this._navigationLibrary);
         } catch (error) {
             console.error(error);
 
@@ -828,7 +831,7 @@ export default class RouteModel extends BaseModel {
         let routeModel;
 
         try {
-            routeModel = new RouteModel(routeString);
+            routeModel = new RouteModel(routeString, this._navigationLibrary);
         } catch (error) {
             console.error(error);
 
@@ -1535,7 +1538,7 @@ export default class RouteModel extends BaseModel {
     _generateLegsFromRouteString(routeString) {
         const segments = this._divideRouteStringIntoSegments(routeString);
         const legs = _map(segments, (segmentRouteString) => {
-            return new LegModel(segmentRouteString);
+            return new LegModel(segmentRouteString, this._navigationLibrary);
         });
 
         return legs;

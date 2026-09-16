@@ -44,6 +44,7 @@ async function main() {
     const speech = require('../src/assets/scripts/client/speech');
     const { STORAGE_KEY } = require('../src/assets/scripts/client/constants/storageKeys');
     const ContentQueue = loadDefault('../src/assets/scripts/client/contentQueue/ContentQueue');
+    const SimulationContext = loadDefault('../src/assets/scripts/client/simulation/SimulationContext');
 
     const assetLoader = new AssetLoader((url) => ({ url }));
     assert.deepEqual(await assetLoader.loadJson('asset.json'), { url: 'asset.json' });
@@ -96,6 +97,18 @@ async function main() {
         { message: 'ContentQueue requires an asset loader' }
     );
     assert.deepEqual(queue.queuedContent, {});
+
+    const firstContext = new SimulationContext();
+    const secondContext = new SimulationContext();
+    let firstEventCount = 0;
+    let secondEventCount = 0;
+    firstContext.eventBus.on('proof', () => { firstEventCount++; });
+    secondContext.eventBus.on('proof', () => { secondEventCount++; });
+    firstContext.eventBus.trigger('proof');
+    assert.equal(firstEventCount, 1);
+    assert.equal(secondEventCount, 0);
+    firstContext.destroy();
+    secondContext.destroy();
 
     process.stdout.write('core services browser-free proof passed\n');
 }

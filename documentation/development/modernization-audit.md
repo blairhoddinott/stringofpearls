@@ -262,7 +262,7 @@ Exit condition: UI work no longer requires editing multi-thousand-line controlle
 
 ## Current implementation slice
 
-Phase 3 is proceeding through asset loading first because airport, airline, terrain, tutorial, autocomplete, and navigation startup currently depend on browser globals or jQuery-specific deferred values. `App` startup and the internal `ContentQueue` transport now use the injected adapter without changing asset formats or scheduling behavior. The next tracer should migrate autocomplete, then convert queue consumers from Deferred callbacks to native Promises before replacing the global `zlsa.atc.loadAsset` bridge with explicit dependencies.
+Phase 4 has begun with a browser-free `SimulationContext` shell. Each context creates a fresh `EventBusClass` by default, may retain exact injected clock, random-source, and event-bus identities, and destroys only its own event observers. The legacy `EventBus` default singleton export remains unchanged for unmigrated consumers while the constructible class enables incremental instance migration. Two contexts can already dispatch the same event name without cross-session delivery, and the core browser-free proof now exercises that isolation. Acceptance reports 1,583 passing, 17 skipped, and 14 todo tests; all 129 eligible source files appear in coverage, lines/statements are 72.78%, functions are 70.79%, branches are 93.05%, and lint, the deterministic 278-file build, and KPDX browser smoke pass. The next tracer will move simulation time behind the context and establish the deterministic `tick(delta)` boundary without yet migrating airport, traffic, or aircraft ownership.
 
 ## Explicit non-goals for the first phases
 

@@ -16,7 +16,7 @@ import EventModel from './EventModel';
  *
  * @class EventBus
  */
-class EventBus {
+export class EventBusClass {
     /**
      * @constructor
      */
@@ -163,4 +163,4 @@ class EventBus {
     }
 }
 
-export default new EventBus();
+export default new EventBusClass();

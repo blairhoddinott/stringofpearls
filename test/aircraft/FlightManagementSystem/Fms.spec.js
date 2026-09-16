@@ -3,9 +3,14 @@ import sinon from 'sinon';
 import _every from 'lodash/every';
 import _isArray from 'lodash/isArray';
 import Fms from '../../../src/assets/scripts/client/aircraft/FlightManagementSystem/Fms';
+import { NavigationLibraryClass } from '../../../src/assets/scripts/client/navigationLibrary/NavigationLibrary';
 import WaypointModel from '../../../src/assets/scripts/client/aircraft/FlightManagementSystem/WaypointModel';
 // import StaticPositionModel from '../../../src/assets/scripts/client/base/StaticPositionModel';
-import { airportModelFixture } from '../../fixtures/airportFixtures';
+import {
+    airportControllerKlasFixture,
+    airportModelFixture
+} from '../../fixtures/airportFixtures';
+import { AIRPORT_JSON_KLAS_MOCK } from '../../airport/_mocks/airportJsonMock';
 import {
     createNavigationLibraryFixture,
     resetNavigationLibraryFixture
@@ -90,6 +95,141 @@ ava('throws when called without proper parameters', (t) => {
         instanceOf: TypeError,
         message: expectedMessage
     });
+});
+
+ava('retains explicit navigation and airport owners for the initial route', (t) => {
+    const navigationLibrary = new NavigationLibraryClass();
+
+    navigationLibrary.init(AIRPORT_JSON_KLAS_MOCK);
+
+    const fms = new Fms(
+        DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK,
+        navigationLibrary,
+        airportControllerKlasFixture
+    );
+
+    t.is(fms._navigationLibrary, navigationLibrary);
+    t.is(fms._airportController, airportControllerKlasFixture);
+    t.is(fms._routeModel._navigationLibrary, navigationLibrary);
+});
+
+ava('resolves initial airport state through the explicit airport owner', (t) => {
+    const airportController = {
+        current: airportModelFixture,
+        airport_get: sinon.stub().returns(airportModelFixture)
+    };
+
+    const fms = new Fms(
+        DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK,
+        undefined,
+        airportController
+    );
+
+    t.true(airportController.airport_get.calledOnceWithExactly('KLAS'));
+    t.is(fms.departureAirportModel, airportModelFixture);
+});
+
+ava.serial('retains the explicit navigation owner after a partial-route amendment', (t) => {
+    const navigationLibrary = new NavigationLibraryClass();
+    const aircraftProps = {
+        ...ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK,
+        routeString: directOnlyRouteStringMock
+    };
+
+    navigationLibrary.init(AIRPORT_JSON_KLAS_MOCK);
+
+    const fms = new Fms(
+        aircraftProps,
+        navigationLibrary,
+        airportControllerKlasFixture
+    );
+
+    resetNavigationLibraryFixture();
+
+    const [success] = fms.applyPartialRouteAmendment('BIKKR..PGS');
+
+    t.true(success);
+    t.is(fms._routeModel._navigationLibrary, navigationLibrary);
+});
+
+ava.serial('retains the explicit navigation owner after replacing the flight plan', (t) => {
+    const navigationLibrary = new NavigationLibraryClass();
+    const aircraftProps = {
+        ...ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK,
+        routeString: directOnlyRouteStringMock
+    };
+
+    navigationLibrary.init(AIRPORT_JSON_KLAS_MOCK);
+
+    const fms = new Fms(
+        aircraftProps,
+        navigationLibrary,
+        airportControllerKlasFixture
+    );
+
+    resetNavigationLibraryFixture();
+
+    const [success] = fms.replaceFlightPlanWithNewRoute('TNP..PGS..DRK');
+
+    t.true(success);
+    t.is(fms._routeModel._navigationLibrary, navigationLibrary);
+});
+
+ava.serial('resolves arrival procedures through the explicit navigation owner', (t) => {
+    const navigationLibrary = new NavigationLibraryClass();
+
+    navigationLibrary.init(AIRPORT_JSON_KLAS_MOCK);
+
+    const fms = new Fms(
+        ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK,
+        navigationLibrary,
+        airportControllerKlasFixture
+    );
+
+    resetNavigationLibraryFixture();
+
+    const [success] = fms.replaceArrivalProcedure(starRouteStringMock);
+
+    t.true(success);
+    t.is(fms._routeModel._navigationLibrary, navigationLibrary);
+});
+
+ava.serial('resolves departure procedures through the explicit navigation owner', (t) => {
+    const navigationLibrary = new NavigationLibraryClass();
+
+    navigationLibrary.init(AIRPORT_JSON_KLAS_MOCK);
+
+    const fms = new Fms(
+        DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK,
+        navigationLibrary,
+        airportControllerKlasFixture
+    );
+
+    resetNavigationLibraryFixture();
+
+    const [success] = fms.replaceDepartureProcedure(sidRouteStringMock, 'KLAS');
+
+    t.true(success);
+    t.is(fms._routeModel._navigationLibrary, navigationLibrary);
+});
+
+ava.serial('resolves unknown hold spoken names through the explicit navigation owner', (t) => {
+    const navigationLibrary = new NavigationLibraryClass();
+
+    navigationLibrary.init(AIRPORT_JSON_KLAS_MOCK);
+
+    const fms = new Fms(
+        DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK,
+        navigationLibrary,
+        airportControllerKlasFixture
+    );
+
+    sinon.stub(navigationLibrary, 'getFixSpokenName').returns('owner spoken name');
+    resetNavigationLibraryFixture();
+
+    const [, readback] = fms.activateHoldForWaypointName('DINGBAT', {});
+
+    t.is(readback.say, 'unable to hold at owner spoken name; it is not on our route!');
 });
 
 ava('throws when instantiated with a route string containing less than two waypoints', (t) => {

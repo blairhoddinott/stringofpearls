@@ -2,7 +2,9 @@ import ava from 'ava';
 import sinon from 'sinon';
 import AircraftModel from '../../src/assets/scripts/client/aircraft/AircraftModel';
 import AirportController from '../../src/assets/scripts/client/airport/AirportController';
-import NavigationLibrary from '../../src/assets/scripts/client/navigationLibrary/NavigationLibrary';
+import NavigationLibrary, {
+    NavigationLibraryClass
+} from '../../src/assets/scripts/client/navigationLibrary/NavigationLibrary';
 import TimeKeeper from '../../src/assets/scripts/client/engine/TimeKeeper';
 import {
     createAirportControllerFixture,
@@ -26,6 +28,7 @@ import {
 } from '../../src/assets/scripts/client/constants/aircraftConstants';
 import { AIRPORT_CONSTANTS } from '../../src/assets/scripts/client/constants/airportConstants';
 import { DEFAULT_HOLD_PARAMETERS } from '../../src/assets/scripts/client/constants/waypointConstants';
+import { AIRPORT_JSON_KLAS_MOCK } from '../airport/_mocks/airportJsonMock';
 
 let sandbox; // using the sinon sandbox ensures stubs are restored after each test
 
@@ -61,6 +64,91 @@ ava.afterEach(() => {
 
 ava('does not throw with valid parameters', (t) => {
     t.notThrows(() => new AircraftModel(DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK));
+});
+
+ava('passes explicit navigation and airport owners to its FMS', (t) => {
+    const navigationLibrary = new NavigationLibraryClass();
+    const airportController = {
+        current: AirportController.current,
+        airport_get: (...args) => AirportController.airport_get(...args)
+    };
+
+    navigationLibrary.init(AIRPORT_JSON_KLAS_MOCK);
+
+    const model = new AircraftModel(
+        DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK,
+        navigationLibrary,
+        airportController
+    );
+
+    t.is(model.fms._navigationLibrary, navigationLibrary);
+    t.is(model.fms._airportController, airportController);
+});
+
+ava('resolves departure initialization through the explicit airport owner', (t) => {
+    const airportController = {
+        current: AirportController.current,
+        airport_get: sinon.stub().returns(AirportController.current)
+    };
+
+    new AircraftModel(
+        DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK,
+        NavigationLibrary,
+        airportController
+    );
+
+    t.is(airportController.airport_get.callCount, 2);
+});
+
+ava('resolves arrival initialization through the explicit airport owner', (t) => {
+    const airportController = {
+        current: AirportController.current,
+        airport_get: sinon.stub().returns(AirportController.current)
+    };
+
+    new AircraftModel(
+        ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK,
+        NavigationLibrary,
+        airportController
+    );
+
+    t.is(airportController.airport_get.callCount, 3);
+});
+
+ava('resolves post-construction airport data through the explicit owner', (t) => {
+    const airportController = {
+        current: AirportController.current,
+        airport_get: sinon.stub().returns(AirportController.current)
+    };
+    const model = new AircraftModel(
+        ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK,
+        NavigationLibrary,
+        airportController
+    );
+    airportController.airport_get.resetHistory();
+
+    model.getWindComponents();
+
+    t.true(airportController.airport_get.calledOnce);
+});
+
+ava('builds restricted-area links from the explicit airport owner', (t) => {
+    const restrictedArea = { name: 'context-owned restricted area' };
+    const airportController = {
+        current: {
+            icao: AirportController.current.icao,
+            restricted_areas: [restrictedArea]
+        },
+        airport_get: sinon.stub().returns(AirportController.current)
+    };
+    const model = new AircraftModel(
+        DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK,
+        NavigationLibrary,
+        airportController
+    );
+
+    t.is(model.restricted.list.length, 1);
+    t.is(model.restricted.list[0].data, restrictedArea);
 });
 
 ava('#targetHeading throws when neither #_targetHeading nor #_targetGroundTrack is not null', (t) => {

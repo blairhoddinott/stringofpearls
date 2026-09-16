@@ -39,6 +39,21 @@ export default class SimulationContext {
         aircraftController = null,
         spawnPatternCollection = null
     } = {}) {
+        if (eventBus != null && aircraftController?._eventBus != null &&
+            aircraftController._eventBus !== eventBus) {
+            throw new TypeError('aircraftController must own the supplied eventBus.');
+        }
+
+        if (airportController != null && aircraftController?._airportController != null &&
+            aircraftController._airportController !== airportController) {
+            throw new TypeError('aircraftController must own the supplied airportController.');
+        }
+
+        if (navigationLibrary != null && aircraftController?._navigationLibrary != null &&
+            aircraftController._navigationLibrary !== navigationLibrary) {
+            throw new TypeError('aircraftController must own the supplied navigationLibrary.');
+        }
+
         if (aircraftCollection != null && aircraftController != null &&
             aircraftController.aircraft !== aircraftCollection) {
             throw new TypeError('aircraftController must own the supplied aircraftCollection.');
@@ -47,9 +62,13 @@ export default class SimulationContext {
         this._clock = clock ?? new SimulationClock();
         this._timerQueue = new SimulationTimerQueue(this._clock);
         this._randomSource = randomSource;
-        this._eventBus = eventBus ?? new EventBusClass();
-        this._airportController = airportController ?? new AirportControllerClass(this._eventBus);
-        this._navigationLibrary = navigationLibrary ?? new NavigationLibraryClass();
+        this._eventBus = eventBus ?? aircraftController?._eventBus ?? new EventBusClass();
+        this._airportController = airportController ??
+            aircraftController?._airportController ??
+            new AirportControllerClass(this._eventBus);
+        this._navigationLibrary = navigationLibrary ??
+            aircraftController?._navigationLibrary ??
+            new NavigationLibraryClass();
         this._aircraftCollection = aircraftCollection ?? aircraftController?.aircraft ?? new AircraftCollection();
         this._aircraftController = aircraftController;
         this._spawnPatternCollection = spawnPatternCollection ?? new SpawnPatternCollectionClass(

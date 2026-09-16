@@ -2,6 +2,8 @@ import ava from 'ava';
 import sinon from 'sinon';
 import SimulationContext from '../../src/assets/scripts/client/simulation/SimulationContext';
 import { EventBusClass } from '../../src/assets/scripts/client/lib/EventBus';
+import { AirportControllerClass } from '../../src/assets/scripts/client/airport/AirportController';
+import { NavigationLibraryClass } from '../../src/assets/scripts/client/navigationLibrary/NavigationLibrary';
 import { AIRPORT_JSON_KLAS_MOCK } from '../airport/_mocks/airportJsonMock';
 import {
     ARRIVAL_PATTERN_MOCK,
@@ -62,6 +64,23 @@ ava('uses an injected aircraft controller collection when no collection is suppl
     t.is(context.spawnScheduler._aircraftController, aircraftController);
 });
 
+ava('uses injected aircraft controller service owners when none are supplied', (t) => {
+    const eventBus = new EventBusClass();
+    const airportController = new AirportControllerClass(new EventBusClass());
+    const navigationLibrary = new NavigationLibraryClass();
+    const aircraftController = {
+        aircraft: { reset: () => {} },
+        _eventBus: eventBus,
+        _airportController: airportController,
+        _navigationLibrary: navigationLibrary
+    };
+    const context = new SimulationContext({ aircraftController });
+
+    t.is(context.eventBus, eventBus);
+    t.is(context.airportController, airportController);
+    t.is(context.navigationLibrary, navigationLibrary);
+});
+
 ava('rejects mismatched injected aircraft controller and collection state', (t) => {
     const error = t.throws(() => new SimulationContext({
         aircraftCollection: {},
@@ -69,6 +88,42 @@ ava('rejects mismatched injected aircraft controller and collection state', (t) 
     }), { instanceOf: TypeError });
 
     t.is(error.message, 'aircraftController must own the supplied aircraftCollection.');
+});
+
+ava('rejects a mismatched injected aircraft controller airport owner', (t) => {
+    const error = t.throws(() => new SimulationContext({
+        airportController: new AirportControllerClass(new EventBusClass()),
+        aircraftController: {
+            aircraft: { reset: () => {} },
+            _airportController: new AirportControllerClass(new EventBusClass())
+        }
+    }), { instanceOf: TypeError });
+
+    t.is(error.message, 'aircraftController must own the supplied airportController.');
+});
+
+ava('rejects a mismatched injected aircraft controller event owner', (t) => {
+    const error = t.throws(() => new SimulationContext({
+        eventBus: new EventBusClass(),
+        aircraftController: {
+            aircraft: { reset: () => {} },
+            _eventBus: new EventBusClass()
+        }
+    }), { instanceOf: TypeError });
+
+    t.is(error.message, 'aircraftController must own the supplied eventBus.');
+});
+
+ava('rejects a mismatched injected aircraft controller navigation owner', (t) => {
+    const error = t.throws(() => new SimulationContext({
+        navigationLibrary: new NavigationLibraryClass(),
+        aircraftController: {
+            aircraft: { reset: () => {} },
+            _navigationLibrary: new NavigationLibraryClass()
+        }
+    }), { instanceOf: TypeError });
+
+    t.is(error.message, 'aircraftController must own the supplied navigationLibrary.');
 });
 
 ava('default navigation state uses this simulation session random source', (t) => {

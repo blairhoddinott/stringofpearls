@@ -4,6 +4,7 @@ import _isNil from 'lodash/isNil';
 import _without from 'lodash/without';
 import AirlineController from '../airline/AirlineController';
 import AirportController from '../airport/AirportController';
+import NavigationLibrary from '../navigationLibrary/NavigationLibrary';
 import ScopeModel from '../scope/ScopeModel';
 import UiController from '../ui/UiController';
 import EventBus from '../lib/EventBus';
@@ -47,6 +48,7 @@ export default class AircraftController {
      * @param aircraftCollection {AircraftCollection} [optional] aircraft state owner
      * @param eventBus {EventBus} [optional] aircraft event dispatcher
      * @param airportController {AirportController} [optional] airport state owner
+     * @param navigationLibrary {NavigationLibrary} [optional] navigation state owner
      */
     constructor(
         aircraftTypeDefinitionList,
@@ -56,7 +58,8 @@ export default class AircraftController {
         randomSource,
         aircraftCollection,
         eventBus = EventBus,
-        airportController = AirportController
+        airportController = AirportController,
+        navigationLibrary = NavigationLibrary
     ) {
         if (_isNil(aircraftTypeDefinitionList) || _isNil(airlineController) || _isNil(scopeModel)) {
             throw new TypeError('Invalid parameter(s) passed to AircraftController constructor. ' +
@@ -112,6 +115,7 @@ export default class AircraftController {
          */
         this._eventBus = eventBus;
         this._airportController = airportController;
+        this._navigationLibrary = navigationLibrary;
 
         /**
          * Reference to an `AircraftTypeDefinitionCollection` instance
@@ -581,7 +585,11 @@ export default class AircraftController {
      * @private
      */
     _createAircraftWithInitializationProps(initializationProps) {
-        const aircraftModel = new AircraftModel(initializationProps);
+        const aircraftModel = new AircraftModel(
+            initializationProps,
+            this._navigationLibrary,
+            this._airportController
+        );
         const isDeparture = initializationProps.category === 'departure';
         const isArrival = initializationProps.category === 'arrival';
         const isAutoTower = GameController.getGameOption(GAME_OPTION_NAMES.TOWER_CONTROLLER) === 'SYSTEM';

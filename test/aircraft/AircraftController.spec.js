@@ -3,8 +3,14 @@ import ava from 'ava';
 
 import AircraftController from '../../src/assets/scripts/client/aircraft/AircraftController';
 import AircraftCollection from '../../src/assets/scripts/client/aircraft/AircraftCollection';
+import AirportController from '../../src/assets/scripts/client/airport/AirportController';
 import { EventBusClass } from '../../src/assets/scripts/client/lib/EventBus';
-import { AIRCRAFT_DEFINITION_LIST_MOCK } from './_mocks/aircraftMocks';
+import { NavigationLibraryClass } from '../../src/assets/scripts/client/navigationLibrary/NavigationLibrary';
+import {
+    AIRCRAFT_DEFINITION_LIST_MOCK,
+    DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK
+} from './_mocks/aircraftMocks';
+import { AIRPORT_JSON_KLAS_MOCK } from '../airport/_mocks/airportJsonMock';
 import { airlineControllerFixture } from '../fixtures/airlineFixtures';
 import { scopeModelFixture } from '../fixtures/scopeFixtures';
 // import { spawnPatternModelArrivalFixture } from '../fixtures/trafficGeneratorFixtures';
@@ -213,6 +219,50 @@ ava('retains an injected airport controller by exact identity', (t) => {
     );
 
     t.is(controller._airportController, airportController);
+});
+
+ava('retains an injected navigation library by exact identity', (t) => {
+    const navigationLibrary = new NavigationLibraryClass();
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture,
+        undefined,
+        undefined,
+        new AircraftCollection(),
+        new EventBusClass(),
+        undefined,
+        navigationLibrary
+    );
+
+    t.is(controller._navigationLibrary, navigationLibrary);
+});
+
+ava('creates aircraft with the exact injected navigation and airport owners', (t) => {
+    const navigationLibrary = new NavigationLibraryClass();
+    navigationLibrary.init(AIRPORT_JSON_KLAS_MOCK);
+    const airportController = {
+        current: AirportController.current,
+        airport_get: (...args) => AirportController.airport_get(...args)
+    };
+    const aircraftCollection = new AircraftCollection();
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture,
+        undefined,
+        undefined,
+        aircraftCollection,
+        new EventBusClass(),
+        airportController,
+        navigationLibrary
+    );
+
+    controller._createAircraftWithInitializationProps(DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK);
+
+    t.is(aircraftCollection.list.length, 1);
+    t.is(aircraftCollection.list[0].fms._navigationLibrary, navigationLibrary);
+    t.is(aircraftCollection.list[0].fms._airportController, airportController);
 });
 
 ava('generates distinct deterministic CIDs when randomSource is omitted', (t) => {

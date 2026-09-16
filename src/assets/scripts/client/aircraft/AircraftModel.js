@@ -9,6 +9,7 @@ import _isEqual from 'lodash/isEqual';
 import _isNil from 'lodash/isNil';
 import _uniqueId from 'lodash/uniqueId';
 import AirportController from '../airport/AirportController';
+import NavigationLibrary from '../navigationLibrary/NavigationLibrary';
 import Fms from './FlightManagementSystem/Fms';
 import GameController, { GAME_EVENTS } from '../game/GameController';
 import ModeController from './ModeControl/ModeController';
@@ -98,8 +99,17 @@ export default class AircraftModel {
      * @for AircraftModel
      * @constructor
      * @param options {object}
+     * @param navigationLibrary {NavigationLibrary} [optional]
+     * @param airportController {AirportController} [optional]
      */
-    constructor(options = {}) {
+    constructor(
+        options = {},
+        navigationLibrary = NavigationLibrary,
+        airportController = AirportController
+    ) {
+        this._navigationLibrary = navigationLibrary;
+        this._airportController = airportController;
+
         /**
          * Unique id
          *
@@ -486,7 +496,7 @@ export default class AircraftModel {
          * @property fms
          * @type {Fms}
          */
-        this.fms = new Fms(options);
+        this.fms = new Fms(options, this._navigationLibrary, this._airportController);
 
         /**
          * @for AircraftModel
@@ -503,7 +513,7 @@ export default class AircraftModel {
         this.buildRestrictedAreaLinks();
         this.parse(options);
 
-        const airport = AirportController.airport_get();
+        const airport = this._airportController.airport_get();
         // const initialRunway = airport.getActiveRunwayForCategory(this.category);
 
         if (this.category === FLIGHT_CATEGORY.DEPARTURE) {
@@ -514,7 +524,7 @@ export default class AircraftModel {
             throw new Error('Invalid #category found in AircraftModel');
         } else {
             const bottomAltitude = this.fms.getBottomAltitude();
-            const airportModel = AirportController.airport_get();
+            const airportModel = this._airportController.airport_get();
             const airspaceCeiling = airportModel.maxAssignableAltitude;
 
             this.mcp.initializeForAirborneFlight(
@@ -642,7 +652,7 @@ export default class AircraftModel {
      * @method buildRestrictedAreaLinks
      */
     buildRestrictedAreaLinks() {
-        const restrictedAreas = AirportController.current.restricted_areas;
+        const restrictedAreas = this._airportController.current.restricted_areas;
 
         _forEach(restrictedAreas, (area) => {
             this.restricted.list.push({
@@ -1139,7 +1149,7 @@ export default class AircraftModel {
       * @return {object} headwind and crosswind
       */
     getWindComponents() {
-        const { wind } = AirportController.airport_get();
+        const { wind } = this._airportController.airport_get();
         const crosswindAngle = calculateCrosswindAngle(this.heading, wind.angle);
 
         return {
@@ -1180,13 +1190,13 @@ export default class AircraftModel {
         // let call = '';
         //
         // if (sectorType) {
-        //     call += AirportController.airport_get().radio[sectorType];
+        //     call += this._airportController.airport_get().radio[sectorType];
         // }
         //
         // call += ", " + this.callsign + " " + msg;
 
         // TODO: quick abstraction, this doesn't belong here.
-        const logMessage = (callsign) => `${AirportController.airport_get().radio[sectorType]}, ${callsign} ${msg}`;
+        const logMessage = (callsign) => `${this._airportController.airport_get().radio[sectorType]}, ${callsign} ${msg}`;
 
         if (alert) {
             const isWarning = true;
@@ -1229,20 +1239,20 @@ export default class AircraftModel {
                 alt_say = `at ${radio_altitude(alt)}`;
             }
 
-            UiController.ui_log(`${AirportController.airport_get().radio.app}, ${this.callsign} with you ${alt_log}`);
+            UiController.ui_log(`${this._airportController.airport_get().radio.app}, ${this.callsign} with you ${alt_log}`);
             speech_say(
                 [
-                    { type: 'text', content: `${AirportController.airport_get().radio.app}, ` },
+                    { type: 'text', content: `${this._airportController.airport_get().radio.app}, ` },
                     { type: 'callsign', content: this },
                     { type: 'text', content: `with you ${alt_say}` }
                 ],
                 this.pilotVoice
             );
         } else {
-            UiController.ui_log(`${AirportController.airport_get().radio.twr}, ${this.callsign}, ready to taxi`);
+            UiController.ui_log(`${this._airportController.airport_get().radio.twr}, ${this.callsign}, ready to taxi`);
             speech_say(
                 [
-                    { type: 'text', content: AirportController.airport_get().radio.twr },
+                    { type: 'text', content: this._airportController.airport_get().radio.twr },
                     { type: 'callsign', content: this },
                     { type: 'text', content: ', ready to taxi' }
                 ],
@@ -1616,7 +1626,7 @@ export default class AircraftModel {
      * @private
      */
     _calculateCrabHeadingForGroundTrack(groundTrackHeading) {
-        const windVector = AirportController.airport_get().getWindVectorAtAltitude(this.altitude);
+        const windVector = this._airportController.airport_get().getWindVectorAtAltitude(this.altitude);
         const windAngle = vradial(windVector);
         const angleDifference = groundTrackHeading - windAngle;
         const crabAngle = Math.asin((vlen(windVector) * sin(angleDifference)) / this.trueAirspeed);
@@ -1635,7 +1645,7 @@ export default class AircraftModel {
      */
     _calculateGroundTrackForHeading(heading) {
         const headingVector = vscale(vectorize2dFromRadians(heading), this.trueAirspeed);
-        const windVector = AirportController.airport_get().getWindVectorAtAltitude(this.altitude);
+        const windVector = this._airportController.airport_get().getWindVectorAtAltitude(this.altitude);
         const groundTrackHeading = vradial(vadd(headingVector, windVector));
 
         return radians_normalize(groundTrackHeading);
@@ -2517,7 +2527,7 @@ export default class AircraftModel {
         const flightThroughAirVector = vscale(vectorize2dFromRadians(this.heading), trueAirspeed);
 
         // Calculate ground speed and direction
-        const windVector = AirportController.airport_get().getWindVectorAtAltitude(this.altitude);
+        const windVector = this._airportController.airport_get().getWindVectorAtAltitude(this.altitude);
         const flightPathVector = vadd(flightThroughAirVector, windVector);
         const groundSpeed = vlen(flightPathVector);
         let groundTrack = vradial(flightPathVector);
@@ -2618,7 +2628,7 @@ export default class AircraftModel {
         }
 
         if (this.terrain_ranges && !this.isOnGround()) {
-            const { terrain } = AirportController.current;
+            const { terrain } = this._airportController.current;
             const prev_level = this.terrain_ranges[this.terrain_level];
             const ele = Math.ceil(this.altitude, 1000);
             const curr_ranges = this.terrain_ranges[ele];
@@ -2763,7 +2773,7 @@ export default class AircraftModel {
             return;
         }
 
-        const isInsideAirspace = this.isInsideAirspace(AirportController.airport_get());
+        const isInsideAirspace = this.isInsideAirspace(this._airportController.airport_get());
 
         if (this.isControllable === isInsideAirspace) {
             return;

@@ -71,6 +71,10 @@ ava('creates isolated game and simulation-option state for each simulation sessi
     t.is(second.gameState.score, 0);
     t.is(second.gameState.events[GAME_EVENTS.ARRIVAL], 0);
     t.is(second.gameState.getGameOption('towerController'), 'SYSTEM');
+    t.is(first.airportController._clock, first.clock);
+    t.is(first.airportController._gameState, first.gameState);
+    t.is(second.airportController._clock, second.clock);
+    t.is(second.airportController._gameState, second.gameState);
 });
 
 ava('uses an injected aircraft controller collection when no collection is supplied', (t) => {
@@ -126,6 +130,31 @@ ava('rejects a mismatched injected aircraft controller game state owner', (t) =>
     }), { instanceOf: TypeError });
 
     t.is(error.message, 'aircraftController must own the supplied gameState.');
+});
+
+ava('rejects mismatched airport-controller clock and game-state owners', (t) => {
+    const airportClock = new SimulationClock();
+    const airportGameState = new SimulationGameState();
+    const airportController = new AirportControllerClass(
+        new EventBusClass(),
+        airportClock,
+        airportGameState
+    );
+
+    t.throws(() => new SimulationContext({
+        airportController,
+        clock: new SimulationClock()
+    }), {
+        instanceOf: TypeError,
+        message: 'airportController must own the supplied clock.'
+    });
+    t.throws(() => new SimulationContext({
+        airportController,
+        gameState: new SimulationGameState()
+    }), {
+        instanceOf: TypeError,
+        message: 'airportController must own the supplied gameState.'
+    });
 });
 
 ava('rejects mismatched injected aircraft controller and collection state', (t) => {

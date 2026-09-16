@@ -303,11 +303,11 @@ ava.serial('creates aircraft and conflicts with the exact injected service owner
         clock,
         gameState
     );
-    const previousAircraftController = window.aircraftController;
-    window.aircraftController = controller;
-    t.teardown(() => {
-        window.aircraftController = previousAircraftController;
-    });
+
+    t.is(controller._aircraftCommander._eventBus, eventBus);
+    t.is(controller._aircraftCommander._airportController, airportController);
+    t.is(controller._aircraftCommander._navigationLibrary, navigationLibrary);
+    t.is(controller._aircraftCommander._gameState, gameState);
 
     controller._createAircraftWithInitializationProps(DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK);
     controller._createAircraftWithInitializationProps(DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK);
@@ -326,6 +326,13 @@ ava.serial('creates aircraft and conflicts with the exact injected service owner
     t.is(controller.conflicts[0]._eventBus, eventBus);
     t.is(controller.conflicts[0]._airportController, airportController);
     t.is(controller.conflicts[0]._gameState, gameState);
+
+    const conflictCollection = controller.conflicts;
+
+    controller.removeConflict(controller.conflicts[0]);
+
+    t.is(controller.conflicts, conflictCollection);
+    t.is(controller.conflicts.length, 0);
 });
 
 ava('generates distinct deterministic CIDs when randomSource is omitted', (t) => {

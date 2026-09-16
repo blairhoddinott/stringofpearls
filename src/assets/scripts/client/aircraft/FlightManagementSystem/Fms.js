@@ -276,7 +276,11 @@ export default class Fms {
             routeString
         } = aircraftInitProps;
 
-        this._routeModel = new RouteModel(routeString, this._navigationLibrary);
+        this._routeModel = new RouteModel(
+            routeString,
+            this._navigationLibrary,
+            this._airportController
+        );
 
         this._verifyRouteContainsMultipleWaypoints();
         this._initializeFlightPhaseForCategory(category);
@@ -511,7 +515,11 @@ export default class Fms {
         let nextRouteModel;
 
         try {
-            nextRouteModel = new RouteModel(routeString, this._navigationLibrary);
+            nextRouteModel = new RouteModel(
+                routeString,
+                this._navigationLibrary,
+                this._airportController
+            );
         } catch (error) {
             console.error(error);
 
@@ -992,7 +1000,11 @@ export default class Fms {
         let nextRouteModel;
 
         try {
-            nextRouteModel = new RouteModel(routeString, this._navigationLibrary);
+            nextRouteModel = new RouteModel(
+                routeString,
+                this._navigationLibrary,
+                this._airportController
+            );
         } catch (error) {
             console.error(error);
 

@@ -125,6 +125,29 @@ ava('.set() continues the loaded path without throwing or touching browser stora
     t.true(triggerSpy.calledWith(EVENT.PAUSE_UPDATE_LOOP, true));
 });
 
+ava('.set() uses exact injected clock and game-state owners', (t) => {
+    const eventBus = { trigger: sinon.spy() };
+    const clock = { accumulatedDeltaTime: 123 };
+    const gameState = { game_reset_score_and_events: sinon.spy() };
+    const model = new AirportModel(
+        FLYWEIGHT_OPTIONS_MOCK,
+        null,
+        null,
+        null,
+        eventBus,
+        null,
+        clock,
+        gameState
+    );
+
+    model.loaded = true;
+    model.set();
+
+    t.true(gameState.game_reset_score_and_events.calledOnce);
+    t.is(model.start, 123);
+    t.true(eventBus.trigger.calledWithExactly(EVENT.PAUSE_UPDATE_LOOP, true));
+});
+
 ava('.loadTerrain() returns early when #has_terrain is false', (t) => {
     const model = new AirportModel(AIRPORT_JSON_KLAS_MOCK);
     const parseTerrainSpy = sinon.spy(model, 'parseTerrain');

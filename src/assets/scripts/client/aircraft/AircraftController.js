@@ -108,7 +108,11 @@ export default class AircraftController {
          */
         this._aircraftCommander = new AircraftCommander(
             this.onRequestToChangeTransponderCode.bind(this),
-            this.findAircraftById.bind(this)
+            this.findAircraftById.bind(this),
+            eventBus,
+            airportController,
+            navigationLibrary,
+            gameState
         );
 
         /**
@@ -160,9 +164,9 @@ export default class AircraftController {
         const usesLegacyAircraftCollection = _isNil(aircraftCollection);
 
         this.aircraft = aircraftCollection ?? aircraft;
-        prop.aircraft = this.aircraft;
 
         if (usesLegacyAircraftCollection) {
+            prop.aircraft = this.aircraft;
             this.aircraft.list = [];
             this.aircraft.auto = { enabled: false };
         }
@@ -481,7 +485,8 @@ export default class AircraftController {
             this._eventBus,
             this._airportController,
             this._clock,
-            this._gameState
+            this._gameState,
+            this.conflicts
         );
 
         if (conflict.shouldBeRemoved()) {
@@ -531,7 +536,9 @@ export default class AircraftController {
         conflict.aircraft[0].removeConflict(conflict.aircraft[1]);
         conflict.aircraft[1].removeConflict(conflict.aircraft[0]);
 
-        this.conflicts = _without(this.conflicts, conflict);
+        const remainingConflicts = _without(this.conflicts, conflict);
+
+        this.conflicts.splice(0, this.conflicts.length, ...remainingConflicts);
     };
 
     /**

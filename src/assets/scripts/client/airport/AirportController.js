@@ -1,6 +1,8 @@
 import _has from 'lodash/has';
 import AirportModel from './AirportModel';
 import EventBus from '../lib/EventBus';
+import GameController from '../game/GameController';
+import TimeKeeper from '../engine/TimeKeeper';
 import { EVENT } from '../constants/eventNames';
 import { STORAGE_KEY } from '../constants/storageKeys';
 
@@ -13,12 +15,14 @@ export class AirportControllerClass {
     /**
      * @constructor
      */
-    constructor(eventBus = EventBus) {
+    constructor(eventBus = EventBus, clock = TimeKeeper, gameState = GameController) {
         /**
          * @property _eventBus
          * @type {EventBus}
          */
         this._eventBus = eventBus;
+        this._clock = clock;
+        this._gameState = gameState;
 
         /**
          * Local reference to `window.AIRPORT_LOAD_LIST`
@@ -145,7 +149,9 @@ export class AirportControllerClass {
             this._storageAdapter,
             this._reportError,
             this._eventBus,
-            this
+            this,
+            this._clock,
+            this._gameState
         );
 
         this.airport_add(airportModel);

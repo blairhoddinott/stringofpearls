@@ -30,8 +30,18 @@ import { heading_to_string, radiansToDegrees, degreesToRadians } from '../utilit
  * @class AircraftCommander
  */
 export default class AircraftCommander {
-    constructor(onChangeTransponderCode, findAircraftById) {
-        this._eventBus = EventBus;
+    constructor(
+        onChangeTransponderCode,
+        findAircraftById,
+        eventBus = EventBus,
+        airportController = AirportController,
+        navigationLibrary = NavigationLibrary,
+        gameState = GameController
+    ) {
+        this._eventBus = eventBus;
+        this._airportController = airportController;
+        this._navigationLibrary = navigationLibrary;
+        this._gameState = gameState;
         this._findAircraftById = findAircraftById;
         this._onChangeTransponderCode = onChangeTransponderCode;
     }
@@ -187,8 +197,8 @@ export default class AircraftCommander {
     runAltitude(aircraft, data) {
         const altitudeRequested = data[0];
         const expediteRequested = data[1];
-        const shouldUseSoftCeiling = GameController.game.option.getOptionByName('softCeiling') === 'yes';
-        const airport = AirportController.airport_get();
+        const shouldUseSoftCeiling = this._gameState.getGameOption('softCeiling') === 'yes';
+        const airport = this._airportController.airport_get();
 
         return aircraft.pilot.maintainAltitude(
             altitudeRequested,
@@ -313,7 +323,7 @@ export default class AircraftCommander {
             return [false, 'unable to hold over present position, we can only hold over fixes'];
         }
 
-        const fixModel = NavigationLibrary.findFixByName(fixName);
+        const fixModel = this._navigationLibrary.findFixByName(fixName);
 
         if (!fixModel) {
             return [false, `unable to hold at unknown fix ${fixName}`];
@@ -387,7 +397,7 @@ export default class AircraftCommander {
      * @return {array} [success of operation, response]
      */
     runExpectArrivalRunway(aircraft, data) {
-        const airportModel = AirportController.airport_get();
+        const airportModel = this._airportController.airport_get();
         const runwayName = data[0];
         const runwayModel = airportModel.getRunway(runwayName);
 
@@ -446,7 +456,7 @@ export default class AircraftCommander {
      */
     runSID(aircraft, data) {
         const routeString = data[0];
-        const airportModel = AirportController.airport_get();
+        const airportModel = this._airportController.airport_get();
 
         return aircraft.pilot.applyDepartureProcedure(routeString, airportModel.icao);
     }
@@ -459,7 +469,7 @@ export default class AircraftCommander {
      */
     runSTAR(aircraft, data) {
         const routeString = data[0];
-        const airportModel = AirportController.airport_get();
+        const airportModel = this._airportController.airport_get();
 
         return aircraft.pilot.applyArrivalProcedure(routeString, airportModel.name);
     }
@@ -641,7 +651,7 @@ export default class AircraftCommander {
      * @return {array} [success of operation, readback]
      */
     runTaxi(aircraftModel, data) {
-        const airportModel = AirportController.airport_get();
+        const airportModel = this._airportController.airport_get();
         const requestedRunwayName = data[0];
 
         if (!requestedRunwayName) {
@@ -671,7 +681,7 @@ export default class AircraftCommander {
      */
     runTakeoff(aircraft) {
         // TODO: update some of this queue logic to live in the RunwayModel
-        const airport = AirportController.airport_get();
+        const airport = this._airportController.airport_get();
         const runway = aircraft.fms.departureRunwayModel;
         const spotInQueue = runway.getAircraftQueuePosition(aircraft.id);
         const isInQueue = spotInQueue > -1;
@@ -748,7 +758,7 @@ export default class AircraftCommander {
     runIls(aircraft, data) {
         const approachType = 'ils';
         const runwayName = data[1].toUpperCase();
-        const runwayModel = AirportController.airport_get().getRunway(runwayName);
+        const runwayModel = this._airportController.airport_get().getRunway(runwayName);
 
         return aircraft.pilot.conductInstrumentApproach(aircraft, approachType, runwayModel);
     }

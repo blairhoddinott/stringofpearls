@@ -39,11 +39,13 @@ export default class RouteModel extends BaseModel {
      * @constructor
      * @param routeString {string}
      * @param navigationLibrary {NavigationLibrary} navigation-session route resolver; optional
+     * @param airportController {AirportController} airport-session owner; optional
      */
-    constructor(routeString, navigationLibrary) {
+    constructor(routeString, navigationLibrary, airportController = AirportController) {
         super();
 
         this._navigationLibrary = navigationLibrary;
+        this._airportController = airportController;
 
         /**
          * Array of `LegModel`s on the route
@@ -294,7 +296,7 @@ export default class RouteModel extends BaseModel {
             return null;
         }
 
-        return AirportController.airport_get(airportIcao);
+        return this._airportController.airport_get(airportIcao);
     }
 
     /**
@@ -362,7 +364,7 @@ export default class RouteModel extends BaseModel {
             return null;
         }
 
-        return AirportController.airport_get(airportIcao);
+        return this._airportController.airport_get(airportIcao);
     }
 
     /**
@@ -576,7 +578,7 @@ export default class RouteModel extends BaseModel {
             return sidLegModel.altitude;
         }
 
-        const airport = AirportController.airport_get();
+        const airport = this._airportController.airport_get();
 
         return airport.initial_alt;
     }

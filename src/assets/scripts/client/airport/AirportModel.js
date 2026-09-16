@@ -57,6 +57,8 @@ export default class AirportModel {
      * @param reportError {Function|null} [optional]
      * @param eventBus {EventBus} [optional]
      * @param airportController {AirportController|null} [optional]
+     * @param clock {TimeKeeper|SimulationClock} [optional]
+     * @param gameState {GameController|SimulationGameState} [optional]
      */
     // istanbul ignore next
     constructor(
@@ -65,7 +67,9 @@ export default class AirportModel {
         storageAdapter = null,
         reportError = null,
         eventBus = EventBus,
-        airportController = null
+        airportController = null,
+        clock = TimeKeeper,
+        gameState = GameController
     ) {
         /**
          * @property EventBus
@@ -73,6 +77,8 @@ export default class AirportModel {
          */
         this.eventBus = eventBus;
         this._airportController = airportController;
+        this._clock = clock;
+        this._gameState = gameState;
 
         /**
          * Persistence boundary used to write the last-selected airport.
@@ -607,9 +613,9 @@ export default class AirportModel {
         }
 
         // TODO: this should live elsewhere and be called by a higher level controller
-        GameController.game_reset_score_and_events();
+        this._gameState.game_reset_score_and_events();
 
-        this.start = TimeKeeper.accumulatedDeltaTime;
+        this.start = this._clock.accumulatedDeltaTime;
 
         this.eventBus.trigger(EVENT.PAUSE_UPDATE_LOOP, true);
     }

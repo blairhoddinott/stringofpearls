@@ -111,6 +111,7 @@ ava('retains explicit navigation and airport owners for the initial route', (t) 
     t.is(fms._navigationLibrary, navigationLibrary);
     t.is(fms._airportController, airportControllerKlasFixture);
     t.is(fms._routeModel._navigationLibrary, navigationLibrary);
+    t.is(fms._routeModel._airportController, airportControllerKlasFixture);
 });
 
 ava('resolves initial airport state through the explicit airport owner', (t) => {
@@ -150,6 +151,7 @@ ava.serial('retains the explicit navigation owner after a partial-route amendmen
 
     t.true(success);
     t.is(fms._routeModel._navigationLibrary, navigationLibrary);
+    t.is(fms._routeModel._airportController, airportControllerKlasFixture);
 });
 
 ava.serial('retains the explicit navigation owner after replacing the flight plan', (t) => {
@@ -173,6 +175,7 @@ ava.serial('retains the explicit navigation owner after replacing the flight pla
 
     t.true(success);
     t.is(fms._routeModel._navigationLibrary, navigationLibrary);
+    t.is(fms._routeModel._airportController, airportControllerKlasFixture);
 });
 
 ava.serial('resolves arrival procedures through the explicit navigation owner', (t) => {
@@ -192,6 +195,7 @@ ava.serial('resolves arrival procedures through the explicit navigation owner', 
 
     t.true(success);
     t.is(fms._routeModel._navigationLibrary, navigationLibrary);
+    t.is(fms._routeModel._airportController, airportControllerKlasFixture);
 });
 
 ava.serial('resolves departure procedures through the explicit navigation owner', (t) => {
@@ -211,6 +215,7 @@ ava.serial('resolves departure procedures through the explicit navigation owner'
 
     t.true(success);
     t.is(fms._routeModel._navigationLibrary, navigationLibrary);
+    t.is(fms._routeModel._airportController, airportControllerKlasFixture);
 });
 
 ava.serial('resolves unknown hold spoken names through the explicit navigation owner', (t) => {

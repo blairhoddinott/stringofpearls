@@ -53,14 +53,20 @@ ava('reset retains a constructible controller event bus for subsequent selection
     t.true(eventObserver.calledOnceWithExactly(airport.data));
 });
 
-ava('constructible controllers give created airport models their exact event bus', (t) => {
+ava('constructible controllers give created airport models their exact service owners', (t) => {
     const eventBus = new EventBusClass();
-    const controller = new AirportControllerClass(eventBus);
+    const clock = {};
+    const gameState = {};
+    const controller = new AirportControllerClass(eventBus, clock, gameState);
     const airportDefinition = AIRPORT_LOAD_LIST_MOCK[0];
 
     controller.airport_load(airportDefinition);
 
-    t.is(controller.airport_get(airportDefinition.icao).eventBus, eventBus);
+    const airportModel = controller.airport_get(airportDefinition.icao);
+
+    t.is(airportModel.eventBus, eventBus);
+    t.is(airportModel._clock, clock);
+    t.is(airportModel._gameState, gameState);
 });
 
 ava.serial('created airport models recover load failures through their owning controller', (t) => {

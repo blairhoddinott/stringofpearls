@@ -84,6 +84,8 @@ ava('passes explicit navigation and airport owners to its FMS', (t) => {
 
     t.is(model.fms._navigationLibrary, navigationLibrary);
     t.is(model.fms._airportController, airportController);
+    t.is(model.pilot._navigationLibrary, navigationLibrary);
+    t.is(model.pilot._airportController, airportController);
 });
 
 ava('retains an explicit clock and uses its elapsed time during initialization', (t) => {

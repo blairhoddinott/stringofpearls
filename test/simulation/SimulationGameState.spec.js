@@ -9,16 +9,20 @@ ava('starts with isolated zeroed score, event counts, and inherited tower mode',
 
     t.is(first.score, 0);
     t.deepEqual(first.events, Object.fromEntries(Object.values(GAME_EVENTS).map((eventName) => [eventName, 0])));
+    t.is(first.getGameOption(GAME_OPTION_NAMES.SOFT_CEILING), 'yes');
     t.is(first.getGameOption(GAME_OPTION_NAMES.TOWER_CONTROLLER), 'SYSTEM');
 
     first.events_recordNew(GAME_EVENTS.ARRIVAL);
+    first.setGameOption(GAME_OPTION_NAMES.SOFT_CEILING, 'no');
     first.setGameOption(GAME_OPTION_NAMES.TOWER_CONTROLLER, 'USER');
 
     t.is(first.score, 10);
     t.is(first.events[GAME_EVENTS.ARRIVAL], 1);
+    t.is(first.getGameOption(GAME_OPTION_NAMES.SOFT_CEILING), 'no');
     t.is(first.getGameOption(GAME_OPTION_NAMES.TOWER_CONTROLLER), 'USER');
     t.is(second.score, 0);
     t.is(second.events[GAME_EVENTS.ARRIVAL], 0);
+    t.is(second.getGameOption(GAME_OPTION_NAMES.SOFT_CEILING), 'yes');
     t.is(second.getGameOption(GAME_OPTION_NAMES.TOWER_CONTROLLER), 'SYSTEM');
 });
 
@@ -39,14 +43,16 @@ ava('records inherited event points and rejects unknown events without mutation'
     t.false(Object.hasOwn(gameState.events, 'NOT_A_GAME_EVENT'));
 });
 
-ava('reset clears score and events and restores the configured initial tower mode', (t) => {
-    const gameState = new SimulationGameState({ towerController: 'USER' });
+ava('reset clears score and events and restores configured simulation options', (t) => {
+    const gameState = new SimulationGameState({ softCeiling: 'no', towerController: 'USER' });
 
     gameState.events_recordNew(GAME_EVENTS.ARRIVAL);
+    gameState.setGameOption(GAME_OPTION_NAMES.SOFT_CEILING, 'yes');
     gameState.setGameOption(GAME_OPTION_NAMES.TOWER_CONTROLLER, 'SYSTEM');
     gameState.reset();
 
     t.is(gameState.score, 0);
     t.is(gameState.events[GAME_EVENTS.ARRIVAL], 0);
+    t.is(gameState.getGameOption(GAME_OPTION_NAMES.SOFT_CEILING), 'no');
     t.is(gameState.getGameOption(GAME_OPTION_NAMES.TOWER_CONTROLLER), 'USER');
 });

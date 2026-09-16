@@ -47,14 +47,44 @@ export default class SimulationContext {
             throw new TypeError('aircraftController must own the supplied gameState.');
         }
 
+        if (gameState != null && airportController?._gameState != null &&
+            airportController._gameState !== gameState) {
+            throw new TypeError('airportController must own the supplied gameState.');
+        }
+
         if (clock != null && aircraftController?._clock != null &&
             aircraftController._clock !== clock) {
             throw new TypeError('aircraftController must own the supplied clock.');
         }
 
+        if (clock != null && airportController?._clock != null &&
+            airportController._clock !== clock) {
+            throw new TypeError('airportController must own the supplied clock.');
+        }
+
         if (eventBus != null && aircraftController?._eventBus != null &&
             aircraftController._eventBus !== eventBus) {
             throw new TypeError('aircraftController must own the supplied eventBus.');
+        }
+
+        if (eventBus != null && airportController?._eventBus != null &&
+            airportController._eventBus !== eventBus) {
+            throw new TypeError('airportController must own the supplied eventBus.');
+        }
+
+        if (aircraftController?._clock != null && airportController?._clock != null &&
+            aircraftController._clock !== airportController._clock) {
+            throw new TypeError('aircraftController and airportController must own the same clock.');
+        }
+
+        if (aircraftController?._eventBus != null && airportController?._eventBus != null &&
+            aircraftController._eventBus !== airportController._eventBus) {
+            throw new TypeError('aircraftController and airportController must own the same eventBus.');
+        }
+
+        if (aircraftController?._gameState != null && airportController?._gameState != null &&
+            aircraftController._gameState !== airportController._gameState) {
+            throw new TypeError('aircraftController and airportController must own the same gameState.');
         }
 
         if (airportController != null && aircraftController?._airportController != null &&
@@ -72,19 +102,21 @@ export default class SimulationContext {
             throw new TypeError('aircraftController must own the supplied aircraftCollection.');
         }
 
-        this._clock = clock ?? aircraftController?._clock ?? new SimulationClock();
+        this._clock = clock ?? aircraftController?._clock ?? airportController?._clock ?? new SimulationClock();
         this._timerQueue = new SimulationTimerQueue(this._clock);
         this._randomSource = randomSource;
-        this._eventBus = eventBus ?? aircraftController?._eventBus ?? new EventBusClass();
+        this._eventBus = eventBus ?? aircraftController?._eventBus ??
+            airportController?._eventBus ?? new EventBusClass();
+        this._gameState = gameState ?? aircraftController?._gameState ??
+            airportController?._gameState ?? new SimulationGameState();
         this._airportController = airportController ??
             aircraftController?._airportController ??
-            new AirportControllerClass(this._eventBus);
+            new AirportControllerClass(this._eventBus, this._clock, this._gameState);
         this._navigationLibrary = navigationLibrary ??
             aircraftController?._navigationLibrary ??
             new NavigationLibraryClass();
         this._aircraftCollection = aircraftCollection ?? aircraftController?.aircraft ?? new AircraftCollection();
         this._aircraftController = aircraftController;
-        this._gameState = gameState ?? aircraftController?._gameState ?? new SimulationGameState();
         this._spawnPatternCollection = spawnPatternCollection ?? new SpawnPatternCollectionClass(
             this._navigationLibrary,
             this._airportController

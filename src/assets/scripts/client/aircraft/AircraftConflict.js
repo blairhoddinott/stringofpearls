@@ -26,6 +26,7 @@ export default class AircraftConflict {
      * @param airportController {AirportController} [optional]
      * @param clock {TimeKeeper|SimulationClock} [optional]
      * @param gameState {GameController|SimulationGameState} [optional]
+     * @param conflictCollection {array<AircraftConflict>|null} [optional]
      */
     constructor(
         first,
@@ -33,12 +34,14 @@ export default class AircraftConflict {
         eventBus = EventBus,
         airportController = AirportController,
         clock = TimeKeeper,
-        gameState = GameController
+        gameState = GameController,
+        conflictCollection = null
     ) {
         this._eventBus = eventBus;
         this._airportController = airportController;
         this._clock = clock;
         this._gameState = gameState;
+        this._conflictCollection = conflictCollection;
 
         this.aircraft = [first, second];
         this.distance = vlen(vsub(first.relativePosition, second.relativePosition));
@@ -348,7 +351,9 @@ export default class AircraftConflict {
      * @return {Boolean}
      */
     _findInstancesOfThisConflictInAircraftController() {
-        return _filter(window.aircraftController.conflicts, (conflict) => {
+        const conflicts = this._conflictCollection ?? window.aircraftController.conflicts;
+
+        return _filter(conflicts, (conflict) => {
             return _includes(conflict.aircraft, this.aircraft[0]) && _includes(conflict.aircraft, this.aircraft[1]);
         });
     }

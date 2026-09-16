@@ -513,7 +513,12 @@ export default class AircraftModel {
          * @property pilot
          * @type {Pilot}
          */
-        this.pilot = new Pilot(this.fms, this.mcp);
+        this.pilot = new Pilot(
+            this.fms,
+            this.mcp,
+            this._navigationLibrary,
+            this._airportController
+        );
 
         this.takeoffTime = options.category === FLIGHT_CATEGORY.ARRIVAL ?
             this._clock.accumulatedDeltaTime :

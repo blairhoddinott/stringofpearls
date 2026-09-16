@@ -5,15 +5,16 @@ import { GAME_EVENTS, GAME_EVENTS_POINT_VALUES } from '../game/gameEventConstant
  * Browser-free score, event-count, and simulation-option state for one session.
  */
 export default class SimulationGameState {
-    constructor({ towerController = 'SYSTEM' } = {}) {
-        this._initialTowerController = towerController;
+    constructor({ towerController = 'SYSTEM', softCeiling = 'yes' } = {}) {
+        this._initialOptions = {
+            [GAME_OPTION_NAMES.SOFT_CEILING]: softCeiling,
+            [GAME_OPTION_NAMES.TOWER_CONTROLLER]: towerController
+        };
         this._score = 0;
         this._events = Object.fromEntries(
             Object.values(GAME_EVENTS).map((eventName) => [eventName, 0])
         );
-        this._options = {
-            [GAME_OPTION_NAMES.TOWER_CONTROLLER]: towerController
-        };
+        this._options = { ...this._initialOptions };
     }
 
     get score() {
@@ -33,6 +34,10 @@ export default class SimulationGameState {
         this._score += GAME_EVENTS_POINT_VALUES[gameEvent];
     }
 
+    game_reset_score_and_events() {
+        this.reset();
+    }
+
     getGameOption(optionName) {
         return this._options[optionName];
     }
@@ -50,6 +55,6 @@ export default class SimulationGameState {
             this._events[eventName] = 0;
         }
 
-        this._options[GAME_OPTION_NAMES.TOWER_CONTROLLER] = this._initialTowerController;
+        this._options = { ...this._initialOptions };
     }
 }

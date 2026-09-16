@@ -115,6 +115,20 @@ ava('retains an explicit event bus by exact identity', (t) => {
     t.is(model._eventBus, eventBus);
 });
 
+ava('retains an explicit game state by exact identity', (t) => {
+    const gameState = {};
+    const model = new AircraftModel(
+        DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK,
+        NavigationLibrary,
+        AirportController,
+        TimeKeeper,
+        new EventBusClass(),
+        gameState
+    );
+
+    t.is(model._gameState, gameState);
+});
+
 ava('uses the explicit clock effective delta for aircraft turn physics', (t) => {
     const getEffectiveDelta = sinon.stub().returns(2);
     const clock = {

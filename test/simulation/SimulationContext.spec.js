@@ -2,8 +2,10 @@ import ava from 'ava';
 import sinon from 'sinon';
 import SimulationContext from '../../src/assets/scripts/client/simulation/SimulationContext';
 import SimulationClock from '../../src/assets/scripts/client/simulation/SimulationClock';
+import SimulationGameState from '../../src/assets/scripts/client/simulation/SimulationGameState';
 import { EventBusClass } from '../../src/assets/scripts/client/lib/EventBus';
 import { AirportControllerClass } from '../../src/assets/scripts/client/airport/AirportController';
+import { GAME_EVENTS } from '../../src/assets/scripts/client/game/gameEventConstants';
 import { NavigationLibraryClass } from '../../src/assets/scripts/client/navigationLibrary/NavigationLibrary';
 import { AIRPORT_JSON_KLAS_MOCK } from '../airport/_mocks/airportJsonMock';
 import {
@@ -56,6 +58,21 @@ ava('creates isolated aircraft collection state for each simulation session', (t
     t.deepEqual(second.aircraftCollection.items, []);
 });
 
+ava('creates isolated game and simulation-option state for each simulation session', (t) => {
+    const first = new SimulationContext();
+    const second = new SimulationContext();
+
+    first.gameState.events_recordNew(GAME_EVENTS.ARRIVAL);
+    first.gameState.setGameOption('towerController', 'USER');
+
+    t.is(first.gameState.score, 10);
+    t.is(first.gameState.events[GAME_EVENTS.ARRIVAL], 1);
+    t.is(first.gameState.getGameOption('towerController'), 'USER');
+    t.is(second.gameState.score, 0);
+    t.is(second.gameState.events[GAME_EVENTS.ARRIVAL], 0);
+    t.is(second.gameState.getGameOption('towerController'), 'SYSTEM');
+});
+
 ava('uses an injected aircraft controller collection when no collection is supplied', (t) => {
     const aircraftCollection = { reset: () => {} };
     const aircraftController = { aircraft: aircraftCollection };
@@ -70,12 +87,14 @@ ava('uses injected aircraft controller service owners when none are supplied', (
     const eventBus = new EventBusClass();
     const airportController = new AirportControllerClass(new EventBusClass());
     const navigationLibrary = new NavigationLibraryClass();
+    const gameState = new SimulationGameState();
     const aircraftController = {
         aircraft: { reset: () => {} },
         _clock: clock,
         _eventBus: eventBus,
         _airportController: airportController,
-        _navigationLibrary: navigationLibrary
+        _navigationLibrary: navigationLibrary,
+        _gameState: gameState
     };
     const context = new SimulationContext({ aircraftController });
 
@@ -83,6 +102,7 @@ ava('uses injected aircraft controller service owners when none are supplied', (
     t.is(context.eventBus, eventBus);
     t.is(context.airportController, airportController);
     t.is(context.navigationLibrary, navigationLibrary);
+    t.is(context.gameState, gameState);
 });
 
 ava('rejects a mismatched injected aircraft controller clock owner', (t) => {
@@ -95,6 +115,17 @@ ava('rejects a mismatched injected aircraft controller clock owner', (t) => {
     }), { instanceOf: TypeError });
 
     t.is(error.message, 'aircraftController must own the supplied clock.');
+});
+
+ava('rejects a mismatched injected aircraft controller game state owner', (t) => {
+    const error = t.throws(() => new SimulationContext({
+        gameState: new SimulationGameState(),
+        aircraftController: {
+            _gameState: new SimulationGameState()
+        }
+    }), { instanceOf: TypeError });
+
+    t.is(error.message, 'aircraftController must own the supplied gameState.');
 });
 
 ava('rejects mismatched injected aircraft controller and collection state', (t) => {
@@ -222,6 +253,7 @@ ava('retains exact injected service identities', (t) => {
     const aircraftCollection = {};
     const aircraftController = { aircraft: aircraftCollection };
     const spawnPatternCollection = { reset: () => {} };
+    const gameState = { reset: () => {} };
     const context = new SimulationContext({
         clock,
         randomSource,
@@ -230,7 +262,8 @@ ava('retains exact injected service identities', (t) => {
         navigationLibrary,
         aircraftCollection,
         aircraftController,
-        spawnPatternCollection
+        spawnPatternCollection,
+        gameState
     });
 
     t.is(context.clock, clock);
@@ -242,6 +275,7 @@ ava('retains exact injected service identities', (t) => {
     t.is(context.aircraftController, aircraftController);
     t.is(context.spawnScheduler._aircraftController, aircraftController);
     t.is(context.spawnPatternCollection, spawnPatternCollection);
+    t.is(context.gameState, gameState);
 });
 
 ava('destroy clears only this simulation session observers and timers', (t) => {

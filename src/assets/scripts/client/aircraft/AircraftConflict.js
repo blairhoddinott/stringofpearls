@@ -2,7 +2,8 @@ import _includes from 'lodash/includes';
 import _filter from 'lodash/filter';
 import AirportController from '../airport/AirportController';
 import EventBus from '../lib/EventBus';
-import GameController, { GAME_EVENTS } from '../game/GameController';
+import GameController from '../game/GameController';
+import { GAME_EVENTS } from '../game/gameEventConstants';
 import TimeKeeper from '../engine/TimeKeeper';
 import UiController from '../ui/UiController';
 import { abs } from '../math/core';
@@ -24,17 +25,20 @@ export default class AircraftConflict {
      * @param eventBus {EventBus} [optional]
      * @param airportController {AirportController} [optional]
      * @param clock {TimeKeeper|SimulationClock} [optional]
+     * @param gameState {GameController|SimulationGameState} [optional]
      */
     constructor(
         first,
         second,
         eventBus = EventBus,
         airportController = AirportController,
-        clock = TimeKeeper
+        clock = TimeKeeper,
+        gameState = GameController
     ) {
         this._eventBus = eventBus;
         this._airportController = airportController;
         this._clock = clock;
+        this._gameState = gameState;
 
         this.aircraft = [first, second];
         this.distance = vlen(vsub(first.relativePosition, second.relativePosition));
@@ -173,7 +177,7 @@ export default class AircraftConflict {
                 isWarning
             );
 
-            GameController.events_recordNew(GAME_EVENTS.COLLISION);
+            this._gameState.events_recordNew(GAME_EVENTS.COLLISION);
             this.aircraft[0].hit = true;
             this.aircraft[1].hit = true;
         }

@@ -12,7 +12,7 @@ This roadmap tracks the current direction of the project. The order may change a
 - [x] Replace AVA 1 and NYC 14 with Node 24-compatible tests and all-module coverage floors.
 - [x] Modernize ESLint and establish a clean full-repository lint baseline.
 - [x] Upgrade vulnerable production dependencies behind focused compatibility tests.
-- [ ] Modernize the application architecture; Phase 4 now has a browser-free per-session `SimulationContext`, isolated event dispatch, deterministic time, context-owned game timers, isolated airport-controller/navigation state, context-owned traffic patterns/scheduling, isolated aircraft collections, owner-bound scheduled aircraft construction, and deterministic context-local aircraft updates.
+- [ ] Modernize the application architecture; Phase 4 now has a browser-free per-session `SimulationContext`, isolated event dispatch, deterministic time, context-owned game timers and score/options state, isolated airport-controller/navigation state, context-owned traffic patterns/scheduling, isolated aircraft collections, owner-bound scheduled aircraft construction, and deterministic context-local aircraft updates.
   - [x] Introduce explicit platform boundaries for asset loading, storage, clock/timers, randomness, analytics, speech synthesis, clipboard, and page visibility; `npm run core:browser-free` proves the extracted core services execute without fabricated browser globals.
 - [ ] Resume feature development on the modernized foundation
 

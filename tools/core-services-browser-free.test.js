@@ -45,6 +45,7 @@ async function main() {
     const { STORAGE_KEY } = require('../src/assets/scripts/client/constants/storageKeys');
     const ContentQueue = loadDefault('../src/assets/scripts/client/contentQueue/ContentQueue');
     const SimulationContext = loadDefault('../src/assets/scripts/client/simulation/SimulationContext');
+    const { GAME_EVENTS } = require('../src/assets/scripts/client/game/gameEventConstants');
 
     const assetLoader = new AssetLoader((url) => ({ url }));
     assert.deepEqual(await assetLoader.loadJson('asset.json'), { url: 'asset.json' });
@@ -144,6 +145,14 @@ async function main() {
     assert.notEqual(firstContext.aircraftCollection, secondContext.aircraftCollection);
     assert.deepEqual(firstContext.aircraftCollection.items, [aircraft]);
     assert.deepEqual(secondContext.aircraftCollection.items, []);
+    firstContext.gameState.events_recordNew(GAME_EVENTS.ARRIVAL);
+    firstContext.gameState.setGameOption('towerController', 'USER');
+    assert.equal(firstContext.gameState.score, 10);
+    assert.equal(firstContext.gameState.events[GAME_EVENTS.ARRIVAL], 1);
+    assert.equal(firstContext.gameState.getGameOption('towerController'), 'USER');
+    assert.equal(secondContext.gameState.score, 0);
+    assert.equal(secondContext.gameState.events[GAME_EVENTS.ARRIVAL], 0);
+    assert.equal(secondContext.gameState.getGameOption('towerController'), 'SYSTEM');
     let firstAircraftUpdateCount = 0;
     let secondAircraftUpdateCount = 0;
     firstContext._aircraftController = {
@@ -181,6 +190,9 @@ async function main() {
     assert.equal(firstAircraftUpdateCount, 3);
     assert.equal(secondAircraftUpdateCount, 0);
     firstContext.destroy();
+    assert.equal(firstContext.gameState.score, 0);
+    assert.equal(firstContext.gameState.events[GAME_EVENTS.ARRIVAL], 0);
+    assert.equal(firstContext.gameState.getGameOption('towerController'), 'SYSTEM');
     assert.equal(firstContext.navigationLibrary.findFixByName('ALPHA'), null);
     assert.equal(firstContext.airportController.current, null);
     assert.equal(firstContext.airportController.hasAirport('kaaa'), false);

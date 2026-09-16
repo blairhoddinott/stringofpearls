@@ -5,6 +5,7 @@ import { SpawnPatternCollectionClass } from '../trafficGenerator/SpawnPatternCol
 import { SpawnSchedulerClass } from '../trafficGenerator/SpawnScheduler';
 import AircraftCollection from '../aircraft/AircraftCollection';
 import SimulationClock from './SimulationClock';
+import SimulationGameState from './SimulationGameState';
 import SimulationTimerQueue from './SimulationTimerQueue';
 
 /**
@@ -28,6 +29,7 @@ export default class SimulationContext {
      * @param options.aircraftCollection {AircraftCollection|null} [optional] session aircraft state; a fresh instance is created when nullish
      * @param options.aircraftController {AircraftController|null} [optional] session aircraft behavior
      * @param options.spawnPatternCollection {SpawnPatternCollection|null} [optional] session traffic patterns
+     * @param options.gameState {SimulationGameState|null} [optional] session score and simulation options
      */
     constructor({
         clock = null,
@@ -37,8 +39,14 @@ export default class SimulationContext {
         navigationLibrary = null,
         aircraftCollection = null,
         aircraftController = null,
-        spawnPatternCollection = null
+        spawnPatternCollection = null,
+        gameState = null
     } = {}) {
+        if (gameState != null && aircraftController?._gameState != null &&
+            aircraftController._gameState !== gameState) {
+            throw new TypeError('aircraftController must own the supplied gameState.');
+        }
+
         if (clock != null && aircraftController?._clock != null &&
             aircraftController._clock !== clock) {
             throw new TypeError('aircraftController must own the supplied clock.');
@@ -76,6 +84,7 @@ export default class SimulationContext {
             new NavigationLibraryClass();
         this._aircraftCollection = aircraftCollection ?? aircraftController?.aircraft ?? new AircraftCollection();
         this._aircraftController = aircraftController;
+        this._gameState = gameState ?? aircraftController?._gameState ?? new SimulationGameState();
         this._spawnPatternCollection = spawnPatternCollection ?? new SpawnPatternCollectionClass(
             this._navigationLibrary,
             this._airportController
@@ -129,6 +138,10 @@ export default class SimulationContext {
         return this._aircraftController;
     }
 
+    get gameState() {
+        return this._gameState;
+    }
+
     get spawnPatternCollection() {
         return this._spawnPatternCollection;
     }
@@ -157,6 +170,7 @@ export default class SimulationContext {
         this._eventBus.destroy();
         this._timerQueue.destroyTimers();
         this._aircraftCollection.reset();
+        this._gameState.reset();
         this._spawnPatternCollection.reset();
         this._airportController.reset();
         this._navigationLibrary.reset();

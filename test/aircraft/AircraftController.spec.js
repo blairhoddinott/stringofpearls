@@ -1,11 +1,12 @@
 import ava from 'ava';
-// import sinon from 'sinon';
+import sinon from 'sinon';
 
 import AircraftController from '../../src/assets/scripts/client/aircraft/AircraftController';
 import AircraftCollection from '../../src/assets/scripts/client/aircraft/AircraftCollection';
 import AirportController from '../../src/assets/scripts/client/airport/AirportController';
 import { EventBusClass } from '../../src/assets/scripts/client/lib/EventBus';
 import { NavigationLibraryClass } from '../../src/assets/scripts/client/navigationLibrary/NavigationLibrary';
+import SimulationGameState from '../../src/assets/scripts/client/simulation/SimulationGameState';
 import {
     AIRCRAFT_DEFINITION_LIST_MOCK,
     DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK
@@ -256,6 +257,25 @@ ava('retains an injected clock by exact identity', (t) => {
     t.is(controller._clock, clock);
 });
 
+ava('retains an injected game state by exact identity', (t) => {
+    const gameState = {};
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture,
+        undefined,
+        undefined,
+        undefined,
+        new EventBusClass(),
+        undefined,
+        undefined,
+        undefined,
+        gameState
+    );
+
+    t.is(controller._gameState, gameState);
+});
+
 ava.serial('creates aircraft and conflicts with the exact injected service owners', (t) => {
     const navigationLibrary = new NavigationLibraryClass();
     navigationLibrary.init(AIRPORT_JSON_KLAS_MOCK);
@@ -263,6 +283,8 @@ ava.serial('creates aircraft and conflicts with the exact injected service owner
         accumulatedDeltaTime: 0
     };
     const eventBus = new EventBusClass();
+    const gameState = new SimulationGameState();
+    const getGameOptionSpy = sinon.spy(gameState, 'getGameOption');
     const airportController = {
         current: AirportController.current,
         airport_get: (...args) => AirportController.airport_get(...args)
@@ -278,7 +300,8 @@ ava.serial('creates aircraft and conflicts with the exact injected service owner
         eventBus,
         airportController,
         navigationLibrary,
-        clock
+        clock,
+        gameState
     );
     const previousAircraftController = window.aircraftController;
     window.aircraftController = controller;
@@ -291,14 +314,18 @@ ava.serial('creates aircraft and conflicts with the exact injected service owner
     controller.addConflict(aircraftCollection.list[0], aircraftCollection.list[1]);
 
     t.is(aircraftCollection.list.length, 2);
+    t.true(getGameOptionSpy.calledTwice);
+    t.true(getGameOptionSpy.alwaysCalledWithExactly('towerController'));
     t.is(aircraftCollection.list[0].fms._navigationLibrary, navigationLibrary);
     t.is(aircraftCollection.list[0].fms._airportController, airportController);
     t.is(aircraftCollection.list[0]._clock, clock);
     t.is(aircraftCollection.list[0]._eventBus, eventBus);
+    t.is(aircraftCollection.list[0]._gameState, gameState);
     t.is(controller.conflicts.length, 1);
     t.is(controller.conflicts[0]._clock, clock);
     t.is(controller.conflicts[0]._eventBus, eventBus);
     t.is(controller.conflicts[0]._airportController, airportController);
+    t.is(controller.conflicts[0]._gameState, gameState);
 });
 
 ava('generates distinct deterministic CIDs when randomSource is omitted', (t) => {

@@ -11,7 +11,8 @@ import _uniqueId from 'lodash/uniqueId';
 import AirportController from '../airport/AirportController';
 import NavigationLibrary from '../navigationLibrary/NavigationLibrary';
 import Fms from './FlightManagementSystem/Fms';
-import GameController, { GAME_EVENTS } from '../game/GameController';
+import GameController from '../game/GameController';
+import { GAME_EVENTS } from '../game/gameEventConstants';
 import ModeController from './ModeControl/ModeController';
 import Pilot from './Pilot/Pilot';
 import TimeKeeper from '../engine/TimeKeeper';
@@ -103,18 +104,21 @@ export default class AircraftModel {
      * @param airportController {AirportController} [optional]
      * @param clock {TimeKeeper|SimulationClock} [optional]
      * @param eventBus {EventBus} [optional]
+     * @param gameState {GameController|SimulationGameState} [optional]
      */
     constructor(
         options = {},
         navigationLibrary = NavigationLibrary,
         airportController = AirportController,
         clock = TimeKeeper,
-        eventBus = EventBus
+        eventBus = EventBus,
+        gameState = GameController
     ) {
         this._navigationLibrary = navigationLibrary;
         this._airportController = airportController;
         this._clock = clock;
         this._eventBus = eventBus;
+        this._gameState = gameState;
 
         /**
          * Unique id
@@ -2346,7 +2350,8 @@ export default class AircraftModel {
         // SPEED
         this.updateSpeedPhysics();
 
-        const offsetGameTime = this._clock.accumulatedDeltaTime / GameController.game_speedup();
+        const simulationRate = this._clock.isPaused ? 0 : this._clock.simulationRate;
+        const offsetGameTime = this._clock.accumulatedDeltaTime / simulationRate;
         // const nextHistoricalPosition = [
         //     this.positionModel.relativePosition[0],
         //     this.positionModel.relativePosition[1],
@@ -2364,7 +2369,7 @@ export default class AircraftModel {
             ]);
             // TODO: this can be abstracted
         } else if (abs(offsetGameTime - this.relativePositionHistory[this.relativePositionHistory.length - 1][2]) >
-            4 / GameController.game_speedup()
+            4 / simulationRate
         ) {
             this.relativePositionHistory.push([
                 this.positionModel.relativePosition[0],
@@ -2610,7 +2615,7 @@ export default class AircraftModel {
 
                     // ac has just entered the area: .inside is still false, but st is true
                     if (new_inside && !area.inside) {
-                        GameController.events_recordNew(GAME_EVENTS.AIRSPACE_BUST);
+                        this._gameState.events_recordNew(GAME_EVENTS.AIRSPACE_BUST);
                         area.range = this.speed * 1.85 / 3.6 * 50 / 1000; // check in 50 seconds
                         // speed is kts, range is km.
                         // if a plane got into restricted area, don't check it too often
@@ -2670,7 +2675,7 @@ export default class AircraftModel {
                                 this.pilotVoice
                             );
 
-                            GameController.events_recordNew(GAME_EVENTS.COLLISION);
+                            this._gameState.events_recordNew(GAME_EVENTS.COLLISION);
                         }
                     } else {
                         curr_ranges[id] = Math.max(0.2, status.distance);

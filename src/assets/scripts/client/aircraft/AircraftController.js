@@ -14,7 +14,8 @@ import AircraftModel from './AircraftModel';
 import AircraftCommander from './AircraftCommander';
 import AircraftConflict from './AircraftConflict';
 import StripViewController from './StripView/StripViewController';
-import GameController, { GAME_EVENTS } from '../game/GameController';
+import GameController from '../game/GameController';
+import { GAME_EVENTS } from '../game/gameEventConstants';
 import CommandParser from '../commands/parsers/CommandParser';
 import { airlineNameAndFleetHelper } from '../airline/airlineHelpers';
 import { convertStaticPositionToDynamic } from '../base/staticPositionToDynamicPositionHelper';
@@ -51,6 +52,7 @@ export default class AircraftController {
      * @param airportController {AirportController} [optional] airport state owner
      * @param navigationLibrary {NavigationLibrary} [optional] navigation state owner
      * @param clock {TimeKeeper|SimulationClock} [optional] simulation time owner
+     * @param gameState {GameController|SimulationGameState} [optional] score and simulation-option owner
      */
     constructor(
         aircraftTypeDefinitionList,
@@ -62,7 +64,8 @@ export default class AircraftController {
         eventBus = EventBus,
         airportController = AirportController,
         navigationLibrary = NavigationLibrary,
-        clock = TimeKeeper
+        clock = TimeKeeper,
+        gameState = GameController
     ) {
         if (_isNil(aircraftTypeDefinitionList) || _isNil(airlineController) || _isNil(scopeModel)) {
             throw new TypeError('Invalid parameter(s) passed to AircraftController constructor. ' +
@@ -120,6 +123,7 @@ export default class AircraftController {
         this._airportController = airportController;
         this._navigationLibrary = navigationLibrary;
         this._clock = clock;
+        this._gameState = gameState;
 
         /**
          * Reference to an `AircraftTypeDefinitionCollection` instance
@@ -476,7 +480,8 @@ export default class AircraftController {
             otherAircraft,
             this._eventBus,
             this._airportController,
-            this._clock
+            this._clock,
+            this._gameState
         );
 
         if (conflict.shouldBeRemoved()) {
@@ -600,11 +605,12 @@ export default class AircraftController {
             this._navigationLibrary,
             this._airportController,
             this._clock,
-            this._eventBus
+            this._eventBus,
+            this._gameState
         );
         const isDeparture = initializationProps.category === 'departure';
         const isArrival = initializationProps.category === 'arrival';
-        const isAutoTower = GameController.getGameOption(GAME_OPTION_NAMES.TOWER_CONTROLLER) === 'SYSTEM';
+        const isAutoTower = this._gameState.getGameOption(GAME_OPTION_NAMES.TOWER_CONTROLLER) === 'SYSTEM';
         const runwayCommands = initializationProps.commands;
 
         // triggering event bus rather than calling locally because multiple classes
@@ -933,7 +939,7 @@ export default class AircraftController {
                 aircraftModel.pilotVoice
             );
 
-            GameController.events_recordNew(GAME_EVENTS.ARRIVAL);
+            this._gameState.events_recordNew(GAME_EVENTS.ARRIVAL);
             this.aircraft_remove(aircraftModel);
 
             return;

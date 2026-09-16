@@ -74,13 +74,14 @@ docker compose --profile development run --rm dev npm run build:test
 docker compose --profile development run --rm dev npm test
 docker compose --profile development run --rm dev npm run test:coverage
 docker compose --profile development run --rm dev npm run lint
+docker compose --profile development run --rm dev npm run core:browser-free
 docker compose --profile development run --rm dev npm run server:test
 docker compose --profile development run --rm dev npm run validator:test
 docker compose --profile development run --rm dev npm run validate:assets
 docker compose --profile development run --rm dev npm run audit:production
 ```
 
-AVA 6 passes the unchanged suite on Node 24 with 1,320 passing, 17 skipped, and 14 todo. `npm run test:coverage` uses c8, includes all 115 eligible source modules, and enforces measured regression floors; see [`tools/README.md`](../../tools/README.md). `npm run lint` checks all 272 maintained JavaScript files with a zero-error, zero-warning baseline.
+Final Phase 4 acceptance on Node 24 reports 1,662 passing, 17 skipped, and 14 todo tests. `npm run test:coverage` uses c8, includes all 134 eligible source modules, and enforces measured regression floors; see [`tools/README.md`](../../tools/README.md). `npm run lint` checks 322 JavaScript files with a zero-error, zero-warning baseline, and `npm run core:browser-free` proves the extracted core and simulation services run without fabricated browser globals.
 
 Remove the dependency volume after changing the lockfile or if the installation becomes stale:
 
@@ -162,10 +163,11 @@ CI/CD provider and runner decisions are intentionally deferred. Whatever automat
 4. run `npm run docker:smoke`;
 5. run `npm run validator:test` and `npm run validate:assets`;
 6. run `npm run server:test` and `npm run audit:production`;
-7. run `npm run browser:smoke`;
-8. build the `runtime` target with an immutable commit tag;
-9. scan the final image;
-10. publish only after tests and scanning pass.
+7. run `npm run core:browser-free`;
+8. run `npm run browser:smoke`;
+9. build the `runtime` target with an immutable commit tag;
+10. scan the final image;
+11. publish only after tests and scanning pass.
 
 Both base images are pinned by digest in `Dockerfile`. Update the human-readable tag and digest together. The tags document intent; the digests determine what is actually built.
 

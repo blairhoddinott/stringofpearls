@@ -862,10 +862,10 @@
 
 # 5.1.0 (May 1, 2017)
 ### Features
-- [#316](https://github.com/openscope/openscope/issues/316) - adds [deployment-checklist](tools/documentation/deployment-checklist.md) document
+- [#316](https://github.com/openscope/openscope/issues/316) - adds `deployment-checklist` document
 - [#184](https://github.com/openscope/openscope/issues/184) - Updates the airport-format.md file
 - [#374](https://github.com/openscope/openscope/issues/374) - allow for specification of airport's default arrival and departure runway
-- [#367](https://github.com/openscope/openscope/issues/367) - adds [airport-file-standards](tools/documentation/deployment-checklist.md) document
+- [#367](https://github.com/openscope/openscope/issues/367) - adds `airport-file-standards` document
 
 ### Bugfixes
 - [#364](https://github.com/openscope/openscope/issues/364) - Adds additional check for `undefined` in `CommandParser` when adding args to a `CommandModel`
@@ -874,7 +874,7 @@
 - [#396](https://github.com/openscope/openscope/issues/396) - Updates Pilot.applyDepartureProcedure() to use RunwayModel correctly
 - [#399](https://github.com/openscope/openscope/issues/399) - Updates `fms.getDestinationName()` to return the `fixName` when `currentLeg` is not a procedure
 - [#394](https://github.com/openscope/openscope/issues/394) - Fix wrong PTL length and set to 1 minute
-- [#404](https://github.com/openscope/openscope/issues/404) - Fixes broken link in [airport-format](tools/documentation/airport-format.md)
+- [#404](https://github.com/openscope/openscope/issues/404) - Fixes broken link in [airport-format](documentation/airport-format.md)
 - [#395](https://github.com/openscope/openscope/issues/395) - Fix datablock speed to show GS, not IAS
 - [#408](https://github.com/openscope/openscope/issues/408) - Ensure red response is given to `rr FIXXA..FIXXB`
 - [#410](https://github.com/openscope/openscope/issues/410) - Fix strip update crash for arrivals on vectors
@@ -1083,7 +1083,7 @@
 - [n8rzz/atc#36](https://github.com/n8rzz/atc/issues/36) - Rename `AreaModel` to `AirspaceModel`
 - [n8rzz/atc#57](https://github.com/n8rzz/atc/issues/57) - Changes `StandardRoute` property name `icao` to `identifier`
 - [n8rzz/atc#44](https://github.com/n8rzz/atc/issues/44) - Introduce early exit for airport load when airport data is not complete
-- [n8rzz/atc#60](https://github.com/n8rzz/atc/issues/60) - Adds [git-flow](tools/documentation/git-flow-process.md) strategy document
+- [n8rzz/atc#60](https://github.com/n8rzz/atc/issues/60) - Adds [git-flow](documentation/git-flow-process.md) strategy document
 - [n8rzz/atc#100](https://github.com/n8rzz/atc/issues/100) - Adds `BaseModel`
 - [n8rzz/atc#101](https://github.com/n8rzz/atc/issues/101) - Adds `BaseCollection`
 

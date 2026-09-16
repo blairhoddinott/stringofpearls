@@ -13,8 +13,9 @@ This roadmap tracks the current direction of the project. The order may change a
 - [x] Modernize ESLint and establish a clean full-repository lint baseline.
 - [x] Upgrade vulnerable production dependencies behind focused compatibility tests.
 - [ ] Modernize the application architecture.
-  - [x] Complete Phase 4: establish browser-free per-session simulation contexts with explicit ownership and deterministic two-context isolation.
   - [x] Introduce explicit platform boundaries for asset loading, storage, clock/timers, randomness, analytics, speech synthesis, clipboard, and page visibility; `npm run core:browser-free` proves the extracted core services execute without fabricated browser globals.
+  - [x] Complete Phase 4: establish browser-free per-session simulation contexts with explicit ownership and deterministic two-context isolation.
+  - [ ] Complete Phase 5: decompose presentation hotspots without pulling UI concerns back into the simulation context.
 - [ ] Resume feature development on the modernized foundation
 
 ## Simulation and realism

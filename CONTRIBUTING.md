@@ -42,6 +42,7 @@ npm run build:test
 npm test
 npm run test:coverage
 npm run lint
+npm run core:browser-free
 npm run server:test
 npm run validator:test
 npm run validate:assets

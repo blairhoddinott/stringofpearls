@@ -7,7 +7,7 @@ import _map from 'lodash/map';
 import _without from 'lodash/without';
 import _uniq from 'lodash/uniq';
 import AirwayModel from './AirwayModel';
-import FixCollection from './FixCollection';
+import FixCollection, { FixCollectionClass } from './FixCollection';
 import HoldCollection from './HoldCollection';
 import ProcedureModel from './ProcedureModel';
 import StaticPositionModel from '../base/StaticPositionModel';
@@ -20,13 +20,14 @@ import { INVALID_INDEX } from '../constants/globalConstants';
  *
  * @class NavigationLibrary
  */
-class NavigationLibrary {
+export class NavigationLibraryClass {
     /**
      * @constructor
      * @for NavigationLibrary
      * @param airportJson {object}
      */
-    constructor() {
+    constructor(fixCollection = new FixCollectionClass()) {
+        this._fixCollection = fixCollection;
         this._airwayCollection = {};
 
         /**
@@ -142,7 +143,11 @@ class NavigationLibrary {
      * @type {array<FixModel>}
      */
     get realFixes() {
-        return FixCollection.findRealFixes();
+        return this._fixCollection.findRealFixes();
+    }
+
+    get fixCollection() {
+        return this._fixCollection;
     }
 
     /**
@@ -203,7 +208,7 @@ class NavigationLibrary {
      * @param fixes {object} - fixes to add to the collection.
      */
     _initializeFixCollection(fixes) {
-        FixCollection.addItems(fixes, this._referencePosition);
+        this._fixCollection.addItems(fixes, this._referencePosition);
     }
 
     /**
@@ -229,7 +234,12 @@ class NavigationLibrary {
                 throw new TypeError(`Expected single definition for '${sidId}' procedure, but received multiple`);
             }
 
-            this._procedureCollection[sidId] = new ProcedureModel(PROCEDURE_TYPE.SID, sid, this._randomSource);
+            this._procedureCollection[sidId] = new ProcedureModel(
+                PROCEDURE_TYPE.SID,
+                sid,
+                this._randomSource,
+                this._fixCollection
+            );
         });
 
         _forEach(stars, (star, starId) => {
@@ -237,7 +247,12 @@ class NavigationLibrary {
                 throw new TypeError(`Expected single definition for '${starId}' procedure, but received multiple`);
             }
 
-            this._procedureCollection[starId] = new ProcedureModel(PROCEDURE_TYPE.STAR, star, this._randomSource);
+            this._procedureCollection[starId] = new ProcedureModel(
+                PROCEDURE_TYPE.STAR,
+                star,
+                this._randomSource,
+                this._fixCollection
+            );
         });
     }
 
@@ -347,7 +362,7 @@ class NavigationLibrary {
      * @method reset
      */
     reset() {
-        FixCollection.removeItems();
+        this._fixCollection.removeItems();
         this._holdCollection.reset();
 
         this._airwayCollection = {};
@@ -463,7 +478,7 @@ class NavigationLibrary {
      * @return {FixModel|undefined}
      */
     findFixByName(fixName) {
-        return FixCollection.findFixByName(fixName);
+        return this._fixCollection.findFixByName(fixName);
     }
 
     /**
@@ -520,7 +535,7 @@ class NavigationLibrary {
      * @return {array<number>}
      */
     getFixRelativePosition(fixName) {
-        return FixCollection.getFixRelativePosition(fixName);
+        return this._fixCollection.getFixRelativePosition(fixName);
     }
 
     /**
@@ -532,7 +547,7 @@ class NavigationLibrary {
      * @return {string}
      */
     getFixSpokenName(fixName) {
-        return FixCollection.getFixSpokenName(fixName);
+        return this._fixCollection.getFixSpokenName(fixName);
     }
 
     /**
@@ -597,7 +612,7 @@ class NavigationLibrary {
      */
     _showConsoleWarningForUndefinedFixes() {
         const allFixNames = this._getAllFixNamesInUse();
-        const missingFixes = allFixNames.filter((fix) => !FixCollection.findFixByName(fix));
+        const missingFixes = allFixNames.filter((fix) => !this._fixCollection.findFixByName(fix));
 
         if (missingFixes.length < 1) {
             return;
@@ -623,4 +638,4 @@ class NavigationLibrary {
     }
 }
 
-export default new NavigationLibrary();
+export default new NavigationLibraryClass(FixCollection);

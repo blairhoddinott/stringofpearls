@@ -26,8 +26,9 @@ export default class ProcedureModel {
      * @param procedureType {string} must belong to the `PROCEDURE_TYPE` enum
      * @param data {object} JSON data from airport file
      * @param randomSource {RandomSource} composition-root randomness boundary used to select an exit point; optional
+     * @param fixCollection {FixCollection} navigation-session fix collection; optional for legacy callers
      */
-    constructor(procedureType, data, randomSource) {
+    constructor(procedureType, data, randomSource, fixCollection) {
         if (_isNil(data)) {
             throw new TypeError(`Expected valid procedure data, but received '${data}'`);
         }
@@ -43,6 +44,7 @@ export default class ProcedureModel {
          * @private
          */
         this._randomSource = randomSource ?? null;
+        this._fixCollection = fixCollection;
 
         /**
          * Body segment of the procedure
@@ -462,7 +464,7 @@ export default class ProcedureModel {
      * @private
      */
     _generateWaypoint(data) {
-        const waypoint = new WaypointModel(data);
+        const waypoint = new WaypointModel(data, this._fixCollection);
 
         const holdParameters = this._holdCollection.findHoldParametersByFix(waypoint.name);
 

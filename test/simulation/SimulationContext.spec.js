@@ -2,6 +2,7 @@ import ava from 'ava';
 import sinon from 'sinon';
 import SimulationContext from '../../src/assets/scripts/client/simulation/SimulationContext';
 import { EventBusClass } from '../../src/assets/scripts/client/lib/EventBus';
+import { AIRPORT_JSON_KLAS_MOCK } from '../airport/_mocks/airportJsonMock';
 
 ava('creates an isolated event bus for each simulation session', (t) => {
     const first = new SimulationContext();
@@ -18,15 +19,38 @@ ava('creates an isolated event bus for each simulation session', (t) => {
     t.false(secondObserver.called);
 });
 
-ava('retains the exact injected clock, random source, and event bus identities', (t) => {
+ava('creates isolated navigation and fix state for each simulation session', (t) => {
+    const first = new SimulationContext();
+    const second = new SimulationContext();
+
+    t.not(first.navigationLibrary, second.navigationLibrary);
+    t.not(first.navigationLibrary.fixCollection, second.navigationLibrary.fixCollection);
+});
+
+ava('default navigation state uses this simulation session random source', (t) => {
+    const randomSource = { integer: () => 0 };
+    const context = new SimulationContext({ randomSource });
+
+    context.navigationLibrary.init(AIRPORT_JSON_KLAS_MOCK);
+
+    const procedures = context.navigationLibrary.getProceduresByType('SID')
+        .concat(context.navigationLibrary.getProceduresByType('STAR'));
+
+    t.true(procedures.length > 0);
+    procedures.forEach((procedure) => t.is(procedure._randomSource, randomSource));
+});
+
+ava('retains exact injected clock, random source, event bus, and navigation identities', (t) => {
     const clock = { now: () => 123 };
     const randomSource = { fraction: () => 0.5 };
     const eventBus = new EventBusClass();
-    const context = new SimulationContext({ clock, randomSource, eventBus });
+    const navigationLibrary = { reset: () => {} };
+    const context = new SimulationContext({ clock, randomSource, eventBus, navigationLibrary });
 
     t.is(context.clock, clock);
     t.is(context.randomSource, randomSource);
     t.is(context.eventBus, eventBus);
+    t.is(context.navigationLibrary, navigationLibrary);
 });
 
 ava('destroy clears only this simulation session observers and timers', (t) => {
@@ -47,6 +71,18 @@ ava('destroy clears only this simulation session observers and timers', (t) => {
     t.true(secondObserver.calledOnceWithExactly());
     t.deepEqual(first.timerQueue.timers, []);
     t.is(second.timerQueue.timers.length, 1);
+});
+
+ava('destroy resets only this simulation session navigation state', (t) => {
+    const first = new SimulationContext();
+    const second = new SimulationContext();
+
+    first.navigationLibrary.init(AIRPORT_JSON_KLAS_MOCK);
+    second.navigationLibrary.init(AIRPORT_JSON_KLAS_MOCK);
+    first.destroy();
+
+    t.is(first.navigationLibrary.findFixByName('BAKRR'), null);
+    t.truthy(second.navigationLibrary.findFixByName('BAKRR'));
 });
 
 ava('tick advances only this simulation session clock', (t) => {

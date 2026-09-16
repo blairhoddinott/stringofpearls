@@ -32,11 +32,12 @@ export default class WaypointModel {
      * @for WaypointModel
      * @constructor
      */
-    constructor(data) {
+    constructor(data, fixCollection = FixCollection) {
         if (typeof data !== 'string' && !_isArray(data)) {
             throw new TypeError(`Expected valid data to create WaypointModel but received ${data}`);
         }
 
+        this._fixCollection = fixCollection;
         this.altitudeMaximum = INVALID_NUMBER;
         this.altitudeMinimum = INVALID_NUMBER;
         this._speedMaximum = INVALID_NUMBER;
@@ -819,7 +820,7 @@ export default class WaypointModel {
             return;
         }
 
-        const fixPosition = FixCollection.getPositionModelForFixName(this._name);
+        const fixPosition = this._fixCollection.getPositionModelForFixName(this._name);
 
         if (!fixPosition) {
             throw new TypeError(`Expected fix with known position, but cannot find fix '${this._name}'`);

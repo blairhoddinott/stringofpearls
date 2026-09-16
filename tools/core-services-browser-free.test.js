@@ -107,6 +107,26 @@ async function main() {
     firstContext.eventBus.trigger('proof');
     assert.equal(firstEventCount, 1);
     assert.equal(secondEventCount, 0);
+    firstContext.navigationLibrary.init({
+        position: ['N36.080056', 'W115.15225', '2181ft'],
+        magnetic_north: 11.9,
+        fixes: {
+            ALPHA: ['N36.07582', 'W114.95309'],
+            BRAVO: ['N36.01000', 'W114.90000']
+        },
+        airways: { V1: ['ALPHA', 'BRAVO'] },
+        holds: {},
+        sids: {},
+        stars: {}
+    });
+    const [alphaWaypoint] = firstContext.navigationLibrary
+        .getAirway('V1')
+        .getWaypointModelsForEntryAndExit('ALPHA', 'BRAVO');
+    assert.equal(
+        alphaWaypoint.positionModel,
+        firstContext.navigationLibrary.findFixByName('ALPHA').positionModel
+    );
+    assert.equal(secondContext.navigationLibrary.findFixByName('ALPHA'), null);
     let firstTimerCount = 0;
     firstContext.timerQueue.scheduleTimeout(() => { firstTimerCount++; }, 1);
     firstContext.tick(0.5);
@@ -117,6 +137,7 @@ async function main() {
     assert.equal(firstContext.clock.elapsedTime, 1.75);
     assert.equal(secondContext.clock.elapsedTime, 0);
     firstContext.destroy();
+    assert.equal(firstContext.navigationLibrary.findFixByName('ALPHA'), null);
     secondContext.destroy();
 
     process.stdout.write('core services browser-free proof passed\n');

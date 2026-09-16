@@ -1,4 +1,5 @@
 import { EventBusClass } from '../lib/EventBus';
+import { NavigationLibraryClass } from '../navigationLibrary/NavigationLibrary';
 import SimulationClock from './SimulationClock';
 import SimulationTimerQueue from './SimulationTimerQueue';
 
@@ -18,12 +19,18 @@ export default class SimulationContext {
      * @param options.clock {*} [optional] session clock
      * @param options.randomSource {RandomSource|null} [optional] session random source
      * @param options.eventBus {EventBus|null} [optional] session event bus; a fresh instance is created when nullish
+     * @param options.navigationLibrary {NavigationLibrary|null} [optional] session navigation state; a fresh instance is created when nullish
      */
-    constructor({ clock = null, randomSource = null, eventBus = null } = {}) {
+    constructor({ clock = null, randomSource = null, eventBus = null, navigationLibrary = null } = {}) {
         this._clock = clock ?? new SimulationClock();
         this._timerQueue = new SimulationTimerQueue(this._clock);
         this._randomSource = randomSource;
         this._eventBus = eventBus ?? new EventBusClass();
+        this._navigationLibrary = navigationLibrary ?? new NavigationLibraryClass();
+
+        if (navigationLibrary == null) {
+            this._navigationLibrary.initRandomSource(this._randomSource);
+        }
     }
 
     get clock() {
@@ -42,6 +49,10 @@ export default class SimulationContext {
         return this._eventBus;
     }
 
+    get navigationLibrary() {
+        return this._navigationLibrary;
+    }
+
     tick(delta) {
         const result = this._clock.tick(delta);
 
@@ -53,5 +64,6 @@ export default class SimulationContext {
     destroy() {
         this._eventBus.destroy();
         this._timerQueue.destroyTimers();
+        this._navigationLibrary.reset();
     }
 }

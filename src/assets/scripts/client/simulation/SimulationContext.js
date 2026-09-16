@@ -3,6 +3,7 @@ import { AirportControllerClass } from '../airport/AirportController';
 import { NavigationLibraryClass } from '../navigationLibrary/NavigationLibrary';
 import { SpawnPatternCollectionClass } from '../trafficGenerator/SpawnPatternCollection';
 import { SpawnSchedulerClass } from '../trafficGenerator/SpawnScheduler';
+import AircraftCollection from '../aircraft/AircraftCollection';
 import SimulationClock from './SimulationClock';
 import SimulationTimerQueue from './SimulationTimerQueue';
 
@@ -24,6 +25,8 @@ export default class SimulationContext {
      * @param options.eventBus {EventBus|null} [optional] session event bus; a fresh instance is created when nullish
      * @param options.airportController {AirportController|null} [optional] session airport registry; a fresh instance is created when nullish
      * @param options.navigationLibrary {NavigationLibrary|null} [optional] session navigation state; a fresh instance is created when nullish
+     * @param options.aircraftCollection {AircraftCollection|null} [optional] session aircraft state; a fresh instance is created when nullish
+     * @param options.aircraftController {AircraftController|null} [optional] session aircraft behavior
      * @param options.spawnPatternCollection {SpawnPatternCollection|null} [optional] session traffic patterns
      */
     constructor({
@@ -32,14 +35,23 @@ export default class SimulationContext {
         eventBus = null,
         airportController = null,
         navigationLibrary = null,
+        aircraftCollection = null,
+        aircraftController = null,
         spawnPatternCollection = null
     } = {}) {
+        if (aircraftCollection != null && aircraftController != null &&
+            aircraftController.aircraft !== aircraftCollection) {
+            throw new TypeError('aircraftController must own the supplied aircraftCollection.');
+        }
+
         this._clock = clock ?? new SimulationClock();
         this._timerQueue = new SimulationTimerQueue(this._clock);
         this._randomSource = randomSource;
         this._eventBus = eventBus ?? new EventBusClass();
         this._airportController = airportController ?? new AirportControllerClass(this._eventBus);
         this._navigationLibrary = navigationLibrary ?? new NavigationLibraryClass();
+        this._aircraftCollection = aircraftCollection ?? aircraftController?.aircraft ?? new AircraftCollection();
+        this._aircraftController = aircraftController;
         this._spawnPatternCollection = spawnPatternCollection ?? new SpawnPatternCollectionClass(
             this._navigationLibrary,
             this._airportController
@@ -52,7 +64,8 @@ export default class SimulationContext {
         this._spawnScheduler = new SpawnSchedulerClass(
             this._spawnPatternCollection,
             this._clock,
-            this._timerQueue
+            this._timerQueue,
+            this._aircraftController
         );
 
         if (navigationLibrary == null) {
@@ -84,6 +97,14 @@ export default class SimulationContext {
         return this._navigationLibrary;
     }
 
+    get aircraftCollection() {
+        return this._aircraftCollection;
+    }
+
+    get aircraftController() {
+        return this._aircraftController;
+    }
+
     get spawnPatternCollection() {
         return this._spawnPatternCollection;
     }
@@ -101,8 +122,13 @@ export default class SimulationContext {
     }
 
     destroy() {
+        if (this._aircraftController) {
+            this._aircraftController.disable();
+        }
+
         this._eventBus.destroy();
         this._timerQueue.destroyTimers();
+        this._aircraftCollection.reset();
         this._spawnPatternCollection.reset();
         this._airportController.reset();
         this._navigationLibrary.reset();

@@ -41,6 +41,36 @@ ava('creates isolated airport controller state using each simulation session eve
     t.is(second.airportController._eventBus, second.eventBus);
 });
 
+ava('creates isolated aircraft collection state for each simulation session', (t) => {
+    const first = new SimulationContext();
+    const second = new SimulationContext();
+    const aircraft = { id: 'first' };
+
+    first.aircraftCollection.addItem(aircraft);
+
+    t.not(first.aircraftCollection, second.aircraftCollection);
+    t.deepEqual(first.aircraftCollection.items, [aircraft]);
+    t.deepEqual(second.aircraftCollection.items, []);
+});
+
+ava('uses an injected aircraft controller collection when no collection is supplied', (t) => {
+    const aircraftCollection = { reset: () => {} };
+    const aircraftController = { aircraft: aircraftCollection };
+    const context = new SimulationContext({ aircraftController });
+
+    t.is(context.aircraftCollection, aircraftCollection);
+    t.is(context.spawnScheduler._aircraftController, aircraftController);
+});
+
+ava('rejects mismatched injected aircraft controller and collection state', (t) => {
+    const error = t.throws(() => new SimulationContext({
+        aircraftCollection: {},
+        aircraftController: { aircraft: {} }
+    }), { instanceOf: TypeError });
+
+    t.is(error.message, 'aircraftController must own the supplied aircraftCollection.');
+});
+
 ava('default navigation state uses this simulation session random source', (t) => {
     const randomSource = { integer: () => 0 };
     const context = new SimulationContext({ randomSource });
@@ -118,6 +148,8 @@ ava('retains exact injected service identities', (t) => {
     const eventBus = new EventBusClass();
     const airportController = { reset: () => {} };
     const navigationLibrary = { reset: () => {} };
+    const aircraftCollection = {};
+    const aircraftController = { aircraft: aircraftCollection };
     const spawnPatternCollection = { reset: () => {} };
     const context = new SimulationContext({
         clock,
@@ -125,6 +157,8 @@ ava('retains exact injected service identities', (t) => {
         eventBus,
         airportController,
         navigationLibrary,
+        aircraftCollection,
+        aircraftController,
         spawnPatternCollection
     });
 
@@ -133,6 +167,9 @@ ava('retains exact injected service identities', (t) => {
     t.is(context.eventBus, eventBus);
     t.is(context.airportController, airportController);
     t.is(context.navigationLibrary, navigationLibrary);
+    t.is(context.aircraftCollection, aircraftCollection);
+    t.is(context.aircraftController, aircraftController);
+    t.is(context.spawnScheduler._aircraftController, aircraftController);
     t.is(context.spawnPatternCollection, spawnPatternCollection);
 });
 
@@ -201,6 +238,36 @@ ava('destroy resets only this simulation session spawn pattern state', (t) => {
     t.is(first.spawnPatternCollection.spawnPatternModels.length, 0);
     t.false(secondPattern.reset.called);
     t.is(second.spawnPatternCollection.spawnPatternModels.length, 1);
+});
+
+ava('destroy resets only this simulation session aircraft collection state', (t) => {
+    const first = new SimulationContext();
+    const second = new SimulationContext();
+    const firstAircraft = { id: 'first' };
+    const secondAircraft = { id: 'second' };
+
+    first.aircraftCollection.addItem(firstAircraft);
+    second.aircraftCollection.addItem(secondAircraft);
+    first.aircraftCollection.auto.enabled = true;
+    second.aircraftCollection.auto.enabled = true;
+    first.destroy();
+
+    t.deepEqual(first.aircraftCollection.items, []);
+    t.false(first.aircraftCollection.auto.enabled);
+    t.deepEqual(second.aircraftCollection.items, [secondAircraft]);
+    t.true(second.aircraftCollection.auto.enabled);
+});
+
+ava('destroy disables only this simulation session aircraft controller', (t) => {
+    const firstAircraftController = { disable: sinon.stub() };
+    const secondAircraftController = { disable: sinon.stub() };
+    const first = new SimulationContext({ aircraftController: firstAircraftController });
+    new SimulationContext({ aircraftController: secondAircraftController });
+
+    first.destroy();
+
+    t.true(firstAircraftController.disable.calledOnceWithExactly());
+    t.false(secondAircraftController.disable.called);
 });
 
 ava('ticks only this simulation session traffic schedule', (t) => {

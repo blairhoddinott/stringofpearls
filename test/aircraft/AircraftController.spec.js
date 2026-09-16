@@ -2,6 +2,8 @@ import ava from 'ava';
 // import sinon from 'sinon';
 
 import AircraftController from '../../src/assets/scripts/client/aircraft/AircraftController';
+import AircraftCollection from '../../src/assets/scripts/client/aircraft/AircraftCollection';
+import { EventBusClass } from '../../src/assets/scripts/client/lib/EventBus';
 import { AIRCRAFT_DEFINITION_LIST_MOCK } from './_mocks/aircraftMocks';
 import { airlineControllerFixture } from '../fixtures/airlineFixtures';
 import { scopeModelFixture } from '../fixtures/scopeFixtures';
@@ -143,6 +145,74 @@ ava('threads the randomSource by identity to StripViewController after the delay
 
     t.is(controller._stripViewController._delayScheduler, delayScheduler);
     t.is(controller._stripViewController._randomSource, randomSource);
+});
+
+ava('retains an injected aircraft collection by exact identity', (t) => {
+    const aircraftCollection = new AircraftCollection();
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture,
+        undefined,
+        undefined,
+        aircraftCollection
+    );
+
+    t.is(controller.aircraft, aircraftCollection);
+});
+
+ava('resets the legacy aircraft collection when an explicit null collection is supplied', (t) => {
+    const firstController = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture
+    );
+
+    firstController.aircraft.list.push({ callsign: 'stale' });
+    firstController.aircraft.auto.enabled = true;
+
+    const secondController = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture,
+        undefined,
+        undefined,
+        null
+    );
+
+    t.deepEqual(secondController.aircraft.list, []);
+    t.false(secondController.aircraft.auto.enabled);
+});
+
+ava('retains an injected event bus by exact identity', (t) => {
+    const eventBus = new EventBusClass();
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture,
+        undefined,
+        undefined,
+        new AircraftCollection(),
+        eventBus
+    );
+
+    t.is(controller._eventBus, eventBus);
+});
+
+ava('retains an injected airport controller by exact identity', (t) => {
+    const airportController = {};
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture,
+        undefined,
+        undefined,
+        new AircraftCollection(),
+        new EventBusClass(),
+        airportController
+    );
+
+    t.is(controller._airportController, airportController);
 });
 
 ava('generates distinct deterministic CIDs when randomSource is omitted', (t) => {

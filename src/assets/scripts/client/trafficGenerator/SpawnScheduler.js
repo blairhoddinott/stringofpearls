@@ -21,12 +21,16 @@ export class SpawnSchedulerClass {
     /**
      * @constructor
      * @for SpawnScheduler
-     * @param aircraftController {AircraftController}
+     * @param spawnPatternCollection {SpawnPatternCollection}
+     * @param clock {TimeKeeper|SimulationClock}
+     * @param timerQueue {object}
+     * @param aircraftController {AircraftController|null} [optional]
      */
     constructor(
         spawnPatternCollection = SpawnPatternCollection,
         clock = TimeKeeper,
-        timerQueue = LEGACY_TIMER_QUEUE
+        timerQueue = LEGACY_TIMER_QUEUE,
+        aircraftController = null
     ) {
         this._spawnPatternCollection = spawnPatternCollection;
         this._clock = clock;
@@ -38,7 +42,7 @@ export class SpawnSchedulerClass {
          * @default null
          * @private
          */
-        this._aircraftController = null;
+        this._aircraftController = aircraftController;
     }
 
     /**

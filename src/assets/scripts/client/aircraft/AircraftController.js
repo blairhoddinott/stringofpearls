@@ -44,8 +44,20 @@ export default class AircraftController {
      * @param scopeModel {ScopeModel}
      * @param delayScheduler {DelayScheduler} delayed-callback boundary forwarded to StripViewController
      * @param randomSource {RandomSource} randomness boundary forwarded to StripViewController
+     * @param aircraftCollection {AircraftCollection} [optional] aircraft state owner
+     * @param eventBus {EventBus} [optional] aircraft event dispatcher
+     * @param airportController {AirportController} [optional] airport state owner
      */
-    constructor(aircraftTypeDefinitionList, airlineController, scopeModel, delayScheduler, randomSource) {
+    constructor(
+        aircraftTypeDefinitionList,
+        airlineController,
+        scopeModel,
+        delayScheduler,
+        randomSource,
+        aircraftCollection,
+        eventBus = EventBus,
+        airportController = AirportController
+    ) {
         if (_isNil(aircraftTypeDefinitionList) || _isNil(airlineController) || _isNil(scopeModel)) {
             throw new TypeError('Invalid parameter(s) passed to AircraftController constructor. ' +
                 'Expected aircraftTypeDefinitionList, airlineController and scopeModel to be defined, ' +
@@ -98,7 +110,8 @@ export default class AircraftController {
          * @default EventBus
          * @private
          */
-        this._eventBus = EventBus;
+        this._eventBus = eventBus;
+        this._airportController = airportController;
 
         /**
          * Reference to an `AircraftTypeDefinitionCollection` instance
@@ -132,12 +145,15 @@ export default class AircraftController {
          */
         this._transponderCodesInUse = [];
 
-        prop.aircraft = aircraft;
-        this.aircraft = aircraft;
+        const usesLegacyAircraftCollection = _isNil(aircraftCollection);
 
-        // TODO: this should its own collection class
-        this.aircraft.list = [];
-        this.aircraft.auto = { enabled: false };
+        this.aircraft = aircraftCollection ?? aircraft;
+        prop.aircraft = this.aircraft;
+
+        if (usesLegacyAircraftCollection) {
+            this.aircraft.list = [];
+            this.aircraft.auto = { enabled: false };
+        }
         this.conflicts = [];
 
         /**
@@ -317,7 +333,7 @@ export default class AircraftController {
      * @returns {boolean}
      */
     isAircraftVisible(aircraft, factor = 1) {
-        const visibleDistance = AirportController.airport_get().ctr_radius * factor;
+        const visibleDistance = this._airportController.airport_get().ctr_radius * factor;
 
         return aircraft.distance < visibleDistance;
     }
@@ -340,7 +356,7 @@ export default class AircraftController {
      * @param aircraftModel {AircraftModel}
      */
     aircraft_remove(aircraftModel) {
-        AirportController.removeAircraftFromAllRunwayQueues(aircraftModel);
+        this._airportController.removeAircraftFromAllRunwayQueues(aircraftModel);
         this.removeFlightNumberFromList(aircraftModel);
         this.removeAircraftModelFromList(aircraftModel);
         this._removeTransponderCodeFromUse(aircraftModel);
@@ -630,7 +646,7 @@ export default class AircraftController {
         }
 
         const dynamicPositionModel = convertStaticPositionToDynamic(spawnPatternModel.positionModel);
-        const transponderCode = this._generateUniqueTransponderCode(AirportController.airport_get().icao);
+        const transponderCode = this._generateUniqueTransponderCode(this._airportController.airport_get().icao);
 
         return {
             fleet,

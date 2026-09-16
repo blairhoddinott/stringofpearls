@@ -138,6 +138,12 @@ async function main() {
     firstContext.airportController.airport_set('kaaa');
     assert.equal(firstContext.airportController.current, firstAirport);
     assert.equal(secondContext.airportController.current, null);
+    const aircraft = { id: 'first-context-aircraft' };
+    firstContext.aircraftCollection.addItem(aircraft);
+    firstContext.aircraftCollection.auto.enabled = true;
+    assert.notEqual(firstContext.aircraftCollection, secondContext.aircraftCollection);
+    assert.deepEqual(firstContext.aircraftCollection.items, [aircraft]);
+    assert.deepEqual(secondContext.aircraftCollection.items, []);
     let firstTimerCount = 0;
     firstContext.timerQueue.scheduleTimeout(() => { firstTimerCount++; }, 1);
     firstContext.tick(0.5);
@@ -164,6 +170,8 @@ async function main() {
     assert.equal(firstContext.navigationLibrary.findFixByName('ALPHA'), null);
     assert.equal(firstContext.airportController.current, null);
     assert.equal(firstContext.airportController.hasAirport('kaaa'), false);
+    assert.deepEqual(firstContext.aircraftCollection.items, []);
+    assert.equal(firstContext.aircraftCollection.auto.enabled, false);
     secondContext.destroy();
 
     process.stdout.write('core services browser-free proof passed\n');

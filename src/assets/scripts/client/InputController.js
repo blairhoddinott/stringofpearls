@@ -14,6 +14,7 @@ import InputEventBindings from './input/InputEventBindings';
 import MeasurementInteraction from './input/MeasurementInteraction';
 import AircraftSelectionInteraction from './input/AircraftSelectionInteraction';
 import CommandInteraction from './input/CommandInteraction';
+import ViewportGestureInteraction from './input/ViewportGestureInteraction';
 import MeasureTool from './measurement/MeasureTool';
 import FixCollection from './navigationLibrary/FixCollection';
 import { EVENT } from './constants/eventNames';
@@ -47,8 +48,9 @@ export default class InputController {
      * @param measurementInteraction {MeasurementInteraction} measurement-input behavior; optional
      * @param selectionInteraction {AircraftSelectionInteraction} aircraft selection/history behavior; optional
      * @param commandInteraction {CommandInteraction} command parsing and dispatch behavior; optional
+     * @param viewportInteraction {ViewportGestureInteraction} viewport zoom/pan gesture behavior; optional
      */
-    constructor($element, aircraftController, scopeModel, assetLoader, clearStorageAndReload, reportError, clipboardAdapter, inputEventBindings = null, measurementInteraction = null, selectionInteraction = null, commandInteraction = null) {
+    constructor($element, aircraftController, scopeModel, assetLoader, clearStorageAndReload, reportError, clipboardAdapter, inputEventBindings = null, measurementInteraction = null, selectionInteraction = null, commandInteraction = null, viewportInteraction = null) {
         this.$element = $element;
         this.$body = null;
         this.$window = null;
@@ -89,6 +91,7 @@ export default class InputController {
         );
         this._selectionInteraction = selectionInteraction;
         this._commandInteraction = commandInteraction;
+        this._viewportInteraction = viewportInteraction;
         this._autocompleteController = new AutocompleteController(
             this.$element,
             this,
@@ -102,7 +105,6 @@ export default class InputController {
         this.input.callsign = '';
         this.input.history = [];
         this.input.history_item = null;
-        this._mouseDownScreenPosition = [0, 0];
         this.input.isMouseDown = false;
         this.commandBarContext = COMMAND_CONTEXT.AIRCRAFT;
 
@@ -125,6 +127,10 @@ export default class InputController {
 
         if (this._commandInteraction === null) {
             this._commandInteraction = this._createCommandInteraction();
+        }
+
+        if (this._viewportInteraction === null) {
+            this._viewportInteraction = this._createViewportGestureInteraction();
         }
 
         this.setupHandlers();
@@ -210,6 +216,14 @@ export default class InputController {
         });
     }
 
+    _createViewportGestureInteraction() {
+        return new ViewportGestureInteraction(
+            this.input,
+            CanvasStageModel,
+            () => GameController.getGameOption(GAME_OPTION_NAMES.MOUSE_CLICK_DRAG)
+        );
+    }
+
     /**
      * Disable all event handlers and destroy the instance
      *
@@ -231,6 +245,7 @@ export default class InputController {
         this._measurementInteraction = null;
         this._selectionInteraction = null;
         this._commandInteraction = null;
+        this._viewportInteraction = null;
         this.$element = null;
         this.$body = null;
         this.$window = null;
@@ -243,7 +258,6 @@ export default class InputController {
         this.input.callsign = '';
         this.input.history = [];
         this.input.history_item = null;
-        this._mouseDownScreenPosition = [0, 0];
         this.input.isMouseDown = false;
 
         return this;
@@ -259,7 +273,6 @@ export default class InputController {
         this.input.callsign = '';
         this.input.history = [];
         this.input.history_item = null;
-        this._mouseDownScreenPosition = [0, 0];
         this.input.isMouseDown = false;
     }
 
@@ -285,13 +298,7 @@ export default class InputController {
      * @param event {jquery Event}
      */
     _onMouseScroll(event) {
-        if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
-            CanvasStageModel.zoomIn();
-
-            return;
-        }
-
-        CanvasStageModel.zoomOut();
+        this._viewportInteraction.zoom(event);
     }
 
     /**
@@ -306,14 +313,9 @@ export default class InputController {
             return this;
         }
 
-        if (!this.input.isMouseDown) {
+        if (!this._viewportInteraction.drag(event)) {
             return this;
         }
-
-        const nextXPan = event.pageX - this._mouseDownScreenPosition[0];
-        const nextYPan = event.pageY - this._mouseDownScreenPosition[1];
-
-        CanvasStageModel.updatePan(nextXPan, nextYPan);
     }
 
     /**
@@ -322,7 +324,7 @@ export default class InputController {
      * @param event {jquery Event}
      */
     _onMouseUp(event) {
-        this.input.isMouseDown = false;
+        this._viewportInteraction.release();
     }
 
     /**
@@ -339,7 +341,7 @@ export default class InputController {
 
                 break;
             case MOUSE_EVENT_CODE.MIDDLE_PRESS:
-                CanvasStageModel.zoomReset();
+                this._viewportInteraction.resetZoom();
 
                 break;
             case MOUSE_EVENT_CODE.RIGHT_PRESS:
@@ -874,22 +876,6 @@ export default class InputController {
      * @param {String} mouseButton
      */
     _markMousePressed(event, mouseButton) {
-        const canvasDragButton = GameController.getGameOption(GAME_OPTION_NAMES.MOUSE_CLICK_DRAG);
-
-        // The mouse button that's been pressed isn't the one
-        // that drags the canvas, so we return.
-        if (mouseButton !== canvasDragButton) {
-            return;
-        }
-
-        const mousePositionX = event.pageX - CanvasStageModel._panX;
-        const mousePositionY = event.pageY - CanvasStageModel._panY;
-
-        // Record mouse down position for panning
-        this._mouseDownScreenPosition = [
-            mousePositionX,
-            mousePositionY
-        ];
-        this.input.isMouseDown = true;
+        this._viewportInteraction.markPressed(event, mouseButton);
     }
 }

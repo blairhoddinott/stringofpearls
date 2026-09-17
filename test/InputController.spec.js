@@ -5,6 +5,7 @@ import InputEventBindings from '../src/assets/scripts/client/input/InputEventBin
 import MeasurementInteraction from '../src/assets/scripts/client/input/MeasurementInteraction';
 import AircraftSelectionInteraction from '../src/assets/scripts/client/input/AircraftSelectionInteraction';
 import CommandInteraction from '../src/assets/scripts/client/input/CommandInteraction';
+import ViewportGestureInteraction from '../src/assets/scripts/client/input/ViewportGestureInteraction';
 import AutocompleteController from '../src/assets/scripts/client/ui/autocomplete/AutocompleteController';
 import CanvasStageModel from '../src/assets/scripts/client/canvas/CanvasStageModel';
 import MeasureTool from '../src/assets/scripts/client/measurement/MeasureTool';
@@ -16,6 +17,8 @@ import AirportController from '../src/assets/scripts/client/airport/AirportContr
 import CommandParser from '../src/assets/scripts/client/commands/parsers/CommandParser';
 import ScopeCommandModel from '../src/assets/scripts/client/commands/scopeCommand/ScopeCommandModel';
 import { EVENT } from '../src/assets/scripts/client/constants/eventNames';
+import { GAME_OPTION_NAMES } from '../src/assets/scripts/client/constants/gameOptionConstants';
+import { MOUSE_EVENT_CODE } from '../src/assets/scripts/client/constants/inputConstants';
 
 // The copy-coordinates command is exercised directly through the prototype
 // method with a minimal `this`, so the clipboard boundary and success-log
@@ -506,4 +509,66 @@ ava.serial('public command methods delegate through current controller callbacks
         inputInit.restore();
         autocompleteInit.restore();
     }
+});
+
+ava.serial('._createViewportGestureInteraction() composes exact state, viewport, and live drag option', (t) => {
+    const dragButton = 'right';
+    const option = sinon.stub(GameController, 'getGameOption').returns(dragButton);
+    const controller = Object.create(InputController.prototype);
+    controller.input = {};
+
+    const interaction = controller._createViewportGestureInteraction();
+
+    t.true(interaction instanceof ViewportGestureInteraction);
+    t.is(interaction._inputState, controller.input);
+    t.is(interaction._viewport, CanvasStageModel);
+    t.is(interaction._dragButtonProvider(), dragButton);
+    t.true(option.calledOnceWithExactly(GAME_OPTION_NAMES.MOUSE_CLICK_DRAG));
+});
+
+ava.serial('constructor retains an explicitly supplied trailing viewport gesture interaction', (t) => {
+    const inputInit = sinon.stub(InputController.prototype, '_init');
+    const autocompleteInit = sinon.stub(AutocompleteController.prototype, '_init');
+    const viewportInteraction = {};
+
+    try {
+        const controller = new InputController(
+            {}, {}, {}, {}, null, null, null, {}, {}, {}, {}, viewportInteraction
+        );
+
+        t.is(controller._viewportInteraction, viewportInteraction);
+    } finally {
+        inputInit.restore();
+        autocompleteInit.restore();
+    }
+});
+
+ava('viewport gesture routes preserve controller returns and operation order', (t) => {
+    const calls = [];
+    const event = { which: MOUSE_EVENT_CODE.MIDDLE_PRESS, preventDefault: () => calls.push('prevent') };
+    const controller = Object.create(InputController.prototype);
+    controller._measurementInteraction = { hasStarted: false };
+    controller._viewportInteraction = {
+        zoom: (value) => calls.push(['zoom', value]),
+        drag: (value) => { calls.push(['drag', value]); return calls.filter(([name]) => name === 'drag').length > 1; },
+        release: () => calls.push(['release']),
+        resetZoom: () => calls.push(['reset']),
+        markPressed: (...args) => calls.push(['mark', ...args])
+    };
+
+    t.is(controller._onMouseScroll(event), undefined);
+    t.is(controller._onMouseClickAndDrag(event), controller);
+    t.is(controller._onMouseClickAndDrag(event), undefined);
+    t.is(controller._onMouseUp(event), undefined);
+    t.is(controller._markMousePressed(event, 'left'), undefined);
+    t.is(controller._onMouseDown(event), undefined);
+    t.deepEqual(calls, [
+        ['zoom', event],
+        ['drag', event],
+        ['drag', event],
+        ['release'],
+        ['mark', event, 'left'],
+        'prevent',
+        ['reset']
+    ]);
 });

@@ -2,7 +2,11 @@ import ava from 'ava';
 import sinon from 'sinon';
 import InputController from '../src/assets/scripts/client/InputController';
 import InputEventBindings from '../src/assets/scripts/client/input/InputEventBindings';
+import MeasurementInteraction from '../src/assets/scripts/client/input/MeasurementInteraction';
 import AutocompleteController from '../src/assets/scripts/client/ui/autocomplete/AutocompleteController';
+import CanvasStageModel from '../src/assets/scripts/client/canvas/CanvasStageModel';
+import MeasureTool from '../src/assets/scripts/client/measurement/MeasureTool';
+import FixCollection from '../src/assets/scripts/client/navigationLibrary/FixCollection';
 import UiController from '../src/assets/scripts/client/ui/UiController';
 import { EVENT } from '../src/assets/scripts/client/constants/eventNames';
 
@@ -218,4 +222,96 @@ ava.serial('constructor retains an explicitly supplied trailing input-event boun
         inputInit.restore();
         autocompleteInit.restore();
     }
+});
+
+ava.serial('constructor composes the default measurement interaction from exact dependencies', (t) => {
+    const inputInit = sinon.stub(InputController.prototype, '_init');
+    const autocompleteInit = sinon.stub(AutocompleteController.prototype, '_init');
+    const aircraftController = {};
+
+    try {
+        const controller = new InputController({}, aircraftController, {}, {}, null, null, null, {});
+
+        t.true(controller._measurementInteraction instanceof MeasurementInteraction);
+        t.is(controller._measurementInteraction._viewport, CanvasStageModel);
+        t.is(controller._measurementInteraction._measureTool, MeasureTool);
+        t.is(controller._measurementInteraction._eventBus, controller._eventBus);
+        t.is(controller._measurementInteraction._aircraftController, aircraftController);
+        t.is(controller._measurementInteraction._fixCollection, FixCollection);
+        t.true(inputInit.calledOnceWithExactly());
+        t.true(autocompleteInit.calledOnceWithExactly());
+    } finally {
+        inputInit.restore();
+        autocompleteInit.restore();
+    }
+});
+
+ava.serial('constructor retains an explicitly supplied trailing measurement interaction', (t) => {
+    const inputInit = sinon.stub(InputController.prototype, '_init');
+    const autocompleteInit = sinon.stub(AutocompleteController.prototype, '_init');
+    const interaction = {};
+
+    try {
+        const controller = new InputController(
+            {}, {}, {}, {}, null, null, null, {}, interaction
+        );
+
+        t.is(controller._measurementInteraction, interaction);
+    } finally {
+        inputInit.restore();
+        autocompleteInit.restore();
+    }
+});
+
+ava('mouse measurement routes use the exact interaction and preserve returns', (t) => {
+    const event = {};
+    const calls = [];
+    const controller = Object.create(InputController.prototype);
+    controller._measurementInteraction = {
+        hasStarted: true,
+        isMeasuring: true,
+        addPoint: (...args) => calls.push(['addPoint', ...args]),
+        removePreviousPoint: (...args) => calls.push(['removePreviousPoint', ...args])
+    };
+
+    t.is(controller._onMouseClickAndDrag(event), controller);
+    t.is(controller._onRightMousePress(event), undefined);
+    t.is(controller._onLeftMouseButtonPress(event), undefined);
+    t.deepEqual(calls, [
+        ['addPoint', event, true],
+        ['removePreviousPoint'],
+        ['addPoint', event]
+    ]);
+});
+
+ava.serial('control and escape keyboard routes delegate measurement lifecycle in inherited order', (t) => {
+    const calls = [];
+    const controller = Object.create(InputController.prototype);
+    controller._measurementInteraction = {
+        start: () => calls.push('start'),
+        stop: () => calls.push('stop'),
+        reset: () => calls.push('reset')
+    };
+    controller._eventBus = {
+        trigger: (...args) => calls.push(['trigger', ...args])
+    };
+    controller._autocompleteController = { active: false };
+    controller._isDialog = () => false;
+    controller.$commandInput = { val: () => '' };
+    controller.input = { callsign: '' };
+    controller.deselectAircraft = () => calls.push('deselect');
+    sinon.stub(UiController, 'closeAllDialogs').callsFake(() => calls.push('closeAllDialogs'));
+
+    controller._onKeydown({ originalEvent: { code: 'ControlLeft' }, target: {} });
+    controller._onKeyup({ originalEvent: { code: 'ControlLeft' } });
+    controller._onKeydown({ originalEvent: { code: 'Escape' }, target: {} });
+
+    t.deepEqual(calls, [
+        'start',
+        'stop',
+        ['trigger', EVENT.MARK_SHALLOW_RENDER],
+        'reset',
+        'closeAllDialogs',
+        'deselect'
+    ]);
 });

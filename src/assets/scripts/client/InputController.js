@@ -12,6 +12,7 @@ import CommandParser from './commands/parsers/CommandParser';
 import ScopeCommandModel from './commands/scopeCommand/ScopeCommandModel';
 import EventTracker from './EventTracker';
 import InputEventBindings from './input/InputEventBindings';
+import MeasurementInteraction from './input/MeasurementInteraction';
 import MeasureTool from './measurement/MeasureTool';
 import FixCollection from './navigationLibrary/FixCollection';
 import { clamp } from './math/core';
@@ -46,8 +47,9 @@ export default class InputController {
      * @param reportError {Function} async error reporter forwarded to AutocompleteController
      * @param clipboardAdapter {ClipboardAdapter} clipboard boundary used by the copy-coordinates command; optional
      * @param inputEventBindings {InputEventBindings} browser event-registration boundary; optional
+     * @param measurementInteraction {MeasurementInteraction} measurement-input behavior; optional
      */
-    constructor($element, aircraftController, scopeModel, assetLoader, clearStorageAndReload, reportError, clipboardAdapter, inputEventBindings = null) {
+    constructor($element, aircraftController, scopeModel, assetLoader, clearStorageAndReload, reportError, clipboardAdapter, inputEventBindings = null, measurementInteraction = null) {
         this.$element = $element;
         this.$body = null;
         this.$window = null;
@@ -79,6 +81,13 @@ export default class InputController {
          */
         this._clipboardAdapter = clipboardAdapter ?? null;
         this._inputEventBindings = inputEventBindings;
+        this._measurementInteraction = measurementInteraction ?? new MeasurementInteraction(
+            CanvasStageModel,
+            MeasureTool,
+            this._eventBus,
+            this._aircraftController,
+            FixCollection
+        );
         this._autocompleteController = new AutocompleteController(
             this.$element,
             this,
@@ -184,6 +193,7 @@ export default class InputController {
      */
     destroy() {
         this._inputEventBindings = null;
+        this._measurementInteraction = null;
         this.$element = null;
         this.$body = null;
         this.$window = null;
@@ -237,112 +247,6 @@ export default class InputController {
         this._eventBus.trigger(EVENT.DESELECT_AIRCRAFT, {});
     }
 
-    /**
-     * Adds a point to the measuring tool
-     *
-     * @for InputController
-     * @method _addMeasurePoint
-     * @param event {jquery Event}
-     * @param shouldReplaceLastPoint {boolean} Indicates whether this will replace the last point
-     * @private
-     */
-    _addMeasurePoint(event, shouldReplaceLastPoint = false) {
-        const mouseCanvasPosition = CanvasStageModel.calculateCanvasPositionFromPagePosition(
-            event.pageX, event.pageY
-        );
-        let relativePosition = CanvasStageModel.calculateRelativePositionFromCanvasPosition(...mouseCanvasPosition);
-
-        // Snapping should only be done when the shift key is depressed
-        if (event.originalEvent.shiftKey) {
-            const [aircraftModel, distanceFromAircraft] = this._findClosestAircraftAndDistanceToCanvasPosition(
-                ...mouseCanvasPosition
-            );
-            const [fixModel, distanceFromFix] = this._findClosestFixAndDistanceToCanvasPosition(...mouseCanvasPosition);
-            let distance;
-            let nearestModel;
-
-            // Which model is closest
-            if (distanceFromFix < distanceFromAircraft) {
-                distance = distanceFromFix;
-                nearestModel = fixModel;
-            } else {
-                distance = distanceFromAircraft;
-                nearestModel = aircraftModel;
-            }
-
-            // Only snap if the distance is with 50px, otherwise the behaviour is jarring
-            if (distance < CanvasStageModel.translatePixelsToKilometers(50)) {
-                relativePosition = nearestModel;
-            }
-        }
-
-        if (MeasureTool.hasStarted && shouldReplaceLastPoint) {
-            MeasureTool.updateLastPoint(relativePosition);
-        } else {
-            MeasureTool.addPoint(relativePosition);
-        }
-
-        // Mark for shallow render so the draw motion is smooth
-        this._eventBus.trigger(EVENT.MARK_SHALLOW_RENDER);
-    }
-
-    /**
-     * Removes the last point in the measuring tool
-     *
-     * @for InputController
-     * @method _removePreviousMeasurePoint
-     * @private
-     */
-    _removePreviousMeasurePoint() {
-        MeasureTool.removePreviousPoint();
-
-        // Mark for shallow render so the feedback is immediate
-        this._eventBus.trigger(EVENT.MARK_SHALLOW_RENDER);
-    }
-
-    /**
-     * Resets the measuring tool, clearing existing paths
-     *
-     * @for InputController
-     * @method _resetMeasuring
-     * @private
-     */
-    _resetMeasuring() {
-        const { hasPaths } = MeasureTool;
-
-        MeasureTool.reset();
-
-        // Mark for shallow render so the feedback is immediate
-        if (hasPaths) {
-            this._eventBus.trigger(EVENT.MARK_SHALLOW_RENDER);
-        }
-    }
-
-    /**
-     * Starts the measuring tool
-     *
-     * @for InputController
-     * @method _startMeasuring
-     * @private
-     */
-    _startMeasuring() {
-        if (MeasureTool.isMeasuring) {
-            return;
-        }
-
-        MeasureTool.startNewPath();
-    }
-
-    /**
-     * Stops the measuring tool
-     *
-     * @for InputController
-     * @method _stopMeasuring
-     * @private
-     */
-    _stopMeasuring() {
-        MeasureTool.endPath();
-    }
 
     /**
      * @for InputController
@@ -365,8 +269,8 @@ export default class InputController {
      * @param event {jquery Event}
      */
     _onMouseClickAndDrag(event) {
-        if (MeasureTool.hasStarted) {
-            this._addMeasurePoint(event, true);
+        if (this._measurementInteraction.hasStarted) {
+            this._measurementInteraction.addPoint(event, true);
 
             return this;
         }
@@ -508,7 +412,7 @@ export default class InputController {
         switch (code) {
             case KEY_CODES.CONTROL_LEFT:
             case KEY_CODES.CONTROL_RIGHT:
-                this._startMeasuring();
+                this._measurementInteraction.start();
 
                 break;
             case KEY_CODES.ENTER:
@@ -644,7 +548,7 @@ export default class InputController {
             case KEY_CODES.ESCAPE:
             case LEGACY_KEY_CODES.ESCAPE: {
                 // TODO: Probably should have its own cancel button
-                this._resetMeasuring();
+                this._measurementInteraction.reset();
 
                 UiController.closeAllDialogs();
 
@@ -684,7 +588,7 @@ export default class InputController {
         switch (code) {
             case KEY_CODES.CONTROL_LEFT:
             case KEY_CODES.CONTROL_RIGHT:
-                this._stopMeasuring();
+                this._measurementInteraction.stop();
                 this._eventBus.trigger(EVENT.MARK_SHALLOW_RENDER);
 
                 break;
@@ -1037,24 +941,6 @@ export default class InputController {
     }
 
     /**
-     * Facade for `FixCollection.getNearest`
-     *
-     * Accepts current mouse position in canvas coordinates x, y
-     *
-     * @for InputController
-     * @method _findClosestFixAndDistanceToCanvasPosition
-     * @param x {number}
-     * @param y {number}
-     * @returns [FixModel, number]
-     * @private
-     */
-    _findClosestFixAndDistanceToCanvasPosition(x, y) {
-        return FixCollection.getNearestFix(
-            CanvasStageModel.calculateRelativePositionFromCanvasPosition(x, y)
-        );
-    }
-
-    /**
      * Log the provided lat/lon coordinates to the console, display in command log, and copy to clipboard
      *
      * @for InputController
@@ -1093,8 +979,8 @@ export default class InputController {
      * @private
      */
     _onRightMousePress(event) {
-        if (MeasureTool.isMeasuring) {
-            this._removePreviousMeasurePoint();
+        if (this._measurementInteraction.isMeasuring) {
+            this._measurementInteraction.removePreviousPoint();
 
             return;
         }
@@ -1126,8 +1012,8 @@ export default class InputController {
      * @private
      */
     _onLeftMouseButtonPress(event) {
-        if (MeasureTool.isMeasuring) {
-            this._addMeasurePoint(event);
+        if (this._measurementInteraction.isMeasuring) {
+            this._measurementInteraction.addPoint(event);
 
             return;
         }

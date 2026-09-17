@@ -17,6 +17,7 @@ This roadmap tracks the current direction of the project. The order may change a
   - [x] Complete Phase 4: establish browser-free per-session simulation contexts with explicit ownership and deterministic two-context isolation.
   - [ ] Complete Phase 5: decompose presentation hotspots without pulling UI concerns back into the simulation context.
     - [x] Extract canvas render scheduling and dirty-state policy from `CanvasController` into a pure browser-free service while preserving frame ordering and retry-on-render-failure behavior.
+    - [x] Extract browser canvas creation, context ownership, resizing, HiDPI adjustment, clearing, and teardown into a dedicated `CanvasHost`.
 - [ ] Resume feature development on the modernized foundation
 
 ## Simulation and realism

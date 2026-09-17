@@ -129,3 +129,77 @@ ava.serial('canvasUpdatePost() renders only the dynamic canvas when simulation t
         shouldUpdate.restore();
     }
 });
+
+// `CanvasController` no longer owns the browser-bound canvas DOM/context
+// lifecycle; it delegates to an injected `CanvasHost`. These characterizations
+// prove that delegation and that a resize still marks a deep render afterwards.
+const buildControllerWithHost = () => {
+    const controller = Object.create(CanvasController.prototype);
+    const host = {
+        init: sinon.spy(),
+        resize: sinon.spy(),
+        getContext: sinon.stub(),
+        clearContext: sinon.spy(),
+        destroy: sinon.spy()
+    };
+
+    controller._canvasHost = host;
+    controller._renderScheduler = new CanvasRenderScheduler();
+
+    return { controller, host };
+};
+
+ava('canvas_init() delegates canvas creation to the host', (t) => {
+    const { controller, host } = buildControllerWithHost();
+
+    controller.canvas_init();
+
+    t.true(host.init.calledOnce);
+});
+
+ava('canvas_resize() delegates to the host then marks a deep render', (t) => {
+    const { controller, host } = buildControllerWithHost();
+
+    controller._renderScheduler.completeFrame();
+
+    const markDeep = sinon.spy(controller._renderScheduler, 'markDeep');
+
+    controller.canvas_resize();
+
+    t.true(host.resize.calledOnce);
+    t.true(markDeep.calledOnce);
+    t.true(host.resize.calledBefore(markDeep));
+    t.deepEqual(
+        controller._renderScheduler.nextFrame(() => false),
+        { renderStatic: true, renderDynamic: true }
+    );
+});
+
+ava('_getCanvasContextByName() and _clearCanvasContext() delegate to the host', (t) => {
+    const { controller, host } = buildControllerWithHost();
+    const staticContext = { name: CANVAS_NAME.STATIC };
+
+    host.getContext.withArgs(CANVAS_NAME.STATIC).returns(staticContext);
+
+    t.is(controller._getCanvasContextByName(CANVAS_NAME.STATIC), staticContext);
+    t.true(host.getContext.calledOnceWithExactly(CANVAS_NAME.STATIC));
+
+    controller._clearCanvasContext(staticContext);
+
+    t.true(host.clearContext.calledOnceWithExactly(staticContext));
+});
+
+ava('destroy() delegates host teardown and restores an initial render plan', (t) => {
+    const { controller, host } = buildControllerWithHost();
+
+    controller._renderScheduler.completeFrame();
+
+    const result = controller.destroy();
+
+    t.is(result, controller);
+    t.true(host.destroy.calledOnce);
+    t.deepEqual(
+        controller._renderScheduler.nextFrame(() => false),
+        { renderStatic: true, renderDynamic: true }
+    );
+});

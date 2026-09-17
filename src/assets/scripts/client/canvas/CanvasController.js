@@ -4,6 +4,7 @@ import _filter from 'lodash/filter';
 import _has from 'lodash/has';
 import _inRange from 'lodash/inRange';
 import AirportController from '../airport/AirportController';
+import CanvasHost from './CanvasHost';
 import CanvasRenderScheduler from './CanvasRenderScheduler';
 import CanvasStageModel from './CanvasStageModel';
 import EventBus from '../lib/EventBus';
@@ -60,8 +61,9 @@ export default class CanvasController {
      * @param storageAdapter {StorageAdapter}
      * @param delayScheduler {DelayScheduler} delayed-callback boundary; nullish/omitted normalizes to null
      * @param renderScheduler {CanvasRenderScheduler} render dirty-state/update policy; nullish/omitted constructs a default
+     * @param canvasHost {CanvasHost} browser-bound canvas DOM/context lifecycle; nullish/omitted constructs a default
      */
-    constructor($element, aircraftController, scopeModel, storageAdapter, delayScheduler, renderScheduler) {
+    constructor($element, aircraftController, scopeModel, storageAdapter, delayScheduler, renderScheduler, canvasHost) {
         /**
          * Reference to the `window` object
          *
@@ -102,21 +104,17 @@ export default class CanvasController {
         this._eventBus = EventBus;
 
         /**
-         * @property _context
-         * @type {object<string, HTMLCanvasContext>}
-         * @private
-         */
-        this._context = {};
-
-        /**
-         * Flag used to determine if the canvas dimensions should be resized
+         * Owns the browser-bound canvas DOM/context lifecycle.
          *
-         * @property _shouldResize
-         * @type {boolean}
-         * @default true
+         * Nullish/omitted constructs a default host at this presentation
+         * boundary from the same `$element`; `CanvasController` retains
+         * ownership of actual drawing and render scheduling.
+         *
+         * @property _canvasHost
+         * @type {CanvasHost}
          * @private
          */
-        this._shouldResize = true;
+        this._canvasHost = canvasHost ?? new CanvasHost(this.$element);
 
         /**
          * Owns the render dirty-state and per-frame update policy.
@@ -330,8 +328,7 @@ export default class CanvasController {
     destroy() {
         this.$window = null;
         this.$element = null;
-        this._context = {};
-        this._shouldResize = true;
+        this._canvasHost.destroy();
         this._renderScheduler.reset();
         this._shouldDrawFixLabels = false;
         this._shouldDrawRestrictedAreas = false;
@@ -351,8 +348,7 @@ export default class CanvasController {
      * @method canvas_init
      */
     canvas_init() {
-        this._addCanvas(CANVAS_NAME.STATIC);
-        this._addCanvas(CANVAS_NAME.DYNAMIC);
+        this._canvasHost.init();
     }
 
     /**
@@ -381,20 +377,7 @@ export default class CanvasController {
      * @method canvas_resize
      */
     canvas_resize() {
-        if (this._shouldResize) {
-            CanvasStageModel.updateHeightAndWidth(
-                this.$window.height(),
-                this.$window.width()
-            );
-        }
-
-        for (const canvasName in this._context) {
-            const context = this._context[canvasName];
-            context.canvas.height = CanvasStageModel.height;
-            context.canvas.width = CanvasStageModel.width;
-
-            this._adjustHidpi(canvasName);
-        }
+        this._canvasHost.resize();
 
         this._markDeepRender();
     }
@@ -465,45 +448,6 @@ export default class CanvasController {
     }
 
     /**
-     * Add a `canvas` element to the DOM
-     *
-     * @for CanvasController
-     * @method _addCanvas
-     * @param name {CANVAS_NAME|string}
-     * @private
-     */
-    _addCanvas(name) {
-        const canvasTemplate = `<canvas id='${name}-canvas'></canvas>`;
-
-        this.$element.append(canvasTemplate);
-
-        this._context[name] = $(`#${name}-canvas`).get(0).getContext('2d');
-    }
-
-    /**
-     * @for CanvasController
-     * @method _adjustHidpi
-     * @private
-     */
-    _adjustHidpi(canvasName) {
-        const devicePixelRatio = window.devicePixelRatio || 1;
-        const canvasContext = this._context[canvasName];
-
-        if (devicePixelRatio <= 1) {
-            return;
-        }
-
-        const $canvasElement = $(`#${canvasContext.canvas.id}`).get(0);
-
-        $($canvasElement).attr('height', CanvasStageModel.height * devicePixelRatio);
-        $($canvasElement).css('height', CanvasStageModel.height);
-        $($canvasElement).attr('width', CanvasStageModel.width * devicePixelRatio);
-        $($canvasElement).css('width', CanvasStageModel.width);
-
-        canvasContext.scale(devicePixelRatio, devicePixelRatio);
-    }
-
-    /**
      * Clear the current canvas context
      *
      * @for CanvasController
@@ -512,7 +456,7 @@ export default class CanvasController {
      * @private
      */
     _clearCanvasContext(cc) {
-        cc.clearRect(0, 0, CanvasStageModel.width, CanvasStageModel.height);
+        this._canvasHost.clearContext(cc);
     }
 
     /**
@@ -2450,7 +2394,7 @@ export default class CanvasController {
      * @private
      */
     _getCanvasContextByName(name) {
-        return this._context[name];
+        return this._canvasHost.getContext(name);
     }
 
     // TODO: this duplicates (but is slightly different than) the more widely-used method of

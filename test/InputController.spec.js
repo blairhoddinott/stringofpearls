@@ -6,6 +6,7 @@ import MeasurementInteraction from '../src/assets/scripts/client/input/Measureme
 import AircraftSelectionInteraction from '../src/assets/scripts/client/input/AircraftSelectionInteraction';
 import CommandInteraction from '../src/assets/scripts/client/input/CommandInteraction';
 import ViewportGestureInteraction from '../src/assets/scripts/client/input/ViewportGestureInteraction';
+import KeyboardInteraction from '../src/assets/scripts/client/input/KeyboardInteraction';
 import AutocompleteController from '../src/assets/scripts/client/ui/autocomplete/AutocompleteController';
 import CanvasStageModel from '../src/assets/scripts/client/canvas/CanvasStageModel';
 import MeasureTool from '../src/assets/scripts/client/measurement/MeasureTool';
@@ -18,7 +19,7 @@ import CommandParser from '../src/assets/scripts/client/commands/parsers/Command
 import ScopeCommandModel from '../src/assets/scripts/client/commands/scopeCommand/ScopeCommandModel';
 import { EVENT } from '../src/assets/scripts/client/constants/eventNames';
 import { GAME_OPTION_NAMES } from '../src/assets/scripts/client/constants/gameOptionConstants';
-import { MOUSE_EVENT_CODE } from '../src/assets/scripts/client/constants/inputConstants';
+import { COMMAND_CONTEXT, MOUSE_EVENT_CODE } from '../src/assets/scripts/client/constants/inputConstants';
 
 // The copy-coordinates command is exercised directly through the prototype
 // method with a minimal `this`, so the clipboard boundary and success-log
@@ -306,15 +307,22 @@ ava.serial('control and escape keyboard routes delegate measurement lifecycle in
         trigger: (...args) => calls.push(['trigger', ...args])
     };
     controller._autocompleteController = { active: false };
-    controller._isDialog = () => false;
     controller.$commandInput = { val: () => '' };
     controller.input = { callsign: '' };
+    controller._scopeModel = {};
+    controller.commandBarContext = COMMAND_CONTEXT.AIRCRAFT;
+    controller._isArrowControlMethod = () => false;
+    controller.processCommand = () => {};
+    controller.selectPreviousAircraft = () => {};
+    controller.selectNextAircraft = () => {};
     controller.deselectAircraft = () => calls.push('deselect');
     sinon.stub(UiController, 'closeAllDialogs').callsFake(() => calls.push('closeAllDialogs'));
+    controller._keyboardInteraction = controller._createKeyboardInteraction();
+    const target = { classList: { contains: () => false }, parentElement: null };
 
-    controller._onKeydown({ originalEvent: { code: 'ControlLeft' }, target: {} });
+    controller._onKeydown({ originalEvent: { code: 'ControlLeft' }, target });
     controller._onKeyup({ originalEvent: { code: 'ControlLeft' } });
-    controller._onKeydown({ originalEvent: { code: 'Escape' }, target: {} });
+    controller._onKeydown({ originalEvent: { code: 'Escape' }, target });
 
     t.deepEqual(calls, [
         'start',
@@ -570,5 +578,88 @@ ava('viewport gesture routes preserve controller returns and operation order', (
         ['mark', event, 'left'],
         'prevent',
         ['reset']
+    ]);
+});
+
+ava('._createKeyboardInteraction() composes exact dependencies and lazy current controller callbacks', (t) => {
+    const calls = [];
+    const controller = Object.create(InputController.prototype);
+    controller.input = {};
+    controller.$commandInput = {};
+    controller._autocompleteController = {};
+    controller._measurementInteraction = {};
+    controller._scopeModel = {};
+    controller._eventBus = {};
+    controller.commandBarContext = COMMAND_CONTEXT.AIRCRAFT;
+    controller._isArrowControlMethod = () => calls.push('staleArrow');
+    controller.processCommand = () => calls.push('staleProcess');
+    controller.selectPreviousAircraft = () => calls.push('stalePrevious');
+    controller.selectNextAircraft = () => calls.push('staleNext');
+    controller.deselectAircraft = () => calls.push('staleDeselect');
+
+    const interaction = controller._createKeyboardInteraction();
+
+    controller._isArrowControlMethod = () => {
+        calls.push('arrow');
+        return true;
+    };
+    controller.processCommand = () => calls.push('process');
+    controller.selectPreviousAircraft = () => calls.push('previous');
+    controller.selectNextAircraft = () => calls.push('next');
+    controller.deselectAircraft = () => calls.push('deselect');
+
+    t.true(interaction instanceof KeyboardInteraction);
+    t.is(interaction._inputState, controller.input);
+    t.is(interaction._commandInput, controller.$commandInput);
+    t.is(interaction._autocompleteController, controller._autocompleteController);
+    t.is(interaction._measurementInteraction, controller._measurementInteraction);
+    t.is(interaction._scopeModel, controller._scopeModel);
+    t.is(interaction._uiController, UiController);
+    t.is(interaction._eventBus, controller._eventBus);
+    t.true(interaction._arrowControlProvider());
+    t.is(interaction._commandContextProvider(), COMMAND_CONTEXT.AIRCRAFT);
+    interaction._commandContextSetter(COMMAND_CONTEXT.SCOPE);
+    t.is(controller.commandBarContext, COMMAND_CONTEXT.SCOPE);
+    interaction._processCommand();
+    interaction._selectPreviousAircraft();
+    interaction._selectNextAircraft();
+    interaction._deselectAircraft();
+    t.deepEqual(calls, ['arrow', 'process', 'previous', 'next', 'deselect']);
+});
+
+ava.serial('constructor retains an explicitly supplied trailing keyboard interaction and destroy clears it', (t) => {
+    const inputInit = sinon.stub(InputController.prototype, '_init');
+    const autocompleteInit = sinon.stub(AutocompleteController.prototype, '_init');
+    const keyboardInteraction = {};
+
+    try {
+        const controller = new InputController(
+            {}, {}, {}, {}, null, null, null, {}, {}, {}, {}, {}, keyboardInteraction
+        );
+
+        t.is(controller._keyboardInteraction, keyboardInteraction);
+        controller.destroy();
+        t.is(controller._keyboardInteraction, null);
+    } finally {
+        inputInit.restore();
+        autocompleteInit.restore();
+    }
+});
+
+ava('keyboard façades delegate exact events and discard collaborator returns', (t) => {
+    const calls = [];
+    const keydownEvent = {};
+    const keyupEvent = {};
+    const controller = Object.create(InputController.prototype);
+    controller._keyboardInteraction = {
+        keydown: (event) => { calls.push(['keydown', event]); return 'ignored'; },
+        keyup: (event) => { calls.push(['keyup', event]); return 'ignored'; }
+    };
+
+    t.is(controller._onKeydown(keydownEvent), undefined);
+    t.is(controller._onKeyup(keyupEvent), undefined);
+    t.deepEqual(calls, [
+        ['keydown', keydownEvent],
+        ['keyup', keyupEvent]
     ]);
 });

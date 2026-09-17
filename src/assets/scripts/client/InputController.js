@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import _includes from 'lodash/includes';
+
 import AirportController from './airport/AirportController';
 import AutocompleteController from './ui/autocomplete/AutocompleteController';
 import CanvasStageModel from './canvas/CanvasStageModel';
@@ -15,18 +15,13 @@ import MeasurementInteraction from './input/MeasurementInteraction';
 import AircraftSelectionInteraction from './input/AircraftSelectionInteraction';
 import CommandInteraction from './input/CommandInteraction';
 import ViewportGestureInteraction from './input/ViewportGestureInteraction';
+import KeyboardInteraction from './input/KeyboardInteraction';
 import MeasureTool from './measurement/MeasureTool';
 import FixCollection from './navigationLibrary/FixCollection';
 import { EVENT } from './constants/eventNames';
 import { GAME_OPTION_NAMES } from './constants/gameOptionConstants';
-import {
-    COMMAND_CONTEXT,
-    KEY_CODES,
-    LEGACY_KEY_CODES,
-    MOUSE_BUTTON_NAMES,
-    MOUSE_EVENT_CODE
-} from './constants/inputConstants';
-import { SELECTORS, CLASSNAMES } from './constants/selectors';
+import { COMMAND_CONTEXT, MOUSE_BUTTON_NAMES, MOUSE_EVENT_CODE } from './constants/inputConstants';
+import { SELECTORS } from './constants/selectors';
 
 // Temporary const declaration here to attach to the window AND use as internal propert
 const input = {};
@@ -49,8 +44,9 @@ export default class InputController {
      * @param selectionInteraction {AircraftSelectionInteraction} aircraft selection/history behavior; optional
      * @param commandInteraction {CommandInteraction} command parsing and dispatch behavior; optional
      * @param viewportInteraction {ViewportGestureInteraction} viewport zoom/pan gesture behavior; optional
+     * @param keyboardInteraction {KeyboardInteraction} keyboard interpretation behavior; optional
      */
-    constructor($element, aircraftController, scopeModel, assetLoader, clearStorageAndReload, reportError, clipboardAdapter, inputEventBindings = null, measurementInteraction = null, selectionInteraction = null, commandInteraction = null, viewportInteraction = null) {
+    constructor($element, aircraftController, scopeModel, assetLoader, clearStorageAndReload, reportError, clipboardAdapter, inputEventBindings = null, measurementInteraction = null, selectionInteraction = null, commandInteraction = null, viewportInteraction = null, keyboardInteraction = null) {
         this.$element = $element;
         this.$body = null;
         this.$window = null;
@@ -92,6 +88,7 @@ export default class InputController {
         this._selectionInteraction = selectionInteraction;
         this._commandInteraction = commandInteraction;
         this._viewportInteraction = viewportInteraction;
+        this._keyboardInteraction = keyboardInteraction;
         this._autocompleteController = new AutocompleteController(
             this.$element,
             this,
@@ -131,6 +128,10 @@ export default class InputController {
 
         if (this._viewportInteraction === null) {
             this._viewportInteraction = this._createViewportGestureInteraction();
+        }
+
+        if (this._keyboardInteraction === null) {
+            this._keyboardInteraction = this._createKeyboardInteraction();
         }
 
         this.setupHandlers();
@@ -224,6 +225,27 @@ export default class InputController {
         );
     }
 
+    _createKeyboardInteraction() {
+        return new KeyboardInteraction({
+            inputState: this.input,
+            commandInput: this.$commandInput,
+            autocompleteController: this._autocompleteController,
+            measurementInteraction: this._measurementInteraction,
+            scopeModel: this._scopeModel,
+            uiController: UiController,
+            eventBus: this._eventBus,
+            arrowControlProvider: () => this._isArrowControlMethod(),
+            commandContextProvider: () => this.commandBarContext,
+            commandContextSetter: (commandContext) => {
+                this.commandBarContext = commandContext;
+            },
+            processCommand: () => this.processCommand(),
+            selectPreviousAircraft: () => this.selectPreviousAircraft(),
+            selectNextAircraft: () => this.selectNextAircraft(),
+            deselectAircraft: () => this.deselectAircraft()
+        });
+    }
+
     /**
      * Disable all event handlers and destroy the instance
      *
@@ -246,6 +268,7 @@ export default class InputController {
         this._selectionInteraction = null;
         this._commandInteraction = null;
         this._viewportInteraction = null;
+        this._keyboardInteraction = null;
         this.$element = null;
         this.$body = null;
         this.$window = null;
@@ -402,188 +425,7 @@ export default class InputController {
      * @private
      */
     _onKeydown(event) {
-        let { code } = event.originalEvent;
-        const isEscape = code === KEY_CODES.ESCAPE || code === LEGACY_KEY_CODES.ESCAPE;
-
-        if (this._isDialog(event.target) && !isEscape) {
-            // ignore input for dialogs
-            return;
-        }
-
-        // pass keboard inputs to autocomplete if it is active
-        if (this._autocompleteController.active) {
-            this._autocompleteController.onKeydownHandler(event);
-            return;
-        }
-
-        const currentCommandInputValue = this.$commandInput.val();
-
-        if (code == null) {
-            // fallback for legacy browsers like IE/Edge
-            code = event.originalEvent.keyCode;
-        }
-
-        // TODO: this switch can be simplified, there is a lot of repetition here
-        switch (code) {
-            case KEY_CODES.CONTROL_LEFT:
-            case KEY_CODES.CONTROL_RIGHT:
-                this._measurementInteraction.start();
-
-                break;
-            case KEY_CODES.ENTER:
-            case KEY_CODES.NUM_ENTER:
-            case LEGACY_KEY_CODES.ENTER:
-                this.processCommand();
-
-                break;
-            case KEY_CODES.PAGE_UP:
-            case LEGACY_KEY_CODES.PAGE_UP:
-                this.selectPreviousAircraft();
-                event.preventDefault();
-
-                break;
-            case KEY_CODES.PAGE_DOWN:
-            case LEGACY_KEY_CODES.PAGE_DOWN:
-                this.selectNextAircraft();
-                event.preventDefault();
-
-                break;
-            // turning
-            case KEY_CODES.LEFT_ARROW:
-            case LEGACY_KEY_CODES.LEFT_ARROW:
-                if (this._isArrowControlMethod() && this.commandBarContext === COMMAND_CONTEXT.AIRCRAFT) {
-                    this.$commandInput.val(`${currentCommandInputValue} t l `);
-                    event.preventDefault();
-                }
-
-                break;
-            case KEY_CODES.RIGHT_ARROW:
-            case LEGACY_KEY_CODES.RIGHT_ARROW:
-                if (this._isArrowControlMethod() && this.commandBarContext === COMMAND_CONTEXT.AIRCRAFT) {
-                    this.$commandInput.val(`${currentCommandInputValue} t r `);
-                    event.preventDefault();
-                }
-
-                break;
-            // climb / descend
-            case KEY_CODES.UP_ARROW:
-            case LEGACY_KEY_CODES.UP_ARROW:
-                if (this._isArrowControlMethod() && this.commandBarContext === COMMAND_CONTEXT.AIRCRAFT) {
-                    this.$commandInput.val(`${currentCommandInputValue} c `);
-                    event.preventDefault();
-                } else {
-                    this.selectPreviousAircraft();
-                    event.preventDefault();
-                }
-
-                break;
-            case KEY_CODES.DOWN_ARROW:
-            case LEGACY_KEY_CODES.DOWN_ARROW:
-                if (this._isArrowControlMethod() && this.commandBarContext === COMMAND_CONTEXT.AIRCRAFT) {
-                    this.$commandInput.val(`${currentCommandInputValue} d `);
-                    event.preventDefault();
-                } else {
-                    this.selectNextAircraft();
-                    event.preventDefault();
-                }
-
-                break;
-            // takeoff / landing
-            case KEY_CODES.NUM_DIVIDE:
-            case LEGACY_KEY_CODES.NUM_DIVIDE:
-                if (this.commandBarContext === COMMAND_CONTEXT.AIRCRAFT) {
-                    this.$commandInput.val(`${currentCommandInputValue} / `);
-                    event.preventDefault();
-                }
-
-                break;
-            case KEY_CODES.NUM_MULTIPLY:
-            case LEGACY_KEY_CODES.NUM_MULTIPLY:
-                if (this.commandBarContext === COMMAND_CONTEXT.AIRCRAFT) {
-                    this.$commandInput.val(`${currentCommandInputValue} * `);
-                    event.preventDefault();
-                }
-
-                break;
-            // speed up / slow down
-            case KEY_CODES.NUM_ADD:
-            case LEGACY_KEY_CODES.NUM_ADD:
-                if (this.commandBarContext === COMMAND_CONTEXT.AIRCRAFT) {
-                    this.$commandInput.val(`${currentCommandInputValue} + `);
-                    event.preventDefault();
-                }
-
-                break;
-            case KEY_CODES.NUM_SUBTRACT:
-            case LEGACY_KEY_CODES.NUM_SUBTRACT:
-                if (this.commandBarContext === COMMAND_CONTEXT.AIRCRAFT) {
-                    this.$commandInput.val(`${currentCommandInputValue} - `);
-                    event.preventDefault();
-                }
-
-                break;
-            case KEY_CODES.F1:
-            case LEGACY_KEY_CODES.F1:
-                event.preventDefault();
-                this._scopeModel.decreasePtlLength();
-
-                break;
-            case KEY_CODES.F2:
-            case LEGACY_KEY_CODES.F2:
-                event.preventDefault();
-                this._scopeModel.increasePtlLength();
-
-                break;
-            case KEY_CODES.F7:
-            case LEGACY_KEY_CODES.F7:
-                if (this.commandBarContext !== COMMAND_CONTEXT.SCOPE) {
-                    return;
-                }
-
-                this.$commandInput.val('QP_J ');
-                event.preventDefault();
-
-                break;
-            case KEY_CODES.BACKQUOTE:
-            case LEGACY_KEY_CODES.BACKQUOTE:
-                this.$commandInput.val('');
-                event.preventDefault();
-                this._toggleCommandBarContext();
-
-                break;
-            case KEY_CODES.TAB:
-            case LEGACY_KEY_CODES.TAB:
-                event.preventDefault();
-
-                if (this.commandBarContext === COMMAND_CONTEXT.AIRCRAFT) {
-                    this._autocompleteController.activate();
-                }
-
-                break;
-            case KEY_CODES.ESCAPE:
-            case LEGACY_KEY_CODES.ESCAPE: {
-                // TODO: Probably should have its own cancel button
-                this._measurementInteraction.reset();
-
-                UiController.closeAllDialogs();
-
-                const hasCallsign = _includes(currentCommandInputValue, this.input.callsign);
-                const hasOnlyCallsign = currentCommandInputValue.trim() === this.input.callsign;
-                const hasSelectedCallsign = this.input.callsign !== '';
-
-                if (!hasCallsign || hasOnlyCallsign || !hasSelectedCallsign) {
-                    this.deselectAircraft();
-
-                    return;
-                }
-
-                this.$commandInput.val(`${this.input.callsign} `);
-
-                break;
-            }
-            default:
-                this.$commandInput.focus();
-        }
+        this._keyboardInteraction.keydown(event);
     }
 
     /**
@@ -593,43 +435,8 @@ export default class InputController {
      * @private
      */
     _onKeyup(event) {
-        let { code } = event.originalEvent;
-
-        if (code == null) {
-            // fallback for legacy browsers like IE/Edge
-            code = event.originalEvent.keyCode;
-        }
-
-        switch (code) {
-            case KEY_CODES.CONTROL_LEFT:
-            case KEY_CODES.CONTROL_RIGHT:
-                this._measurementInteraction.stop();
-                this._eventBus.trigger(EVENT.MARK_SHALLOW_RENDER);
-
-                break;
-            default:
-        }
+        this._keyboardInteraction.keyup(event);
     }
-
-    /**
-     * Returns true if $element is part of a dialog
-     *
-     * @for InputController
-     * @method _isDialog
-     * @param element {jquery element}
-     * @return {boolean}
-     * @private
-     */
-    _isDialog($element) {
-        if ($element.classList.contains(CLASSNAMES.DIALOG)) {
-            return true;
-        }
-
-        const { parentElement } = $element;
-
-        return parentElement && this._isDialog(parentElement);
-    }
-
 
     /**
      * @for InputController
@@ -656,31 +463,6 @@ export default class InputController {
      */
     _isArrowControlMethod() {
         return GameController.game.option.getOptionByName(GAME_OPTION_NAMES.CONTROL_METHOD) === 'arrows';
-    }
-
-    /**
-     * Toggle command bar between aircraft commands and scope commands
-     *
-     * @for InputController
-     * @method _toggleCommandBarContext
-     */
-    _toggleCommandBarContext() {
-        switch (this.commandBarContext) {
-            case COMMAND_CONTEXT.AIRCRAFT:
-                this.commandBarContext = COMMAND_CONTEXT.SCOPE;
-                this.$commandInput.attr('placeholder', 'enter scope command');
-                this.$commandInput.toggleClass(SELECTORS.CLASSNAMES.COMMAND_SCOPE_MODE);
-
-                return;
-            case COMMAND_CONTEXT.SCOPE:
-                this.commandBarContext = COMMAND_CONTEXT.AIRCRAFT;
-                this.$commandInput.attr('placeholder', 'enter aircraft command');
-                this.$commandInput.toggleClass(SELECTORS.CLASSNAMES.COMMAND_SCOPE_MODE);
-
-                break;
-
-            default:
-        }
     }
 
     /**

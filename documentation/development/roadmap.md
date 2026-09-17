@@ -30,6 +30,7 @@ This roadmap tracks the current direction of the project. The order may change a
     - [x] Extract aircraft selection, callsign lookup, command-input focus, selection events, and aircraft history navigation into an injected `AircraftSelectionInteraction` while retaining public controller routing methods.
     - [x] Extract aircraft/scope/system command parsing, dispatch, history mutation, diagnostics, and command side effects into an injected `CommandInteraction` while retaining public controller routing methods.
     - [x] Extract wheel zoom, configurable drag-button matching, pan anchoring and deltas, mouse release, and zoom reset into an injected `ViewportGestureInteraction` while retaining measurement-first and semantic mouse routing in `InputController`.
+    - [x] Extract keyboard normalization, dialog/autocomplete gating, shortcuts, command-bar editing, context toggling, Escape policy, and keyup measurement behavior into an injected `KeyboardInteraction` while retaining controller event façades.
 - [ ] Resume feature development on the modernized foundation
 
 ## Simulation and realism

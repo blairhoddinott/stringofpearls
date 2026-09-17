@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import _cloneDeep from 'lodash/cloneDeep';
 import _filter from 'lodash/filter';
 import _has from 'lodash/has';
 import _inRange from 'lodash/inRange';
@@ -7,6 +6,7 @@ import AirportController from '../airport/AirportController';
 import AirportBackgroundRenderer from './AirportBackgroundRenderer';
 import AirportNavigationRenderer from './AirportNavigationRenderer';
 import AirportRunwayRenderer from './AirportRunwayRenderer';
+import AircraftTargetRenderer from './AircraftTargetRenderer';
 import CanvasHost from './CanvasHost';
 import CanvasRenderScheduler from './CanvasRenderScheduler';
 import CanvasStageModel from './CanvasStageModel';
@@ -16,29 +16,21 @@ import GameController from '../game/GameController';
 import MeasureTool from '../measurement/MeasureTool';
 import NavigationLibrary from '../navigationLibrary/NavigationLibrary';
 import TimeKeeper from '../engine/TimeKeeper';
-import { tau } from '../math/circle';
 import { round } from '../math/core';
 import {
     positive_intersection_with_rect,
-    vectorize2dFromRadians,
     vectorize2dFromDegrees,
     vadd,
     vscale
 } from '../math/vector';
-import {
-    FLIGHT_PHASE,
-    FLIGHT_CATEGORY
-} from '../constants/aircraftConstants';
+import { FLIGHT_CATEGORY } from '../constants/aircraftConstants';
 import {
     BASE_CANVAS_FONT,
     CANVAS_NAME
 } from '../constants/canvasConstants';
 import { THEME } from '../constants/themes';
 import { EVENT } from '../constants/eventNames';
-import {
-    INVALID_NUMBER,
-    TIME
-} from '../constants/globalConstants';
+import { INVALID_NUMBER } from '../constants/globalConstants';
 import { GAME_OPTION_NAMES } from '../constants/gameOptionConstants';
 import {
     degreesToRadians,
@@ -64,8 +56,9 @@ export default class CanvasController {
      * @param navigationRenderer {AirportNavigationRenderer} airport fix/procedure presentation; nullish/omitted constructs a default
      * @param backgroundRenderer {AirportBackgroundRenderer} airport background presentation; nullish/omitted constructs a default
      * @param measurementRenderer {MeasurementOverlayRenderer} measurement overlay presentation; nullish/omitted constructs a default
+     * @param aircraftTargetRenderer {AircraftTargetRenderer} aircraft target geometry presentation; nullish/omitted constructs a default
      */
-    constructor($element, aircraftController, scopeModel, storageAdapter, delayScheduler, renderScheduler, canvasHost, viewport, runwayRenderer, navigationRenderer, backgroundRenderer, measurementRenderer) {
+    constructor($element, aircraftController, scopeModel, storageAdapter, delayScheduler, renderScheduler, canvasHost, viewport, runwayRenderer, navigationRenderer, backgroundRenderer, measurementRenderer, aircraftTargetRenderer) {
         /**
          * Reference to the `window` object
          *
@@ -166,6 +159,13 @@ export default class CanvasController {
         this._measurementRenderer = measurementRenderer ?? new MeasurementOverlayRenderer(
             this._viewport,
             MeasureTool
+        );
+        this._aircraftTargetRenderer = aircraftTargetRenderer ?? new AircraftTargetRenderer(
+            this._viewport,
+            this._scopeModel,
+            GameController,
+            TimeKeeper,
+            () => prop.input.callsign
         );
 
         /**
@@ -491,7 +491,7 @@ export default class CanvasController {
 
         this._clearCanvasContext(dynamicCanvasCtx);
         this._drawSelectedAircraftCompass(dynamicCanvasCtx);
-        this._drawRadarTargetList(dynamicCanvasCtx);
+        this._aircraftTargetRenderer.draw(dynamicCanvasCtx, this.theme);
         this._drawAircraftDataBlocks(dynamicCanvasCtx);
         this._measurementRenderer.draw(dynamicCanvasCtx, this.theme);
 
@@ -563,252 +563,6 @@ export default class CanvasController {
         );
         cc.restore();
     }
-
-    /**
-     * Draw a trailing indicator 2.5 NM (4.6km) behind landing aircraft to help with traffic spacing
-     *
-     * POSITIONING: Before calling this method, translate to the AIRPORT CENTER
-     *
-     * @for CanvasController
-     * @method _drawSeparationIndicator
-     * @param cc {HTMLCanvasContext}
-     * @param aircraftModel {AircraftModel}
-     * @returns undefined
-     * @private
-     */
-    _drawSeparationIndicator(cc, aircraftModel) {
-        if (!GameController.shouldUseTrailingSeparationIndicator(aircraftModel)) {
-            return;
-        }
-
-        cc.save();
-
-        const { fms, relativePosition } = aircraftModel;
-        const oppositeOfRunwayHeading = fms.arrivalRunwayModel.oppositeAngle;
-        const aircraftCanvasPosition = this._viewport.calculateRoundedCanvasPositionFromRelativePosition(relativePosition);
-        cc.strokeStyle = this.theme.RADAR_TARGET.TRAILING_SEPARATION_INDICATOR;
-        cc.lineWidth = 3;
-
-        cc.translate(...aircraftCanvasPosition);
-        cc.rotate(oppositeOfRunwayHeading);
-        cc.beginPath();
-
-        const indicatorPaddingPx = 5;
-        const indicatorKmInTrail = 5.556; // 5.556km = 3.0nm
-        const pixelsInTrail = this._viewport._translateKilometersToPixels(indicatorKmInTrail);
-
-        cc.moveTo(-indicatorPaddingPx, -pixelsInTrail);
-        cc.lineTo(indicatorPaddingPx, -pixelsInTrail);
-        cc.stroke();
-
-        cc.restore();
-    }
-
-    /**
-     * Draws circle around aircraft that are in (or soon to be in) conflict with another aircraft
-     *
-     * POSITIONING: Before calling this method, translate to the AIRCRAFT POSITION
-     *
-     * These rings are drawn independently of user-set halos
-     *
-     * @for CanvasController
-     * @method _drawAircraftConflictRings
-     * @param cc {HTMLCanvasContext}
-     * @param radarTargetModel {RadarTargetModel}
-     * @returns undefined
-     * @private
-     */
-    _drawAircraftConflictRings(cc, radarTargetModel) {
-        const { aircraftModel } = radarTargetModel;
-        const aircraftAlerts = aircraftModel.getAlerts();
-        const radiusNm = 3;
-
-        if (!aircraftAlerts[0]) {
-            return;
-        }
-
-        let strokeStyle = this.theme.RADAR_TARGET.RING_CONFLICT;
-
-        if (aircraftAlerts[1]) {
-            strokeStyle = this.theme.RADAR_TARGET.RING_VIOLATION;
-        }
-
-        cc.strokeStyle = strokeStyle;
-
-        cc.beginPath();
-        cc.arc(0, 0, this._viewport._translateKilometersToPixels(km(radiusNm)), 0, tau());
-        cc.stroke();
-    }
-
-    /**
-     * Draws circle around aircraft with radius as requested by the user
-     *
-     * POSITIONING: Before calling this method, translate to the AIRCRAFT POSITION
-     *
-     * @for CanvasController
-     * @method _drawAircraftHalo
-     * @param cc {HTMLCanvasContext}
-     * @param radarTargetModel {RadarTargetModel}
-     * @returns undefined
-     * @private
-     */
-    _drawAircraftHalo(cc, radarTargetModel) {
-        if (!radarTargetModel.hasHalo) {
-            return;
-        }
-
-        const radiusNm = radarTargetModel.haloRadius;
-        cc.strokeStyle = this.theme.RADAR_TARGET.HALO;
-
-        cc.beginPath();
-        cc.arc(0, 0, this._viewport._translateKilometersToPixels(km(radiusNm)), 0, tau());
-        cc.stroke();
-    }
-
-    /**
-     * Draw the RADAR RETURN AND HISTORY DOTS ONLY of the specified radar target model
-     *
-     * POSITIONING: Before calling this method, translate to the AIRPORT CENTER
-     *
-     * @for CanvasController
-     * @method _drawSingleRadarTarget
-     * @param cc {HTMLCanvasContext}
-     * @param radarTargetModel {RadarTargetModel}
-     * @returns undefined
-     * @private
-     */
-    _drawSingleRadarTarget(cc, radarTargetModel) {
-        const { aircraftModel } = radarTargetModel;
-
-        if (!aircraftModel.isVisible()) {
-            return;
-        }
-
-        cc.save();
-
-        // TODO: death to the `prop`!!!
-        const match = prop.input.callsign.length > 0 && aircraftModel.matchCallsign(prop.input.callsign);
-        let fillStyle = this.theme.RADAR_TARGET.HISTORY_DOT_OUTSIDE_RANGE;
-
-        if (aircraftModel.isControllable) {
-            fillStyle = this.theme.RADAR_TARGET.HISTORY_DOT_INSIDE_RANGE;
-        }
-
-        cc.fillStyle = fillStyle;
-
-        const positionHistory = aircraftModel.relativePositionHistory;
-
-        for (let i = 0; i < positionHistory.length; i++) {
-            const position = aircraftModel.relativePositionHistory[i];
-            const canvasPosition = this._viewport.calculatePreciseCanvasPositionFromRelativePosition(position);
-
-            cc.beginPath();
-            cc.arc(
-                ...canvasPosition,
-                this._viewport._translateKilometersToPixels(this.theme.RADAR_TARGET.HISTORY_DOT_RADIUS_KM),
-                0,
-                tau()
-            );
-            cc.closePath();
-            cc.fill();
-        }
-
-        cc.restore();
-        cc.save();
-
-        if (positionHistory.length > this.theme.RADAR_TARGET.HISTORY_LENGTH) {
-            // TODO: This slice is being reassigned to the aircraft, which doesn't really
-            // make sense as a canvas controller job. This should be done elsewhere.
-            aircraftModel.relativePositionHistory = positionHistory.slice(
-                positionHistory.length - this.theme.RADAR_TARGET.HISTORY_LENGTH,
-                positionHistory.length
-            );
-        }
-
-        if (aircraftModel.isEstablishedOnCourse()) {
-            this._drawSeparationIndicator(cc, aircraftModel);
-        }
-
-        // Draw the future path
-        switch (GameController.game.option.getOptionByName('drawProjectedPaths')) {
-            case 'always':
-                this._drawAircraftFuturePath(cc, aircraftModel, match);
-
-                break;
-            case 'selected':
-                if (match) {
-                    this._drawAircraftFuturePath(cc, aircraftModel, match);
-                }
-
-                break;
-            default:
-                break;
-        }
-
-        const aircraftCanvasPosition = this._viewport.calculatePreciseCanvasPositionFromRelativePosition(
-            aircraftModel.relativePosition
-        );
-
-        cc.translate(...aircraftCanvasPosition);
-
-        this._drawAircraftVectorLines(cc, aircraftModel);
-        this._drawAircraftHalo(cc, radarTargetModel);
-        this._drawAircraftConflictRings(cc, radarTargetModel);
-
-        let radarTargetRadiusKm = this.theme.RADAR_TARGET.RADIUS_KM;
-
-        // Draw bigger circle around radar target when the aircraftModel is selected
-        if (match) {
-            radarTargetRadiusKm = this.theme.RADAR_TARGET.RADIUS_SELECTED_KM;
-        }
-
-        // Draw the radar target (aka aircraft position dot)
-        cc.fillStyle = this.theme.RADAR_TARGET.RADAR_TARGET;
-        cc.beginPath();
-        cc.arc(0, 0, this._viewport._translateKilometersToPixels(radarTargetRadiusKm), 0, tau());
-        cc.fill();
-
-        cc.restore();
-    }
-
-    /**
-     * Draw aircraft vector lines ("projected track lines" or "PTL")
-     *
-     * POSITIONING: Before calling this method, translate to the AIRCRAFT POSITION
-     *
-     * Note: These extend in front of aircraft a definable number of minutes
-     *
-     * @for CanvasController
-     * @method _drawAircraftVectorLines
-     * @param cc {HTMLCanvasContext}
-     * @param aircraftModel {AircraftModel}
-     * @private
-     */
-    _drawAircraftVectorLines(cc, aircraftModel) {
-        if (aircraftModel.hit) {
-            return;
-        }
-
-        cc.save();
-
-        cc.fillStyle = this.theme.RADAR_TARGET.PROJECTED_TRACK_LINES;
-        cc.strokeStyle = this.theme.RADAR_TARGET.PROJECTED_TRACK_LINES;
-
-        const lineLengthInMinutes = this._scopeModel.ptlLength;
-        const lineLengthInHours = lineLengthInMinutes * TIME.ONE_MINUTE_IN_HOURS;
-        const lineLength_km = km(aircraftModel.groundSpeed * lineLengthInHours);
-        const groundTrackVector = vectorize2dFromRadians(aircraftModel.groundTrack);
-        const scaledGroundTrackVector = vscale(groundTrackVector, lineLength_km);
-        const screenPositionOffsetX = this._viewport._translateKilometersToPixels(scaledGroundTrackVector[0]);
-        const screenPositionOffsetY = this._viewport._translateKilometersToPixels(scaledGroundTrackVector[1]);
-
-        cc.beginPath();
-        cc.moveTo(0, 0);
-        cc.lineTo(screenPositionOffsetX, -screenPositionOffsetY);
-        cc.stroke();
-        cc.restore();
-    }
-
     // TODO: This is currently not working correctly and not in use
     /**
      * Draw dashed line from last coordinate of future track through
@@ -847,127 +601,6 @@ export default class CanvasController {
 
         // cc.stroke();
     }
-
-    /**
-     * Run physics updates into the future, draw future track
-     *
-     * POSITIONING: Before calling this method, translate to the AIRPORT CENTER
-     *
-     * @for CanvasController
-     * @method _drawAircraftFuturePath
-     * @param cc {HTMLCanvasContext}
-     * @param aircraftModel {AircraftModel}
-     * @param selected {boolean}
-     * @private
-     */
-    _drawAircraftFuturePath(cc, aircraftModel, selected) {
-        if (aircraftModel.isTaxiing() || TimeKeeper.simulationRate !== 1) {
-            return;
-        }
-
-        let was_locked = false;
-        const future_track = [];
-        const fms_twin = _cloneDeep(aircraftModel.fms);
-        const twin = _cloneDeep(aircraftModel);
-
-        twin.fms = fms_twin;
-        twin.projected = true;
-        TimeKeeper.saveDeltaTimeBeforeFutureTrackCalculation();
-
-        for (let i = 0; i < 60; i++) {
-            twin.update();
-
-            const ils_locked = twin.isEstablishedOnCourse() && twin.fms.currentPhase === FLIGHT_PHASE.APPROACH;
-
-            future_track.push([...twin.relativePosition, ils_locked]);
-
-            if (ils_locked && twin.altitude < 500) {
-                break;
-            }
-        }
-
-        TimeKeeper.restoreDeltaTimeAfterFutureTrackCalculation();
-
-        cc.save();
-
-        // future track colors
-        let strokeStyle = this.theme.RADAR_TARGET.PROJECTION_ARRIVAL_ALL;
-
-        if (aircraftModel.category === FLIGHT_CATEGORY.DEPARTURE) {
-            if (selected) {
-                strokeStyle = this.theme.RADAR_TARGET.PROJECTION_DEPARTURE;
-            } else {
-                strokeStyle = this.theme.RADAR_TARGET.PROJECTION_DEPARTURE_ALL;
-            }
-        } else if (selected) {
-            strokeStyle = this.theme.RADAR_TARGET.PROJECTION_ARRIVAL;
-        }
-
-        cc.strokeStyle = strokeStyle;
-        cc.globalCompositeOperation = 'screen';
-        cc.lineWidth = 2;
-        cc.beginPath();
-
-        for (let i = 0; i < future_track.length; i++) {
-            const track = future_track[i];
-            const ils_locked = track[2];
-            const trackPosition = this._viewport.calculatePreciseCanvasPositionFromRelativePosition(track);
-
-            if (ils_locked && !was_locked) {
-                cc.lineTo(trackPosition[0], trackPosition[1]);
-                // end the current path, start a new path with lockedStroke
-                cc.stroke();
-                cc.strokeStyle = this.theme.RADAR_TARGET.PROJECTION_ESTABLISHED_ON_APPROACH;
-                cc.lineWidth = 2;
-                cc.beginPath();
-                cc.moveTo(trackPosition[0], trackPosition[1]);
-
-                was_locked = true;
-
-                continue;
-            }
-
-            if (i === 0) {
-                cc.moveTo(trackPosition[0], trackPosition[1]);
-            } else {
-                cc.lineTo(trackPosition[0], trackPosition[1]);
-            }
-        }
-
-        cc.stroke();
-
-        // TODO: following method not in use, leaving for posterity
-        // this.canvas_draw_future_track_fixes(cc, twin, future_track);
-
-        cc.restore();
-    }
-
-    /**
-     * Draw the RADAR RETURN AND HISTORY DOTS ONLY of all radar target models
-     *
-     * POSITIONING: Before calling this method, ensure NO TRANSLATION has occurred
-     *
-     * @for CanvasController
-     * @method _drawRadarTargetList
-     * @param cc {HTMLCanvasContext}
-     * @returns undefined
-     * @private
-     */
-
-    _drawRadarTargetList(cc) {
-        cc.font = BASE_CANVAS_FONT;
-        cc.save();
-        this._ccTranslateFromCanvasOriginToAirportCenter(cc);
-
-        const radarTargetModels = this._scopeModel.radarTargetCollection.items;
-
-        for (let i = 0; i < radarTargetModels.length; i++) {
-            this._drawSingleRadarTarget(cc, radarTargetModels[i]);
-        }
-
-        cc.restore();
-    }
-
     /**
      * Draw an aircraft's data block
      * (box that contains callsign, altitude, speed)

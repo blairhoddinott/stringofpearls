@@ -27,7 +27,7 @@ const STATIC_DRAW_METHODS = [
 
 const DYNAMIC_DRAW_METHODS = [
     '_drawSelectedAircraftCompass',
-    '_drawRadarTargetList',
+    'aircraftTargetRenderer.draw',
     '_drawAircraftDataBlocks',
     'measurementRenderer.draw'
 ];
@@ -66,6 +66,9 @@ const buildController = () => {
     };
     controller._measurementRenderer = {
         draw: () => calls.push(`${dynamicContext.name}:measurementRenderer.draw`)
+    };
+    controller._aircraftTargetRenderer = {
+        draw: () => calls.push(`${dynamicContext.name}:aircraftTargetRenderer.draw`)
     };
 
     for (const methodName of STATIC_DRAW_METHODS.filter((name) => !name.includes('Renderer.'))) {
@@ -323,6 +326,40 @@ ava.serial('canvasUpdatePost() delegates measurement after aircraft rendering', 
     }
 });
 
+ava.serial('canvasUpdatePost() delegates aircraft targets between compass and data blocks', (t) => {
+    const {
+        calls, controller, dynamicContext
+    } = buildController();
+    const shouldUpdate = sinon.stub(TimeKeeper, 'shouldUpdate').returns(false);
+    const oldDrawRadarTargetList = sinon.spy();
+
+    controller.theme = { name: 'theme' };
+    controller._drawRadarTargetList = oldDrawRadarTargetList;
+    controller._aircraftTargetRenderer = {
+        draw: sinon.spy((context, theme) => {
+            t.is(context, dynamicContext);
+            t.is(theme, controller.theme);
+            calls.push(`${CANVAS_NAME.DYNAMIC}:aircraftTargetRenderer.draw`);
+        })
+    };
+
+    try {
+        controller.canvasUpdatePost();
+
+        t.true(controller._aircraftTargetRenderer.draw.calledOnceWithExactly(
+            dynamicContext,
+            controller.theme
+        ));
+        t.true(oldDrawRadarTargetList.notCalled);
+        t.true(calls.indexOf(`${CANVAS_NAME.DYNAMIC}:_drawSelectedAircraftCompass`) <
+            calls.indexOf(`${CANVAS_NAME.DYNAMIC}:aircraftTargetRenderer.draw`));
+        t.true(calls.indexOf(`${CANVAS_NAME.DYNAMIC}:aircraftTargetRenderer.draw`) <
+            calls.indexOf(`${CANVAS_NAME.DYNAMIC}:_drawAircraftDataBlocks`));
+    } finally {
+        shouldUpdate.restore();
+    }
+});
+
 ava.serial('canvasUpdatePost() renders only the dynamic canvas when simulation time advances', (t) => {
     const { calls, controller } = buildController();
     const shouldUpdate = sinon.stub(TimeKeeper, 'shouldUpdate').returns(true);
@@ -471,6 +508,10 @@ ava.serial('constructing without an explicit host builds a default CanvasHost ow
         t.is(controller._backgroundRenderer._viewport, viewport);
         t.is(controller._measurementRenderer._viewport, viewport);
         t.is(controller._measurementRenderer._measureTool, MeasureTool);
+        t.is(controller._aircraftTargetRenderer._viewport, viewport);
+        t.is(controller._aircraftTargetRenderer._scopeModel, null);
+        t.is(controller._aircraftTargetRenderer._gameController, GameController);
+        t.is(controller._aircraftTargetRenderer._timeKeeper, TimeKeeper);
         t.true(viewport.initStorage.calledOnce);
     } finally {
         initStub.restore();
@@ -487,6 +528,7 @@ ava.serial('an explicitly supplied host is retained unchanged while the viewport
     const navigationRenderer = {};
     const backgroundRenderer = {};
     const measurementRenderer = {};
+    const aircraftTargetRenderer = {};
 
     const initStub = sinon.stub(CanvasController.prototype, '_init').returnsThis();
     const setupStub = sinon.stub(CanvasController.prototype, '_setupHandlers').returnsThis();
@@ -495,7 +537,8 @@ ava.serial('an explicitly supplied host is retained unchanged while the viewport
     try {
         const controller = new CanvasController(
             $element, null, null, null, null, null, explicitHost, viewport,
-            runwayRenderer, navigationRenderer, backgroundRenderer, measurementRenderer
+            runwayRenderer, navigationRenderer, backgroundRenderer, measurementRenderer,
+            aircraftTargetRenderer
         );
 
         t.is(controller._canvasHost, explicitHost);
@@ -504,6 +547,7 @@ ava.serial('an explicitly supplied host is retained unchanged while the viewport
         t.is(controller._navigationRenderer, navigationRenderer);
         t.is(controller._backgroundRenderer, backgroundRenderer);
         t.is(controller._measurementRenderer, measurementRenderer);
+        t.is(controller._aircraftTargetRenderer, aircraftTargetRenderer);
         t.true(viewport.initStorage.calledOnce);
     } finally {
         initStub.restore();

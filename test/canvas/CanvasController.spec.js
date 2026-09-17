@@ -7,15 +7,16 @@ import CanvasRenderScheduler from '../../src/assets/scripts/client/canvas/Canvas
 import CanvasStageModel from '../../src/assets/scripts/client/canvas/CanvasStageModel';
 import { CANVAS_NAME } from '../../src/assets/scripts/client/constants/canvasConstants';
 import TimeKeeper from '../../src/assets/scripts/client/engine/TimeKeeper';
+import NavigationLibrary from '../../src/assets/scripts/client/navigationLibrary/NavigationLibrary';
 
 const STATIC_DRAW_METHODS = [
     '_drawVideoMap',
     '_drawTerrain',
     '_drawRestrictedAirspace',
     'runwayRenderer.drawRunways',
-    '_drawAirportFixesAndLabels',
-    '_drawSids',
-    '_drawStars',
+    'navigationRenderer.drawFixes',
+    'navigationRenderer.drawSids',
+    'navigationRenderer.drawStars',
     '_drawAirspaceAndRangeRings',
     '_drawAirspaceShelvesAndLabels',
     'runwayRenderer.drawRunwayLabels',
@@ -49,8 +50,13 @@ const buildController = () => {
         drawRunways: () => calls.push(`${staticContext.name}:runwayRenderer.drawRunways`),
         drawRunwayLabels: () => calls.push(`${staticContext.name}:runwayRenderer.drawRunwayLabels`)
     };
+    controller._navigationRenderer = {
+        drawFixes: () => calls.push(`${staticContext.name}:navigationRenderer.drawFixes`),
+        drawSids: () => calls.push(`${staticContext.name}:navigationRenderer.drawSids`),
+        drawStars: () => calls.push(`${staticContext.name}:navigationRenderer.drawStars`)
+    };
 
-    for (const methodName of STATIC_DRAW_METHODS.filter((name) => !name.startsWith('runwayRenderer.'))) {
+    for (const methodName of STATIC_DRAW_METHODS.filter((name) => !name.includes('Renderer.'))) {
         controller[methodName] = () => calls.push(`${staticContext.name}:${methodName}`);
     }
 
@@ -128,9 +134,55 @@ ava.serial('canvasUpdatePost() delegates runway bodies and labels to the exact r
         t.true(oldDrawRunways.notCalled);
         t.true(oldDrawRunwayLabels.notCalled);
         t.true(calls.indexOf(`${CANVAS_NAME.STATIC}:_drawRestrictedAirspace`) < calls.indexOf(`${CANVAS_NAME.STATIC}:runway-bodies`));
-        t.true(calls.indexOf(`${CANVAS_NAME.STATIC}:runway-bodies`) < calls.indexOf(`${CANVAS_NAME.STATIC}:_drawAirportFixesAndLabels`));
+        t.true(calls.indexOf(`${CANVAS_NAME.STATIC}:runway-bodies`) < calls.indexOf(`${CANVAS_NAME.STATIC}:navigationRenderer.drawFixes`));
         t.true(calls.indexOf(`${CANVAS_NAME.STATIC}:_drawAirspaceShelvesAndLabels`) < calls.indexOf(`${CANVAS_NAME.STATIC}:runway-labels`));
         t.true(calls.indexOf(`${CANVAS_NAME.STATIC}:runway-labels`) < calls.indexOf(`${CANVAS_NAME.STATIC}:_drawCurrentScale`));
+    } finally {
+        shouldUpdate.restore();
+    }
+});
+
+ava.serial('canvasUpdatePost() delegates fixes and procedures at their inherited order positions', (t) => {
+    const {
+        calls, controller, staticContext
+    } = buildController();
+    const shouldUpdate = sinon.stub(TimeKeeper, 'shouldUpdate').returns(false);
+    const oldDrawFixes = sinon.spy();
+    const oldDrawSids = sinon.spy();
+    const oldDrawStars = sinon.spy();
+
+    controller.theme = { name: 'theme' };
+    controller._shouldDrawFixLabels = 'fixes-enabled';
+    controller._shouldDrawSidMap = 'sids-enabled';
+    controller._shouldDrawStarMap = 'stars-enabled';
+    controller._drawAirportFixesAndLabels = oldDrawFixes;
+    controller._drawSids = oldDrawSids;
+    controller._drawStars = oldDrawStars;
+    controller._navigationRenderer = {
+        drawFixes: sinon.spy(() => calls.push(`${CANVAS_NAME.STATIC}:navigation-fixes`)),
+        drawSids: sinon.spy(() => calls.push(`${CANVAS_NAME.STATIC}:navigation-sids`)),
+        drawStars: sinon.spy(() => calls.push(`${CANVAS_NAME.STATIC}:navigation-stars`))
+    };
+
+    try {
+        controller.canvasUpdatePost();
+
+        t.true(controller._navigationRenderer.drawFixes.calledOnceWithExactly(
+            staticContext, 'fixes-enabled', controller.theme
+        ));
+        t.true(controller._navigationRenderer.drawSids.calledOnceWithExactly(
+            staticContext, 'sids-enabled', controller.theme
+        ));
+        t.true(controller._navigationRenderer.drawStars.calledOnceWithExactly(
+            staticContext, 'stars-enabled', controller.theme
+        ));
+        t.true(oldDrawFixes.notCalled);
+        t.true(oldDrawSids.notCalled);
+        t.true(oldDrawStars.notCalled);
+        t.true(calls.indexOf(`${CANVAS_NAME.STATIC}:runwayRenderer.drawRunways`) < calls.indexOf(`${CANVAS_NAME.STATIC}:navigation-fixes`));
+        t.true(calls.indexOf(`${CANVAS_NAME.STATIC}:navigation-fixes`) < calls.indexOf(`${CANVAS_NAME.STATIC}:navigation-sids`));
+        t.true(calls.indexOf(`${CANVAS_NAME.STATIC}:navigation-sids`) < calls.indexOf(`${CANVAS_NAME.STATIC}:navigation-stars`));
+        t.true(calls.indexOf(`${CANVAS_NAME.STATIC}:navigation-stars`) < calls.indexOf(`${CANVAS_NAME.STATIC}:_drawAirspaceAndRangeRings`));
     } finally {
         shouldUpdate.restore();
     }
@@ -263,6 +315,25 @@ ava('destroy() delegates host teardown and restores an initial render plan', (t)
 // characterizations prove the coordinate/pan paths use the exact injected
 // viewport and that a default-created host is wired to that same viewport.
 
+ava('_drawText() remains available for non-navigation airspace labels', (t) => {
+    const controller = Object.create(CanvasController.prototype);
+    const context = { textAlign: 'right', fillText: sinon.spy() };
+    const relativePosition = [1, 2];
+
+    controller._viewport = {
+        calculateRoundedCanvasPositionFromRelativePosition: sinon.stub()
+            .withArgs(relativePosition).returns([100, 200])
+    };
+
+    const result = controller._drawText(context, relativePosition, ['ONE', 'TWO']);
+
+    t.is(result, undefined);
+    t.deepEqual(context.fillText.args, [
+        ['ONE', 90, 200],
+        ['TWO', 90, 215]
+    ]);
+});
+
 ava('_onCenterPointInView() pans the exact injected viewport, not the default singleton', (t) => {
     const controller = Object.create(CanvasController.prototype);
     const viewport = {
@@ -306,6 +377,8 @@ ava.serial('constructing without an explicit host builds a default CanvasHost ow
         t.is(controller._viewport, viewport);
         t.is(controller._canvasHost._stageModel, viewport);
         t.is(controller._runwayRenderer._viewport, viewport);
+        t.is(controller._navigationRenderer._viewport, viewport);
+        t.is(controller._navigationRenderer._navigationLibrary, NavigationLibrary);
         t.true(viewport.initStorage.calledOnce);
     } finally {
         initStub.restore();
@@ -319,6 +392,7 @@ ava.serial('an explicitly supplied host is retained unchanged while the viewport
     const viewport = { initStorage: sinon.spy() };
     const explicitHost = { destroy: sinon.spy() };
     const runwayRenderer = {};
+    const navigationRenderer = {};
 
     const initStub = sinon.stub(CanvasController.prototype, '_init').returnsThis();
     const setupStub = sinon.stub(CanvasController.prototype, '_setupHandlers').returnsThis();
@@ -326,12 +400,13 @@ ava.serial('an explicitly supplied host is retained unchanged while the viewport
 
     try {
         const controller = new CanvasController(
-            $element, null, null, null, null, null, explicitHost, viewport, runwayRenderer
+            $element, null, null, null, null, null, explicitHost, viewport, runwayRenderer, navigationRenderer
         );
 
         t.is(controller._canvasHost, explicitHost);
         t.is(controller._viewport, viewport);
         t.is(controller._runwayRenderer, runwayRenderer);
+        t.is(controller._navigationRenderer, navigationRenderer);
         t.true(viewport.initStorage.calledOnce);
     } finally {
         initStub.restore();

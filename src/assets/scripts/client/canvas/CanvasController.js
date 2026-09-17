@@ -4,6 +4,7 @@ import _filter from 'lodash/filter';
 import _has from 'lodash/has';
 import _inRange from 'lodash/inRange';
 import AirportController from '../airport/AirportController';
+import AirportNavigationRenderer from './AirportNavigationRenderer';
 import AirportRunwayRenderer from './AirportRunwayRenderer';
 import CanvasHost from './CanvasHost';
 import CanvasRenderScheduler from './CanvasRenderScheduler';
@@ -41,7 +42,6 @@ import {
     TIME
 } from '../constants/globalConstants';
 import { GAME_OPTION_NAMES } from '../constants/gameOptionConstants';
-import { PROCEDURE_TYPE } from '../constants/routeConstants';
 import { leftPad } from '../utilities/generalUtilities';
 import {
     DECIMAL_RADIX,
@@ -65,8 +65,9 @@ export default class CanvasController {
      * @param canvasHost {CanvasHost} browser-bound canvas DOM/context lifecycle; nullish/omitted constructs a default
      * @param viewport {CanvasStageModel} viewport/camera dimensions, pan and zoom; nullish/omitted uses the shared singleton
      * @param runwayRenderer {AirportRunwayRenderer} airport runway presentation; nullish/omitted constructs a default
+     * @param navigationRenderer {AirportNavigationRenderer} airport fix/procedure presentation; nullish/omitted constructs a default
      */
-    constructor($element, aircraftController, scopeModel, storageAdapter, delayScheduler, renderScheduler, canvasHost, viewport, runwayRenderer) {
+    constructor($element, aircraftController, scopeModel, storageAdapter, delayScheduler, renderScheduler, canvasHost, viewport, runwayRenderer, navigationRenderer) {
         /**
          * Reference to the `window` object
          *
@@ -134,6 +135,22 @@ export default class CanvasController {
         this._runwayRenderer = runwayRenderer ?? new AirportRunwayRenderer(
             this._viewport,
             () => AirportController.airport_get()
+        );
+
+        /**
+         * Owns airport fix, SID, and STAR presentation.
+         *
+         * The default renderer receives the controller's exact viewport and
+         * the compatibility navigation owner. An explicit renderer is retained
+         * unchanged.
+         *
+         * @property _navigationRenderer
+         * @type {AirportNavigationRenderer}
+         * @private
+         */
+        this._navigationRenderer = navigationRenderer ?? new AirportNavigationRenderer(
+            this._viewport,
+            NavigationLibrary
         );
 
         /**
@@ -450,9 +467,9 @@ export default class CanvasController {
             this._drawTerrain(staticCanvasCtx);
             this._drawRestrictedAirspace(staticCanvasCtx);
             this._runwayRenderer.drawRunways(staticCanvasCtx, this._shouldDrawFixLabels, this.theme);
-            this._drawAirportFixesAndLabels(staticCanvasCtx);
-            this._drawSids(staticCanvasCtx);
-            this._drawStars(staticCanvasCtx);
+            this._navigationRenderer.drawFixes(staticCanvasCtx, this._shouldDrawFixLabels, this.theme);
+            this._navigationRenderer.drawSids(staticCanvasCtx, this._shouldDrawSidMap, this.theme);
+            this._navigationRenderer.drawStars(staticCanvasCtx, this._shouldDrawStarMap, this.theme);
             this._drawAirspaceAndRangeRings(staticCanvasCtx);
             this._drawAirspaceShelvesAndLabels(staticCanvasCtx);
             this._runwayRenderer.drawRunwayLabels(staticCanvasCtx, this._shouldDrawFixLabels, this.theme);
@@ -537,235 +554,15 @@ export default class CanvasController {
     }
 
     /**
-     * Draw the provided `FixModel`, including triangle marker AND text label
+     * Draw the provided text at the specified relative position.
      *
-     * POSITIONING: Before calling this method, translate to the AIRPORT CENTER
+     * This helper remains in the controller for airspace shelf labels. Procedure
+     * labels use the equivalent renderer-local helper.
      *
-     * @for CanvasController
-     * @method _drawSingleFixAndLabel
      * @param cc {HTMLCanvasContext}
-     * @param fixModel {FixModel}
-     * @returns undefined
-     * @private
-     */
-    _drawSingleFixAndLabel(cc, fixModel) {
-        const fixCanvasPosition = this._viewport.calculateRoundedCanvasPositionFromRelativePosition(fixModel.relativePosition);
-
-        cc.save();
-        cc.translate(...fixCanvasPosition);
-        cc.fillStyle = this.theme.SCOPE.FIX_FILL;
-        cc.globalCompositeOperation = 'source-over';
-        cc.lineWidth = 1;
-        cc.beginPath();
-        cc.moveTo(0, -5);
-        cc.lineTo(4, 3);
-        cc.lineTo(-4, 3);
-        cc.closePath();
-        cc.fill();
-        cc.fillStyle = this.theme.SCOPE.FIX_TEXT;
-        cc.textAlign = 'center';
-        cc.textBaseline = 'top';
-        cc.fillText(fixModel.name, 0, 6);
-        cc.restore();
-    }
-
-    /**
-     * Draw fixes and labels
-     *
-     * POSITIONING: Before calling this method, ensure NO TRANSLATION has occurred
-     *
-     * @for CanvasController
-     * @method _drawAirportFixesAndLabels
-     * @param cc {HTMLCanvasContext}
-     * @returns undefined
-     * @private
-     */
-    _drawAirportFixesAndLabels(cc) {
-        if (!this._shouldDrawFixLabels) {
-            return;
-        }
-
-        cc.save();
-        this._ccTranslateFromCanvasOriginToAirportCenter(cc);
-
-        cc.lineJoin = 'round';
-        cc.font = BASE_CANVAS_FONT;
-
-        for (let i = 0; i < NavigationLibrary.realFixes.length; i++) {
-            const fixModel = NavigationLibrary.realFixes[i];
-
-            this._drawSingleFixAndLabel(cc, fixModel);
-        }
-
-        cc.restore();
-    }
-
-    // TODO: break this method up into smaller chunks
-    /**
-     * Draw SID lines and labels
-     *
-     * POSITIONING: Before calling this method, ensure NO TRANSLATION has occurred
-     *
-     * @for CanvasController
-     * @method _drawSids
-     * @param cc {HTMLCanvasContext}
-     * @returns undefined
-     * @private
-     */
-    _drawSids(cc) {
-        if (!this._shouldDrawSidMap) {
-            return;
-        }
-
-        const textAtFix = [];
-        const sidLines = NavigationLibrary.getProcedureLines(PROCEDURE_TYPE.SID);
-
-        cc.save();
-        this._ccTranslateFromCanvasOriginToAirportCenter(cc);
-        cc.strokeStyle = this.theme.SCOPE.SID;
-        cc.fillStyle = this.theme.SCOPE.SID;
-        cc.setLineDash([1, 10]);
-        cc.font = 'italic 14px monoOne, monospace';
-
-        for (let i = 0; i < sidLines.length; i++) {
-            const sid = sidLines[i];
-            let shouldDrawProcedureName = true;
-
-            for (let j = 0; j < sid.lines.length; j++) {
-                this._drawPolyLineFromRelativePositions(cc, sid.lines[j]);
-            }
-
-            for (let j = 0; j < sid.exits.length; j++) {
-                const exitName = sid.exits[j];
-
-                if (!(exitName in textAtFix)) {
-                    textAtFix[exitName] = [];
-                }
-
-                textAtFix[exitName].push(`${sid.identifier}.${exitName}`);
-
-                shouldDrawProcedureName = false;
-            }
-
-            if (shouldDrawProcedureName) {
-                const { lastFixName } = sid;
-
-                if (!(lastFixName in textAtFix)) {
-                    textAtFix[lastFixName] = [];
-                }
-
-                textAtFix[lastFixName].push(sid.identifier);
-            }
-        }
-
-        // draw labels
-        for (const fix in textAtFix) {
-            const textItemsToPrint = textAtFix[fix];
-            const fixPosition = NavigationLibrary.getFixRelativePosition(fix);
-
-            this._drawText(cc, fixPosition, textItemsToPrint);
-        }
-
-        cc.restore();
-    }
-
-    /**
-     * Draw STAR lines and labels
-     *
-     * POSITIONING: Before calling this method, ensure NO TRANSLATION has occurred
-     *
-     * @for CanvasController
-     * @method _drawStars
-     * @param cc {HTMLCanvasContext}
-     * @returns undefined
-     * @private
-     */
-    _drawStars(cc) {
-        if (!this._shouldDrawStarMap) {
-            return;
-        }
-
-        const starLines = NavigationLibrary.getProcedureLines(PROCEDURE_TYPE.STAR);
-        const textAtFix = [];
-
-        cc.save();
-        this._ccTranslateFromCanvasOriginToAirportCenter(cc);
-        cc.strokeStyle = this.theme.SCOPE.STAR;
-        cc.fillStyle = this.theme.SCOPE.STAR;
-        cc.setLineDash([1, 10]);
-        cc.font = 'italic 14px monoOne, monospace';
-        cc.textAlign = 'right';
-
-        for (let i = 0; i < starLines.length; i++) {
-            const star = starLines[i];
-
-            for (let j = 0; j < star.lines.length; j++) {
-                this._drawPolyLineFromRelativePositions(cc, star.lines[j]);
-            }
-
-            const { firstFixName } = star;
-
-            if (!(firstFixName in textAtFix)) {
-                textAtFix[firstFixName] = [];
-            }
-
-            textAtFix[firstFixName].push(star.identifier);
-        }
-
-        // draw labels
-        for (const fix in textAtFix) {
-            const textItemsToPrint = textAtFix[fix];
-            const fixPosition = NavigationLibrary.getFixRelativePosition(fix);
-
-            this._drawText(cc, fixPosition, textItemsToPrint);
-        }
-
-        cc.restore();
-    }
-
-    /**
-     * Draw the provided polyline (includes 2 or more points)
-     *
-     * POSITIONING: Before calling this method, translate to the AIRPORT CENTER
-     *
-     * @for CanvasController
-     * @method _drawPolyLineFromRelativePositions
-     * @param cc {HTMLCanvasContext}
-     * @param relativePositions {array<array<number, number>>} position coordinates (in km)
-     * @returns undefined
-     * @private
-     */
-    _drawPolyLineFromRelativePositions(cc, relativePositions) {
-        if (relativePositions.length < 2) {
-            return;
-        }
-
-        const lineStartPosition = this._viewport.calculateRoundedCanvasPositionFromRelativePosition(relativePositions[0]);
-
-        cc.beginPath();
-        cc.moveTo(...lineStartPosition);
-
-        for (let k = 0; k < relativePositions.length; k++) {
-            const relativePosition = relativePositions[k];
-            const canvasPosition = this._viewport.calculateRoundedCanvasPositionFromRelativePosition(relativePosition);
-
-            cc.lineTo(...canvasPosition);
-        }
-
-        cc.stroke();
-    }
-
-    /**
-     * Draw the provided text at the specified relative position
-     *
-     * POSITIONING: Before calling this method, translate to the AIRPORT CENTER
-     *
-     * @for CanvasController
-     * @method _drawText
-     * @param cc {HTMLCanvasContext}
-     * @param relativePosition {array<number, number>} offset coordinates from airport center (in km)
+     * @param relativePosition {array<number, number>}
      * @param labels {array}
-     * @param lineHeight {number} in pixels
+     * @param lineHeight {number}
      * @returns undefined
      * @private
      */
@@ -777,12 +574,11 @@ export default class CanvasController {
             dx = 0;
         }
 
-        for (let k = 0; k < labels.length; k++) {
-            const textItem = labels[k];
+        for (let i = 0; i < labels.length; i++) {
             const drawCanvasPositionX = canvasPosition[0] + dx;
-            const drawCanvasPositionY = canvasPosition[1] + (lineHeight * k);
+            const drawCanvasPositionY = canvasPosition[1] + (lineHeight * i);
 
-            cc.fillText(textItem, drawCanvasPositionX, drawCanvasPositionY);
+            cc.fillText(labels[i], drawCanvasPositionX, drawCanvasPositionY);
         }
     }
 

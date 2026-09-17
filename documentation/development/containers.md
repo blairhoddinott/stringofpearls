@@ -81,7 +81,7 @@ docker compose --profile development run --rm dev npm run validate:assets
 docker compose --profile development run --rm dev npm run audit:production
 ```
 
-The current Phase 5 baseline on Node 24 reports 1,704 passing, 17 skipped, and 14 todo tests. `npm run test:coverage` uses c8, includes all 137 eligible source modules, and enforces measured regression floors; see [`tools/README.md`](../../tools/README.md). `npm run lint` checks the JavaScript files under `src/`, `test/`, and `tools/` with a zero-error, zero-warning baseline, and `npm run core:browser-free` proves the extracted core and simulation services run without fabricated browser globals.
+The current Phase 5 baseline on Node 24 reports 1,711 passing, 17 skipped, and 14 todo tests. `npm run test:coverage` uses c8, includes all 138 eligible source modules, and enforces measured regression floors; see [`tools/README.md`](../../tools/README.md). `npm run lint` checks the JavaScript files under `src/`, `test/`, and `tools/` with a zero-error, zero-warning baseline, and `npm run core:browser-free` proves the extracted core and simulation services run without fabricated browser globals.
 
 Remove the dependency volume after changing the lockfile or if the installation becomes stale:
 

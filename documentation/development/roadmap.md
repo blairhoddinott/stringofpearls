@@ -20,6 +20,7 @@ This roadmap tracks the current direction of the project. The order may change a
     - [x] Extract browser canvas creation, context ownership, resizing, HiDPI adjustment, clearing, and teardown into a dedicated `CanvasHost`.
     - [x] Make the existing canvas viewport/camera model explicitly constructible and inject one exact viewport through `CanvasController` and its default `CanvasHost`, while retaining the legacy singleton for unmigrated presentation consumers.
     - [x] Extract airport runway bodies, extended centerlines, and reciprocal labels into an injected `AirportRunwayRenderer` while preserving their two static-render order positions.
+    - [x] Extract airport fixes plus SID/STAR geometry and labels into an injected `AirportNavigationRenderer` while preserving their three static-render order positions and shared airspace-label behavior.
 - [ ] Resume feature development on the modernized foundation
 
 ## Simulation and realism

@@ -1,6 +1,7 @@
 import ava from 'ava';
 import sinon from 'sinon';
 import $ from 'jquery';
+import AirportController from '../../src/assets/scripts/client/airport/AirportController';
 import CanvasController from '../../src/assets/scripts/client/canvas/CanvasController';
 import CanvasRenderScheduler from '../../src/assets/scripts/client/canvas/CanvasRenderScheduler';
 import CanvasStageModel from '../../src/assets/scripts/client/canvas/CanvasStageModel';
@@ -11,13 +12,13 @@ const STATIC_DRAW_METHODS = [
     '_drawVideoMap',
     '_drawTerrain',
     '_drawRestrictedAirspace',
-    '_drawRunways',
+    'runwayRenderer.drawRunways',
     '_drawAirportFixesAndLabels',
     '_drawSids',
     '_drawStars',
     '_drawAirspaceAndRangeRings',
     '_drawAirspaceShelvesAndLabels',
-    '_drawRunwayLabels',
+    'runwayRenderer.drawRunwayLabels',
     '_drawCurrentScale'
 ];
 
@@ -44,7 +45,12 @@ const buildController = () => {
         calls.push(`${context.name}:clear`);
     };
 
-    for (const methodName of STATIC_DRAW_METHODS) {
+    controller._runwayRenderer = {
+        drawRunways: () => calls.push(`${staticContext.name}:runwayRenderer.drawRunways`),
+        drawRunwayLabels: () => calls.push(`${staticContext.name}:runwayRenderer.drawRunwayLabels`)
+    };
+
+    for (const methodName of STATIC_DRAW_METHODS.filter((name) => !name.startsWith('runwayRenderer.'))) {
         controller[methodName] = () => calls.push(`${staticContext.name}:${methodName}`);
     }
 
@@ -52,7 +58,12 @@ const buildController = () => {
         controller[methodName] = () => calls.push(`${dynamicContext.name}:${methodName}`);
     }
 
-    return { calls, controller };
+    return {
+        calls,
+        controller,
+        staticContext,
+        dynamicContext
+    };
 };
 
 const expectedInitialFrameCalls = () => [
@@ -79,6 +90,47 @@ ava.serial('canvasUpdatePost() preserves static-then-dynamic draw order and ackn
 
         t.deepEqual(calls, []);
         t.true(shouldUpdate.calledOnce);
+    } finally {
+        shouldUpdate.restore();
+    }
+});
+
+ava.serial('canvasUpdatePost() delegates runway bodies and labels to the exact renderer at their inherited order positions', (t) => {
+    const {
+        calls, controller, staticContext
+    } = buildController();
+    const shouldUpdate = sinon.stub(TimeKeeper, 'shouldUpdate').returns(false);
+    const oldDrawRunways = sinon.spy();
+    const oldDrawRunwayLabels = sinon.spy();
+
+    controller.theme = { name: 'theme' };
+    controller._shouldDrawFixLabels = 'enabled';
+    controller._drawRunways = oldDrawRunways;
+    controller._drawRunwayLabels = oldDrawRunwayLabels;
+    controller._runwayRenderer = {
+        drawRunways: sinon.spy(() => calls.push(`${CANVAS_NAME.STATIC}:runway-bodies`)),
+        drawRunwayLabels: sinon.spy(() => calls.push(`${CANVAS_NAME.STATIC}:runway-labels`))
+    };
+
+    try {
+        controller.canvasUpdatePost();
+
+        t.true(controller._runwayRenderer.drawRunways.calledOnceWithExactly(
+            staticContext,
+            'enabled',
+            controller.theme
+        ));
+        t.true(controller._runwayRenderer.drawRunwayLabels.calledOnceWithExactly(
+            staticContext,
+            'enabled',
+            controller.theme
+        ));
+        t.true(oldDrawRunways.notCalled);
+        t.true(oldDrawRunwayLabels.notCalled);
+        t.true(calls.indexOf(`${CANVAS_NAME.STATIC}:_drawRestrictedAirspace`) < calls.indexOf(`${CANVAS_NAME.STATIC}:runway-bodies`));
+        t.true(calls.indexOf(`${CANVAS_NAME.STATIC}:runway-bodies`) < calls.indexOf(`${CANVAS_NAME.STATIC}:_drawAirportFixesAndLabels`));
+        t.true(calls.indexOf(`${CANVAS_NAME.STATIC}:_drawAirspaceShelvesAndLabels`) < calls.indexOf(`${CANVAS_NAME.STATIC}:runway-labels`));
+        t.true(calls.indexOf(`${CANVAS_NAME.STATIC}:runway-labels`) < calls.indexOf(`${CANVAS_NAME.STATIC}:_drawCurrentScale`));
     } finally {
         shouldUpdate.restore();
     }
@@ -253,6 +305,7 @@ ava.serial('constructing without an explicit host builds a default CanvasHost ow
 
         t.is(controller._viewport, viewport);
         t.is(controller._canvasHost._stageModel, viewport);
+        t.is(controller._runwayRenderer._viewport, viewport);
         t.true(viewport.initStorage.calledOnce);
     } finally {
         initStub.restore();
@@ -265,6 +318,7 @@ ava.serial('an explicitly supplied host is retained unchanged while the viewport
     const $element = $('<div></div>');
     const viewport = { initStorage: sinon.spy() };
     const explicitHost = { destroy: sinon.spy() };
+    const runwayRenderer = {};
 
     const initStub = sinon.stub(CanvasController.prototype, '_init').returnsThis();
     const setupStub = sinon.stub(CanvasController.prototype, '_setupHandlers').returnsThis();
@@ -272,13 +326,41 @@ ava.serial('an explicitly supplied host is retained unchanged while the viewport
 
     try {
         const controller = new CanvasController(
-            $element, null, null, null, null, null, explicitHost, viewport
+            $element, null, null, null, null, null, explicitHost, viewport, runwayRenderer
         );
 
         t.is(controller._canvasHost, explicitHost);
         t.is(controller._viewport, viewport);
+        t.is(controller._runwayRenderer, runwayRenderer);
         t.true(viewport.initStorage.calledOnce);
     } finally {
+        initStub.restore();
+        setupStub.restore();
+        enableStub.restore();
+    }
+});
+
+ava.serial('a default runway renderer resolves the current airport lazily for each draw', (t) => {
+    const $element = $('<div></div>');
+    const viewport = { initStorage: sinon.spy() };
+    const firstAirport = {};
+    const secondAirport = {};
+    const airportGet = sinon.stub(AirportController, 'airport_get');
+    const initStub = sinon.stub(CanvasController.prototype, '_init').returnsThis();
+    const setupStub = sinon.stub(CanvasController.prototype, '_setupHandlers').returnsThis();
+    const enableStub = sinon.stub(CanvasController.prototype, 'enable').returnsThis();
+
+    airportGet.onFirstCall().returns(firstAirport);
+    airportGet.onSecondCall().returns(secondAirport);
+
+    try {
+        const controller = new CanvasController($element, null, null, null, null, null, null, viewport);
+
+        t.is(controller._runwayRenderer._airportModelProvider(), firstAirport);
+        t.is(controller._runwayRenderer._airportModelProvider(), secondAirport);
+        t.true(airportGet.calledTwice);
+    } finally {
+        airportGet.restore();
         initStub.restore();
         setupStub.restore();
         enableStub.restore();

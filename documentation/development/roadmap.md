@@ -19,6 +19,7 @@ This roadmap tracks the current direction of the project. The order may change a
     - [x] Extract canvas render scheduling and dirty-state policy from `CanvasController` into a pure browser-free service while preserving frame ordering and retry-on-render-failure behavior.
     - [x] Extract browser canvas creation, context ownership, resizing, HiDPI adjustment, clearing, and teardown into a dedicated `CanvasHost`.
     - [x] Make the existing canvas viewport/camera model explicitly constructible and inject one exact viewport through `CanvasController` and its default `CanvasHost`, while retaining the legacy singleton for unmigrated presentation consumers.
+    - [x] Extract airport runway bodies, extended centerlines, and reciprocal labels into an injected `AirportRunwayRenderer` while preserving their two static-render order positions.
 - [ ] Resume feature development on the modernized foundation
 
 ## Simulation and realism

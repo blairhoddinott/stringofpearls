@@ -4,6 +4,7 @@ import _filter from 'lodash/filter';
 import _has from 'lodash/has';
 import _inRange from 'lodash/inRange';
 import AirportController from '../airport/AirportController';
+import AirportRunwayRenderer from './AirportRunwayRenderer';
 import CanvasHost from './CanvasHost';
 import CanvasRenderScheduler from './CanvasRenderScheduler';
 import CanvasStageModel from './CanvasStageModel';
@@ -63,8 +64,9 @@ export default class CanvasController {
      * @param renderScheduler {CanvasRenderScheduler} render dirty-state/update policy; nullish/omitted constructs a default
      * @param canvasHost {CanvasHost} browser-bound canvas DOM/context lifecycle; nullish/omitted constructs a default
      * @param viewport {CanvasStageModel} viewport/camera dimensions, pan and zoom; nullish/omitted uses the shared singleton
+     * @param runwayRenderer {AirportRunwayRenderer} airport runway presentation; nullish/omitted constructs a default
      */
-    constructor($element, aircraftController, scopeModel, storageAdapter, delayScheduler, renderScheduler, canvasHost, viewport) {
+    constructor($element, aircraftController, scopeModel, storageAdapter, delayScheduler, renderScheduler, canvasHost, viewport, runwayRenderer) {
         /**
          * Reference to the `window` object
          *
@@ -117,6 +119,22 @@ export default class CanvasController {
          * @private
          */
         this._viewport = viewport ?? CanvasStageModel;
+
+        /**
+         * Owns airport runway body, extended-centerline, and label rendering.
+         *
+         * The default renderer receives the controller's exact viewport and a
+         * lazy provider for the current airport so airport changes are observed
+         * at draw time. An explicit renderer is retained unchanged.
+         *
+         * @property _runwayRenderer
+         * @type {AirportRunwayRenderer}
+         * @private
+         */
+        this._runwayRenderer = runwayRenderer ?? new AirportRunwayRenderer(
+            this._viewport,
+            () => AirportController.airport_get()
+        );
 
         /**
          * Owns the browser-bound canvas DOM/context lifecycle.
@@ -431,13 +449,13 @@ export default class CanvasController {
             this._drawVideoMap(staticCanvasCtx);
             this._drawTerrain(staticCanvasCtx);
             this._drawRestrictedAirspace(staticCanvasCtx);
-            this._drawRunways(staticCanvasCtx);
+            this._runwayRenderer.drawRunways(staticCanvasCtx, this._shouldDrawFixLabels, this.theme);
             this._drawAirportFixesAndLabels(staticCanvasCtx);
             this._drawSids(staticCanvasCtx);
             this._drawStars(staticCanvasCtx);
             this._drawAirspaceAndRangeRings(staticCanvasCtx);
             this._drawAirspaceShelvesAndLabels(staticCanvasCtx);
-            this._drawRunwayLabels(staticCanvasCtx);
+            this._runwayRenderer.drawRunwayLabels(staticCanvasCtx, this._shouldDrawFixLabels, this.theme);
             this._drawCurrentScale(staticCanvasCtx);
         }
 
@@ -475,155 +493,6 @@ export default class CanvasController {
      */
     _clearCanvasContext(cc) {
         this._canvasHost.clearContext(cc);
-    }
-
-    /**
-     * Draw the specified RunwayModel (line only)
-     *
-     * POSITIONING: Before calling this method, translate to the AIRPORT CENTER
-     *
-     * @for CanvasController
-     * @method _drawSingleRunway
-     * @param cc {HTMLCanvasContext}
-     * @param runwayModel {RunwayModel}
-     * @param mode {boolean}               flag to switch between drawing a runway or just a runway centerline
-     * @returns undefined
-     * @private
-     */
-    _drawSingleRunway(cc, runwayModel, mode) {
-        const runwayLength = round(this._viewport._translateKilometersToPixels(runwayModel.length / 2)) * -2;
-        const { angle, relativePosition } = runwayModel;
-        const runwayCanvasPosition = this._viewport.calculateRoundedCanvasPositionFromRelativePosition(relativePosition);
-
-        cc.save();
-        cc.translate(...runwayCanvasPosition);
-        cc.rotate(angle);
-
-        // runway body
-        if (!mode) {
-            cc.strokeStyle = '#899';
-            cc.lineWidth = 2.8;
-
-            cc.beginPath();
-            cc.moveTo(0, 0);
-            cc.lineTo(0, runwayLength);
-            cc.stroke();
-        } else { // extended centerlines
-            if (!runwayModel.ils.enabled) {
-                cc.restore();
-
-                return;
-            }
-
-            cc.strokeStyle = this.theme.SCOPE.RUNWAY_EXTENDED_CENTERLINE;
-            cc.lineWidth = 1;
-
-            cc.beginPath();
-            cc.moveTo(0, 0);
-            cc.lineTo(0, this._viewport._translateKilometersToPixels(runwayModel.ils.loc_maxDist));
-            cc.stroke();
-        }
-
-        cc.restore();
-    }
-
-    /**
-     * Draw labels for all runways, but NOT the runways themselves (see _drawRunways())
-     *
-     * POSITIONING: Before calling this method, translate to the AIRPORT CENTER
-     *
-     * @for CanvasController
-     * @method _drawRunwayLabel
-     * @param cc {HTMLCanvasContext}
-     * @param runway {RunwayModel}
-     * @returns undefined
-     * @private
-     */
-    _drawRunwayLabel(cc, runwayModel) {
-        const length2 = round(this._viewport._translateKilometersToPixels(runwayModel.length / 2)) + 0.5;
-        const { angle, relativePosition } = runwayModel;
-        const runwayCanvasPosition = this._viewport.calculateRoundedCanvasPositionFromRelativePosition(relativePosition);
-        const textHeight = 14;
-
-        cc.save();
-        cc.textAlign = 'center';
-        cc.textBaseline = 'middle';
-        cc.translate(...runwayCanvasPosition);
-        cc.rotate(angle);
-        cc.translate(0, length2 + textHeight);
-        cc.rotate(-angle);
-        cc.fillText(runwayModel.name, 0, 0);
-        cc.restore();
-    }
-
-    /**
-     * Draw all runways, but NOT their labels (see _drawRunwayLabels())
-     *
-     * POSITIONING: Before calling this method, ensure NO TRANSLATION has occurred
-     *
-     * @for CanvasController
-     * @method _drawRunways
-     * @param cc {HTMLCanvasContext}
-     * @returns undefined
-     * @private
-     */
-    _drawRunways(cc) {
-        if (!this._shouldDrawFixLabels) {
-            return;
-        }
-
-        cc.save();
-        this._ccTranslateFromCanvasOriginToAirportCenter(cc);
-        cc.font = '11px monoOne, monospace';
-        cc.strokeStyle = this.theme.SCOPE.RUNWAY;
-        cc.fillStyle = this.theme.SCOPE.RUNWAY;
-        cc.lineWidth = 4;
-
-        const airportModel = AirportController.airport_get();
-
-        // TODO: we should try to consolidate this so we aren't looping over the runway collection multiple times
-        // Extended Centerlines
-        for (let i = 0; i < airportModel.runways.length; i++) {
-            this._drawSingleRunway(cc, airportModel.runways[i][0], true);
-            this._drawSingleRunway(cc, airportModel.runways[i][1], true);
-        }
-
-        // Runways
-        for (let i = 0; i < airportModel.runways.length; i++) {
-            this._drawSingleRunway(cc, airportModel.runways[i][0], false);
-        }
-
-        cc.restore();
-    }
-
-    /**
-     * Draw runway label text
-     *
-     * POSITIONING: Before calling this method, ensure NO TRANSLATION has occurred
-     *
-     * @for CanvasController
-     * @method _drawRunwayLabels
-     * @param cc {HTMLCanvasContext}
-     * @returns undefined
-     * @private
-     */
-    _drawRunwayLabels(cc) {
-        if (!this._shouldDrawFixLabels) {
-            return;
-        }
-
-        const airportModel = AirportController.airport_get();
-
-        cc.save();
-        this._ccTranslateFromCanvasOriginToAirportCenter(cc);
-        cc.fillStyle = this.theme.SCOPE.RUNWAY_LABELS;
-
-        for (let i = 0; i < airportModel.runways.length; i++) {
-            this._drawRunwayLabel(cc, airportModel.runways[i][0]);
-            this._drawRunwayLabel(cc, airportModel.runways[i][1]);
-        }
-
-        cc.restore();
     }
 
     /**

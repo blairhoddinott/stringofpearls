@@ -12,10 +12,10 @@ This roadmap tracks the current direction of the project. The order may change a
 - [x] Replace AVA 1 and NYC 14 with Node 24-compatible tests and all-module coverage floors.
 - [x] Modernize ESLint and establish a clean full-repository lint baseline.
 - [x] Upgrade vulnerable production dependencies behind focused compatibility tests.
-- [ ] Modernize the application architecture.
+- [x] Modernize the application architecture through the Phase 5 boundary decomposition.
   - [x] Introduce explicit platform boundaries for asset loading, storage, clock/timers, randomness, analytics, speech synthesis, clipboard, and page visibility; `npm run core:browser-free` proves the extracted core services execute without fabricated browser globals.
   - [x] Complete Phase 4: establish browser-free per-session simulation contexts with explicit ownership and deterministic two-context isolation.
-  - [ ] Complete Phase 5: decompose presentation hotspots without pulling UI concerns back into the simulation context.
+  - [x] Complete Phase 5: decompose presentation hotspots without pulling UI concerns back into the simulation context.
     - [x] Extract canvas render scheduling and dirty-state policy from `CanvasController` into a pure browser-free service while preserving frame ordering and retry-on-render-failure behavior.
     - [x] Extract browser canvas creation, context ownership, resizing, HiDPI adjustment, clearing, and teardown into a dedicated `CanvasHost`.
     - [x] Make the existing canvas viewport/camera model explicitly constructible and inject one exact viewport through `CanvasController` and its default `CanvasHost`, while retaining the legacy singleton for unmigrated presentation consumers.
@@ -31,6 +31,9 @@ This roadmap tracks the current direction of the project. The order may change a
     - [x] Extract aircraft/scope/system command parsing, dispatch, history mutation, diagnostics, and command side effects into an injected `CommandInteraction` while retaining public controller routing methods.
     - [x] Extract wheel zoom, configurable drag-button matching, pan anchoring and deltas, mouse release, and zoom reset into an injected `ViewportGestureInteraction` while retaining measurement-first and semantic mouse routing in `InputController`.
     - [x] Extract keyboard normalization, dialog/autocomplete gating, shortcuts, command-bar editing, context toggling, Escape policy, and keyup measurement behavior into an injected `KeyboardInteraction` while retaining controller event façades.
+    - [x] Establish strict TypeScript `checkJs` contracts for the first two self-contained input boundaries without changing runtime syntax or weakening diagnostics.
+    - [x] Record the UI framework decision: retain the current canvas/DOM stack and require a concrete isolated feature before any incremental framework pilot.
+  - [ ] Expand strict TypeScript contracts through asset schemas, remaining adapters, commands/events, and domain DTOs as independently reviewed follow-on slices.
 - [ ] Resume feature development on the modernized foundation
 
 ## Simulation and realism

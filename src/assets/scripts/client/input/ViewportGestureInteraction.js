@@ -1,4 +1,31 @@
+/**
+ * @typedef {Object} ViewportInputState
+ * @property {boolean} isMouseDown
+ *
+ * @typedef {Object} GestureViewport
+ * @property {number} _panX
+ * @property {number} _panY
+ * @property {() => unknown} zoomIn
+ * @property {() => unknown} zoomOut
+ * @property {() => unknown} zoomReset
+ * @property {(x: number, y: number) => unknown} updatePan
+ *
+ * @typedef {{ wheelDelta: number, detail?: number } | { wheelDelta?: number, detail: number }} WheelDeltaEvent
+ *
+ * @typedef {Object} WheelGestureEvent
+ * @property {WheelDeltaEvent} originalEvent
+ *
+ * @typedef {Object} PointerGestureEvent
+ * @property {number} pageX
+ * @property {number} pageY
+ */
+
 export default class ViewportGestureInteraction {
+    /**
+     * @param {ViewportInputState} inputState
+     * @param {GestureViewport} viewport
+     * @param {() => string} dragButtonProvider
+     */
     constructor(inputState, viewport, dragButtonProvider) {
         this._inputState = inputState;
         this._viewport = viewport;
@@ -6,8 +33,12 @@ export default class ViewportGestureInteraction {
         this._mouseDownScreenPosition = [0, 0];
     }
 
+    /** @param {WheelGestureEvent} event */
     zoom(event) {
-        if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
+        if (
+            /** @type {number} */ (event.originalEvent.wheelDelta) > 0 ||
+            /** @type {number} */ (event.originalEvent.detail) < 0
+        ) {
             this._viewport.zoomIn();
 
             return;
@@ -16,6 +47,10 @@ export default class ViewportGestureInteraction {
         this._viewport.zoomOut();
     }
 
+    /**
+     * @param {PointerGestureEvent} event
+     * @param {string} mouseButton
+     */
     markPressed(event, mouseButton) {
         const canvasDragButton = this._dragButtonProvider();
 
@@ -38,6 +73,7 @@ export default class ViewportGestureInteraction {
         this._viewport.zoomReset();
     }
 
+    /** @param {PointerGestureEvent} event */
     drag(event) {
         if (!this._inputState.isMouseDown) {
             return false;

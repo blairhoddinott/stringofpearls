@@ -22,6 +22,7 @@
     "start": "node public/assets/scripts/server/index.js",
     "test": "ava --concurrency=5",
     "test:coverage": "c8 ava --concurrency=5 && npm run coverage:test",
+    "typecheck:contracts": "tsc --project tsconfig.contracts.json",
     "validator": "npm run validate:assets",
     "validator:test": "node tools/validate-assets.test.js",
     "validate:assets": "node tools/validate-assets.js",
@@ -114,6 +115,7 @@
     "postcss": "8.5.28",
     "showdown": "1.9.1",
     "sinon": "22.1.0",
-    "source-map": "0.5.7"
+    "source-map": "0.5.7",
+    "typescript": "7.0.2"
   }
 }

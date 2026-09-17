@@ -87,9 +87,11 @@ The current Phase 5 baseline reports 1,836 passing, 17 skipped, and 14 todo test
 npm run test:coverage
 ```
 
-Coverage runs with `all: true`, verifies that all 148 eligible source modules appear under their real repository paths, and enforces regression floors of 68% statements/lines, 70% functions, and 90% branches. The current Phase 5 baseline measures 83.27% statements/lines, 77.15% functions, and 92.01% branches. Historical checkpoints remain recorded in the modernization audit. Generated reports are written to `coverage/`.
+Coverage runs with `all: true`, verifies that all 148 eligible source modules appear under their real repository paths, and enforces regression floors of 68% statements/lines, 70% functions, and 90% branches. The final Phase 5 baseline measures 83.30% statements/lines, 77.15% functions, and 92.01% branches. Historical checkpoints remain recorded in the modernization audit. Generated reports are written to `coverage/`.
 
 `npm run lint` uses ESLint 10 flat configuration and currently checks 351 JavaScript files across `src/`, `test/`, and `tools/`, including the lint configuration itself. The gate has a clean baseline with zero errors and zero warnings. Remaining dependency cycles are documented architecture debt and are intentionally outside this toolchain slice.
+
+`npm run typecheck:contracts` uses the exactly pinned TypeScript compiler in strict, no-emit JavaScript-checking mode. The initial contract surface covers `InputEventBindings` and `ViewportGestureInteraction`; expansion is fail-closed and boundary-first rather than a wholesale source conversion. See [`documentation/development/type-contracts.md`](../documentation/development/type-contracts.md).
 
 The generated application may also be served by the inherited [Express][express] server for local development. `npm run server:test` builds the application and verifies root/static-asset responses, missing paths, encoded traversal rejection, and clean server shutdown. Production uses the unprivileged NGINX runtime described in [`documentation/development/containers.md`](../documentation/development/containers.md).
 

@@ -1,7 +1,10 @@
 import ava from 'ava';
 import sinon from 'sinon';
 import InputController from '../src/assets/scripts/client/InputController';
+import InputEventBindings from '../src/assets/scripts/client/input/InputEventBindings';
+import AutocompleteController from '../src/assets/scripts/client/ui/autocomplete/AutocompleteController';
 import UiController from '../src/assets/scripts/client/ui/UiController';
+import { EVENT } from '../src/assets/scripts/client/constants/eventNames';
 
 // The copy-coordinates command is exercised directly through the prototype
 // method with a minimal `this`, so the clipboard boundary and success-log
@@ -93,4 +96,126 @@ ava.serial('._logAndCopyCoordinates() lets a synchronous clipboard write error p
     const thrown = t.throws(() => invokeLogAndCopy(clipboardAdapter, [1, 2]));
 
     t.is(thrown, failure);
+});
+
+ava('._createInputEventBindings() composes exact targets and handler identities', (t) => {
+    const controller = Object.create(InputController.prototype);
+    controller.$window = {};
+    controller.$canvases = {};
+    controller.$body = {};
+    controller._eventBus = {};
+    controller.onKeydownHandler = () => {};
+    controller.onKeyupHandler = () => {};
+    controller.onMouseScrollHandler = () => {};
+    controller.onMouseClickAndDragHandler = () => {};
+    controller.onMouseUpHandler = () => {};
+    controller.onMouseDownHandler = () => {};
+    controller.onMouseDblclickHandler = () => {};
+    controller.selectAircraftByCallsign = () => {};
+
+    const bindings = controller._createInputEventBindings();
+
+    t.true(bindings instanceof InputEventBindings);
+    t.is(bindings._windowTarget, controller.$window);
+    t.is(bindings._canvasTarget, controller.$canvases);
+    t.is(bindings._bodyTarget, controller.$body);
+    t.is(bindings._eventBus, controller._eventBus);
+    t.is(bindings._stripClickEvent, EVENT.STRIP_CLICK);
+    t.is(typeof bindings._handlers, 'function');
+    t.deepEqual(bindings._handlers(), {
+        keydown: controller.onKeydownHandler,
+        keyup: controller.onKeyupHandler,
+        mouseScroll: controller.onMouseScrollHandler,
+        mouseMove: controller.onMouseClickAndDragHandler,
+        mouseUp: controller.onMouseUpHandler,
+        mouseDown: controller.onMouseDownHandler,
+        doubleClick: controller.onMouseDblclickHandler,
+        stripClick: controller.selectAircraftByCallsign
+    });
+});
+
+ava('.enable() delegates to exact input-event bindings and returns the controller', (t) => {
+    const bindings = { enable: sinon.spy() };
+    const controller = Object.create(InputController.prototype);
+    controller._inputEventBindings = bindings;
+
+    t.is(controller.enable(), controller);
+    t.true(bindings.enable.calledOnceWithExactly());
+});
+
+ava('.disable() delegates before destroy and returns the destroy result', (t) => {
+    const calls = [];
+    const result = {};
+    const controller = Object.create(InputController.prototype);
+    controller._inputEventBindings = { disable: () => calls.push('disable') };
+    controller.destroy = () => {
+        calls.push('destroy');
+
+        return result;
+    };
+
+    t.is(controller.disable(), result);
+    t.deepEqual(calls, ['disable', 'destroy']);
+});
+
+ava('.setupHandlers() refreshes callbacks used by an already-created default boundary', (t) => {
+    const registrations = [];
+    const controller = Object.create(InputController.prototype);
+    controller.$window = {
+        on: (...args) => registrations.push(['window.on', ...args])
+    };
+    controller.$canvases = {
+        bind: (...args) => registrations.push(['canvas.bind', ...args]),
+        on: (...args) => registrations.push(['canvas.on', ...args])
+    };
+    controller.$body = {
+        addEventListener: (...args) => registrations.push(['body.addEventListener', ...args])
+    };
+    controller._eventBus = {
+        on: (...args) => registrations.push(['eventBus.on', ...args])
+    };
+    controller._onKeydown = () => {};
+    controller._onKeyup = () => {};
+    controller._onMouseScroll = () => {};
+    controller._onMouseClickAndDrag = () => {};
+    controller._onMouseUp = () => {};
+    controller._onMouseDown = () => {};
+    controller._onMouseDblclick = () => {};
+    controller.selectAircraftByCallsign = () => {};
+
+    controller.setupHandlers();
+    controller._inputEventBindings = controller._createInputEventBindings();
+    const originalKeydown = controller.onKeydownHandler;
+    controller.setupHandlers();
+
+    t.not(controller.onKeydownHandler, originalKeydown);
+    controller._inputEventBindings.enable();
+    t.deepEqual(registrations[0], ['window.on', 'keydown', controller.onKeydownHandler]);
+});
+
+ava.serial('constructor retains an explicitly supplied trailing input-event boundary', (t) => {
+    const inputInit = sinon.stub(InputController.prototype, '_init');
+    const autocompleteInit = sinon.stub(AutocompleteController.prototype, '_init');
+    const bindings = {};
+    const element = {};
+
+    try {
+        const controller = new InputController(
+            element,
+            {},
+            {},
+            {},
+            null,
+            null,
+            null,
+            bindings
+        );
+
+        t.is(controller._inputEventBindings, bindings);
+        t.true(inputInit.calledOnceWithExactly());
+        t.true(autocompleteInit.calledOnceWithExactly());
+    } finally {
+        inputInit.restore();
+        autocompleteInit.restore();
+    }
 });

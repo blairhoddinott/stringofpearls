@@ -25,6 +25,7 @@ This roadmap tracks the current direction of the project. The order may change a
     - [x] Extract measurement paths, turn geometry, label backgrounds, and text into an injected `MeasurementOverlayRenderer` while preserving the final dynamic-render position.
     - [x] Extract radar returns, history dots, separation indicators, projected paths, vector lines, halos, conflict rings, and target dots into an injected `AircraftTargetRenderer` while preserving the dynamic-render order before data blocks.
     - [x] Extract the selected-aircraft compass and aircraft data blocks into an injected `AircraftAnnotationRenderer` while preserving their dynamic-render slots around aircraft targets.
+    - [x] Extract browser input registration and teardown into an injected `InputEventBindings` boundary while preserving the inherited wheel, context-menu, and strip-click lifecycle behavior for a separate repair checkpoint.
 - [ ] Resume feature development on the modernized foundation
 
 ## Simulation and realism

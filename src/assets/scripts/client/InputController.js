@@ -11,6 +11,7 @@ import UiController from './ui/UiController';
 import CommandParser from './commands/parsers/CommandParser';
 import ScopeCommandModel from './commands/scopeCommand/ScopeCommandModel';
 import EventTracker from './EventTracker';
+import InputEventBindings from './input/InputEventBindings';
 import MeasureTool from './measurement/MeasureTool';
 import FixCollection from './navigationLibrary/FixCollection';
 import { clamp } from './math/core';
@@ -44,8 +45,9 @@ export default class InputController {
      * @param clearStorageAndReload {ClearStorageAndReload} clear/reload service invoked by the CLEAR system command; optional
      * @param reportError {Function} async error reporter forwarded to AutocompleteController
      * @param clipboardAdapter {ClipboardAdapter} clipboard boundary used by the copy-coordinates command; optional
+     * @param inputEventBindings {InputEventBindings} browser event-registration boundary; optional
      */
-    constructor($element, aircraftController, scopeModel, assetLoader, clearStorageAndReload, reportError, clipboardAdapter) {
+    constructor($element, aircraftController, scopeModel, assetLoader, clearStorageAndReload, reportError, clipboardAdapter, inputEventBindings = null) {
         this.$element = $element;
         this.$body = null;
         this.$window = null;
@@ -76,6 +78,7 @@ export default class InputController {
          * @type {ClipboardAdapter|null}
          */
         this._clipboardAdapter = clipboardAdapter ?? null;
+        this._inputEventBindings = inputEventBindings;
         this._autocompleteController = new AutocompleteController(
             this.$element,
             this,
@@ -106,7 +109,13 @@ export default class InputController {
         this.$commandInput = this.$element.find(SELECTORS.DOM_SELECTORS.COMMAND);
         this.$canvases = this.$element.find(SELECTORS.DOM_SELECTORS.CANVASES);
 
-        return this.setupHandlers().enable();
+        this.setupHandlers();
+
+        if (this._inputEventBindings === null) {
+            this._inputEventBindings = this._createInputEventBindings();
+        }
+
+        return this.enable();
     }
 
     /**
@@ -132,23 +141,29 @@ export default class InputController {
      * @method enable
      */
     enable() {
-        this.$window.on('keydown', this.onKeydownHandler);
-        this.$window.on('keyup', this.onKeyupHandler);
-        // TODO: these are non-standard events and will be deprecated soon. this should be moved
-        // over to the `wheel` event. This should also be moved over to `.on()` instead of `.bind()`
-        // https://developer.mozilla.org/en-US/docs/Web/Events/wheel
-        // this.$commandInput.on('DOMMouseScroll mousewheel', this.onMouseScrollHandler);
-        this.$canvases.bind('DOMMouseScroll mousewheel', this.onMouseScrollHandler);
-        this.$canvases.on('mousemove', this.onMouseClickAndDragHandler);
-        this.$canvases.on('mouseup', this.onMouseUpHandler);
-        this.$canvases.on('mousedown', this.onMouseDownHandler);
-        this.$canvases.on('dblclick', this.onMouseDblclickHandler);
-        this.$body.addEventListener('contextmenu', (event) => event.preventDefault());
-
-        // TODO: Fix this
-        this._eventBus.on(EVENT.STRIP_CLICK, this.selectAircraftByCallsign);
+        this._inputEventBindings.enable();
 
         return this;
+    }
+
+    _createInputEventBindings() {
+        return new InputEventBindings(
+            this.$window,
+            this.$canvases,
+            this.$body,
+            this._eventBus,
+            EVENT.STRIP_CLICK,
+            () => ({
+                keydown: this.onKeydownHandler,
+                keyup: this.onKeyupHandler,
+                mouseScroll: this.onMouseScrollHandler,
+                mouseMove: this.onMouseClickAndDragHandler,
+                mouseUp: this.onMouseUpHandler,
+                mouseDown: this.onMouseDownHandler,
+                doubleClick: this.onMouseDblclickHandler,
+                stripClick: this.selectAircraftByCallsign
+            })
+        );
     }
 
     /**
@@ -158,17 +173,7 @@ export default class InputController {
      * @method disable
      */
     disable() {
-        this.$window.off('keydown', this.onKeydownHandler);
-        this.$window.off('keyup', this.onKeyupHandler);
-        // uncomment only after `.on()` for this event has been implemented.
-        // this.$commandInput.off('DOMMouseScroll mousewheel', this.onMouseScrollHandler);
-        this.$canvases.off('mousemove', this.onMouseClickAndDragHandler);
-        this.$canvases.off('mouseup', this.onMouseUpHandler);
-        this.$canvases.off('mousedown', this.onMouseDownHandler);
-        this.$canvases.off('dblclick', this.onMouseDblclickHandler);
-        this.$body.removeEventListener('contextmenu', (event) => event.preventDefault());
-
-        this._eventBus.off(EVENT.STRIP_CLICK, this.selectAircraftByCallsign);
+        this._inputEventBindings.disable();
 
         return this.destroy();
     }
@@ -178,6 +183,7 @@ export default class InputController {
      * @method destroy
      */
     destroy() {
+        this._inputEventBindings = null;
         this.$element = null;
         this.$body = null;
         this.$window = null;

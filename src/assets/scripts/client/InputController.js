@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import _has from 'lodash/has';
 import _includes from 'lodash/includes';
 import AirportController from './airport/AirportController';
 import AutocompleteController from './ui/autocomplete/AutocompleteController';
@@ -14,21 +13,19 @@ import EventTracker from './EventTracker';
 import InputEventBindings from './input/InputEventBindings';
 import MeasurementInteraction from './input/MeasurementInteraction';
 import AircraftSelectionInteraction from './input/AircraftSelectionInteraction';
+import CommandInteraction from './input/CommandInteraction';
 import MeasureTool from './measurement/MeasureTool';
 import FixCollection from './navigationLibrary/FixCollection';
 import { EVENT } from './constants/eventNames';
 import { GAME_OPTION_NAMES } from './constants/gameOptionConstants';
-import { INVALID_NUMBER } from './constants/globalConstants';
 import {
     COMMAND_CONTEXT,
     KEY_CODES,
     LEGACY_KEY_CODES,
     MOUSE_BUTTON_NAMES,
-    MOUSE_EVENT_CODE,
-    PARSED_COMMAND_NAME
+    MOUSE_EVENT_CODE
 } from './constants/inputConstants';
 import { SELECTORS, CLASSNAMES } from './constants/selectors';
-import { TRACKABLE_EVENT } from './constants/trackableEvents';
 
 // Temporary const declaration here to attach to the window AND use as internal propert
 const input = {};
@@ -49,8 +46,9 @@ export default class InputController {
      * @param inputEventBindings {InputEventBindings} browser event-registration boundary; optional
      * @param measurementInteraction {MeasurementInteraction} measurement-input behavior; optional
      * @param selectionInteraction {AircraftSelectionInteraction} aircraft selection/history behavior; optional
+     * @param commandInteraction {CommandInteraction} command parsing and dispatch behavior; optional
      */
-    constructor($element, aircraftController, scopeModel, assetLoader, clearStorageAndReload, reportError, clipboardAdapter, inputEventBindings = null, measurementInteraction = null, selectionInteraction = null) {
+    constructor($element, aircraftController, scopeModel, assetLoader, clearStorageAndReload, reportError, clipboardAdapter, inputEventBindings = null, measurementInteraction = null, selectionInteraction = null, commandInteraction = null) {
         this.$element = $element;
         this.$body = null;
         this.$window = null;
@@ -90,6 +88,7 @@ export default class InputController {
             FixCollection
         );
         this._selectionInteraction = selectionInteraction;
+        this._commandInteraction = commandInteraction;
         this._autocompleteController = new AutocompleteController(
             this.$element,
             this,
@@ -122,6 +121,10 @@ export default class InputController {
 
         if (this._selectionInteraction === null) {
             this._selectionInteraction = this._createAircraftSelectionInteraction();
+        }
+
+        if (this._commandInteraction === null) {
+            this._commandInteraction = this._createCommandInteraction();
         }
 
         this.setupHandlers();
@@ -191,6 +194,22 @@ export default class InputController {
         );
     }
 
+    _createCommandInteraction() {
+        return new CommandInteraction({
+            inputState: this.input,
+            commandInput: this.$commandInput,
+            aircraftController: this._aircraftController,
+            scopeModel: this._scopeModel,
+            clearStorageAndReload: this._clearStorageAndReload,
+            uiController: UiController,
+            gameController: GameController,
+            eventTracker: EventTracker,
+            airportController: AirportController,
+            CommandParserClass: CommandParser,
+            ScopeCommandModelClass: ScopeCommandModel
+        });
+    }
+
     /**
      * Disable all event handlers and destroy the instance
      *
@@ -211,6 +230,7 @@ export default class InputController {
         this._inputEventBindings = null;
         this._measurementInteraction = null;
         this._selectionInteraction = null;
+        this._commandInteraction = null;
         this.$element = null;
         this.$body = null;
         this.$window = null;
@@ -668,28 +688,10 @@ export default class InputController {
      * @method processAircraftCommand
      */
     processAircraftCommand() {
-        const userCommand = this.$commandInput.val().trim().toLowerCase();
-
-        // Using try/catch here very much on purpose. the `CommandParser` will throw when it encounters any kind
-        // of error; invalid length, validation, parse, etc. Here we catch those errors, log them to the screen
-        // and then throw them all at once
-        let cmd;
-        try {
-            const parser = new CommandParser(userCommand);
-            cmd = parser.parse();
-        } catch (error) {
-            UiController.ui_log('Command not understood', true);
-            throw error;
-        }
-        const parsedCommand = cmd;
-        if (parsedCommand.command !== PARSED_COMMAND_NAME.TRANSMIT) {
-            return this.processSystemCommand(parsedCommand);
-        }
-
-        this.input.history.unshift(this.input.callsign);
-        this.input.history_item = null;
-
-        return this.processTransmitCommand(parsedCommand);
+        return this._commandInteraction.processAircraft({
+            processSystem: (parsedCommand) => this.processSystemCommand(parsedCommand),
+            processTransmit: (parsedCommand) => this.processTransmitCommand(parsedCommand)
+        });
     }
 
     /**
@@ -700,17 +702,11 @@ export default class InputController {
      * @return {array} [success of operation, response]
      */
     processCommand() {
-        let response = [];
-
-        if (this.commandBarContext === COMMAND_CONTEXT.AIRCRAFT) {
-            response = this.processAircraftCommand();
-        } else if (this.commandBarContext === COMMAND_CONTEXT.SCOPE) {
-            response = this.processScopeCommand();
-        }
-
-        this.deselectAircraft();
-
-        return response;
+        return this._commandInteraction.process(this.commandBarContext, {
+            processAircraft: () => this.processAircraftCommand(),
+            processScope: () => this.processScopeCommand(),
+            deselect: () => this.deselectAircraft()
+        });
     }
 
     /**
@@ -720,21 +716,7 @@ export default class InputController {
      * @method processScopeCommand
      */
     processScopeCommand() {
-        let scopeCommandModel;
-        const userCommand = this.$commandInput.val().trim().toLowerCase();
-
-        try {
-            scopeCommandModel = new ScopeCommandModel(userCommand);
-        } catch (error) {
-            UiController.ui_log('ERROR: BAD SYNTAX', true);
-
-            throw error;
-        }
-
-        const [successful, response] = this._scopeModel.runScopeCommand(scopeCommandModel);
-        const isWarning = !successful;
-
-        UiController.ui_log(response, isWarning);
+        return this._commandInteraction.processScope();
     }
 
     /**
@@ -744,81 +726,7 @@ export default class InputController {
      * @return {boolean}
      */
     processSystemCommand(parsedCommand) {
-        switch (parsedCommand.command) {
-            case PARSED_COMMAND_NAME.TUTORIAL:
-                UiController.onToggleTutorial();
-
-                return true;
-
-            case PARSED_COMMAND_NAME.AUTO:
-                // TODO: does this function exist anywhere?
-                // aircraft_toggle_auto();
-                //
-                // if (this._aircraftController.aircraft.auto.enabled) {
-                //     UiController.ui_log('automatic controller ENGAGED');
-                // } else {
-                //     UiController.ui_log('automatic controller OFF');
-                // }
-
-                return true;
-
-            case PARSED_COMMAND_NAME.PAUSE:
-                GameController.game_pause_toggle();
-
-                return true;
-
-            case PARSED_COMMAND_NAME.TIMEWARP: {
-                let nextTimewarpValue = 0;
-
-                if (parsedCommand.args) {
-                    // timewarp has just one argument
-                    [nextTimewarpValue] = parsedCommand.args;
-                }
-
-                GameController.updateTimescale(nextTimewarpValue);
-                EventTracker.recordEvent(TRACKABLE_EVENT.OPTIONS, 'timewarp-maunal-entry', `${nextTimewarpValue}`);
-
-                return true;
-            }
-
-            case PARSED_COMMAND_NAME.CLEAR:
-                if (this._clearStorageAndReload != null) {
-                    this._clearStorageAndReload.execute();
-                }
-
-                break;
-            case PARSED_COMMAND_NAME.AIRPORT: {
-                // TODO: it may be better to do this in the parser
-                const airportIcao = parsedCommand.args[0];
-
-                if (_has(AirportController.airports, airportIcao)) {
-                    AirportController.airport_set(airportIcao);
-                }
-
-                return true;
-            }
-            case PARSED_COMMAND_NAME.AIRAC: {
-                const airportIcao = AirportController.current.icao.toUpperCase();
-                const airacCycle = AirportController.getAiracCycle();
-
-                if (!airacCycle) {
-                    UiController.ui_log(`${airportIcao} AIRAC cycle: unknown`);
-
-                    return true;
-                }
-
-                UiController.ui_log(`${airportIcao} AIRAC cycle: ${airacCycle}`);
-
-                return true;
-            }
-            // TODO: this will be removed entirely, eventually.
-            case PARSED_COMMAND_NAME.RATE:
-                UiController.ui_log('this command has been deprecated', true);
-
-                return true;
-            default:
-                return true;
-        }
+        return this._commandInteraction.processSystem(parsedCommand);
     }
 
     /**
@@ -828,34 +736,7 @@ export default class InputController {
      * @return {boolean}
      */
     processTransmitCommand(parsedCommand) {
-        // TODO: abstract the aircraft callsign matching
-        let matches = 0;
-        let match = INVALID_NUMBER;
-
-        for (let i = 0; i < this._aircraftController.aircraft.list.length; i++) {
-            const aircraft = this._aircraftController.aircraft.list[i];
-
-            if (aircraft.matchCallsign(parsedCommand.callsign)) {
-                matches += 1;
-                match = i;
-            }
-        }
-
-        if (matches > 1) {
-            UiController.ui_log('multiple aircraft match the callsign, say again', true);
-
-            return true;
-        }
-
-        if (match === INVALID_NUMBER) {
-            UiController.ui_log('no such aircraft, say again', true);
-
-            return true;
-        }
-
-        const aircraft = this._aircraftController.aircraft.list[match];
-
-        return this._aircraftController.aircraftCommander.runCommands(aircraft, parsedCommand.args);
+        return this._commandInteraction.processTransmit(parsedCommand);
     }
 
     /**

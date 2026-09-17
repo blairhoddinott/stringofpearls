@@ -4,11 +4,17 @@ import InputController from '../src/assets/scripts/client/InputController';
 import InputEventBindings from '../src/assets/scripts/client/input/InputEventBindings';
 import MeasurementInteraction from '../src/assets/scripts/client/input/MeasurementInteraction';
 import AircraftSelectionInteraction from '../src/assets/scripts/client/input/AircraftSelectionInteraction';
+import CommandInteraction from '../src/assets/scripts/client/input/CommandInteraction';
 import AutocompleteController from '../src/assets/scripts/client/ui/autocomplete/AutocompleteController';
 import CanvasStageModel from '../src/assets/scripts/client/canvas/CanvasStageModel';
 import MeasureTool from '../src/assets/scripts/client/measurement/MeasureTool';
 import FixCollection from '../src/assets/scripts/client/navigationLibrary/FixCollection';
 import UiController from '../src/assets/scripts/client/ui/UiController';
+import EventTracker from '../src/assets/scripts/client/EventTracker';
+import GameController from '../src/assets/scripts/client/game/GameController';
+import AirportController from '../src/assets/scripts/client/airport/AirportController';
+import CommandParser from '../src/assets/scripts/client/commands/parsers/CommandParser';
+import ScopeCommandModel from '../src/assets/scripts/client/commands/scopeCommand/ScopeCommandModel';
 import { EVENT } from '../src/assets/scripts/client/constants/eventNames';
 
 // The copy-coordinates command is exercised directly through the prototype
@@ -398,6 +404,104 @@ ava.serial('public aircraft-selection methods delegate through current controlle
             t.is(calls.at(-1)[1], nextAircraft);
             t.is(typeof calls.at(-1)[2], 'function');
         }
+    } finally {
+        inputInit.restore();
+        autocompleteInit.restore();
+    }
+});
+
+ava('._createCommandInteraction() composes exact controller and application dependencies', (t) => {
+    const controller = Object.create(InputController.prototype);
+    controller.input = {};
+    controller.$commandInput = {};
+    controller._aircraftController = {};
+    controller._scopeModel = {};
+    controller._clearStorageAndReload = {};
+
+    const interaction = controller._createCommandInteraction();
+
+    t.true(interaction instanceof CommandInteraction);
+    t.is(interaction._inputState, controller.input);
+    t.is(interaction._commandInput, controller.$commandInput);
+    t.is(interaction._aircraftController, controller._aircraftController);
+    t.is(interaction._scopeModel, controller._scopeModel);
+    t.is(interaction._clearStorageAndReload, controller._clearStorageAndReload);
+    t.is(interaction._uiController, UiController);
+    t.is(interaction._gameController, GameController);
+    t.is(interaction._eventTracker, EventTracker);
+    t.is(interaction._airportController, AirportController);
+    t.is(interaction._CommandParserClass, CommandParser);
+    t.is(interaction._ScopeCommandModelClass, ScopeCommandModel);
+});
+
+ava.serial('constructor retains an explicitly supplied trailing command interaction', (t) => {
+    const inputInit = sinon.stub(InputController.prototype, '_init');
+    const autocompleteInit = sinon.stub(AutocompleteController.prototype, '_init');
+    const commandInteraction = {};
+
+    try {
+        const controller = new InputController(
+            {}, {}, {}, {}, null, null, null, {}, {}, {}, commandInteraction
+        );
+
+        t.is(controller._commandInteraction, commandInteraction);
+    } finally {
+        inputInit.restore();
+        autocompleteInit.restore();
+    }
+});
+
+ava.serial('public command methods delegate through current controller callbacks', (t) => {
+    const inputInit = sinon.stub(InputController.prototype, '_init');
+    const autocompleteInit = sinon.stub(AutocompleteController.prototype, '_init');
+    const calls = [];
+    const response = {};
+    const parsedCommand = {};
+    const interaction = {
+        process: (...args) => { calls.push(['process', ...args]); return response; },
+        processAircraft: (...args) => { calls.push(['processAircraft', ...args]); return response; },
+        processScope: (...args) => { calls.push(['processScope', ...args]); return response; },
+        processSystem: (...args) => { calls.push(['processSystem', ...args]); return response; },
+        processTransmit: (...args) => { calls.push(['processTransmit', ...args]); return response; }
+    };
+
+    try {
+        const controller = new InputController(
+            {}, {}, {}, {}, null, null, null, {}, {}, {}, interaction
+        );
+        controller.deselectAircraft = () => calls.push(['deselect']);
+
+        t.is(controller.processCommand(), response);
+        t.is(controller.processAircraftCommand(), response);
+        t.is(controller.processScopeCommand(), response);
+        t.is(controller.processSystemCommand(parsedCommand), response);
+        t.is(controller.processTransmitCommand(parsedCommand), response);
+        t.deepEqual(calls.map(([name]) => name), [
+            'process',
+            'processAircraft',
+            'processScope',
+            'processSystem',
+            'processTransmit'
+        ]);
+        t.is(calls[0][1], controller.commandBarContext);
+        t.is(typeof calls[0][2].processAircraft, 'function');
+        t.is(typeof calls[0][2].processScope, 'function');
+        t.is(typeof calls[0][2].deselect, 'function');
+        t.is(typeof calls[1][1].processSystem, 'function');
+        t.is(typeof calls[1][1].processTransmit, 'function');
+        t.is(calls[3][1], parsedCommand);
+        t.is(calls[4][1], parsedCommand);
+
+        calls[0][2].processAircraft();
+        t.is(calls.at(-1)[0], 'processAircraft');
+        calls[0][2].processScope();
+        t.is(calls.at(-1)[0], 'processScope');
+        calls[0][2].deselect();
+        t.is(calls.at(-1)[0], 'deselect');
+        calls[1][1].processSystem(parsedCommand);
+        t.is(calls.at(-1)[0], 'processSystem');
+        calls[1][1].processTransmit(parsedCommand);
+        t.is(calls.at(-1)[0], 'processTransmit');
     } finally {
         inputInit.restore();
         autocompleteInit.restore();

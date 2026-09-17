@@ -81,13 +81,13 @@ The application tests use [AVA 6][ava] with Babel 7 register on Node 24:
 npm test
 ```
 
-The current Phase 5 baseline reports 1,686 passing, 17 skipped, and 14 todo tests. [c8][c8] provides Node 24 coverage:
+The current Phase 5 baseline reports 1,697 passing, 17 skipped, and 14 todo tests. [c8][c8] provides Node 24 coverage:
 
 ```sh
 npm run test:coverage
 ```
 
-Coverage runs with `all: true`, verifies that all 136 eligible source modules appear under their real repository paths, and enforces regression floors of 68% statements/lines, 70% functions, and 90% branches. The current Phase 5 baseline measures 78.27% statements/lines, 72.07% functions, and 92.03% branches. Historical checkpoints remain recorded in the modernization audit. Generated reports are written to `coverage/`.
+Coverage runs with `all: true`, verifies that all 136 eligible source modules appear under their real repository paths, and enforces regression floors of 68% statements/lines, 70% functions, and 90% branches. The current Phase 5 baseline measures 78.68% statements/lines, 72.36% functions, and 92.01% branches. Historical checkpoints remain recorded in the modernization audit. Generated reports are written to `coverage/`.
 
 `npm run lint` uses ESLint 10 flat configuration and currently checks 327 JavaScript files across `src/`, `test/`, and `tools/`, including the lint configuration itself. The gate has a clean baseline with zero errors and zero warnings. Remaining dependency cycles are documented architecture debt and are intentionally outside this toolchain slice.
 

@@ -1,7 +1,9 @@
 import ava from 'ava';
 import sinon from 'sinon';
+import $ from 'jquery';
 import CanvasController from '../../src/assets/scripts/client/canvas/CanvasController';
 import CanvasRenderScheduler from '../../src/assets/scripts/client/canvas/CanvasRenderScheduler';
+import CanvasStageModel from '../../src/assets/scripts/client/canvas/CanvasStageModel';
 import { CANVAS_NAME } from '../../src/assets/scripts/client/constants/canvasConstants';
 import TimeKeeper from '../../src/assets/scripts/client/engine/TimeKeeper';
 
@@ -202,4 +204,83 @@ ava('destroy() delegates host teardown and restores an initial render plan', (t)
         controller._renderScheduler.nextFrame(() => false),
         { renderStatic: true, renderDynamic: true }
     );
+});
+
+// `CanvasController` now owns its viewport/camera (a `CanvasStageModel`) as an
+// injectable dependency rather than reaching for the shared singleton. These
+// characterizations prove the coordinate/pan paths use the exact injected
+// viewport and that a default-created host is wired to that same viewport.
+
+ava('_onCenterPointInView() pans the exact injected viewport, not the default singleton', (t) => {
+    const controller = Object.create(CanvasController.prototype);
+    const viewport = {
+        _translateKilometersToPixels: sinon.stub(),
+        updatePan: sinon.spy()
+    };
+
+    viewport._translateKilometersToPixels.withArgs(10).returns(100.4);
+    viewport._translateKilometersToPixels.withArgs(20).returns(200.6);
+    controller._viewport = viewport;
+
+    const singletonTranslate = sinon.spy(CanvasStageModel, '_translateKilometersToPixels');
+    const singletonUpdatePan = sinon.spy(CanvasStageModel, 'updatePan');
+
+    try {
+        controller._onCenterPointInView([10, 20]);
+
+        // newPanX = -round(100.4) = -100; newPanY = round(200.6) = 201
+        t.true(viewport.updatePan.calledOnceWithExactly(-100, 201));
+        t.true(singletonTranslate.notCalled);
+        t.true(singletonUpdatePan.notCalled);
+    } finally {
+        singletonTranslate.restore();
+        singletonUpdatePan.restore();
+    }
+});
+
+ava.serial('constructing without an explicit host builds a default CanvasHost owning the exact injected viewport', (t) => {
+    const $element = $('<div></div>');
+    const viewport = { initStorage: sinon.spy() };
+
+    // Isolate the wiring-under-test from unrelated theme/handler/enable behavior,
+    // none of which this characterization is asserting.
+    const initStub = sinon.stub(CanvasController.prototype, '_init').returnsThis();
+    const setupStub = sinon.stub(CanvasController.prototype, '_setupHandlers').returnsThis();
+    const enableStub = sinon.stub(CanvasController.prototype, 'enable').returnsThis();
+
+    try {
+        const controller = new CanvasController($element, null, null, null, null, null, null, viewport);
+
+        t.is(controller._viewport, viewport);
+        t.is(controller._canvasHost._stageModel, viewport);
+        t.true(viewport.initStorage.calledOnce);
+    } finally {
+        initStub.restore();
+        setupStub.restore();
+        enableStub.restore();
+    }
+});
+
+ava.serial('an explicitly supplied host is retained unchanged while the viewport still owns storage config', (t) => {
+    const $element = $('<div></div>');
+    const viewport = { initStorage: sinon.spy() };
+    const explicitHost = { destroy: sinon.spy() };
+
+    const initStub = sinon.stub(CanvasController.prototype, '_init').returnsThis();
+    const setupStub = sinon.stub(CanvasController.prototype, '_setupHandlers').returnsThis();
+    const enableStub = sinon.stub(CanvasController.prototype, 'enable').returnsThis();
+
+    try {
+        const controller = new CanvasController(
+            $element, null, null, null, null, null, explicitHost, viewport
+        );
+
+        t.is(controller._canvasHost, explicitHost);
+        t.is(controller._viewport, viewport);
+        t.true(viewport.initStorage.calledOnce);
+    } finally {
+        initStub.restore();
+        setupStub.restore();
+        enableStub.restore();
+    }
 });

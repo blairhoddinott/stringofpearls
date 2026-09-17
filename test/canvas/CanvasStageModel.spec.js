@@ -1,7 +1,13 @@
 import ava from 'ava';
 import sinon from 'sinon';
-import CanvasStageModel from '../../src/assets/scripts/client/canvas/CanvasStageModel';
-import { SCALE } from '../../src/assets/scripts/client/constants/canvasConstants';
+import CanvasStageModel, { CanvasStageModelClass } from '../../src/assets/scripts/client/canvas/CanvasStageModel';
+import EventBus from '../../src/assets/scripts/client/lib/EventBus';
+import {
+    DEFAULT_CANVAS_SIZE,
+    PAN,
+    SCALE
+} from '../../src/assets/scripts/client/constants/canvasConstants';
+import { EVENT } from '../../src/assets/scripts/client/constants/eventNames';
 import { STORAGE_KEY } from '../../src/assets/scripts/client/constants/storageKeys';
 
 // Build a storage adapter stub exposing only the `get(key)`/`set(key, value)`
@@ -22,6 +28,97 @@ ava.afterEach(() => {
 
 ava('throws when called to instantiate', (t) => {
     t.throws(() => new CanvasStageModel());
+});
+
+// The named `CanvasStageModelClass` export is the constructible viewport/camera
+// dependency. The default export above remains a single shared singleton for
+// unmigrated consumers, so these tests exercise construction/injection directly
+// on the class without touching that singleton.
+
+ava('CanvasStageModelClass is a constructible named export distinct from the default singleton', (t) => {
+    t.is(typeof CanvasStageModelClass, 'function');
+    t.true(CanvasStageModel instanceof CanvasStageModelClass);
+    t.not(CanvasStageModelClass, CanvasStageModel);
+});
+
+ava('CanvasStageModelClass initializes the same dimensions/pan/scale/storage state as the singleton', (t) => {
+    const viewport = new CanvasStageModelClass();
+
+    t.is(viewport.width, DEFAULT_CANVAS_SIZE.WIDTH);
+    t.is(viewport.height, DEFAULT_CANVAS_SIZE.HEIGHT);
+    t.is(viewport._panX, PAN.X);
+    t.is(viewport._panY, PAN.Y);
+    t.is(viewport._scale, SCALE.DEFAULT);
+    t.is(viewport._storageAdapter, null);
+});
+
+ava('CanvasStageModelClass defaults its event bus to the compatibility EventBus singleton', (t) => {
+    const viewport = new CanvasStageModelClass();
+
+    t.is(viewport._eventBus, EventBus);
+});
+
+ava('CanvasStageModelClass retains the exact injected event bus identity', (t) => {
+    const eventBus = { trigger: sinon.spy() };
+    const viewport = new CanvasStageModelClass(eventBus);
+
+    t.is(viewport._eventBus, eventBus);
+});
+
+ava('two constructed viewports isolate their dimensions', (t) => {
+    const a = new CanvasStageModelClass();
+    const b = new CanvasStageModelClass();
+
+    a.updateHeightAndWidth(1000, 2000);
+
+    t.is(a.width, 2000);
+    t.is(a.height, 1000 - DEFAULT_CANVAS_SIZE.FOTTER_HEIGHT_OFFSET);
+    t.is(b.width, DEFAULT_CANVAS_SIZE.WIDTH);
+    t.is(b.height, DEFAULT_CANVAS_SIZE.HEIGHT);
+});
+
+ava('two constructed viewports isolate their pan and publish to their own event bus', (t) => {
+    const busA = { trigger: sinon.spy() };
+    const busB = { trigger: sinon.spy() };
+    const a = new CanvasStageModelClass(busA);
+    const b = new CanvasStageModelClass(busB);
+
+    a.updatePan(11, 22);
+
+    t.is(a._panX, 11);
+    t.is(a._panY, 22);
+    t.is(b._panX, PAN.X);
+    t.is(b._panY, PAN.Y);
+    t.true(busA.trigger.calledOnceWithExactly(EVENT.PAN_VIEWPORT));
+    t.true(busB.trigger.notCalled);
+});
+
+ava('two constructed viewports isolate their scale/zoom', (t) => {
+    const a = new CanvasStageModelClass({ trigger: sinon.spy() });
+    const b = new CanvasStageModelClass({ trigger: sinon.spy() });
+
+    a._scale = 50;
+    a.zoomIn();
+
+    t.is(a._scale, 50 / SCALE.CHANGE_FACTOR);
+    t.is(b._scale, SCALE.DEFAULT);
+});
+
+ava('two constructed viewports isolate their storage adapters', (t) => {
+    const adapterA = buildStorageAdapter();
+    const adapterB = buildStorageAdapter();
+    const a = new CanvasStageModelClass({ trigger: sinon.spy() });
+    const b = new CanvasStageModelClass({ trigger: sinon.spy() });
+
+    a.initStorage(adapterA);
+    b.initStorage(adapterB);
+    a._scale = 0.05;
+    a._storeZoomLevel();
+
+    t.is(a._storageAdapter, adapterA);
+    t.is(b._storageAdapter, adapterB);
+    t.true(adapterA.set.calledOnceWithExactly(STORAGE_KEY.ZOOM_LEVEL, 0.05));
+    t.true(adapterB.set.notCalled);
 });
 
 ava('.translatePixelsToKilometers() divides pixels by scale', (t) => {

@@ -24,19 +24,26 @@ import { INVALID_NUMBER } from '../constants/globalConstants';
  *      V     (haversine math from DynamicPositionModel to find GPS coordinates based on dist/dir from known coordinates)
  * "GPS Coordinates": the latitude/longitude values of a given position
  *
- * @class CanvasStageModel
+ * The constructible `CanvasStageModelClass` is the ownable viewport/camera
+ * dependency; the module default export below remains a single shared singleton
+ * for unmigrated consumers. The named export carries a distinct identifier to
+ * avoid `no-named-as-default` lint warnings against that default import.
+ *
+ * @class CanvasStageModelClass
  */
-class CanvasStageModel {
+export class CanvasStageModelClass {
     /**
      * @constructor
+     * @param eventBus {EventBus} event bus used to publish pan/zoom events;
+     *                            defaults to the compatibility `EventBus` singleton
      */
-    constructor() {
+    constructor(eventBus = EventBus) {
         /**
          * @property _eventBus
          * @type {EventBus}
          * @private
          */
-        this._eventBus = EventBus;
+        this._eventBus = eventBus;
 
         /**
          * Pixel height of the canvas(es)
@@ -489,4 +496,4 @@ class CanvasStageModel {
     }
 }
 
-export default new CanvasStageModel();
+export default new CanvasStageModelClass();

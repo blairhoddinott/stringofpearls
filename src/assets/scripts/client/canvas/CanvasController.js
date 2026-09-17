@@ -10,6 +10,7 @@ import AirportRunwayRenderer from './AirportRunwayRenderer';
 import CanvasHost from './CanvasHost';
 import CanvasRenderScheduler from './CanvasRenderScheduler';
 import CanvasStageModel from './CanvasStageModel';
+import MeasurementOverlayRenderer from './MeasurementOverlayRenderer';
 import EventBus from '../lib/EventBus';
 import GameController from '../game/GameController';
 import MeasureTool from '../measurement/MeasureTool';
@@ -62,8 +63,9 @@ export default class CanvasController {
      * @param runwayRenderer {AirportRunwayRenderer} airport runway presentation; nullish/omitted constructs a default
      * @param navigationRenderer {AirportNavigationRenderer} airport fix/procedure presentation; nullish/omitted constructs a default
      * @param backgroundRenderer {AirportBackgroundRenderer} airport background presentation; nullish/omitted constructs a default
+     * @param measurementRenderer {MeasurementOverlayRenderer} measurement overlay presentation; nullish/omitted constructs a default
      */
-    constructor($element, aircraftController, scopeModel, storageAdapter, delayScheduler, renderScheduler, canvasHost, viewport, runwayRenderer, navigationRenderer, backgroundRenderer) {
+    constructor($element, aircraftController, scopeModel, storageAdapter, delayScheduler, renderScheduler, canvasHost, viewport, runwayRenderer, navigationRenderer, backgroundRenderer, measurementRenderer) {
         /**
          * Reference to the `window` object
          *
@@ -160,6 +162,10 @@ export default class CanvasController {
             this._viewport,
             () => AirportController.airport_get(),
             () => GameController.getGameOption(GAME_OPTION_NAMES.RANGE_RINGS)
+        );
+        this._measurementRenderer = measurementRenderer ?? new MeasurementOverlayRenderer(
+            this._viewport,
+            MeasureTool
         );
 
         /**
@@ -487,7 +493,7 @@ export default class CanvasController {
         this._drawSelectedAircraftCompass(dynamicCanvasCtx);
         this._drawRadarTargetList(dynamicCanvasCtx);
         this._drawAircraftDataBlocks(dynamicCanvasCtx);
-        this._drawMeasureTool(dynamicCanvasCtx);
+        this._measurementRenderer.draw(dynamicCanvasCtx, this.theme);
 
         this._renderScheduler.completeFrame();
     }
@@ -932,174 +938,6 @@ export default class CanvasController {
 
         // TODO: following method not in use, leaving for posterity
         // this.canvas_draw_future_track_fixes(cc, twin, future_track);
-
-        cc.restore();
-    }
-
-    /**
-     * Draw the `MeasureTool` path and text labels
-     *
-     * POSITIONING: Before calling this method, ensure NO TRANSLATION has occurred
-     *
-     * @for CanvasController
-     * @method _drawMeasureTool
-     * @param cc {HTMLCanvasContext}
-     * @returns undefined
-     * @private
-     */
-    _drawMeasureTool(cc) {
-        if (!MeasureTool.hasPaths) {
-            return;
-        }
-
-        const pathInfoList = MeasureTool.buildPathInfo();
-
-        cc.save();
-        this._ccTranslateFromCanvasOriginToAirportCenter(cc);
-
-        pathInfoList.forEach((pathInfo) => {
-            this._drawMeasureToolPath(cc, pathInfo);
-            this._drawMeasureToolLabels(cc, pathInfo);
-        });
-
-        cc.restore();
-    }
-
-    /**
-     * Draw the `MeasureTool` text labels
-     *
-     * POSITIONING: Before calling this method, translate to the AIRPORT CENTER
-     *
-     * @for CanvasController
-     * @method _drawMeasureToolLabels
-     * @param cc {HTMLCanvasContext}
-     * @param pathInfo {object} as returned by `MeasureTools.getPointsAndLabels()`
-     * @returns undefined
-     * @private
-     */
-    _drawMeasureToolLabels(cc, pathInfo) {
-        let leg = pathInfo.firstLeg;
-        const values = [];
-        const labelPadding = 5;
-
-        // This way the points are translated only once
-        while (leg != null) {
-            // Ignore empty labels
-            if (leg.labels !== null && leg.labels.length !== 0) {
-                const position = this._viewport.calculatePreciseCanvasPositionFromRelativePosition(leg.midPoint);
-
-                values.push({
-                    x: position[0],
-                    y: position[1],
-                    labels: leg.labels
-                });
-            }
-
-            leg = leg.next;
-        }
-
-        // Shortcut if there are no labels (line is too short)
-        if (values.length === 0) {
-            return;
-        }
-
-        cc.save();
-
-        // Label backgrounds
-        cc.fillStyle = this.theme.SCOPE.MEASURE_BACKGROUND;
-        cc.font = this.theme.DATA_BLOCK.TEXT_FONT;
-
-        values.forEach((item) => {
-            const { x, y, labels } = item;
-            const height = (2 * labelPadding) + (12 * labels.length);
-            const maxLabelWidth = labels.reduce((lastWidth, label) => {
-                const newWidth = cc.measureText(label).width;
-
-                return Math.max(lastWidth, newWidth);
-            }, 0);
-            const width = (2 * labelPadding) + maxLabelWidth;
-
-            cc.fillRect(x, y, width, height);
-        });
-
-        // Label text
-        cc.fillStyle = this.theme.SCOPE.MEASURE_TEXT;
-
-        values.forEach((item) => {
-            const { labels } = item;
-            const x = item.x + labelPadding;
-            const y = item.y + 15;
-
-            labels.forEach((line, index) => {
-                cc.fillText(line, x, y + (12 * index));
-            });
-        });
-
-        cc.restore();
-    }
-
-    /**
-     * Draw the `MeasureTool` path
-     *
-     * POSITIONING: Before calling this method, translate to the AIRPORT CENTER
-     *
-     * @for CanvasController
-     * @method _drawMeasureToolPath
-     * @param cc {HTMLCanvasContext}
-     * @param pathInfo {object} as returned by `MeasureTools.getPointsAndLabels()`
-     * @returns undefined
-     * @private
-     */
-    _drawMeasureToolPath(cc, pathInfo) {
-        const { initialTurn } = pathInfo;
-        let leg = pathInfo.firstLeg;
-        const firstPoint = this._viewport.calculatePreciseCanvasPositionFromRelativePosition(leg.startPoint);
-        const firstMidPoint = this._viewport.calculatePreciseCanvasPositionFromRelativePosition(leg.midPoint);
-
-        cc.save();
-
-        cc.strokeStyle = this.theme.SCOPE.MEASURE_LINE;
-
-        cc.beginPath();
-
-        // If available, this draws the arc the a/c will fly to intercept the course to the
-        // first fix
-        if (initialTurn !== null) {
-            const {
-                isRHT, center, entryAngle, exitAngle, turnRadius
-            } = initialTurn;
-            const position = this._viewport.calculatePreciseCanvasPositionFromRelativePosition(center);
-            const radius = this._viewport._translateKilometersToPixels(turnRadius);
-
-            // The angles calculated in the `MeasureTool` are magnetic, and have to be shifted CCW 90°
-            cc.arc(position[0], position[1], radius, entryAngle - Math.PI / 2, exitAngle - Math.PI / 2, !isRHT);
-        }
-
-        // Draw up to the first midpoint
-        cc.moveTo(firstPoint[0], firstPoint[1]);
-        cc.lineTo(firstMidPoint[0], firstMidPoint[1]);
-
-        // Iterate through the linked list
-        while (leg != null) {
-            const { next } = leg;
-            const radius = this._viewport._translateKilometersToPixels(leg.radius);
-            const position1 = this._viewport.calculatePreciseCanvasPositionFromRelativePosition(leg.endPoint);
-
-            if (next === null) {
-                // This is the last leg, so simply draw to the end point
-                cc.lineTo(position1[0], position1[1]);
-            } else {
-                // Draw an arc'd line to the next midpoint
-                const position2 = this._viewport.calculatePreciseCanvasPositionFromRelativePosition(next.midPoint);
-
-                cc.arcTo(position1[0], position1[1], position2[0], position2[1], radius);
-                cc.lineTo(position2[0], position2[1]);
-            }
-
-            leg = next;
-        }
-
-        cc.stroke();
 
         cc.restore();
     }

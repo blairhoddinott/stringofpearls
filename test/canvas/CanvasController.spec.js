@@ -8,6 +8,7 @@ import CanvasStageModel from '../../src/assets/scripts/client/canvas/CanvasStage
 import { CANVAS_NAME } from '../../src/assets/scripts/client/constants/canvasConstants';
 import TimeKeeper from '../../src/assets/scripts/client/engine/TimeKeeper';
 import GameController from '../../src/assets/scripts/client/game/GameController';
+import MeasureTool from '../../src/assets/scripts/client/measurement/MeasureTool';
 import NavigationLibrary from '../../src/assets/scripts/client/navigationLibrary/NavigationLibrary';
 
 const STATIC_DRAW_METHODS = [
@@ -28,7 +29,7 @@ const DYNAMIC_DRAW_METHODS = [
     '_drawSelectedAircraftCompass',
     '_drawRadarTargetList',
     '_drawAircraftDataBlocks',
-    '_drawMeasureTool'
+    'measurementRenderer.draw'
 ];
 
 const buildController = () => {
@@ -63,12 +64,15 @@ const buildController = () => {
         drawAirspaceAndRangeRings: () => calls.push(`${staticContext.name}:backgroundRenderer.drawAirspaceAndRangeRings`),
         drawAirspaceShelvesAndLabels: () => calls.push(`${staticContext.name}:backgroundRenderer.drawAirspaceShelvesAndLabels`)
     };
+    controller._measurementRenderer = {
+        draw: () => calls.push(`${dynamicContext.name}:measurementRenderer.draw`)
+    };
 
     for (const methodName of STATIC_DRAW_METHODS.filter((name) => !name.includes('Renderer.'))) {
         controller[methodName] = () => calls.push(`${staticContext.name}:${methodName}`);
     }
 
-    for (const methodName of DYNAMIC_DRAW_METHODS) {
+    for (const methodName of DYNAMIC_DRAW_METHODS.filter((name) => !name.includes('Renderer.'))) {
         controller[methodName] = () => calls.push(`${dynamicContext.name}:${methodName}`);
     }
 
@@ -287,6 +291,38 @@ ava.serial('canvasUpdatePost() leaves a deep frame pending when a static rendere
     }
 });
 
+ava.serial('canvasUpdatePost() delegates measurement after aircraft rendering', (t) => {
+    const {
+        calls, controller, dynamicContext
+    } = buildController();
+    const shouldUpdate = sinon.stub(TimeKeeper, 'shouldUpdate').returns(false);
+    const oldDrawMeasureTool = sinon.spy();
+
+    controller.theme = { name: 'theme' };
+    controller._drawMeasureTool = oldDrawMeasureTool;
+    controller._measurementRenderer = {
+        draw: sinon.spy((context, theme) => {
+            t.is(context, dynamicContext);
+            t.is(theme, controller.theme);
+            calls.push(`${CANVAS_NAME.DYNAMIC}:measurementRenderer.draw`);
+        })
+    };
+
+    try {
+        controller.canvasUpdatePost();
+
+        t.true(controller._measurementRenderer.draw.calledOnceWithExactly(
+            dynamicContext,
+            controller.theme
+        ));
+        t.true(oldDrawMeasureTool.notCalled);
+        t.true(calls.indexOf(`${CANVAS_NAME.DYNAMIC}:_drawAircraftDataBlocks`) <
+            calls.indexOf(`${CANVAS_NAME.DYNAMIC}:measurementRenderer.draw`));
+    } finally {
+        shouldUpdate.restore();
+    }
+});
+
 ava.serial('canvasUpdatePost() renders only the dynamic canvas when simulation time advances', (t) => {
     const { calls, controller } = buildController();
     const shouldUpdate = sinon.stub(TimeKeeper, 'shouldUpdate').returns(true);
@@ -433,6 +469,8 @@ ava.serial('constructing without an explicit host builds a default CanvasHost ow
         t.is(controller._navigationRenderer._viewport, viewport);
         t.is(controller._navigationRenderer._navigationLibrary, NavigationLibrary);
         t.is(controller._backgroundRenderer._viewport, viewport);
+        t.is(controller._measurementRenderer._viewport, viewport);
+        t.is(controller._measurementRenderer._measureTool, MeasureTool);
         t.true(viewport.initStorage.calledOnce);
     } finally {
         initStub.restore();
@@ -448,6 +486,7 @@ ava.serial('an explicitly supplied host is retained unchanged while the viewport
     const runwayRenderer = {};
     const navigationRenderer = {};
     const backgroundRenderer = {};
+    const measurementRenderer = {};
 
     const initStub = sinon.stub(CanvasController.prototype, '_init').returnsThis();
     const setupStub = sinon.stub(CanvasController.prototype, '_setupHandlers').returnsThis();
@@ -456,7 +495,7 @@ ava.serial('an explicitly supplied host is retained unchanged while the viewport
     try {
         const controller = new CanvasController(
             $element, null, null, null, null, null, explicitHost, viewport,
-            runwayRenderer, navigationRenderer, backgroundRenderer
+            runwayRenderer, navigationRenderer, backgroundRenderer, measurementRenderer
         );
 
         t.is(controller._canvasHost, explicitHost);
@@ -464,6 +503,7 @@ ava.serial('an explicitly supplied host is retained unchanged while the viewport
         t.is(controller._runwayRenderer, runwayRenderer);
         t.is(controller._navigationRenderer, navigationRenderer);
         t.is(controller._backgroundRenderer, backgroundRenderer);
+        t.is(controller._measurementRenderer, measurementRenderer);
         t.true(viewport.initStorage.calledOnce);
     } finally {
         initStub.restore();

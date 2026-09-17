@@ -5,7 +5,7 @@
 
 String of Pearls is a browser-based air traffic control simulator. Work traffic on realistic scopes, issue clearances, manage arrivals and departures, and try not to manufacture an FAA incident report.
 
-The project is being modernized from the openScope codebase. Existing simulation behavior and airport data remain useful; the obsolete build system, runtime assumptions, and global architecture are being replaced incrementally.
+String of Pearls is an independent community fork of the openScope codebase. It retains the inherited simulation behavior, airport data, Git history, license, and attribution while replacing obsolete build infrastructure and isolating platform, simulation, presentation, and input responsibilities behind characterized boundaries.
 
 ## Run with Docker
 
@@ -80,7 +80,7 @@ The canonical roadmap lives at [documentation/development/roadmap.md](documentat
 - [x] Add deterministic aviation asset validation
 - [x] Add an automated browser startup and airport-selection smoke test
 - [x] Replace the legacy JavaScript build toolchain and adopt Node 24
-- [ ] Modernize the application architecture
+- [x] Modernize the application architecture through the Phase 5 boundary decomposition
 - [ ] Resume feature development on the modernized foundation
 
 ### Simulation and realism
@@ -116,7 +116,7 @@ Issues and pull requests are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) be
 
 ## Privacy
 
-The inherited client currently includes Google Analytics event tracking. See [Event tracking and privacy](documentation/event-tracking.md) for details. Removing or replacing that integration is part of the modernization work.
+The client supports optional Google Analytics event tracking through an explicit adapter configured at the browser composition root. See [Event tracking and privacy](documentation/event-tracking.md) for details.
 
 ## License and attribution
 

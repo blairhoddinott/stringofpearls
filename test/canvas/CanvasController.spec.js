@@ -26,9 +26,9 @@ const STATIC_DRAW_METHODS = [
 ];
 
 const DYNAMIC_DRAW_METHODS = [
-    '_drawSelectedAircraftCompass',
+    'aircraftAnnotationRenderer.drawCompass',
     'aircraftTargetRenderer.draw',
-    '_drawAircraftDataBlocks',
+    'aircraftAnnotationRenderer.drawDataBlocks',
     'measurementRenderer.draw'
 ];
 
@@ -69,6 +69,10 @@ const buildController = () => {
     };
     controller._aircraftTargetRenderer = {
         draw: () => calls.push(`${dynamicContext.name}:aircraftTargetRenderer.draw`)
+    };
+    controller._aircraftAnnotationRenderer = {
+        drawCompass: () => calls.push(`${dynamicContext.name}:aircraftAnnotationRenderer.drawCompass`),
+        drawDataBlocks: () => calls.push(`${dynamicContext.name}:aircraftAnnotationRenderer.drawDataBlocks`)
     };
 
     for (const methodName of STATIC_DRAW_METHODS.filter((name) => !name.includes('Renderer.'))) {
@@ -319,7 +323,7 @@ ava.serial('canvasUpdatePost() delegates measurement after aircraft rendering', 
             controller.theme
         ));
         t.true(oldDrawMeasureTool.notCalled);
-        t.true(calls.indexOf(`${CANVAS_NAME.DYNAMIC}:_drawAircraftDataBlocks`) <
+        t.true(calls.indexOf(`${CANVAS_NAME.DYNAMIC}:aircraftAnnotationRenderer.drawDataBlocks`) <
             calls.indexOf(`${CANVAS_NAME.DYNAMIC}:measurementRenderer.draw`));
     } finally {
         shouldUpdate.restore();
@@ -351,10 +355,48 @@ ava.serial('canvasUpdatePost() delegates aircraft targets between compass and da
             controller.theme
         ));
         t.true(oldDrawRadarTargetList.notCalled);
-        t.true(calls.indexOf(`${CANVAS_NAME.DYNAMIC}:_drawSelectedAircraftCompass`) <
+        t.true(calls.indexOf(`${CANVAS_NAME.DYNAMIC}:aircraftAnnotationRenderer.drawCompass`) <
             calls.indexOf(`${CANVAS_NAME.DYNAMIC}:aircraftTargetRenderer.draw`));
         t.true(calls.indexOf(`${CANVAS_NAME.DYNAMIC}:aircraftTargetRenderer.draw`) <
-            calls.indexOf(`${CANVAS_NAME.DYNAMIC}:_drawAircraftDataBlocks`));
+            calls.indexOf(`${CANVAS_NAME.DYNAMIC}:aircraftAnnotationRenderer.drawDataBlocks`));
+    } finally {
+        shouldUpdate.restore();
+    }
+});
+
+ava.serial('canvasUpdatePost() delegates both aircraft annotation slots around targets', (t) => {
+    const {
+        calls, controller, dynamicContext
+    } = buildController();
+    const shouldUpdate = sinon.stub(TimeKeeper, 'shouldUpdate').returns(false);
+    const oldDrawCompass = sinon.spy();
+    const oldDrawDataBlocks = sinon.spy();
+
+    controller.theme = { name: 'theme' };
+    controller._drawSelectedAircraftCompass = oldDrawCompass;
+    controller._drawAircraftDataBlocks = oldDrawDataBlocks;
+    controller._aircraftAnnotationRenderer = {
+        drawCompass: sinon.spy(() => calls.push(`${CANVAS_NAME.DYNAMIC}:aircraftAnnotationRenderer.drawCompass`)),
+        drawDataBlocks: sinon.spy(() => calls.push(`${CANVAS_NAME.DYNAMIC}:aircraftAnnotationRenderer.drawDataBlocks`))
+    };
+
+    try {
+        controller.canvasUpdatePost();
+
+        t.true(controller._aircraftAnnotationRenderer.drawCompass.calledOnceWithExactly(
+            dynamicContext,
+            controller.theme
+        ));
+        t.true(controller._aircraftAnnotationRenderer.drawDataBlocks.calledOnceWithExactly(
+            dynamicContext,
+            controller.theme
+        ));
+        t.true(oldDrawCompass.notCalled);
+        t.true(oldDrawDataBlocks.notCalled);
+        t.true(calls.indexOf(`${CANVAS_NAME.DYNAMIC}:aircraftAnnotationRenderer.drawCompass`) <
+            calls.indexOf(`${CANVAS_NAME.DYNAMIC}:aircraftTargetRenderer.draw`));
+        t.true(calls.indexOf(`${CANVAS_NAME.DYNAMIC}:aircraftTargetRenderer.draw`) <
+            calls.indexOf(`${CANVAS_NAME.DYNAMIC}:aircraftAnnotationRenderer.drawDataBlocks`));
     } finally {
         shouldUpdate.restore();
     }
@@ -512,6 +554,11 @@ ava.serial('constructing without an explicit host builds a default CanvasHost ow
         t.is(controller._aircraftTargetRenderer._scopeModel, null);
         t.is(controller._aircraftTargetRenderer._gameController, GameController);
         t.is(controller._aircraftTargetRenderer._timeKeeper, TimeKeeper);
+        t.is(controller._aircraftAnnotationRenderer._viewport, viewport);
+        t.is(controller._aircraftAnnotationRenderer._scopeModel, null);
+        t.is(controller._aircraftAnnotationRenderer._aircraftController, null);
+        t.is(controller._aircraftAnnotationRenderer._gameController, GameController);
+        t.is(controller._aircraftAnnotationRenderer._timeKeeper, TimeKeeper);
         t.true(viewport.initStorage.calledOnce);
     } finally {
         initStub.restore();
@@ -529,6 +576,7 @@ ava.serial('an explicitly supplied host is retained unchanged while the viewport
     const backgroundRenderer = {};
     const measurementRenderer = {};
     const aircraftTargetRenderer = {};
+    const aircraftAnnotationRenderer = {};
 
     const initStub = sinon.stub(CanvasController.prototype, '_init').returnsThis();
     const setupStub = sinon.stub(CanvasController.prototype, '_setupHandlers').returnsThis();
@@ -538,7 +586,7 @@ ava.serial('an explicitly supplied host is retained unchanged while the viewport
         const controller = new CanvasController(
             $element, null, null, null, null, null, explicitHost, viewport,
             runwayRenderer, navigationRenderer, backgroundRenderer, measurementRenderer,
-            aircraftTargetRenderer
+            aircraftTargetRenderer, aircraftAnnotationRenderer
         );
 
         t.is(controller._canvasHost, explicitHost);
@@ -548,6 +596,7 @@ ava.serial('an explicitly supplied host is retained unchanged while the viewport
         t.is(controller._backgroundRenderer, backgroundRenderer);
         t.is(controller._measurementRenderer, measurementRenderer);
         t.is(controller._aircraftTargetRenderer, aircraftTargetRenderer);
+        t.is(controller._aircraftAnnotationRenderer, aircraftAnnotationRenderer);
         t.true(viewport.initStorage.calledOnce);
     } finally {
         initStub.restore();

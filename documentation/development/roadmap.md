@@ -24,6 +24,7 @@ This roadmap tracks the current direction of the project. The order may change a
     - [x] Extract video maps, terrain, restricted areas, airspace shelves/borders, range rings, and their labels into an injected `AirportBackgroundRenderer` while preserving their five static-render order positions.
     - [x] Extract measurement paths, turn geometry, label backgrounds, and text into an injected `MeasurementOverlayRenderer` while preserving the final dynamic-render position.
     - [x] Extract radar returns, history dots, separation indicators, projected paths, vector lines, halos, conflict rings, and target dots into an injected `AircraftTargetRenderer` while preserving the dynamic-render order before data blocks.
+    - [x] Extract the selected-aircraft compass and aircraft data blocks into an injected `AircraftAnnotationRenderer` while preserving their dynamic-render slots around aircraft targets.
 - [ ] Resume feature development on the modernized foundation
 
 ## Simulation and realism

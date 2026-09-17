@@ -1,11 +1,10 @@
 import $ from 'jquery';
-import _filter from 'lodash/filter';
 import _has from 'lodash/has';
-import _inRange from 'lodash/inRange';
 import AirportController from '../airport/AirportController';
 import AirportBackgroundRenderer from './AirportBackgroundRenderer';
 import AirportNavigationRenderer from './AirportNavigationRenderer';
 import AirportRunwayRenderer from './AirportRunwayRenderer';
+import AircraftAnnotationRenderer from './AircraftAnnotationRenderer';
 import AircraftTargetRenderer from './AircraftTargetRenderer';
 import CanvasHost from './CanvasHost';
 import CanvasRenderScheduler from './CanvasRenderScheduler';
@@ -17,23 +16,11 @@ import MeasureTool from '../measurement/MeasureTool';
 import NavigationLibrary from '../navigationLibrary/NavigationLibrary';
 import TimeKeeper from '../engine/TimeKeeper';
 import { round } from '../math/core';
-import {
-    positive_intersection_with_rect,
-    vectorize2dFromDegrees,
-    vadd,
-    vscale
-} from '../math/vector';
-import { FLIGHT_CATEGORY } from '../constants/aircraftConstants';
-import {
-    BASE_CANVAS_FONT,
-    CANVAS_NAME
-} from '../constants/canvasConstants';
+import { CANVAS_NAME } from '../constants/canvasConstants';
 import { THEME } from '../constants/themes';
 import { EVENT } from '../constants/eventNames';
-import { INVALID_NUMBER } from '../constants/globalConstants';
 import { GAME_OPTION_NAMES } from '../constants/gameOptionConstants';
 import {
-    degreesToRadians,
     km,
     nm
 } from '../utilities/unitConverters';
@@ -57,8 +44,9 @@ export default class CanvasController {
      * @param backgroundRenderer {AirportBackgroundRenderer} airport background presentation; nullish/omitted constructs a default
      * @param measurementRenderer {MeasurementOverlayRenderer} measurement overlay presentation; nullish/omitted constructs a default
      * @param aircraftTargetRenderer {AircraftTargetRenderer} aircraft target geometry presentation; nullish/omitted constructs a default
+     * @param aircraftAnnotationRenderer {AircraftAnnotationRenderer} selected-aircraft compass and data-block presentation; nullish/omitted constructs a default
      */
-    constructor($element, aircraftController, scopeModel, storageAdapter, delayScheduler, renderScheduler, canvasHost, viewport, runwayRenderer, navigationRenderer, backgroundRenderer, measurementRenderer, aircraftTargetRenderer) {
+    constructor($element, aircraftController, scopeModel, storageAdapter, delayScheduler, renderScheduler, canvasHost, viewport, runwayRenderer, navigationRenderer, backgroundRenderer, measurementRenderer, aircraftTargetRenderer, aircraftAnnotationRenderer) {
         /**
          * Reference to the `window` object
          *
@@ -163,6 +151,14 @@ export default class CanvasController {
         this._aircraftTargetRenderer = aircraftTargetRenderer ?? new AircraftTargetRenderer(
             this._viewport,
             this._scopeModel,
+            GameController,
+            TimeKeeper,
+            () => prop.input.callsign
+        );
+        this._aircraftAnnotationRenderer = aircraftAnnotationRenderer ?? new AircraftAnnotationRenderer(
+            this._viewport,
+            this._scopeModel,
+            this._aircraftController,
             GameController,
             TimeKeeper,
             () => prop.input.callsign
@@ -490,27 +486,13 @@ export default class CanvasController {
         const dynamicCanvasCtx = this._getCanvasContextByName(CANVAS_NAME.DYNAMIC);
 
         this._clearCanvasContext(dynamicCanvasCtx);
-        this._drawSelectedAircraftCompass(dynamicCanvasCtx);
+        this._aircraftAnnotationRenderer.drawCompass(dynamicCanvasCtx, this.theme);
         this._aircraftTargetRenderer.draw(dynamicCanvasCtx, this.theme);
-        this._drawAircraftDataBlocks(dynamicCanvasCtx);
+        this._aircraftAnnotationRenderer.drawDataBlocks(dynamicCanvasCtx, this.theme);
         this._measurementRenderer.draw(dynamicCanvasCtx, this.theme);
 
         this._renderScheduler.completeFrame();
     }
-
-    /**
-     * Used primarily for the data block
-     *
-     * This provides a way to know when to show the primary
-     * dataBlock or the secondary dataBlock
-     *
-     * @method shouldShowSecondaryDataBlock
-     * @returns {boolean}
-     */
-    shouldShowSecondaryDataBlock() {
-        return _inRange(TimeKeeper.gameTimeMilliseconds % 3000, 2000, 3000);
-    }
-
     /**
      * Clear the current canvas context
      *
@@ -601,289 +583,6 @@ export default class CanvasController {
 
         // cc.stroke();
     }
-    /**
-     * Draw an aircraft's data block
-     * (box that contains callsign, altitude, speed)
-     *
-     * POSITIONING: Before calling this method, translate to the AIRPORT CENTER
-     *
-     * @for CanvasController
-     * @method _drawSingleAircraftDataBlock
-     * @param cc {HTMLCanvasContext}
-     * @param radarTargetModel {RadarTargetModel}
-     * @returns undefined
-     * @private
-     */
-    _drawSingleAircraftDataBlock(cc, radarTargetModel) {
-        const { aircraftModel } = radarTargetModel;
-
-        if (!aircraftModel.isVisible() || aircraftModel.hit) {
-            return;
-        }
-
-        cc.save();
-
-        const paddingLR = 5;
-        let match = false;
-
-        // Callsign Matching
-        if (prop.input.callsign.length > 0 && aircraftModel.matchCallsign(prop.input.callsign)) {
-            match = true;
-        }
-
-        let white = aircraftModel.isControllable ?
-            this.theme.DATA_BLOCK.TEXT_IN_RANGE :
-            this.theme.DATA_BLOCK.TEXT_OUT_OF_RANGE;
-
-        if (match) {
-            white = this.theme.DATA_BLOCK.TEXT_SELECTED;
-        }
-
-        cc.textBaseline = 'middle';
-
-        let { dataBlockLeaderDirection } = radarTargetModel;
-
-        if (dataBlockLeaderDirection === INVALID_NUMBER) {
-            dataBlockLeaderDirection = this.theme.DATA_BLOCK.LEADER_DIRECTION;
-        }
-
-        let offsetComponent = [
-            Math.sin(degreesToRadians(dataBlockLeaderDirection)),
-            -Math.cos(degreesToRadians(dataBlockLeaderDirection))
-        ];
-
-        // `degreesToRadians('ctr')` above will yield NaN, so we override that here
-        if (dataBlockLeaderDirection === 'ctr') {
-            offsetComponent = [0, 0];
-        }
-
-        // Move to center of where the data block is to be drawn
-        const radarTargetPosition = this._viewport.calculateRoundedCanvasPositionFromRelativePosition(
-            aircraftModel.relativePosition
-        );
-        const leaderLength = this._calculateLeaderLength(radarTargetModel.dataBlockLeaderLength);
-        const leaderStart = [
-            radarTargetPosition[0] + (offsetComponent[0] * this.theme.DATA_BLOCK.LEADER_PADDING_FROM_TARGET_PX),
-            radarTargetPosition[1] + (offsetComponent[1] * this.theme.DATA_BLOCK.LEADER_PADDING_FROM_TARGET_PX)
-        ];
-        const leaderEnd = [
-            radarTargetPosition[0] + offsetComponent[0] * (leaderLength - this.theme.DATA_BLOCK.LEADER_PADDING_FROM_BLOCK_PX),
-            radarTargetPosition[1] + offsetComponent[1] * (leaderLength - this.theme.DATA_BLOCK.LEADER_PADDING_FROM_BLOCK_PX)
-        ];
-        const leaderIntersectionWithBlock = [
-            radarTargetPosition[0] + offsetComponent[0] * leaderLength,
-            radarTargetPosition[1] + offsetComponent[1] * leaderLength
-        ];
-
-        cc.beginPath();
-        cc.moveTo(...leaderStart);
-        cc.lineTo(...leaderEnd);
-        cc.strokeStyle = white;
-        cc.stroke();
-
-        const dataBlockCenterCanvasPosition = radarTargetModel.calculateDataBlockCenter(leaderIntersectionWithBlock);
-
-        cc.translate(...dataBlockCenterCanvasPosition);
-
-        this._drawLegacyDatablock(cc, aircraftModel);
-
-        // height of TOTAL vertical space between the rows (0 for touching)
-        const gap = 3;
-        const lineheight = 4.5; // height of text row (used for spacing basis)
-        const row1text = radarTargetModel.buildDataBlockRowOne();
-        let row2text = radarTargetModel.buildDataBlockRowTwoPrimaryInfo();
-
-        if (this.shouldShowSecondaryDataBlock()) {
-            row2text = radarTargetModel.buildDataBlockRowTwoSecondaryInfo();
-        }
-
-        const fillStyle = aircraftModel.isControllable ?
-            this.theme.DATA_BLOCK.TEXT_IN_RANGE :
-            this.theme.DATA_BLOCK.TEXT_OUT_OF_RANGE;
-
-        cc.fillStyle = fillStyle;
-
-        // Draw full datablock text
-        cc.font = this.theme.DATA_BLOCK.TEXT_FONT;
-        cc.textAlign = 'left';
-        cc.fillText(row1text, -this.theme.DATA_BLOCK.HALF_WIDTH + paddingLR, -gap / 2 - lineheight);
-        cc.fillText(row2text, -this.theme.DATA_BLOCK.HALF_WIDTH + paddingLR, gap / 2 + lineheight);
-        cc.font = BASE_CANVAS_FONT;
-
-        cc.restore();
-    }
-
-    /**
-     * Draw the legacy dataBlock
-     *
-     * POSITIONING: Before calling this method, translate to the AIRCRAFT'S DATA BLOCK CENTER
-     *
-     * @for CanvasController
-     * @method
-     * @param {HTMLCanvasContext} cc
-     * @param {AircraftModel} aircraftModel
-     * @returns undefined
-     * @private
-     */
-    _drawLegacyDatablock(cc, aircraftModel) {
-        if (!this.theme.DATA_BLOCK.HAS_FILL) {
-            return;
-        }
-
-        // TODO: logic and math here should be done once and not every frame. this could be moved to the `RadarTargetModel`
-        // width of datablock (scales to fit callsign)
-        const width = this.theme.DATA_BLOCK.WIDTH; // clamp(1, 6 * callsign.length) + (paddingLR * 2);
-        const halfWidth = this.theme.DATA_BLOCK.HALF_WIDTH; // width / 2;
-        // height of datablock
-        const height = this.theme.DATA_BLOCK.HEIGHT; // 31;
-        const halfHeight = this.theme.DATA_BLOCK.HALF_HEIGHT; // height / 2;
-        // width of colored bar
-        const barWidth = 3;
-        const barHalfWidth = barWidth / 2;
-        // const ILS_enabled = aircraftModel.pilot.hasApproachClearance;
-        const lock_size = height / 3;
-        const lock_offset = lock_size / 8;
-        const point1 = lock_size - barHalfWidth;
-        const a = point1 - lock_offset;
-        const b = barHalfWidth;
-        const clipping_mask_angle = Math.atan(b / a);
-        // describes how far around to arc the arms of the ils lock case
-        const pi_slice = Math.PI / 24;
-        let match = false;
-
-        // Callsign Matching
-        if (prop.input.callsign.length > 0 && aircraftModel.matchCallsign(prop.input.callsign)) {
-            match = true;
-        }
-
-        // set color, intensity, and style elements
-        let red = this.theme.DATA_BLOCK.ARRIVAL_BAR_OUT_OF_RANGE;
-        let green = this.theme.DATA_BLOCK.BACKGROUND_OUT_OF_RANGE;
-        let blue = this.theme.DATA_BLOCK.DEPARTURE_BAR_OUT_OF_RANGE;
-        let white = this.theme.DATA_BLOCK.TEXT_OUT_OF_RANGE;
-
-        if (aircraftModel.isControllable) {
-            red = this.theme.DATA_BLOCK.ARRIVAL_BAR_IN_RANGE;
-            green = this.theme.DATA_BLOCK.BACKGROUND_IN_RANGE;
-            blue = this.theme.DATA_BLOCK.DEPARTURE_BAR_IN_RANGE;
-            white = this.theme.DATA_BLOCK.TEXT_IN_RANGE;
-
-            if (match) {
-                red = this.theme.DATA_BLOCK.ARRIVAL_BAR_SELECTED;
-                green = this.theme.DATA_BLOCK.BACKGROUND_SELECTED;
-                blue = this.theme.DATA_BLOCK.DEPARTURE_BAR_SELECTED;
-                white = this.theme.DATA_BLOCK.TEXT_SELECTED;
-            }
-        }
-
-        // Draw datablock shapes
-        if (!aircraftModel.pilot.hasApproachClearance && this.theme.DATA_BLOCK.HAS_FILL) {
-            // data block box background fill
-            cc.fillStyle = green;
-            cc.fillRect(-halfWidth, -halfHeight, width, height);
-
-            // Draw colored bar
-            cc.fillStyle = (aircraftModel.category === FLIGHT_CATEGORY.DEPARTURE) ? blue : red;
-            cc.fillRect(-halfWidth - barWidth, -halfHeight, barWidth, height);
-
-            return;
-        }
-
-        // Box with ILS Lock Indicator
-        cc.save();
-
-        // Draw green part of box (excludes space where ILS Clearance Indicator juts in)
-        cc.fillStyle = green;
-        cc.beginPath();
-        cc.moveTo(-halfWidth, halfHeight); // bottom-left corner
-        cc.lineTo(halfWidth, halfHeight); // bottom-right corner
-        cc.lineTo(halfWidth, -halfHeight); // top-right corner
-        cc.lineTo(-halfWidth, -halfHeight); // top-left corner
-        cc.lineTo(-halfWidth, -point1); // begin side cutout
-        cc.arc(-halfWidth - barHalfWidth,
-            -lock_offset, lock_size / 2 + barHalfWidth,
-            clipping_mask_angle - Math.PI / 2,
-            0);
-        cc.lineTo(-halfWidth + lock_size / 2, lock_offset);
-        cc.arc(-halfWidth - barHalfWidth,
-            lock_offset,
-            lock_size / 2 + barHalfWidth,
-            0,
-            Math.PI / 2 - clipping_mask_angle);
-        cc.closePath();
-        cc.fill();
-
-        // Draw ILS Clearance Indicator
-        cc.translate(-halfWidth - barHalfWidth, 0);
-        cc.lineWidth = barWidth;
-        cc.strokeStyle = red;
-        cc.beginPath(); // top arc start
-        cc.arc(0, -lock_offset, lock_size / 2, -pi_slice, Math.PI + pi_slice, true);
-        cc.moveTo(0, -lock_size / 2);
-        cc.lineTo(0, -halfHeight);
-        cc.stroke(); // top arc end
-        cc.beginPath(); // bottom arc start
-        cc.arc(0, lock_offset, lock_size / 2, pi_slice, Math.PI - pi_slice);
-        cc.moveTo(0, lock_size - barWidth);
-        cc.lineTo(0, halfHeight);
-        cc.stroke(); // bottom arc end
-
-        if (aircraftModel.isEstablishedOnCourse()) {
-            // Localizer Capture Indicator
-            cc.fillStyle = white;
-            cc.beginPath();
-            cc.arc(0, 0, lock_size / 5, 0, Math.PI * 2);
-            cc.fill(); // Draw Localizer Capture Dot
-        }
-
-        cc.translate(halfWidth + barHalfWidth, 0);
-        // unclear how this works...
-        cc.beginPath(); // if removed, white lines appear on top of bottom half of lock case
-        cc.stroke(); // if removed, white lines appear on top of bottom half of lock case
-
-        cc.restore();
-    }
-
-    /**
-     * Draw data blocks for each aircraft
-     *
-     * POSITIONING: Before calling this method, ensure NO TRANSLATION has occurred
-     *
-     * @for CanvasController
-     * @method _drawAircraftDataBlocks
-     * @param cc {HTMLCanvasContext}
-     * @returns undefined
-     * @private
-     */
-    _drawAircraftDataBlocks(cc) {
-        const radarTargetModels = this._scopeModel.radarTargetCollection.items;
-
-        cc.save();
-        this._ccTranslateFromCanvasOriginToAirportCenter(cc);
-
-        for (let i = 0; i < radarTargetModels.length; i++) {
-            this._drawSingleAircraftDataBlock(cc, radarTargetModels[i]);
-        }
-
-        cc.restore();
-    }
-
-    // TODO: To round, or not to round?
-    /**
-     * From the canvas origin, cc.translate() to the airport center, adjusting for user panning
-     *
-     * @for CanvasController
-     * @method _ccTranslateFromCanvasOriginToAirportCenter
-     * @param cc {HTMLCanvasContext}
-     * @returns undefined
-     * @private
-     */
-    _ccTranslateFromCanvasOriginToAirportCenter(cc) {
-        cc.translate(
-            round(this._viewport.halfWidth),
-            round(this._viewport.halfHeight)
-        );
-    }
 
     // TODO: To round, or not to round?
     /**
@@ -902,123 +601,6 @@ export default class CanvasController {
         );
     }
 
-    // TODO: this method should be removed or reworked.
-    /**
-     * Draw the compass around the edge of the scope view
-     *
-     * POSITIONING: Before calling this method, ensure NO TRANSLATION has occurred
-     *
-     * @for CanvasController
-     * @method _drawSelectedAircraftCompass
-     * @param cc {HTMLCanvasContext}
-     * @returns undefined
-     * @private
-     */
-    _drawSelectedAircraftCompass(cc) {
-        if (GameController.game_paused()) {
-            return;
-        }
-
-        const callsign = prop.input.callsign.toUpperCase();
-
-        if (callsign.length === 0) {
-            return;
-        }
-
-        // TODO: this should be a method on the `AircraftController` if one doesn't already exist.
-        // Get the selected aircraft.
-        const aircraft = _filter(this._aircraftController.aircraft.list, (p) => {
-            return p.matchCallsign(callsign) && p.isVisible();
-        })[0];
-
-        if (!aircraft) {
-            return;
-        }
-
-        const canvasOrigin = [0, 0];
-        const canvasSize = [this._viewport.width, this._viewport.height];
-        const aircraftPosition = this._toCanvasPosition(aircraft.relativePosition);
-
-        cc.save();
-
-        // generic styles of the compass marks
-        cc.strokeStyle = this.theme.SCOPE.COMPASS_HASH;
-        cc.fillStyle = this.theme.SCOPE.COMPASS_TEXT;
-        cc.textAlign = 'center';
-        cc.textBaseline = 'middle';
-
-        // Compute the intersection point between a ray originating from the
-        // aircraft at a given heading angle and the canvas boundaries, for
-        // each heading angle between 0 and 360 (by 1 degree increment)
-        for (let heading = 1; heading <= 360; heading++) {
-            // compute the 2D unit vector representing the ray direction using the given
-            // heading angle
-            const rayUnitVector = vectorize2dFromDegrees(heading);
-
-            // Use the opposite of the y component of the vector because of the vertical
-            // axes of the reference frames being oriented in opposite directions
-            rayUnitVector[1] = -rayUnitVector[1];
-
-            // compute the intersection point between the ray and the canvas
-            const intersection = positive_intersection_with_rect(
-                aircraftPosition,
-                rayUnitVector,
-                canvasOrigin,
-                canvasSize
-            );
-
-            if (!intersection) {
-                continue;
-            }
-
-            // draw a mark and label at the intersection point
-            // standard marks on all headings
-            // minor marks on headings multiple of 5 degrees
-            // major marks on headings multiple of 10 degrees
-            let markLen = 8;
-
-            if (heading % 5 === 0) {
-                markLen = heading % 10 === 0 ? 16 : 12;
-            }
-
-            const markWeight = heading % 30 === 0 ? 2 : 1;
-
-            // use the opposite of the length to draw toward the inside of the canvas
-            const markVector = vscale(rayUnitVector, -markLen);
-            const markStartPoint = intersection;
-            const markEndPoint = vadd(markStartPoint, markVector);
-
-            // draw the mark
-            cc.lineWidth = markWeight;
-            cc.beginPath();
-            cc.moveTo(...markStartPoint);
-            cc.lineTo(...markEndPoint);
-            cc.stroke();
-
-            // only draw label on major marks
-            if (heading % 10 !== 0) {
-                continue;
-            }
-
-            // set label font heavier every 3 major marks
-            cc.font = heading % 30 === 0 ?
-                'bold 10px monoOne, monospace' :
-                BASE_CANVAS_FONT;
-
-            const text = `${String(heading).padStart(3, '0')}`;
-            const textWidth = cc.measureText(text).width;
-
-            // draw the label
-            cc.fillText(
-                text,
-                markEndPoint[0] - rayUnitVector[0] * (textWidth / 2 + 4),
-                markEndPoint[1] - rayUnitVector[1] * 7
-            );
-        }
-
-        cc.restore();
-    }
-
     /**
      * Find a canvas context stored within `#_context`
      *
@@ -1030,70 +612,6 @@ export default class CanvasController {
      */
     _getCanvasContextByName(name) {
         return this._canvasHost.getContext(name);
-    }
-
-    // TODO: this duplicates (but is slightly different than) the more widely-used method of
-    // `CanvasStageModel.calculatePreciseCanvasPositionFromRelativePosition()`. What is the
-    // difference, and can _toCanvasPosition() be removed in favor of using the former?
-    /**
-     * Transform a scope relative position to a canvas relative position.
-     *
-     * NOTE: DONT USE ME! I AM BEING DEPRECATED! INSTEAD USE:
-     * `CanvasStageModel.calculatePreciseCanvasPositionFromRelativePosition()`
-     *
-     * POSITIONING: Before calling this method, ensure NO TRANSLATION has occurred
-     *
-     * Create a vector "vCanvasToScope" describing the position of the canvas
-     * relative to the scope, and simply add it to the given position to get the
-     * position relative to the canvas.
-     *
-     * The vertical axes are oriented in opposite direction in our source and
-     * destination frames of reference (scope versus canvas), so the y component of
-     * the given position need to be "reversed".
-     *
-     * The given position in expressed in kilometers so it needs to be
-     * translated to pixels.
-     *
-     * @for CanvasController
-     * @method _toCanvasPosition
-     * @param positionFromScope {array<number>} relative position, in km offset from airport center
-     * @returns {array<number>} canvas position, in pixels
-     * @private
-     */
-    _toCanvasPosition(positionFromScope) {
-        // positionFromScope is given in kilometers so it needs to be translated
-        // to pixels first
-
-        // use the opposite of the y component of the aircraft position because
-        // the vertical axes are not oriented in the same direction in the
-        // scope (aircraft) frame of reference versus the canvas frame of reference
-        positionFromScope = [
-            this._viewport._translateKilometersToPixels(positionFromScope[0]),
-            -this._viewport._translateKilometersToPixels(positionFromScope[1])
-        ];
-
-        const scopePositionRelativeToView = [this._viewport._panX, this._viewport._panY];
-        const viewPositionRelativeToCanvasOrigin = [this._viewport.halfWidth, this._viewport.halfHeight];
-        const scopePositionRelativeToCanvasOrigin = vadd(viewPositionRelativeToCanvasOrigin, scopePositionRelativeToView);
-
-        return vadd(scopePositionRelativeToCanvasOrigin, positionFromScope);
-    }
-
-    /**
-     * Calculate the length of the leader line connecting the target to the data block
-     *
-     * @for CanvasController
-     * @method _calculateLeaderLength
-     * @param dataBlockLeaderLength {number} from RadarTargetModel#dataBlockLeaderLength
-     * @return {number} length, in pixels
-     * @private
-     */
-    _calculateLeaderLength(dataBlockLeaderLength) {
-        return dataBlockLeaderLength *
-            this.theme.DATA_BLOCK.LEADER_LENGTH_INCREMENT_PIXELS +
-            this.theme.DATA_BLOCK.LEADER_LENGTH_ADJUSTMENT_PIXELS -
-            this.theme.DATA_BLOCK.LEADER_PADDING_FROM_BLOCK_PX -
-            this.theme.DATA_BLOCK.LEADER_PADDING_FROM_TARGET_PX;
     }
 
     /**

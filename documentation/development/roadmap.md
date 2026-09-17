@@ -16,6 +16,7 @@ This roadmap tracks the current direction of the project. The order may change a
   - [x] Introduce explicit platform boundaries for asset loading, storage, clock/timers, randomness, analytics, speech synthesis, clipboard, and page visibility; `npm run core:browser-free` proves the extracted core services execute without fabricated browser globals.
   - [x] Complete Phase 4: establish browser-free per-session simulation contexts with explicit ownership and deterministic two-context isolation.
   - [ ] Complete Phase 5: decompose presentation hotspots without pulling UI concerns back into the simulation context.
+    - [x] Extract canvas render scheduling and dirty-state policy from `CanvasController` into a pure browser-free service while preserving frame ordering and retry-on-render-failure behavior.
 - [ ] Resume feature development on the modernized foundation
 
 ## Simulation and realism

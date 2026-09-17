@@ -284,6 +284,8 @@ The final isolation checkpoint closes nested owner escapes. `Fms` passes navigat
 
 Final Phase 4 acceptance reports 1,662 passing, 17 skipped, and 14 todo tests; all 134 eligible source files appear in coverage, lines/statements are 75.37%, functions are 74.37%, branches are 91.92%, and lint, the deterministic 278-file build, KPDX browser smoke with zero uncaught errors, the browser-free proof, and the production audit pass. The browser frame loop remains unchanged.
 
+Phase 5 begins with a pure `CanvasRenderScheduler` extracted from `CanvasController`. The scheduler owns shallow/deep dirty state and frame planning while the controller retains `TimeKeeper` access and every draw operation. The boundary preserves the inherited static-before-dynamic draw order, short-circuits simulation-update checks when a dirty frame is already pending, renders dynamic-only frames when simulation time advances, and clears dirty state only after every draw succeeds so a renderer exception leaves the frame pending for retry. Focused scheduler and controller characterizations cover initial, shallow, deep, idle, simulation-update, reset, predicate-error, draw-order, and renderer-failure paths without moving canvas or UI state into `SimulationContext`. Current acceptance reports 1,674 passing, 17 skipped, and 14 todo tests; all 135 eligible source files appear in coverage, lines/statements are 78.02%, functions are 71.49%, branches are 92.00%, and lint, the browser-free proof, deterministic 278-file build, production audit, and KPDX browser smoke with zero uncaught errors pass.
+
 ## Explicit non-goals for the first phases
 
 - No React/Vue/Svelte rewrite.

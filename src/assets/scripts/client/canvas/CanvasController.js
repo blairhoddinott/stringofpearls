@@ -4,6 +4,7 @@ import _filter from 'lodash/filter';
 import _has from 'lodash/has';
 import _inRange from 'lodash/inRange';
 import AirportController from '../airport/AirportController';
+import CanvasRenderScheduler from './CanvasRenderScheduler';
 import CanvasStageModel from './CanvasStageModel';
 import EventBus from '../lib/EventBus';
 import GameController from '../game/GameController';
@@ -58,8 +59,9 @@ export default class CanvasController {
      * @param scopeModel {ScopeModel}
      * @param storageAdapter {StorageAdapter}
      * @param delayScheduler {DelayScheduler} delayed-callback boundary; nullish/omitted normalizes to null
+     * @param renderScheduler {CanvasRenderScheduler} render dirty-state/update policy; nullish/omitted constructs a default
      */
-    constructor($element, aircraftController, scopeModel, storageAdapter, delayScheduler) {
+    constructor($element, aircraftController, scopeModel, storageAdapter, delayScheduler, renderScheduler) {
         /**
          * Reference to the `window` object
          *
@@ -117,27 +119,17 @@ export default class CanvasController {
         this._shouldResize = true;
 
         /**
-         * Flag used to determine if the Aircraft canvas should be updated
+         * Owns the render dirty-state and per-frame update policy.
          *
-         * @property _shouldShallowRender
-         * @type {boolean}
-         * @default true
+         * Nullish/omitted constructs a default scheduler at this presentation
+         * boundary; `CanvasController` retains ownership of actual drawing and
+         * `TimeKeeper` access.
+         *
+         * @property _renderScheduler
+         * @type {CanvasRenderScheduler}
+         * @private
          */
-        this._shouldShallowRender = true;
-
-        /**
-         * Flag used to determine if _all_ canvases should be updated
-         *
-         * When this is true, the non-updating canvases like terrain, fix labels,
-         * video map, etc will be recalculated and re-drawn.
-         *
-         * This should only be true when the view changes via zoom/pan or airport change
-         *
-         * @property _shouldDeepRender
-         * @type {boolean}
-         * @default true
-         */
-        this._shouldDeepRender = true;
+        this._renderScheduler = renderScheduler ?? new CanvasRenderScheduler();
 
         /**
          * Flag used to determine if airspace polygons should be displayed and labeled
@@ -340,8 +332,7 @@ export default class CanvasController {
         this.$element = null;
         this._context = {};
         this._shouldResize = true;
-        this._shouldShallowRender = true;
-        this._shouldDeepRender = true;
+        this._renderScheduler.reset();
         this._shouldDrawFixLabels = false;
         this._shouldDrawRestrictedAreas = false;
         this._shouldDrawSidMap = false;
@@ -423,11 +414,13 @@ export default class CanvasController {
      * @method canvasUpdatePost
      */
     canvasUpdatePost() {
-        if (!this._shouldShallowRender && !TimeKeeper.shouldUpdate()) {
+        const renderPlan = this._renderScheduler.nextFrame(() => TimeKeeper.shouldUpdate());
+
+        if (renderPlan === null) {
             return;
         }
 
-        if (this._shouldDeepRender) {
+        if (renderPlan.renderStatic) {
             // we should only ever enter this block as a result of a change in the view
             // or an airport change. these methods involve much more complicated drawing
             // and can degrade performance if called too frequently.
@@ -455,8 +448,7 @@ export default class CanvasController {
         this._drawAircraftDataBlocks(dynamicCanvasCtx);
         this._drawMeasureTool(dynamicCanvasCtx);
 
-        this._shouldShallowRender = false;
-        this._shouldDeepRender = false;
+        this._renderScheduler.completeFrame();
     }
 
     /**
@@ -2705,7 +2697,7 @@ export default class CanvasController {
     }
 
     /**
-     * Update the value of `#_shouldShallowRender` to true, forcing a redraw
+     * Mark the render scheduler shallow-dirty, forcing a redraw
      * on the next frame.
      *
      * This method should be used for forcing redraws on _dynamic_ elements
@@ -2718,11 +2710,11 @@ export default class CanvasController {
      * @private
      */
     _markShallowRender() {
-        this._shouldShallowRender = true;
+        this._renderScheduler.markShallow();
     }
 
     /**
-     * Update the value of `#_shouldShallowRender` and `#_shouldDeepRender` to true, thus
+     * Mark the render scheduler deep-dirty (static and dynamic), thus
      * forcing a redraw of both canvases on the next frame.
      *
      * This method should be used for forcing redraws on dynamic _and_ static elements.
@@ -2735,9 +2727,7 @@ export default class CanvasController {
      * @private
      */
     _markDeepRender() {
-        this._shouldDeepRender = true;
-
-        this._markShallowRender();
+        this._renderScheduler.markDeep();
     }
 
     /**

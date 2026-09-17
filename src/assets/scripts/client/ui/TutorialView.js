@@ -1,6 +1,4 @@
-/* eslint-disable max-len, indent, no-undef, prefer-destructuring */
 import $ from 'jquery';
-import _has from 'lodash/has';
 import _flow from 'lodash/flow';
 import AirportController from '../airport/AirportController';
 import EventBus from '../lib/EventBus';
@@ -12,6 +10,7 @@ import { EVENT } from '../constants/eventNames';
 import { STORAGE_KEY } from '../constants/storageKeys';
 import { SELECTORS } from '../constants/selectors';
 import { TRACKABLE_EVENT } from '../constants/trackableEvents';
+import { AssetLoadError, formatAssetLoadError } from '../platform/AssetLoader';
 
 const tutorial = {};
 
@@ -30,7 +29,7 @@ export default class TutorialView {
     /**
      * @constructor
      */
-    constructor($element = null) {
+    constructor($element = null, contentQueue = null, storageAdapter = null, reportError = null) {
         /**
          * @property EventBus
          * @type {EventBus}
@@ -38,6 +37,39 @@ export default class TutorialView {
          * @private
          */
         this._eventBus = EventBus;
+
+        /**
+         * Native-Promise asset boundary used to load tutorial content.
+         *
+         * @property _contentQueue
+         * @type {ContentQueue}
+         * @default contentQueue
+         * @private
+         */
+        this._contentQueue = contentQueue;
+
+        /**
+         * Persistence boundary used to read and write the first-run completion time.
+         *
+         * @property _storageAdapter
+         * @type {StorageAdapter}
+         * @default storageAdapter
+         * @private
+         */
+        this._storageAdapter = storageAdapter;
+
+        /**
+         * Reporter used to surface exceptions on the browser uncaught-error channel.
+         *
+         * Nullish/omitted normalizes to canonical null and the report call is
+         * guarded, so a shorter call stays free of a browser global.
+         *
+         * @property _reportError
+         * @type {Function|null}
+         * @default null
+         * @private
+         */
+        this._reportError = reportError ?? null;
 
         /**
          * @property tutorial
@@ -81,7 +113,6 @@ export default class TutorialView {
          * @default `.next`
          */
         this.$tutorialNext = null;
-
 
         /**
          * Command bar button to toggle the tutorial on/off
@@ -252,16 +283,45 @@ export default class TutorialView {
             }
         };
 
-        zlsa.atc.loadAsset({ url: 'assets/tutorial/tutorial.json', immediate: true })
-            .done((response) => {
-                response.forEach((step) => {
-                    this._loadTutorialStep(step);
-                });
-            })
-            .fail((jqxhr, textStatus, error) => {
-                console.error(`Failed to load tutorial data: ${textStatus}, ${error}`);
-                this.tutorial_step({ title: 'Error', text: `The tutorial failed to load: ${textStatus}, ${error}` });
+        return this._contentQueue.addPromise({ url: 'assets/tutorial/tutorial.json', immediate: true })
+            .then((response) => {
+                // Guard payload processing separately from the transport failure
+                // path so a throwing step loader surfaces on the browser
+                // uncaught-error channel instead of being mislabeled as a load
+                // failure or leaking as an unhandled rejection.
+                try {
+                    response.forEach((step) => {
+                        this._loadTutorialStep(step);
+                    });
+                } catch (error) {
+                    if (this._reportError) {
+                        this._reportError(error);
+                    }
+                }
+            }, (error) => {
+                this._renderTutorialLoadError(error);
             });
+    }
+
+    /**
+     * Render the tutorial error step for a failed content load.
+     *
+     * Preserves the historical jQuery-style diagnostic text for
+     * `AssetLoadError` transport failures, and produces an intelligible
+     * message for ordinary `Error` rejections.
+     *
+     * @for TutorialView
+     * @method _renderTutorialLoadError
+     * @param error {Error}
+     * @private
+     */
+    _renderTutorialLoadError(error) {
+        const message = error instanceof AssetLoadError
+            ? `${error.textStatus}, ${error.errorThrown}`
+            : formatAssetLoadError(error);
+
+        console.error(`Failed to load tutorial data: ${message}`);
+        this.tutorial_step({ title: 'Error', text: `The tutorial failed to load: ${message}` });
     }
 
     /**
@@ -429,11 +489,17 @@ export default class TutorialView {
      * @method tutorial_complete
      */
     tutorial_complete() {
-        if (!_has(localStorage, STORAGE_KEY.FIRST_RUN_TIME)) {
+        const firstRunTime = this._storageAdapter.get(STORAGE_KEY.FIRST_RUN_TIME);
+
+        // Web Storage `getItem()` returns `null` for a missing key, whereas the
+        // legacy property-presence guard treated only a wholly absent property as
+        // missing. Treat both `null` and `undefined` as missing at this boundary
+        // so a stored falsy-but-present value still suppresses the first-run open.
+        if (firstRunTime == null) {
             this.tutorial_open();
         }
 
-        localStorage[STORAGE_KEY.FIRST_RUN_TIME] = TimeKeeper.gameTimeInSeconds;
+        this._storageAdapter.set(STORAGE_KEY.FIRST_RUN_TIME, TimeKeeper.gameTimeInSeconds);
     }
 
     /**

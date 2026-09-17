@@ -1,6 +1,5 @@
 import $ from 'jquery';
 import _forEach from 'lodash/forEach';
-import _isNaN from 'lodash/isNaN';
 import GameController from '../game/GameController';
 import { SELECTORS } from '../constants/selectors';
 
@@ -276,7 +275,7 @@ export default class SettingsController {
         const simulatorVersion = window.GLOBAL.VERSION;
         const $container = $(UI_DIALOG_FOOTER_TEMPLATE);
 
-        $container.text(`openScope ATC Simulator v${simulatorVersion}`);
+        $container.text(`String of Pearls ATC Simulator v${simulatorVersion}`);
 
         return $container;
     }

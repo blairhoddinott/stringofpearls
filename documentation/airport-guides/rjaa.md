@@ -51,7 +51,7 @@ Opened in 1978, after years of bloody local resistance that delayed the airport'
 
 ## Airspace
 
-There are four radar positions in the Tokyo Approach Control Area (ACA) — Depature, Approach, Radar, and TCA, with each being divided into smaller sectors. The Tokyo ACA covers both Tokyo Int'l (RJTT) and Narita Int'l (RJAA); however, due to the nature of openScope, aircraft will only be arriving and departing from Narita Int'l.
+There are four radar positions in the Tokyo Approach Control Area (ACA) — Depature, Approach, Radar, and TCA, with each being divided into smaller sectors. The Tokyo ACA covers both Tokyo Int'l (RJTT) and Narita Int'l (RJAA); however, due to the nature of String of Pearls, aircraft will only be arriving and departing from Narita Int'l.
 
 As the name suggests, the Departure and Approach positions are for departing and arriving aircraft in the Tokyo ACA.
 
@@ -65,7 +65,7 @@ Finally, the TCA position provides advisory service to VFR traffic in the Tokyo 
 
 Departing aircraft will generally be assigned runway 16R/34L for it being the longer runway. However, when the Simulataneous Parallel Independent Departures (SPID) procedure is also in use, both runways can be used for departure at the same time. For the SPID, both aircraft from each runway must be departing using the RNAV1 SIDs, including BORLO2, GULBO2, OLVAN2, PEDLA1, PIGOK2, REDEK2, and TETRA8.
 
-The openScope scenario is set for the south wind operation, where departure is from 16L/R, but for most SIDs departing from 34L/R, there is an altitude restriction of 7000ft. This is to prevent conflicts between aircraft arriving at Tokyo Int'l. There will be no such traffic in openScope, so it is safe to immediately allow the aircraft to climb.
+The String of Pearls scenario is set for the south wind operation, where departure is from 16L/R, but for most SIDs departing from 34L/R, there is an altitude restriction of 7000ft. This is to prevent conflicts between aircraft arriving at Tokyo Int'l. There will be no such traffic in String of Pearls, so it is safe to immediately allow the aircraft to climb.
 
 ###Arrivals
 
@@ -77,9 +77,9 @@ After handed off from Tokyo Control, Tokyo Approach is responsible for:
 * issuing approach clearance
 * ensuring sufficient spacing between aircraft;
 
-All the aircrafts arriving in openScope will head to NORMA (IAF for ILS Y/Z RWY 16L/R) following their assigned STAR. It is your responsibility to vector the aircraft to the final approach course.
+All the aircrafts arriving in String of Pearls will head to NORMA (IAF for ILS Y/Z RWY 16L/R) following their assigned STAR. It is your responsibility to vector the aircraft to the final approach course.
 
-## Sectors Available in openScope
+## Sectors Available in String of Pearls
 ```
 Tokyo Depature
 Tokyo Approach

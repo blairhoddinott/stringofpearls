@@ -2,7 +2,6 @@ import _forEach from 'lodash/forEach';
 import _isArray from 'lodash/isArray';
 import _isNil from 'lodash/isNil';
 import _map from 'lodash/map';
-import _random from 'lodash/random';
 import _uniq from 'lodash/uniq';
 import WaypointModel from '../aircraft/FlightManagementSystem/WaypointModel';
 import HoldCollection from './HoldCollection';
@@ -26,11 +25,26 @@ export default class ProcedureModel {
      * @constructor
      * @param procedureType {string} must belong to the `PROCEDURE_TYPE` enum
      * @param data {object} JSON data from airport file
+     * @param randomSource {RandomSource} composition-root randomness boundary used to select an exit point; optional
+     * @param fixCollection {FixCollection} navigation-session fix collection; optional for legacy callers
      */
-    constructor(procedureType, data) {
+    constructor(procedureType, data, randomSource, fixCollection) {
         if (_isNil(data)) {
             throw new TypeError(`Expected valid procedure data, but received '${data}'`);
         }
+
+        /**
+         * Randomness boundary injected from the composition root, used to draw a
+         * random exit point index. When omitted, the draw deterministically
+         * returns the lower bound so the first exit point is selected.
+         *
+         * @property _randomSource
+         * @type {RandomSource}
+         * @default null
+         * @private
+         */
+        this._randomSource = randomSource ?? null;
+        this._fixCollection = fixCollection;
 
         /**
          * Body segment of the procedure
@@ -318,7 +332,7 @@ export default class ProcedureModel {
     getRandomExitPoint() {
         const exitNames = Object.keys(this._exitPoints);
         const maxIndex = exitNames.length - 1;
-        const randomIndex = _random(0, maxIndex);
+        const randomIndex = this._randomSource ? this._randomSource.integer(0, maxIndex) : 0;
 
         return exitNames[randomIndex];
     }
@@ -450,7 +464,7 @@ export default class ProcedureModel {
      * @private
      */
     _generateWaypoint(data) {
-        const waypoint = new WaypointModel(data);
+        const waypoint = new WaypointModel(data, this._fixCollection);
 
         const holdParameters = this._holdCollection.findHoldParametersByFix(waypoint.name);
 

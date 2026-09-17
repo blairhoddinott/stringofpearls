@@ -3,7 +3,6 @@ import _get from 'lodash/get';
 import _map from 'lodash/map';
 import _isArray from 'lodash/isArray';
 import _isEmpty from 'lodash/isEmpty';
-import _random from 'lodash/random';
 import _round from 'lodash/round';
 import RouteModel from '../aircraft/FlightManagementSystem/RouteModel';
 import AirportController from '../airport/AirportController';
@@ -92,10 +91,28 @@ export default class SpawnPatternModel extends BaseModel {
      * @constructor
      * @for SpawnPatternModel
      * @param spawnPatternJson {object}
+     * @param randomSource {RandomSource} composition-root randomness boundary used for spawn draws; optional
+     * @param navigationLibrary {NavigationLibrary} navigation-session route resolver; optional
+     * @param airportController {AirportController} owning airport session; optional
      */
     // istanbul ignore next
-    constructor(spawnPatternJson) {
+    constructor(spawnPatternJson, randomSource, navigationLibrary, airportController = AirportController) {
         super('spawnPatternModel');
+
+        this._navigationLibrary = navigationLibrary;
+        this._airportController = airportController;
+
+        /**
+         * Randomness boundary injected from the composition root, used for altitude,
+         * delay and index draws. When omitted, each draw deterministically returns
+         * its lower bound so the model stays usable without an injected source.
+         *
+         * @property _randomSource
+         * @type {RandomSource}
+         * @default null
+         * @private
+         */
+        this._randomSource = randomSource ?? null;
 
         /**
          * Schedule reference id
@@ -451,7 +468,9 @@ export default class SpawnPatternModel extends BaseModel {
      * @return {number}
      */
     get altitude() {
-        const altitude = _random(this._minimumAltitude, this._maximumAltitude);
+        const altitude = this._randomSource
+            ? this._randomSource.integer(this._minimumAltitude, this._maximumAltitude)
+            : this._minimumAltitude;
 
         return _round(altitude, -3);
     }
@@ -511,13 +530,16 @@ export default class SpawnPatternModel extends BaseModel {
         this.defaultRate = this.rate;
         this.entrail = _get(spawnPatternJson, 'entrail', this.entrail);
 
-        this._routeModel = new RouteModel(spawnPatternJson.route);
+        this._routeModel = new RouteModel(spawnPatternJson.route, this._navigationLibrary);
         this.cycleStartTime = 0;
         this.period = TIME.ONE_HOUR_IN_SECONDS / 2;
         this._positionModel = this._generateSelfReferencedAirportPositionModel();
         this.airlines = this._assembleAirlineNamesAndFrequencyForSpawn(spawnPatternJson.airlines);
         this._weightedAirlineList = this._buildWeightedAirlineList();
-        this.preSpawnAircraftList = this._buildPreSpawnAircraft(spawnPatternJson);
+        this.preSpawnAircraftList = this._buildPreSpawnAircraft({
+            ...spawnPatternJson,
+            _routeModel: this._routeModel
+        });
 
         this._calculateSurgePatternInitialDelayValues(spawnPatternJson);
         this._setCyclePeriodAndOffset(spawnPatternJson);
@@ -806,7 +828,7 @@ export default class SpawnPatternModel extends BaseModel {
         const delayVariation = averageDelay - minimumDelay;
         const maximumDelay = averageDelay + delayVariation;
 
-        return _random(minimumDelay, maximumDelay);
+        return this._randomSource ? this._randomSource.integer(minimumDelay, maximumDelay) : minimumDelay;
     }
 
     /**
@@ -983,7 +1005,7 @@ export default class SpawnPatternModel extends BaseModel {
      * @private
      */
     _findRandomIndexForList(list) {
-        return _random(0, list.length - 1);
+        return this._randomSource ? this._randomSource.integer(0, list.length - 1) : 0;
     }
 
     /**
@@ -1068,7 +1090,8 @@ export default class SpawnPatternModel extends BaseModel {
 
         const preSpawnArrivalAircraftList = buildPreSpawnAircraft(
             spawnPatternJson,
-            AirportController.current
+            this._airportController.current,
+            this._randomSource
         );
 
         return preSpawnArrivalAircraftList;
@@ -1117,7 +1140,7 @@ export default class SpawnPatternModel extends BaseModel {
      * @return {StaticPositionModel}
      */
     _generateSelfReferencedAirportPositionModel() {
-        const airportPosition = AirportController.airport_get().positionModel;
+        const airportPosition = this._airportController.airport_get().positionModel;
         const selfReferencingPosition = new StaticPositionModel(
             airportPosition.gps,
             airportPosition,

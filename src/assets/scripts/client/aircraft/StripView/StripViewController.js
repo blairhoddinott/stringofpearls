@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import _random from 'lodash/random';
 import _without from 'lodash/without';
 import StripViewCollection from './StripViewCollection';
 import StripViewModel from './StripViewModel';
@@ -25,8 +24,10 @@ const CID_UPPER_BOUND = 999;
 export default class StripViewController {
     /**
      * @constructor
+     * @param delayScheduler {DelayScheduler} delayed-callback boundary; optional
+     * @param randomSource {RandomSource} randomness boundary used for CID generation; optional
      */
-    constructor() {
+    constructor(delayScheduler, randomSource) {
         /**
          * Collection class used to manage instances of `StripViewModel`s
          *
@@ -75,6 +76,9 @@ export default class StripViewController {
          * @private
          */
         this._cidNumbersInUse = [];
+
+        this._delayScheduler = delayScheduler ?? null;
+        this._randomSource = randomSource ?? null;
 
         return this._init()
             .enable();
@@ -240,9 +244,11 @@ export default class StripViewController {
         if (this.$stripView.hasClass(SELECTORS.CLASSNAMES.STRIP_VIEW_IS_HIDDEN)) {
             this.$stripView.removeClass(SELECTORS.CLASSNAMES.STRIP_VIEW_IS_HIDDEN);
             // wait 0.3s for strip view drawer slide out transition to complete
-            setTimeout(() => {
-                stripModel.scrollIntoView();
-            }, 300);
+            if (this._delayScheduler) {
+                this._delayScheduler.schedule(() => {
+                    stripModel.scrollIntoView();
+                }, 300);
+            }
         } else {
             stripModel.scrollIntoView();
         }
@@ -321,7 +327,7 @@ export default class StripViewController {
      * @param event {JQueryEventObject}
      * @private
      */
-    // eslint-disable-next-line no-unused-vars
+
     _onStripListToggle = (event) => {
         this.$stripView.toggleClass(SELECTORS.CLASSNAMES.STRIP_VIEW_IS_HIDDEN);
     };
@@ -335,7 +341,7 @@ export default class StripViewController {
      * @param event {JQueryEventObject}
      * @private
      */
-    // eslint-disable-next-line no-unused-vars
+
     _onStripListClickOutsideStripViewModel = (event) => this.findAndDeselectActiveStripView();
 
     /**
@@ -349,7 +355,19 @@ export default class StripViewController {
      * @private
      */
     _generateCidNumber() {
-        const nextCid = _random(1, CID_UPPER_BOUND);
+        if (!this._randomSource) {
+            for (let cid = 1; cid <= CID_UPPER_BOUND; cid++) {
+                if (this._cidNumbersInUse.indexOf(cid) === INVALID_INDEX) {
+                    this._cidNumbersInUse.push(cid);
+
+                    return cid;
+                }
+            }
+
+            return undefined;
+        }
+
+        const nextCid = this._randomSource.integer(1, CID_UPPER_BOUND);
 
         if (this._cidNumbersInUse.indexOf(nextCid) !== INVALID_INDEX) {
             return this._generateCidNumber();

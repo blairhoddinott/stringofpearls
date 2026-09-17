@@ -9,7 +9,7 @@ The Juliana Terminal Maneuvering Area controls a relatively small area within th
 ## Instrument Procedures
 Due to the high terrain East of Princess Juliana Airport, all departure procedures out of RWY10 instruct aircraft to turn right towards the ocean as soon as practicable to gain some altitude before turning towards their departure waypoints. In order to separate jet aircraft from propeller aircraft, different departure procedures are used for different aircraft types. In general, propeller aircraft fly Southwest after departure (BOPAT2 and MULLT2 departures), allowing jet aircraft to depart without delay to the South (MODOR2 departure). There is just one standard arrival into TNCM, ULUBA1, which takes aircraft from the borders of the TMA onto the VOR Approach for RWY10, although radar vectors are usually given to guide aircraft into Sint Maarten. 
 
-## Sectors Available in openScope
+## Sectors Available in String of Pearls
 
 `Juliana TMA` from the surface up to FL150
 

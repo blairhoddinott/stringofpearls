@@ -9,7 +9,7 @@ The Carrasco Terminal Maneuvering Area controls a large area covering the southe
 ## Instrument Procedures
 Instrument procedures in and out of Montevideo are fairly simple, containing no altitude or speed restrictions. There are only procedures for RWY06 and RWY24, although RWY01 and RWY19 are often used for arrivals. aircraft landing at Montevideo are usually vectored for an RNAV approach into RWY06 or RWY19. It is the responsibility of air traffic control to climb and descend aircraft and maintain separation between other aircraft.
 
-## Sectors Available in openScope
+## Sectors Available in String of Pearls
 
 `Carrasco TMA` from the ground up to FL245
 

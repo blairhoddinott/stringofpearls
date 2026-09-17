@@ -20,7 +20,7 @@ The airport has 3 runways. The southeastern runway (05/23) is 2580m (8465ft) lon
 * Runway 05 for landing
 * Runway 35L for take-off
 
-**This is also the configuration in use in openScope**
+**This is also the configuration in use in String of Pearls**
 
 
 ### Instrument Procedures

@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 /**
  * @property INVALID_ARG
  * @type {string}

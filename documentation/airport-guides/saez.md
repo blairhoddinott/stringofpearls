@@ -11,7 +11,7 @@ The Baires Terminal Maneuvering Area controls a large, mostly circular area with
 ## Instrument Procedures
 The procedures in and out of Ezeiza have remained almost identical for the last 30 years, meaning they are a little 'old-fashioned'. Most SIDs follow a 10nm arc around EZE VOR, allowing aircraft to gain some altitude before heading to their departure fixes. The only exception to this rule is the PTA6B departure for aircraft departing from Runway 11 to the East. All the STARs guide aircraft either to the EZE VOR or the Initial Approach Fix of the corresponding runway, to then be vectored onto the ILS by ATC. Procedures contain no climb or descent instructions or altitude restrictions. ATC is therefore entirely responsible for descending and climbing aircraft in and out of the airport. Special attention must be paid to arrivals from the Northeast who follow routes which take them through restricted airspace overhead Buenos Aires.
 
-## Sectors Available in openScope
+## Sectors Available in String of Pearls
 
 `Baires Center`
 

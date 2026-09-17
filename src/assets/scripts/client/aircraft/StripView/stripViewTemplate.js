@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 /**
  * HTML element used for each `StripViewModel`
  *

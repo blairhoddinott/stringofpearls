@@ -58,12 +58,21 @@ export default class Fms {
     /**
      * @constructor
      * @param aircraftInitProps {object}
+     * @param navigationLibrary {NavigationLibrary} [optional]
+     * @param airportController {AirportController} [optional]
      */
-    constructor(aircraftInitProps) {
+    constructor(
+        aircraftInitProps,
+        navigationLibrary = NavigationLibrary,
+        airportController = AirportController
+    ) {
         if (isEmptyOrNotObject(aircraftInitProps)) {
             throw new TypeError('Invalid aircraftInitProps passed to Fms constructor. ' +
                 `Expected a non-empty object, but received ${typeof aircraftInitProps}`);
         }
+
+        this._navigationLibrary = navigationLibrary;
+        this._airportController = airportController;
 
         /**
          * Airport the aircraft arrives at
@@ -267,7 +276,11 @@ export default class Fms {
             routeString
         } = aircraftInitProps;
 
-        this._routeModel = new RouteModel(routeString);
+        this._routeModel = new RouteModel(
+            routeString,
+            this._navigationLibrary,
+            this._airportController
+        );
 
         this._verifyRouteContainsMultipleWaypoints();
         this._initializeFlightPhaseForCategory(category);
@@ -311,12 +324,12 @@ export default class Fms {
         const originLowerCase = origin.toLowerCase();
         const destinationLowerCase = destination.toLowerCase();
 
-        if (originLowerCase === AirportController.current.icao) {
+        if (originLowerCase === this._airportController.current.icao) {
             this._initializeDepartureAirport(origin);
             this._initializeDepartureRunway();
         }
 
-        if (destinationLowerCase === AirportController.current.icao) {
+        if (destinationLowerCase === this._airportController.current.icao) {
             this._initializeArrivalAirport(destination);
             this._initializeArrivalRunway();
         }
@@ -331,7 +344,7 @@ export default class Fms {
      * @private
      */
     _initializeArrivalAirport(destinationIcao) {
-        this.arrivalAirportModel = AirportController.airport_get(destinationIcao);
+        this.arrivalAirportModel = this._airportController.airport_get(destinationIcao);
     }
 
     /**
@@ -368,7 +381,7 @@ export default class Fms {
      * @private
      */
     _initializeDepartureAirport(originIcao) {
-        this.departureAirportModel = AirportController.airport_get(originIcao);
+        this.departureAirportModel = this._airportController.airport_get(originIcao);
     }
 
     /**
@@ -483,7 +496,7 @@ export default class Fms {
         if (!this._routeModel.hasWaypointName(waypointName)) {
             return [false, {
                 log: `unable to hold at ${waypointName.toUpperCase()}; it is not on our route!`,
-                say: `unable to hold at ${NavigationLibrary.getFixSpokenName(waypointName)}; it is not on our route!`
+                say: `unable to hold at ${this._navigationLibrary.getFixSpokenName(waypointName)}; it is not on our route!`
             }];
         }
 
@@ -502,7 +515,11 @@ export default class Fms {
         let nextRouteModel;
 
         try {
-            nextRouteModel = new RouteModel(routeString);
+            nextRouteModel = new RouteModel(
+                routeString,
+                this._navigationLibrary,
+                this._airportController
+            );
         } catch (error) {
             console.error(error);
 
@@ -886,7 +903,7 @@ export default class Fms {
 
         const procedureId = routeStringElements[1];
 
-        if (!NavigationLibrary.hasProcedure(procedureId)) {
+        if (!this._navigationLibrary.hasProcedure(procedureId)) {
             return [false, `unknown procedure "${procedureId}"`];
         }
 
@@ -922,7 +939,7 @@ export default class Fms {
             procedureId = routeStringElements[1];
         }
 
-        const sidModel = NavigationLibrary.getProcedure(procedureId);
+        const sidModel = this._navigationLibrary.getProcedure(procedureId);
 
         if (_isNil(sidModel)) {
             return [false, `unknown procedure "${procedureId}"`];
@@ -983,7 +1000,11 @@ export default class Fms {
         let nextRouteModel;
 
         try {
-            nextRouteModel = new RouteModel(routeString);
+            nextRouteModel = new RouteModel(
+                routeString,
+                this._navigationLibrary,
+                this._airportController
+            );
         } catch (error) {
             console.error(error);
 

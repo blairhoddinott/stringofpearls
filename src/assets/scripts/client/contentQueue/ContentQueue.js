@@ -1,6 +1,3 @@
-import $ from 'jquery';
-import LoadableContentModel from './LoadableContentModel';
-
 /**
  * Asynchronous JSON asset loading framework.
  *
@@ -13,16 +10,17 @@ import LoadableContentModel from './LoadableContentModel';
  *   stopLoading - When the last asset in the queue is downloaded
  *
  * Example:
- *  var promise = zlsa.atc.loadAsset({url: 'assets/aircraft/b747.json'});
+ *  const promise = contentQueue.addPromise({ url: 'assets/aircraft/b747.json' });
  *
- * @module zlsa.atc.loadAsset
+ * @module ContentQueue
  */
 /**
 * Implementation of the queueing
 */
 export default class ContentQueueClass {
-    constructor(loadingView) {
+    constructor(loadingView, assetLoader = null) {
         this.loadingView = loadingView;
+        this._assetLoader = assetLoader == null ? null : assetLoader;
         this.isLoading = false;
         this.lowPriorityQueue = [];
         this.highPriorityQueue = [];
@@ -30,43 +28,70 @@ export default class ContentQueueClass {
     }
 
     /**
-     * Adds or updates a piece of content
+     * Adds or updates a queued piece of content, returning a native Promise
+     * that settles with the loaded asset.
      *
-     * Supports a url becoming an `immediate` load
+     * Requests for a url already in flight share the same Promise and issue a
+     * single transport request. A duplicate request may upgrade a pending
+     * low-priority url to `immediate`, promoting it into the high-priority
+     * queue exactly once while retaining the original Promise.
      *
      * @for ContentQueue
-     * @method add
+     * @method addPromise
      * @param options {object}
      * @return {Promise}
      */
-    add(options) {
-        let c = new LoadableContentModel(options);
+    addPromise(options) {
+        const { url } = options;
+        const immediate = Boolean(options.immediate);
 
-        if (c.url in this.queuedContent) {
-            c = this.queuedContent[c.url];
+        if (this._assetLoader === null) {
+            return Promise.reject(new Error('ContentQueue requires an asset loader'));
+        }
 
-            if (c.immediate && (!this.queuedContent[c.url].immediate)) {
-                const idx = $.inArray(c.url, this.lowPriorityQueue);
+        if (url in this.queuedContent) {
+            const existing = this.queuedContent[url];
+
+            if (immediate && !existing.immediate) {
+                const idx = this.lowPriorityQueue.indexOf(url);
 
                 if (idx > -1) {
-                    this.highPriorityQueue.push(this.lowPriorityQueue.splice(idx, 1));
+                    this.lowPriorityQueue.splice(idx, 1);
+                    this.highPriorityQueue.push(url);
                 }
-            }
-        } else {
-            this.queuedContent[c.url] = c;
 
-            if (c.immediate) {
-                this.highPriorityQueue.push(c.url);
-            } else {
-                this.lowPriorityQueue.push(c.url);
+                existing.immediate = true;
             }
+
+            return existing.promise;
+        }
+
+        let resolveEntry;
+        let rejectEntry;
+        const promise = new Promise((resolve, reject) => {
+            resolveEntry = resolve;
+            rejectEntry = reject;
+        });
+
+        this.queuedContent[url] = {
+            url,
+            immediate,
+            promise,
+            resolve: resolveEntry,
+            reject: rejectEntry
+        };
+
+        if (immediate) {
+            this.highPriorityQueue.push(url);
+        } else {
+            this.lowPriorityQueue.push(url);
         }
 
         if (!this.isLoading) {
             this.startLoad();
         }
 
-        return c.deferred.promise();
+        return promise;
     }
 
     /**
@@ -95,17 +120,17 @@ export default class ContentQueueClass {
      * @return {Promise}
      */
     load(url) {
-        const c = this.queuedContent[url];
+        const entry = this.queuedContent[url];
 
-        $.getJSON(c.url)
-            .done((data, textStatus, jqXHR) => {
-                c.deferred.resolve(data, textStatus, jqXHR);
-            })
-            .fail((jqXHR, textStatus, errorThrown) => {
-                c.deferred.reject(jqXHR, textStatus, errorThrown);
-            })
-            .always(() => {
-                delete this.queuedContent[c.url];
-            });
+        return this._assetLoader.loadJson(entry.url).then(
+            (data) => {
+                delete this.queuedContent[entry.url];
+                entry.resolve(data);
+            },
+            (error) => {
+                delete this.queuedContent[entry.url];
+                entry.reject(error);
+            }
+        );
     }
 }

@@ -1,4 +1,3 @@
-/* eslint-disable arrow-parens, max-len, import/no-extraneous-dependencies*/
 import ava from 'ava';
 import _forEach from 'lodash/forEach';
 

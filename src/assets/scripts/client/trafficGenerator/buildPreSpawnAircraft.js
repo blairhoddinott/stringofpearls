@@ -2,7 +2,6 @@ import _findIndex from 'lodash/findIndex';
 import _floor from 'lodash/floor';
 import _isArray from 'lodash/isArray';
 import _isNil from 'lodash/isNil';
-import _random from 'lodash/random';
 import _without from 'lodash/without';
 import AirportModel from '../airport/AirportModel';
 import RouteModel from '../aircraft/FlightManagementSystem/RouteModel';
@@ -131,6 +130,7 @@ export function _calculateAltitudeAtOffset(altitudeOffsets, offsetDistance) {
  * @param spawnAltitude {number|array<number>} altitude specified in the spawn pattern json
  * @param totalDistance {number} distance along route from spawn point to airspace boundary
  * @param airspaceCeiling {number} altitude of the top of our airspace
+ * @param randomSource {RandomSource} composition-root randomness boundary used for the array altitude draw; optional
  * @return {number} ideal spawn altitude, in feet (rounded up to nearest thousand)
  */
 export function _calculateIdealSpawnAltitudeAtOffset(
@@ -139,7 +139,8 @@ export function _calculateIdealSpawnAltitudeAtOffset(
     spawnSpeed,
     spawnAltitude,
     totalDistance,
-    airspaceCeiling
+    airspaceCeiling,
+    randomSource
 ) {
     const indexOfDistance = 0;
     const indexOfAltitude = 1;
@@ -160,7 +161,16 @@ export function _calculateIdealSpawnAltitudeAtOffset(
         (assumedDescentRate * minutesToFirstAltitudeRestriction);
 
     if (_isArray(spawnAltitude)) {
-        spawnAltitude = _random(spawnAltitude[0] / 1000, spawnAltitude[1] / 1000) * 1000;
+        const lowerAltitude = spawnAltitude[0] / 1000;
+        const upperAltitude = spawnAltitude[1] / 1000;
+
+        if (!randomSource) {
+            spawnAltitude = lowerAltitude * 1000;
+        } else if (Number.isInteger(lowerAltitude) && Number.isInteger(upperAltitude)) {
+            spawnAltitude = randomSource.integer(lowerAltitude, upperAltitude) * 1000;
+        } else {
+            spawnAltitude = randomSource.real(lowerAltitude, upperAltitude) * 1000;
+        }
     }
 
     return Math.min(_floor(highestAcceptableAltitude, -3), spawnAltitude);
@@ -176,6 +186,7 @@ export function _calculateIdealSpawnAltitudeAtOffset(
  * @param spawnSpeed {number}
  * @param spawnAltitude {number}
  * @param totalDistance {number} distance along route from spawn point to airspace boundary
+ * @param randomSource {RandomSource} composition-root randomness boundary forwarded to the altitude calculation; optional
  * @return spawnPositions {array<number>} distances along route, in nm
  */
 function _calculateSpawnPositionsAndAltitudes(
@@ -184,7 +195,8 @@ function _calculateSpawnPositionsAndAltitudes(
     spawnSpeed,
     spawnAltitude,
     totalDistance,
-    airspaceCeiling
+    airspaceCeiling,
+    randomSource
 ) {
     const spawnPositionsAndAltitudes = [];
     const waypointOffsetMap = _calculateOffsetsToEachWaypointInRoute(waypointModelList);
@@ -216,7 +228,8 @@ function _calculateSpawnPositionsAndAltitudes(
             spawnSpeed,
             spawnAltitude,
             totalDistance,
-            airspaceCeiling
+            airspaceCeiling,
+            randomSource
         );
 
         spawnPositionsAndAltitudes.push({
@@ -248,9 +261,10 @@ function _calculateSpawnPositionsAndAltitudes(
  * @function _assembleSpawnOffsets
  * @param entrailDistance {number}
  * @param totalDistance {number}
+ * @param randomSource {RandomSource} composition-root randomness boundary used for interval draws; optional
  * @return spawnOffsets {array<number>} distances along route, in nm
  */
-const _assembleSpawnOffsets = (entrailDistance, totalDistance = 0) => {
+const _assembleSpawnOffsets = (entrailDistance, totalDistance = 0, randomSource = null) => {
     const offsetClosestToAirspace = totalDistance - 3;
     // dont spawn aircraft closer than 6 MIT
     const clampedEntrailDistance = Math.max(6, entrailDistance);
@@ -273,7 +287,7 @@ const _assembleSpawnOffsets = (entrailDistance, totalDistance = 0) => {
 
     // distance between successive arrivals in nm
     while (distanceAlongRoute > smallestIntervalNm) {
-        const interval = _random(smallestIntervalNm, largestIntervalNm, true);
+        const interval = randomSource ? randomSource.real(smallestIntervalNm, largestIntervalNm) : smallestIntervalNm;
         distanceAlongRoute -= interval;
 
         if (distanceAlongRoute < smallestIntervalNm) {
@@ -346,9 +360,10 @@ const _calculateTotalDistanceAlongRoute = (waypointModelList, airport) => {
  * @function _preSpawn
  * @param spawnPatternJson {object|SpawnPatternModel}
  * @param airport {AirportModel}
+ * @param randomSource {RandomSource} composition-root randomness boundary forwarded to the spawn calculations; optional
  * @return {array<object>}
  */
-const _preSpawn = (spawnPatternJson, airport) => {
+const _preSpawn = (spawnPatternJson, airport, randomSource) => {
     const spawnRate = spawnPatternJson.rate;
 
     if (spawnRate <= 0) {
@@ -368,7 +383,7 @@ const _preSpawn = (spawnPatternJson, airport) => {
     const waypointModelList = routeModel.waypoints;
     const totalDistance = _calculateTotalDistanceAlongRoute(waypointModelList, airport);
     // calculate number of offsets
-    const spawnOffsets = _assembleSpawnOffsets(entrailDistance, totalDistance);
+    const spawnOffsets = _assembleSpawnOffsets(entrailDistance, totalDistance, randomSource);
     // calculate heading, nextFix and position data to be used when creating an `AircraftModel` along a route
     const spawnPositions = _calculateSpawnPositionsAndAltitudes(
         waypointModelList,
@@ -376,7 +391,8 @@ const _preSpawn = (spawnPatternJson, airport) => {
         spawnSpeed,
         spawnAltitude,
         totalDistance,
-        airspaceCeiling
+        airspaceCeiling,
+        randomSource
     );
 
     return spawnPositions;
@@ -396,9 +412,10 @@ const _preSpawn = (spawnPatternJson, airport) => {
  * @function buildPreSpawnAircraft
  * @param spawnPatternJson {object|SpawnPatternModel}
  * @param currentAirport {AirportModel}
+ * @param randomSource {RandomSource} composition-root randomness boundary forwarded to the spawn calculations; optional
  * @return {array<object>}
  */
-export const buildPreSpawnAircraft = (spawnPatternJson, currentAirport) => {
+export const buildPreSpawnAircraft = (spawnPatternJson, currentAirport, randomSource) => {
     if (_isNil(spawnPatternJson) || _isNil(currentAirport)) {
         throw new TypeError('Invalid parameter(s) passed to buildPreSpawnAircraft. ' +
             'Expected spawnPatternJson and currentAirport to be defined, ' +
@@ -415,5 +432,5 @@ export const buildPreSpawnAircraft = (spawnPatternJson, currentAirport) => {
             `Expected instance of AirportModel, but received ${typeof currentAirport}`);
     }
 
-    return _preSpawn(spawnPatternJson, currentAirport);
+    return _preSpawn(spawnPatternJson, currentAirport, randomSource);
 };

@@ -42,14 +42,14 @@ Class C airspace extends to 17,000 feet above sea level, encompassing the area a
 
 Traffic to/from the West is usually assigned to RWY17R/35L Traffic to/from the East is usually assigned to RWY17L/35R
 
-### Sectors Available in openScope
+### Sectors Available in String of Pearls
 
 ```
 E - East Approach
 S - South Approach
 W - West Approach
 ```
-The airspace available in openScope is a combination of these 3 sectors.
+The airspace available in String of Pearls is a combination of these 3 sectors.
 
 ### Airports of Interest
 

@@ -36,7 +36,7 @@ The post linked below has a thorough explanation of a very effective git branchi
 
 [http://nvie.com/posts/a-successful-git-branching-model/](http://nvie.com/posts/a-successful-git-branching-model/)
 
-Below you will find a helpful flow chart showing the exact git branching strategy employed at openScope. Additional information on the phases of our development lifecycle can be found [here](development-processes-checklists.md).
+Below you will find a helpful flow chart showing the exact git branching strategy employed at String of Pearls. Additional information on the phases of our development lifecycle can be found [here](development-processes-checklists.md).
 
 ```text
          +------------------------+-------------------------+-----------------------------------+

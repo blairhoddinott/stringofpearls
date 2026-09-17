@@ -1,4 +1,3 @@
-/* eslint-disable arrow-parens, import/no-extraneous-dependencies, new-cap */
 import ava from 'ava';
 
 import ModelSourceFactory from '../../../src/assets/scripts/client/base/ModelSource/ModelSourceFactory';

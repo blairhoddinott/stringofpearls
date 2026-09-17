@@ -1,11 +1,9 @@
-/* eslint-disable max-len */
 import _ceil from 'lodash/ceil';
 import _chunk from 'lodash/chunk';
 import _clamp from 'lodash/clamp';
 import _forEach from 'lodash/forEach';
 import _get from 'lodash/get';
 import _map from 'lodash/map';
-import AirportController from './AirportController';
 import AirspaceModel from './AirspaceModel';
 import DynamicPositionModel from '../base/DynamicPositionModel';
 import EventBus from '../lib/EventBus';
@@ -14,6 +12,7 @@ import MapCollection from './MapCollection';
 import RunwayCollection from './runway/RunwayCollection';
 import StaticPositionModel from '../base/StaticPositionModel';
 import TimeKeeper from '../engine/TimeKeeper';
+import { AssetLoadError, formatAssetLoadError } from '../platform/AssetLoader';
 import { isValidGpsCoordinatePair } from '../base/positionModelHelpers';
 import { degreesToRadians, parseElevation } from '../utilities/unitConverters';
 import {
@@ -53,14 +52,77 @@ export default class AirportModel {
     /**
      * @constructor
      * @param options {object}
+     * @param contentQueue {ContentQueue|null} [optional]
+     * @param storageAdapter {StorageAdapter|null} [optional]
+     * @param reportError {Function|null} [optional]
+     * @param eventBus {EventBus} [optional]
+     * @param airportController {AirportController|null} [optional]
+     * @param clock {TimeKeeper|SimulationClock} [optional]
+     * @param gameState {GameController|SimulationGameState} [optional]
      */
     // istanbul ignore next
-    constructor(options = {}) {
+    constructor(
+        options = {},
+        contentQueue = null,
+        storageAdapter = null,
+        reportError = null,
+        eventBus = EventBus,
+        airportController = null,
+        clock = TimeKeeper,
+        gameState = GameController
+    ) {
         /**
          * @property EventBus
          * @type {EventBus}
          */
-        this.eventBus = EventBus;
+        this.eventBus = eventBus;
+        this._airportController = airportController;
+        this._clock = clock;
+        this._gameState = gameState;
+
+        /**
+         * Persistence boundary used to write the last-selected airport.
+         *
+         * Injected by `AirportController` so every flyweight persists through
+         * the single app-wide `StorageAdapter`. When absent (e.g. a model
+         * constructed directly from full in-memory airport JSON), the loaded
+         * `set()` path continues without persisting rather than reaching for a
+         * browser global.
+         *
+         * @property _storageAdapter
+         * @type {StorageAdapter}
+         * @default null
+         */
+        this._storageAdapter = storageAdapter;
+
+        /**
+         * Shared asset-loading queue used to fetch airport and terrain data.
+         *
+         * Injected by `AirportController` so every flyweight shares the single
+         * app-wide `ContentQueue`. When absent (e.g. a model constructed
+         * directly from full in-memory airport JSON), the network load paths
+         * are skipped rather than embedding a queue or transport here.
+         *
+         * @property _contentQueue
+         * @type {ContentQueue}
+         * @default null
+         */
+        this._contentQueue = contentQueue;
+
+        /**
+         * Surfaces exceptions thrown while processing a successful load on the
+         * browser's uncaught-error channel.
+         *
+         * Injected by `AirportController` from the single app-wide reporter.
+         * When absent (e.g. a model constructed directly from full in-memory
+         * airport JSON), nullish/omitted normalizes to canonical null and the
+         * report calls are guarded rather than reaching for a browser global.
+         *
+         * @property _reportError
+         * @type {Function|null}
+         * @default null
+         */
+        this._reportError = reportError ?? null;
 
         /**
          * cache of airport json data
@@ -546,12 +608,14 @@ export default class AirportModel {
             return;
         }
 
-        localStorage[STORAGE_KEY.ATC_LAST_AIRPORT] = this.icao;
+        if (this._storageAdapter) {
+            this._storageAdapter.set(STORAGE_KEY.ATC_LAST_AIRPORT, this.icao);
+        }
 
         // TODO: this should live elsewhere and be called by a higher level controller
-        GameController.game_reset_score_and_events();
+        this._gameState.game_reset_score_and_events();
 
-        this.start = TimeKeeper.accumulatedDeltaTime;
+        this.start = this._clock.accumulatedDeltaTime;
 
         this.eventBus.trigger(EVENT.PAUSE_UPDATE_LOOP, true);
     }
@@ -799,27 +863,40 @@ export default class AirportModel {
      * @method loadTerrain
      */
     loadTerrain() {
-        if (!this.has_terrain) {
+        if (!this.has_terrain || !this._contentQueue) {
             return;
         }
 
-        // eslint-disable-next-line no-undef
-        zlsa.atc.loadAsset({
+        return this._contentQueue.addPromise({
             url: `assets/airports/terrain/${this.icao.toLowerCase()}.geojson`,
             immediate: true
-        }).done((data) => { // TODO: change to onSuccess and onError handler abstractions
-            try {
-                // eslint-disable-next-line no-undef
-                this.parseTerrain(data);
-            } catch (e) {
-                throw new Error(e.message);
-            }
-        }).fail((jqXHR, textStatus, errorThrown) => {
-            console.error(`Unable to load airport/terrain/${this.icao}: ${textStatus}`);
+        }).then(
+            (data) => { // TODO: change to onSuccess and onError handler abstractions
+                // Guard payload parsing separately from the transport failure path so a
+                // throwing parse surfaces on the browser uncaught-error channel instead
+                // of being mislabeled as a load failure or leaking as an unhandled rejection.
+                try {
+                    this.parseTerrain(data);
+                } catch (e) {
+                    // Preserve the historical browser-facing error shape.
+                    if (this._reportError) {
+                        this._reportError(new Error(e.message));
+                    }
+                }
+            },
+            (error) => {
+                const textStatus = error instanceof AssetLoadError
+                    ? error.textStatus
+                    : formatAssetLoadError(error);
 
-            this.loading = false;
-            AirportController.current.set();
-        });
+                console.error(`Unable to load airport/terrain/${this.icao}: ${textStatus}`);
+
+                this.loading = false;
+                if (this._airportController && this._airportController.current) {
+                    this._airportController.current.set();
+                }
+            }
+        );
     }
 
     /**
@@ -834,21 +911,39 @@ export default class AirportModel {
             return;
         }
 
+        const hasInitialAirportData = airportJson && airportJson.icao.toLowerCase() === this.icao;
+
+        if (!hasInitialAirportData && !this._contentQueue) {
+            return;
+        }
+
         this.loading = true;
         this.eventBus.trigger(EVENT.PAUSE_UPDATE_LOOP, false);
 
-        if (airportJson && airportJson.icao.toLowerCase() === this.icao) {
+        if (hasInitialAirportData) {
             this.onLoadIntialAirportFromJson(airportJson);
 
             return;
         }
 
-        // eslint-disable-next-line no-undef
-        zlsa.atc.loadAsset({
+        return this._contentQueue.addPromise({
             url: `assets/airports/${this.icao.toLowerCase()}.json`,
             immediate: true
-        }).done((response) => this.onLoadAirportSuccess(response))
-            .fail((...args) => this.onLoadAirportError(...args));
+        }).then(
+            (response) => {
+                // Guard payload processing separately from the transport failure path so a
+                // throwing initialization surfaces on the browser uncaught-error channel
+                // instead of being mislabeled as a load failure or leaking as an unhandled rejection.
+                try {
+                    this.onLoadAirportSuccess(response);
+                } catch (error) {
+                    if (this._reportError) {
+                        this._reportError(error);
+                    }
+                }
+            },
+            (error) => this.onLoadAirportError(error)
+        );
     }
 
     /**
@@ -871,11 +966,17 @@ export default class AirportModel {
      * @method onLoadAirportError
      * @param textStatus {string}
      */
-    onLoadAirportError = ({ textStatus }) => {
+    onLoadAirportError = (error) => {
+        const textStatus = error instanceof AssetLoadError
+            ? error.textStatus
+            : formatAssetLoadError(error);
+
         console.error(`Unable to load airport/${this.icao}: ${textStatus}`);
 
         this.loading = false;
-        AirportController.current.set();
+        if (this._airportController && this._airportController.current) {
+            this._airportController.current.set();
+        }
     }
 
     /**

@@ -3,7 +3,6 @@ import _has from 'lodash/has';
 import _head from 'lodash/head';
 import _forEach from 'lodash/forEach';
 import _map from 'lodash/map';
-import _random from 'lodash/random';
 import _uniq from 'lodash/uniq';
 import _without from 'lodash/without';
 import BaseModel from '../base/BaseModel';
@@ -26,15 +25,27 @@ export default class AirlineModel extends BaseModel {
      * @constructor
      * @for AirlineModel
      * @param airlineDefinition {object}
+     * @param randomSource {RandomSource} composition-root randomness boundary used to select aircraft types; optional
      */
     /* istanbul ignore next */
-    constructor(airlineDefinition) {
+    constructor(airlineDefinition, randomSource) {
         super();
 
         if (isEmptyOrNotObject(airlineDefinition)) {
             throw new TypeError('Invalid airlineDefinition passed to AirlineModel constructor. ' +
                 `Expected a non-empty object, but received ${typeof airlineDefinition}`);
         }
+
+        /**
+         * Randomness boundary injected from the composition root, used to draw an
+         * aircraft type index. When omitted, draws deterministically return the
+         * lower bound so the model stays usable without an injected source.
+         *
+         * @property _randomSource
+         * @type {RandomSource}
+         * @private
+         */
+        this._randomSource = randomSource ?? null;
 
         /**
          * ICAO airline designation
@@ -151,7 +162,7 @@ export default class AirlineModel extends BaseModel {
         // TODO: these _get() lines are likely redundant and could be removed only after proper testing
         this.icao = _get(airlineDefinition, 'icao', this.icao).toLowerCase();
         this.radioName = _get(airlineDefinition, 'callsign.name', this.radioName);
-        this.flightNumberGeneration.callsignFormats = _get(airlineDefinition, 'callsign.callsignFormats', this.flightNumberGeneration.callsignFormats); // eslint-disable-line max-len
+        this.flightNumberGeneration.callsignFormats = _get(airlineDefinition, 'callsign.callsignFormats', this.flightNumberGeneration.callsignFormats);
         this.fleets = _get(airlineDefinition, 'fleets');
 
         this._transformFleetNamesToLowerCase();
@@ -233,7 +244,8 @@ export default class AirlineModel extends BaseModel {
      * @return {AirlineModel}
      */
     _getRandomAircraftTypeFromAllFleets() {
-        const index = _random(0, this.aircraftList.length - 1);
+        const maxIndex = this.aircraftList.length - 1;
+        const index = this._randomSource ? this._randomSource.integer(0, maxIndex) : 0;
 
         return this.aircraftList[index];
     }
@@ -250,12 +262,12 @@ export default class AirlineModel extends BaseModel {
     _getRandomAircraftTypeFromFleet(fleetName) {
         // if we want to be uber defensive here we would lowercase the `fleetName` param
         if (!this._hasFleet(fleetName)) {
-            // eslint-disable-next-line max-len
+
             throw new Error(`Invalid fleetName passed to AirlineModel. ${fleetName} is not a fleet defined in ${this.icao}`);
         }
 
         const fleet = this.fleets[fleetName];
-        const index = _random(0, fleet.length - 1);
+        const index = this._randomSource ? this._randomSource.integer(0, fleet.length - 1) : 0;
 
         // entries in `fleets[fleetName]` are of the shape `[TYPE, WEIGHT]` we only need the type here
         return _head(fleet[index]);

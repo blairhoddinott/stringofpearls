@@ -1,4 +1,3 @@
-/* eslint-disable quotes, quote-props */
 export const SID_MOCK = {
     "BOACH6": {
         "icao": "BOACH6",

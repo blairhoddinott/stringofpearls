@@ -1,4 +1,3 @@
-import _has from 'lodash/has';
 import EventBus from '../lib/EventBus';
 import { round } from '../math/core';
 import { EVENT } from '../constants/eventNames';
@@ -25,19 +24,26 @@ import { INVALID_NUMBER } from '../constants/globalConstants';
  *      V     (haversine math from DynamicPositionModel to find GPS coordinates based on dist/dir from known coordinates)
  * "GPS Coordinates": the latitude/longitude values of a given position
  *
- * @class CanvasStageModel
+ * The constructible `CanvasStageModelClass` is the ownable viewport/camera
+ * dependency; the module default export below remains a single shared singleton
+ * for unmigrated consumers. The named export carries a distinct identifier to
+ * avoid `no-named-as-default` lint warnings against that default import.
+ *
+ * @class CanvasStageModelClass
  */
-class CanvasStageModel {
+export class CanvasStageModelClass {
     /**
      * @constructor
+     * @param eventBus {EventBus} event bus used to publish pan/zoom events;
+     *                            defaults to the compatibility `EventBus` singleton
      */
-    constructor() {
+    constructor(eventBus = EventBus) {
         /**
          * @property _eventBus
          * @type {EventBus}
          * @private
          */
-        this._eventBus = EventBus;
+        this._eventBus = eventBus;
 
         /**
          * Pixel height of the canvas(es)
@@ -122,6 +128,20 @@ class CanvasStageModel {
          */
         this._scale = INVALID_NUMBER;
 
+        /**
+         * Persistence boundary used to read and write the zoom level.
+         *
+         * Remains `null` until a composition root configures it through
+         * `initStorage()`, so import-time construction never touches a
+         * browser global.
+         *
+         * @property _storageAdapter
+         * @type {StorageAdapter}
+         * @default null
+         * @private
+         */
+        this._storageAdapter = null;
+
         return this._init();
     }
 
@@ -182,6 +202,23 @@ class CanvasStageModel {
     }
 
     /**
+     * Configure the persistence boundary used for the zoom level.
+     *
+     * Called by `CanvasController` during construction, at the composition
+     * root, before any normal canvas behavior. Storing the adapter and
+     * rehydrating `#_scale` from it is the only way this singleton reaches
+     * storage; before this runs it stays browser-global-free.
+     *
+     * @for CanvasStageModel
+     * @method initStorage
+     * @param storageAdapter {StorageAdapter}  boundary exposing `get(key)`/`set(key, value)`
+     */
+    initStorage(storageAdapter) {
+        this._storageAdapter = storageAdapter == null ? null : storageAdapter;
+        this._scale = this._retrieveZoomLevelFromStorageOrDefault();
+    }
+
+    /**
      * @for CanvasStageModel
      * @method reset
      */
@@ -194,6 +231,7 @@ class CanvasStageModel {
         this._scaleMax = INVALID_NUMBER;
         this._scaleMin = INVALID_NUMBER;
         this._scale = INVALID_NUMBER;
+        this._storageAdapter = null;
     }
 
     /**
@@ -360,34 +398,50 @@ class CanvasStageModel {
     }
 
     /**
-     * Look for a stored `#_scale` value in localStorage
+     * Look for a stored `#_scale` value through the storage boundary
      *
-     * When a stored value cannot be found, use the `SCALE.DEFAULT` value
+     * When no adapter has been configured, or the stored value is missing,
+     * use the numeric `SCALE.DEFAULT` value. A present raw value is returned
+     * verbatim (this boundary neither parses nor coerces it).
      *
      * @for CanvasStageModel
-     * @method _retrieveZoomLevelFromStorage
-     * @return {number}
+     * @method _retrieveZoomLevelFromStorageOrDefault
+     * @return {number|string}
      * @private
      */
     _retrieveZoomLevelFromStorageOrDefault() {
-        if (!_has(localStorage, STORAGE_KEY.ZOOM_LEVEL)) {
+        if (this._storageAdapter === null) {
             return SCALE.DEFAULT;
         }
 
-        const storedScale = localStorage.getItem(STORAGE_KEY.ZOOM_LEVEL);
+        const storedScale = this._storageAdapter.get(STORAGE_KEY.ZOOM_LEVEL);
+
+        // Web Storage `getItem()` returns `null` for a missing key; treat both
+        // `null` and `undefined` as missing, while preserving any present raw
+        // value (including falsy strings like `'0'` and `''`).
+        if (storedScale == null) {
+            return SCALE.DEFAULT;
+        }
 
         return storedScale;
     }
 
     /**
-     * Store the current `#_scale` value in localStorage
+     * Store the current `#_scale` value through the storage boundary
+     *
+     * When no adapter has been configured this is a safe no-op, so the
+     * singleton remains usable before the composition root wires storage.
      *
      * @for CanvasStageModel
      * @method _storeZoomLevel
      * @private
      */
     _storeZoomLevel() {
-        localStorage.setItem(STORAGE_KEY.ZOOM_LEVEL, this._scale);
+        if (this._storageAdapter === null) {
+            return;
+        }
+
+        this._storageAdapter.set(STORAGE_KEY.ZOOM_LEVEL, this._scale);
     }
 
     /**
@@ -442,4 +496,4 @@ class CanvasStageModel {
     }
 }
 
-export default new CanvasStageModel();
+export default new CanvasStageModelClass();

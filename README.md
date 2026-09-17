@@ -1,62 +1,125 @@
-[![openScope Current Release](https://img.shields.io/github/v/release/openscope/openscope.svg)](https://github.com/openscope/openscope/releases)
-[![Production Build State](https://img.shields.io/github/actions/workflow/status/openscope/openscope/push.yml?branch=master)](https://github.com/openscope/openscope/tree/master)
-[![Coverage Status](https://coveralls.io/repos/github/openscope/openscope/badge.svg?branch=develop)](https://coveralls.io/github/openscope/openscope?branch=develop)
-[![Slack Status](https://img.shields.io/badge/slack-join-yellow)](https://join.slack.com/t/openscopeatc/shared_invite/zt-g9wq2mch-B7Z9IltlgxgCBC2dBYPjiw)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md)
+# String of Pearls
 
-# openScope Air Traffic Control Simulator
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
+[![Docker ready](https://img.shields.io/badge/Docker-ready-2496ED?logo=docker&logoColor=white)](documentation/development/containers.md)
 
-Visit http://openscope.io to begin playing now!
+String of Pearls is a browser-based air traffic control simulator. Work traffic on realistic scopes, issue clearances, manage arrivals and departures, and try not to manufacture an FAA incident report.
 
-If you're just getting started, try the tutorial and see the [command reference](documentation/commands.md) for a full list of commands you can use. For information on each airport, see the [airport guide](documentation/airport-guides/airport-guide-directory.md).
+String of Pearls is an independent community fork of the openScope codebase. It retains the inherited simulation behavior, airport data, Git history, license, and attribution while replacing obsolete build infrastructure and isolating platform, simulation, presentation, and input responsibilities behind characterized boundaries.
 
-Feel free to [join us on slack](https://join.slack.com/t/openscopeatc/shared_invite/zt-g9wq2mch-B7Z9IltlgxgCBC2dBYPjiw) if you have questions, comments or would like to contribute to the project. We can then add you to the organization so you can begin committing to this repo.
+## Run with Docker
 
----
+Docker is the supported production-like and isolated development path. Local development uses Node.js 24 and npm 11.
 
-## Developer Quick Start
-
-_Prerequisites: In order to successfully complete this quick start, you will need to have the following installed locally:_
-
-- [Git](https://git-scm.com/downloads)
-- [Node](https://nodejs.org/en/download/)
-
-_Installation directions are beyond the scope of this document.  Instead, search the [Google](http://google.com).  Installing these two packages has been written about ad-nauseum._
-
-From a terminal (or GitBash for Windows users), run the following commands:
-
-1. `git clone https://github.com/openscope/openscope.git`
-1. `cd openscope`
-1. `npm install`
-1. `npm run build`
-1. `npm run start`
-
-Once that finishes doing its thing, you should see something close to the following in the terminal:
-
-```bash
-> node ./public/assets/scripts/server/index.js
-
-Listening on PORT 3003
+```sh
+git clone https://github.com/blairhoddinott/stringofpearls.git
+cd stringofpearls
+docker compose up --build app
 ```
 
-Success!!
+Open http://localhost:3003.
 
-You you do not see this message and are having trouble getting set up, please join us on [Slack](https://join.slack.com/t/openscopeatc/shared_invite/zt-g9wq2mch-B7Z9IltlgxgCBC2dBYPjiw) and someone will be able to troubleshoot with you.
+For the source-mounted development image, runtime hardening details, health checks, and future automation commands, see [Container development and deployment](documentation/development/containers.md).
 
-For more information on the available tools, please view the [Tools Readme](tools/README.md).
+## Simulator documentation
+
+- [Command reference](documentation/commands.md)
+- [Airport guides](documentation/airport-guides/airport-guide-directory.md)
+- [Airport format](documentation/airport-format.md)
+- [Airport file standards](documentation/airport-file-standards.md)
+- [Event tracking and privacy](documentation/event-tracking.md)
+- [Supported browsers](documentation/development/supported-browsers.md)
+
+## Development
+
+The repository builds, tests, and measures coverage on Node 24 with a small repository-owned pipeline based on esbuild, `fs/promises`, AVA 6, and c8. Native build and watch execution requires Linux with `/proc` and util-linux `flock`; macOS and Windows contributors should use the supported container workflow. The generated URL layout remains compatible with the inherited static site, while the production container serves it from unprivileged NGINX.
+
+Useful commands:
+
+```sh
+# Exact local install and production build
+npm ci --ignore-scripts --no-audit --no-fund
+npm run build
+
+# Generated-output contract
+npm run build:test
+
+# Inherited unit suite on Node 24
+npm test
+
+# All-module coverage with regression floors
+npm run test:coverage
+
+# Production-like container
+docker compose up --build app
+
+# Source-mounted development container
+docker compose --profile development up --build dev
+
+# Container acceptance test
+npm run docker:smoke
+
+# Browser acceptance test
+npm run browser:smoke
+
+# Aviation asset validation
+npm run validator:test
+npm run validate:assets
+```
+
+Read the [modernization audit](documentation/development/modernization-audit.md) for the technical baseline and migration sequence.
+
+## Roadmap
+
+The canonical roadmap lives at [documentation/development/roadmap.md](documentation/development/roadmap.md). This is the current working plan.
+
+### Foundations
+
+- [x] Rename the project to String of Pearls
+- [x] Add development and production container workflows
+- [x] Add deterministic aviation asset validation
+- [x] Add an automated browser startup and airport-selection smoke test
+- [x] Replace the legacy JavaScript build toolchain and adopt Node 24
+- [x] Modernize the application architecture through the Phase 5 boundary decomposition
+- [ ] Resume feature development on the modernized foundation
+
+### Simulation and realism
+
+- [ ] Use real-world traffic schedules
+- [ ] Use real-world weather
+- [ ] Simulate handoffs from center controllers
+- [ ] Model service to smaller airports in the surrounding area
+- [ ] Add operational holding instructions
+- [ ] Divide airspace into sectors and allow users to work selected sectors where the model makes sense
+- [ ] Separate arrival and departure positions so users can work either position or combine both
+
+### Voice and interaction
+
+- [ ] Add speech-to-text command input
+- [ ] Improve text-to-speech for aircraft responses
+- [ ] Allow users to reposition data tags to reduce overlap
+- [ ] Add more realistic information to flight progress strips
+
+### Scope and community
+
+- [ ] Update the display to resemble the Raytheon STARS 6191 scope using the available manual
+- [ ] Create a maintainable submission and review process for new airports
+- [ ] Evaluate a leaderboard or other scoring system without turning the simulator into an arcade cabinet
+
+### Deferred platform decisions
+
+- [ ] Choose a CI/CD execution model, provider, and budget after the local toolchain is stable
 
 ## Contributing
 
-We do not use forks. Instead, we add to add all contributors to the openScope organization. This way, we can keep all branches local to the organization, and use testing integrations on pull requests. If you are interested in contributing, _please message Erik Quinn or Nate Geslin on slack_ so you can be added to the organization.
+Issues and pull requests are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) before starting work. Keep changes focused, include tests where the current harness permits them, and document behavior that affects airport authors or operators.
 
-We use the [GitFlow Branching Model](http://nvie.com/posts/a-successful-git-branching-model) for managing branches.  If you would like to contribute, you will be expected to use appropriate branch names based on this methodology (and we can help if you have questions).
+## Privacy
 
-Don't know Javascript?  That's cool, we're always looking for beta testers and/or airport contributors.  If you would like to add a new airport, or help update existing airports, please read the [Airport Format Documentation](documentation/airport-format.md) and [Airport File Standards Documentation](documentation/airport-file-standards.md) to get up to speed on what is expected in that file.
+The client supports optional Google Analytics event tracking through an explicit adapter configured at the browser composition root. See [Event tracking and privacy](documentation/event-tracking.md) for details.
 
-## Privacy Disclosures
+## License and attribution
 
-We use Google Analytics for gathering data about how our app is used. See [Event Tracking](documentation/event-tracking.md) for more information.
+String of Pearls is distributed under the [MIT License](LICENSE.md).
 
-## License
-
-[MIT License](LICENSE.md)
+The simulator is derived from the openScope project and retains its copyright and license history. Historical references in the changelog and modernization audit are preserved where they describe the original project.

@@ -13,8 +13,35 @@ export default class ChangelogController {
     /**
      * @constructor
      * @param {ContentQueue} contentQueue
+     * @param {StorageAdapter} storageAdapter  persistence boundary for the
+     *                                         last-played version
+     * @param {Function} [reportError] reporter for processing-time exceptions;
+     *                                 nullish/omitted normalizes to null so a
+     *                                 shorter call surfaces nothing rather than
+     *                                 reaching for a browser global
      */
-    constructor(contentQueue) {
+    constructor(contentQueue, storageAdapter, reportError = null) {
+        /**
+         * Persistence boundary used to read and write the last-played version.
+         *
+         * @property _storageAdapter
+         * @type {StorageAdapter}
+         */
+        this._storageAdapter = storageAdapter;
+
+        /**
+         * Reporter used to surface processing-time exceptions on the browser's
+         * uncaught-error channel without leaking an unhandled rejection.
+         *
+         * Nullish/omitted normalizes to canonical null and the report call is
+         * guarded, so a shorter call stays free of a browser global.
+         *
+         * @property _reportError
+         * @type {Function|null}
+         * @default null
+         */
+        this._reportError = reportError ?? null;
+
         /**
          * A string representation of the actual changelog.
          *
@@ -175,25 +202,43 @@ export default class ChangelogController {
      * the changelog data is successfully loaded. Stores data in
      * `this.content`.
      *
+     * Returns the complete promise chain so composition and tests can observe
+     * settlement.
+     *
      * @for ChangelogController
      * @method loadChangelogContent
+     * @return {Promise}
      */
     loadChangelogContent() {
-        const options = {
+        return this.contentQueue.addPromise({
             url: 'assets/changelog.json',
             immediate: true
-        };
-        const changelogPromise = this.contentQueue.add(options);
-
-        changelogPromise.done((data /* , textStatus, jqXHR */) => {
-            this.content = data.changelog;
-            this.onLoadComplete();
-        });
+        }).then(
+            (data) => {
+                // Guard payload application separately from the transport failure
+                // path so a throwing content update or `onLoadComplete` surfaces on
+                // the browser uncaught-error channel instead of being mislabeled as
+                // a load failure or leaking as an unhandled rejection.
+                try {
+                    this.content = data.changelog;
+                    this.onLoadComplete();
+                } catch (error) {
+                    if (this._reportError) {
+                        this._reportError(error);
+                    }
+                }
+            },
+            () => {
+                // Transport failure is intentionally quiet: the changelog is
+                // supplementary content, so a failed load leaves the placeholder
+                // in place with no diagnostic or UI replacement.
+            }
+        );
     }
 
     /**
-     * Called when the changelog is loaded (the promise was resolved) as the
-     * callback from the deferred promise.
+     * Called when the changelog content has been loaded and the resolving
+     * promise from `loadChangelogContent` runs its success handler.
      *
      * @for ChangelogController
      * @method onLoadComplete
@@ -230,12 +275,17 @@ export default class ChangelogController {
      * @returns {Boolean} if the user has not played this version
      */
     _shouldShowOnLoad() {
-        const lastPlayedVersion = localStorage[STORAGE_KEY.ATC_LAST_VERSION];
+        const storedVersion = this._storageAdapter.get(STORAGE_KEY.ATC_LAST_VERSION);
+        // Web Storage `getItem()` returns `null` for a missing key, whereas the
+        // legacy `storage[key]` property access returned `undefined`. Normalize
+        // the missing case back to `undefined` so the comparison preserves the
+        // historical behavior when `this.version` is also undefined.
+        const lastPlayedVersion = storedVersion === null ? undefined : storedVersion;
         const currentVersion = this.version;
         const shouldDisplayChangelog = lastPlayedVersion !== currentVersion;
 
         if (shouldDisplayChangelog) {
-            localStorage[STORAGE_KEY.ATC_LAST_VERSION] = currentVersion;
+            this._storageAdapter.set(STORAGE_KEY.ATC_LAST_VERSION, currentVersion);
         }
 
         return shouldDisplayChangelog;

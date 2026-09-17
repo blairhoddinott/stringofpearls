@@ -1,5 +1,6 @@
 import EventBus from '../lib/EventBus';
-import GameController, { GAME_EVENTS } from './GameController';
+import GameController from './GameController';
+import { GAME_EVENTS } from './gameEventConstants';
 import UiController from '../ui/UiController';
 import { nm_ft } from '../utilities/unitConverters';
 import { AIRCRAFT_EVENT } from '../constants/eventNames';
@@ -10,7 +11,7 @@ import { MCP_MODE } from '../aircraft/ModeControl/modeControlConstants';
  * @class ScoreController
  */
 export default class ScoreController {
-    constructor(aircraftController) {
+    constructor(aircraftController, eventBus = EventBus, gameState = GameController) {
         /**
          * Whether the aircraft has received a clearance to conduct an approach to a runway
          *
@@ -20,6 +21,8 @@ export default class ScoreController {
          * @private
          */
         this._aircraftController = aircraftController;
+        this._eventBus = eventBus;
+        this._gameState = gameState;
 
         this.init()
             .setupHandlers()
@@ -49,9 +52,9 @@ export default class ScoreController {
      * @chainable
      */
     enable() {
-        EventBus.on(AIRCRAFT_EVENT.APPROACH, this._onApproachHandler);
-        EventBus.on(AIRCRAFT_EVENT.FULLSTOP, this._onLandingHandler);
-        EventBus.on(AIRCRAFT_EVENT.AIRSPACE_EXIT, this._onExitAirspaceHandler);
+        this._eventBus.on(AIRCRAFT_EVENT.APPROACH, this._onApproachHandler);
+        this._eventBus.on(AIRCRAFT_EVENT.FULLSTOP, this._onLandingHandler);
+        this._eventBus.on(AIRCRAFT_EVENT.AIRSPACE_EXIT, this._onExitAirspaceHandler);
 
         return this;
     }
@@ -62,9 +65,9 @@ export default class ScoreController {
      * @chainable
      */
     disable() {
-        EventBus.off(AIRCRAFT_EVENT.APPROACH, this._onApproachHandler);
-        EventBus.off(AIRCRAFT_EVENT.FULLSTOP, this._onLandingHandler);
-        EventBus.off(AIRCRAFT_EVENT.AIRSPACE_EXIT, this._onExitAirspaceHandler);
+        this._eventBus.off(AIRCRAFT_EVENT.APPROACH, this._onApproachHandler);
+        this._eventBus.off(AIRCRAFT_EVENT.FULLSTOP, this._onLandingHandler);
+        this._eventBus.off(AIRCRAFT_EVENT.AIRSPACE_EXIT, this._onExitAirspaceHandler);
 
         return this;
     }
@@ -125,7 +128,7 @@ export default class ScoreController {
      */
     _onAirspaceExitForArrival(aircraftModel) {
         aircraftModel.radioCall('leaving radar coverage as arrival', AIRPORT_CONTROL_POSITION_NAME.APPROACH, true);
-        GameController.events_recordNew(GAME_EVENTS.AIRSPACE_BUST);
+        this._gameState.events_recordNew(GAME_EVENTS.AIRSPACE_BUST);
     }
 
     /**
@@ -136,7 +139,7 @@ export default class ScoreController {
      */
     _onAirspaceExitWithClearance(aircraftModel) {
         aircraftModel.radioCall('switching to center, good day', AIRPORT_CONTROL_POSITION_NAME.DEPARTURE);
-        GameController.events_recordNew(GAME_EVENTS.DEPARTURE);
+        this._gameState.events_recordNew(GAME_EVENTS.DEPARTURE);
     }
 
     /**
@@ -147,7 +150,7 @@ export default class ScoreController {
      */
     _onAirspaceExitWithoutClearance(aircraftModel) {
         aircraftModel.radioCall('leaving airspace without being on our route', AIRPORT_CONTROL_POSITION_NAME.DEPARTURE, true);
-        GameController.events_recordNew(GAME_EVENTS.NOT_CLEARED_ON_ROUTE);
+        this._gameState.events_recordNew(GAME_EVENTS.NOT_CLEARED_ON_ROUTE);
     }
 
     /**
@@ -162,18 +165,18 @@ export default class ScoreController {
 
         // TODO: these two if blocks could be done in a single switch statement
         if (wind.cross >= 20) {
-            GameController.events_recordNew(GAME_EVENTS.EXTREME_CROSSWIND_OPERATION);
+            this._gameState.events_recordNew(GAME_EVENTS.EXTREME_CROSSWIND_OPERATION);
             UiController.ui_log(`${aircraftModel.callsign} ${action} with major crosswind`, isWarning);
         } else if (wind.cross >= 10) {
-            GameController.events_recordNew(GAME_EVENTS.HIGH_CROSSWIND_OPERATION);
+            this._gameState.events_recordNew(GAME_EVENTS.HIGH_CROSSWIND_OPERATION);
             UiController.ui_log(`${aircraftModel.callsign} ${action} with crosswind`, isWarning);
         }
 
         if (wind.head <= -10) {
-            GameController.events_recordNew(GAME_EVENTS.EXTREME_TAILWIND_OPERATION);
+            this._gameState.events_recordNew(GAME_EVENTS.EXTREME_TAILWIND_OPERATION);
             UiController.ui_log(`${aircraftModel.callsign} ${action} with major tailwind`, isWarning);
         } else if (wind.head <= -5) {
-            GameController.events_recordNew(GAME_EVENTS.HIGH_TAILWIND_OPERATION);
+            this._gameState.events_recordNew(GAME_EVENTS.HIGH_TAILWIND_OPERATION);
             UiController.ui_log(`${aircraftModel.callsign} ${action} with tailwind`, isWarning);
         }
     }
@@ -199,7 +202,7 @@ export default class ScoreController {
         if (actualDistance < requiredDistance || previousAircraft.isOnGround()) {
             const isWarning = true;
 
-            GameController.events_recordNew(GAME_EVENTS.NO_TAKEOFF_SEPARATION);
+            this._gameState.events_recordNew(GAME_EVENTS.NO_TAKEOFF_SEPARATION);
             UiController.ui_log(`${aircraftModel.callsign} ${action} without adequate separation from another ` +
                 'aircraft using the same runway', isWarning);
         }
@@ -220,7 +223,7 @@ export default class ScoreController {
         const isWarning = true;
 
         UiController.ui_log(`${aircraftModel.callsign} intercepted localizer above glideslope`, isWarning);
-        GameController.events_recordNew(GAME_EVENTS.LOCALIZER_INTERCEPT_ABOVE_GLIDESLOPE);
+        this._gameState.events_recordNew(GAME_EVENTS.LOCALIZER_INTERCEPT_ABOVE_GLIDESLOPE);
     }
 
     /**
@@ -234,6 +237,6 @@ export default class ScoreController {
         const isWarning = true;
 
         UiController.ui_log(`${aircraftModel.callsign} approach course intercept angle was greater than 30 degrees`, isWarning);
-        GameController.events_recordNew(GAME_EVENTS.ILLEGAL_APPROACH_CLEARANCE);
+        this._gameState.events_recordNew(GAME_EVENTS.ILLEGAL_APPROACH_CLEARANCE);
     }
 }

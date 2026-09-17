@@ -44,7 +44,7 @@ After handed off from Control, Hiroshima Approach is responsible for:
 
 MISEN is the IF (Intermediate Fix), and MACKY the FAF (Final Approach Fix) for ILS 10 approach which should be used in the scenario. Approach should issue a descent clearance so that the aircraft is at 3600ft before reaching MACKY.
 
-## Sectors Available in openScope
+## Sectors Available in String of Pearls
 ```
 Hiroshima Depature
 Hiroshima Approach

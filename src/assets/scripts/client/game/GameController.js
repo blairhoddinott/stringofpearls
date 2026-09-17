@@ -4,7 +4,13 @@ import _has from 'lodash/has';
 import EventBus from '../lib/EventBus';
 import EventTracker from '../EventTracker';
 import GameOptions from './GameOptions';
+import {
+    GAME_EVENTS,
+    GAME_EVENTS_DESCRIPTION,
+    GAME_EVENTS_POINT_VALUES
+} from './gameEventConstants';
 import TimeKeeper from '../engine/TimeKeeper';
+import SimulationTimerQueue from '../simulation/SimulationTimerQueue';
 import { round } from '../math/core';
 import { EVENT } from '../constants/eventNames';
 import { GAME_OPTION_NAMES } from '../constants/gameOptionConstants';
@@ -13,89 +19,18 @@ import { TRACKABLE_EVENT } from '../constants/trackableEvents';
 import { SELECTORS } from '../constants/selectors';
 import { THEME } from '../constants/themes';
 
-// TODO: Remember to move me to wherever the constants end up being moved to
-/**
- * Definitions of point values for given game events
- * @type {Object}
- */
-const GAME_EVENTS_POINT_VALUES = {
-    AIRSPACE_BUST: -200,
-    ARRIVAL: 10,
-    COLLISION: -1000,
-    DEPARTURE: 10,
-    EXTREME_CROSSWIND_OPERATION: -15,
-    EXTREME_TAILWIND_OPERATION: -75,
-    GO_AROUND: -50,
-    HIGH_CROSSWIND_OPERATION: -5,
-    HIGH_TAILWIND_OPERATION: -25,
-    ILLEGAL_APPROACH_CLEARANCE: -10,
-    LOCALIZER_INTERCEPT_ABOVE_GLIDESLOPE: -10,
-    NOT_CLEARED_ON_ROUTE: -25,
-    SEPARATION_LOSS: -200,
-    NO_TAKEOFF_SEPARATION: -200
-};
-
-/**
- * List of game events
- * @type {Object}
- */
-export const GAME_EVENTS = {
-    AIRSPACE_BUST: 'AIRSPACE_BUST',
-    ARRIVAL: 'ARRIVAL',
-    COLLISION: 'COLLISION',
-    DEPARTURE: 'DEPARTURE',
-    EXTREME_CROSSWIND_OPERATION: 'EXTREME_CROSSWIND_OPERATION',
-    EXTREME_TAILWIND_OPERATION: 'EXTREME_TAILWIND_OPERATION',
-    GO_AROUND: 'GO_AROUND',
-    HIGH_CROSSWIND_OPERATION: 'HIGH_CROSSWIND_OPERATION',
-    HIGH_TAILWIND_OPERATION: 'HIGH_TAILWIND_OPERATION',
-    ILLEGAL_APPROACH_CLEARANCE: 'ILLEGAL_APPROACH_CLEARANCE',
-    /**
-    * Aircraft is cleared for the approach, has just become fully established on the localizer,
-    * but they are above the glideslope, and will have to chase it down
-    *
-    * This event is used to assess a penalty to the controller because they are required to have
-    * aircraft at/below glideslope altitude when intercepting the localizer
-    *
-    * @memberof GAME_EVENTS
-    * @property LOCALIZER_INTERCEPT_ABOVE_GLIDESLOPE
-    * @type {string}
-    */
-    LOCALIZER_INTERCEPT_ABOVE_GLIDESLOPE: 'LOCALIZER_INTERCEPT_ABOVE_GLIDESLOPE',
-    NOT_CLEARED_ON_ROUTE: 'NOT_CLEARED_ON_ROUTE',
-    SEPARATION_LOSS: 'SEPARATION_LOSS',
-    NO_TAKEOFF_SEPARATION: 'NO_TAKEOFF_SEPARATION'
-};
-
-/**
- * Event log description for a point event
- * @type {Object}
- */
-const GAME_EVENTS_DESCRIPTION = {
-    AIRSPACE_BUST: 'Aircraft left radar coverage as arrival',
-    ARRIVAL: 'Aircraft landed successfully',
-    COLLISION: 'Multiple aircraft collided',
-    DEPARTURE: 'Departing aircraft switched to center',
-    EXTREME_CROSSWIND_OPERATION: 'Aircraft operated with extreme crosswind',
-    EXTREME_TAILWIND_OPERATION: 'Aircraft operated with extreme tailwind',
-    GO_AROUND: 'Aircraft had to go around',
-    HIGH_CROSSWIND_OPERATION: 'Aircraft operated with high crosswind',
-    HIGH_TAILWIND_OPERATION: 'Aircraft operated with high tailwind',
-    ILLEGAL_APPROACH_CLEARANCE: 'Aircraft intercept angle was > 30 degrees',
-    LOCALIZER_INTERCEPT_ABOVE_GLIDESLOPE: 'Aircraft intercepted localizer above glidescope',
-    NOT_CLEARED_ON_ROUTE: 'Aircraft left airspace without being on route',
-    SEPARATION_LOSS: 'Aircraft violated separation requirements',
-    NO_TAKEOFF_SEPARATION: 'Aircraft violated same runway separation requirements'
-};
+export { GAME_EVENTS } from './gameEventConstants';
 
 /**
  * @class GameController
  */
-class GameController {
+export class GameControllerClass {
     /**
      * @constructor
      */
-    constructor() {
+    constructor(timerQueue = new SimulationTimerQueue(TimeKeeper)) {
+        this._timerQueue = timerQueue;
+
         // TODO: the below $elements _should_ be used instead of the inline vars currently in use but
         // take caution when implmenting these because it will break tests currently in place. This is
         // because of the use of $ within lifecycle methods and becuase this is a static class used
@@ -108,13 +43,86 @@ class GameController {
         this.game.focused = true;
         this.game.frequency = 1;
         this.game.events = {};
-        this.game.timeouts = [];
+        this.game.timeouts = this._timerQueue.timers;
         this.game.last_score = 0;
         this.game.score = 0;
         this.game.option = new GameOptions();
         this.theme = THEME.DEFAULT;
 
+        /**
+         * Persistence boundary forwarded to the `GameOptions` instance.
+         *
+         * Remains `null` until the composition root configures it through
+         * `initStorage()`, so import-time construction never touches a browser
+         * global. Retained across `destroy()` so rebuilt options stay
+         * storage-backed.
+         *
+         * @property _storageAdapter
+         * @type {StorageAdapter}
+         * @default null
+         * @private
+         */
+        this._storageAdapter = null;
+
+        /**
+         * Page focus/visibility boundary used to register the pause/resume
+         * listeners.
+         *
+         * Remains `null` until the composition root configures it through
+         * `initPageVisibility()`, so import-time construction and `enable()`
+         * never touch a browser global. Retained across `destroy()` so a rebuilt
+         * lifecycle keeps its focus/visibility wiring.
+         *
+         * @property _pageVisibilityAdapter
+         * @type {PageVisibilityAdapter}
+         * @default null
+         * @private
+         */
+        this._pageVisibilityAdapter = null;
+
         this._eventBus = EventBus;
+    }
+
+    /**
+     * Configure the persistence boundary used by game options.
+     *
+     * Called by `AppController.setupChildren()` at the composition root, before
+     * any downstream UI/canvas consumer reads a game option, so persisted
+     * settings are rehydrated on the existing `GameOptions` instance rather than
+     * replacing it.
+     *
+     * @for GameController
+     * @method initStorage
+     * @param storageAdapter {StorageAdapter}  boundary exposing `get(key)`/`set(key, value)`
+     * @chainable
+     */
+    initStorage(storageAdapter) {
+        this._storageAdapter = storageAdapter == null ? null : storageAdapter;
+
+        this.game.option.initStorage(this._storageAdapter);
+
+        return this;
+    }
+
+    /**
+     * Configure the page focus/visibility boundary used by `enable()` to register
+     * the pause/resume listeners.
+     *
+     * Called by `AppController.setupChildren()` at the composition root, before
+     * `init_pre` calls `enable()`, so the browser `window`/`document` references
+     * live only in the composition root rather than inside this controller. A
+     * nullish adapter is normalized to canonical `null`, in which case `enable()`
+     * stays a safe, browser-free no-op for this capability.
+     *
+     * @for GameController
+     * @method initPageVisibility
+     * @param pageVisibilityAdapter {PageVisibilityAdapter} [optional]  boundary exposing `subscribe(onHidden, onVisible)`
+     * @chainable
+     */
+    initPageVisibility(pageVisibilityAdapter = null) {
+        this._pageVisibilityAdapter = pageVisibilityAdapter == null ? null : pageVisibilityAdapter;
+
+        return this;
     }
 
     /**
@@ -163,16 +171,13 @@ class GameController {
     enable() {
         this._eventBus.on(EVENT.SET_THEME, this._setTheme);
 
-        window.addEventListener('blur', this._onWindowBlurHandler);
-        window.addEventListener('focus', this._onWindowFocusHandler);
-        // for when the browser window receives or looses focus
-        document.addEventListener('visibilitychange', () => {
-            if (document.visibilityState === 'hidden') {
-                return this._onWindowBlurHandler();
-            }
-
-            return this._onWindowFocusHandler();
-        });
+        // Register the window blur/focus and document visibilitychange listeners
+        // (for when the browser window receives or looses focus) through the
+        // injected boundary so no browser global is touched here. Remains a safe
+        // no-op when no adapter was configured.
+        if (this._pageVisibilityAdapter !== null) {
+            this._pageVisibilityAdapter.subscribe(this._onWindowBlurHandler, this._onWindowFocusHandler);
+        }
 
         return this.initializeEventCount();
     }
@@ -205,11 +210,16 @@ class GameController {
         // TODO: remove
         this.game.frequency = 1;
         this.game.events = {};
-        this.game.timeouts = [];
+        this._timerQueue.destroyTimers();
+        this.game.timeouts = this._timerQueue.timers;
         this.game.last_score = 0;
         this.game.score = 0;
         this.game.option = new GameOptions();
         this.theme = THEME.DEFAULT;
+
+        // Retain any configured adapter so the rebuilt `GameOptions` instance
+        // stays storage-backed after lifecycle reconstruction.
+        this.game.option.initStorage(this._storageAdapter);
 
         return this;
     }
@@ -399,12 +409,7 @@ class GameController {
      * @return {array} gameTimeout
      */
     game_timeout(functionToCall, delay, that, data) {
-        const timerDelay = TimeKeeper.accumulatedDeltaTime + delay;
-        const gameTimeout = [functionToCall, timerDelay, data, delay, false, that];
-
-        this.game.timeouts.push(gameTimeout);
-
-        return gameTimeout;
+        return this._timerQueue.scheduleTimeout(functionToCall, delay, that, data);
     }
 
     /**
@@ -417,11 +422,7 @@ class GameController {
      * @return {array} to
      */
     game_interval(func, delay, that, data) {
-        const to = [func, TimeKeeper.accumulatedDeltaTime + delay, data, delay, true, that];
-
-        this.game.timeouts.push(to);
-
-        return to;
+        return this._timerQueue.scheduleInterval(func, delay, that, data);
     }
 
     /**
@@ -432,7 +433,7 @@ class GameController {
      * @param timer {array} the timer to destroy
      */
     destroyTimer(timer) {
-        this.game.timeouts.splice(this.game.timeouts.indexOf(timer), 1);
+        this._timerQueue.destroyTimer(timer);
     }
 
     /**
@@ -445,7 +446,8 @@ class GameController {
      * @method destroyTimers
      */
     destroyTimers() {
-        this.game.timeouts = [];
+        this._timerQueue.destroyTimers();
+        this.game.timeouts = this._timerQueue.timers;
     }
 
     /**
@@ -510,32 +512,7 @@ class GameController {
      * @method updateTimers
      */
     updateTimers() {
-        const currentGameTime = TimeKeeper.accumulatedDeltaTime;
-
-        for (let i = this.game.timeouts.length - 1; i >= 0; i--) {
-            let willRemoveTimerFromList = false;
-            const timeout = this.game.timeouts[i];
-            const callback = timeout[0];
-            const delayFireTime = timeout[1];
-            const callbackArguments = timeout[2];
-            const delayInterval = timeout[3];
-            const shouldRepeat = timeout[4];
-
-            if (currentGameTime > delayFireTime) {
-                callback.call(timeout[5], callbackArguments);
-                willRemoveTimerFromList = true;
-
-                if (shouldRepeat) {
-                    timeout[1] = delayFireTime + delayInterval;
-                    willRemoveTimerFromList = false;
-                }
-            }
-
-            if (willRemoveTimerFromList) {
-                this.game.timeouts.splice(i, 1);
-                i -= 1;
-            }
-        }
+        this._timerQueue.update();
     }
 
     /**
@@ -647,4 +624,4 @@ class GameController {
     };
 }
 
-export default new GameController();
+export default new GameControllerClass();

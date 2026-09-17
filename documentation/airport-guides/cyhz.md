@@ -89,7 +89,7 @@ There are various transitions which can bring aircraft from an Initial Approach 
 |   32   |     RNAV (Z)     |        EMBAX, GABAP        |
 |        |     RNAV (Y)     | NOTUB, EBLUV, MENVO, AVRIX |
 
-## Sectors Available in openScope
+## Sectors Available in String of Pearls
 
 `Halifax Terminal`
 

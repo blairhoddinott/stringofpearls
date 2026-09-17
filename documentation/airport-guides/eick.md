@@ -12,7 +12,7 @@ The airport was officially opened on 16 October 1961, following proving flights 
 The Shannon Area Control Centre is operated by the Irish Aviation Authority (IAA) and controls most of the air traffic over the Republic of Ireland between FL75 and FL245. The centre is located in Ballycasey, County Clare in the West of Ireland. In addition, the centre handles over 90% of all air traffic over the North Atlantic, via Shanwick Oceanic Control.
 
 ##### Shannon CTA
-An area of 25nm radius around EICK is available for your contol within openScope, this includes the following:
+An area of 25nm radius around EICK is available for your contol within String of Pearls, this includes the following:
 
 | Name | Lower Limit | Upper Limit | Radius around EICK |
 | --- | -- | --- | --- |
@@ -38,7 +38,7 @@ A maximum speed of 250 KIAS should be maintained below FL100. Aircraft should cl
 ##### Arrivals
 Aircraft arriving into Cork should expect the following STARs, followed by an ILS/RNP/VOR approach to the respective runway. The arrivals into runways 07 and 25 are for CAT A/B aircraft only.
 
-**Note:** Although this isn't simulated in openScope, aircraft will nearly always need to backtrack RWY16/34 (departures backtrack with RWY34 active, arrivals backtrack with RWY16 active). Cork Approach should ideally aim for a minimum of 10nm separation between aircraft on the apprach, to allow for backtracking if necessary. This distance should also be increased if an aircraft is departing in between two arrivals.
+**Note:** Although this isn't simulated in String of Pearls, aircraft will nearly always need to backtrack RWY16/34 (departures backtrack with RWY34 active, arrivals backtrack with RWY16 active). Cork Approach should ideally aim for a minimum of 10nm separation between aircraft on the apprach, to allow for backtracking if necessary. This distance should also be increased if an aircraft is departing in between two arrivals.
 
 | Runway | Suffix |
 | -- | -- |

@@ -3,6 +3,7 @@ import sinon from 'sinon';
 import _isArray from 'lodash/isArray';
 import _map from 'lodash/map';
 import AirwayModel from '../../src/assets/scripts/client/navigationLibrary/AirwayModel';
+import NavigationLibrary from '../../src/assets/scripts/client/navigationLibrary/NavigationLibrary';
 import {
     createNavigationLibraryFixture,
     resetNavigationLibraryFixture
@@ -22,7 +23,7 @@ ava.afterEach(() => {
 });
 
 ava('throws when any fix in the airway definition is not defined in the fixes section', (t) => {
-    t.throws(() => new AirwayModel(airwayNameMock, airwayWithUnknownFix));
+    t.throws(() => new AirwayModel(airwayNameMock, airwayWithUnknownFix, NavigationLibrary));
 });
 
 ava('throws when an empty airway name is given', (t) => {
@@ -39,16 +40,16 @@ ava('throws when airway definition does not include any fixes', (t) => {
 });
 
 ava('initializes correctly when provided valid airway name and fix list', (t) => {
-    const model = new AirwayModel(airwayNameMock, validAirwayFixes);
+    const model = new AirwayModel(airwayNameMock, validAirwayFixes, NavigationLibrary);
 
     t.true(model._icao === airwayNameMock);
     t.true(_isArray(model._fixNameCollection));
     t.true(model._fixNameCollection.length === 7);
-    t.deepEqual(model._navigationLibrary);
+    t.is(model._navigationLibrary, NavigationLibrary);
 });
 
 ava('.getWaypointModelsForEntryAndExit() returns early when specified entry is the same as the exit', (t) => {
-    const model = new AirwayModel(airwayNameMock, validAirwayFixes);
+    const model = new AirwayModel(airwayNameMock, validAirwayFixes, NavigationLibrary);
     const getFixNamesFromIndexToIndexSpy = sinon.spy(model, '_getFixNamesFromIndexToIndex');
     const result = model.getWaypointModelsForEntryAndExit('JOKUR', 'JOKUR');
 
@@ -57,7 +58,7 @@ ava('.getWaypointModelsForEntryAndExit() returns early when specified entry is t
 });
 
 ava('.getWaypointModelsForEntryAndExit() returns early when specified entry is not on the airway', (t) => {
-    const model = new AirwayModel(airwayNameMock, validAirwayFixes);
+    const model = new AirwayModel(airwayNameMock, validAirwayFixes, NavigationLibrary);
     const getFixNamesFromIndexToIndexSpy = sinon.spy(model, '_getFixNamesFromIndexToIndex');
     const result = model.getWaypointModelsForEntryAndExit(fixNotOnAirway, 'CRESO');
 
@@ -66,7 +67,7 @@ ava('.getWaypointModelsForEntryAndExit() returns early when specified entry is n
 });
 
 ava('.getWaypointModelsForEntryAndExit() returns early when specified exit is not on the airway', (t) => {
-    const model = new AirwayModel(airwayNameMock, validAirwayFixes);
+    const model = new AirwayModel(airwayNameMock, validAirwayFixes, NavigationLibrary);
     const getFixNamesFromIndexToIndexSpy = sinon.spy(model, '_getFixNamesFromIndexToIndex');
     const result = model.getWaypointModelsForEntryAndExit('JOKUR', fixNotOnAirway);
 
@@ -75,7 +76,7 @@ ava('.getWaypointModelsForEntryAndExit() returns early when specified exit is no
 });
 
 ava('.getWaypointModelsForEntryAndExit() calls ._getFixNamesFromIndexToIndex() correctly for forward-order fix chains', (t) => {
-    const model = new AirwayModel(airwayNameMock, validAirwayFixes);
+    const model = new AirwayModel(airwayNameMock, validAirwayFixes, NavigationLibrary);
     const getFixNamesFromIndexToIndexSpy = sinon.spy(model, '_getFixNamesFromIndexToIndex');
     const result = model.getWaypointModelsForEntryAndExit('JOKUR', 'CRESO');
     const expectedFixNames = ['JOKUR', 'DANBY', 'WHIGG', 'BOACH', 'CRESO'];
@@ -86,7 +87,7 @@ ava('.getWaypointModelsForEntryAndExit() calls ._getFixNamesFromIndexToIndex() c
 });
 
 ava('.getWaypointModelsForEntryAndExit() calls ._getFixNamesFromIndexToIndex() correctly for backward-order fix chains', (t) => {
-    const model = new AirwayModel(airwayNameMock, validAirwayFixes);
+    const model = new AirwayModel(airwayNameMock, validAirwayFixes, NavigationLibrary);
     const getFixNamesFromIndexToIndexSpy = sinon.spy(model, '_getFixNamesFromIndexToIndex');
     const result = model.getWaypointModelsForEntryAndExit('CRESO', 'JOKUR');
     const expectedFixNames = ['CRESO', 'BOACH', 'WHIGG', 'DANBY', 'JOKUR'];
@@ -97,21 +98,21 @@ ava('.getWaypointModelsForEntryAndExit() calls ._getFixNamesFromIndexToIndex() c
 });
 
 ava('.hasFixName() returns false when the specified fix is not on the airway', (t) => {
-    const model = new AirwayModel(airwayNameMock, validAirwayFixes);
+    const model = new AirwayModel(airwayNameMock, validAirwayFixes, NavigationLibrary);
     const result = model.hasFixName('ABCDE');
 
     t.false(result);
 });
 
 ava('.hasFixName() returns true when the specified fix is on the airway', (t) => {
-    const model = new AirwayModel(airwayNameMock, validAirwayFixes);
+    const model = new AirwayModel(airwayNameMock, validAirwayFixes, NavigationLibrary);
     const result = model.hasFixName('BOACH');
 
     t.true(result);
 });
 
 ava('._getFixNamesFromIndexToIndex() throws when specified indices are the same', (t) => {
-    const model = new AirwayModel(airwayNameMock, validAirwayFixes);
+    const model = new AirwayModel(airwayNameMock, validAirwayFixes, NavigationLibrary);
 
     t.throws(() => model._getFixNamesFromIndexToIndex(1, 1));
 });

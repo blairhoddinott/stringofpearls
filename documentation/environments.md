@@ -1,19 +1,33 @@
 # Environments
 
-We use several environments hosted on Heroku.
+String of Pearls uses containers to keep development and deployment behavior consistent. The project does not currently operate a public production service.
 
-## Production
+## Development
 
-The [`production`](https://openscope-prod.herokuapp.com/) app is what you see when you visit [www.openscope.io](http://www.openscope.io). This app is synced with our `master` branch and should be considered _production_ code. We want to keep this app as reliable and pristine as possible. The code in this branch has been tested and verified to be working. Any bugs discovered here will be addressed during a sprint and merged back into this branch following the standard procedures.
+The `development` image contains Node.js, the source tree, and the legacy build dependencies. Docker Compose mounts the repository into the container and stores dependencies in a named volume.
 
-## Staging
+```sh
+docker compose --profile development up --build dev
+```
 
-The [`staging`](https://staging.openscope.io/) app is used only briefly at the end of each sprint. This app is synced with the current `release/#.#.#` branch. It represents code that _will be_ merged into `master` and should be considered _production-ready_. It is vital that we diligently test this app before pushing any changes to `master`. We want to prevent exposing our users to any bugs or incomplete code.
+The development server is available at http://localhost:3003 and binds to the loopback interface by default.
 
-## Develop
+## Production-like local environment
 
-The [`develop`](https://dev.openscope.io) app is where bugfixes and feature development happens during the development phase of the sprint. Occasionally, things might break here, but every effort should be made to make sure that doesn't happen. At the end of a sprint we review, and fix, anything that may have broken through the course of development.
+The `app` service builds the static site and serves it from an unprivileged NGINX container:
 
-## Review Apps
+```sh
+docker compose up --build app
+```
 
-The [`Review Apps`](https://devcenter.heroku.com/articles/github-integration-review-apps) can be created (by admins only) at the click of a button for any open pull request. This can be very useful for those times a specific branch needs to be shared with the wider development group to facilitate heavier testing. Or, if you are unable to build and host the app locally because you can continue to see the results of your changes.
+This is the closest local approximation of a future deployment. It uses the same runtime image, health endpoint, cache rules, and filesystem restrictions intended for CI/CD.
+
+## CI
+
+CI/CD is planned but not yet configured. The intended pipeline will validate the Dockerfile, run the container smoke test, scan the runtime image, and publish immutable images only after all checks pass.
+
+See [Container development and deployment](development/containers.md) for commands and runtime details. The [roadmap](development/roadmap.md) tracks CI/CD implementation.
+
+## Deployment
+
+No hosting provider or production URL has been selected. Future deployments should run the `runtime` image, expose container port `8080`, and use `/healthz` for health checks. Provider-specific setup belongs in separate deployment documentation once a target exists.

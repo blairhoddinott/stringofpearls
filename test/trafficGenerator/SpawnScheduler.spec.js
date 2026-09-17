@@ -1,8 +1,19 @@
 import ava from 'ava';
 import sinon from 'sinon';
+import AircraftCollection from '../../src/assets/scripts/client/aircraft/AircraftCollection';
+import AircraftController from '../../src/assets/scripts/client/aircraft/AircraftController';
+import AirportController from '../../src/assets/scripts/client/airport/AirportController';
 import GameController from '../../src/assets/scripts/client/game/GameController';
-import SpawnScheduler from '../../src/assets/scripts/client/trafficGenerator/SpawnScheduler';
+import { EventBusClass } from '../../src/assets/scripts/client/lib/EventBus';
+import { NavigationLibraryClass } from '../../src/assets/scripts/client/navigationLibrary/NavigationLibrary';
+import SpawnScheduler, { SpawnSchedulerClass } from '../../src/assets/scripts/client/trafficGenerator/SpawnScheduler';
 import SpawnPatternCollection from '../../src/assets/scripts/client/trafficGenerator/SpawnPatternCollection';
+import {
+    AIRCRAFT_DEFINITION_LIST_MOCK,
+    DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK
+} from '../aircraft/_mocks/aircraftMocks';
+import { AIRPORT_JSON_KLAS_MOCK } from '../airport/_mocks/airportJsonMock';
+import { airlineControllerFixture } from '../fixtures/airlineFixtures';
 import {
     createAirportControllerFixture,
     resetAirportControllerFixture
@@ -13,6 +24,7 @@ import {
 } from '../fixtures/navigationLibraryFixtures';
 import { AIRPORT_JSON_FOR_SPAWN_MOCK } from './_mocks/spawnPatternMocks';
 import { INVALID_NUMBER } from '../../src/assets/scripts/client/constants/globalConstants';
+import { scopeModelFixture } from '../fixtures/scopeFixtures';
 
 let aircraftControllerStub;
 let spawnPatternCollectionFixture;
@@ -104,6 +116,51 @@ ava('.createAircraftAndRegisterNextTimeout() calls .createNextSchedule()', (t) =
     t.true(createNextScheduleSpy.calledOnce);
 
     createNextScheduleSpy.restore();
+});
+
+ava.serial('dispatches a created aircraft only into its controller-owned collection', (t) => {
+    const ownedCollection = new AircraftCollection();
+    const siblingCollection = new AircraftCollection();
+    const navigationLibrary = new NavigationLibraryClass();
+    navigationLibrary.init(AIRPORT_JSON_KLAS_MOCK);
+    const airportController = {
+        current: AirportController.current,
+        airport_get: (...args) => AirportController.airport_get(...args)
+    };
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture,
+        undefined,
+        undefined,
+        ownedCollection,
+        new EventBusClass(),
+        airportController,
+        navigationLibrary
+    );
+    controller.createAircraftWithSpawnPatternModel = () =>
+        controller._createAircraftWithInitializationProps(DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK);
+    const timerQueue = {
+        scheduleTimeout: sinon.stub().returns(['schedule']),
+        destroyTimer: sinon.stub()
+    };
+    const scheduler = new SpawnSchedulerClass(
+        SpawnPatternCollection,
+        { accumulatedDeltaTime: 0 },
+        timerQueue,
+        controller
+    );
+    const spawnPatternModel = {
+        getNextDelayValue: sinon.stub().returns(10),
+        scheduleId: null
+    };
+
+    scheduler.createAircraftAndRegisterNextTimeout([spawnPatternModel, controller]);
+
+    t.is(ownedCollection.list.length, 1);
+    t.is(siblingCollection.list.length, 0);
+    t.is(ownedCollection.list[0].fms._navigationLibrary, navigationLibrary);
+    t.is(ownedCollection.list[0].fms._airportController, airportController);
 });
 
 ava('.resetTimer() returns early when SpawnPatternModel has no #scheduleId', (t) => {

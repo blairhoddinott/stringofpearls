@@ -1,0 +1,16 @@
+.git
+.github
+.gitignore
+.nyc_output
+coverage
+node_modules
+npm-debug.log.*
+public
+.vscode
+.idea
+.DS_Store
+*.swp
+*.tmp
+.env
+.env.*
+!*.env.example

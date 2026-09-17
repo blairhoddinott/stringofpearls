@@ -7,10 +7,10 @@ Southern California TRACON (SCT), San Diego, California, USA
 ### Airspace
 The Southern California TRACON, or SoCal TRACON, as it is nicknamed, provides radar air traffic approach control services to all arriving and departing aircraft for most airports in southern California. SCT's airspace covers a massive area from 20 miles north of Burbank to the US/Mexican border and from San Bernardino to Santa Catalina Island. Airports receiving SCT services include Burbank Airport, John Wayne Airport, Los Angeles International Airport, Long Beach Airport, March AFB, MCAS Miramar, NAS North Island, Ontario Airport, San Diego International Airport, Van Nuys Airport and many more smaller airports that service general aviation, making it one of the busiest air traffic control facilities in the world.
 
-#### Sectors Available in openScope
+#### Sectors Available in String of Pearls
 SCT is divided into 6 main areas, each of which has multiple individual sectors that are worked by controllers.
 
-| Area            | Sector         | Callsign  | Available in openScope |
+| Area            | Sector         | Callsign  | Available in String of Pearls |
 |-----------------|----------------|-----------|------------------------|
 | 1 - Burbank     | M - Moorpark   | BUR_M_APP | No                     |
 | 1 - Burbank     | V - Valley     | BUR_V_APP | No                     |
@@ -32,13 +32,13 @@ SCT is divided into 6 main areas, each of which has multiple individual sectors 
 | 6 - Del Rey     | S - Manhattan  | LAX_S_DEP | Yes                    |
 | 6 - Del Rey     | X - Newport    | LAX_X_DEP | Yes                    |
 
-The area available for control in openScope is a combination of the Los Angeles area (responsible for arrivals into LAX) and the Del Rey area (responsible for departures out of LAX) in a West configuration (landing and departing 24L/R & 25L/R).
+The area available for control in String of Pearls is a combination of the Los Angeles area (responsible for arrivals into LAX) and the Del Rey area (responsible for departures out of LAX) in a West configuration (landing and departing 24L/R & 25L/R).
 
 ### Procedures
 LAX is obviously a very complex airport with numerous departing and arriving procedures (47 to be precise!). These procedures are designed carefully to minimize conflict between aircraft flying within the SCT and reduce noise around the Los Angeles area.
 
 #### SIDs
-Most departure procedures have a 'mirror' procedure to be used at night, designed for noise reduction. Aircraft in openScope will file for either the day or night procedures, although these can be changed with the `SID` or `route` commands, if you'd like. Some procedures also require ATC to vector aircraft to different waypoints before continuing on the departure. The table bellow summarizes this information.
+Most departure procedures have a 'mirror' procedure to be used at night, designed for noise reduction. Aircraft in String of Pearls will file for either the day or night procedures, although these can be changed with the `SID` or `route` commands, if you'd like. Some procedures also require ATC to vector aircraft to different waypoints before continuing on the departure. The table bellow summarizes this information.
 
 | SID    | RNAV | Runways       | Time of Day |  Vectors to  | Top Altitude    |
 |--------|------|---------------|-------------|--------------|-----------------|
@@ -77,7 +77,7 @@ NOTE: Aircraft on the HLYWD and ANJLL arrivals are too far away to intercept the
 
 ##### Preferential RWYs
 - With prevailing winds from the West, departures will be off of 24L and 25R, and arrivals will be to 24R and 25L with arrivals from the South and East usually landing 25L and from the North and West landing on 24R
-- KLAX usually operates an "Over Ocean" configuration at night, where aircraft will depart from runways 24L and 25R and land in the opposite direction on 6L and 7R. This configuration is not simulated in openScope.
+- KLAX usually operates an "Over Ocean" configuration at night, where aircraft will depart from runways 24L and 25R and land in the opposite direction on 6L and 7R. This configuration is not simulated in String of Pearls.
 
 ### Airports of Interest
 

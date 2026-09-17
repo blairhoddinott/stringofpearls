@@ -1,4 +1,5 @@
 import ava from 'ava';
+import sinon from 'sinon';
 import _isEqual from 'lodash/isEqual';
 
 import AirlineCollection from '../../src/assets/scripts/client/airline/AirlineCollection';
@@ -80,4 +81,14 @@ ava('.findAirlineById() returns an AirlineModel when supplied an airlineId with 
 
     t.true(result instanceof AirlineModel);
     t.true(result.icao === 'ual');
+});
+
+ava('passes the injected randomSource by identity to every AirlineModel it builds', (t) => {
+    const randomSourceStub = { integer: sinon.stub() };
+    const collection = new AirlineCollection(AIRLINE_DEFINITION_LIST_MOCK, randomSourceStub);
+
+    t.true(collection._items.length > 0);
+    collection._items.forEach((airlineModel) => {
+        t.is(airlineModel._randomSource, randomSourceStub);
+    });
 });

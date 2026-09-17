@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import $ from 'jquery';
 import AircraftController from './aircraft/AircraftController';
 import AirlineController from './airline/AirlineController';
@@ -37,8 +36,30 @@ export default class AppController {
     /**
      * @constructor
      * @param element {jQuery|HTML Element}
+     * @param assetLoader {AssetLoader}
+     * @param storageAdapter {StorageAdapter}
+     * @param clearStorageAndReload {ClearStorageAndReload} composition-root clear/reload service threaded to InputController for the CLEAR command
+     * @param clockAdapter {ClockAdapter} composition-root current-time boundary threaded to AirportInfoController for the sim clock
+     * @param delayScheduler {DelayScheduler} composition-root delayed-callback boundary threaded to UI/render consumers
+     * @param asyncErrorReporter {Function} composition-root async error reporter threaded to asset consumers
+     * @param randomSource {RandomSource} composition-root randomness boundary threaded to class consumers
+     * @param speechSynthesisAdapter {SpeechSynthesisAdapter|null} composition-root speech boundary threaded to `speech_init` in `init`
+     * @param clipboardAdapter {ClipboardAdapter|null} composition-root clipboard boundary threaded to `InputController` for the copy-coordinates command
+     * @param pageVisibilityAdapter {PageVisibilityAdapter|null} composition-root page focus/visibility boundary threaded to `GameController` for pause/resume
      */
-    constructor(element) {
+    constructor(
+        element,
+        assetLoader,
+        storageAdapter,
+        clearStorageAndReload,
+        clockAdapter,
+        delayScheduler,
+        asyncErrorReporter,
+        randomSource,
+        speechSynthesisAdapter,
+        clipboardAdapter,
+        pageVisibilityAdapter
+    ) {
         /**
          * Root DOM element.
          *
@@ -47,6 +68,67 @@ export default class AppController {
          * @default body
          */
         this.$element = $(element);
+        this._assetLoader = assetLoader;
+
+        /**
+         * Persistence boundary injected from the composition root and forwarded
+         * to children that own persisted state.
+         *
+         * @property _storageAdapter
+         * @type {StorageAdapter}
+         */
+        this._storageAdapter = storageAdapter;
+
+        /**
+         * Clear/reload service injected from the composition root and forwarded
+         * to `InputController` for the CLEAR system command.
+         *
+         * @property _clearStorageAndReload
+         * @type {ClearStorageAndReload}
+         */
+        this._clearStorageAndReload = clearStorageAndReload;
+
+        /**
+         * Current-time boundary injected from the composition root and forwarded
+         * to `AirportInfoController` for the sim clock.
+         *
+         * @property _clockAdapter
+         * @type {ClockAdapter}
+         */
+        this._clockAdapter = clockAdapter;
+        this._delayScheduler = delayScheduler;
+        this._asyncErrorReporter = asyncErrorReporter ?? null;
+        this._randomSource = randomSource ?? null;
+
+        /**
+         * Speech-synthesis boundary injected from the composition root and
+         * forwarded to `speech_init` during `init`, or canonical `null` when no
+         * browser speech backend is available.
+         *
+         * @property _speechSynthesisAdapter
+         * @type {SpeechSynthesisAdapter|null}
+         */
+        this._speechSynthesisAdapter = speechSynthesisAdapter ?? null;
+
+        /**
+         * Clipboard boundary injected from the composition root and forwarded to
+         * `InputController` for the copy-coordinates command, or canonical `null`
+         * when no browser clipboard backend is available.
+         *
+         * @property _clipboardAdapter
+         * @type {ClipboardAdapter|null}
+         */
+        this._clipboardAdapter = clipboardAdapter ?? null;
+
+        /**
+         * Page focus/visibility boundary injected from the composition root and
+         * forwarded to `GameController` for pause/resume, or canonical `null`
+         * when no browser registration seams are available.
+         *
+         * @property _pageVisibilityAdapter
+         * @type {PageVisibilityAdapter|null}
+         */
+        this._pageVisibilityAdapter = pageVisibilityAdapter ?? null;
 
         this.$canvasesElement = null;
         this._eventBus = EventBus;
@@ -119,6 +201,7 @@ export default class AppController {
     destroy() {
         // TODO: add static class.destroy() here
         this.$element = null;
+        this._assetLoader = null;
         this.$canvasesElement = null;
         this._eventBus = null;
         this.loadingView = null;
@@ -160,21 +243,47 @@ export default class AppController {
         // TODO: this entire method needs to be re-written. this is a temporary implemenation used to
         // get things working in a more cohesive manner. soon, all this instantiation should happen
         // in a different class and the window methods should disappear.
-        this.loadingView = new LoadingView();
-        this.contentQueue = new ContentQueue(this.loadingView);
-        zlsa.atc.loadAsset = (options) => this.contentQueue.add(options);
+        this.loadingView = new LoadingView(this._delayScheduler);
+        this.contentQueue = new ContentQueue(this.loadingView, this._assetLoader);
+
+        // Configure the `GameController` option-persistence boundary at the
+        // composition root, before any later option consumer (especially
+        // `UiController`/`SettingsController` and `CanvasController` theme setup)
+        // reads a value, so persisted settings are rehydrated first.
+        GameController.initStorage(this._storageAdapter);
+
+        // Configure the `GameController` page focus/visibility boundary at the
+        // composition root, before `init_pre` calls `enable()` and registers the
+        // pause/resume listeners, so the browser `window`/`document` references
+        // live only in this composition root rather than inside the controller.
+        GameController.initPageVisibility(this._pageVisibilityAdapter);
 
         // IMPORTANT:
         // The order in which the following classes are instantiated is extremely important. Changing
         // this order could break a lot of things. This interdependency is something we should
         // work on reducing in the future.
-        AirportController.init(initialAirportIcao, initialAirportData, airportLoadList);
+        AirportController.init(
+            initialAirportIcao,
+            initialAirportData,
+            airportLoadList,
+            this.contentQueue,
+            this._storageAdapter,
+            this._asyncErrorReporter
+        );
+        NavigationLibrary.initRandomSource(this._randomSource);
         NavigationLibrary.init(initialAirportData);
+        SpawnPatternCollection.initRandomSource(this._randomSource);
         SpawnPatternCollection.init(initialAirportData);
 
-        this.airlineController = new AirlineController(airlineList);
+        this.airlineController = new AirlineController(airlineList, this._randomSource);
         this.scopeModel = new ScopeModel();
-        this.aircraftController = new AircraftController(aircraftTypeDefinitionList, this.airlineController, this.scopeModel);
+        this.aircraftController = new AircraftController(
+            aircraftTypeDefinitionList,
+            this.airlineController,
+            this.scopeModel,
+            this._delayScheduler,
+            this._randomSource
+        );
         this.scoreController = new ScoreController(this.aircraftController);
 
         SpawnScheduler.init(this.aircraftController);
@@ -185,14 +294,42 @@ export default class AppController {
         // explicit instance parameters easier.
         window.aircraftController = this.aircraftController;
 
-        UiController.init(this.$element);
+        UiController.init(
+            this.$element,
+            this.contentQueue,
+            this._storageAdapter,
+            this._delayScheduler,
+            this._asyncErrorReporter
+        );
 
-        this.canvasController = new CanvasController(this.$canvasesElement, this.aircraftController, this.scopeModel);
+        this.canvasController = new CanvasController(
+            this.$canvasesElement,
+            this.aircraftController,
+            this.scopeModel,
+            this._storageAdapter,
+            this._delayScheduler
+        );
 
-        this.inputController = new InputController(this.$element, this.aircraftController, this.scopeModel);
-        this.airportInfoController = new AirportInfoController(this.$element);
+        this.inputController = new InputController(
+            this.$element,
+            this.aircraftController,
+            this.scopeModel,
+            this._assetLoader,
+            this._clearStorageAndReload,
+            this._asyncErrorReporter,
+            this._clipboardAdapter
+        );
+        this.airportInfoController = new AirportInfoController(
+            this.$element,
+            this._clockAdapter,
+            this._randomSource
+        );
         this.airportGuideController = new AirportGuideViewController(this.$element, airportGuideData, initialAirportData.icao);
-        this.changelogController = new ChangelogController(this.contentQueue);
+        this.changelogController = new ChangelogController(
+            this.contentQueue,
+            this._storageAdapter,
+            this._asyncErrorReporter
+        );
 
         this.updateViewControls();
     }
@@ -211,7 +348,7 @@ export default class AppController {
      * @method init
      */
     init() {
-        speech_init();
+        speech_init(this._storageAdapter, this._speechSynthesisAdapter);
 
         this.canvasController.canvas_init();
         UiController.ui_init();
@@ -266,7 +403,6 @@ export default class AppController {
         this.canvasController.canvasUpdatePost();
         this.aircraftController.updateAircraftStrips();
     }
-
 
     /**
      * `onChange` callback fired from within the `AirportModel` when an airport is changed.

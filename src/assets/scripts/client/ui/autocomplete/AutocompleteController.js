@@ -18,6 +18,7 @@ import {
 import { SELECTORS } from '../../constants/selectors';
 import { AUTOCOMPLETE_COMMAND_TEMPLATE } from './AutocompleteCommandTemplate';
 import { AUTOCOMPLETE_ARGUMENT_TEMPLATE } from './AutocompleteArgumentTemplate';
+import { formatAssetLoadError } from '../../platform/AssetLoader';
 
 const Handlebars = require('handlebars');
 
@@ -30,9 +31,15 @@ export default class AutocompleteController {
      * @param $element {JQuery|HTML Element}
      * @param inputController {InputController}
      * @param aircraftController {AircraftController}
+     * @param assetLoader {AssetLoader}
+     * @param reportError {Function} reporter for processing-time exceptions;
+     *                               nullish/omitted normalizes to null so a
+     *                               shorter call stays free of a browser global
      */
-    constructor($element, inputController, aircraftController) {
+    constructor($element, inputController, aircraftController, assetLoader, reportError = null) {
         this.$element = $element;
+        this._assetLoader = assetLoader;
+        this._reportError = reportError ?? null;
         this.$autocomplete = null;
         this.$autocompleteInput = null;
         this.$autocompleteOutput = null;
@@ -99,9 +106,20 @@ export default class AutocompleteController {
      * @private
      */
     _fetchConfig() {
-        $.getJSON('assets/autocomplete/commandAutocompleteConfig.json')
-            .done((response) => this.onConfigFetchedHandler(response))
-            .fail((jqXHR) => console.error(`Failed to load autocomplete configuration: ${jqXHR.status}: ${jqXHR.statusText}`));
+        return this._assetLoader.loadJson('assets/autocomplete/commandAutocompleteConfig.json')
+            .then((response) => {
+                try {
+                    return this.onConfigFetchedHandler(response);
+                } catch (error) {
+                    if (this._reportError) {
+                        this._reportError(error);
+                    }
+
+                    return undefined;
+                }
+            }, (error) => {
+                console.error(`Failed to load autocomplete configuration: ${formatAssetLoadError(error)}`);
+            });
     }
 
     /**
@@ -669,7 +687,7 @@ export default class AutocompleteController {
         const matches = {};
         for (const command of this.commandDefs[this.commandType]) {
             for (const variant of command.variants) {
-                /* eslint-disable max-len, no-multi-spaces */
+
                 for (const alias of variant.aliases) {
                     if (alias.startsWith(prefix) &&
                         (typeof matches[command.id] === 'undefined' ||        // has not been matched yet
@@ -698,7 +716,6 @@ export default class AutocompleteController {
 
         return matches;
     }
-
 
     /**
      * @for AutocompleteController

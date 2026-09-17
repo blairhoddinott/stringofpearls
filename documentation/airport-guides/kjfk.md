@@ -5,7 +5,7 @@ New York TRACON (N90), Westbury, New York, USA
 ### Airspace
 Widely considered to be the most complex airspace in the world, the New York TRACON (N90) includes three major airports: KJFK, KEWR, and KLGA. Combined, they accumulated 1.29 million aircraft movements in 2019, and an additional 667,000 movements from various New York area satellite airports. With only 9 miles and 14 miles separating KLGA from KJFK and KEWR (respectively), these powerhouse airports are extremely close together, making simultaneous operations with changing runway configurations and countless crossing flows highly difficult.
 
-### Sectors Available in openScope
+### Sectors Available in String of Pearls
 N90 includes 5 different areas: Kennedy, LaGuardia, Newark, Islip, and Liberty. In this case, we are only simulating the Kennedy area, operating as the CAMRN sector, with all other Kennedy sectors combined at CAMRN.
 
 ```

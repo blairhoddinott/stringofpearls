@@ -38,9 +38,14 @@ export default class RouteModel extends BaseModel {
      * @for RouteModel
      * @constructor
      * @param routeString {string}
+     * @param navigationLibrary {NavigationLibrary} navigation-session route resolver; optional
+     * @param airportController {AirportController} airport-session owner; optional
      */
-    constructor(routeString) {
+    constructor(routeString, navigationLibrary, airportController = AirportController) {
         super();
+
+        this._navigationLibrary = navigationLibrary;
+        this._airportController = airportController;
 
         /**
          * Array of `LegModel`s on the route
@@ -291,7 +296,7 @@ export default class RouteModel extends BaseModel {
             return null;
         }
 
-        return AirportController.airport_get(airportIcao);
+        return this._airportController.airport_get(airportIcao);
     }
 
     /**
@@ -359,7 +364,7 @@ export default class RouteModel extends BaseModel {
             return null;
         }
 
-        return AirportController.airport_get(airportIcao);
+        return this._airportController.airport_get(airportIcao);
     }
 
     /**
@@ -573,7 +578,7 @@ export default class RouteModel extends BaseModel {
             return sidLegModel.altitude;
         }
 
-        const airport = AirportController.airport_get();
+        const airport = this._airportController.airport_get();
 
         return airport.initial_alt;
     }
@@ -793,7 +798,7 @@ export default class RouteModel extends BaseModel {
         let starLegModel;
 
         try {
-            starLegModel = new LegModel(routeString);
+            starLegModel = new LegModel(routeString, this._navigationLibrary);
         } catch (error) {
             console.error(error);
 
@@ -828,7 +833,7 @@ export default class RouteModel extends BaseModel {
         let routeModel;
 
         try {
-            routeModel = new RouteModel(routeString);
+            routeModel = new RouteModel(routeString, this._navigationLibrary);
         } catch (error) {
             console.error(error);
 
@@ -1535,7 +1540,7 @@ export default class RouteModel extends BaseModel {
     _generateLegsFromRouteString(routeString) {
         const segments = this._divideRouteStringIntoSegments(routeString);
         const legs = _map(segments, (segmentRouteString) => {
-            return new LegModel(segmentRouteString);
+            return new LegModel(segmentRouteString, this._navigationLibrary);
         });
 
         return legs;

@@ -3,8 +3,13 @@ import sinon from 'sinon';
 
 import AirportModel from '../../src/assets/scripts/client/airport/AirportModel';
 import DynamicPositionModel from '../../src/assets/scripts/client/base/DynamicPositionModel';
+import { AssetLoadError } from '../../src/assets/scripts/client/platform/AssetLoader';
 import { FLIGHT_CATEGORY } from '../../src/assets/scripts/client/constants/aircraftConstants';
+import { EVENT } from '../../src/assets/scripts/client/constants/eventNames';
+import { STORAGE_KEY } from '../../src/assets/scripts/client/constants/storageKeys';
 import { AIRPORT_JSON_KLAS_MOCK } from './_mocks/airportJsonMock';
+
+const FLYWEIGHT_OPTIONS_MOCK = { icao: 'ksfo', level: 'medium', name: 'San Francisco International Airport' };
 
 ava('does not throw when passed valid parameters', (t) => {
     t.notThrows(() => new AirportModel(AIRPORT_JSON_KLAS_MOCK));
@@ -86,6 +91,63 @@ ava('.set() calls .load() when #lodaed is false', (t) => {
     t.true(loadSpy.calledWithExactly(AIRPORT_JSON_KLAS_MOCK));
 });
 
+ava('.set() persists the current icao under the last-airport key through the injected adapter when loaded', (t) => {
+    const storageAdapterMock = { get: sinon.stub(), set: sinon.stub() };
+    const model = new AirportModel(FLYWEIGHT_OPTIONS_MOCK, null, storageAdapterMock);
+    model.loaded = true;
+    model.eventBus = { trigger: sinon.stub() };
+
+    model.set();
+
+    t.true(storageAdapterMock.set.calledOnceWithExactly(STORAGE_KEY.ATC_LAST_AIRPORT, model.icao));
+});
+
+ava('.set() delegates to .load() and does not write to storage when not loaded', (t) => {
+    const storageAdapterMock = { get: sinon.stub(), set: sinon.stub() };
+    const model = new AirportModel(FLYWEIGHT_OPTIONS_MOCK, null, storageAdapterMock);
+    model.loaded = false;
+    const loadSpy = sinon.spy(model, 'load');
+
+    model.set(AIRPORT_JSON_KLAS_MOCK);
+
+    t.true(loadSpy.calledWithExactly(AIRPORT_JSON_KLAS_MOCK));
+    t.false(storageAdapterMock.set.called);
+});
+
+ava('.set() continues the loaded path without throwing or touching browser storage when no adapter is injected', (t) => {
+    const model = new AirportModel(FLYWEIGHT_OPTIONS_MOCK);
+    model.loaded = true;
+    const triggerSpy = sinon.spy();
+    model.eventBus = { trigger: triggerSpy };
+
+    t.notThrows(() => model.set());
+
+    t.true(triggerSpy.calledWith(EVENT.PAUSE_UPDATE_LOOP, true));
+});
+
+ava('.set() uses exact injected clock and game-state owners', (t) => {
+    const eventBus = { trigger: sinon.spy() };
+    const clock = { accumulatedDeltaTime: 123 };
+    const gameState = { game_reset_score_and_events: sinon.spy() };
+    const model = new AirportModel(
+        FLYWEIGHT_OPTIONS_MOCK,
+        null,
+        null,
+        null,
+        eventBus,
+        null,
+        clock,
+        gameState
+    );
+
+    model.loaded = true;
+    model.set();
+
+    t.true(gameState.game_reset_score_and_events.calledOnce);
+    t.is(model.start, 123);
+    t.true(eventBus.trigger.calledWithExactly(EVENT.PAUSE_UPDATE_LOOP, true));
+});
+
 ava('.loadTerrain() returns early when #has_terrain is false', (t) => {
     const model = new AirportModel(AIRPORT_JSON_KLAS_MOCK);
     const parseTerrainSpy = sinon.spy(model, 'parseTerrain');
@@ -112,6 +174,17 @@ ava('.load() does not call .onLoadIntialAirportFromJson() when no parameters are
     model.load();
 
     t.false(onLoadIntialAirportFromJsonSpy.called);
+});
+
+ava('.load() without an injected queue returns before changing loading state or pausing', (t) => {
+    const model = new AirportModel(FLYWEIGHT_OPTIONS_MOCK);
+    const triggerSpy = sinon.spy();
+    model.eventBus = { trigger: triggerSpy };
+
+    model.load();
+
+    t.false(model.loading);
+    t.false(triggerSpy.called);
 });
 
 ava('.getRunwayByName() returns null when passed an invalid runwayname', (t) => {
@@ -184,6 +257,130 @@ ava.skip('.removeAircraftFromAllRunwayQueues()', (t) => {
     model.removeAircraftFromAllRunwayQueues({});
 
     t.true(removeAircraftFromAllRunwayQueuesSpy.calledOnce);
+});
+
+ava.serial('.load() requests the airport json from the injected content queue with immediate priority', async (t) => {
+    const responseMock = { icao: 'ksfo' };
+    const addPromiseStub = sinon.stub().resolves(responseMock);
+    const contentQueueMock = { addPromise: addPromiseStub };
+    const model = new AirportModel(FLYWEIGHT_OPTIONS_MOCK, contentQueueMock);
+    const onLoadAirportSuccessStub = sinon.stub(model, 'onLoadAirportSuccess');
+
+    await model.load();
+
+    t.true(addPromiseStub.calledOnceWithExactly({ url: 'assets/airports/ksfo.json', immediate: true }));
+    t.true(onLoadAirportSuccessStub.calledOnceWithExactly(responseMock));
+});
+
+ava.serial('.load() logs the transport diagnostic and recovers when the content queue rejects with an AssetLoadError', async (t) => {
+    const setSpy = sinon.spy();
+    const consoleErrorStub = sinon.stub(console, 'error');
+    const airportControllerMock = { current: { set: setSpy } };
+
+    t.teardown(() => consoleErrorStub.restore());
+
+    const assetLoadError = new AssetLoadError({ status: 404, statusText: 'Not Found' }, 'timeout');
+    const contentQueueMock = { addPromise: sinon.stub().rejects(assetLoadError) };
+    const model = new AirportModel(
+        FLYWEIGHT_OPTIONS_MOCK,
+        contentQueueMock,
+        null,
+        null,
+        undefined,
+        airportControllerMock
+    );
+
+    await t.notThrowsAsync(model.load());
+
+    t.true(consoleErrorStub.calledOnceWithExactly('Unable to load airport/ksfo: timeout'));
+    t.is(model.loading, false);
+    t.true(setSpy.calledOnce);
+});
+
+ava.serial('.onLoadAirportError() remains safe when no owning controller was injected', (t) => {
+    const consoleErrorStub = sinon.stub(console, 'error');
+    const model = new AirportModel(FLYWEIGHT_OPTIONS_MOCK);
+
+    t.teardown(() => consoleErrorStub.restore());
+
+    t.notThrows(() => model.onLoadAirportError(new Error('failed')));
+    t.true(consoleErrorStub.calledOnceWithExactly('Unable to load airport/ksfo: failed'));
+    t.is(model.loading, false);
+});
+
+ava.serial('.load() surfaces an exception thrown while processing a successful response through the injected reporter', async (t) => {
+    const consoleErrorStub = sinon.stub(console, 'error');
+    t.teardown(() => consoleErrorStub.restore());
+
+    const processingError = new Error('kaboom');
+    const reportErrorSpy = sinon.spy();
+    const contentQueueMock = { addPromise: sinon.stub().resolves({ icao: 'ksfo' }) };
+    const model = new AirportModel(FLYWEIGHT_OPTIONS_MOCK, contentQueueMock, null, reportErrorSpy);
+    sinon.stub(model, 'onLoadAirportSuccess').throws(processingError);
+
+    await t.notThrowsAsync(model.load());
+
+    t.true(reportErrorSpy.calledOnceWithExactly(processingError));
+    t.false(consoleErrorStub.called);
+});
+
+ava.serial('.loadTerrain() requests terrain geojson from the injected queue and parses the response', async (t) => {
+    const terrainDataMock = { features: [] };
+    const addPromiseStub = sinon.stub().resolves(terrainDataMock);
+    const contentQueueMock = { addPromise: addPromiseStub };
+    const model = new AirportModel(FLYWEIGHT_OPTIONS_MOCK, contentQueueMock);
+    model.has_terrain = true;
+    const parseTerrainStub = sinon.stub(model, 'parseTerrain');
+
+    await model.loadTerrain();
+
+    t.true(addPromiseStub.calledOnceWithExactly({ url: 'assets/airports/terrain/ksfo.geojson', immediate: true }));
+    t.true(parseTerrainStub.calledOnceWithExactly(terrainDataMock));
+});
+
+ava.serial('.loadTerrain() logs the terrain transport diagnostic and recovers when the content queue rejects', async (t) => {
+    const setSpy = sinon.spy();
+    const consoleErrorStub = sinon.stub(console, 'error');
+    const airportControllerMock = { current: { set: setSpy } };
+
+    t.teardown(() => consoleErrorStub.restore());
+
+    const assetLoadError = new AssetLoadError({ status: 500, statusText: 'Server Error' }, 'error');
+    const contentQueueMock = { addPromise: sinon.stub().rejects(assetLoadError) };
+    const model = new AirportModel(
+        FLYWEIGHT_OPTIONS_MOCK,
+        contentQueueMock,
+        null,
+        null,
+        undefined,
+        airportControllerMock
+    );
+    model.has_terrain = true;
+
+    await t.notThrowsAsync(model.loadTerrain());
+
+    t.true(consoleErrorStub.calledOnceWithExactly('Unable to load airport/terrain/ksfo: error'));
+    t.is(model.loading, false);
+    t.true(setSpy.calledOnce);
+});
+
+ava.serial('.loadTerrain() reports a parse failure through the injected reporter without a transport diagnostic', async (t) => {
+    const consoleErrorStub = sinon.stub(console, 'error');
+    t.teardown(() => consoleErrorStub.restore());
+
+    const parseError = new Error('bad geojson');
+    const reportErrorSpy = sinon.spy();
+    const contentQueueMock = { addPromise: sinon.stub().resolves({ features: 'nope' }) };
+    const model = new AirportModel(FLYWEIGHT_OPTIONS_MOCK, contentQueueMock, null, reportErrorSpy);
+    model.has_terrain = true;
+    sinon.stub(model, 'parseTerrain').throws(parseError);
+
+    await t.notThrowsAsync(model.loadTerrain());
+
+    t.true(reportErrorSpy.calledOnce);
+    t.true(reportErrorSpy.firstCall.args[0] instanceof Error);
+    t.is(reportErrorSpy.firstCall.args[0].message, 'bad geojson');
+    t.false(consoleErrorStub.called);
 });
 
 ava('.resetAllRunwayQueues() calls .resetQueue() for all runways', (t) => {

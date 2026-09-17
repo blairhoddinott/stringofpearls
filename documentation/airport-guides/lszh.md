@@ -10,7 +10,7 @@ The airspace encompasses a large area around Zurich up to FL190. It includes a f
 ### Instrument Procedures
 LSZH offers several departure procedures, however the DEGES and VEBIT departures are the most commonly used. Arrivals follow their STARs to either GIPOL or AMIKI, where aircraft must be vectored to their final approach course.
 
-### Sectors Available in openScope
+### Sectors Available in String of Pearls
 ```
 D - Zurich Departure
 W - Zurich Arrival (West)

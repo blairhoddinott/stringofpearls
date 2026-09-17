@@ -48,7 +48,7 @@ After handed off from Tokyo Control, Sendai Approach is responsible for:
 
 YUCCA is the Final Approach Fix (FAF) for ILS 27, meaning that aircraft can be cleared for the approach after this fix. Approach should issue a descent clearance so that the aircraft is at 1700ft at YUCCA (note: in real life, the intercept altitude is 1500ft; however due to constraints, the minimum intercept altitude in the simulator is 1700ft.)
 
-## Sectors Available in openScope
+## Sectors Available in String of Pearls
 ```
 Sendai Depature
 Sendai Approach

@@ -16,11 +16,11 @@
   * [Identifiers](#icao-and-iata-identifiers)
   * [Flight Level](#flight-level)
 
-The airport JSON file must be in "[assets/airports](https://github.com/openscope/openscope/tree/develop/assets/airports)"; the filename should be `icao.json` where `icao` is the lowercase four-letter ICAO airport identifier, such as `ksfo` or `kmsp`.  If this is a new airport, an entry must also be added to [airportLoadList.json](https://github.com/openscope/openscope/blob/develop/assets/airports/airportLoadList.json) in alphabetical order. See the [airport load list documentation](https://github.com/openscope/openscope/blob/develop/documentation/airport-load-list.md) for information on the correct structure to use.
+The airport JSON file must be in "[assets/airports](https://github.com/blairhoddinott/stringofpearls/tree/master/assets/airports)"; the filename should be `icao.json` where `icao` is the lowercase four-letter ICAO airport identifier, such as `ksfo` or `kmsp`.  If this is a new airport, an entry must also be added to [airportLoadList.json](https://github.com/blairhoddinott/stringofpearls/blob/master/assets/airports/airportLoadList.json) in alphabetical order. See the [airport load list documentation](https://github.com/blairhoddinott/stringofpearls/blob/master/documentation/airport-load-list.md) for information on the correct structure to use.
 
 ## Example
 
-_Note: The code block shown below is an abbreviated version of [ksea.json](https://github.com/openscope/openscope/blob/develop/assets/airports/ksea.json)._
+_Note: The code block shown below is an abbreviated version of [ksea.json](https://github.com/blairhoddinott/stringofpearls/blob/master/assets/airports/ksea.json)._
 
 ```json
 {
@@ -254,7 +254,7 @@ All properties in this section are required
 * **rr.enabled** ― Whether or not range rings will be shown for this airport
 * **rr.radius_nm** ― The distance between each range ring (in nautical miles) within the airspace.
 * **rr.center** ― The position at which the range rings are centered. (in latitude, longitude: _see [lat, lon, elev](#latitude-longitude-elevation) for formatting_)
-* **has_terrain** ― Flag used to determine if the airport has a corresponding `.geoJSON` file in [assets/airports/terrain](https://github.com/openscope/openscope/tree/develop/assets/airports/terrain).
+* **has_terrain** ― Flag used to determine if the airport has a corresponding `.geoJSON` file in [assets/airports/terrain](https://github.com/blairhoddinott/stringofpearls/tree/master/assets/airports/terrain).
 * **wind** ― The true heading (angle) in degrees and speed in knots of the current wind at the airport:
 
 ```json

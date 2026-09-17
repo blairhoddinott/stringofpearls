@@ -1,8 +1,17 @@
 import ava from 'ava';
-// import sinon from 'sinon';
+import sinon from 'sinon';
 
 import AircraftController from '../../src/assets/scripts/client/aircraft/AircraftController';
-import { AIRCRAFT_DEFINITION_LIST_MOCK } from './_mocks/aircraftMocks';
+import AircraftCollection from '../../src/assets/scripts/client/aircraft/AircraftCollection';
+import AirportController from '../../src/assets/scripts/client/airport/AirportController';
+import { EventBusClass } from '../../src/assets/scripts/client/lib/EventBus';
+import { NavigationLibraryClass } from '../../src/assets/scripts/client/navigationLibrary/NavigationLibrary';
+import SimulationGameState from '../../src/assets/scripts/client/simulation/SimulationGameState';
+import {
+    AIRCRAFT_DEFINITION_LIST_MOCK,
+    DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK
+} from './_mocks/aircraftMocks';
+import { AIRPORT_JSON_KLAS_MOCK } from '../airport/_mocks/airportJsonMock';
 import { airlineControllerFixture } from '../fixtures/airlineFixtures';
 import { scopeModelFixture } from '../fixtures/scopeFixtures';
 // import { spawnPatternModelArrivalFixture } from '../fixtures/trafficGeneratorFixtures';
@@ -128,6 +137,214 @@ ava('throws when called with invalid scopeModel', (t) => {
         instanceOf: TypeError,
         message: expectedMessage
     });
+});
+
+ava('threads the randomSource by identity to StripViewController after the delay scheduler', (t) => {
+    const delayScheduler = { schedule: () => {} };
+    const randomSource = { integer: () => 1 };
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture,
+        delayScheduler,
+        randomSource
+    );
+
+    t.is(controller._stripViewController._delayScheduler, delayScheduler);
+    t.is(controller._stripViewController._randomSource, randomSource);
+});
+
+ava('retains an injected aircraft collection by exact identity', (t) => {
+    const aircraftCollection = new AircraftCollection();
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture,
+        undefined,
+        undefined,
+        aircraftCollection
+    );
+
+    t.is(controller.aircraft, aircraftCollection);
+});
+
+ava('resets the legacy aircraft collection when an explicit null collection is supplied', (t) => {
+    const firstController = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture
+    );
+
+    firstController.aircraft.list.push({ callsign: 'stale' });
+    firstController.aircraft.auto.enabled = true;
+
+    const secondController = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture,
+        undefined,
+        undefined,
+        null
+    );
+
+    t.deepEqual(secondController.aircraft.list, []);
+    t.false(secondController.aircraft.auto.enabled);
+});
+
+ava('retains an injected event bus by exact identity', (t) => {
+    const eventBus = new EventBusClass();
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture,
+        undefined,
+        undefined,
+        new AircraftCollection(),
+        eventBus
+    );
+
+    t.is(controller._eventBus, eventBus);
+});
+
+ava('retains an injected airport controller by exact identity', (t) => {
+    const airportController = {};
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture,
+        undefined,
+        undefined,
+        new AircraftCollection(),
+        new EventBusClass(),
+        airportController
+    );
+
+    t.is(controller._airportController, airportController);
+});
+
+ava('retains an injected navigation library by exact identity', (t) => {
+    const navigationLibrary = new NavigationLibraryClass();
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture,
+        undefined,
+        undefined,
+        new AircraftCollection(),
+        new EventBusClass(),
+        undefined,
+        navigationLibrary
+    );
+
+    t.is(controller._navigationLibrary, navigationLibrary);
+});
+
+ava('retains an injected clock by exact identity', (t) => {
+    const clock = {};
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture,
+        undefined,
+        undefined,
+        new AircraftCollection(),
+        new EventBusClass(),
+        undefined,
+        undefined,
+        clock
+    );
+
+    t.is(controller._clock, clock);
+});
+
+ava('retains an injected game state by exact identity', (t) => {
+    const gameState = {};
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture,
+        undefined,
+        undefined,
+        undefined,
+        new EventBusClass(),
+        undefined,
+        undefined,
+        undefined,
+        gameState
+    );
+
+    t.is(controller._gameState, gameState);
+});
+
+ava.serial('creates aircraft and conflicts with the exact injected service owners', (t) => {
+    const navigationLibrary = new NavigationLibraryClass();
+    navigationLibrary.init(AIRPORT_JSON_KLAS_MOCK);
+    const clock = {
+        accumulatedDeltaTime: 0
+    };
+    const eventBus = new EventBusClass();
+    const gameState = new SimulationGameState();
+    const getGameOptionSpy = sinon.spy(gameState, 'getGameOption');
+    const airportController = {
+        current: AirportController.current,
+        airport_get: (...args) => AirportController.airport_get(...args)
+    };
+    const aircraftCollection = new AircraftCollection();
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture,
+        undefined,
+        undefined,
+        aircraftCollection,
+        eventBus,
+        airportController,
+        navigationLibrary,
+        clock,
+        gameState
+    );
+
+    t.is(controller._aircraftCommander._eventBus, eventBus);
+    t.is(controller._aircraftCommander._airportController, airportController);
+    t.is(controller._aircraftCommander._navigationLibrary, navigationLibrary);
+    t.is(controller._aircraftCommander._gameState, gameState);
+
+    controller._createAircraftWithInitializationProps(DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK);
+    controller._createAircraftWithInitializationProps(DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK);
+    controller.addConflict(aircraftCollection.list[0], aircraftCollection.list[1]);
+
+    t.is(aircraftCollection.list.length, 2);
+    t.true(getGameOptionSpy.calledTwice);
+    t.true(getGameOptionSpy.alwaysCalledWithExactly('towerController'));
+    t.is(aircraftCollection.list[0].fms._navigationLibrary, navigationLibrary);
+    t.is(aircraftCollection.list[0].fms._airportController, airportController);
+    t.is(aircraftCollection.list[0]._clock, clock);
+    t.is(aircraftCollection.list[0]._eventBus, eventBus);
+    t.is(aircraftCollection.list[0]._gameState, gameState);
+    t.is(controller.conflicts.length, 1);
+    t.is(controller.conflicts[0]._clock, clock);
+    t.is(controller.conflicts[0]._eventBus, eventBus);
+    t.is(controller.conflicts[0]._airportController, airportController);
+    t.is(controller.conflicts[0]._gameState, gameState);
+
+    const conflictCollection = controller.conflicts;
+
+    controller.removeConflict(controller.conflicts[0]);
+
+    t.is(controller.conflicts, conflictCollection);
+    t.is(controller.conflicts.length, 0);
+});
+
+ava('generates distinct deterministic CIDs when randomSource is omitted', (t) => {
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture
+    );
+    const stripViewController = controller._stripViewController;
+
+    t.is(stripViewController._generateCidNumber(), 1);
+    t.is(stripViewController._generateCidNumber(), 2);
 });
 
 ava('does not throw when passed valid parameters', (t) => {

@@ -10,8 +10,9 @@ export default class SimClockController {
     /**
      * @for SimClockController
      * @constructor
+     * @param clockAdapter {ClockAdapter}  current-time boundary exposing `now()`, injected from the composition root
      */
-    constructor() {
+    constructor(clockAdapter) {
         /**
          * @for SimClockController
          * @property startTime
@@ -19,6 +20,18 @@ export default class SimClockController {
          * @default 0
          */
         this.startTime = 0;
+
+        /**
+         * Current-time boundary used to read the real-world wall clock.
+         *
+         * Injected from the composition root through `AirportInfoController`;
+         * this class never reaches a browser global for the current time.
+         *
+         * @for SimClockController
+         * @property _clockAdapter
+         * @type {ClockAdapter}
+         */
+        this._clockAdapter = clockAdapter == null ? null : clockAdapter;
 
         return this._init();
     }
@@ -42,7 +55,11 @@ export default class SimClockController {
      * @return {number} ms since 01/01/1970, 00:00:00 (user's time zone)
      */
     get realWorldCurrentLocalTime() {
-        return new Date().getTime();
+        if (this._clockAdapter === null) {
+            return 0;
+        }
+
+        return this._clockAdapter.now().getTime();
     }
 
     /**
@@ -53,7 +70,11 @@ export default class SimClockController {
      * @return utc {number} ms since 01/01/1970, 00:00:00 UTC
      */
     get realWorldCurrentZuluTime() {
-        const date = new Date();
+        if (this._clockAdapter === null) {
+            return 0;
+        }
+
+        const date = this._clockAdapter.now();
         const utc = date.getTime() + (date.getTimezoneOffset() * TIME.ONE_MINUTE_IN_MILLISECONDS);
 
         return utc;

@@ -22,15 +22,26 @@ export default class AirlineCollection extends BaseCollection {
      * @constructor
      * @for AirlineCollection
      * @param airlineList {array}
+     * @param randomSource {RandomSource} composition-root randomness boundary forwarded to every `AirlineModel`; optional
      */
     /* istanbul ignore next */
-    constructor(airlineList) {
+    constructor(airlineList, randomSource) {
         super(airlineList);
 
         if (isEmptyOrNotArray(airlineList)) {
             throw new TypeError('Invalid airlineList passed to AirlineCollection constructor. ' +
                 `Expected a non-empty array, but received ${typeof airlineList}`);
         }
+
+        /**
+         * Randomness boundary injected from the composition root and forwarded
+         * by identity to every `AirlineModel` built by this collection.
+         *
+         * @property _randomSource
+         * @type {RandomSource}
+         * @private
+         */
+        this._randomSource = randomSource ?? null;
 
         this.init(airlineList);
     }
@@ -135,7 +146,7 @@ export default class AirlineCollection extends BaseCollection {
      * @private
      */
     _buildAirlineModels(airlineDefinition) {
-        const airlineToAdd = new AirlineModel(airlineDefinition);
+        const airlineToAdd = new AirlineModel(airlineDefinition, this._randomSource);
 
         this.addItem(airlineToAdd);
     }

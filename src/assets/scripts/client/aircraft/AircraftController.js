@@ -1,10 +1,11 @@
-/* eslint-disable no-continue */
 import _find from 'lodash/find';
 import _get from 'lodash/get';
 import _isNil from 'lodash/isNil';
 import _without from 'lodash/without';
 import AirlineController from '../airline/AirlineController';
 import AirportController from '../airport/AirportController';
+import NavigationLibrary from '../navigationLibrary/NavigationLibrary';
+import TimeKeeper from '../engine/TimeKeeper';
 import ScopeModel from '../scope/ScopeModel';
 import UiController from '../ui/UiController';
 import EventBus from '../lib/EventBus';
@@ -13,7 +14,8 @@ import AircraftModel from './AircraftModel';
 import AircraftCommander from './AircraftCommander';
 import AircraftConflict from './AircraftConflict';
 import StripViewController from './StripView/StripViewController';
-import GameController, { GAME_EVENTS } from '../game/GameController';
+import GameController from '../game/GameController';
+import { GAME_EVENTS } from '../game/gameEventConstants';
 import CommandParser from '../commands/parsers/CommandParser';
 import { airlineNameAndFleetHelper } from '../airline/airlineHelpers';
 import { convertStaticPositionToDynamic } from '../base/staticPositionToDynamicPositionHelper';
@@ -43,9 +45,28 @@ export default class AircraftController {
      * @param aircraftTypeDefinitionList {array<object>}
      * @param airlineController {AirlineController}
      * @param scopeModel {ScopeModel}
-     * @param aircraftCommander {AircraftCommander}
+     * @param delayScheduler {DelayScheduler} delayed-callback boundary forwarded to StripViewController
+     * @param randomSource {RandomSource} randomness boundary forwarded to StripViewController
+     * @param aircraftCollection {AircraftCollection} [optional] aircraft state owner
+     * @param eventBus {EventBus} [optional] aircraft event dispatcher
+     * @param airportController {AirportController} [optional] airport state owner
+     * @param navigationLibrary {NavigationLibrary} [optional] navigation state owner
+     * @param clock {TimeKeeper|SimulationClock} [optional] simulation time owner
+     * @param gameState {GameController|SimulationGameState} [optional] score and simulation-option owner
      */
-    constructor(aircraftTypeDefinitionList, airlineController, scopeModel) {
+    constructor(
+        aircraftTypeDefinitionList,
+        airlineController,
+        scopeModel,
+        delayScheduler,
+        randomSource,
+        aircraftCollection,
+        eventBus = EventBus,
+        airportController = AirportController,
+        navigationLibrary = NavigationLibrary,
+        clock = TimeKeeper,
+        gameState = GameController
+    ) {
         if (_isNil(aircraftTypeDefinitionList) || _isNil(airlineController) || _isNil(scopeModel)) {
             throw new TypeError('Invalid parameter(s) passed to AircraftController constructor. ' +
                 'Expected aircraftTypeDefinitionList, airlineController and scopeModel to be defined, ' +
@@ -87,7 +108,11 @@ export default class AircraftController {
          */
         this._aircraftCommander = new AircraftCommander(
             this.onRequestToChangeTransponderCode.bind(this),
-            this.findAircraftById.bind(this)
+            this.findAircraftById.bind(this),
+            eventBus,
+            airportController,
+            navigationLibrary,
+            gameState
         );
 
         /**
@@ -98,7 +123,11 @@ export default class AircraftController {
          * @default EventBus
          * @private
          */
-        this._eventBus = EventBus;
+        this._eventBus = eventBus;
+        this._airportController = airportController;
+        this._navigationLibrary = navigationLibrary;
+        this._clock = clock;
+        this._gameState = gameState;
 
         /**
          * Reference to an `AircraftTypeDefinitionCollection` instance
@@ -132,12 +161,15 @@ export default class AircraftController {
          */
         this._transponderCodesInUse = [];
 
-        prop.aircraft = aircraft;
-        this.aircraft = aircraft;
+        const usesLegacyAircraftCollection = _isNil(aircraftCollection);
 
-        // TODO: this should its own collection class
-        this.aircraft.list = [];
-        this.aircraft.auto = { enabled: false };
+        this.aircraft = aircraftCollection ?? aircraft;
+
+        if (usesLegacyAircraftCollection) {
+            prop.aircraft = this.aircraft;
+            this.aircraft.list = [];
+            this.aircraft.auto = { enabled: false };
+        }
         this.conflicts = [];
 
         /**
@@ -147,7 +179,7 @@ export default class AircraftController {
          * @type {StripViewController}
          * @private
          */
-        this._stripViewController = new StripViewController();
+        this._stripViewController = new StripViewController(delayScheduler, randomSource);
 
         return this.init()
             ._setupHandlers()
@@ -317,7 +349,7 @@ export default class AircraftController {
      * @returns {boolean}
      */
     isAircraftVisible(aircraft, factor = 1) {
-        const visibleDistance = AirportController.airport_get().ctr_radius * factor;
+        const visibleDistance = this._airportController.airport_get().ctr_radius * factor;
 
         return aircraft.distance < visibleDistance;
     }
@@ -340,7 +372,7 @@ export default class AircraftController {
      * @param aircraftModel {AircraftModel}
      */
     aircraft_remove(aircraftModel) {
-        AirportController.removeAircraftFromAllRunwayQueues(aircraftModel);
+        this._airportController.removeAircraftFromAllRunwayQueues(aircraftModel);
         this.removeFlightNumberFromList(aircraftModel);
         this.removeAircraftModelFromList(aircraftModel);
         this._removeTransponderCodeFromUse(aircraftModel);
@@ -447,7 +479,15 @@ export default class AircraftController {
      * @param otherAircraft {AircraftModel}  aircraft 2
      */
     addConflict(aircraft, otherAircraft) {
-        const conflict = new AircraftConflict(aircraft, otherAircraft);
+        const conflict = new AircraftConflict(
+            aircraft,
+            otherAircraft,
+            this._eventBus,
+            this._airportController,
+            this._clock,
+            this._gameState,
+            this.conflicts
+        );
 
         if (conflict.shouldBeRemoved()) {
             conflict.destroy();
@@ -496,7 +536,9 @@ export default class AircraftController {
         conflict.aircraft[0].removeConflict(conflict.aircraft[1]);
         conflict.aircraft[1].removeConflict(conflict.aircraft[0]);
 
-        this.conflicts = _without(this.conflicts, conflict);
+        const remainingConflicts = _without(this.conflicts, conflict);
+
+        this.conflicts.splice(0, this.conflicts.length, ...remainingConflicts);
     };
 
     /**
@@ -565,10 +607,17 @@ export default class AircraftController {
      * @private
      */
     _createAircraftWithInitializationProps(initializationProps) {
-        const aircraftModel = new AircraftModel(initializationProps);
+        const aircraftModel = new AircraftModel(
+            initializationProps,
+            this._navigationLibrary,
+            this._airportController,
+            this._clock,
+            this._eventBus,
+            this._gameState
+        );
         const isDeparture = initializationProps.category === 'departure';
         const isArrival = initializationProps.category === 'arrival';
-        const isAutoTower = GameController.getGameOption(GAME_OPTION_NAMES.TOWER_CONTROLLER) === 'SYSTEM';
+        const isAutoTower = this._gameState.getGameOption(GAME_OPTION_NAMES.TOWER_CONTROLLER) === 'SYSTEM';
         const runwayCommands = initializationProps.commands;
 
         // triggering event bus rather than calling locally because multiple classes
@@ -630,7 +679,7 @@ export default class AircraftController {
         }
 
         const dynamicPositionModel = convertStaticPositionToDynamic(spawnPatternModel.positionModel);
-        const transponderCode = this._generateUniqueTransponderCode(AirportController.airport_get().icao);
+        const transponderCode = this._generateUniqueTransponderCode(this._airportController.airport_get().icao);
 
         return {
             fleet,
@@ -886,7 +935,7 @@ export default class AircraftController {
     _updateAircraftVisibility(aircraftModel) {
         // TODO: these next 3 logic blocks could use some cleaning/abstraction
         if (aircraftModel.isArrival() && aircraftModel.isStopped() && !aircraftModel.hit) {
-            EventBus.trigger(AIRCRAFT_EVENT.FULLSTOP, aircraftModel, aircraftModel.fms.arrivalRunwayModel);
+            this._eventBus.trigger(AIRCRAFT_EVENT.FULLSTOP, aircraftModel, aircraftModel.fms.arrivalRunwayModel);
 
             UiController.ui_log(`${aircraftModel.callsign} switching to ground, good day`);
             speech_say(
@@ -897,7 +946,7 @@ export default class AircraftController {
                 aircraftModel.pilotVoice
             );
 
-            GameController.events_recordNew(GAME_EVENTS.ARRIVAL);
+            this._gameState.events_recordNew(GAME_EVENTS.ARRIVAL);
             this.aircraft_remove(aircraftModel);
 
             return;

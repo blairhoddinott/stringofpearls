@@ -314,21 +314,19 @@ export const groupNumbers = (callsign, airline) => {
         // TODO: this block is unreachable
         switch (callsign.length) {
             case 0:
-                return callsign; break;
+                return callsign;
             case 1:
-                return radio_names[callsign]; break;
+                return radio_names[callsign];
             case 2:
-                return getGrouping(callsign); break;
+                return getGrouping(callsign);
             case 3:
                 return `${radio_names[callsign[0]]} ${getGrouping(callsign.substr(1))}`;
-                break;
             case 4:
                 if (callsign[1] === '0' && callsign[2] === '0' && callsign[3] === '0') {
                     return `${radio_names[callsign[0]]} thousand`;
                 }
 
                 return `${getGrouping(callsign.substr(0, 2))} ${getGrouping(callsign.substr(2))}`;
-                break;
             default:
                 return callsign;
         }
@@ -365,8 +363,6 @@ export const radio_heading = (heading) => {
         default:
             return `${radio_names[str[0]]} ${radio_names[str[1]]} ${radio_names[str[2]]}`;
     }
-
-    return heading;
 };
 
 /**

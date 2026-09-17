@@ -37,7 +37,7 @@ James River (JRV) covers Richmond and the southern area of the PCT.
 The instrument procedures are as of AIRAC 2006.
 
 ##### Departures
-Dulles has 10 Standard Instrument Departures (SIDs) which are all available in openScope. The only departure which is not assigned automatically is the Capital One (CPTAL1) departure as it is used much less frequently than the others.
+Dulles has 10 Standard Instrument Departures (SIDs) which are all available in String of Pearls. The only departure which is not assigned automatically is the Capital One (CPTAL1) departure as it is used much less frequently than the others.
 
 
 |SID|Departure Gate(s)|Altitude (ft)|Notes|Handoff To|
@@ -80,8 +80,8 @@ Dulles is home to four runways:
 |1R/19L|11,500|150|Concrete/grooved|
 |12/30|10,501|150|Concrete/grooved|
 
-### Sectors Available in openScope
-The following sectors are part of the Shenandoah Area of the PCT and available in openScope.
+### Sectors Available in String of Pearls
+The following sectors are part of the Shenandoah Area of the PCT and available in String of Pearls.
 
 ```
 Potomac Departure (ASPER Sector)

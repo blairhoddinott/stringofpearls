@@ -13,15 +13,16 @@ export default class AirlineController {
      * @constructor
      * @for AirlineController
      * @param airlineList {array<object>}
+     * @param randomSource {RandomSource} composition-root randomness boundary forwarded to the `AirlineCollection`; optional
      */
-    constructor(airlineList) {
+    constructor(airlineList, randomSource) {
         /**
          * Instance of an `AirlineCollection`
          *
          * @property airlineCollection
          * @type {AirlineCollection}
          */
-        this.airlineCollection = new AirlineCollection(airlineList);
+        this.airlineCollection = new AirlineCollection(airlineList, randomSource);
     }
 
     /**

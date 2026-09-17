@@ -161,15 +161,21 @@
         "premium": false
     },
     {
+        "icao": "kbna",
+        "level": "hard",
+        "name": "Nashville International Airport",
+        "premium": false
+    },
+    {
         "icao": "kbos",
         "level": "hard",
         "name": "Boston Logan International Airport",
         "premium": false
     },
     {
-        "icao": "kbna",
+        "icao": "kclt",
         "level": "hard",
-        "name": "Nashville International Airport",
+        "name": "Charlotte-Douglas International Airport",
         "premium": false
     },
     {
@@ -182,12 +188,6 @@
         "icao": "kdab",
         "level": "easy",
         "name": "Daytona Beach International Airport",
-        "premium": false
-    },
-    {
-        "icao": "kclt",
-        "level": "hard",
-        "name": "Charlotte-Douglas International Airport",
         "premium": false
     },
     {
@@ -354,13 +354,6 @@
         "premium": false
     },
     {
-        "icao": "ksdf",
-        "level": "easy",
-        "name": "Louisville International Airport",
-        "premium": false,
-        "disabled": true
-    },
-    {
         "icao": "ksan",
         "level": "easy",
         "name": "San Diego International Airport",
@@ -372,6 +365,13 @@
         "level": "medium",
         "name": "San Antonio International Airport",
         "premium": false
+    },
+    {
+        "icao": "ksdf",
+        "level": "easy",
+        "name": "Louisville International Airport",
+        "premium": false,
+        "disabled": true
     },
     {
         "icao": "ksea",
@@ -493,6 +493,12 @@
         "premium": false
     },
     {
+        "icao": "rjaa",
+        "level": "hard",
+        "name": "Tokyo Narita International Airport",
+        "premium": false
+    },
+    {
         "icao": "rjbb",
         "level": "hard",
         "name": "Osaka Kansai International Airport",
@@ -500,17 +506,11 @@
         "disabled": true
     },
     {
-        "icao": "rjaa",
-        "level": "hard",
-        "name": "Tokyo Narita International Airport",
-        "premium": false
-    },
-	{
         "icao": "rjoa",
         "level": "beginner",
         "name": "Hiroshima Airport",
         "premium": false,
-		"disabled": false
+        "disabled": false
     },
     {
         "icao": "rjss",
@@ -605,13 +605,6 @@
         "disabled": true
     },
     {
-        "icao": "vobl",
-        "level": "medium",
-        "name": "Kempegowda International Airport Bengaluru",
-        "premium": false,
-        "disabled": true
-    },
-    {
         "icao": "vhhh",
         "level": "medium",
         "name": "Hong Kong Chep Lap Kok International Airport",
@@ -622,6 +615,13 @@
         "icao": "vidp",
         "level": "hard",
         "name": "Indira Gandhi International Airport",
+        "premium": false,
+        "disabled": true
+    },
+    {
+        "icao": "vobl",
+        "level": "medium",
+        "name": "Kempegowda International Airport Bengaluru",
         "premium": false,
         "disabled": true
     },
@@ -640,16 +640,16 @@
         "disabled": true
     },
     {
-        "icao": "wmkp",
-        "level": "medium",
-        "name": "Pulau Pinang International Airport",
+        "icao": "wmkk",
+        "level": "hard",
+        "name": "Kuala Lumpur International Airport (KLIA)",
         "premium": false,
         "disabled": true
     },
     {
-        "icao": "wmkk",
-        "level": "hard",
-        "name": "Kuala Lumpur International Airport (KLIA)",
+        "icao": "wmkp",
+        "level": "medium",
+        "name": "Pulau Pinang International Airport",
         "premium": false,
         "disabled": true
     },

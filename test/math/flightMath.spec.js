@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies, arrow-parens */
 import ava from 'ava';
 
 import {
@@ -6,7 +5,6 @@ import {
     calcTurnRadiusByTurnRate,
     calcTurnInitiationDistanceNm,
     bearingToPoint,
-    fixRadialDist,
     calculateCrosswindAngle
 } from '../../src/assets/scripts/client/math/flightMath';
 

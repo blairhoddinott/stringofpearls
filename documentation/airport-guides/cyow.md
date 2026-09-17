@@ -48,7 +48,7 @@ The following fixes are Final Approach Course Fixes, meaning that aircraft can b
 * TEXEN - ILS 32, RNAV 32
 * VISOL - ILS 07, RNAV 07
 
-### Sectors Available in openScope
+### Sectors Available in String of Pearls
 ```
 Ottawa Departures
 Ottawa Arrivals

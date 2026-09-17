@@ -34,6 +34,20 @@ class UiController {
         this._eventBus = null;
 
         /**
+         * Delayed-callback boundary used to defer removal of a faded log entry.
+         *
+         * Nullish/omitted normalizes to canonical null so a hidden log entry is
+         * left in place rather than reaching for a browser global to remove it.
+         *
+         * @for UiController
+         * @property _delayScheduler
+         * @type {DelayScheduler|null}
+         * @default null
+         * @private
+         */
+        this._delayScheduler = null;
+
+        /**
          * @for UiController
          * @property tutorialView
          * @type {TutorialView}
@@ -105,7 +119,6 @@ class UiController {
          */
         this.$airportGuideDialog = null;
 
-
         /**
          * Element of the airport search bar
          *
@@ -137,7 +150,7 @@ class UiController {
         this.$fastForwards = null;
 
         /**
-         * Footer button element which opens the openScope github page in a new tab
+         * Footer button element which opens the String of Pearls GitHub page in a new tab
          *
          * @for UiController
          * @property $githubLinkElement
@@ -345,10 +358,15 @@ class UiController {
      * @for UiController
      * @method init
      * @param $element {jQuery Element}
+     * @param contentQueue {ContentQueue}
+     * @param storageAdapter {StorageAdapter}
+     * @param delayScheduler {DelayScheduler} delayed-callback boundary; nullish/omitted normalizes to null
+     * @param reportError {Function} async error reporter forwarded to TutorialView
      */
-    init($element) {
+    init($element, contentQueue, storageAdapter, delayScheduler, reportError) {
         this._eventBus = EventBus;
-        this.tutorialView = new TutorialView($element);
+        this._delayScheduler = delayScheduler ?? null;
+        this.tutorialView = new TutorialView($element, contentQueue, storageAdapter, reportError);
         this.settingsController = new SettingsController($element);
         this.trafficRateController = new TrafficRateController($element);
         this.videoMapController = new VideoMapController($element);
@@ -547,7 +565,11 @@ class UiController {
         GameController.game_timeout((uiLogView) => {
             uiLogView.addClass(SELECTORS.CLASSNAMES.HIDDEN);
 
-            setTimeout(() => {
+            if (!this._delayScheduler) {
+                return;
+            }
+
+            this._delayScheduler.schedule(() => {
                 uiLogView.remove();
             }, 10000);
         }, this.chatLogDuration, window, html);
@@ -674,12 +696,10 @@ class UiController {
         this.$airportDialogBody.empty();
 
         const airports = _keys(AirportController.airports).sort();
-        let difficulty = '';
 
         for (let i = 0; i < airports.length; i++) {
             const { name, icao, level } = AirportController.airports[airports[i]];
-
-            difficulty = this._buildAirportListIconForDifficultyLevel(level);
+            const difficulty = this._buildAirportListIconForDifficultyLevel(level);
             const $airportListItem = $(this._buildAirportListItemTemplate(icao, difficulty, name));
 
             // TODO: replace with an onClick() handler
@@ -772,7 +792,6 @@ class UiController {
 
         this.$switchAirport.addClass(SELECTORS.CLASSNAMES.ACTIVE);
     }
-
 
     /**
      * @for UiController

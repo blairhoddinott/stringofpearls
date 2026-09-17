@@ -1,11 +1,27 @@
 import $ from 'jquery';
-import _isNil from 'lodash/isNil';
-import _lowerCase from 'lodash/lowerCase';
+import _random from 'lodash/random';
 import AppController from './AppController';
+import AssetLoader, { formatAssetLoadError } from './platform/AssetLoader';
+import StartupAssetLoader from './platform/StartupAssetLoader';
+import StorageAdapter from './platform/StorageAdapter';
+import StartupStorage from './platform/StartupStorage';
+import ClearStorageAndReload from './platform/ClearStorageAndReload';
+import ClockAdapter from './platform/ClockAdapter';
+import FrameScheduler from './platform/FrameScheduler';
+import DelayScheduler from './platform/DelayScheduler';
+import RandomSource from './platform/RandomSource';
+import AnalyticsAdapter from './platform/AnalyticsAdapter';
+import SpeechSynthesisAdapter from './platform/SpeechSynthesisAdapter';
+import ClipboardAdapter from './platform/ClipboardAdapter';
+import PageVisibilityAdapter from './platform/PageVisibilityAdapter';
+import createAsyncErrorReporter from './platform/reportAsyncError';
 import EventBus from './lib/EventBus';
+import EventTracker from './EventTracker';
 import TimeKeeper from './engine/TimeKeeper';
+import { initRandomSource as initGeneralUtilitiesRandomSource } from './utilities/generalUtilities';
+import { initRandomSource as initMathCoreRandomSource } from './math/core';
+import { randomizePilotVoice_init } from './speech';
 import { DEFAULT_AIRPORT_ICAO } from './constants/airportConstants';
-import { STORAGE_KEY } from './constants/storageKeys';
 import { EVENT } from './constants/eventNames';
 import { LOG } from './constants/logLevel';
 
@@ -31,8 +47,47 @@ export default class App {
     /**
      * @constructor
      * @param $element {HTML Element|null}
+     * @param assetLoader {AssetLoader}
+     * @param storageAdapter {StorageAdapter}
+     * @param reload {Function} composition-root page-reload callable composed into the CLEAR ClearStorageAndReload service
+     * @param clockAdapter {ClockAdapter} composition-root current-time boundary backed by `() => new Date()`
+     * @param frameScheduler {FrameScheduler} composition-root animation-frame boundary backed by `(callback) => window.requestAnimationFrame(callback)`
+     * @param delayScheduler {DelayScheduler} composition-root delayed-callback boundary backed by `(callback, delay) => window.setTimeout(callback, delay)`
+     * @param randomSource {RandomSource} composition-root randomness boundary backed by `Math.random` and Lodash `random`
+     * @param analyticsAdapter {AnalyticsAdapter} composition-root analytics boundary backed by `window.gtag` when present
+     * @param speechSynthesisAdapter {SpeechSynthesisAdapter|null} composition-root speech boundary backed by `window.speechSynthesis` and `SpeechSynthesisUtterance` when both are available, otherwise `null`
+     * @param clipboardAdapter {ClipboardAdapter|null} composition-root clipboard boundary backed by a receiver-preserving wrapper around `window.navigator.clipboard.writeText` when callable, otherwise `null`
+     * @param pageVisibilityAdapter {PageVisibilityAdapter} composition-root page focus/visibility boundary backed by wrappers around `window.addEventListener`, `document.addEventListener`, and `document.visibilityState`
      */
-    constructor(element) {
+    constructor(
+        element,
+        assetLoader = new AssetLoader((url) => $.getJSON(url)),
+        storageAdapter = new StorageAdapter(window.localStorage),
+        reload = () => window.location.reload(),
+        clockAdapter = new ClockAdapter(() => new Date()),
+        frameScheduler = new FrameScheduler((callback) => window.requestAnimationFrame(callback)),
+        delayScheduler = new DelayScheduler((callback, delay) => window.setTimeout(callback, delay)),
+        randomSource = new RandomSource(
+            () => Math.random(),
+            (lower, upper) => _random(lower, upper),
+            (lower, upper) => _random(lower, upper, true)
+        ),
+        analyticsAdapter = typeof window.gtag === 'function' ? new AnalyticsAdapter(window.gtag) : null,
+        speechSynthesisAdapter = window.speechSynthesis != null && typeof window.SpeechSynthesisUtterance === 'function'
+            ? new SpeechSynthesisAdapter(
+                window.speechSynthesis,
+                (text) => new window.SpeechSynthesisUtterance(text)
+            )
+            : null,
+        clipboardAdapter = typeof window.navigator?.clipboard?.writeText === 'function'
+            ? new ClipboardAdapter((text) => window.navigator.clipboard.writeText(text))
+            : null,
+        pageVisibilityAdapter = new PageVisibilityAdapter(
+            (type, listener) => window.addEventListener(type, listener),
+            (type, listener) => document.addEventListener(type, listener),
+            () => document.visibilityState
+        )
+    ) {
         /**
          * Root DOM element.
          *
@@ -41,7 +96,54 @@ export default class App {
          * @default body
          */
         this.$element = $(element);
-        this._appController = new AppController(this.$element);
+
+        // Configure the import-time `TimeKeeper` singleton with the injected
+        // current-time boundary early, before any runtime update/init reads
+        // game time, so the wall clock is never a hidden browser global.
+        TimeKeeper.initClock(clockAdapter);
+
+        // Configure the shared function-module randomness boundary early, before
+        // any runtime consumer draws, so `Math.random`/Lodash `random` live only
+        // in this composition root rather than inside each module. Only these
+        // direct/shared consumers are migrated in this slice; several class
+        // consumers still hold their own Lodash `random` draws.
+        initGeneralUtilitiesRandomSource(randomSource);
+        initMathCoreRandomSource(randomSource);
+        randomizePilotVoice_init(randomSource);
+
+        // Animation-frame scheduling boundary; the browser
+        // `requestAnimationFrame` reference lives only in the constructor
+        // default so runtime update/pause loops never touch a browser global.
+        this._frameScheduler = frameScheduler;
+
+        // Single app-wide async error reporter, composed from the same
+        // `DelayScheduler` boundary so the uncaught-error rethrow is scheduled
+        // through the injected timer rather than a browser global. Threaded by
+        // identity through `AppController` to every reporter consumer.
+        const asyncErrorReporter = createAsyncErrorReporter(delayScheduler);
+
+        // Configure the import-time `EventTracker` singleton with the injected
+        // analytics boundary early, before `AppController` is built and before
+        // the initial-load event is recorded, so the `window.gtag` provider
+        // reference lives only in this composition root rather than inside the
+        // tracker.
+        EventTracker.initAnalytics(analyticsAdapter);
+
+        this._startupAssetLoader = new StartupAssetLoader(assetLoader);
+        this._startupStorage = new StartupStorage(storageAdapter);
+        this._appController = new AppController(
+            this.$element,
+            assetLoader,
+            storageAdapter,
+            new ClearStorageAndReload(storageAdapter, reload),
+            clockAdapter,
+            delayScheduler,
+            asyncErrorReporter,
+            randomSource,
+            speechSynthesisAdapter,
+            clipboardAdapter,
+            pageVisibilityAdapter
+        );
         this.eventBus = EventBus;
 
         window.prop = prop;
@@ -62,9 +164,9 @@ export default class App {
      * @method _fetchAirportLoadList
      */
     _fetchAirportLoadList() {
-        $.getJSON('assets/airports/airportLoadList.json')
-            .done((response) => this.onAirportLoadListFetchedHandler(response))
-            .fail((jqXHR) => console.error(`Unable to load airport list: ${jqXHR.status}: ${jqXHR.statusText}`));
+        return this._startupAssetLoader.loadAirportList()
+            .then((response) => this.onAirportLoadListFetchedHandler(response))
+            .catch((error) => console.error(`Unable to load application assets: ${formatAssetLoadError(error)}`));
     }
 
     /**
@@ -76,40 +178,9 @@ export default class App {
     _onAirportLoadListFetched(data) {
         const airportLoadList = data.filter((airport) => airport.disabled !== true);
         // ICAO id of the initial airport. may be the default or a stored airport
-        const initialAirportToLoad = this._getInitialAirport(airportLoadList);
+        const initialAirportToLoad = this._startupStorage.getInitialAirport(airportLoadList);
 
-        this.loadInitialAirport(airportLoadList, initialAirportToLoad);
-    }
-
-    /**
-     * Check if a given icao exists in the list of available airports
-     *
-     * @for App
-     * @method _isAirportIcaoInLoadList
-     * @param icao {string}  icao
-     * @param airportLoadList {array<object>}  List of available airports
-     */
-    _isAirportIcaoInLoadList(icao, airportLoadList) {
-        return !_isNil(icao) && airportLoadList.some((airport) => airport.icao === icao);
-    }
-
-    /**
-     * Obtain icao for the initial airport from localStorage if available
-     * otherwise use `DEFAULT_AIRPORT_ICAO`
-     *
-     * @for App
-     * @method _getInitialAirport
-     * @param airportLoadList {array<object>}  List of airports to load
-     */
-    _getInitialAirport(airportLoadList) {
-        let airportName = DEFAULT_AIRPORT_ICAO;
-        const previousAirportIcaoFromLocalStorage = localStorage[STORAGE_KEY.ATC_LAST_AIRPORT];
-
-        if (this._isAirportIcaoInLoadList(previousAirportIcaoFromLocalStorage, airportLoadList)) {
-            airportName = _lowerCase(localStorage[STORAGE_KEY.ATC_LAST_AIRPORT]);
-        }
-
-        return airportName;
+        return this.loadInitialAirport(airportLoadList, initialAirportToLoad);
     }
 
     /**
@@ -121,8 +192,6 @@ export default class App {
      */
     setupHandlers() {
         this.onAirportLoadListFetchedHandler = this._onAirportLoadListFetched.bind(this);
-        this.loadDefaultAiportAfterStorageIcaoFailureHandler = this.loadDefaultAiportAfterStorageIcaoFailure.bind(this);
-        this.loadAirlinesAndAircraftHandler = this.loadAirlinesAndAircraft.bind(this);
         this.setupChildrenHandler = this.setupChildren.bind(this);
         this.onPauseHandler = this._onPause.bind(this);
         this.onUpdateHandler = this.update.bind(this);
@@ -133,10 +202,10 @@ export default class App {
     }
 
     /**
-     * Used to load data for the initial airport using an icao from
-     * either localStorage or `DEFAULT_AIRPORT_ICAO`
+     * Used to load data for the initial airport using an icao chosen by
+     * `StartupStorage` (a stored airport or `DEFAULT_AIRPORT_ICAO`)
      *
-     * If a localStorage airport cannot be found, we will attempt
+     * If the selected airport cannot be found, we will attempt
      * to load the `DEFAULT_AIRPORT_ICAO`
      *
      * Lifecycle method. Should be called only once on initialization
@@ -146,60 +215,15 @@ export default class App {
      * @param airportLoadList {array<object>}  List of airports to load
      */
     loadInitialAirport(airportLoadList, initialAirportToLoad) {
-        const initialAirportIcao = initialAirportToLoad.toLowerCase();
-
-        $.getJSON(`assets/airports/${initialAirportIcao}.json`)
-            .then((response) => this.loadAirlinesAndAircraftHandler(airportLoadList, initialAirportIcao, response))
-            .catch((error) => this.loadDefaultAiportAfterStorageIcaoFailureHandler(airportLoadList));
-    }
-
-    /**
-     * Used only when an attempt to load airport data with an icao in localStorage fails.
-     * In this case we attempt to load the default airport with this method
-     *
-     * Lifecycle method. Should be called only once on initialization
-     *
-     * @for App
-     * @method onLoadDefaultAirportAfterStorageIcaoFailure
-     * @param {array<object>} airportLoadList
-     */
-    loadDefaultAiportAfterStorageIcaoFailure(airportLoadList) {
-        $.getJSON(`assets/airports/${DEFAULT_AIRPORT_ICAO}.json`)
-            .then((defaultAirportResponse) => this.loadAirlinesAndAircraftHandler(
-                airportLoadList,
-                DEFAULT_AIRPORT_ICAO,
-                defaultAirportResponse
-            ));
-    }
-
-    /**
-     * Handler method called after data has loaded for the airline and aircraftTypeDefinitions datasets.
-     *
-     * Lifecycle method. Should be called only once on initialization
-     *
-     * @for App
-     * @method loadAirlinesAndAircraft
-     * @param {array>object>} airportLoadList
-     * @param {string} initialAirportIcao
-     * @param {object<string>} initialAirportResponse
-     */
-    loadAirlinesAndAircraft(airportLoadList, initialAirportIcao, initialAirportResponse) {
-        const airlineListPromise = $.getJSON('assets/airlines/airlines.json');
-        const aircraftListPromise = $.getJSON('assets/aircraft/aircraft.json');
-        const airportGuideListPromise = $.getJSON('assets/guides/guides.json');
-
-        // This is provides a way to get async data from several sources in the app before anything else runs
-        // we need to resolve data from two sources before the app can proceede. This data should always
-        // exist, if it doesn't, something has gone terribly wrong.
-        $.when(airlineListPromise, aircraftListPromise, airportGuideListPromise)
-            .done((airlineResponse, aircraftResponse, airportGuideResponse) => {
+        return this._startupAssetLoader.loadInitialAssets(initialAirportToLoad, DEFAULT_AIRPORT_ICAO)
+            .then(({ aircraft, airlines, airport, guides, icao }) => {
                 this.setupChildrenHandler(
                     airportLoadList,
-                    initialAirportIcao,
-                    initialAirportResponse,
-                    airlineResponse[0].airlines,
-                    aircraftResponse[0].aircraft,
-                    airportGuideResponse[0]
+                    icao,
+                    airport,
+                    airlines,
+                    aircraft,
+                    guides
                 );
             });
     }
@@ -337,7 +361,7 @@ export default class App {
         this.prop.loaded = true;
 
         if (UPDATE) {
-            requestAnimationFrame(this.onUpdateHandler);
+            this._frameScheduler.requestFrame(this.onUpdateHandler);
         }
 
         return this;
@@ -388,7 +412,7 @@ export default class App {
             return this;
         }
 
-        requestAnimationFrame(this.onUpdateHandler);
+        this._frameScheduler.requestFrame(this.onUpdateHandler);
 
         this.updatePre();
         this.updatePost();
@@ -404,7 +428,7 @@ export default class App {
      */
     _onPause(shouldUpdate) {
         if (!UPDATE && shouldUpdate) {
-            requestAnimationFrame(this.onUpdateHandler);
+            this._frameScheduler.requestFrame(this.onUpdateHandler);
         }
 
         UPDATE = shouldUpdate;

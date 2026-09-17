@@ -24,7 +24,7 @@ export default class AirspaceModel extends BaseModel {
         super();
 
         if (!data || !airportPosition || !_isNumber(magneticNorth)) {
-            // eslint-disable-next-line max-len
+
             throw new TypeError('Invalid parameter, expected airspace, airportPosition and magneticNorth to be defined');
         }
 

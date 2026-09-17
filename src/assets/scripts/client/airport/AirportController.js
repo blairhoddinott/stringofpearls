@@ -1,6 +1,8 @@
 import _has from 'lodash/has';
 import AirportModel from './AirportModel';
 import EventBus from '../lib/EventBus';
+import GameController from '../game/GameController';
+import TimeKeeper from '../engine/TimeKeeper';
 import { EVENT } from '../constants/eventNames';
 import { STORAGE_KEY } from '../constants/storageKeys';
 
@@ -9,16 +11,18 @@ import { STORAGE_KEY } from '../constants/storageKeys';
  *
  * @class AirportController
  */
-class AirportController {
+export class AirportControllerClass {
     /**
      * @constructor
      */
-    constructor() {
+    constructor(eventBus = EventBus, clock = TimeKeeper, gameState = GameController) {
         /**
          * @property _eventBus
          * @type {EventBus}
          */
-        this._eventBus = EventBus;
+        this._eventBus = eventBus;
+        this._clock = clock;
+        this._gameState = gameState;
 
         /**
          * Local reference to `window.AIRPORT_LOAD_LIST`
@@ -32,6 +36,38 @@ class AirportController {
          * @default []
          */
         this._airportListToLoad = [];
+
+        /**
+         * Shared asset-loading queue injected in `init` and passed into every
+         * `AirportModel` this controller creates, so all flyweights share the
+         * single app-wide `ContentQueue` instance.
+         *
+         * @property _contentQueue
+         * @type {ContentQueue}
+         * @default null
+         */
+        this._contentQueue = null;
+
+        /**
+         * Persistence boundary injected in `init` and passed into every
+         * `AirportModel` this controller creates, so the last-selected airport
+         * is read and written through the single app-wide `StorageAdapter`
+         * instead of a browser global.
+         *
+         * @property _storageAdapter
+         * @type {StorageAdapter}
+         * @default null
+         */
+        this._storageAdapter = null;
+
+        /**
+         * Shared async error reporter forwarded to every AirportModel.
+         *
+         * @property _reportError
+         * @type {Function|null}
+         * @default null
+         */
+        this._reportError = null;
 
         /**
          * Dictionary of available airports
@@ -65,8 +101,14 @@ class AirportController {
      * @param InitialAirportIcao {string}
      * @param initialAirportData {object}
      * @param airportLoadList {array<object>}  List of airports to load
+     * @param contentQueue {ContentQueue}  Shared asset-loading queue
+     * @param storageAdapter {StorageAdapter}  Shared persistence boundary
+     * @param reportError {Function}  Shared async error reporter
      */
-    init(initialAirportIcao, initialAirportData, airportLoadList) {
+    init(initialAirportIcao, initialAirportData, airportLoadList, contentQueue, storageAdapter, reportError) {
+        this._contentQueue = contentQueue;
+        this._storageAdapter = storageAdapter;
+        this._reportError = reportError ?? null;
         this._airportListToLoad = airportLoadList;
 
         for (let i = 0; i < this._airportListToLoad.length; i++) {
@@ -101,7 +143,16 @@ class AirportController {
             return null;
         }
 
-        const airportModel = new AirportModel({ icao, level, name });
+        const airportModel = new AirportModel(
+            { icao, level, name },
+            this._contentQueue,
+            this._storageAdapter,
+            this._reportError,
+            this._eventBus,
+            this,
+            this._clock,
+            this._gameState
+        );
 
         this.airport_add(airportModel);
     }
@@ -126,7 +177,9 @@ class AirportController {
      * @method reset
      */
     reset() {
-        this._eventBus = EventBus;
+        this._contentQueue = null;
+        this._storageAdapter = null;
+        this._reportError = null;
         this._airportListToLoad = [];
         this.airports = {};
         this.current = null;
@@ -141,10 +194,7 @@ class AirportController {
      * @param airportJson {object} [default=null]
      */
     airport_set(icao, airportJson = null) {
-        if (this.hasStoredIcao(icao)) {
-            icao = localStorage[STORAGE_KEY.ATC_LAST_AIRPORT];
-        }
-
+        icao = this._resolveInitialIcao(icao);
         icao = icao.toLowerCase();
 
         if (!this.airports[icao]) {
@@ -210,15 +260,31 @@ class AirportController {
     }
 
     /**
-     * Boolean helper used to determine if a given `icao` exists within `localStorage`
+     * Resolve the `icao` to select, substituting the persisted last-selected
+     * airport when no explicit `icao` is supplied.
+     *
+     * When a truthy `icao` is passed it is returned untouched and storage is
+     * never read, preserving the short-circuit for an explicit selection. When
+     * `icao` is falsy and an injected adapter is present, the value stored under
+     * `STORAGE_KEY.ATC_LAST_AIRPORT` is read through the adapter. Web Storage
+     * returns `null` for a missing key; browser-light fakes may return
+     * `undefined`. Both are treated as "no stored airport", in which case the
+     * supplied (falsy) `icao` is returned rather than fabricating a value.
      *
      * @for AirportController
-     * @method hasStoredIcao
+     * @method _resolveInitialIcao
      * @param icao {string}
-     * @return {boolean}
+     * @return {string}
+     * @private
      */
-    hasStoredIcao(icao) {
-        return !icao && _has(localStorage, STORAGE_KEY.ATC_LAST_AIRPORT);
+    _resolveInitialIcao(icao) {
+        if (icao || !this._storageAdapter) {
+            return icao;
+        }
+
+        const storedIcao = this._storageAdapter.get(STORAGE_KEY.ATC_LAST_AIRPORT);
+
+        return storedIcao == null ? icao : storedIcao;
     }
 
     /**
@@ -245,4 +311,4 @@ class AirportController {
     }
 }
 
-export default new AirportController();
+export default new AirportControllerClass();

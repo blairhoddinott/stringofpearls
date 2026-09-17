@@ -1,12 +1,30 @@
 import ava from 'ava';
+import sinon from 'sinon';
 
 import {
     isWithin,
     isWithinEpsilon,
     calculateMiddle,
     clamp,
-    generateRandomOctalWithLength
+    randint,
+    generateRandomOctalWithLength,
+    initRandomSource
 } from '../../src/assets/scripts/client/math/core';
+
+// Build a random source stub exposing the `fraction()`/`integer(lower, upper)`
+// contract used by `randint`/`generateRandomOctalWithLength`, so the randomness
+// boundary is exercised without global `Math.random` or a lodash backend.
+const buildRandomSource = ({ fractionValue = 0, integerValue = 0 } = {}) => ({
+    fraction: sinon.stub().returns(fractionValue),
+    integer: sinon.stub().returns(integerValue),
+    real: sinon.stub()
+});
+
+// Clear the retained module random source so no test leaks into the next and
+// the deterministic unconfigured behavior is restored.
+ava.afterEach.always(() => {
+    initRandomSource();
+});
 
 ava('.isWithin() returns true if value is within (inclusive) two given values', (t) => {
     // we want to test the function operates correctly in the negative
@@ -102,4 +120,36 @@ ava('.generateRandomOctalWithLength() returns a number of a desired length', (t)
     const result = generateRandomOctalWithLength(4);
 
     t.true(result.toString().length === 4);
+});
+
+ava.serial('.randint() returns floor(fraction * (high - low + 1)) + low drawn once from the source', (t) => {
+    const randomSource = buildRandomSource({ fractionValue: 0.5 });
+    initRandomSource(randomSource);
+
+    // range [1, 10] has 10 slots; floor(0.5 * 10) + 1 === 6
+    const result = randint(1, 10);
+
+    t.is(result, 6);
+    t.true(randomSource.fraction.calledOnceWithExactly());
+});
+
+ava.serial('.randint() without a configured source returns the low bound', (t) => {
+    t.is(randint(3, 9), 3);
+});
+
+ava.serial('.generateRandomOctalWithLength() draws integer(0, 7) once per digit in order and left-pads', (t) => {
+    const randomSource = buildRandomSource({ integerValue: 5 });
+    initRandomSource(randomSource);
+
+    const result = generateRandomOctalWithLength(4);
+
+    t.is(result, '5555');
+    t.is(randomSource.integer.callCount, 4);
+    t.true(randomSource.integer.alwaysCalledWithExactly(0, 7));
+});
+
+ava.serial('.generateRandomOctalWithLength() without a configured source returns all-zero digits', (t) => {
+    const result = generateRandomOctalWithLength(4);
+
+    t.is(result, '0000');
 });

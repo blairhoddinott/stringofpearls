@@ -63,7 +63,7 @@ Frankfurt primarily uses the transitions to position aircraft onto downwind or b
 
 Transitions with the suffix 07N/25N are used to sequence aircraft for arrival onto 07L/25R; 07S/25S for 07C/25C and 07R/25L.
 
-### Sectors Available in openScope
+### Sectors Available in String of Pearls
 ```
 Langen Radar (Departure)
 Langen Radar (North Approach)

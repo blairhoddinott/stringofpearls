@@ -17,7 +17,7 @@ import FixModel from './FixModel';
  * @class FixCollection
  * @extends BaseCollection
  */
-class FixCollection extends BaseCollection {
+export class FixCollectionClass extends BaseCollection {
     /**
      * Lifecycle method. Should be run only once on instantiation.
      *
@@ -201,4 +201,4 @@ class FixCollection extends BaseCollection {
     }
 }
 
-export default new FixCollection();
+export default new FixCollectionClass();

@@ -2,7 +2,8 @@ import _includes from 'lodash/includes';
 import _filter from 'lodash/filter';
 import AirportController from '../airport/AirportController';
 import EventBus from '../lib/EventBus';
-import GameController, { GAME_EVENTS } from '../game/GameController';
+import GameController from '../game/GameController';
+import { GAME_EVENTS } from '../game/gameEventConstants';
 import TimeKeeper from '../engine/TimeKeeper';
 import UiController from '../ui/UiController';
 import { abs } from '../math/core';
@@ -18,8 +19,29 @@ import { EVENT } from '../constants/eventNames';
  * @class AircraftConflict
  */
 export default class AircraftConflict {
-    constructor(first, second) {
-        this._eventBus = EventBus;
+    /**
+     * @param first {AircraftModel}
+     * @param second {AircraftModel}
+     * @param eventBus {EventBus} [optional]
+     * @param airportController {AirportController} [optional]
+     * @param clock {TimeKeeper|SimulationClock} [optional]
+     * @param gameState {GameController|SimulationGameState} [optional]
+     * @param conflictCollection {array<AircraftConflict>|null} [optional]
+     */
+    constructor(
+        first,
+        second,
+        eventBus = EventBus,
+        airportController = AirportController,
+        clock = TimeKeeper,
+        gameState = GameController,
+        conflictCollection = null
+    ) {
+        this._eventBus = eventBus;
+        this._airportController = airportController;
+        this._clock = clock;
+        this._gameState = gameState;
+        this._conflictCollection = conflictCollection;
 
         this.aircraft = [first, second];
         this.distance = vlen(vsub(first.relativePosition, second.relativePosition));
@@ -117,8 +139,8 @@ export default class AircraftConflict {
         this.checkCollision();
 
         // Ignore aircraft below about 1000 feet
-        const airportElevation = AirportController.airport_get().elevation;
-        const gameTime = TimeKeeper.accumulatedDeltaTime;
+        const airportElevation = this._airportController.airport_get().elevation;
+        const gameTime = this._clock.accumulatedDeltaTime;
         if (((this.aircraft[0].altitude - airportElevation) < 990) ||
             ((this.aircraft[1].altitude - airportElevation) < 990)) {
             return;
@@ -144,7 +166,7 @@ export default class AircraftConflict {
 
         // TODO: enumerate the magic numbers.
         // Collide within 160 feet
-        const airport = AirportController.airport_get();
+        const airport = this._airportController.airport_get();
 
         if (
             ((this.distance < 0.05) && (this.altitude < 160)) &&
@@ -158,7 +180,7 @@ export default class AircraftConflict {
                 isWarning
             );
 
-            GameController.events_recordNew(GAME_EVENTS.COLLISION);
+            this._gameState.events_recordNew(GAME_EVENTS.COLLISION);
             this.aircraft[0].hit = true;
             this.aircraft[1].hit = true;
         }
@@ -178,18 +200,17 @@ export default class AircraftConflict {
             return;
         }
 
-        let conflict = false;
-        let violation = false;
+        let conflict;
+        let violation;
         let disableNotices = false;
         const a1 = this.aircraft[0];
         const a2 = this.aircraft[1];
         let applicableLatSepMin = SEPARATION.STANDARD_LATERAL_KM;
 
-
         // Established on precision guided approaches && both are following different instrument approaches
         if ((a1.isEstablishedOnCourse() && a2.isEstablishedOnCourse()) &&
             (a1.fms.arrivalRunwayModel.name !== a2.fms.arrivalRunwayModel.name)) {
-            const runwayRelationship = AirportController.airport_get().getRunwayRelationshipForRunwayNames(
+            const runwayRelationship = this._airportController.airport_get().getRunwayRelationshipForRunwayNames(
                 a1.fms.arrivalRunwayModel.name,
                 a2.fms.arrivalRunwayModel.name
             );
@@ -330,7 +351,9 @@ export default class AircraftConflict {
      * @return {Boolean}
      */
     _findInstancesOfThisConflictInAircraftController() {
-        return _filter(window.aircraftController.conflicts, (conflict) => {
+        const conflicts = this._conflictCollection ?? window.aircraftController.conflicts;
+
+        return _filter(conflicts, (conflict) => {
             return _includes(conflict.aircraft, this.aircraft[0]) && _includes(conflict.aircraft, this.aircraft[1]);
         });
     }

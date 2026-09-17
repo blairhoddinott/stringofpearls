@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "skipLibCheck": false,
+    "strict": true,
+    "target": "ES2022"
+  },
+  "include": [
+    "src/assets/scripts/client/input/InputEventBindings.js",
+    "src/assets/scripts/client/input/ViewportGestureInteraction.js",
+    "test/types/input-contracts.spec.ts"
+  ]
+}

@@ -1,7 +1,6 @@
 import _filter from 'lodash/filter';
 import _forEach from 'lodash/forEach';
 import _isNaN from 'lodash/isNaN';
-import _random from 'lodash/random';
 import BaseCollection from '../base/BaseCollection';
 import SpawnPatternModel from './SpawnPatternModel';
 import { FLIGHT_CATEGORY } from '../constants/aircraftConstants';
@@ -13,7 +12,34 @@ import { isEmptyOrNotObject } from '../utilities/validatorUtilities';
  * @class SpawnPatternCollection
  * @extends BaseCollection
  */
-class SpawnPatternCollection extends BaseCollection {
+export class SpawnPatternCollectionClass extends BaseCollection {
+    /**
+     * @constructor
+     * @for SpawnPatternCollection
+     */
+    constructor(navigationLibrary, airportController) {
+        super();
+
+        this._navigationLibrary = navigationLibrary;
+        this._airportController = airportController;
+
+        /**
+         * Randomness boundary injected from the composition root and forwarded by
+         * identity to every `SpawnPatternModel` this collection builds.
+         *
+         * The canonical singleton stores `null` until configured through
+         * `.initRandomSource()`. Because it is app-level configuration rather than
+         * airport session state, `.reset()` retains it across airport rebuilds so a
+         * subsequent `.init()` may omit it.
+         *
+         * @property _randomSource
+         * @type {RandomSource}
+         * @default null
+         * @private
+         */
+        this._randomSource = null;
+    }
+
     /**
      * Public property that gives access to the current value of `_items`
      *
@@ -52,6 +78,21 @@ class SpawnPatternCollection extends BaseCollection {
         }
 
         this._buildSpawnPatternModels(airportJson.spawnPatterns);
+    }
+
+    /**
+     * Configure the randomness boundary forwarded to `SpawnPatternModel` instances.
+     *
+     * Nullish values normalize to `null`. `.reset()` deliberately retains this
+     * app-level capability across airport changes, so it only needs to be set
+     * once before the initial `.init()`.
+     *
+     * @for SpawnPatternCollection
+     * @method initRandomSource
+     * @param randomSource {RandomSource} [optional]
+     */
+    initRandomSource(randomSource = null) {
+        this._randomSource = randomSource ?? null;
     }
 
     /**
@@ -176,7 +217,7 @@ class SpawnPatternCollection extends BaseCollection {
             const spawnPatterns = spawnPatternsByDepartureRunway[runway].filter((p) => p.rate > 0);
             const rateMap = spawnPatterns.map((pattern) => pattern.rate);
             const rateTotal = spawnPatterns.reduce((sum, pattern) => sum + pattern.rate, 0);
-            const randomPosition = _random(rateTotal, true);
+            const randomPosition = this._randomSource ? this._randomSource.real(0, rateTotal) : 0;
             let position = 0;
 
             for (let i = 0; i < rateMap.length; i++) {
@@ -218,11 +259,16 @@ class SpawnPatternCollection extends BaseCollection {
      */
     _buildSpawnPatternModels(spawnPatterns) {
         _forEach(spawnPatterns, (spawnPattern) => {
-            const spawnPatternModel = new SpawnPatternModel(spawnPattern);
+            const spawnPatternModel = new SpawnPatternModel(
+                spawnPattern,
+                this._randomSource,
+                this._navigationLibrary,
+                this._airportController
+            );
 
             this.addItem(spawnPatternModel);
         });
     }
 }
 
-export default new SpawnPatternCollection();
+export default new SpawnPatternCollectionClass();

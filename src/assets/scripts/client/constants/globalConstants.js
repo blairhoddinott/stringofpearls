@@ -38,6 +38,8 @@ export const REGEX = {
     SINGLE_DOT: /\./g,
     THREE_DIGIT_NUMBER: /^[0-9]{3}$/,
     TRANSPONDER_CODE: /^[0-7][0-7][0-7][0-7]$/,
+    // The explicit control-character range is intentional: this matches non-Latin-1 input.
+    // eslint-disable-next-line no-control-regex
     UNICODE: /[^\u0000-\u00ff]/,
     WHITESPACE: /\s/g
 };

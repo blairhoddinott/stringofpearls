@@ -4,11 +4,12 @@ import AircraftModel from '../../src/assets/scripts/client/aircraft/AircraftMode
 import UiController from '../../src/assets/scripts/client/ui/UiController';
 import GameController, { GAME_EVENTS } from '../../src/assets/scripts/client/game/GameController';
 import ScoreController from '../../src/assets/scripts/client/game/ScoreController';
+import { EventBusClass } from '../../src/assets/scripts/client/lib/EventBus';
+import SimulationGameState from '../../src/assets/scripts/client/simulation/SimulationGameState';
 import { ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK } from '../aircraft/_mocks/aircraftMocks';
 
 let sandbox; // using the sinon sandbox ensures stubs are restored after each test
 
-/* eslint-disable no-unused-vars, no-undef */
 ava.beforeEach(() => {
     sandbox = sinon.createSandbox();
 });
@@ -16,7 +17,24 @@ ava.beforeEach(() => {
 ava.afterEach.always(() => {
     sandbox.restore();
 });
-/* eslint-enable no-unused-vars, no-undef */
+
+ava.serial('uses explicit event and game-state owners for scoring', (t) => {
+    const eventBus = new EventBusClass();
+    const gameState = new SimulationGameState();
+    const scoreController = new ScoreController(undefined, eventBus, gameState);
+    const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
+
+    sandbox.stub(UiController, 'ui_log');
+    sandbox.stub(aircraftModel, 'isAboveGlidepath').returns(true);
+    scoreController._penalizeLocalizerInterceptAltitude(aircraftModel);
+
+    t.is(scoreController._eventBus, eventBus);
+    t.is(scoreController._gameState, gameState);
+    t.is(gameState.events[GAME_EVENTS.LOCALIZER_INTERCEPT_ABOVE_GLIDESLOPE], 1);
+    t.is(gameState.score, -10);
+
+    scoreController.disable();
+});
 
 ava('._penalizeLocalizerInterceptAltitude() records an event and notifies the user of their error when above the glideslope', (t) => {
     const scoreController = new ScoreController();

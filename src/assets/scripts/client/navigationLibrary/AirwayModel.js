@@ -1,12 +1,11 @@
 import _forEach from 'lodash/forEach';
 import _isEmpty from 'lodash/isEmpty';
 import _map from 'lodash/map';
-import NavigationLibrary from './NavigationLibrary';
 import WaypointModel from '../aircraft/FlightManagementSystem/WaypointModel';
 import { INVALID_INDEX } from '../constants/globalConstants';
 
 export default class AirwayModel {
-    constructor(icao, fixNames) {
+    constructor(icao, fixNames, navigationLibrary) {
         if (_isEmpty(icao)) {
             throw new TypeError('Expected airway to have a non-empty name, but no airway name was given');
         }
@@ -15,6 +14,7 @@ export default class AirwayModel {
             throw new TypeError(`Expected a list of fix names for airway "${icao}", but received none`);
         }
 
+        this._navigationLibrary = navigationLibrary;
         this._fixNameCollection = [];
 
         this._icao = '';
@@ -57,7 +57,7 @@ export default class AirwayModel {
 
     _verifyFixNamesExistInNavigationLibrary(fixNames) {
         _forEach(fixNames, (fixName) => {
-            if (!NavigationLibrary.hasFixName(fixName)) {
+            if (!this._navigationLibrary.hasFixName(fixName)) {
                 throw new TypeError(`Expected to find fix "${fixName}" for ` +
                     `airway "${this._icao}", but it is not a defined fix!`);
             }
@@ -89,7 +89,10 @@ export default class AirwayModel {
         }
 
         const fixNames = this._getFixNamesFromIndexToIndex(indexOfEntryFix, indexOfExitFix);
-        const waypointModels = _map(fixNames, (fixName) => new WaypointModel(fixName));
+        const waypointModels = _map(
+            fixNames,
+            (fixName) => new WaypointModel(fixName, this._navigationLibrary.fixCollection)
+        );
 
         return waypointModels;
     }

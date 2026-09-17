@@ -3,6 +3,7 @@ import sinon from 'sinon';
 import InputController from '../src/assets/scripts/client/InputController';
 import InputEventBindings from '../src/assets/scripts/client/input/InputEventBindings';
 import MeasurementInteraction from '../src/assets/scripts/client/input/MeasurementInteraction';
+import AircraftSelectionInteraction from '../src/assets/scripts/client/input/AircraftSelectionInteraction';
 import AutocompleteController from '../src/assets/scripts/client/ui/autocomplete/AutocompleteController';
 import CanvasStageModel from '../src/assets/scripts/client/canvas/CanvasStageModel';
 import MeasureTool from '../src/assets/scripts/client/measurement/MeasureTool';
@@ -314,4 +315,91 @@ ava.serial('control and escape keyboard routes delegate measurement lifecycle in
         'closeAllDialogs',
         'deselect'
     ]);
+});
+
+ava('._createAircraftSelectionInteraction() composes exact controller-owned dependencies', (t) => {
+    const controller = Object.create(InputController.prototype);
+    controller.input = {};
+    controller.$commandInput = {};
+    controller._eventBus = {};
+    controller._aircraftController = {};
+
+    const interaction = controller._createAircraftSelectionInteraction();
+
+    t.true(interaction instanceof AircraftSelectionInteraction);
+    t.is(interaction._inputState, controller.input);
+    t.is(interaction._commandInput, controller.$commandInput);
+    t.is(interaction._eventBus, controller._eventBus);
+    t.is(interaction._aircraftController, controller._aircraftController);
+    t.is(typeof interaction._legacyInputProvider, 'function');
+});
+
+ava.serial('constructor retains an explicitly supplied trailing aircraft-selection interaction', (t) => {
+    const inputInit = sinon.stub(InputController.prototype, '_init');
+    const autocompleteInit = sinon.stub(AutocompleteController.prototype, '_init');
+    const selectionInteraction = {};
+
+    try {
+        const controller = new InputController(
+            {}, {}, {}, {}, null, null, null, {}, {}, selectionInteraction
+        );
+
+        t.is(controller._selectionInteraction, selectionInteraction);
+    } finally {
+        inputInit.restore();
+        autocompleteInit.restore();
+    }
+});
+
+ava.serial('public aircraft-selection methods delegate through current controller callbacks', (t) => {
+    const inputInit = sinon.stub(InputController.prototype, '_init');
+    const autocompleteInit = sinon.stub(AutocompleteController.prototype, '_init');
+    const calls = [];
+    const aircraft = {};
+    const nextAircraft = {};
+    const selectionInteraction = {
+        deselect: (...args) => calls.push(['deselect', ...args]),
+        select: (...args) => calls.push(['select', ...args]),
+        selectByCallsign: (...args) => calls.push(['selectByCallsign', ...args]),
+        selectPrevious: (...args) => calls.push(['selectPrevious', ...args]),
+        selectNext: (...args) => calls.push(['selectNext', ...args])
+    };
+
+    try {
+        const controller = new InputController(
+            {}, {}, {}, {}, null, null, null, {}, {}, selectionInteraction
+        );
+
+        t.is(controller.deselectAircraft(), undefined);
+        t.is(controller.selectAircraft(aircraft), undefined);
+        t.is(controller.selectAircraftByCallsign('AAL1'), undefined);
+        t.is(controller.selectPreviousAircraft(), undefined);
+        t.is(controller.selectNextAircraft(), undefined);
+        t.deepEqual(calls.map(([name]) => name), [
+            'deselect',
+            'select',
+            'selectByCallsign',
+            'selectPrevious',
+            'selectNext'
+        ]);
+        t.is(calls[1][1], aircraft);
+        t.is(typeof calls[1][2], 'function');
+        t.is(calls[2][1], 'AAL1');
+        t.is(typeof calls[2][2], 'function');
+        t.is(typeof calls[3][1], 'function');
+        t.is(typeof calls[4][1], 'function');
+
+        calls[1][2]();
+        t.deepEqual(calls.at(-1), ['deselect']);
+
+        for (const callback of [calls[2][2], calls[3][1], calls[4][1]]) {
+            callback(nextAircraft);
+            t.is(calls.at(-1)[0], 'select');
+            t.is(calls.at(-1)[1], nextAircraft);
+            t.is(typeof calls.at(-1)[2], 'function');
+        }
+    } finally {
+        inputInit.restore();
+        autocompleteInit.restore();
+    }
 });

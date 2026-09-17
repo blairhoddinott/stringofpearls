@@ -27,6 +27,7 @@ This roadmap tracks the current direction of the project. The order may change a
     - [x] Extract the selected-aircraft compass and aircraft data blocks into an injected `AircraftAnnotationRenderer` while preserving their dynamic-render slots around aircraft targets.
     - [x] Extract browser input registration and teardown into an injected `InputEventBindings` boundary while preserving the inherited wheel, context-menu, and strip-click lifecycle behavior for a separate repair checkpoint.
     - [x] Extract measurement point conversion, snapping, lifecycle, and render invalidation into an injected `MeasurementInteraction` while retaining pointer and keyboard routing in `InputController`.
+    - [x] Extract aircraft selection, callsign lookup, command-input focus, selection events, and aircraft history navigation into an injected `AircraftSelectionInteraction` while retaining public controller routing methods.
 - [ ] Resume feature development on the modernized foundation
 
 ## Simulation and realism

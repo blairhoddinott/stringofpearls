@@ -13,9 +13,9 @@ import ScopeCommandModel from './commands/scopeCommand/ScopeCommandModel';
 import EventTracker from './EventTracker';
 import InputEventBindings from './input/InputEventBindings';
 import MeasurementInteraction from './input/MeasurementInteraction';
+import AircraftSelectionInteraction from './input/AircraftSelectionInteraction';
 import MeasureTool from './measurement/MeasureTool';
 import FixCollection from './navigationLibrary/FixCollection';
-import { clamp } from './math/core';
 import { EVENT } from './constants/eventNames';
 import { GAME_OPTION_NAMES } from './constants/gameOptionConstants';
 import { INVALID_NUMBER } from './constants/globalConstants';
@@ -48,8 +48,9 @@ export default class InputController {
      * @param clipboardAdapter {ClipboardAdapter} clipboard boundary used by the copy-coordinates command; optional
      * @param inputEventBindings {InputEventBindings} browser event-registration boundary; optional
      * @param measurementInteraction {MeasurementInteraction} measurement-input behavior; optional
+     * @param selectionInteraction {AircraftSelectionInteraction} aircraft selection/history behavior; optional
      */
-    constructor($element, aircraftController, scopeModel, assetLoader, clearStorageAndReload, reportError, clipboardAdapter, inputEventBindings = null, measurementInteraction = null) {
+    constructor($element, aircraftController, scopeModel, assetLoader, clearStorageAndReload, reportError, clipboardAdapter, inputEventBindings = null, measurementInteraction = null, selectionInteraction = null) {
         this.$element = $element;
         this.$body = null;
         this.$window = null;
@@ -88,6 +89,7 @@ export default class InputController {
             this._aircraftController,
             FixCollection
         );
+        this._selectionInteraction = selectionInteraction;
         this._autocompleteController = new AutocompleteController(
             this.$element,
             this,
@@ -117,6 +119,10 @@ export default class InputController {
         this.$window = $(window);
         this.$commandInput = this.$element.find(SELECTORS.DOM_SELECTORS.COMMAND);
         this.$canvases = this.$element.find(SELECTORS.DOM_SELECTORS.CANVASES);
+
+        if (this._selectionInteraction === null) {
+            this._selectionInteraction = this._createAircraftSelectionInteraction();
+        }
 
         this.setupHandlers();
 
@@ -175,6 +181,16 @@ export default class InputController {
         );
     }
 
+    _createAircraftSelectionInteraction() {
+        return new AircraftSelectionInteraction(
+            this.input,
+            this.$commandInput,
+            this._eventBus,
+            this._aircraftController,
+            () => prop.input
+        );
+    }
+
     /**
      * Disable all event handlers and destroy the instance
      *
@@ -194,6 +210,7 @@ export default class InputController {
     destroy() {
         this._inputEventBindings = null;
         this._measurementInteraction = null;
+        this._selectionInteraction = null;
         this.$element = null;
         this.$body = null;
         this.$window = null;
@@ -238,13 +255,7 @@ export default class InputController {
      * @method deselectAircraft
      */
     deselectAircraft() {
-        // TODO: Refactor out the prop
-        // using `prop` here so CanvasController knows which aircraft is selected
-        prop.input.callsign = '';
-        this.input.callsign = '';
-        this.$commandInput.val('');
-
-        this._eventBus.trigger(EVENT.DESELECT_AIRCRAFT, {});
+        this._selectionInteraction.deselect();
     }
 
 
@@ -348,23 +359,7 @@ export default class InputController {
      * @param aircraftModel {AircraftModel}
      */
     selectAircraft = (aircraftModel) => {
-        if (!aircraftModel || !aircraftModel.isControllable) {
-            this.deselectAircraft();
-
-            return;
-        }
-
-        // TODO: Refactor out the prop
-        // using `prop` here so CanvasController knows which aircraft is selected
-        prop.input.callsign = aircraftModel.callsign;
-        this.input.callsign = aircraftModel.callsign;
-        this.$commandInput.val(`${aircraftModel.callsign} `);
-
-        if (!this.$commandInput.is(':focus')) {
-            this.$commandInput.focus();
-        }
-
-        this._eventBus.trigger(EVENT.SELECT_AIRCRAFT, aircraftModel);
+        this._selectionInteraction.select(aircraftModel, () => this.deselectAircraft());
     };
 
     /**
@@ -375,9 +370,7 @@ export default class InputController {
      * @param callsign {string}
      */
     selectAircraftByCallsign = (callsign) => {
-        const aircraftModel = this._aircraftController.findAircraftByCallsign(callsign);
-
-        this.selectAircraft(aircraftModel);
+        this._selectionInteraction.selectByCallsign(callsign, (aircraftModel) => this.selectAircraft(aircraftModel));
     }
 
     /**
@@ -615,35 +608,13 @@ export default class InputController {
         return parentElement && this._isDialog(parentElement);
     }
 
-    /**
-     * @for InputController
-     * @method input_history_clamp
-     */
-    input_history_clamp() {
-        this.input.history_item = clamp(0, this.input.history_item, this.input.history.length - 1);
-    }
 
     /**
      * @for InputController
      * @method selectPreviousAircraft
      */
     selectPreviousAircraft() {
-        if (this.input.history.length === 0) {
-            return;
-        }
-
-        if (this.input.history_item == null) {
-            this.input.history.unshift(this.$commandInput.val());
-            this.input.history_item = 0;
-        }
-
-        this.input.history_item += 1;
-        this.input_history_clamp();
-
-        const callsign = this.input.history[this.input.history_item];
-        const aircraftModel = this._aircraftController.findAircraftByCallsign(callsign);
-
-        this.selectAircraft(aircraftModel);
+        this._selectionInteraction.selectPrevious((aircraftModel) => this.selectAircraft(aircraftModel));
     }
 
     /**
@@ -651,27 +622,7 @@ export default class InputController {
      * @method selectNextAircraft
      */
     selectNextAircraft() {
-        if (this.input.history.length === 0 || !this.input.history_item) {
-            return;
-        }
-
-        this.input.history_item -= 1;
-
-        if (this.input.history_item <= 0) {
-            this.$commandInput.val(this.input.history[0]);
-
-            this.input.history.splice(0, 1);
-            this.input.history_item = null;
-
-            return;
-        }
-
-        this.input_history_clamp();
-
-        const callsign = this.input.history[this.input.history_item];
-        const aircraftModel = this._aircraftController.findAircraftByCallsign(callsign);
-
-        this.selectAircraft(aircraftModel);
+        this._selectionInteraction.selectNext((aircraftModel) => this.selectAircraft(aircraftModel));
     }
 
     /**

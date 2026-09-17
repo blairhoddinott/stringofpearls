@@ -81,15 +81,15 @@ The application tests use [AVA 6][ava] with Babel 7 register on Node 24:
 npm test
 ```
 
-The current Phase 5 baseline reports 1,759 passing, 17 skipped, and 14 todo tests. [c8][c8] provides Node 24 coverage:
+The current Phase 5 baseline reports 1,774 passing, 17 skipped, and 14 todo tests. [c8][c8] provides Node 24 coverage:
 
 ```sh
 npm run test:coverage
 ```
 
-Coverage runs with `all: true`, verifies that all 144 eligible source modules appear under their real repository paths, and enforces regression floors of 68% statements/lines, 70% functions, and 90% branches. The current Phase 5 baseline measures 82.24% statements/lines, 75.61% functions, and 90.73% branches. Historical checkpoints remain recorded in the modernization audit. Generated reports are written to `coverage/`.
+Coverage runs with `all: true`, verifies that all 145 eligible source modules appear under their real repository paths, and enforces regression floors of 68% statements/lines, 70% functions, and 90% branches. The current Phase 5 baseline measures 82.45% statements/lines, 76.05% functions, and 90.81% branches. Historical checkpoints remain recorded in the modernization audit. Generated reports are written to `coverage/`.
 
-`npm run lint` uses ESLint 10 flat configuration and currently checks 343 JavaScript files across `src/`, `test/`, and `tools/`, including the lint configuration itself. The gate has a clean baseline with zero errors and zero warnings. Remaining dependency cycles are documented architecture debt and are intentionally outside this toolchain slice.
+`npm run lint` uses ESLint 10 flat configuration and currently checks 345 JavaScript files across `src/`, `test/`, and `tools/`, including the lint configuration itself. The gate has a clean baseline with zero errors and zero warnings. Remaining dependency cycles are documented architecture debt and are intentionally outside this toolchain slice.
 
 The generated application may also be served by the inherited [Express][express] server for local development. `npm run server:test` builds the application and verifies root/static-asset responses, missing paths, encoded traversal rejection, and clean server shutdown. Production uses the unprivileged NGINX runtime described in [`documentation/development/containers.md`](../documentation/development/containers.md).
 

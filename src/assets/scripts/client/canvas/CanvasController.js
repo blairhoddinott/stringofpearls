@@ -4,6 +4,7 @@ import _filter from 'lodash/filter';
 import _has from 'lodash/has';
 import _inRange from 'lodash/inRange';
 import AirportController from '../airport/AirportController';
+import AirportBackgroundRenderer from './AirportBackgroundRenderer';
 import AirportNavigationRenderer from './AirportNavigationRenderer';
 import AirportRunwayRenderer from './AirportRunwayRenderer';
 import CanvasHost from './CanvasHost';
@@ -15,10 +16,7 @@ import MeasureTool from '../measurement/MeasureTool';
 import NavigationLibrary from '../navigationLibrary/NavigationLibrary';
 import TimeKeeper from '../engine/TimeKeeper';
 import { tau } from '../math/circle';
-import {
-    round,
-    clamp
-} from '../math/core';
+import { round } from '../math/core';
 import {
     positive_intersection_with_rect,
     vectorize2dFromRadians,
@@ -37,14 +35,11 @@ import {
 import { THEME } from '../constants/themes';
 import { EVENT } from '../constants/eventNames';
 import {
-    INVALID_INDEX,
     INVALID_NUMBER,
     TIME
 } from '../constants/globalConstants';
 import { GAME_OPTION_NAMES } from '../constants/gameOptionConstants';
-import { leftPad } from '../utilities/generalUtilities';
 import {
-    DECIMAL_RADIX,
     degreesToRadians,
     km,
     nm
@@ -66,8 +61,9 @@ export default class CanvasController {
      * @param viewport {CanvasStageModel} viewport/camera dimensions, pan and zoom; nullish/omitted uses the shared singleton
      * @param runwayRenderer {AirportRunwayRenderer} airport runway presentation; nullish/omitted constructs a default
      * @param navigationRenderer {AirportNavigationRenderer} airport fix/procedure presentation; nullish/omitted constructs a default
+     * @param backgroundRenderer {AirportBackgroundRenderer} airport background presentation; nullish/omitted constructs a default
      */
-    constructor($element, aircraftController, scopeModel, storageAdapter, delayScheduler, renderScheduler, canvasHost, viewport, runwayRenderer, navigationRenderer) {
+    constructor($element, aircraftController, scopeModel, storageAdapter, delayScheduler, renderScheduler, canvasHost, viewport, runwayRenderer, navigationRenderer, backgroundRenderer) {
         /**
          * Reference to the `window` object
          *
@@ -154,6 +150,19 @@ export default class CanvasController {
         );
 
         /**
+         * Owns airport map, terrain, restricted-area, and airspace background rendering.
+         *
+         * @property _backgroundRenderer
+         * @type {AirportBackgroundRenderer}
+         * @private
+         */
+        this._backgroundRenderer = backgroundRenderer ?? new AirportBackgroundRenderer(
+            this._viewport,
+            () => AirportController.airport_get(),
+            () => GameController.getGameOption(GAME_OPTION_NAMES.RANGE_RINGS)
+        );
+
+        /**
          * Owns the browser-bound canvas DOM/context lifecycle.
          *
          * Nullish/omitted constructs a default host at this presentation
@@ -234,17 +243,6 @@ export default class CanvasController {
          * @default true
          */
         this._shouldDrawTerrain = true;
-
-        /**
-         * has a console.warn been output for terrain?
-         *
-         * This is meant for airport contributors designing new airports
-         *
-         * @property _hasSeenTerrainWarning
-         * @type {boolean}
-         * @default false
-         */
-        this._hasSeenTerrainWarning = false;
 
         /**
          * container property for the current canvas theme
@@ -463,15 +461,22 @@ export default class CanvasController {
             const staticCanvasCtx = this._getCanvasContextByName(CANVAS_NAME.STATIC);
 
             this._clearCanvasContext(staticCanvasCtx);
-            this._drawVideoMap(staticCanvasCtx);
-            this._drawTerrain(staticCanvasCtx);
-            this._drawRestrictedAirspace(staticCanvasCtx);
+            this._backgroundRenderer.drawVideoMap(staticCanvasCtx, this.theme);
+            this._backgroundRenderer.drawTerrain(staticCanvasCtx, this._shouldDrawTerrain, this.theme);
+            this._backgroundRenderer.drawRestrictedAirspace(
+                staticCanvasCtx,
+                this._shouldDrawRestrictedAreas,
+                this.theme
+            );
             this._runwayRenderer.drawRunways(staticCanvasCtx, this._shouldDrawFixLabels, this.theme);
             this._navigationRenderer.drawFixes(staticCanvasCtx, this._shouldDrawFixLabels, this.theme);
             this._navigationRenderer.drawSids(staticCanvasCtx, this._shouldDrawSidMap, this.theme);
             this._navigationRenderer.drawStars(staticCanvasCtx, this._shouldDrawStarMap, this.theme);
-            this._drawAirspaceAndRangeRings(staticCanvasCtx);
-            this._drawAirspaceShelvesAndLabels(staticCanvasCtx);
+            this._backgroundRenderer.drawAirspaceAndRangeRings(staticCanvasCtx, this.theme);
+            this._backgroundRenderer.drawAirspaceShelvesAndLabels(
+                staticCanvasCtx,
+                this._shouldDrawAirspace
+            );
             this._runwayRenderer.drawRunwayLabels(staticCanvasCtx, this._shouldDrawFixLabels, this.theme);
             this._drawCurrentScale(staticCanvasCtx);
         }
@@ -551,35 +556,6 @@ export default class CanvasController {
             offsetY + height + 17
         );
         cc.restore();
-    }
-
-    /**
-     * Draw the provided text at the specified relative position.
-     *
-     * This helper remains in the controller for airspace shelf labels. Procedure
-     * labels use the equivalent renderer-local helper.
-     *
-     * @param cc {HTMLCanvasContext}
-     * @param relativePosition {array<number, number>}
-     * @param labels {array}
-     * @param lineHeight {number}
-     * @returns undefined
-     * @private
-     */
-    _drawText(cc, relativePosition, labels, lineHeight = 15) {
-        const canvasPosition = this._viewport.calculateRoundedCanvasPositionFromRelativePosition(relativePosition);
-        let dx = cc.textAlign === 'right' ? -10 : 10;
-
-        if (cc.textAlign === 'center') {
-            dx = 0;
-        }
-
-        for (let i = 0; i < labels.length; i++) {
-            const drawCanvasPositionX = canvasPosition[0] + dx;
-            const drawCanvasPositionY = canvasPosition[1] + (lineHeight * i);
-
-            cc.fillText(labels[i], drawCanvasPositionX, drawCanvasPositionY);
-        }
     }
 
     /**
@@ -1421,28 +1397,6 @@ export default class CanvasController {
         cc.restore();
     }
 
-    /**
-     * Draw and fill all airspace boundaries, and draw range rings clipped to that area
-     *
-     * POSITIONING: Before calling this method, ensure NO TRANSLATION has occurred
-     *
-     * @for CanvasController
-     * @method _drawAirspaceAndRangeRings
-     * @param cc {HTMLCanvasContext}
-     * @returns undefined
-     * @private
-     */
-    _drawAirspaceAndRangeRings(cc) {
-        cc.save();
-
-        // translate to airport center
-        this._ccTranslateFromCanvasOriginToAirportCenter(cc);
-        this._drawAirspaceBorder(cc); // includes the .clip() used by ._drawRangeRings()
-        this._drawRangeRings(cc);
-
-        cc.restore();
-    }
-
     // TODO: To round, or not to round?
     /**
      * From the canvas origin, cc.translate() to the airport center, adjusting for user panning
@@ -1475,479 +1429,6 @@ export default class CanvasController {
             -round(this._viewport.halfWidth),
             -round(this._viewport.halfHeight)
         );
-    }
-
-    /**
-     * Draw range rings
-     *
-     * POSITIONING: Before calling this method, translate to the AIRPORT CENTER
-     *
-     * @for CanvasController
-     * @method _drawRangeRings
-     * @param cc {HTMLCanvasContext}
-     * @returns undefined
-     * @private
-     */
-    _drawRangeRings(cc) {
-        const airportModel = AirportController.airport_get();
-        const centerCanvasPosition = this._viewport.calculatePreciseCanvasPositionFromRelativePosition(
-            airportModel.rangeRings.center.relativePosition
-        );
-        const ringRadiusKm = this._calculateRangeRingRadiusKm(airportModel);
-
-        if (ringRadiusKm === 0) { // prevent infinite loop
-            return;
-        }
-
-        cc.save();
-
-        cc.linewidth = 1;
-        cc.strokeStyle = this.theme.SCOPE.RANGE_RING_COLOR;
-
-        // Fill up airportModel's ctr_radius with rings of the specified radius
-        for (let i = 1; i * ringRadiusKm < airportModel.ctr_radius * 3; i++) {
-            cc.beginPath();
-            cc.arc(...centerCanvasPosition, ringRadiusKm * this._viewport.scale * i, 0, tau());
-            cc.stroke();
-        }
-
-        cc.restore();
-    }
-
-    /**
-     * Draw polygonal airspace border
-     *
-     * POSITIONING: Before calling this method, translate to the AIRPORT CENTER
-     *
-     * @for CanvasController
-     * @method _drawAirspaceBorder
-     * @param cc {HTMLCanvasContext}
-     * @returns undefined
-     * @private
-     */
-    _drawAirspaceBorder(cc) {
-        cc.save();
-
-        const airport = AirportController.airport_get();
-        cc.strokeStyle = this.theme.SCOPE.AIRSPACE_PERIMETER;
-        cc.fillStyle = this.theme.SCOPE.AIRSPACE_FILL;
-
-        for (let i = 0; i < airport.airspace.length; i++) {
-            const airspace = airport.airspace[i];
-
-            this._drawRelativePoly(cc, airspace.relativePoly, true);
-        }
-
-        // this only includes the last polygon... and therefore does not support multiple
-        // airspace shelves, which are now supported elsewhere in the app. Removing for now.
-        // cc.clip();
-
-        cc.restore();
-    }
-
-    /**
-     * Draw individual airspace shelves, each labeled by index and altitude(s)
-     *
-     * POSITIONING: Before calling this method, ensure NO TRANSLATION has occurred
-     *
-     * @for CanvasController
-     * @method _drawAirspaceShelvesAndLabels
-     * @param cc {HTMLCanvasContext}
-     * @returns undefined
-     * @private
-     */
-    _drawAirspaceShelvesAndLabels(cc) {
-        if (!this._shouldDrawAirspace) {
-            return;
-        }
-
-        cc.save();
-
-        const airport = AirportController.airport_get();
-        cc.strokeStyle = 'rgba(224, 128, 128, 1.0)';
-        cc.fillStyle = 'rgba(224, 128, 128, 1.0)';
-        cc.font = '12px monoOne, monospace';
-        cc.textAlign = 'center';
-        cc.textBaseline = 'middle';
-
-        for (let i = 0; i < airport.airspace.length; i++) {
-            const airspace = airport.airspace[i];
-
-            cc.save(); // to allow reset of translation
-            // required positioning to use _drawPoly
-            this._ccTranslateFromCanvasOriginToAirportCenter(cc);
-            // draw lines
-            this._drawRelativePoly(cc, airspace.relativePoly, false);
-
-            const bottomFlightLevel = leftPad(Math.floor(airspace.floor / 100), 3);
-            const topFlightLevel = leftPad(Math.ceil(airspace.ceiling / 100), 3);
-            const content = `${bottomFlightLevel}-${topFlightLevel} (#${i})`;
-
-            cc.restore(); // reset from translation used for poly above
-            cc.save();
-            // required positioning to use _drawText
-            this._ccTranslateFromCanvasOriginToAirportCenter(cc);
-
-            // draw labels
-            for (const labelRelativePosition of airspace.labelRelativePositions) {
-                this._drawText(cc, labelRelativePosition, [content]);
-            }
-
-            cc.restore();
-        }
-
-        cc.restore();
-    }
-
-    /**
-     * Calculates the range ring radius
-     *
-     * Returns radius of 0 if rings should not be drawn
-     *
-     * @for CanvasController
-     * @method _calculateRangeRingRadiusKm
-     * @param airportModel {AirportModel}
-     * @returns {number} radius to use for range rings, in km
-     * @private
-     */
-    _calculateRangeRingRadiusKm(airportModel) {
-        const userValue = GameController.getGameOption(GAME_OPTION_NAMES.RANGE_RINGS);
-        const useDefault = userValue === 'default';
-        const defaultRangeRings = airportModel.rangeRings;
-
-        if (userValue === 'off' || (useDefault && defaultRangeRings.enabled === false)) {
-            return 0;
-        }
-
-        if (!useDefault) {
-            return km(parseInt(userValue, DECIMAL_RADIX));
-        }
-
-        return km(defaultRangeRings.radius_nm);
-    }
-
-    /**
-     * Draw the provided polygon to the specified canvas
-     *
-     * POSITIONING: Before calling this method, translate to the AIRPORT CENTER
-     *
-     * This method does not itself provide any specific color/width/etc properties. These must be
-     * set prior to calling this method.
-     *
-     * @for CanvasController
-     * @method _drawPoly
-     * @param cc {HTMLCanvasContext}
-     * @param relativePoly {array<array<number, number>>} an array of relative positions to draw as a polygon
-     * @param fill {boolean} whether to fill the polygon
-     * @returns undefined
-     * @private
-     */
-    _drawRelativePoly(cc, relativePoly, fill = true) {
-        cc.beginPath();
-
-        for (let i = 0; i < relativePoly.length; i++) {
-            const pointRelativePos = relativePoly[i];
-            const pointCanvasPos = this._viewport.calculateRoundedCanvasPositionFromRelativePosition(pointRelativePos);
-
-            cc.lineTo(...pointCanvasPos);
-        }
-
-        cc.closePath();
-        cc.stroke();
-
-        if (fill) {
-            cc.fill();
-        }
-    }
-
-    /**
-     * Draw terrain contours for a SPECIFIC elevation
-     *
-     * POSITIONING: Before calling this method, translate to the AIRPORT CENTER
-     *
-     * @for CanvasController
-     * @method _drawTerrainAtElevation
-     * @param cc {HTMLCanvasContext}
-     * @param terrainLevel {object}
-     * @param elevation {number} elevation, in ft
-     * @returns undefined
-     * @private
-     */
-    _drawTerrainAtElevation(cc, terrainLevel, elevation) {
-        // Here we use HSL colors instead of RGB to enable easier bulk adjustments
-        // to saturation/lightness of multiple elevation levels without the need
-        // to use web-based color tools
-        const color = `hsla(${this.theme.TERRAIN.COLOR[elevation]}`;
-
-        cc.save();
-
-        cc.strokeStyle = `${color}, ${this.theme.TERRAIN.BORDER_OPACITY})`;
-        cc.fillStyle = `${color}, ${this.theme.TERRAIN.FILL_OPACITY})`;
-
-        for (let i = 0; i < terrainLevel.length; i++) {
-            const terrainGroup = terrainLevel[i];
-
-            cc.beginPath();
-
-            for (let j = 0; j < terrainGroup.length; j++) {
-                const terrainItem = terrainGroup[j];
-
-                for (let k = 0; k < terrainItem.length; k++) {
-                    const canvasPosition = this._viewport.calculateRoundedCanvasPositionFromRelativePosition(terrainItem[k]);
-
-                    if (k === 0) { // .moveTo() to start the line
-                        cc.moveTo(...canvasPosition);
-                        // cc.moveTo(
-                        //     CanvasStageModel._translateKilometersToPixels(terrainItem[k][0]),
-                        //     -CanvasStageModel._translateKilometersToPixels(terrainItem[k][1])
-                        // );
-                    } else { // .lineTo() to draw a line segment
-                        cc.lineTo(...canvasPosition);
-                        // cc.lineTo(
-                        //     CanvasStageModel._translateKilometersToPixels(terrainItem[k][0]),
-                        //     -CanvasStageModel._translateKilometersToPixels(terrainItem[k][1])
-                        // );
-                    }
-                }
-
-                cc.closePath();
-            }
-
-            cc.fill();
-            cc.stroke();
-        }
-
-        cc.restore();
-    }
-
-    /**
-     * Draw the terrain legend in the upper right hand corner of the scope view
-     *
-     * POSITIONING: Before calling this method, translate to the AIRPORT CENTER
-     *
-     * @for CanvasController
-     * @method _drawTerrainElevationLegend
-     * @param  cc  {HTMLCanvasContext}
-     * @param max_elevation {number}
-     * @returns undefined
-     * @private
-     */
-    _drawTerrainElevationLegend(cc, max_elevation) {
-        cc.save();
-        cc.font = BASE_CANVAS_FONT;
-        cc.lineWidth = 1;
-
-        const offset = 10;
-        const { width } = this._viewport;
-        const { height } = this._viewport;
-        const box_width = 30;
-        const box_height = 5;
-
-        for (let i = 0; i <= max_elevation; i += 1000) {
-            cc.save();
-            // translate coordinates for every block to not use these X & Y twice in rect and text
-            // .5 in X and Y coordinates are used to make 1px rectangle fit exactly into 1 px
-            // and not be blurred
-            cc.translate(
-                width / 2 - 170 - (max_elevation - i) / 1000 * (box_width + 1),
-                -height / 2 + offset + 0.5
-            );
-            cc.beginPath();
-            cc.rect(0, 0, box_width - 1, box_height);
-            cc.closePath();
-
-            // in the map, terrain of higher levels has fill of all the lower levels
-            // so we need to fill it below exactly as in the map
-            for (let j = 0; j <= i; j += 1000) {
-                cc.fillStyle = `hsla(${this.theme.TERRAIN.COLOR[j]}, ${this.theme.TERRAIN.FILL_OPACITY})`;
-                cc.fill(); // 'rgba(32, 64, 72, 1.0)'
-            }
-
-            cc.strokeStyle = `hsla(${this.theme.TERRAIN.COLOR[i]}, ${this.theme.TERRAIN.BORDER_OPACITY})`;
-            cc.stroke();
-
-            // write elevation signs only for the outer elevations
-            const labeledAltitudes = [0, 5000, 10000, 15000, 20000, 25000, 30000].filter((alt) => {
-                return alt < max_elevation - 1001;
-            });
-
-            if (i === max_elevation || labeledAltitudes.indexOf(i) !== INVALID_INDEX) {
-                cc.fillStyle = this.theme.SCOPE.FIX_FILL;
-                cc.textAlign = 'center';
-                cc.textBaseline = 'top';
-                const text = i === 0 ? 'MSL' : `${i}'`;
-
-                cc.fillText(text, box_width / 2 + 0.5, offset + 2);
-            }
-
-            cc.restore();
-        }
-
-        cc.restore();
-    }
-
-    /**
-     * Draw all terrain contours and legend
-     *
-     * POSITIONING: Before calling this method, ensure NO TRANSLATION has occurred
-     *
-     * @for CanvasController
-     * @method _drawTerrain
-     * @param cc {HTMLCanvasContext}
-     * @returns undefined
-     * @private
-     */
-    _drawTerrain(cc) {
-        const airport = AirportController.airport_get();
-        const airportTerrain = airport.terrain;
-        let max_elevation = 0;
-
-        if (!this._shouldDrawTerrain || Object.keys(airportTerrain).length === 0) {
-            return;
-        }
-
-        cc.save();
-        this._ccTranslateFromCanvasOriginToAirportCenter(cc);
-        // Terrain key rectangles' outline stroke color
-        // Also determines color of terrain outline drawn at '0ft'
-        cc.strokeStyle = this.theme.SCOPE.FIX_FILL;
-        // Somehow used to tint the terrain key rectangles' fill color
-        // Also determines color of terrain fill at '0ft'
-        cc.fillStyle = this.theme.SCOPE.FIX_FILL;
-        cc.lineWidth = clamp(0.5, (this._viewport.scale / 10), 2);
-        cc.lineJoin = 'round';
-
-        for (const elevation in airportTerrain) {
-            // eslint-disable-next-line
-            if (!airportTerrain.hasOwnProperty(elevation)) {
-                continue;
-            }
-
-            const terrainLevel = airportTerrain[elevation];
-
-            if (elevation < 0 && !this._hasSeenTerrainWarning) {
-                console.warn(`${airport.icao}.geojson contains 'terrain' ` +
-                    ' below sea level, which is not supported!');
-
-                this._hasSeenTerrainWarning = true;
-
-                continue;
-            }
-
-            max_elevation = Math.max(max_elevation, elevation);
-
-            this._drawTerrainAtElevation(cc, terrainLevel, elevation);
-        }
-
-        if (max_elevation !== 0) {
-            this._drawTerrainElevationLegend(cc, max_elevation);
-        }
-
-        cc.restore();
-    }
-
-    /**
-     * Draw restricted airspace and labels
-     *
-     * POSITIONING: Before calling this method, ensure NO TRANSLATION has occurred
-     *
-     * @for CanvasController
-     * @method _drawRestrictedAirspace
-     * @param cc {HTMLCanvasContext}
-     * @returns undefined
-     * @private
-     */
-    _drawRestrictedAirspace(cc) {
-        if (!this._shouldDrawRestrictedAreas) {
-            return;
-        }
-
-        cc.save();
-        this._ccTranslateFromCanvasOriginToAirportCenter(cc);
-
-        cc.fillStyle = this.theme.SCOPE.RESTRICTED_AIRSPACE;
-        cc.strokeStyle = this.theme.SCOPE.RESTRICTED_AIRSPACE;
-        cc.lineWidth = Math.max(this._viewport.scale / 3, 2);
-        cc.lineJoin = 'round';
-        cc.font = BASE_CANVAS_FONT;
-        cc.textAlign = 'center';
-        cc.textBaseline = 'top';
-
-        const airportModel = AirportController.airport_get();
-
-        for (let i = 0; i < airportModel.restricted_areas.length; i++) {
-            const area = airportModel.restricted_areas[i];
-            const areaRelativePositions = area.poly;
-
-            this._drawRelativePoly(cc, areaRelativePositions, false);
-
-            const height = area.height === Infinity ? 'UNL' : `FL ${Math.ceil(area.height / 1000) * 10}`;
-
-            for (let j = 0; j < area.labelRelativePositions.length; j++) {
-                const canvasPosition = this._viewport.calculateRoundedCanvasPositionFromRelativePosition(
-                    area.labelRelativePositions[j]
-                );
-                let linePaddingPx = 0;
-
-                if (area.name) {
-                    linePaddingPx = 6;
-                    const nameLineCanvasPosition = [canvasPosition[0], canvasPosition[1] - linePaddingPx];
-
-                    cc.fillText(area.name, ...nameLineCanvasPosition);
-                }
-
-                const altLineCanvasPosition = [canvasPosition[0], canvasPosition[1] + linePaddingPx];
-
-                cc.fillText(height, ...altLineCanvasPosition);
-            }
-        }
-
-        cc.restore();
-    }
-
-    /**
-     * Draw all active video map(s)
-     *
-     * POSITIONING: Before calling this method, ensure NO TRANSLATION has occurred
-     *
-     * @for CanvasController
-     * @method _drawVideoMap
-     * @param cc {HTMLCanvasContext}
-     * @returns undefined
-     * @private
-     */
-    _drawVideoMap(cc) {
-        const airportModel = AirportController.airport_get();
-
-        // Don't bother with the canvas set up if the airport has no visible maps
-        if (!airportModel.mapCollection.hasVisibleMaps) {
-            return;
-        }
-
-        cc.save();
-        this._ccTranslateFromCanvasOriginToAirportCenter(cc);
-
-        cc.strokeStyle = this.theme.SCOPE.VIDEO_MAP;
-        cc.lineWidth = Math.max(1, this._viewport.scale / 15);
-        cc.lineJoin = 'round';
-        cc.font = BASE_CANVAS_FONT;
-
-        cc.beginPath();
-
-        const lines = airportModel.mapCollection.getVisibleMapLines();
-
-        lines.forEach((mapItem) => {
-            const startRelativePos = [mapItem[0], mapItem[1]];
-            const startCanvasPos = this._viewport.calculateRoundedCanvasPositionFromRelativePosition(startRelativePos);
-            const endRelativePos = [mapItem[2], mapItem[3]];
-            const endCanvasPos = this._viewport.calculateRoundedCanvasPositionFromRelativePosition(endRelativePos);
-
-            cc.moveTo(...startCanvasPos);
-            cc.lineTo(...endCanvasPos);
-        });
-
-        cc.stroke();
-        cc.restore();
     }
 
     // TODO: this method should be removed or reworked.

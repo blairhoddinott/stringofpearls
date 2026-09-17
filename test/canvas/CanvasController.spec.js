@@ -7,18 +7,19 @@ import CanvasRenderScheduler from '../../src/assets/scripts/client/canvas/Canvas
 import CanvasStageModel from '../../src/assets/scripts/client/canvas/CanvasStageModel';
 import { CANVAS_NAME } from '../../src/assets/scripts/client/constants/canvasConstants';
 import TimeKeeper from '../../src/assets/scripts/client/engine/TimeKeeper';
+import GameController from '../../src/assets/scripts/client/game/GameController';
 import NavigationLibrary from '../../src/assets/scripts/client/navigationLibrary/NavigationLibrary';
 
 const STATIC_DRAW_METHODS = [
-    '_drawVideoMap',
-    '_drawTerrain',
-    '_drawRestrictedAirspace',
+    'backgroundRenderer.drawVideoMap',
+    'backgroundRenderer.drawTerrain',
+    'backgroundRenderer.drawRestrictedAirspace',
     'runwayRenderer.drawRunways',
     'navigationRenderer.drawFixes',
     'navigationRenderer.drawSids',
     'navigationRenderer.drawStars',
-    '_drawAirspaceAndRangeRings',
-    '_drawAirspaceShelvesAndLabels',
+    'backgroundRenderer.drawAirspaceAndRangeRings',
+    'backgroundRenderer.drawAirspaceShelvesAndLabels',
     'runwayRenderer.drawRunwayLabels',
     '_drawCurrentScale'
 ];
@@ -54,6 +55,13 @@ const buildController = () => {
         drawFixes: () => calls.push(`${staticContext.name}:navigationRenderer.drawFixes`),
         drawSids: () => calls.push(`${staticContext.name}:navigationRenderer.drawSids`),
         drawStars: () => calls.push(`${staticContext.name}:navigationRenderer.drawStars`)
+    };
+    controller._backgroundRenderer = {
+        drawVideoMap: () => calls.push(`${staticContext.name}:backgroundRenderer.drawVideoMap`),
+        drawTerrain: () => calls.push(`${staticContext.name}:backgroundRenderer.drawTerrain`),
+        drawRestrictedAirspace: () => calls.push(`${staticContext.name}:backgroundRenderer.drawRestrictedAirspace`),
+        drawAirspaceAndRangeRings: () => calls.push(`${staticContext.name}:backgroundRenderer.drawAirspaceAndRangeRings`),
+        drawAirspaceShelvesAndLabels: () => calls.push(`${staticContext.name}:backgroundRenderer.drawAirspaceShelvesAndLabels`)
     };
 
     for (const methodName of STATIC_DRAW_METHODS.filter((name) => !name.includes('Renderer.'))) {
@@ -182,7 +190,71 @@ ava.serial('canvasUpdatePost() delegates fixes and procedures at their inherited
         t.true(calls.indexOf(`${CANVAS_NAME.STATIC}:runwayRenderer.drawRunways`) < calls.indexOf(`${CANVAS_NAME.STATIC}:navigation-fixes`));
         t.true(calls.indexOf(`${CANVAS_NAME.STATIC}:navigation-fixes`) < calls.indexOf(`${CANVAS_NAME.STATIC}:navigation-sids`));
         t.true(calls.indexOf(`${CANVAS_NAME.STATIC}:navigation-sids`) < calls.indexOf(`${CANVAS_NAME.STATIC}:navigation-stars`));
-        t.true(calls.indexOf(`${CANVAS_NAME.STATIC}:navigation-stars`) < calls.indexOf(`${CANVAS_NAME.STATIC}:_drawAirspaceAndRangeRings`));
+        t.true(calls.indexOf(`${CANVAS_NAME.STATIC}:navigation-stars`) < calls.indexOf(`${CANVAS_NAME.STATIC}:backgroundRenderer.drawAirspaceAndRangeRings`));
+    } finally {
+        shouldUpdate.restore();
+    }
+});
+
+ava.serial('canvasUpdatePost() delegates airport backgrounds at inherited order positions', (t) => {
+    const {
+        calls, controller, staticContext
+    } = buildController();
+    const shouldUpdate = sinon.stub(TimeKeeper, 'shouldUpdate').returns(false);
+
+    controller._backgroundRenderer = {
+        drawVideoMap: sinon.spy((context, theme) => {
+            t.is(context, staticContext);
+            t.is(theme, controller.theme);
+            calls.push(`${CANVAS_NAME.STATIC}:background-video`);
+        }),
+        drawTerrain: sinon.spy((context, enabled, theme) => {
+            t.is(context, staticContext);
+            t.is(enabled, controller._shouldDrawTerrain);
+            t.is(theme, controller.theme);
+            calls.push(`${CANVAS_NAME.STATIC}:background-terrain`);
+        }),
+        drawRestrictedAirspace: sinon.spy((context, enabled, theme) => {
+            t.is(context, staticContext);
+            t.is(enabled, controller._shouldDrawRestrictedAreas);
+            t.is(theme, controller.theme);
+            calls.push(`${CANVAS_NAME.STATIC}:background-restricted`);
+        }),
+        drawAirspaceAndRangeRings: sinon.spy((context, theme) => {
+            t.is(context, staticContext);
+            t.is(theme, controller.theme);
+            calls.push(`${CANVAS_NAME.STATIC}:background-airspace-rings`);
+        }),
+        drawAirspaceShelvesAndLabels: sinon.spy((context, enabled) => {
+            t.is(context, staticContext);
+            t.is(enabled, controller._shouldDrawAirspace);
+            calls.push(`${CANVAS_NAME.STATIC}:background-airspace-shelves`);
+        })
+    };
+
+    try {
+        controller.canvasUpdatePost();
+
+        const staticCalls = calls.filter((call) => call.startsWith(`${CANVAS_NAME.STATIC}:`));
+
+        t.deepEqual(staticCalls.slice(1, 6), [
+            `${CANVAS_NAME.STATIC}:background-video`,
+            `${CANVAS_NAME.STATIC}:background-terrain`,
+            `${CANVAS_NAME.STATIC}:background-restricted`,
+            `${CANVAS_NAME.STATIC}:runwayRenderer.drawRunways`,
+            `${CANVAS_NAME.STATIC}:navigationRenderer.drawFixes`
+        ]);
+        t.deepEqual(staticCalls.slice(8, 12), [
+            `${CANVAS_NAME.STATIC}:background-airspace-rings`,
+            `${CANVAS_NAME.STATIC}:background-airspace-shelves`,
+            `${CANVAS_NAME.STATIC}:runwayRenderer.drawRunwayLabels`,
+            `${CANVAS_NAME.STATIC}:_drawCurrentScale`
+        ]);
+        t.true(controller._backgroundRenderer.drawVideoMap.calledOnce);
+        t.true(controller._backgroundRenderer.drawTerrain.calledOnce);
+        t.true(controller._backgroundRenderer.drawRestrictedAirspace.calledOnce);
+        t.true(controller._backgroundRenderer.drawAirspaceAndRangeRings.calledOnce);
+        t.true(controller._backgroundRenderer.drawAirspaceShelvesAndLabels.calledOnce);
     } finally {
         shouldUpdate.restore();
     }
@@ -193,8 +265,8 @@ ava.serial('canvasUpdatePost() leaves a deep frame pending when a static rendere
     const shouldUpdate = sinon.stub(TimeKeeper, 'shouldUpdate').returns(false);
     const renderError = new Error('terrain render failed');
 
-    controller._drawTerrain = () => {
-        calls.push(`${CANVAS_NAME.STATIC}:_drawTerrain`);
+    controller._backgroundRenderer.drawTerrain = () => {
+        calls.push(`${CANVAS_NAME.STATIC}:backgroundRenderer.drawTerrain`);
         throw renderError;
     };
 
@@ -205,7 +277,7 @@ ava.serial('canvasUpdatePost() leaves a deep frame pending when a static rendere
         t.true(shouldUpdate.notCalled);
 
         calls.length = 0;
-        controller._drawTerrain = () => calls.push(`${CANVAS_NAME.STATIC}:_drawTerrain`);
+        controller._backgroundRenderer.drawTerrain = () => calls.push(`${CANVAS_NAME.STATIC}:backgroundRenderer.drawTerrain`);
         controller.canvasUpdatePost();
 
         t.deepEqual(calls, expectedInitialFrameCalls());
@@ -315,25 +387,6 @@ ava('destroy() delegates host teardown and restores an initial render plan', (t)
 // characterizations prove the coordinate/pan paths use the exact injected
 // viewport and that a default-created host is wired to that same viewport.
 
-ava('_drawText() remains available for non-navigation airspace labels', (t) => {
-    const controller = Object.create(CanvasController.prototype);
-    const context = { textAlign: 'right', fillText: sinon.spy() };
-    const relativePosition = [1, 2];
-
-    controller._viewport = {
-        calculateRoundedCanvasPositionFromRelativePosition: sinon.stub()
-            .withArgs(relativePosition).returns([100, 200])
-    };
-
-    const result = controller._drawText(context, relativePosition, ['ONE', 'TWO']);
-
-    t.is(result, undefined);
-    t.deepEqual(context.fillText.args, [
-        ['ONE', 90, 200],
-        ['TWO', 90, 215]
-    ]);
-});
-
 ava('_onCenterPointInView() pans the exact injected viewport, not the default singleton', (t) => {
     const controller = Object.create(CanvasController.prototype);
     const viewport = {
@@ -379,6 +432,7 @@ ava.serial('constructing without an explicit host builds a default CanvasHost ow
         t.is(controller._runwayRenderer._viewport, viewport);
         t.is(controller._navigationRenderer._viewport, viewport);
         t.is(controller._navigationRenderer._navigationLibrary, NavigationLibrary);
+        t.is(controller._backgroundRenderer._viewport, viewport);
         t.true(viewport.initStorage.calledOnce);
     } finally {
         initStub.restore();
@@ -393,6 +447,7 @@ ava.serial('an explicitly supplied host is retained unchanged while the viewport
     const explicitHost = { destroy: sinon.spy() };
     const runwayRenderer = {};
     const navigationRenderer = {};
+    const backgroundRenderer = {};
 
     const initStub = sinon.stub(CanvasController.prototype, '_init').returnsThis();
     const setupStub = sinon.stub(CanvasController.prototype, '_setupHandlers').returnsThis();
@@ -400,13 +455,15 @@ ava.serial('an explicitly supplied host is retained unchanged while the viewport
 
     try {
         const controller = new CanvasController(
-            $element, null, null, null, null, null, explicitHost, viewport, runwayRenderer, navigationRenderer
+            $element, null, null, null, null, null, explicitHost, viewport,
+            runwayRenderer, navigationRenderer, backgroundRenderer
         );
 
         t.is(controller._canvasHost, explicitHost);
         t.is(controller._viewport, viewport);
         t.is(controller._runwayRenderer, runwayRenderer);
         t.is(controller._navigationRenderer, navigationRenderer);
+        t.is(controller._backgroundRenderer, backgroundRenderer);
         t.true(viewport.initStorage.calledOnce);
     } finally {
         initStub.restore();
@@ -415,12 +472,13 @@ ava.serial('an explicitly supplied host is retained unchanged while the viewport
     }
 });
 
-ava.serial('a default runway renderer resolves the current airport lazily for each draw', (t) => {
+ava.serial('default airport renderers resolve live airport and range-ring state lazily', (t) => {
     const $element = $('<div></div>');
     const viewport = { initStorage: sinon.spy() };
     const firstAirport = {};
     const secondAirport = {};
     const airportGet = sinon.stub(AirportController, 'airport_get');
+    const getGameOption = sinon.stub(GameController, 'getGameOption').returns('off');
     const initStub = sinon.stub(CanvasController.prototype, '_init').returnsThis();
     const setupStub = sinon.stub(CanvasController.prototype, '_setupHandlers').returnsThis();
     const enableStub = sinon.stub(CanvasController.prototype, 'enable').returnsThis();
@@ -432,10 +490,13 @@ ava.serial('a default runway renderer resolves the current airport lazily for ea
         const controller = new CanvasController($element, null, null, null, null, null, null, viewport);
 
         t.is(controller._runwayRenderer._airportModelProvider(), firstAirport);
-        t.is(controller._runwayRenderer._airportModelProvider(), secondAirport);
+        t.is(controller._backgroundRenderer._airportProvider(), secondAirport);
+        t.is(controller._backgroundRenderer._rangeRingOptionProvider(), 'off');
         t.true(airportGet.calledTwice);
+        t.true(getGameOption.calledOnce);
     } finally {
         airportGet.restore();
+        getGameOption.restore();
         initStub.restore();
         setupStub.restore();
         enableStub.restore();

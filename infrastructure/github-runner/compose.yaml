@@ -1,0 +1,36 @@
+name: stringofpearls-github-runner
+
+services:
+  runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: stringofpearls-github-runner:2.337.0
+    init: true
+    network_mode: host
+    restart: unless-stopped
+    environment:
+      RUNNER_REPOSITORY_URL: https://github.com/blairhoddinott/stringofpearls
+      RUNNER_NAME: ${RUNNER_NAME:-stringofpearls-debian}
+      RUNNER_LABELS: stringofpearls-ci
+    group_add:
+      - "${DOCKER_GID:?Set DOCKER_GID to the group ID of /var/run/docker.sock}"
+    volumes:
+      - runner-state:/runner-state
+      - runner-work:/home/node/actions-runner/_work
+      - runner-diagnostics:/home/node/actions-runner/_diag
+      - /var/run/docker.sock:/var/run/docker.sock
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "5"
+
+volumes:
+  runner-state:
+  runner-work:
+  runner-diagnostics:

@@ -59,6 +59,7 @@ This roadmap tracks the current direction of the project. The order may change a
 - [ ] Create a maintainable submission and review process for new airports
 - [ ] Evaluate a leaderboard or other scoring system without turning the simulator into an arcade cabinet.
 
-## Deferred platform decisions
+## Platform and delivery
 
-- [ ] Choose a CI/CD execution model, provider, and budget after the local toolchain is stable.
+- [x] Run GitHub Actions on a dedicated, repository-scoped Docker runner for trusted pushes by the repository owner.
+- [ ] Choose production hosting, final-image scanning, and immutable image publication.

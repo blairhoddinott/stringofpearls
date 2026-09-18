@@ -154,21 +154,18 @@ docker compose config --quiet
 - generated assets use a cache lifetime of 512,000 seconds.
 - `.geojson` files are served as `application/json`.
 
-## Future automation contract
+## Automation contract
 
-CI/CD provider and runner decisions are intentionally deferred. Whatever automation is selected later can invoke the same repository-owned checks used locally:
+GitHub Actions uses the repository-owned Docker runner described in [Local GitHub Actions runner](self-hosted-runner.md). The runner invokes the same repository-owned checks used locally:
 
 1. install the npm 11 lockfile with `npm ci --ignore-scripts --no-audit --no-fund`;
-2. run `npm run build:test`;
-3. run `docker build --check .`;
-4. run `npm run docker:smoke`;
-5. run `npm run validator:test` and `npm run validate:assets`;
-6. run `npm run server:test` and `npm run audit:production`;
-7. run `npm run core:browser-free`;
-8. run `npm run browser:smoke`;
-9. build the `runtime` target with an immutable commit tag;
-10. scan the final image;
-11. publish only after tests and scanning pass.
+2. validate workflows with `actionlint` and both Dockerfiles with `docker build --check`;
+3. run full lint and strict contract checks;
+4. run `npm run build:test` on trusted branch pushes;
+5. add coverage, browser-free, asset, server, and production-audit contracts on `master` and manual runs;
+6. run `npm run docker:smoke` and `npm run browser:smoke` on `master` and manual runs.
+
+Production hosting, final-image scanning, immutable image publication, and deployment remain separate future delivery work. The current workflow does not claim to perform them.
 
 Both base images are pinned by digest in `Dockerfile`. Update the human-readable tag and digest together. The tags document intent; the digests determine what is actually built.
 

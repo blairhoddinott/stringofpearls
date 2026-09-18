@@ -1,0 +1,207 @@
+# Local GitHub Actions runner
+
+String of Pearls runs GitHub Actions only on a repository-scoped self-hosted runner. The supported runner host is a dedicated or disposable x86_64 Debian 13 server with Docker Engine and the Compose plugin.
+
+The runner container is built from repository-owned files. It uses the digest-pinned Node 24 image, GitHub Actions runner `2.337.0` verified against GitHub's published SHA-256 checksum, and Docker CLI/Compose copied from a digest-pinned official Docker image. No third-party runner image is used.
+
+## Trust model
+
+The workflow intentionally accepts work only when both `github.actor` and `github.triggering_actor` are `blairhoddinott`:
+
+- pushes to non-`master` branches run the fast branch checks;
+- pushes and merges to `master` run the full acceptance suite;
+- manual dispatches run the full acceptance suite on the selected ref;
+- events initiated or re-run by any other account are skipped before a job is assigned;
+- no GitHub-hosted runner label or fallback exists;
+- no `pull_request` or `pull_request_target` workflow executes contributor code.
+
+The actor check is deliberate for re-runs: GitHub distinguishes the account that triggered the original run from the account that initiated a re-run. Both must match.
+
+The container receives the host Docker socket because repository acceptance includes production-container and browser smoke tests. Access to that socket is effectively administrative access to the host. It also uses host networking so the runner can reach random loopback ports published by the production-container smoke test. Do not run this configuration on a server containing unrelated workloads, credentials, or valuable data.
+
+## 1. Install Docker on Debian 13
+
+If Docker Engine and the Compose plugin are already installed, skip to the verification commands. Otherwise, use Docker's official Debian repository:
+
+```sh
+sudo apt update
+sudo apt install --yes ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl --fail --silent --show-error --location \
+  https://download.docker.com/linux/debian/gpg \
+  --output /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+sudo tee /etc/apt/sources.list.d/docker.sources >/dev/null <<EOF
+Types: deb
+URIs: https://download.docker.com/linux/debian
+Suites: $(. /etc/os-release && echo "$VERSION_CODENAME")
+Components: stable
+Architectures: $(dpkg --print-architecture)
+Signed-By: /etc/apt/keyrings/docker.asc
+EOF
+
+sudo apt update
+sudo apt install --yes \
+  docker-ce \
+  docker-ce-cli \
+  containerd.io \
+  docker-buildx-plugin \
+  docker-compose-plugin
+sudo systemctl enable --now docker
+sudo usermod --append --groups docker "$USER"
+```
+
+Log out and back in after changing group membership. Membership in the `docker` group grants root-equivalent control of this dedicated host; do not grant it to untrusted accounts.
+
+Verify the host:
+
+```sh
+dpkg --print-architecture
+docker --version
+docker info
+docker compose version
+```
+
+The architecture must report `amd64`. The login account uses its `docker` group membership to run the host CLI. The runner container separately receives the socket's numeric group ID through Compose so its non-root `node` user can reach the same daemon.
+
+## 2. Clone the repository
+
+Choose a stable directory on the server:
+
+```sh
+sudo install --directory --owner "$USER" --group "$(id -gn)" /opt/stringofpearls-runner
+git clone https://github.com/blairhoddinott/stringofpearls.git /opt/stringofpearls-runner/repository
+cd /opt/stringofpearls-runner/repository/infrastructure/github-runner
+```
+
+Create a local Compose environment file containing only non-secret host configuration:
+
+```sh
+printf 'DOCKER_GID=%s\nRUNNER_NAME=%s\n' \
+  "$(stat --format='%g' /var/run/docker.sock)" \
+  "stringofpearls-debian" \
+  > .env
+```
+
+The repository ignores this `.env` file. Never add a registration token, personal access token, or runner credential to it.
+
+## 3. Build the runner image
+
+```sh
+docker compose build --pull runner
+```
+
+The build fails if the downloaded GitHub runner archive does not match its pinned checksum.
+
+## 4. Create the repository runner in GitHub
+
+1. Open `https://github.com/blairhoddinott/stringofpearls/settings/actions/runners`.
+2. Select **New self-hosted runner**.
+3. Select **Linux** and **x64**.
+4. Copy only the time-limited registration token shown by GitHub. Registration tokens expire after one hour.
+5. In the server shell, read the token without writing it to history or disk:
+
+```sh
+read -r -s -p 'GitHub runner registration token: ' REGISTRATION_TOKEN
+printf '\n'
+REGISTRATION_TOKEN="${REGISTRATION_TOKEN}" \
+  docker compose run --rm --env REGISTRATION_TOKEN runner configure
+unset REGISTRATION_TOKEN
+```
+
+The transient registration container is removed when configuration completes. Persistent runner credentials are stored in the `runner-state` Docker volume, not in the image, repository, Compose file, or ordinary container environment.
+
+## 5. Start and verify the runner
+
+```sh
+docker compose up --detach runner
+docker compose ps
+docker compose logs --follow --tail 100 runner
+```
+
+A healthy startup reports that it is connected and listening for jobs. In GitHub, the runner should appear **Idle** with the default `self-hosted`, `Linux`, and `X64` labels plus `stringofpearls-ci`.
+
+No inbound firewall rule or published runner port is required. The runner initiates outbound HTTPS connections to GitHub on port 443. Its host-network access exists only so repository smoke tests can reach containers that publish ephemeral ports on host loopback.
+
+## 6. Enable and test the workflow
+
+The workflow at `.github/workflows/local-ci.yml` routes every job to:
+
+```yaml
+runs-on: [self-hosted, linux, x64, stringofpearls-ci]
+```
+
+Push a commit as `blairhoddinott` to a non-`master` branch. The **Branch checks** job should run on `stringofpearls-debian`. It installs the exact npm lockfile and runs workflow, Dockerfile, whitespace, lint, strict-contract, and deterministic-build checks.
+
+A push or merge to `master`, or a manual **Run workflow** action, starts **Master acceptance**. That job adds coverage, browser-free validation, aviation validation, deterministic build and server contracts, the production dependency audit, production-container smoke, and browser acceptance.
+
+Manual re-runs by any account other than `blairhoddinott` are skipped. Automated merges performed under another actor are also skipped by design.
+
+## 7. Protect `master`
+
+In **Settings → Rules → Rulesets**, create a branch ruleset targeting `master`:
+
+- require a pull request before merging;
+- block force pushes;
+- block branch deletion;
+- require signed commits;
+- after the workflow has completed once, require the `Branch checks` status for pull-request commits if desired.
+
+The local `Master acceptance` job runs after merge. It is post-merge verification, not a pre-merge status check. The branch-push `Branch checks` job is the pre-merge signal for branches pushed by `blairhoddinott`.
+
+## Operations
+
+Check status and recent logs:
+
+```sh
+cd /opt/stringofpearls-runner/repository/infrastructure/github-runner
+docker compose ps
+docker compose logs --tail 200 runner
+```
+
+Restart without re-registering:
+
+```sh
+docker compose restart runner
+```
+
+Update repository configuration and rebuild:
+
+```sh
+git fetch origin
+git checkout master
+git pull --ff-only origin master
+docker compose build --pull runner
+docker compose up --detach runner
+```
+
+Periodically remove unused build cache and images on the dedicated runner host:
+
+```sh
+docker builder prune --filter until=168h
+docker image prune --filter until=168h
+```
+
+The Compose service rotates its own JSON logs at 10 MiB and retains five files. Review disk usage before pruning; these commands remove only unused cache and images, not active containers or named runner volumes.
+
+The runner is registered with `--disableupdate`; updates are delivered by rebuilding the pinned image. GitHub requires disabled-update runners to be updated within 30 days of a new runner release, and can stop routing jobs to an outdated runner sooner for a critical security update.
+
+To retire the runner:
+
+1. Remove it in **Settings → Actions → Runners**.
+2. Stop it and delete its credentials, work directory, and diagnostics:
+
+```sh
+docker compose down --volumes --remove-orphans
+```
+
+Do not delete the volumes before removing the runner in GitHub unless the intent is to abandon that registration.
+
+## References
+
+- [GitHub: Self-hosted runners](https://docs.github.com/en/actions/concepts/runners/self-hosted-runners)
+- [GitHub: Adding self-hosted runners](https://docs.github.com/en/actions/how-tos/manage-runners/self-hosted-runners/add-runners)
+- [GitHub: Self-hosted runner reference](https://docs.github.com/en/actions/reference/runners/self-hosted-runners)
+- [GitHub: Contexts reference](https://docs.github.com/en/actions/reference/workflows-and-actions/contexts)
+- [Docker: Install Docker Engine on Debian](https://docs.docker.com/engine/install/debian/)

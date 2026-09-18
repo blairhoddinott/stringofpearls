@@ -19,7 +19,7 @@ docker compose up --build app
 
 Open http://localhost:3003.
 
-For the source-mounted development image, runtime hardening details, health checks, and future automation commands, see [Container development and deployment](documentation/development/containers.md).
+For the source-mounted development image, runtime hardening details, health checks, and automation details, see [Container development and deployment](documentation/development/containers.md).
 
 ## Traffic mode
 
@@ -39,6 +39,7 @@ The selected mode remains active when traffic is reset or the airport changes. R
 - [Airport file standards](documentation/airport-file-standards.md)
 - [Event tracking and privacy](documentation/event-tracking.md)
 - [Supported browsers](documentation/development/supported-browsers.md)
+- [Local GitHub Actions runner](documentation/development/self-hosted-runner.md)
 
 ## Development
 
@@ -116,9 +117,10 @@ The canonical roadmap lives at [documentation/development/roadmap.md](documentat
 - [ ] Create a maintainable submission and review process for new airports
 - [ ] Evaluate a leaderboard or other scoring system without turning the simulator into an arcade cabinet
 
-### Deferred platform decisions
+### Platform and delivery
 
-- [ ] Choose a CI/CD execution model, provider, and budget after the local toolchain is stable
+- [x] Run GitHub Actions on a dedicated, repository-scoped Docker runner
+- [ ] Choose production hosting, image scanning, and immutable image publication
 
 ## Contributing
 

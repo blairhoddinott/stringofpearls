@@ -24,7 +24,7 @@ FROM nginxinc/nginx-unprivileged:${NGINX_VERSION} AS runtime
 LABEL org.opencontainers.image.title="String of Pearls" \
       org.opencontainers.image.description="Browser-based air traffic control simulator" \
       org.opencontainers.image.source="https://github.com/blairhoddinott/stringofpearls"
-COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --chmod=0644 docker/nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build --chown=101:101 /workspace/public/ /usr/share/nginx/html/
 EXPOSE 8080
 HEALTHCHECK --interval=10s --timeout=3s --start-period=5s --retries=3 \

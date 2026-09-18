@@ -81,7 +81,7 @@ The canonical roadmap lives at [documentation/development/roadmap.md](documentat
 - [x] Add an automated browser startup and airport-selection smoke test
 - [x] Replace the legacy JavaScript build toolchain and adopt Node 24
 - [x] Modernize the application architecture through the Phase 5 boundary decomposition
-- [ ] Resume feature development on the modernized foundation
+- [x] Resume feature development on the modernized foundation
 
 ### Simulation and realism
 
@@ -91,7 +91,7 @@ The canonical roadmap lives at [documentation/development/roadmap.md](documentat
 - [ ] Model service to smaller airports in the surrounding area
 - [ ] Add operational holding instructions
 - [ ] Divide airspace into sectors and allow users to work selected sectors where the model makes sense
-- [ ] Separate arrival and departure positions so users can work either position or combine both
+- [x] Let users choose arrivals, departures, or both for the current simulator session
 
 ### Voice and interaction
 

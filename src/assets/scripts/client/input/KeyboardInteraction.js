@@ -209,7 +209,10 @@ export default class KeyboardInteraction {
     }
 
     _isDialog(element) {
-        if (element.classList.contains(CLASSNAMES.DIALOG)) {
+        if (
+            element.classList.contains(CLASSNAMES.DIALOG) ||
+            (typeof element.getAttribute === 'function' && element.getAttribute('role') === 'dialog')
+        ) {
             return true;
         }
 

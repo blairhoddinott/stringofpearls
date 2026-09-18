@@ -16,6 +16,8 @@ import NavigationLibrary from './navigationLibrary/NavigationLibrary';
 import ScopeModel from './scope/ScopeModel';
 import SpawnPatternCollection from './trafficGenerator/SpawnPatternCollection';
 import SpawnScheduler from './trafficGenerator/SpawnScheduler';
+import TrafficModeStartup from './trafficGenerator/TrafficModeStartup';
+import TrafficModeSelectionView from './ui/TrafficModeSelectionView';
 import UiController from './ui/UiController';
 import ScoreController from './game/ScoreController';
 import { speech_init } from './speech';
@@ -139,6 +141,8 @@ export default class AppController {
         this.inputController = null;
         this.canvasController = null;
         this.changelogController = null;
+        this.trafficModeSelectionView = null;
+        this.trafficModeStartup = null;
 
         return this._init()
             .setupHandlers()
@@ -200,6 +204,10 @@ export default class AppController {
      */
     destroy() {
         // TODO: add static class.destroy() here
+        if (this.trafficModeStartup) {
+            this.trafficModeStartup.destroy();
+        }
+
         this.$element = null;
         this._assetLoader = null;
         this.$canvasesElement = null;
@@ -210,6 +218,8 @@ export default class AppController {
         this.airportGuideController = null;
         this.inputController = null;
         this.canvasController = null;
+        this.trafficModeSelectionView = null;
+        this.trafficModeStartup = null;
 
         return this;
     }
@@ -286,8 +296,6 @@ export default class AppController {
         );
         this.scoreController = new ScoreController(this.aircraftController);
 
-        SpawnScheduler.init(this.aircraftController);
-
         // TEMPORARY!
         // some instances are attached to the window here as an intermediate step away from global functions.
         // this allows for any module file to call window.{module}.{method} and will make the transition to
@@ -332,6 +340,11 @@ export default class AppController {
         );
 
         this.updateViewControls();
+
+        this.trafficModeSelectionView = new TrafficModeSelectionView(
+            this.$element.find(SELECTORS.DOM_SELECTORS.TRAFFIC_MODE_SELECTION)
+        );
+        this.trafficModeStartup = new TrafficModeStartup(this.trafficModeSelectionView, SpawnScheduler);
     }
 
     /**
@@ -377,6 +390,7 @@ export default class AppController {
         GameController.complete();
         this.canvasController.canvas_complete();
         UiController.ui_complete();
+        this.trafficModeStartup.start(this.aircraftController);
     }
 
     /**

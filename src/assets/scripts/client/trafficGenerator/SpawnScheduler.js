@@ -2,7 +2,9 @@ import _forEach from 'lodash/forEach';
 import SpawnPatternCollection from './SpawnPatternCollection';
 import TimeKeeper from '../engine/TimeKeeper';
 import GameController from '../game/GameController';
+import { FLIGHT_CATEGORY } from '../constants/aircraftConstants';
 import { INVALID_NUMBER } from '../constants/globalConstants';
+import TrafficMode from './TrafficMode';
 
 const LEGACY_TIMER_QUEUE = {
     scheduleTimeout: (...args) => GameController.game_timeout(...args),
@@ -25,16 +27,19 @@ export class SpawnSchedulerClass {
      * @param clock {TimeKeeper|SimulationClock}
      * @param timerQueue {object}
      * @param aircraftController {AircraftController|null} [optional]
+     * @param trafficMode {TrafficMode} [optional]
      */
     constructor(
         spawnPatternCollection = SpawnPatternCollection,
         clock = TimeKeeper,
         timerQueue = LEGACY_TIMER_QUEUE,
-        aircraftController = null
+        aircraftController = null,
+        trafficMode = new TrafficMode()
     ) {
         this._spawnPatternCollection = spawnPatternCollection;
         this._clock = clock;
         this._timerQueue = timerQueue;
+        this._trafficMode = trafficMode;
 
         /**
          * @property _aircraftController
@@ -63,6 +68,10 @@ export class SpawnSchedulerClass {
         return this;
     }
 
+    selectTrafficMode(trafficMode) {
+        return this._trafficMode.select(trafficMode);
+    }
+
     /**
      * Starts the scheduler and prespawns departures
      *
@@ -85,6 +94,10 @@ export class SpawnSchedulerClass {
      */
     createSchedulesFromList() {
         _forEach(this._spawnPatternCollection.spawnPatternModels, (spawnPatternModel) => {
+            if (!this._trafficMode.allows(spawnPatternModel.category)) {
+                return;
+            }
+
             // set the #cycleStartTime for this `spawnPatternModel` with current game time
             spawnPatternModel.cycleStart(this._clock.accumulatedDeltaTime);
             spawnPatternModel.scheduleId = this.createNextSchedule(spawnPatternModel);
@@ -101,11 +114,14 @@ export class SpawnSchedulerClass {
      * @method resetAirborneTraffic
      */
     resetAirborneTraffic() {
-        this._spawnPatternCollection.spawnPatternModels.filter((s) => s.isAirborneAtSpawn()).forEach((spawnPatternModel) => {
-            spawnPatternModel.preSpawnAircraftList = [];
-            spawnPatternModel.createPreSpawnAircraft(this._aircraftController);
-            this.resetTimer(spawnPatternModel);
-        });
+        this._spawnPatternCollection.spawnPatternModels
+            .filter((spawnPatternModel) => this._trafficMode.allows(spawnPatternModel.category))
+            .filter((spawnPatternModel) => spawnPatternModel.isAirborneAtSpawn())
+            .forEach((spawnPatternModel) => {
+                spawnPatternModel.preSpawnAircraftList = [];
+                spawnPatternModel.createPreSpawnAircraft(this._aircraftController);
+                this.resetTimer(spawnPatternModel);
+            });
     }
 
     /**
@@ -121,6 +137,10 @@ export class SpawnSchedulerClass {
      * @method createPreSpawnDepartures
      */
     createPreSpawnDepartures() {
+        if (!this._trafficMode.allows(FLIGHT_CATEGORY.DEPARTURE)) {
+            return;
+        }
+
         const departureModelsToPreSpawn = this._spawnPatternCollection.getDepartureModelsForPreSpawn();
 
         for (let i = 0; i < departureModelsToPreSpawn.length; i++) {
@@ -161,6 +181,10 @@ export class SpawnSchedulerClass {
             const timerStart = spawnPatternModel.scheduleId[1] - spawnPatternModel.scheduleId[3];
             timePassed = this._clock.accumulatedDeltaTime - timerStart;
             spawnPatternModel.scheduleId = null;
+        }
+
+        if (!this._trafficMode.allows(spawnPatternModel.category)) {
+            return;
         }
 
         if (spawnPatternModel.rate <= 0) {
@@ -215,6 +239,12 @@ export class SpawnSchedulerClass {
     createAircraftAndRegisterNextTimeout = (...args) => {
         const spawnPatternModel = args[0][0];
         const aircraftController = args[0][1];
+
+        if (!this._trafficMode.allows(spawnPatternModel.category)) {
+            spawnPatternModel.scheduleId = null;
+
+            return;
+        }
 
         aircraftController.createAircraftWithSpawnPatternModel(spawnPatternModel);
 

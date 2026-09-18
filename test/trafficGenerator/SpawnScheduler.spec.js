@@ -8,6 +8,7 @@ import { EventBusClass } from '../../src/assets/scripts/client/lib/EventBus';
 import { NavigationLibraryClass } from '../../src/assets/scripts/client/navigationLibrary/NavigationLibrary';
 import SpawnScheduler, { SpawnSchedulerClass } from '../../src/assets/scripts/client/trafficGenerator/SpawnScheduler';
 import SpawnPatternCollection from '../../src/assets/scripts/client/trafficGenerator/SpawnPatternCollection';
+import TrafficMode, { TRAFFIC_MODE } from '../../src/assets/scripts/client/trafficGenerator/TrafficMode';
 import {
     AIRCRAFT_DEFINITION_LIST_MOCK,
     DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK
@@ -199,6 +200,163 @@ ava('.resetTimer() destroys existing timers but does not create a new spawn sche
 
     destroyTimerStub.restore();
     getNextDelayValueStub.restore();
+});
+
+ava('.createSchedulesFromList() schedules and pre-spawns only categories allowed by the traffic mode', (t) => {
+    const buildPattern = (category) => ({
+        category,
+        createPreSpawnAircraft: sinon.stub(),
+        cycleStart: sinon.stub(),
+        getNextDelayValue: sinon.stub().returns(10),
+        scheduleId: null
+    });
+    const arrival = buildPattern('arrival');
+    const departure = buildPattern('departure');
+    const overflight = buildPattern('overflight');
+    const trafficMode = new TrafficMode();
+    trafficMode.select(TRAFFIC_MODE.ARRIVALS);
+    const scheduler = new SpawnSchedulerClass(
+        { spawnPatternModels: [arrival, departure, overflight] },
+        { accumulatedDeltaTime: 25 },
+        { scheduleTimeout: sinon.stub().returns(['schedule']) },
+        aircraftControllerStub,
+        trafficMode
+    );
+
+    scheduler.createSchedulesFromList();
+
+    t.true(arrival.cycleStart.calledOnceWithExactly(25));
+    t.true(arrival.createPreSpawnAircraft.calledOnceWithExactly(aircraftControllerStub));
+    t.deepEqual(arrival.scheduleId, ['schedule']);
+    t.true(departure.cycleStart.notCalled);
+    t.true(departure.createPreSpawnAircraft.notCalled);
+    t.is(departure.scheduleId, null);
+    t.true(overflight.cycleStart.notCalled);
+    t.true(overflight.createPreSpawnAircraft.notCalled);
+    t.is(overflight.scheduleId, null);
+});
+
+ava('.createPreSpawnDepartures() does not inspect or create departures when the mode excludes them', (t) => {
+    const getDepartureModelsForPreSpawn = sinon.stub().returns([{ category: 'departure' }]);
+    const trafficMode = new TrafficMode();
+    const localAircraftController = {
+        createAircraftWithSpawnPatternModel: sinon.stub()
+    };
+    trafficMode.select(TRAFFIC_MODE.ARRIVALS);
+    const scheduler = new SpawnSchedulerClass(
+        { getDepartureModelsForPreSpawn },
+        { accumulatedDeltaTime: 0 },
+        { scheduleTimeout: sinon.stub() },
+        localAircraftController,
+        trafficMode
+    );
+
+    scheduler.createPreSpawnDepartures();
+
+    t.true(getDepartureModelsForPreSpawn.notCalled);
+    t.true(localAircraftController.createAircraftWithSpawnPatternModel.notCalled);
+});
+
+ava('.resetAirborneTraffic() leaves excluded airborne categories untouched', (t) => {
+    const buildAirbornePattern = (category) => ({
+        category,
+        createPreSpawnAircraft: sinon.stub(),
+        isAirborneAtSpawn: sinon.stub().returns(true),
+        preSpawnAircraftList: ['existing']
+    });
+    const arrival = buildAirbornePattern('arrival');
+    const overflight = buildAirbornePattern('overflight');
+    const trafficMode = new TrafficMode();
+    trafficMode.select(TRAFFIC_MODE.DEPARTURES);
+    const scheduler = new SpawnSchedulerClass(
+        { spawnPatternModels: [arrival, overflight] },
+        { accumulatedDeltaTime: 0 },
+        { scheduleTimeout: sinon.stub() },
+        aircraftControllerStub,
+        trafficMode
+    );
+    const resetTimer = sinon.stub(scheduler, 'resetTimer');
+
+    scheduler.resetAirborneTraffic();
+
+    t.deepEqual(arrival.preSpawnAircraftList, ['existing']);
+    t.true(arrival.createPreSpawnAircraft.notCalled);
+    t.deepEqual(overflight.preSpawnAircraftList, ['existing']);
+    t.true(overflight.createPreSpawnAircraft.notCalled);
+    t.true(resetTimer.notCalled);
+});
+
+ava('.resetTimer() destroys a stale excluded timer without spawning or rescheduling', (t) => {
+    const trafficMode = new TrafficMode();
+    trafficMode.select(TRAFFIC_MODE.ARRIVALS);
+    const destroyTimer = sinon.stub();
+    const scheduleTimeout = sinon.stub();
+    const localAircraftController = {
+        createAircraftWithSpawnPatternModel: sinon.stub()
+    };
+    const scheduler = new SpawnSchedulerClass(
+        { spawnPatternModels: [] },
+        { accumulatedDeltaTime: 20 },
+        { destroyTimer, scheduleTimeout },
+        localAircraftController,
+        trafficMode
+    );
+    const departure = {
+        category: 'departure',
+        getNextDelayValue: sinon.stub().returns(10),
+        rate: 5,
+        scheduleId: ['timer', 30, null, 10]
+    };
+
+    scheduler.resetTimer(departure);
+
+    t.true(destroyTimer.calledOnceWithExactly(['timer', 30, null, 10]));
+    t.is(departure.scheduleId, null);
+    t.true(departure.getNextDelayValue.notCalled);
+    t.true(localAircraftController.createAircraftWithSpawnPatternModel.notCalled);
+    t.true(scheduleTimeout.notCalled);
+});
+
+ava('.createAircraftAndRegisterNextTimeout() ignores a callback for a category excluded by the current mode', (t) => {
+    const trafficMode = new TrafficMode();
+    trafficMode.select(TRAFFIC_MODE.DEPARTURES);
+    const localAircraftController = {
+        createAircraftWithSpawnPatternModel: sinon.stub()
+    };
+    const scheduler = new SpawnSchedulerClass(
+        { spawnPatternModels: [] },
+        { accumulatedDeltaTime: 0 },
+        { scheduleTimeout: sinon.stub() },
+        localAircraftController,
+        trafficMode
+    );
+    const createNextSchedule = sinon.stub(scheduler, 'createNextSchedule');
+    const arrival = { category: 'arrival', scheduleId: ['expired'] };
+
+    scheduler.createAircraftAndRegisterNextTimeout([arrival, localAircraftController]);
+
+    t.true(localAircraftController.createAircraftWithSpawnPatternModel.notCalled);
+    t.true(createNextSchedule.notCalled);
+    t.is(arrival.scheduleId, null);
+});
+
+ava('.selectTrafficMode() delegates validation and returns the selected mode', (t) => {
+    const trafficMode = new TrafficMode();
+    const select = sinon.spy(trafficMode, 'select');
+    const scheduler = new SpawnSchedulerClass(
+        { spawnPatternModels: [] },
+        { accumulatedDeltaTime: 0 },
+        { scheduleTimeout: sinon.stub() },
+        aircraftControllerStub,
+        trafficMode
+    );
+
+    const result = scheduler.selectTrafficMode(TRAFFIC_MODE.DEPARTURES);
+
+    t.true(select.calledOnceWithExactly(TRAFFIC_MODE.DEPARTURES));
+    t.is(result, TRAFFIC_MODE.DEPARTURES);
+    t.is(trafficMode.value, TRAFFIC_MODE.DEPARTURES);
+    t.throws(() => scheduler.selectTrafficMode('invalid'), { instanceOf: RangeError });
 });
 
 // ava('.resetTimer() updates remaining time when timer has not yet expired', (t) => {

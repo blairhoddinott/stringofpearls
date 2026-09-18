@@ -145,14 +145,22 @@ ava('keydown() delegates active autocomplete with the exact event before command
     t.deepEqual(harness.calls, [['autocomplete', event]]);
 });
 
-ava('_isDialog() walks parents and recognizes only the inherited dialog class', (t) => {
+ava('_isDialog() walks parents and recognizes inherited and semantic dialogs', (t) => {
     const harness = buildHarness();
     const dialog = { classList: { contains: (name) => name === CLASSNAMES.DIALOG }, parentElement: null };
+    const semanticDialog = {
+        classList: { contains: () => false },
+        getAttribute: (name) => name === 'role' ? 'dialog' : null,
+        parentElement: null
+    };
+    const semanticChild = { classList: { contains: () => false }, parentElement: semanticDialog };
     const child = { classList: { contains: () => false }, parentElement: dialog };
     const outside = { classList: { contains: () => false }, parentElement: null };
 
     t.true(harness.interaction._isDialog(dialog));
     t.true(harness.interaction._isDialog(child));
+    t.true(harness.interaction._isDialog(semanticDialog));
+    t.true(harness.interaction._isDialog(semanticChild));
     t.falsy(harness.interaction._isDialog(outside));
 });
 

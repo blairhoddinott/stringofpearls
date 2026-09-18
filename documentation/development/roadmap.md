@@ -34,7 +34,7 @@ This roadmap tracks the current direction of the project. The order may change a
     - [x] Establish strict TypeScript `checkJs` contracts for the first two self-contained input boundaries without changing runtime syntax or weakening diagnostics.
     - [x] Record the UI framework decision: retain the current canvas/DOM stack and require a concrete isolated feature before any incremental framework pilot.
   - [ ] Expand strict TypeScript contracts through asset schemas, remaining adapters, commands/events, and domain DTOs as independently reviewed follow-on slices.
-- [ ] Resume feature development on the modernized foundation
+- [x] Resume feature development on the modernized foundation
 
 ## Simulation and realism
 
@@ -44,7 +44,7 @@ This roadmap tracks the current direction of the project. The order may change a
 - [ ] Model service to smaller airports in the surrounding area
 - [ ] Add operational holding instructions
 - [ ] Divide airspace into sectors and allow users to work selected sectors where the model makes sense
-- [ ] Separate arrival and departure positions so users can work either position or combine both
+- [x] Let users work arrivals, departures, or both, with traffic generation and flight-strip presentation matched to the selection
 
 ## Voice and interaction
 

@@ -21,6 +21,16 @@ Open http://localhost:3003.
 
 For the source-mounted development image, runtime hardening details, health checks, and future automation commands, see [Container development and deployment](documentation/development/containers.md).
 
+## Traffic mode
+
+Each browser session starts by asking whether you want to work **Arrivals**, **Departures**, or **Both**:
+
+- **Arrivals** generates arrival traffic and shows only arrival flight strips.
+- **Departures** generates departure traffic and shows only departure flight strips.
+- **Both** preserves the combined traffic flow and shows both flight-strip sections.
+
+The selected mode remains active when traffic is reset or the airport changes. Reloading the application starts a new session and asks for the mode again.
+
 ## Simulator documentation
 
 - [Command reference](documentation/commands.md)

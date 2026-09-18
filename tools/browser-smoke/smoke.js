@@ -43,6 +43,38 @@ async function main() {
         const response = await page.goto(baseUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
         assert(response && response.ok(), `startup returned HTTP ${response ? response.status() : 'no response'}`);
 
+        const trafficModeDialog = page.locator('#traffic-mode-selection');
+        await trafficModeDialog.waitFor({ state: 'visible', timeout: 30000 });
+        const trafficModeLabels = await trafficModeDialog.locator('[data-traffic-mode]').allTextContents();
+        assert.deepStrictEqual(trafficModeLabels, ['Arrivals', 'Departures', 'Both']);
+        assert.strictEqual(await page.locator(':focus').getAttribute('data-traffic-mode'), 'arrivals');
+        await page.keyboard.press('Enter');
+        await trafficModeDialog.waitFor({ state: 'hidden', timeout: 30000 });
+        await page.locator('.js-stripViewArrivals-section').waitFor({ state: 'visible' });
+        await page.locator('.js-stripViewDepartures-section').waitFor({ state: 'hidden' });
+
+        await page.reload({ waitUntil: 'domcontentloaded', timeout: 30000 });
+        await trafficModeDialog.waitFor({ state: 'visible', timeout: 30000 });
+        await trafficModeDialog.locator('[data-traffic-mode="departures"]').click();
+        await trafficModeDialog.waitFor({ state: 'hidden', timeout: 30000 });
+        await page.locator('.js-stripViewArrivals-section').waitFor({ state: 'hidden' });
+        await page.locator('.js-stripViewDepartures-section').waitFor({ state: 'visible' });
+
+        await page.reload({ waitUntil: 'domcontentloaded', timeout: 30000 });
+        await trafficModeDialog.waitFor({ state: 'visible', timeout: 30000 });
+        await page.keyboard.press('Tab');
+        assert.strictEqual(await page.locator(':focus').getAttribute('data-traffic-mode'), 'departures');
+        await page.keyboard.press('Tab');
+        assert.strictEqual(await page.locator(':focus').getAttribute('data-traffic-mode'), 'both');
+        await page.keyboard.press('Tab');
+        assert.strictEqual(await page.locator(':focus').getAttribute('data-traffic-mode'), 'arrivals');
+        await page.keyboard.press('Shift+Tab');
+        assert.strictEqual(await page.locator(':focus').getAttribute('data-traffic-mode'), 'both');
+        await page.keyboard.press('Enter');
+        await trafficModeDialog.waitFor({ state: 'hidden', timeout: 30000 });
+        await page.locator('.js-stripViewArrivals-section').waitFor({ state: 'visible' });
+        await page.locator('.js-stripViewDepartures-section').waitFor({ state: 'visible' });
+
         await page.waitForFunction(() => window.prop && window.prop.complete === true, null, { timeout: 30000 });
         await page.locator('.js-loadingView').waitFor({ state: 'hidden', timeout: 30000 });
 
@@ -71,7 +103,7 @@ async function main() {
         await page.locator(`.airport-list-item.mix-airport-list-item_isActive[data-icao="${targetAirport}"]`).waitFor({ state: 'visible' });
 
         assert.deepStrictEqual(errors, [], errors.join('\n'));
-        console.log(`Browser smoke test passed: startup, render frame, airport=${targetAirport}, uncaughtErrors=0`);
+        console.log(`Browser smoke test passed: traffic mode, startup, render frame, airport=${targetAirport}, uncaughtErrors=0`);
     } finally {
         await browser.close();
     }

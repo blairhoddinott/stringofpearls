@@ -21,6 +21,16 @@ Open http://localhost:3003.
 
 For the source-mounted development image, runtime hardening details, health checks, and future automation commands, see [Container development and deployment](documentation/development/containers.md).
 
+## Traffic mode
+
+Each browser session starts by asking whether you want to work **Arrivals**, **Departures**, or **Both**:
+
+- **Arrivals** generates arrival traffic and shows only arrival flight strips.
+- **Departures** generates departure traffic and shows only departure flight strips.
+- **Both** preserves the combined traffic flow and shows both flight-strip sections.
+
+The selected mode remains active when traffic is reset or the airport changes. Reloading the application starts a new session and asks for the mode again.
+
 ## Simulator documentation
 
 - [Command reference](documentation/commands.md)
@@ -81,7 +91,7 @@ The canonical roadmap lives at [documentation/development/roadmap.md](documentat
 - [x] Add an automated browser startup and airport-selection smoke test
 - [x] Replace the legacy JavaScript build toolchain and adopt Node 24
 - [x] Modernize the application architecture through the Phase 5 boundary decomposition
-- [ ] Resume feature development on the modernized foundation
+- [x] Resume feature development on the modernized foundation
 
 ### Simulation and realism
 
@@ -91,7 +101,7 @@ The canonical roadmap lives at [documentation/development/roadmap.md](documentat
 - [ ] Model service to smaller airports in the surrounding area
 - [ ] Add operational holding instructions
 - [ ] Divide airspace into sectors and allow users to work selected sectors where the model makes sense
-- [ ] Separate arrival and departure positions so users can work either position or combine both
+- [x] Let users choose arrivals, departures, or both for the current simulator session
 
 ### Voice and interaction
 

@@ -1,0 +1,102 @@
+.traffic-mode-selection {
+    align-items: center;
+    background-color: @dark-085;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    opacity: 0;
+    padding: @spacing-4x;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: opacity 0.25s ease, visibility 0s linear 0.25s;
+    visibility: hidden;
+    z-index: @trafficModeSelection-z;
+}
+
+.traffic-mode-selection.open {
+    opacity: 1;
+    pointer-events: auto;
+    transition-delay: 0s;
+    visibility: visible;
+}
+
+.traffic-mode-selection-panel {
+    background-color: @dark;
+    border: 6px solid @blue-medium;
+    border-radius: 8px;
+    box-shadow: 0 0 50px -10px rgba(0, 0, 0, 0.7);
+    box-sizing: border-box;
+    color: @light-gray;
+    max-width: 680px;
+    padding: @spacing-4x;
+    text-align: center;
+    width: 100%;
+}
+
+.traffic-mode-selection-title {
+    color: @white;
+    font-size: 170%;
+    font-weight: normal;
+    margin: 0 0 @spacing-2x;
+    text-transform: uppercase;
+}
+
+.traffic-mode-selection-intro {
+    color: @medium-light-gray;
+    margin: 0 0 @spacing-4x;
+}
+
+.traffic-mode-selection-options {
+    display: flex;
+    gap: @spacing-2x;
+}
+
+.traffic-mode-selection-option {
+    background-color: @blue-very-dark;
+    border: 2px solid @blue-medium;
+    border-radius: 4px;
+    color: @light-gray;
+    cursor: pointer;
+    flex: 1;
+    font-family: inherit;
+    font-size: 110%;
+    min-height: 54px;
+    padding: @spacing-2x @spacing-3x;
+    text-transform: uppercase;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.traffic-mode-selection-option:hover,
+.traffic-mode-selection-option:focus {
+    background-color: @blue-medium;
+    color: @white;
+    outline: none;
+}
+
+.mix-traffic-mode-selection-option_arrivals {
+    border-color: @arrival-accent;
+}
+
+.mix-traffic-mode-selection-option_departures {
+    border-color: @departure-accent;
+}
+
+.mix-traffic-mode-selection-option_both {
+    border-color: @blue;
+}
+
+.traffic-mode-selection-note {
+    color: @gray-40;
+    font-size: 85%;
+    font-style: italic;
+    margin: @spacing-3x 0 0;
+}
+
+@media screen and (max-width: 540px) {
+    .traffic-mode-selection-options {
+        flex-direction: column;
+    }
+}

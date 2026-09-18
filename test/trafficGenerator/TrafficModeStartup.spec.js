@@ -33,10 +33,38 @@ ava('.start() waits for a choice, then selects the mode before starting aircraft
     t.true(scheduler.init.calledOnceWithExactly(aircraftController));
 });
 
+ava('.start() applies strip visibility after mode validation and before generation starts', (t) => {
+    const calls = [];
+    let selectTrafficMode;
+    const view = {
+        show: (onSelect) => {
+            selectTrafficMode = onSelect;
+        }
+    };
+    const scheduler = {
+        selectTrafficMode: (mode) => calls.push(['select', mode]),
+        init: () => calls.push('init')
+    };
+    const stripView = {
+        apply: (mode) => calls.push(['strips', mode])
+    };
+    const startup = new TrafficModeStartup(view, scheduler, stripView);
+
+    startup.start({});
+    selectTrafficMode('arrivals');
+
+    t.deepEqual(calls, [
+        ['select', 'arrivals'],
+        ['strips', 'arrivals'],
+        'init'
+    ]);
+});
+
 ava('.destroy() hides the choice and releases its collaborators', (t) => {
     const view = { hide: sinon.stub() };
     const scheduler = {};
-    const startup = new TrafficModeStartup(view, scheduler);
+    const stripView = {};
+    const startup = new TrafficModeStartup(view, scheduler, stripView);
 
     const result = startup.destroy();
 
@@ -44,4 +72,5 @@ ava('.destroy() hides the choice and releases its collaborators', (t) => {
     t.true(view.hide.calledOnceWithExactly());
     t.is(startup._view, null);
     t.is(startup._scheduler, null);
+    t.is(startup._stripView, null);
 });

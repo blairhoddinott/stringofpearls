@@ -18,6 +18,7 @@ import SpawnPatternCollection from './trafficGenerator/SpawnPatternCollection';
 import SpawnScheduler from './trafficGenerator/SpawnScheduler';
 import TrafficModeStartup from './trafficGenerator/TrafficModeStartup';
 import TrafficModeSelectionView from './ui/TrafficModeSelectionView';
+import TrafficModeStripView from './ui/TrafficModeStripView';
 import UiController from './ui/UiController';
 import ScoreController from './game/ScoreController';
 import { speech_init } from './speech';
@@ -344,7 +345,15 @@ export default class AppController {
         this.trafficModeSelectionView = new TrafficModeSelectionView(
             this.$element.find(SELECTORS.DOM_SELECTORS.TRAFFIC_MODE_SELECTION)
         );
-        this.trafficModeStartup = new TrafficModeStartup(this.trafficModeSelectionView, SpawnScheduler);
+        const trafficModeStripView = new TrafficModeStripView(
+            this.$element.find(SELECTORS.DOM_SELECTORS.STRIP_VIEW_ARRIVALS_SECTION),
+            this.$element.find(SELECTORS.DOM_SELECTORS.STRIP_VIEW_DEPARTURES_SECTION)
+        );
+        this.trafficModeStartup = new TrafficModeStartup(
+            this.trafficModeSelectionView,
+            SpawnScheduler,
+            trafficModeStripView
+        );
     }
 
     /**

@@ -26,12 +26,31 @@
     text-align: center;
 }
 
+.stripView-sections {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.stripView-section {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.stripView-section[hidden] {
+    display: none;
+}
+
 .stripView-list {
     // LESS itself tries to evaluate calc(), using ~"" here to prevent that
     width: ~"calc(100% - " @spacing-2x ~")";
     overflow-y: scroll;
     list-style-type: none;
-    height: ~"calc(50% - 1.25em - 10px)";
+    flex: 1;
+    min-height: 0;
     display: flex;
     flex-direction: column;
 }

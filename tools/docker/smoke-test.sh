@@ -29,7 +29,8 @@ if [[ -z "${IMAGE_USER}" || "${IMAGE_USER}" == "0" || "${IMAGE_USER}" == "root" 
     exit 1
 fi
 
-CONTAINER_ID=$("${DOCKER[@]}" run --detach --rm --publish 127.0.0.1::8080 "${IMAGE_NAME}")
+# Keep an exited container available for diagnostics; the EXIT trap removes it.
+CONTAINER_ID=$("${DOCKER[@]}" run --detach --publish 127.0.0.1::8080 "${IMAGE_NAME}")
 
 for _ in $(seq 1 30); do
     HEALTH=$("${DOCKER[@]}" inspect --format '{{if .State.Health}}{{.State.Health.Status}}{{else}}{{.State.Status}}{{end}}' "${CONTAINER_ID}")

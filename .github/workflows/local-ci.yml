@@ -2,6 +2,12 @@ name: local-ci
 
 on:
   push:
+    branches-ignore:
+      - master
+  pull_request:
+    branches:
+      - master
+    types: [opened, synchronize, reopened, ready_for_review]
   workflow_dispatch:
 
 permissions:
@@ -17,8 +23,7 @@ jobs:
     if: >-
       github.actor == 'blairhoddinott' &&
       github.triggering_actor == 'blairhoddinott' &&
-      github.event_name == 'push' &&
-      github.ref != 'refs/heads/master'
+      github.event_name == 'push'
     runs-on: [self-hosted, linux, x64, stringofpearls-ci]
     timeout-minutes: 30
     steps:
@@ -40,6 +45,9 @@ jobs:
 
       - name: Validate GitHub Actions workflows
         run: actionlint -color
+
+      - name: Validate local CI policy
+        run: node tools/ci/validate-local-workflow-policy.js
 
       - name: Validate Dockerfiles
         run: |
@@ -71,7 +79,14 @@ jobs:
     if: >-
       github.actor == 'blairhoddinott' &&
       github.triggering_actor == 'blairhoddinott' &&
-      (github.ref == 'refs/heads/master' || github.event_name == 'workflow_dispatch')
+      (
+        github.event_name == 'workflow_dispatch' ||
+        (
+          github.event_name == 'pull_request' &&
+          github.event.pull_request.head.repo.full_name == github.repository &&
+          github.event.pull_request.user.login == 'blairhoddinott'
+        )
+      )
     runs-on: [self-hosted, linux, x64, stringofpearls-ci]
     timeout-minutes: 90
     steps:
@@ -93,6 +108,9 @@ jobs:
 
       - name: Validate GitHub Actions workflows
         run: actionlint -color
+
+      - name: Validate local CI policy
+        run: node tools/ci/validate-local-workflow-policy.js
 
       - name: Validate Dockerfiles
         run: |

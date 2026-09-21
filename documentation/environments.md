@@ -24,7 +24,7 @@ This is the closest local approximation of a future deployment. It uses the same
 
 ## CI
 
-GitHub Actions runs on a dedicated, repository-scoped Docker runner. Trusted branch pushes run lint, strict contracts, Dockerfile checks, and the deterministic build contract. Merges to `master` and manual runs add coverage, asset validation, server and production-audit contracts, production-container smoke, and browser acceptance.
+GitHub Actions runs on a dedicated, repository-scoped Docker runner. Trusted branch pushes run lint, strict contracts, Dockerfile checks, and the deterministic build contract. Pull requests into `master` and manual runs add coverage, asset validation, server and production-audit contracts, production-container smoke, and browser acceptance. The required `Master acceptance` pull-request check blocks merging when it fails; merging does not run the suite again.
 
 See [Local GitHub Actions runner](development/self-hosted-runner.md) for the runner trust model, installation, and operations. See [Container development and deployment](development/containers.md) for application-container commands and runtime details.
 

@@ -162,8 +162,9 @@ GitHub Actions uses the repository-owned Docker runner described in [Local GitHu
 2. validate workflows with `actionlint` and both Dockerfiles with `docker build --check`;
 3. run full lint and strict contract checks;
 4. run `npm run build:test` on trusted branch pushes;
-5. add coverage, browser-free, asset, server, and production-audit contracts on `master` and manual runs;
-6. run `npm run docker:smoke` and `npm run browser:smoke` on `master` and manual runs.
+5. add coverage, browser-free, asset, server, and production-audit contracts on trusted pull requests into `master` and manual runs;
+6. run `npm run docker:smoke` and `npm run browser:smoke` on those pull requests and manual runs;
+7. require the pull-request acceptance result before merge without rerunning it after merge.
 
 Production hosting, final-image scanning, immutable image publication, and deployment remain separate future delivery work. The current workflow does not claim to perform them.
 

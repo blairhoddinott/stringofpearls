@@ -128,7 +128,7 @@ No inbound firewall rule or published runner port is required. The runner initia
 
 ## 6. Enable and test the workflow
 
-The workflow at `.github/workflows/local-ci.yml` routes every job to:
+The push workflow at `.github/workflows/local-ci.yml` and the pull-request workflow at `.github/workflows/local-master-acceptance.yml` route every executing job to:
 
 ```yaml
 runs-on: [self-hosted, linux, x64, stringofpearls-ci]

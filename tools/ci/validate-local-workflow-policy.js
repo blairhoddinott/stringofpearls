@@ -6,8 +6,10 @@ const path = require('node:path');
 const yaml = require('js-yaml');
 
 const WORKFLOW_DIRECTORY = path.resolve(__dirname, '../../.github/workflows');
-const WORKFLOW_FILE = 'local-ci.yml';
-const APPROVED_WORKFLOW_DIGEST = '4a80ae857972a6068178e50cfd1d26e582335fd816f60b950cac2cbc70cff80c';
+const APPROVED_WORKFLOW_DIGESTS = Object.freeze({
+    'local-ci.yml': 'd1cb21439ad0703118a35e9f505ec3f05672fd2b6d0b3e7de7a188a86e55ad35',
+    'local-master-acceptance.yml': '41b3441713cc1cc0f8fa04b751086f8650d013b3f147f622e8cc2d8c23f8b6bc'
+});
 
 function canonicalize(value) {
     if (Array.isArray(value)) {
@@ -54,23 +56,28 @@ function workflowDigest(source) {
 }
 
 function validateWorkflowSet(workflows) {
+    const expectedFiles = Object.keys(APPROVED_WORKFLOW_DIGESTS).sort();
     const workflowFiles = Object.keys(workflows).sort();
 
-    if (workflowFiles.length !== 1 || workflowFiles[0] !== WORKFLOW_FILE) {
-        return [`workflow set must contain only ${WORKFLOW_FILE}; found ${workflowFiles.join(', ') || 'none'}`];
+    if (JSON.stringify(workflowFiles) !== JSON.stringify(expectedFiles)) {
+        return [`workflow set must contain exactly ${expectedFiles.join(', ')}; found ${workflowFiles.join(', ') || 'none'}`];
     }
 
-    try {
-        const digest = workflowDigest(workflows[WORKFLOW_FILE]);
+    const failures = [];
 
-        if (digest !== APPROVED_WORKFLOW_DIGEST) {
-            return [`workflow semantics do not match the approved policy: ${digest}`];
+    for (const file of expectedFiles) {
+        try {
+            const digest = workflowDigest(workflows[file]);
+
+            if (digest !== APPROVED_WORKFLOW_DIGESTS[file]) {
+                failures.push(`${file} semantics do not match the approved policy: ${digest}`);
+            }
+        } catch (error) {
+            failures.push(`${file} YAML is not allowed: ${error.message}`);
         }
-    } catch (error) {
-        return [`workflow YAML is not allowed: ${error.message}`];
     }
 
-    return [];
+    return failures;
 }
 
 function loadWorkflowSet(directory) {
@@ -89,64 +96,88 @@ function expectRejected(description, workflows, failures) {
     }
 }
 
+function replaceWorkflow(workflows, file, transform) {
+    return {
+        ...workflows,
+        [file]: transform(workflows[file])
+    };
+}
+
 function validateMutationResistance(workflows) {
     const failures = [];
-    const baseline = workflows[WORKFLOW_FILE];
+    const branchFile = 'local-ci.yml';
+    const acceptanceFile = 'local-master-acceptance.yml';
 
     expectRejected('extra workflow file', {
         ...workflows,
         'bypass.yml': 'name: bypass\non: pull_request\njobs: {}\n'
     }, failures);
 
-    expectRejected('extra expression-named required-context jobs with YAML spelling variants', {
-        [WORKFLOW_FILE]: `${baseline}\n${[
-            '  "spoof-branch":',
-            "    name: ${{ 'Branch checks' }}",
-            '    runs-on : ubuntu-latest',
-            '    steps: []',
-            '  "spoof-master":',
-            "    name: ${{ 'Master acceptance' }}",
-            '    runs-on : ubuntu-latest',
-            '    steps: []',
-            ''
-        ].join('\n')}`
-    }, failures);
+    const missingAcceptance = {...workflows};
+    delete missingAcceptance[acceptanceFile];
+    expectRejected('missing acceptance workflow', missingAcceptance, failures);
 
-    expectRejected('removed actor gates', {
-        [WORKFLOW_FILE]: baseline.replaceAll("github.actor == 'blairhoddinott' &&\n", '')
-    }, failures);
+    for (const file of [branchFile, acceptanceFile]) {
+        expectRejected(`extra expression-named required-context job in ${file}`, replaceWorkflow(
+            workflows,
+            file,
+            (baseline) => `${baseline}\n${[
+                '  "spoof-master":',
+                "    name: ${{ 'Master acceptance' }}",
+                '    runs-on : ubuntu-latest',
+                '    steps: []',
+                ''
+            ].join('\n')}`
+        ), failures);
 
-    expectRejected('neutralized same-repository gate', {
-        [WORKFLOW_FILE]: baseline.replaceAll(
+        expectRejected(`removed actor gates in ${file}`, replaceWorkflow(
+            workflows,
+            file,
+            (baseline) => baseline.replaceAll("github.actor == 'blairhoddinott' &&\n", '')
+        ), failures);
+
+        expectRejected(`external checkout override in ${file}`, replaceWorkflow(
+            workflows,
+            file,
+            (baseline) => baseline.replace(
+                '          fetch-depth: 0\n',
+                '          fetch-depth: 0\n          repository: attacker/untrusted\n'
+            )
+        ), failures);
+
+        expectRejected(`extra action with a spaced mapping key in ${file}`, replaceWorkflow(
+            workflows,
+            file,
+            (baseline) => baseline.replace(
+                '      - name: Verify runner toolchain\n',
+                '      - name: Untrusted action\n        uses : attacker/untrusted-action@0123456789abcdef0123456789abcdef01234567\n\n      - name: Verify runner toolchain\n'
+            )
+        ), failures);
+    }
+
+    expectRejected('neutralized same-repository gate', replaceWorkflow(
+        workflows,
+        acceptanceFile,
+        (baseline) => baseline.replace(
             'github.event.pull_request.head.repo.full_name == github.repository &&',
             '(true || github.event.pull_request.head.repo.full_name == github.repository) &&'
         )
-    }, failures);
+    ), failures);
 
-    expectRejected('external checkout override', {
-        [WORKFLOW_FILE]: baseline.replace(
-            '          fetch-depth: 0\n',
-            '          fetch-depth: 0\n          repository: attacker/untrusted\n'
-        )
-    }, failures);
+    expectRejected('duplicate mapping key', replaceWorkflow(
+        workflows,
+        branchFile,
+        (baseline) => baseline.replace('permissions:\n', 'permissions:\npermissions:\n')
+    ), failures);
 
-    expectRejected('extra action with whitespace before the mapping colon', {
-        [WORKFLOW_FILE]: baseline.replace(
-            '      - name: Verify runner toolchain\n',
-            '      - name: Untrusted action\n        uses : attacker/untrusted-action@0123456789abcdef0123456789abcdef01234567\n\n      - name: Verify runner toolchain\n'
-        )
-    }, failures);
-
-    expectRejected('duplicate mapping key', {
-        [WORKFLOW_FILE]: baseline.replace('permissions:\n', 'permissions:\npermissions:\n')
-    }, failures);
-
-    expectRejected('YAML anchor and alias', {
-        [WORKFLOW_FILE]: baseline.replace(
+    expectRejected('YAML anchor and alias', replaceWorkflow(
+        workflows,
+        acceptanceFile,
+        (baseline) => baseline.replace(
             'permissions:\n  contents: read\n',
             'permissions: &permissions\n  contents: read\npermissions-copy: *permissions\n'
         )
-    }, failures);
+    ), failures);
 
     return failures;
 }

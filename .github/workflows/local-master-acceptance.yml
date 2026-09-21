@@ -1,25 +1,35 @@
-name: local-ci
+name: local-master-acceptance
 
 on:
-  push:
-    branches-ignore:
+  pull_request:
+    branches:
       - master
+    types: [opened, synchronize, reopened, ready_for_review]
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: local-ci-${{ github.ref }}
+  group: local-master-acceptance-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  branch-checks:
-    name: Branch checks
+  master-checks:
+    name: Master acceptance
     if: >-
       github.actor == 'blairhoddinott' &&
-      github.triggering_actor == 'blairhoddinott'
+      github.triggering_actor == 'blairhoddinott' &&
+      (
+        github.event_name == 'workflow_dispatch' ||
+        (
+          github.event_name == 'pull_request' &&
+          github.event.pull_request.head.repo.full_name == github.repository &&
+          github.event.pull_request.user.login == 'blairhoddinott'
+        )
+      )
     runs-on: [self-hosted, linux, x64, stringofpearls-ci]
-    timeout-minutes: 30
+    timeout-minutes: 90
     steps:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -48,16 +58,8 @@ jobs:
           docker build --check .
           docker build --check --file infrastructure/github-runner/Dockerfile infrastructure/github-runner
 
-      - name: Check formatting and whitespace
-        env:
-          AFTER_SHA: ${{ github.sha }}
-          BEFORE_SHA: ${{ github.event.before }}
-        run: |
-          if [[ "${BEFORE_SHA}" =~ ^0+$ ]]; then
-            git diff --check "${AFTER_SHA}^" "${AFTER_SHA}"
-          else
-            git diff --check "${BEFORE_SHA}" "${AFTER_SHA}"
-          fi
+      - name: Run unit tests and coverage contract
+        run: npm run test:coverage
 
       - name: Lint source
         run: npm run lint
@@ -65,5 +67,23 @@ jobs:
       - name: Check strict contracts
         run: npm run typecheck:contracts
 
+      - name: Prove core services are browser-free
+        run: npm run core:browser-free
+
+      - name: Validate aviation assets
+        run: npm run validator:test && npm run validate:assets
+
       - name: Verify deterministic build
         run: npm run build:test
+
+      - name: Test production server
+        run: npm run server:test
+
+      - name: Audit production dependencies
+        run: npm run audit:production
+
+      - name: Smoke-test production container
+        run: npm run docker:smoke
+
+      - name: Run browser acceptance
+        run: npm run browser:smoke

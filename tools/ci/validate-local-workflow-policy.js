@@ -8,7 +8,8 @@ const yaml = require('js-yaml');
 const WORKFLOW_DIRECTORY = path.resolve(__dirname, '../../.github/workflows');
 const APPROVED_WORKFLOW_DIGESTS = Object.freeze({
     'local-ci.yml': 'd1cb21439ad0703118a35e9f505ec3f05672fd2b6d0b3e7de7a188a86e55ad35',
-    'local-master-acceptance.yml': '41b3441713cc1cc0f8fa04b751086f8650d013b3f147f622e8cc2d8c23f8b6bc'
+    'local-master-acceptance.yml': '41b3441713cc1cc0f8fa04b751086f8650d013b3f147f622e8cc2d8c23f8b6bc',
+    'local-release.yml': '5d5e1025e1598f04a50577b7081b63680d35658e525ee4973e07f269f89f64d5'
 });
 
 function canonicalize(value) {
@@ -107,6 +108,7 @@ function validateMutationResistance(workflows) {
     const failures = [];
     const branchFile = 'local-ci.yml';
     const acceptanceFile = 'local-master-acceptance.yml';
+    const releaseFile = 'local-release.yml';
 
     expectRejected('extra workflow file', {
         ...workflows,
@@ -117,7 +119,11 @@ function validateMutationResistance(workflows) {
     delete missingAcceptance[acceptanceFile];
     expectRejected('missing acceptance workflow', missingAcceptance, failures);
 
-    for (const file of [branchFile, acceptanceFile]) {
+    const missingRelease = {...workflows};
+    delete missingRelease[releaseFile];
+    expectRejected('missing release workflow', missingRelease, failures);
+
+    for (const file of [branchFile, acceptanceFile, releaseFile]) {
         expectRejected(`extra expression-named required-context job in ${file}`, replaceWorkflow(
             workflows,
             file,
@@ -162,6 +168,122 @@ function validateMutationResistance(workflows) {
             'github.event.pull_request.head.repo.full_name == github.repository &&',
             '(true || github.event.pull_request.head.repo.full_name == github.repository) &&'
         )
+    ), failures);
+
+    // --- release-workflow-specific mutations -------------------------------
+    // The release workflow is the only privileged, token-bearing workflow, so
+    // its trigger, guards, runner routing, permissions, and signed-release
+    // invocation are all pinned by the canonical digest and probed here.
+
+    expectRejected('release trigger moved off master push', replaceWorkflow(
+        workflows,
+        releaseFile,
+        (baseline) => baseline.replace(
+            'on:\n  push:\n    branches:\n      - master\n  workflow_dispatch:\n',
+            'on:\n  push:\n    branches:\n      - "*"\n  workflow_dispatch:\n'
+        )
+    ), failures);
+
+    expectRejected('release direct-master-push routed into branch CI', replaceWorkflow(
+        workflows,
+        branchFile,
+        (baseline) => baseline.replace(
+            'on:\n  push:\n    branches-ignore:\n      - master\n',
+            'on:\n  push:\n    branches:\n      - master\n'
+        )
+    ), failures);
+
+    expectRejected('release repository gate removed', replaceWorkflow(
+        workflows,
+        releaseFile,
+        (baseline) => baseline.replace("github.repository == 'blairhoddinott/stringofpearls' &&\n", '')
+    ), failures);
+
+    expectRejected('release repository gate neutralized', replaceWorkflow(
+        workflows,
+        releaseFile,
+        (baseline) => baseline.replace(
+            "github.repository == 'blairhoddinott/stringofpearls' &&",
+            "(true || github.repository == 'blairhoddinott/stringofpearls') &&"
+        )
+    ), failures);
+
+    expectRejected('release triggering-actor gate neutralized', replaceWorkflow(
+        workflows,
+        releaseFile,
+        (baseline) => baseline.replace(
+            "github.triggering_actor == 'blairhoddinott'",
+            'true'
+        )
+    ), failures);
+
+    expectRejected('release current-ref gate neutralized', replaceWorkflow(
+        workflows,
+        releaseFile,
+        (baseline) => baseline.replace("github.ref == 'refs/heads/master' &&", 'true &&')
+    ), failures);
+
+    expectRejected('release rerun guard neutralized', replaceWorkflow(
+        workflows,
+        releaseFile,
+        (baseline) => baseline.replace('github.run_attempt == 1 &&', 'true &&')
+    ), failures);
+
+    expectRejected('release routed to a hosted runner', replaceWorkflow(
+        workflows,
+        releaseFile,
+        (baseline) => baseline.replace(
+            'runs-on: [self-hosted, linux, x64, stringofpearls-release]',
+            'runs-on: ubuntu-latest'
+        )
+    ), failures);
+
+    expectRejected('release routed to the general self-hosted runner', replaceWorkflow(
+        workflows,
+        releaseFile,
+        (baseline) => baseline.replace('stringofpearls-release]', 'stringofpearls-ci]')
+    ), failures);
+
+    expectRejected('release permissions widened', replaceWorkflow(
+        workflows,
+        releaseFile,
+        (baseline) => baseline.replace('permissions:\n  contents: read\n', 'permissions:\n  contents: write\n')
+    ), failures);
+
+    expectRejected('release token echoed to the log', replaceWorkflow(
+        workflows,
+        releaseFile,
+        (baseline) => baseline.replace(
+            'run: node tools/release/lifecycle-cli.js\n',
+            'run: echo "${{ secrets.RELEASE_AUTOMATION_TOKEN }}"\n'
+        )
+    ), failures);
+
+    expectRejected('release token placed on the command line', replaceWorkflow(
+        workflows,
+        releaseFile,
+        (baseline) => baseline.replace(
+            'run: node tools/release/lifecycle-cli.js\n',
+            'run: node tools/release/lifecycle-cli.js --token "${{ secrets.RELEASE_AUTOMATION_TOKEN }}"\n'
+        )
+    ), failures);
+
+    expectRejected('release signing invocation neutralized', replaceWorkflow(
+        workflows,
+        releaseFile,
+        (baseline) => baseline.replace('run: node tools/release/lifecycle-cli.js\n', "run: 'true'\n")
+    ), failures);
+
+    expectRejected('release gains an extra job', replaceWorkflow(
+        workflows,
+        releaseFile,
+        (baseline) => `${baseline}\n${[
+            '  smuggle:',
+            '    runs-on: ubuntu-latest',
+            '    steps:',
+            '      - run: echo smuggle',
+            ''
+        ].join('\n')}`
     ), failures);
 
     expectRejected('duplicate mapping key', replaceWorkflow(

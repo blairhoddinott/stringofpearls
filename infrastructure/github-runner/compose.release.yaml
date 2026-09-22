@@ -1,0 +1,38 @@
+name: stringofpearls-release-runner
+
+# Deploy this stack only on a host or Docker daemon that is inaccessible to the
+# ordinary CI runner. The signing runner intentionally has no Docker socket.
+services:
+  release-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: stringofpearls-github-runner:2.337.0
+    init: true
+    restart: unless-stopped
+    environment:
+      RUNNER_REPOSITORY_URL: https://github.com/blairhoddinott/stringofpearls
+      RUNNER_NAME: ${RELEASE_RUNNER_NAME:-stringofpearls-release}
+      RUNNER_LABELS: stringofpearls-release
+      GNUPGHOME: /gnupg
+      RELEASE_RUNNER_ISOLATED_HOST: ${RELEASE_RUNNER_ISOLATED_HOST:?Set only after proving this host is inaccessible to the general CI runner}
+    volumes:
+      - release-runner-state:/runner-state
+      - release-runner-work:/home/node/actions-runner/_work
+      - release-runner-diagnostics:/home/node/actions-runner/_diag
+      - release-gnupg:/gnupg
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "5"
+
+volumes:
+  release-runner-state:
+  release-runner-work:
+  release-runner-diagnostics:
+  release-gnupg:

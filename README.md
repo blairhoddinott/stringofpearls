@@ -2,6 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
 [![Docker ready](https://img.shields.io/badge/Docker-ready-2496ED?logo=docker&logoColor=white)](documentation/development/containers.md)
+[![Latest release](https://img.shields.io/github/v/release/blairhoddinott/stringofpearls?display_name=tag&sort=semver)](https://github.com/blairhoddinott/stringofpearls/releases/latest)
 
 String of Pearls is a browser-based air traffic control simulator. Work traffic on realistic scopes, issue clearances, manage arrivals and departures, and try not to manufacture an FAA incident report.
 
@@ -39,6 +40,7 @@ The selected mode remains active when traffic is reset or the airport changes. R
 - [Airport file standards](documentation/airport-file-standards.md)
 - [Event tracking and privacy](documentation/event-tracking.md)
 - [Supported browsers](documentation/development/supported-browsers.md)
+- [Release process and versioning](documentation/releases.md)
 - [Local GitHub Actions runner](documentation/development/self-hosted-runner.md)
 
 ## Development

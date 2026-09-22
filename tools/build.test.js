@@ -14,6 +14,7 @@ const {
     recoverBuildDirectories,
     replacePublicDirectory
 } = require('./build');
+const { newestReleaseBody } = require('./release/changelog');
 
 const ROOT = path.resolve(__dirname, '..');
 const PUBLIC_DIR = path.join(ROOT, 'public');
@@ -168,10 +169,12 @@ async function expectedGuides() {
 
 async function expectedChangelog() {
     const markdown = await fsp.readFile(path.join(ROOT, 'CHANGELOG.md'), 'utf8');
-    const sections = markdown.split(/# [0-9]\.[0-9]+\.[0-9] \(.*\)/g);
     const converter = new showdown.Converter({ simpleLineBreaks: true });
 
-    return { changelog: converter.makeHtml(sections[1]) };
+    // Cross-check against the shared release/changelog parser rather than a
+    // duplicated regex, so the newest-release extraction has a single source of
+    // truth for both the modern and inherited heading formats.
+    return { changelog: converter.makeHtml(newestReleaseBody(markdown)) };
 }
 
 async function hashOutput() {

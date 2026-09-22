@@ -17,6 +17,7 @@ RUN apt-get update \
         ca-certificates \
         curl \
         git \
+        gnupg \
         jq \
         libicu72 \
         libkrb5-3 \
@@ -38,8 +39,9 @@ RUN curl --fail --location --silent --show-error \
     && printf '%s  %s\n' "${RUNNER_SHA256}" actions-runner.tar.gz | sha256sum --check --strict \
     && tar --extract --gzip --file actions-runner.tar.gz \
     && rm actions-runner.tar.gz \
-    && mkdir --parents /runner-state _diag _work \
-    && chown --recursive node:node /home/node/actions-runner /runner-state
+    && mkdir --parents /runner-state /gnupg _diag _work \
+    && chown --recursive node:node /home/node/actions-runner /runner-state /gnupg \
+    && chmod 700 /gnupg
 
 RUN curl --fail --location --silent --show-error \
         --output /tmp/actionlint.tar.gz \

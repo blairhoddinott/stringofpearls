@@ -25,6 +25,7 @@ services:
     environment:
       BASE_URL: http://simulator:8080
       TARGET_AIRPORT: kpdx
+      APP_VERSION: ${APP_VERSION:?APP_VERSION must be set by the launcher}
     read_only: true
     tmpfs:
       - /tmp

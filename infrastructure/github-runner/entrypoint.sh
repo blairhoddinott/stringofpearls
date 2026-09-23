@@ -10,6 +10,7 @@ RUNNER_REPOSITORY_URL="${RUNNER_REPOSITORY_URL:-}"
 RUNNER_NAME="${RUNNER_NAME:-}"
 RUNNER_LABELS="${RUNNER_LABELS:-}"
 REGISTRATION_TOKEN="${REGISTRATION_TOKEN:-}"
+RELEASE_RUNNER_ISOLATED_HOST="${RELEASE_RUNNER_ISOLATED_HOST:-}"
 
 cd "${RUNNER_HOME}"
 umask 077
@@ -19,6 +20,22 @@ require_variable() {
 
     if [[ -z "${!name:-}" ]]; then
         printf 'error: %s is required\n' "${name}" >&2
+        exit 1
+    fi
+}
+
+verify_release_isolation() {
+    if [[ ",${RUNNER_LABELS}," != *",stringofpearls-release,"* ]]; then
+        return
+    fi
+
+    if [[ "${RELEASE_RUNNER_ISOLATED_HOST}" != 'confirmed-no-general-ci-access' ]]; then
+        printf '%s\n' 'error: release runner requires explicit isolated-host acknowledgement' >&2
+        exit 1
+    fi
+
+    if [[ -S /var/run/docker.sock ]]; then
+        printf '%s\n' 'error: release runner refuses to start with a Docker socket' >&2
         exit 1
     fi
 }
@@ -74,6 +91,8 @@ run_runner() {
     link_state_files
     exec ./run.sh
 }
+
+verify_release_isolation
 
 case "${1:-run}" in
     configure)

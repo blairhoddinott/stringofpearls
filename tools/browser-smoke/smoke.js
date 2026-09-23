@@ -5,6 +5,11 @@ const { chromium } = require('playwright');
 
 const baseUrl = process.env.BASE_URL || 'http://simulator:8080';
 const targetAirport = process.env.TARGET_AIRPORT || 'kpdx';
+// The application version is interpolated in Node-side (from package.json via
+// the launcher) rather than hard-coded, so the "what's new" dialog is suppressed
+// deterministically for whatever version is under test. Fail closed if missing.
+const appVersion = process.env.APP_VERSION;
+assert(appVersion, 'APP_VERSION must be provided (the launcher reads it from package.json)');
 
 async function main() {
     const browser = await chromium.launch({
@@ -33,12 +38,12 @@ async function main() {
             }
         });
 
-        await page.addInitScript(() => {
+        await page.addInitScript((version) => {
             localStorage.clear();
-            localStorage.setItem('atc-last-version', '6.29.0-BETA');
+            localStorage.setItem('atc-last-version', version);
             localStorage.setItem('first-run-time', '0');
             localStorage.setItem('atc-speech-enabled', 'false');
-        });
+        }, appVersion);
 
         const response = await page.goto(baseUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
         assert(response && response.ok(), `startup returned HTTP ${response ? response.status() : 'no response'}`);

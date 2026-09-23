@@ -1,5 +1,12 @@
 # Development Processes Checklists
 
+> **Historical openScope process:** this document preserves the inherited sprint,
+> `develop`-branch, Heroku, and manual release procedure for attribution. It is
+> not the String of Pearls development or release policy. Current development
+> uses protected pull requests into `master`; current SemVer, changelog, release
+> PR, signed-tag, and GitHub Release behavior is documented in
+> [Release process and versioning](releases.md).
+
 ## Processes of Each Sprint
 
 **Note**: In order to complete all of the steps below a user will need:

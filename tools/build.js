@@ -12,6 +12,7 @@ const handlebarsLayouts = require('handlebars-layouts');
 const less = require('less');
 const postcss = require('postcss');
 const showdown = require('showdown');
+const { newestReleaseBody } = require('./release/changelog');
 
 const ROOT = path.resolve(__dirname, '..');
 const PUBLIC_DIR = path.join(ROOT, 'public');
@@ -230,16 +231,25 @@ async function buildGuides(publicDirectory) {
     await writeFile(path.join(publicDirectory, 'assets/guides/guides.json'), JSON.stringify(guides));
 }
 
+/**
+ * Render the in-app changelog dialog markup. Only the newest release body is
+ * shown; the shared release/changelog parser recognizes both the modern
+ * `## [X.Y.Z] - YYYY-MM-DD` sections and the inherited `# X.Y.Z (Month D, YYYY)`
+ * headings, so a modern preamble and older upstream history are never leaked
+ * into the dialog.
+ *
+ * @param {string} markdown the raw CHANGELOG.md contents
+ * @returns {string} the rendered HTML for the newest release
+ */
+function renderChangelogHtml(markdown) {
+    const converter = new showdown.Converter({ simpleLineBreaks: true });
+
+    return converter.makeHtml(newestReleaseBody(markdown));
+}
+
 async function buildChangelog(publicDirectory) {
     const markdown = await fsp.readFile(path.join(ROOT, 'CHANGELOG.md'), 'utf8');
-    const sections = markdown.split(/# [0-9]\.[0-9]+\.[0-9] \(.*\)/g);
-
-    if (sections.length < 2) {
-        throw new Error('CHANGELOG.md does not contain a version heading');
-    }
-
-    const converter = new showdown.Converter({ simpleLineBreaks: true });
-    const output = JSON.stringify({ changelog: converter.makeHtml(sections[1]) });
+    const output = JSON.stringify({ changelog: renderChangelogHtml(markdown) });
     await writeFile(path.join(publicDirectory, 'assets/changelog.json'), output);
 }
 
@@ -666,5 +676,6 @@ module.exports = {
     getBuildDate,
     parseArguments,
     recoverBuildDirectories,
+    renderChangelogHtml,
     replacePublicDirectory
 };

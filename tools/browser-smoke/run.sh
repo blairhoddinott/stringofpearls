@@ -11,6 +11,12 @@ else
     exit 1
 fi
 
+# Read the application version from package.json on the host (where the manifest
+# is present) and export it so the smoke container can suppress the "what's new"
+# dialog deterministically for the version under test.
+APP_VERSION="$(node -p "require('./package.json').version")"
+export APP_VERSION
+
 PROJECT_NAME="stringofpearls-browser-smoke-${PPID}-$$"
 COMPOSE=("${DOCKER[@]}" compose --project-name "${PROJECT_NAME}" --file compose.browser-smoke.yaml)
 

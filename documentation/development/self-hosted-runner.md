@@ -11,7 +11,7 @@ The workflow intentionally accepts work only when both `github.actor` and `githu
 - pushes to non-`master` branches run the fast branch checks;
 - pull requests targeting `master` from `blairhoddinott` branches in this repository run the full acceptance suite;
 - manual dispatches run the full acceptance suite on the selected ref;
-- pushes and merges to `master` do not start another workflow run;
+- pushes and merges to `master` do not repeat acceptance; a separate release coordinator runs only after an owner merge;
 - events initiated or re-run by any other account are skipped before a job is assigned;
 - no GitHub-hosted runner label or fallback exists;
 - `pull_request` execution is limited to same-repository PRs owned by `blairhoddinott`;
@@ -19,7 +19,9 @@ The workflow intentionally accepts work only when both `github.actor` and `githu
 
 The actor check is deliberate for re-runs: GitHub distinguishes the account that triggered the original run from the account that initiated a re-run. Both must match.
 
-The container receives the host Docker socket because repository acceptance includes production-container and browser smoke tests. Access to that socket is effectively administrative access to the host. It also uses host networking so the runner can reach random loopback ports published by the production-container smoke test. Do not run this configuration on a server containing unrelated workloads, credentials, or valuable data.
+The general container receives the host Docker socket because repository acceptance includes production-container and browser smoke tests. Access to that socket is effectively administrative access to the host. It also uses host networking so the runner can reach random loopback ports published by the production-container smoke test. Do not run this configuration on a server containing unrelated workloads, credentials, or valuable data.
+
+Release signing uses a second, separately registered runner on a **different host or Docker daemon that the ordinary CI runner cannot access**, with the custom `stringofpearls-release` label. Deploy it from `compose.release.yaml`; it deliberately has no Docker socket. Only that isolated host mounts the dedicated OpenPGP keyring volume. The key makes that runner capable of producing trusted repository history: treat its state, work, host, and keyring volumes as privileged credentials, never route pull-request jobs to it, and never approve external code for it.
 
 ## 1. Install Docker on Debian 13
 
@@ -140,7 +142,98 @@ Opening or updating a pull request from one of those branches into `master` star
 
 Manual re-runs and same-repository pull-request events initiated by any account other than `blairhoddinott` are skipped by design. GitHub is configured to require approval for workflows from every external contributor; do not approve those workflows onto this privileged runner. GitHub treats a conditionally skipped job as successful after approval, so external merge handling is a procedural policy rather than enforcement by this ruleset. External contributions require the separate contributor process before CI execution or merge.
 
-## 7. Protect `master`
+## 7. Configure the privileged release runner
+
+This section is required only for automated release preparation and publication. Complete it after the release workflow has merged to `master`; until then, the repository-owned release tooling is available only for local checks.
+
+### Create the isolated keyring
+
+On the isolated release host, first make the required deployment acknowledgement. Set this only after proving that the general CI runner cannot reach this host or Docker daemon:
+
+```sh
+export RELEASE_RUNNER_ISOLATED_HOST=confirmed-no-general-ci-access
+```
+
+The container also refuses to start if a Docker socket is present. These guards do not turn a shared host into an isolated one; they make the operator decision explicit and fail closed on the most dangerous misconfiguration.
+
+Build the image from the dedicated Compose file, then stream Balder's existing secret signing subkey directly from that host's keyring into the named Docker volume. The export is never written to disk:
+
+```sh
+docker compose -f compose.release.yaml build --pull release-runner
+
+gpg --batch --export-secret-subkeys \
+  55752C968BC2E769D973F65727D0742393C6CAA3 \
+  | docker compose -f compose.release.yaml run --rm --no-deps --no-TTY \
+      --entrypoint gpg release-runner --batch --import
+```
+
+Verify that the release keyring contains the expected primary fingerprint:
+
+```sh
+docker compose -f compose.release.yaml run --rm --no-deps \
+  --entrypoint gpg release-runner \
+  --batch --with-colons --fingerprint --list-secret-keys \
+  55752C968BC2E769D973F65727D0742393C6CAA3
+```
+
+The output must contain exactly this primary fingerprint:
+
+```text
+55752C968BC2E769D973F65727D0742393C6CAA3
+```
+
+Before registration, prove unattended signing works inside the isolated volume. This writes only disposable probe files inside the temporary container:
+
+```sh
+docker compose -f compose.release.yaml run --rm --no-deps \
+  --entrypoint sh release-runner -c '
+    set -eu
+    printf "%s\n" "release signing probe" > /tmp/probe
+    gpg --batch --yes --pinentry-mode error \
+      --local-user 55752C968BC2E769D973F65727D0742393C6CAA3 \
+      --detach-sign /tmp/probe
+    gpg --batch --verify /tmp/probe.sig /tmp/probe
+  '
+```
+
+If this asks for a passphrase or fails under `--pinentry-mode error`, stop. Do not put a passphrase or exported key in Compose, workflow YAML, `.env`, an Actions secret, or shell history. Use a dedicated unattended signing subkey before enabling automation.
+
+### Register the second runner
+
+Create another repository-scoped Linux x64 runner in **Settings → Actions → Runners**. Read its one-hour registration token without persisting it:
+
+```sh
+read -r -s -p 'Release runner registration token: ' REGISTRATION_TOKEN
+printf '\n'
+REGISTRATION_TOKEN="${REGISTRATION_TOKEN}" \
+  docker compose -f compose.release.yaml run --rm --no-deps \
+    --env REGISTRATION_TOKEN release-runner configure
+unset REGISTRATION_TOKEN
+```
+
+The runner must appear with `self-hosted`, `Linux`, `X64`, and `stringofpearls-release`. Its credentials live in `release-runner-state`. The ordinary runner cannot reach this host or its `release-gnupg` volume; merely omitting the mount on a shared Docker host is not isolation because the ordinary runner has Docker-socket authority.
+
+### Configure release API authentication
+
+Create a fine-grained personal access token owned by `blairhoddinott`, restricted to this repository, with:
+
+- **Contents: Read and write** for release branches, signed tag publication, and GitHub Releases;
+- **Pull requests: Read and write** for release-PR discovery and creation;
+- **Metadata: Read**.
+
+Store it as the repository Actions secret `RELEASE_AUTOMATION_TOKEN`. Give it a short expiry and rotate it deliberately. Never place it in `.env`, Compose, Git configuration, a remote URL, command arguments, documentation output, or logs. A personal token is required here because events created by the default workflow token do not trigger the branch and pull-request checks that protect generated release PRs.
+
+Start only the release service and verify it is idle:
+
+```sh
+docker compose -f compose.release.yaml up --detach release-runner
+docker compose -f compose.release.yaml ps
+docker compose -f compose.release.yaml logs --follow --tail 100 release-runner
+```
+
+The `local-release` workflow runs after trusted pushes to `master`. It does **not** repeat acceptance. It either prepares a signed `chore/release-vX.Y.Z` pull request or, after that pull request is merged, publishes the locally verified signed tag and matching GitHub Release. The semantic workflow-policy validator pins this routing and rejects any attempt to send pull-request work to the signing runner.
+
+## 8. Protect `master`
 
 In **Settings → Rules → Rulesets**, create a branch ruleset targeting `master`:
 
@@ -166,6 +259,13 @@ docker compose ps
 docker compose logs --tail 200 runner
 ```
 
+Run the corresponding release-runner commands from the checkout on the isolated release host:
+
+```sh
+docker compose -f compose.release.yaml ps
+docker compose -f compose.release.yaml logs --tail 200 release-runner
+```
+
 Restart without re-registering:
 
 ```sh
@@ -182,6 +282,13 @@ docker compose build --pull runner
 docker compose up --detach runner
 ```
 
+Repeat the checkout update separately on the isolated release host, then run:
+
+```sh
+docker compose -f compose.release.yaml build --pull release-runner
+docker compose -f compose.release.yaml up --detach release-runner
+```
+
 Periodically remove unused build cache and images on the dedicated runner host:
 
 ```sh
@@ -196,13 +303,25 @@ The runner is registered with `--disableupdate`; updates are delivered by rebuil
 To retire the runner:
 
 1. Remove it in **Settings → Actions → Runners**.
-2. Stop it and delete its credentials, work directory, and diagnostics:
+2. Stop it and delete its credentials, work directory, and diagnostics. The following command also deletes the release signing keyring if the release profile was configured:
 
 ```sh
 docker compose down --volumes --remove-orphans
 ```
 
 Do not delete the volumes before removing the runner in GitHub unless the intent is to abandon that registration.
+
+If retiring only the release runner, first remove that runner in GitHub, then remove its container and four dedicated volumes without touching the ordinary CI runner:
+
+```sh
+docker compose -f compose.release.yaml stop release-runner
+docker compose -f compose.release.yaml rm --force release-runner
+docker volume rm \
+  stringofpearls-release-runner_release-runner-state \
+  stringofpearls-release-runner_release-runner-work \
+  stringofpearls-release-runner_release-runner-diagnostics \
+  stringofpearls-release-runner_release-gnupg
+```
 
 ## References
 

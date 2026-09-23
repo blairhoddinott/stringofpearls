@@ -1,3 +1,17 @@
+# Changelog
+
+All notable changes to String of Pearls are documented in this file.
+
+String of Pearls is an independent community fork and versions its releases on
+its own [Semantic Versioning](https://semver.org/spec/v2.0.0.html) line starting
+at `1.0.0`. New releases use the [Keep a Changelog](https://keepachangelog.com/)
+`## [X.Y.Z] - YYYY-MM-DD` format and are generated from
+[Conventional Commits](https://www.conventionalcommits.org/). See
+[Release process and versioning](documentation/releases.md) for the policy.
+
+The `# X.Y.Z (Month D, YYYY)` sections below this preamble are the preserved
+inherited openScope history and are retained verbatim for attribution.
+
 # 6.29.0 (October 1, 2022)
 ### New Features
 - <a href="https://github.com/openscope/openscope/issues/2000" target="_blank">#2000</a> - Add popup info for score changes

@@ -8,7 +8,7 @@ const yaml = require('js-yaml');
 const WORKFLOW_DIRECTORY = path.resolve(__dirname, '../../.github/workflows');
 const APPROVED_WORKFLOW_DIGESTS = Object.freeze({
     'local-ci.yml': 'd1cb21439ad0703118a35e9f505ec3f05672fd2b6d0b3e7de7a188a86e55ad35',
-    'local-master-acceptance.yml': '41b3441713cc1cc0f8fa04b751086f8650d013b3f147f622e8cc2d8c23f8b6bc',
+    'local-master-acceptance.yml': '5bab32a42e504b6eeabf74713958f24370acdfb91bb142eff2304330390f4c51',
     'local-release.yml': '5d5e1025e1598f04a50577b7081b63680d35658e525ee4973e07f269f89f64d5'
 });
 
@@ -167,6 +167,71 @@ function validateMutationResistance(workflows) {
         (baseline) => baseline.replace(
             'github.event.pull_request.head.repo.full_name == github.repository &&',
             '(true || github.event.pull_request.head.repo.full_name == github.repository) &&'
+        )
+    ), failures);
+
+    // --- targeted release-acceptance mutations -----------------------------
+    // A generated release PR may skip the application suite only after a
+    // classifier loaded from the trusted base commit proves its exact signer,
+    // merge parents, repository metadata, four-file diff, and artifacts.
+
+    expectRejected('release classifier loaded from the proposed head', replaceWorkflow(
+        workflows,
+        acceptanceFile,
+        (baseline) => baseline.replace(
+            'node "${trusted_policy}/tools/ci/classify-master-acceptance.js"',
+            'node "${GITHUB_WORKSPACE}/tools/ci/classify-master-acceptance.js"'
+        )
+    ), failures);
+
+    expectRejected('release classifier base SHA replaced with head SHA', replaceWorkflow(
+        workflows,
+        acceptanceFile,
+        (baseline) => baseline.replace(
+            'BASE_SHA: ${{ github.event.pull_request.base.sha }}',
+            'BASE_SHA: ${{ github.event.pull_request.head.sha }}'
+        )
+    ), failures);
+
+    expectRejected('release classifier invocation neutralized', replaceWorkflow(
+        workflows,
+        acceptanceFile,
+        (baseline) => baseline.replace(
+            '          node "${trusted_policy}/tools/ci/classify-master-acceptance.js" \\\n            --repository-root "${GITHUB_WORKSPACE}"\n',
+            "          printf 'kind=release\\n' >> \"${GITHUB_OUTPUT}\"\n"
+        )
+    ), failures);
+
+    expectRejected('classifier bootstrap fallback grants targeted acceptance', replaceWorkflow(
+        workflows,
+        acceptanceFile,
+        (baseline) => baseline.replace(
+            "            printf '%s\\n' 'kind=full' >> \"${GITHUB_OUTPUT}\"\n",
+            "            printf '%s\\n' 'kind=release' >> \"${GITHUB_OUTPUT}\"\n"
+        )
+    ), failures);
+
+    expectRejected('invalid classifier output guard neutralized', replaceWorkflow(
+        workflows,
+        acceptanceFile,
+        (baseline) => baseline.replace(
+            "          printf '%s\\n' 'error: acceptance classifier returned an invalid kind' >&2\n          exit 1\n",
+            "          true\n"
+        )
+    ), failures);
+
+    expectRejected('generated release tests removed', replaceWorkflow(
+        workflows,
+        acceptanceFile,
+        (baseline) => baseline.replace('        run: npm run release:test\n', "        run: 'true'\n")
+    ), failures);
+
+    expectRejected('deterministic build skipped for generated releases', replaceWorkflow(
+        workflows,
+        acceptanceFile,
+        (baseline) => baseline.replace(
+            '      - name: Verify deterministic build\n        run: npm run build:test\n',
+            "      - name: Verify deterministic build\n        if: steps.classify.outputs.kind == 'full'\n        run: npm run build:test\n"
         )
     ), failures);
 

@@ -2,11 +2,15 @@
 
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
+const fsp = require('node:fs/promises');
+const os = require('node:os');
+const path = require('node:path');
 
 const { runReleaseLifecycle } = require('./orchestrate');
 const { ReleaseError } = require('./errors');
 const { BOOTSTRAP_BASELINE, TOKEN_ENV_VAR, REPO_FULL_NAME } = require('./constants');
 const { renderReleaseDoc } = require('./release-doc');
+const { prepareRelease } = require('./prepare');
 
 const MERGE_SHA = 'mergesha0000000000000000000000000000abcd';
 
@@ -216,6 +220,48 @@ test('the first feature merge bootstraps from the tracked baseline, signs, pushe
     const createPull = api.calls.find((call) => call.name === 'createPull');
     assert.equal(createPull.args[0].head, 'chore/release-v1.0.0');
     assert.equal(createPull.args[0].base, 'master');
+});
+
+test('default orchestration I/O writes all generated bootstrap artifacts', async () => {
+    const cwd = await fsp.mkdtemp(path.join(os.tmpdir(), 'sop-orchestrate-io-'));
+
+    try {
+        await fsp.mkdir(path.join(cwd, 'documentation'));
+        await fsp.writeFile(path.join(cwd, 'package.json'), JSON.stringify({
+            name: 'stringofpearls',
+            version: '6.29.0-BETA',
+            repository: 'https://github.com/blairhoddinott/stringofpearls'
+        }));
+        await fsp.writeFile(path.join(cwd, 'package-lock.json'), JSON.stringify({
+            name: 'stringofpearls',
+            version: '6.29.0-BETA',
+            lockfileVersion: 3,
+            packages: { '': { name: 'stringofpearls', version: '6.29.0-BETA' } }
+        }));
+        await fsp.writeFile(path.join(cwd, 'CHANGELOG.md'), '# Changelog\n\n# 6.28.0 (June 1, 2023)\n\nInherited history.\n');
+
+        const git = makeFakeGit({
+            listSemverTags: async () => [],
+            verifyCommit: async (ref) => ref,
+            assertAncestor: async () => {},
+            listCommits: async () => [{
+                hash: 'a'.repeat(40),
+                parents: ['b'.repeat(40)],
+                subject: 'feat(release): automate publishing',
+                body: ''
+            }]
+        });
+        const options = baseOptions({ cwd, git, prepare: prepareRelease });
+        delete options.io;
+
+        const result = await runReleaseLifecycle(options);
+
+        assert.equal(result.action, 'opened-release-pr');
+        assert.equal(JSON.parse(await fsp.readFile(path.join(cwd, 'package.json'), 'utf8')).version, '1.0.0');
+        assert.match(await fsp.readFile(path.join(cwd, 'documentation/latest-release.md'), 'utf8'), /v1\.0\.0/);
+    } finally {
+        await fsp.rm(cwd, { recursive: true, force: true });
+    }
 });
 
 test('a later feature merge uses the highest signed tag as baseline and verifies it', async () => {

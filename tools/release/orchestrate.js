@@ -26,7 +26,11 @@ const { BASE_BRANCH } = require('./constants');
 
 
 const DEFAULT_IO = {
-    readFile: (file) => fsp.readFile(file, 'utf8')
+    readFile: (file) => fsp.readFile(file, 'utf8'),
+    async writeFile(file, contents) {
+        await fsp.mkdir(require('path').dirname(file), { recursive: true });
+        await fsp.writeFile(file, contents);
+    }
 };
 const GENERATED_RELEASE_PATHS = [MANIFEST_PATH, LOCKFILE_PATH, CHANGELOG_PATH, RELEASE_DOC_PATH].sort();
 

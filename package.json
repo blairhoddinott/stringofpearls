@@ -1,6 +1,6 @@
 {
   "name": "stringofpearls",
-  "version": "6.29.0-BETA",
+  "version": "1.0.0",
   "description": "An ATC simulator in HTML5",
   "engines": {
     "node": ">=24.0.0 <25",

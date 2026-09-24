@@ -9,7 +9,8 @@ The runner container is built from repository-owned files. It uses the digest-pi
 The workflow intentionally accepts work only when both `github.actor` and `github.triggering_actor` are `blairhoddinott`:
 
 - pushes to non-`master` branches run the fast branch checks;
-- pull requests targeting `master` from `blairhoddinott` branches in this repository run the full acceptance suite;
+- ordinary pull requests targeting `master` from `blairhoddinott` branches in this repository run the full acceptance suite;
+- generated release pull requests run a targeted release/artifact and deterministic-build gate only after a classifier loaded from the trusted base commit verifies their repository metadata, merge parents, exact Balder signature, four-file diff, and artifact agreement;
 - manual dispatches run the full acceptance suite on the selected ref;
 - pushes and merges to `master` do not repeat acceptance; a separate release coordinator runs only after an owner merge;
 - events initiated or re-run by any other account are skipped before a job is assigned;
@@ -138,7 +139,7 @@ runs-on: [self-hosted, linux, x64, stringofpearls-ci]
 
 Push a commit as `blairhoddinott` to a non-`master` branch. The **Branch checks** job should run on `stringofpearls-debian`. It installs the exact npm lockfile and runs workflow-policy, Dockerfile, whitespace, lint, strict-contract, and deterministic-build checks.
 
-Opening or updating a pull request from one of those branches into `master` starts **Master acceptance** against GitHub's proposed merge commit. A manual **Run workflow** action also starts it on the selected ref. That job adds coverage, browser-free validation, aviation validation, deterministic build and server contracts, the production dependency audit, production-container smoke, and browser acceptance. Merging the pull request does not run the suite again.
+Opening or updating a pull request from one of those branches into `master` starts **Master acceptance** against GitHub's proposed merge commit. A manual **Run workflow** action also starts the full suite on the selected ref. Ordinary pull requests add coverage, browser-free validation, aviation validation, deterministic build and server contracts, the production dependency audit, production-container smoke, and browser acceptance. A generated `chore/release-vX.Y.Z` pull request retains the same required context but runs only release-tool tests, whitespace validation, and the deterministic build after the trusted-base classifier proves its signer, ancestry, metadata, exact four generated paths, version, date, and release-body agreement. Merely naming a branch like a release branch is not enough. Merging the pull request does not rerun the application suite.
 
 Manual re-runs and same-repository pull-request events initiated by any account other than `blairhoddinott` are skipped by design. GitHub is configured to require approval for workflows from every external contributor; do not approve those workflows onto this privileged runner. GitHub treats a conditionally skipped job as successful after approval, so external merge handling is a procedural policy rather than enforcement by this ruleset. External contributions require the separate contributor process before CI execution or merge.
 
@@ -245,7 +246,7 @@ In **Settings → Rules → Rulesets**, create a branch ruleset targeting `maste
 - require the branch to be current with `master` before merging;
 - configure no bypass actors.
 
-`Branch checks` provides fast advisory feedback on each trusted branch push. It is not a required merge context because push checks attach to the branch-head commit while pull-request checks attach to GitHub's test-merge commit. `Master acceptance` repeats those checks, adds the full acceptance suite on the test-merge commit, and is the sole required status context. GitHub blocks the pull request when it fails and does not run another acceptance job after the merge reaches `master`.
+`Branch checks` provides fast advisory feedback on each trusted branch push. It is not a required merge context because push checks attach to the branch-head commit while pull-request checks attach to GitHub's test-merge commit. `Master acceptance` is the sole required status context: it runs the full suite for ordinary changes and the fail-closed targeted gate for a verified generated release PR. GitHub blocks the pull request when either path fails and does not run another application acceptance job after the merge reaches `master`.
 
 The repository policy validator parses the complete workflow set, rejects duplicate mappings and YAML aliases, compares the canonical workflow semantics with the reviewed policy, and exercises negative mutations for extra workflows or jobs, weakened actor/repository guards, external checkout overrides, hosted runner routes, and unapproved actions.
 

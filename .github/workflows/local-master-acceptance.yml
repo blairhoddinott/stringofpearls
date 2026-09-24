@@ -44,46 +44,95 @@ jobs:
           docker version
           docker compose version
 
+      - name: Classify pull request acceptance
+        id: classify
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          if ! git cat-file -e "${BASE_SHA}:tools/ci/classify-master-acceptance.js"; then
+            printf '%s\n' 'kind=full' >> "${GITHUB_OUTPUT}"
+            printf '%s\n' 'acceptance: trusted base predates release classifier; running full suite'
+            exit 0
+          fi
+          trusted_policy="${RUNNER_TEMP}/stringofpearls-acceptance-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          trap 'git worktree remove --force "${trusted_policy}" >/dev/null 2>&1 || true' EXIT
+          git worktree add --detach "${trusted_policy}" "${BASE_SHA}"
+          node "${trusted_policy}/tools/ci/classify-master-acceptance.js" \
+            --repository-root "${GITHUB_WORKSPACE}"
+
+      - name: Validate acceptance classification
+        if: >-
+          github.event_name == 'pull_request' &&
+          steps.classify.outputs.kind != 'full' &&
+          steps.classify.outputs.kind != 'release'
+        run: |
+          printf '%s\n' 'error: acceptance classifier returned an invalid kind' >&2
+          exit 1
+
       - name: Install dependencies
         run: npm ci --ignore-scripts --no-audit --no-fund
 
       - name: Validate GitHub Actions workflows
+        if: github.event_name == 'workflow_dispatch' || steps.classify.outputs.kind == 'full'
         run: actionlint -color
 
       - name: Validate local CI policy
+        if: github.event_name == 'workflow_dispatch' || steps.classify.outputs.kind == 'full'
         run: node tools/ci/validate-local-workflow-policy.js
 
       - name: Validate Dockerfiles
+        if: github.event_name == 'workflow_dispatch' || steps.classify.outputs.kind == 'full'
         run: |
           docker build --check .
           docker build --check --file infrastructure/github-runner/Dockerfile infrastructure/github-runner
 
+      - name: Check pull request whitespace
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: git diff --check "${BASE_SHA}" "${HEAD_SHA}"
+
+      - name: Verify generated release tooling
+        if: steps.classify.outputs.kind == 'release'
+        run: npm run release:test
+
       - name: Run unit tests and coverage contract
+        if: github.event_name == 'workflow_dispatch' || steps.classify.outputs.kind == 'full'
         run: npm run test:coverage
 
       - name: Lint source
+        if: github.event_name == 'workflow_dispatch' || steps.classify.outputs.kind == 'full'
         run: npm run lint
 
       - name: Check strict contracts
+        if: github.event_name == 'workflow_dispatch' || steps.classify.outputs.kind == 'full'
         run: npm run typecheck:contracts
 
       - name: Prove core services are browser-free
+        if: github.event_name == 'workflow_dispatch' || steps.classify.outputs.kind == 'full'
         run: npm run core:browser-free
 
       - name: Validate aviation assets
+        if: github.event_name == 'workflow_dispatch' || steps.classify.outputs.kind == 'full'
         run: npm run validator:test && npm run validate:assets
 
       - name: Verify deterministic build
         run: npm run build:test
 
       - name: Test production server
+        if: github.event_name == 'workflow_dispatch' || steps.classify.outputs.kind == 'full'
         run: npm run server:test
 
       - name: Audit production dependencies
+        if: github.event_name == 'workflow_dispatch' || steps.classify.outputs.kind == 'full'
         run: npm run audit:production
 
       - name: Smoke-test production container
+        if: github.event_name == 'workflow_dispatch' || steps.classify.outputs.kind == 'full'
         run: npm run docker:smoke
 
       - name: Run browser acceptance
+        if: github.event_name == 'workflow_dispatch' || steps.classify.outputs.kind == 'full'
         run: npm run browser:smoke

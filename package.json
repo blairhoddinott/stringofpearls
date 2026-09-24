@@ -19,7 +19,7 @@
     "lint": "eslint src test tools eslint.config.js",
     "release:check": "node tools/release/cli.js --check",
     "release:prepare": "node tools/release/cli.js --prepare",
-    "release:test": "node --test tools/release/*.test.js tools/build-changelog.test.js",
+    "release:test": "node --test tools/release/*.test.js tools/build-changelog.test.js tools/ci/classify-master-acceptance.test.js",
     "server": "npm run start",
     "server:test": "npm run build && node tools/server.test.js",
     "start": "node public/assets/scripts/server/index.js",

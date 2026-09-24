@@ -657,10 +657,17 @@ async function main() {
         await expectedChangelog()
     );
 
+    const manifest = JSON.parse(await fsp.readFile(path.join(ROOT, 'package.json'), 'utf8'));
     const index = await fsp.readFile(path.join(PUBLIC_DIR, 'index.html'), 'utf8');
     assert.match(index, /Build Date: Thu, 01 Jan 1970 00:00:00 GMT/);
-    assert.match(index, /assets\/style\/main\.min\.css\?=6\.29\.0-BETA/);
-    assert.match(index, /assets\/scripts\/client\/bundle\.min\.js\?v=6\.29\.0-BETA/);
+    assert.ok(
+        index.includes(`assets/style/main.min.css?=${manifest.version}`),
+        'stylesheet cache key does not match package.json version'
+    );
+    assert.ok(
+        index.includes(`assets/scripts/client/bundle.min.js?v=${manifest.version}`),
+        'client bundle cache key does not match package.json version'
+    );
     assert.doesNotMatch(index, /{{[#/>!]?[^}]+}}/);
 
     const bundle = await fsp.readFile(path.join(PUBLIC_DIR, 'assets/scripts/client/bundle.min.js'), 'utf8');

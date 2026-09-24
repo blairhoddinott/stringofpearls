@@ -72,9 +72,14 @@ workflow is live) is:
 
 1. An eligible merge to `master` triggers a preparation run.
 2. The run opens a release pull request from `chore/release-vX.Y.Z`.
-3. The release PR is merged with a normal two-parent merge commit; squash and
+3. The required `Master acceptance` context classifies the proposed test merge
+   using policy code loaded from the trusted base commit. Only an exact
+   same-repository release branch with the expected signed head, merge parents,
+   four generated paths, and mutually consistent artifacts receives the focused
+   release-tool and deterministic-build gate; ordinary PRs retain full acceptance.
+4. The release PR is merged with a normal two-parent merge commit; squash and
    rebase merges are deliberately rejected for release PRs.
-4. Automation verifies the trusted PR head signature, exact four-file diff,
+5. Automation verifies the trusted PR head signature, exact four-file diff,
    version, changelog body, and date before publishing the `vX.Y.Z` tag and a
    matching GitHub Release. It reads the remote tag back and requires both its
    annotated-tag object and peeled commit to match the locally verified signed

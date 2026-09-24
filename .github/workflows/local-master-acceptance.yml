@@ -50,15 +50,20 @@ jobs:
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
         run: |
-          if ! git cat-file -e "${BASE_SHA}:tools/ci/classify-master-acceptance.js"; then
+          if ! git cat-file -e "${BASE_SHA}:tools/ci/classify-master-acceptance.js" ||
+             ! git cat-file -e "${BASE_SHA}:tools/release/keys/balder-release-signing-public.asc"; then
             printf '%s\n' 'kind=full' >> "${GITHUB_OUTPUT}"
-            printf '%s\n' 'acceptance: trusted base predates release classifier; running full suite'
+            printf '%s\n' 'acceptance: trusted base predates release verification policy; running full suite'
             exit 0
           fi
           trusted_policy="${RUNNER_TEMP}/stringofpearls-acceptance-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
-          trap 'git worktree remove --force "${trusted_policy}" >/dev/null 2>&1 || true' EXIT
+          trusted_gnupg="${RUNNER_TEMP}/stringofpearls-acceptance-gnupg-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          trap 'git worktree remove --force "${trusted_policy}" >/dev/null 2>&1 || true; rm -rf -- "${trusted_gnupg}"' EXIT
           git worktree add --detach "${trusted_policy}" "${BASE_SHA}"
-          node "${trusted_policy}/tools/ci/classify-master-acceptance.js" \
+          mkdir --mode=0700 "${trusted_gnupg}"
+          gpg --batch --homedir "${trusted_gnupg}" --import \
+            "${trusted_policy}/tools/release/keys/balder-release-signing-public.asc"
+          GNUPGHOME="${trusted_gnupg}" node "${trusted_policy}/tools/ci/classify-master-acceptance.js" \
             --repository-root "${GITHUB_WORKSPACE}"
 
       - name: Validate acceptance classification

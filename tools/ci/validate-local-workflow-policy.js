@@ -8,7 +8,7 @@ const yaml = require('js-yaml');
 const WORKFLOW_DIRECTORY = path.resolve(__dirname, '../../.github/workflows');
 const APPROVED_WORKFLOW_DIGESTS = Object.freeze({
     'local-ci.yml': 'd1cb21439ad0703118a35e9f505ec3f05672fd2b6d0b3e7de7a188a86e55ad35',
-    'local-master-acceptance.yml': '5bab32a42e504b6eeabf74713958f24370acdfb91bb142eff2304330390f4c51',
+    'local-master-acceptance.yml': '0887a21d5256be6fd886be15371033b60e5f023e1016b5218a606b5965c8cd52',
     'local-release.yml': '5d5e1025e1598f04a50577b7081b63680d35658e525ee4973e07f269f89f64d5'
 });
 
@@ -197,8 +197,44 @@ function validateMutationResistance(workflows) {
         workflows,
         acceptanceFile,
         (baseline) => baseline.replace(
-            '          node "${trusted_policy}/tools/ci/classify-master-acceptance.js" \\\n            --repository-root "${GITHUB_WORKSPACE}"\n',
+            '          GNUPGHOME="${trusted_gnupg}" node "${trusted_policy}/tools/ci/classify-master-acceptance.js" \\\n            --repository-root "${GITHUB_WORKSPACE}"\n',
             "          printf 'kind=release\\n' >> \"${GITHUB_OUTPUT}\"\n"
+        )
+    ), failures);
+
+    expectRejected('release verification key loaded from proposed head', replaceWorkflow(
+        workflows,
+        acceptanceFile,
+        (baseline) => baseline.replace(
+            '"${trusted_policy}/tools/release/keys/balder-release-signing-public.asc"',
+            '"${GITHUB_WORKSPACE}/tools/release/keys/balder-release-signing-public.asc"'
+        )
+    ), failures);
+
+    expectRejected('release verification key import removed', replaceWorkflow(
+        workflows,
+        acceptanceFile,
+        (baseline) => baseline.replace(
+            '          gpg --batch --homedir "${trusted_gnupg}" --import \\\n            "${trusted_policy}/tools/release/keys/balder-release-signing-public.asc"\n',
+            ''
+        )
+    ), failures);
+
+    expectRejected('release verification escapes isolated keyring', replaceWorkflow(
+        workflows,
+        acceptanceFile,
+        (baseline) => baseline.replace(
+            'GNUPGHOME="${trusted_gnupg}" node',
+            'node'
+        )
+    ), failures);
+
+    expectRejected('bootstrap certificate presence guard removed', replaceWorkflow(
+        workflows,
+        acceptanceFile,
+        (baseline) => baseline.replace(
+            '          if ! git cat-file -e "${BASE_SHA}:tools/ci/classify-master-acceptance.js" ||\n             ! git cat-file -e "${BASE_SHA}:tools/release/keys/balder-release-signing-public.asc"; then\n',
+            '          if ! git cat-file -e "${BASE_SHA}:tools/ci/classify-master-acceptance.js"; then\n'
         )
     ), failures);
 

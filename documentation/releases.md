@@ -77,6 +77,9 @@ workflow is live) is:
    same-repository release branch with the expected signed head, merge parents,
    four generated paths, and mutually consistent artifacts receives the focused
    release-tool and deterministic-build gate; ordinary PRs retain full acceptance.
+   The ordinary runner verifies the signature in a temporary isolated keyring
+   containing only the public certificate loaded from that same trusted base;
+   no release private key is present on the acceptance runner.
 4. The release PR is merged with a normal two-parent merge commit; squash and
    rebase merges are deliberately rejected for release PRs.
 5. Automation verifies the trusted PR head signature, exact four-file diff,

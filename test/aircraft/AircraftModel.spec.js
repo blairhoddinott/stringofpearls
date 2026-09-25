@@ -67,6 +67,15 @@ ava('does not throw with valid parameters', (t) => {
     t.notThrows(() => new AircraftModel(DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK));
 });
 
+ava('retains its center handoff fix', (t) => {
+    const model = new AircraftModel({
+        ...ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK,
+        centerHandoffFix: 'DAG'
+    });
+
+    t.is(model.centerHandoffFix, 'DAG');
+});
+
 ava('passes explicit navigation and airport owners to its FMS', (t) => {
     const navigationLibrary = new NavigationLibraryClass();
     const airportController = {

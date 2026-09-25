@@ -234,6 +234,15 @@ export default class SpawnPatternModel extends BaseModel {
         this.routeString = '';
 
         /**
+         * Named route fix where center will hold an unaccepted arrival.
+         *
+         * @property centerHandoffFix
+         * @type {string}
+         * @default ''
+         */
+        this.centerHandoffFix = '';
+
+        /**
          * Object defining runway specific commands to send to an aircraft at spawn time
          *
          * @property commands
@@ -523,6 +532,7 @@ export default class SpawnPatternModel extends BaseModel {
         this.destination = spawnPatternJson.destination;
         this.category = spawnPatternJson.category;
         this.routeString = spawnPatternJson.route;
+        this.centerHandoffFix = _get(spawnPatternJson, 'centerHandoffFix', '').toUpperCase();
         this.commands = spawnPatternJson.commands;
         this.speed = this._extractSpeedFromJson(spawnPatternJson);
         this.method = spawnPatternJson.method;
@@ -531,6 +541,20 @@ export default class SpawnPatternModel extends BaseModel {
         this.entrail = _get(spawnPatternJson, 'entrail', this.entrail);
 
         this._routeModel = new RouteModel(spawnPatternJson.route, this._navigationLibrary);
+
+        if (this.isArrival() && this.centerHandoffFix &&
+            !this._routeModel.hasWaypointName(this.centerHandoffFix)) {
+            throw new Error(
+                `centerHandoffFix ${this.centerHandoffFix} is not present in arrival route ${this.routeString}`
+            );
+        }
+
+        if (this.isArrival() && !this.centerHandoffFix) {
+            const firstNamedWaypoint = this._routeModel.waypoints.find((waypointModel) => !waypointModel.isVectorWaypoint);
+
+            this.centerHandoffFix = firstNamedWaypoint?.name ?? '';
+        }
+
         this.cycleStartTime = 0;
         this.period = TIME.ONE_HOUR_IN_SECONDS / 2;
         this._positionModel = this._generateSelfReferencedAirportPositionModel();
@@ -562,6 +586,7 @@ export default class SpawnPatternModel extends BaseModel {
         this.origin = '';
         this.destination = '';
         this.routeString = '';
+        this.centerHandoffFix = '';
         this.commands = {};
         this._minimumAltitude = INVALID_NUMBER;
         this._maximumAltitude = INVALID_NUMBER;

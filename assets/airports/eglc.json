@@ -1168,6 +1168,7 @@
             "destination": "EGLC",
             "category": "arrival",
             "route": "BEDEK..BIG..UMTUM..GODLU..ELMIV..LCE11..LCE12..LCE13..RAVSA",
+            "centerHandoffFix": "BEDEK",
             "altitude": 18000,
             "speed": 250,
             "method": "random",

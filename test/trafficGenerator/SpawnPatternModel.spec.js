@@ -70,6 +70,33 @@ ava('initializes correctly when rate is passed as a float', (t) => {
     t.true(model.rate === 3.3);
 });
 
+ava('retains an explicit center handoff fix in normalized form', (t) => {
+    const model = new SpawnPatternModel({
+        ...ARRIVAL_PATTERN_MOCK,
+        centerHandoffFix: 'grnpa'
+    });
+
+    t.is(model.centerHandoffFix, 'GRNPA');
+});
+
+ava('defaults an arrival handoff fix to the first named route waypoint', (t) => {
+    const model = new SpawnPatternModel(ARRIVAL_PATTERN_MOCK);
+
+    t.is(model.centerHandoffFix, 'BETHL');
+});
+
+ava('rejects an explicit handoff fix outside the resolved arrival route', (t) => {
+    const error = t.throws(() => new SpawnPatternModel({
+        ...ARRIVAL_PATTERN_MOCK,
+        centerHandoffFix: 'NOTAFIX'
+    }));
+
+    t.is(
+        error.message,
+        'centerHandoffFix NOTAFIX is not present in arrival route BETHL.GRNPA1.KLAS07R'
+    );
+});
+
 ava('#position defaults to DEFAULT_SCREEN_POSITION', (t) => {
     const model = new SpawnPatternModel(DEPARTURE_PATTERN_MOCK);
 

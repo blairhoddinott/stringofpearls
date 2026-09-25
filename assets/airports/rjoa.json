@@ -465,6 +465,7 @@
             "destination": "RJOA",
             "category": "arrival",
             "route": "MARCO.Y453.SUNFL..MISEN..HGE",
+            "centerHandoffFix": "MARCO",
             "altitude": 7000,
             "speed": 230,
             "method": "random",

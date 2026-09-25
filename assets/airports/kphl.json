@@ -1231,6 +1231,7 @@
             "destination": "KPHL",
             "category": "arrival",
             "route": "JST.BOJID2.KPHL9R",
+            "centerHandoffFix": "LRP",
             "commands": {
                 "9L": "cross bunts A80",
                 "9R": "cross bunts A80",
@@ -1268,6 +1269,7 @@
             "destination": "KPHL",
             "category": "arrival",
             "route": "HTO.J121.BRIGS.JIIMS3.KPHL9R",
+            "centerHandoffFix": "IROKT",
             "commands": {
                 "9L": "CROSS BRIGS A140 CROSS IROKT A90",
                 "9R": "CROSS BRIGS A140 CROSS IROKT A90",
@@ -1306,6 +1308,7 @@
             "destination": "KPHL",
             "category": "arrival",
             "route": "RDU..FAK.PAATS3.KPHL9R",
+            "centerHandoffFix": "ESSSO",
             "commands": {
                 "9L": "CROSS BUKYY A240 CROSS JAYBO A150 CROSS ESSSO A100 S250",
                 "9R": "CROSS BUKYY A240 CROSS JAYBO A150 CROSS ESSSO A100 S250",
@@ -1343,6 +1346,7 @@
             "destination": "KPHL",
             "category": "arrival",
             "route": "DNY.SPUDS4.KPHL9R",
+            "centerHandoffFix": "SPUDS",
             "commands": {
                 "9L": "cross spuds A100 S250",
                 "9R": "cross spuds A100 S250",

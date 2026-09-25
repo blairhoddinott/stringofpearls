@@ -508,6 +508,7 @@
             "destination": "SAWH",
             "category": "arrival",
             "route": "KRILL.W56.BONTA..PWL.G550.USU",
+            "centerHandoffFix": "BONTA",
             "altitude": 14000,
             "speed": 300,
             "method": "random",

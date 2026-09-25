@@ -1220,6 +1220,8 @@
             "destination": "LSZH",
             "category": "arrival",
             "route": "LUL.G42.BLM.BLM2G.LSZH14",
+
+            "centerHandoffFix": "ZH677",
             "altitude": 23000,
             "speed": 290,
             "method": "random",
@@ -1251,6 +1253,8 @@
             "destination": "LSZH",
             "category": "arrival",
             "route": "KORED.UN871.BERSU.BERSU1G.LSZH14",
+
+            "centerHandoffFix": "BERSU",
             "altitude": 10000,
             "speed": 290,
             "method": "random",
@@ -1271,6 +1275,8 @@
             "destination": "LSZH",
             "category": "arrival",
             "route": "LAMUR.Z57.DOPIL.DOPIL1G.LSZH14",
+
+            "centerHandoffFix": "DOPIL",
             "altitude": 21000,
             "speed": 290,
             "method": "random",
@@ -1291,6 +1297,8 @@
             "destination": "LSZH",
             "category": "arrival",
             "route": "LUL.UL613.HOC.HOC1G.LSZH14",
+
+            "centerHandoffFix": "HOC",
             "altitude": 21000,
             "speed": 290,
             "method": "random",
@@ -1321,6 +1329,8 @@
             "destination": "LSZH",
             "category": "arrival",
             "route": "CANNE.UZ651.KELIP.KELIP2G.LSZH14",
+
+            "centerHandoffFix": "MOSIT",
             "altitude": 22000,
             "speed": 290,
             "method": "random",
@@ -1340,6 +1350,8 @@
             "destination": "LSZH",
             "category": "arrival",
             "route": "KOGOL.UL608.KPT.UL856.RAVED.NEGRA1A.LSZH14",
+
+            "centerHandoffFix": "KPT",
             "altitude": 30000,
             "speed": 290,
             "method": "random",
@@ -1381,6 +1393,8 @@
             "destination": "LSZH",
             "category": "arrival",
             "route": "SUNEG.T721.RILAX.RILAX1A.LSZH14",
+
+            "centerHandoffFix": "SUL",
             "altitude": 26000,
             "speed": 290,
             "method": "random",
@@ -1411,6 +1425,8 @@
             "destination": "LSZH",
             "category": "arrival",
             "route": "SPR.G5.WIL.WIL2Z.LSZH14",
+
+            "centerHandoffFix": "WIL",
             "altitude": 25000,
             "speed": 290,
             "method": "random",

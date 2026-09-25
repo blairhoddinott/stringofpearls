@@ -55,14 +55,14 @@ ava('.addRadarTargetModelForAircraftModel() adds new radar target to collection 
     t.deepEqual(collection._items[0].aircraftModel, ARRIVAL_AIRCRAFT_MODEL_MOCK);
 });
 
-ava('.addRadarTargetModelForAircraftModel() offers outside arrivals from center', (t) => {
+ava('.addRadarTargetModelForAircraftModel() gives outside arrivals solid center ownership', (t) => {
     const collection = new RadarTargetCollection(THEME.DEFAULT);
     ARRIVAL_AIRCRAFT_MODEL_MOCK.isControllable = false;
 
     collection.addRadarTargetModelForAircraftModel(ARRIVAL_AIRCRAFT_MODEL_MOCK);
 
-    t.is(collection._items[0].handoffModel.state, HANDOFF_STATE.CENTER_TO_PLAYER);
-    t.true(collection._items[0].handoffModel.shouldFlashDataBlock);
+    t.is(collection._items[0].handoffModel.state, HANDOFF_STATE.CENTER_OWNED);
+    t.false(collection._items[0].handoffModel.shouldFlashDataBlock);
 });
 
 ava('.findRadarTargetModelForAircraftModel() returns undefined when aircraft has no corresponding radar target', (t) => {

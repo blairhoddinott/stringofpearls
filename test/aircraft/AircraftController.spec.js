@@ -15,7 +15,7 @@ import {
 import { AIRPORT_JSON_KLAS_MOCK } from '../airport/_mocks/airportJsonMock';
 import { airlineControllerFixture } from '../fixtures/airlineFixtures';
 import { scopeModelFixture } from '../fixtures/scopeFixtures';
-// import { spawnPatternModelArrivalFixture } from '../fixtures/trafficGeneratorFixtures';
+import { spawnPatternModelArrivalFixture } from '../fixtures/trafficGeneratorFixtures';
 
 ava('throws when called with missing parameters', (t) => {
     const expectedMessage = /Invalid parameter\(s\) passed to AircraftController constructor\. Expected aircraftTypeDefinitionList, airlineController and scopeModel to be defined, but received .*/;
@@ -272,6 +272,36 @@ ava('retains an injected clock by exact identity', (t) => {
     t.is(controller._clock, clock);
 });
 
+ava('updates the injected center handoff coordinator for each aircraft', (t) => {
+    const centerHandoffCoordinator = { update: sinon.stub() };
+    const aircraftCollection = new AircraftCollection();
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture,
+        undefined,
+        undefined,
+        aircraftCollection,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        centerHandoffCoordinator
+    );
+    const aircraftModel = {
+        isControllable: true,
+        isTaxiing: () => true,
+        update: sinon.stub(),
+        updateWarning: sinon.stub()
+    };
+
+    aircraftCollection.list.push(aircraftModel);
+    controller.update();
+
+    t.true(centerHandoffCoordinator.update.calledOnceWithExactly(aircraftModel));
+});
+
 ava('retains an injected game state by exact identity', (t) => {
     const gameState = {};
     const controller = new AircraftController(
@@ -364,6 +394,21 @@ ava('generates distinct deterministic CIDs when randomSource is omitted', (t) =>
 
 ava('does not throw when passed valid parameters', (t) => {
     t.notThrows(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, airlineControllerFixture, scopeModelFixture));
+});
+
+ava('preserves the center handoff fix in aircraft initialization props', (t) => {
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture,
+        undefined,
+        { integer: (lower) => lower, real: (lower) => lower }
+    );
+    sinon.stub(controller, '_generateUniqueTransponderCode').returns('1000');
+
+    const aircraftProps = controller._buildAircraftProps(spawnPatternModelArrivalFixture);
+
+    t.is(aircraftProps.centerHandoffFix, spawnPatternModelArrivalFixture.centerHandoffFix);
 });
 
 // ava('.createAircraftWithSpawnPatternModel() calls ._buildAircraftProps()', (t) => {

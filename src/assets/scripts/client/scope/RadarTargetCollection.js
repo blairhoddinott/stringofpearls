@@ -115,7 +115,6 @@ export default class RadarTargetCollection extends BaseCollection {
 
         if (aircraftModel.category === FLIGHT_CATEGORY.ARRIVAL && !aircraftModel.isControllable) {
             radarTargetModel.markAsNotOurControl();
-            radarTargetModel.handoffModel.offerFromCenter();
         }
 
         this.addRadarTargetModel(radarTargetModel);

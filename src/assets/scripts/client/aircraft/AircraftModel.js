@@ -468,6 +468,7 @@ export default class AircraftModel {
         this.relativePositionHistory = [];
 
         this.category = options.category; // 'arrival' or 'departure'
+        this.centerHandoffFix = options.centerHandoffFix ?? '';
 
         // target represents what the pilot makes of the tower's commands. It is
         // most important when the plane is in a 'guided' situation, that is it is

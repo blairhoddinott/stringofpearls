@@ -45,7 +45,7 @@ The selected mode remains active when traffic is reset or the airport changes. R
 
 ## Development
 
-The repository builds, tests, and measures coverage on Node 24 with a small repository-owned pipeline based on esbuild, `fs/promises`, AVA 6, and c8. Native build and watch execution requires Linux with `/proc` and util-linux `flock`; macOS and Windows contributors should use the supported container workflow. The generated URL layout remains compatible with the inherited static site, while the production container serves it from unprivileged NGINX.
+The repository builds, tests, and measures coverage on Node 24 with a small repository-owned pipeline based on esbuild, `fs/promises`, AVA 6, and c8. Native build and watch execution requires Linux with `/proc` and util-linux `flock`; macOS and Windows contributors should use the supported container workflow. The generated URL layout remains compatible with the inherited static site, while the unprivileged Node production service adds same-origin backend APIs such as live aviation weather.
 
 Useful commands:
 

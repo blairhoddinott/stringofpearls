@@ -81,6 +81,171 @@ ava('.updateCurrentWind() returns early when passed a null or undefined argument
     t.true(model.wind.angle === 42);
 });
 
+ava('.updateCurrentWeather() applies sustained live wind through the existing airport wind state', (t) => {
+    const model = new AirportModel(AIRPORT_JSON_KLAS_MOCK);
+
+    model.updateCurrentWeather({
+        station: model.icao.toUpperCase(),
+        usesLiveWeather: true,
+        observation: {
+            wind: {
+                directionDegreesTrue: 270,
+                speedKnots: 18,
+                gustKnots: 31
+            }
+        }
+    });
+
+    t.is(model.wind.speed, 18);
+    t.is(model.wind.angle, Math.PI * 1.5);
+    t.true(model.usesLiveWeather);
+    t.false(Object.hasOwn(model.wind, 'gust'));
+});
+
+ava('.updateCurrentWeather() ignores weather for another station', (t) => {
+    const model = new AirportModel(AIRPORT_JSON_KLAS_MOCK);
+    const initialWind = { ...model.wind };
+
+    model.updateCurrentWeather({
+        station: 'KJFK',
+        usesLiveWeather: true,
+        observation: {
+            wind: {
+                directionDegreesTrue: 270,
+                speedKnots: 18
+            }
+        }
+    });
+
+    t.deepEqual(model.wind, initialWind);
+    t.false(model.usesLiveWeather);
+});
+
+ava('.updateCurrentWeather() restores static wind when live weather becomes unusable', (t) => {
+    const model = new AirportModel(AIRPORT_JSON_KLAS_MOCK);
+
+    model.updateCurrentWeather({
+        station: model.icao.toUpperCase(),
+        usesLiveWeather: true,
+        observation: {
+            wind: { directionDegreesTrue: 270, speedKnots: 18 }
+        }
+    });
+    model.updateCurrentWeather({
+        station: model.icao.toUpperCase(),
+        usesLiveWeather: false,
+        observation: {
+            wind: { directionDegreesTrue: null, speedKnots: 12, variable: true }
+        }
+    });
+
+    t.deepEqual(model.wind, model.defaultWind);
+    t.false(model.usesLiveWeather);
+});
+
+ava('.updateCurrentWeather() preserves manual wind during repeated fallback retries', (t) => {
+    const model = new AirportModel(AIRPORT_JSON_KLAS_MOCK);
+    const fallbackState = {
+        station: model.icao.toUpperCase(),
+        usesLiveWeather: false,
+        observation: null
+    };
+
+    model.updateCurrentWeather({
+        station: model.icao.toUpperCase(),
+        usesLiveWeather: true,
+        observation: {
+            wind: { directionDegreesTrue: 270, speedKnots: 18 }
+        }
+    });
+    model.updateCurrentWeather(fallbackState);
+    model.updateCurrentWind({ angle: 100, speed: 9 });
+    model.updateCurrentWeather(fallbackState);
+
+    t.is(model.wind.speed, 9);
+    t.is(model.wind.angle, 100 * Math.PI / 180);
+});
+
+ava('.updateManualWind() ignores manual changes while live weather owns wind', (t) => {
+    const model = new AirportModel(AIRPORT_JSON_KLAS_MOCK);
+
+    model.updateCurrentWeather({
+        station: model.icao.toUpperCase(),
+        usesLiveWeather: true,
+        observation: {
+            wind: { directionDegreesTrue: 270, speedKnots: 18 }
+        }
+    });
+    model.updateManualWind({ angle: 100, speed: 9 });
+
+    t.is(model.wind.speed, 18);
+    t.is(model.wind.angle, Math.PI * 1.5);
+});
+
+ava('.updateManualWind() applies manual changes during static fallback', (t) => {
+    const model = new AirportModel(AIRPORT_JSON_KLAS_MOCK);
+
+    model.updateManualWind({ angle: 100, speed: 9 });
+
+    t.is(model.wind.speed, 9);
+    t.is(model.wind.angle, 100 * Math.PI / 180);
+});
+
+ava('initialized airports consume weather change events', (t) => {
+    const handlers = new Map();
+    const eventBus = {
+        on: (eventName, handler) => handlers.set(eventName, handler),
+        trigger: sinon.stub()
+    };
+    const model = new AirportModel(
+        AIRPORT_JSON_KLAS_MOCK,
+        null,
+        null,
+        null,
+        eventBus
+    );
+
+    t.is(typeof handlers.get(EVENT.WEATHER_CHANGE), 'function');
+
+    handlers.get(EVENT.WEATHER_CHANGE)({
+        station: model.icao.toUpperCase(),
+        usesLiveWeather: true,
+        observation: {
+            wind: { directionDegreesTrue: 270, speedKnots: 18 }
+        }
+    });
+
+    t.is(model.wind.speed, 18);
+    t.is(model.wind.angle, Math.PI * 1.5);
+});
+
+ava('initialized airports reject wind change events while live weather is active', (t) => {
+    const handlers = new Map();
+    const eventBus = {
+        on: (eventName, handler) => handlers.set(eventName, handler),
+        trigger: sinon.stub()
+    };
+    const model = new AirportModel(
+        AIRPORT_JSON_KLAS_MOCK,
+        null,
+        null,
+        null,
+        eventBus
+    );
+
+    handlers.get(EVENT.WEATHER_CHANGE)({
+        station: model.icao.toUpperCase(),
+        usesLiveWeather: true,
+        observation: {
+            wind: { directionDegreesTrue: 270, speedKnots: 18 }
+        }
+    });
+    handlers.get(EVENT.WIND_CHANGE)({ angle: 100, speed: 9 });
+
+    t.is(model.wind.speed, 18);
+    t.is(model.wind.angle, Math.PI * 1.5);
+});
+
 ava('.set() calls .load() when #lodaed is false', (t) => {
     const model = new AirportModel(AIRPORT_JSON_KLAS_MOCK);
     const loadSpy = sinon.spy(model, 'load');

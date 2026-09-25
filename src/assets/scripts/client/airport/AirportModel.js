@@ -616,7 +616,7 @@ export default class AirportModel {
         }
 
         this.updateCurrentWind({
-            angle: weatherState.observation.wind.directionDegreesTrue,
+            angle: weatherState.observation.wind.directionDegrees,
             speed: weatherState.observation.wind.speedKnots
         });
         this.usesLiveWeather = true;

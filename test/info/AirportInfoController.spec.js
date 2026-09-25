@@ -5,6 +5,7 @@ import AirportController from '../../src/assets/scripts/client/airport/AirportCo
 import AirportInfoController from '../../src/assets/scripts/client/info/AirportInfoController';
 import { EVENT } from '../../src/assets/scripts/client/constants/eventNames';
 import { AIRPORT_INFO_TEMPLATE } from '../../src/assets/scripts/client/info/airportInfoTemplate';
+import { normalizeObservation } from '../../src/assets/scripts/server/weather/MetarService';
 
 ava('setup handlers binds a stable weather change handler', (t) => {
     const controller = Object.create(AirportInfoController.prototype);
@@ -144,7 +145,7 @@ ava('usable weather updates METAR wind gust and altimeter presentation', (t) => 
             raw,
             altimeterHpa: 1017,
             wind: {
-                directionDegreesTrue: 210,
+                directionDegrees: 210,
                 speedKnots: 12,
                 gustKnots: 19
             }
@@ -156,6 +157,29 @@ ava('usable weather updates METAR wind gust and altimeter presentation', (t) => 
     t.is(controller.altimeter, '30.03');
     t.true(controller.usesLiveWeather);
     t.is(renderCount, 1);
+});
+
+ava('usable weather renders the normalized server observation contract', (t) => {
+    const controller = Object.create(AirportInfoController.prototype);
+    const observation = normalizeObservation('KLAS', {
+        obsTime: 1790330160,
+        rawOb: 'METAR KLAS 250956Z 21012G19KT 10SM CLR 24/08 A3003',
+        wdir: 210,
+        wspd: 12,
+        wgst: 19,
+        altim: 1017
+    });
+    controller.icao = 'KLAS';
+    controller._render = () => {};
+
+    controller.onWeatherChange({
+        station: 'KLAS',
+        status: 'available',
+        usesLiveWeather: true,
+        observation
+    });
+
+    t.is(controller.wind, '210 12 G19');
 });
 
 ava('fallback weather presentation uses static wind and standard pressure', (t) => {

@@ -50,7 +50,7 @@ async function main() {
                         observedAt: new Date().toISOString(),
                         raw,
                         wind: {
-                            directionDegreesTrue: 210,
+                            directionDegrees: 210,
                             speedKnots: 12,
                             gustKnots: 19,
                             variable: false

@@ -319,7 +319,7 @@ export default class AirportInfoController {
             const { observation } = weatherState;
 
             this.wind = this._buildWindAndGustReadout({
-                angle: observation.wind.directionDegreesTrue,
+                angle: observation.wind.directionDegrees,
                 speed: observation.wind.speedKnots,
                 gust: observation.wind.gustKnots
             });

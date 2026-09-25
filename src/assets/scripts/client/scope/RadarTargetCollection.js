@@ -5,6 +5,7 @@ import BaseCollection from '../base/BaseCollection';
 import EventBus from '../lib/EventBus';
 import { EVENT } from '../constants/eventNames';
 import { THEME } from '../constants/themes';
+import { FLIGHT_CATEGORY } from '../constants/aircraftConstants';
 
 /**
  * Collection of `RadarTargetModel`s
@@ -111,6 +112,11 @@ export default class RadarTargetCollection extends BaseCollection {
      */
     addRadarTargetModelForAircraftModel = (aircraftModel) => {
         const radarTargetModel = new RadarTargetModel(this._theme, aircraftModel);
+
+        if (aircraftModel.category === FLIGHT_CATEGORY.ARRIVAL && !aircraftModel.isControllable) {
+            radarTargetModel.markAsNotOurControl();
+            radarTargetModel.handoffModel.offerFromCenter();
+        }
 
         this.addRadarTargetModel(radarTargetModel);
     };

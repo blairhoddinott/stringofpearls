@@ -373,6 +373,34 @@ ava.serial('constructor retains an explicitly supplied trailing aircraft-selecti
     }
 });
 
+ava.serial('selectAircraft() accepts an offered handoff before selecting it', (t) => {
+    const inputInit = sinon.stub(InputController.prototype, '_init');
+    const autocompleteInit = sinon.stub(AutocompleteController.prototype, '_init');
+    const calls = [];
+    const aircraftModel = {};
+    const scopeModel = {
+        acceptHandoffIfOffered: (aircraft) => calls.push(['accept', aircraft])
+    };
+    const selectionInteraction = {
+        select: (...args) => calls.push(['select', ...args])
+    };
+
+    try {
+        const controller = new InputController(
+            {}, {}, scopeModel, {}, null, null, null, {}, {}, selectionInteraction
+        );
+
+        controller.selectAircraft(aircraftModel);
+
+        t.deepEqual(calls.map(([name]) => name), ['accept', 'select']);
+        t.is(calls[0][1], aircraftModel);
+        t.is(calls[1][1], aircraftModel);
+    } finally {
+        inputInit.restore();
+        autocompleteInit.restore();
+    }
+});
+
 ava.serial('public aircraft-selection methods delegate through current controller callbacks', (t) => {
     const inputInit = sinon.stub(InputController.prototype, '_init');
     const autocompleteInit = sinon.stub(AutocompleteController.prototype, '_init');

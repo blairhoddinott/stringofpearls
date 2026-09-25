@@ -345,6 +345,10 @@ export default class RadarTargetModel {
             dataBlockRowOne += ` ${wtc.LETTER}`;
         }
 
+        if (this.handoffModel.controllerIdentifier) {
+            dataBlockRowOne += ` ${this.handoffModel.controllerIdentifier}`;
+        }
+
         return dataBlockRowOne;
     }
 

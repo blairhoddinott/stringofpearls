@@ -259,6 +259,13 @@ ava('.buildDataBlockRowOne() creates correct first row for Large', (t) => {
     t.true(model.buildDataBlockRowOne() === expectedValue);
 });
 
+ava('.buildDataBlockRowOne() appends center ownership', (t) => {
+    const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
+    model.markAsNotOurControl();
+
+    t.is(model.buildDataBlockRowOne(), 'AAL432 C');
+});
+
 ava('.buildDataBlockRowOne() creates correct first row for Heavy', (t) => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK_HEAVY);
     const expectedValue = 'UAL99 H';

@@ -405,6 +405,7 @@ export default class InputController {
      * @param aircraftModel {AircraftModel}
      */
     selectAircraft = (aircraftModel) => {
+        this._scopeModel.acceptHandoffIfOffered?.(aircraftModel);
         this._selectionInteraction.select(aircraftModel, () => this.deselectAircraft());
     };
 

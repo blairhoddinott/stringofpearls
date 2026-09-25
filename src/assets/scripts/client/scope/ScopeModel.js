@@ -128,8 +128,28 @@ export default class ScopeModel {
      * @param radarTargetModel {RadarTargetModel}
      * @return result {array} [success of operation, system's response]
      */
-    acceptHandoff(/* radarTargetModel */) {
-        return [false, 'acceptHandoff command not yet available'];
+    acceptHandoff(radarTargetModel) {
+        if (!radarTargetModel.handoffModel.acceptFromCenter()) {
+            return [false, 'ERR: NO INBOUND HANDOFF'];
+        }
+
+        return [true, 'HANDOFF ACCEPTED'];
+    }
+
+    /**
+     * Accept a pending inbound handoff selected directly on the scope.
+     *
+     * @param aircraftModel {AircraftModel}
+     * @return {boolean}
+     */
+    acceptHandoffIfOffered(aircraftModel) {
+        const radarTargetModel = this.radarTargetCollection.findRadarTargetModelForAircraftModel(aircraftModel);
+
+        if (radarTargetModel?.handoffModel.isInboundHandoffPending !== true) {
+            return false;
+        }
+
+        return this.acceptHandoff(radarTargetModel)[0];
     }
 
     /**

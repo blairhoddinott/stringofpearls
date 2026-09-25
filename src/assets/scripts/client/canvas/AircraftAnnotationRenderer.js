@@ -124,7 +124,7 @@ export default class AircraftAnnotationRenderer {
     _drawSingleDataBlock(cc, theme, radarTargetModel) {
         const { aircraftModel } = radarTargetModel;
 
-        if (!aircraftModel.isVisible() || aircraftModel.hit) {
+        if (!aircraftModel.isVisible() || aircraftModel.hit || !this._isDataBlockVisible(radarTargetModel)) {
             return;
         }
 
@@ -311,6 +311,14 @@ export default class AircraftAnnotationRenderer {
 
     _shouldShowSecondaryDataBlock() {
         return _inRange(this._timeKeeper.gameTimeMilliseconds % 3000, 2000, 3000);
+    }
+
+    _isDataBlockVisible(radarTargetModel) {
+        if (!radarTargetModel.handoffModel?.shouldFlashDataBlock) {
+            return true;
+        }
+
+        return this._timeKeeper.gameTimeMilliseconds % 1000 < 500;
     }
 
     _calculateLeaderLength(theme, dataBlockLeaderLength) {

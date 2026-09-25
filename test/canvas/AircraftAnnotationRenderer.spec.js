@@ -146,6 +146,41 @@ ava('drawCompass() preserves selected-aircraft filtering and compass mark cadenc
     t.deepEqual(calls.at(-1), ['restore']);
 });
 
+ava('_isDataBlockVisible() flashes inbound handoffs on simulation time', (t) => {
+    const timeKeeper = { gameTimeMilliseconds: 499 };
+    const renderer = new AircraftAnnotationRenderer({}, {}, {}, {}, timeKeeper, () => '');
+    const radarTargetModel = {
+        handoffModel: { shouldFlashDataBlock: true }
+    };
+
+    t.true(renderer._isDataBlockVisible(radarTargetModel));
+
+    timeKeeper.gameTimeMilliseconds = 500;
+    t.false(renderer._isDataBlockVisible(radarTargetModel));
+
+    timeKeeper.gameTimeMilliseconds = 1000;
+    t.true(renderer._isDataBlockVisible(radarTargetModel));
+});
+
+ava('_drawSingleDataBlock() skips the hidden phase of an inbound flash', (t) => {
+    const renderer = new AircraftAnnotationRenderer({}, {}, {}, {}, {}, () => '');
+    const radarTargetModel = {
+        aircraftModel: {
+            hit: false,
+            isVisible: sinon.stub().returns(true)
+        }
+    };
+    const visibilityStub = sinon.stub(renderer, '_isDataBlockVisible').returns(false);
+    const unreadableCanvas = new Proxy({}, {
+        get() {
+            throw new Error('canvas should not be read during hidden flash phase');
+        }
+    });
+
+    t.is(renderer._drawSingleDataBlock(unreadableCanvas, {}, radarTargetModel), undefined);
+    t.true(visibilityStub.calledOnceWithExactly(radarTargetModel));
+});
+
 ava('drawDataBlocks() preserves empty-collection translation and canvas state order', (t) => {
     const renderer = new AircraftAnnotationRenderer(
         { halfWidth: 100.4, halfHeight: 80.6 },

@@ -4,6 +4,7 @@ import _includes from 'lodash/includes';
 import _map from 'lodash/map';
 import EventBus from '../../src/assets/scripts/client/lib/EventBus';
 import RadarTargetCollection from '../../src/assets/scripts/client/scope/RadarTargetCollection';
+import { HANDOFF_STATE } from '../../src/assets/scripts/client/scope/HandoffModel';
 import { THEME } from '../../src/assets/scripts/client/constants/themes';
 import { RADAR_TARGET_ARRIVAL_MOCK } from './_mocks/radarTargetMocks';
 import {
@@ -52,6 +53,16 @@ ava('.addRadarTargetModelForAircraftModel() adds new radar target to collection 
     collection.addRadarTargetModelForAircraftModel(ARRIVAL_AIRCRAFT_MODEL_MOCK);
 
     t.deepEqual(collection._items[0].aircraftModel, ARRIVAL_AIRCRAFT_MODEL_MOCK);
+});
+
+ava('.addRadarTargetModelForAircraftModel() offers outside arrivals from center', (t) => {
+    const collection = new RadarTargetCollection(THEME.DEFAULT);
+    ARRIVAL_AIRCRAFT_MODEL_MOCK.isControllable = false;
+
+    collection.addRadarTargetModelForAircraftModel(ARRIVAL_AIRCRAFT_MODEL_MOCK);
+
+    t.is(collection._items[0].handoffModel.state, HANDOFF_STATE.CENTER_TO_PLAYER);
+    t.true(collection._items[0].handoffModel.shouldFlashDataBlock);
 });
 
 ava('.findRadarTargetModelForAircraftModel() returns undefined when aircraft has no corresponding radar target', (t) => {

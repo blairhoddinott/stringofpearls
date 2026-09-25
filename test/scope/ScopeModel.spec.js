@@ -60,13 +60,38 @@ ava('.disable() deregisters event handlers', (t) => {
     t.true(eventBusOffStub.callCount === expectedEventsToDeregister);
 });
 
-ava('.acceptHandoff() returns message that command is unavailable', (t) => {
+ava('.acceptHandoff() accepts a pending center handoff', (t) => {
     const model = new ScopeModel();
-    const expectedResult = [false, 'acceptHandoff command not yet available'];
+    const radarTargetModel = createRadarTargetArrivalMock();
+    radarTargetModel.markAsNotOurControl();
+    radarTargetModel.handoffModel.offerFromCenter();
+    const expectedResult = [true, 'HANDOFF ACCEPTED'];
 
-    const result = model.acceptHandoff();
+    const result = model.acceptHandoff(radarTargetModel);
 
     t.deepEqual(result, expectedResult);
+    t.true(radarTargetModel.handoffModel.isPlayerControlled);
+});
+
+ava('.acceptHandoff() rejects aircraft without a pending inbound handoff', (t) => {
+    const model = new ScopeModel();
+    const radarTargetModel = createRadarTargetArrivalMock();
+
+    const result = model.acceptHandoff(radarTargetModel);
+
+    t.deepEqual(result, [false, 'ERR: NO INBOUND HANDOFF']);
+    t.true(radarTargetModel.handoffModel.isPlayerControlled);
+});
+
+ava('.acceptHandoffIfOffered() resolves and accepts an offered aircraft', (t) => {
+    const model = new ScopeModel();
+    const radarTargetModel = createRadarTargetArrivalMock();
+    radarTargetModel.markAsNotOurControl();
+    radarTargetModel.handoffModel.offerFromCenter();
+    model.radarTargetCollection.addRadarTargetModel(radarTargetModel);
+
+    t.true(model.acceptHandoffIfOffered(radarTargetModel.aircraftModel));
+    t.true(radarTargetModel.handoffModel.isPlayerControlled);
 });
 
 ava('.amendAltitude() accepts {string} number and passes {number} number to radarTargetModel.amendAltitude()', (t) => {

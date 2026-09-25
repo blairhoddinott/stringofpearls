@@ -21,7 +21,7 @@
     "release:prepare": "node tools/release/cli.js --prepare",
     "release:test": "node --test tools/release/*.test.js tools/build-changelog.test.js tools/ci/classify-master-acceptance.test.js",
     "server": "npm run start",
-    "server:test": "npm run build && node tools/server.test.js",
+    "server:test": "npm run weather:test && npm run build && node tools/server.test.js",
     "start": "node public/assets/scripts/server/index.js",
     "test": "ava --concurrency=5",
     "test:coverage": "c8 ava --concurrency=5 && npm run coverage:test",
@@ -29,7 +29,8 @@
     "validator": "npm run validate:assets",
     "validator:test": "node tools/validate-assets.test.js",
     "validate:assets": "node tools/validate-assets.js",
-    "watch": "node tools/build.js --watch"
+    "watch": "node tools/build.js --watch",
+    "weather:test": "node --test tools/weather/*.test.js"
   },
   "repository": {
     "type": "git",

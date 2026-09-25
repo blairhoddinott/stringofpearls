@@ -133,6 +133,35 @@ export default class ScopeModel {
     }
 
     /**
+     * Determine whether the player owns the specified aircraft and may issue
+     * flight commands to it. Geographic airspace containment is deliberately
+     * not part of this decision.
+     *
+     * @param aircraftModel {AircraftModel}
+     * @return {boolean}
+     */
+    canIssueCommandsTo(aircraftModel) {
+        const radarTargetModel = this.radarTargetCollection.findRadarTargetModelForAircraftModel(aircraftModel);
+
+        return radarTargetModel?.handoffModel.isPlayerControlled === true;
+    }
+
+    /**
+     * Determine whether an aircraft may be selected for interaction. Player-owned
+     * aircraft and pending inbound handoffs are selectable regardless of geography.
+     *
+     * @param aircraftModel {AircraftModel}
+     * @return {boolean}
+     */
+    canSelectAircraft(aircraftModel) {
+        const radarTargetModel = this.radarTargetCollection.findRadarTargetModelForAircraftModel(aircraftModel);
+        const handoffModel = radarTargetModel?.handoffModel;
+
+        return handoffModel?.isPlayerControlled === true ||
+            handoffModel?.isInboundHandoffPending === true;
+    }
+
+    /**
      * Amend the cruise altitude OR interim altitude for a given `RadarTargetModel`
      *
      * @for ScopeModel

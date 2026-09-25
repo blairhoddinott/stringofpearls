@@ -197,7 +197,8 @@ export default class InputController {
             this.$commandInput,
             this._eventBus,
             this._aircraftController,
-            () => prop.input
+            () => prop.input,
+            this._scopeModel.canSelectAircraft.bind(this._scopeModel)
         );
     }
 

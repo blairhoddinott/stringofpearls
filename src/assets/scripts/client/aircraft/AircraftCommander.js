@@ -36,7 +36,8 @@ export default class AircraftCommander {
         eventBus = EventBus,
         airportController = AirportController,
         navigationLibrary = NavigationLibrary,
-        gameState = GameController
+        gameState = GameController,
+        canIssueCommandsTo = (aircraft) => aircraft.isControllable
     ) {
         this._eventBus = eventBus;
         this._airportController = airportController;
@@ -44,6 +45,7 @@ export default class AircraftCommander {
         this._gameState = gameState;
         this._findAircraftById = findAircraftById;
         this._onChangeTransponderCode = onChangeTransponderCode;
+        this._canIssueCommandsTo = canIssueCommandsTo;
     }
 
     /**
@@ -54,7 +56,9 @@ export default class AircraftCommander {
      * @param isPreSpawn {boolean}
      */
     runCommands(aircraft, commands, isPreSpawn = false) {
-        if (!aircraft.isControllable && !isPreSpawn) {
+        if (!isPreSpawn && !this._canIssueCommandsTo(aircraft)) {
+            UiController.ui_log(`${aircraft.callsign}, unable, aircraft is not under your control`, true);
+
             return true;
         }
 

@@ -253,6 +253,39 @@ ava('.runScopeCommand() calls the correct method specified in the ScopeCommandMo
     t.true(scopeMethodSpy.calledOnce);
 });
 
+ava('.canIssueCommandsTo() rejects center-owned aircraft regardless of geography', (t) => {
+    const scopeModel = new ScopeModel();
+    const radarTargetModel = createRadarTargetArrivalMock();
+    radarTargetModel.aircraftModel.isControllable = true;
+    radarTargetModel.markAsNotOurControl();
+    scopeModel.radarTargetCollection.addRadarTargetModel(radarTargetModel);
+
+    t.true(radarTargetModel.aircraftModel.isControllable);
+    t.false(scopeModel.canIssueCommandsTo(radarTargetModel.aircraftModel));
+});
+
+ava('.canIssueCommandsTo() accepts player-owned aircraft outside the airspace', (t) => {
+    const scopeModel = new ScopeModel();
+    const radarTargetModel = createRadarTargetArrivalMock();
+    radarTargetModel.aircraftModel.isControllable = false;
+    scopeModel.radarTargetCollection.addRadarTargetModel(radarTargetModel);
+
+    t.true(scopeModel.canIssueCommandsTo(radarTargetModel.aircraftModel));
+});
+
+ava('.canSelectAircraft() accepts only an offered center-owned aircraft', (t) => {
+    const scopeModel = new ScopeModel();
+    const radarTargetModel = createRadarTargetArrivalMock();
+    radarTargetModel.markAsNotOurControl();
+    scopeModel.radarTargetCollection.addRadarTargetModel(radarTargetModel);
+
+    t.false(scopeModel.canSelectAircraft(radarTargetModel.aircraftModel));
+
+    radarTargetModel.handoffModel.offerFromCenter();
+
+    t.true(scopeModel.canSelectAircraft(radarTargetModel.aircraftModel));
+});
+
 ava('.setScratchpad() returns scratchpad length error when too many characters provided', (t) => {
     const model = new ScopeModel();
     const radarTargetModel = createRadarTargetArrivalMock();

@@ -112,7 +112,8 @@ export default class AircraftController {
             eventBus,
             airportController,
             navigationLibrary,
-            gameState
+            gameState,
+            scopeModel.canIssueCommandsTo.bind(scopeModel)
         );
 
         /**

@@ -2,6 +2,7 @@ import ava from 'ava';
 import sinon from 'sinon';
 import EventBus from '../../src/assets/scripts/client/lib/EventBus';
 import RadarTargetModel from '../../src/assets/scripts/client/scope/RadarTargetModel';
+import HandoffModel, { HANDOFF_STATE } from '../../src/assets/scripts/client/scope/HandoffModel';
 import {
     ARRIVAL_AIRCRAFT_MODEL_MOCK,
     ARRIVAL_AIRCRAFT_MODEL_MOCK_HEAVY,
@@ -37,7 +38,9 @@ ava('initializes correctly when called to instantiate with correct parameters', 
     t.true(model._haloRadius === INVALID_NUMBER);
     t.true(model._hasSuppressedDataBlock === false);
     t.true(model._interimAltitude === INVALID_NUMBER);
-    t.true(model._isUnderOurControl === true);
+    t.true(model.handoffModel instanceof HandoffModel);
+    t.is(model.handoffModel.state, HANDOFF_STATE.PLAYER_OWNED);
+    t.false(Object.hasOwn(model, '_isUnderOurControl'));
     t.true(model._routeString === 'DAG.KEPEC3.KLAS07R');
     t.true(model._scratchPadText === 'LAS');
     t.true(model._theme === THEME.DEFAULT);
@@ -78,20 +81,25 @@ ava('.amendAltitude() sets #_cruiseAltitude to the specified altitude', (t) => {
     t.true(model._cruiseAltitude === newAltitude);
 });
 
-ava('.markAsNotOurControl() sets #_isUnderOurControl to false', (t) => {
+ava('.markAsNotOurControl() assigns center ownership', (t) => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
 
     model.markAsNotOurControl();
 
-    t.false(model._isUnderOurControl);
+    t.is(model.handoffModel.state, HANDOFF_STATE.CENTER_OWNED);
+    t.false(model.handoffModel.isPlayerControlled);
+    t.false(Object.hasOwn(model, '_isUnderOurControl'));
 });
 
-ava('.markAsOurControl() sets #_isUnderOurControl to false', (t) => {
+ava('.markAsOurControl() assigns player ownership', (t) => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
+    model.markAsNotOurControl();
 
     model.markAsOurControl();
 
-    t.true(model._isUnderOurControl);
+    t.is(model.handoffModel.state, HANDOFF_STATE.PLAYER_OWNED);
+    t.true(model.handoffModel.isPlayerControlled);
+    t.false(Object.hasOwn(model, '_isUnderOurControl'));
 });
 
 ava('.moveDataBlock() returns syntax error when no arguments provided', (t) => {

@@ -7,6 +7,7 @@ import AirportController from '../../src/assets/scripts/client/airport/AirportCo
 import { EventBusClass } from '../../src/assets/scripts/client/lib/EventBus';
 import { NavigationLibraryClass } from '../../src/assets/scripts/client/navigationLibrary/NavigationLibrary';
 import SimulationGameState from '../../src/assets/scripts/client/simulation/SimulationGameState';
+import ScopeModel from '../../src/assets/scripts/client/scope/ScopeModel';
 import {
     AIRCRAFT_DEFINITION_LIST_MOCK,
     DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK
@@ -152,6 +153,20 @@ ava('threads the randomSource by identity to StripViewController after the delay
 
     t.is(controller._stripViewController._delayScheduler, delayScheduler);
     t.is(controller._stripViewController._randomSource, randomSource);
+});
+
+ava('threads scope ownership policy to AircraftCommander', (t) => {
+    const scopeModel = new ScopeModel();
+    const canIssueCommandsToStub = sinon.stub(scopeModel, 'canIssueCommandsTo').returns(false);
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModel
+    );
+    const aircraftModel = {};
+
+    t.false(controller._aircraftCommander._canIssueCommandsTo(aircraftModel));
+    t.true(canIssueCommandsToStub.calledOnceWithExactly(aircraftModel));
 });
 
 ava('retains an injected aircraft collection by exact identity', (t) => {

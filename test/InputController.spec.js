@@ -340,6 +340,10 @@ ava('._createAircraftSelectionInteraction() composes exact controller-owned depe
     controller.$commandInput = {};
     controller._eventBus = {};
     controller._aircraftController = {};
+    const aircraftModel = { isControllable: false };
+    controller._scopeModel = {
+        canSelectAircraft: (candidate) => candidate === aircraftModel
+    };
 
     const interaction = controller._createAircraftSelectionInteraction();
 
@@ -349,6 +353,7 @@ ava('._createAircraftSelectionInteraction() composes exact controller-owned depe
     t.is(interaction._eventBus, controller._eventBus);
     t.is(interaction._aircraftController, controller._aircraftController);
     t.is(typeof interaction._legacyInputProvider, 'function');
+    t.true(interaction._canSelectAircraft(aircraftModel));
 });
 
 ava.serial('constructor retains an explicitly supplied trailing aircraft-selection interaction', (t) => {

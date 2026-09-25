@@ -149,6 +149,7 @@ docker compose config --quiet
 - Health endpoint: `/healthz`
 - Static root: `/app/public`
 - Weather endpoint: `/api/weather/metar/:station`
+- The endpoint queries only the requested four-character station, caches usable observations for 30 minutes, retries unusable or unavailable observations after five minutes, collapses concurrent station requests, and limits uncached upstream traffic to 90 requests per rolling minute.
 - Unknown `/api/*` paths return JSON `404` responses.
 - Missing `/assets/*` resources return `404`.
 - Other unknown routes fall back to `index.html`, matching the historical static-host configuration.

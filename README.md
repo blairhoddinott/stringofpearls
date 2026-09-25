@@ -99,7 +99,7 @@ The canonical roadmap lives at [documentation/development/roadmap.md](documentat
 ### Simulation and realism
 
 - [ ] Use real-world traffic schedules
-- [ ] Use real-world weather
+- [x] Use real-world METAR weather for sustained wind and altimeter, with visible gusts, active runways, and deterministic fallback
 - [ ] Simulate handoffs from center controllers
 - [ ] Model service to smaller airports in the surrounding area
 - [ ] Add operational holding instructions

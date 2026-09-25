@@ -39,7 +39,7 @@ This roadmap tracks the current direction of the project. The order may change a
 ## Simulation and realism
 
 - [ ] Use real-world traffic schedules
-- [ ] Use real-world weather
+- [x] Use exact-station AviationWeather.gov METARs for sustained wind and altimeter, display reported gusts and active runways, and retain deterministic static/manual fallback
 - [ ] Simulate handoffs from center controllers
 - [ ] Model service to smaller airports in the surrounding area
 - [ ] Add operational holding instructions

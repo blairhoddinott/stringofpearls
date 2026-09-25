@@ -162,6 +162,22 @@ ava('_isDataBlockVisible() flashes inbound handoffs on simulation time', (t) => 
     t.true(renderer._isDataBlockVisible(radarTargetModel));
 });
 
+ava('_isControllerIdentifierVisible() flashes only a pending tower identifier', (t) => {
+    const timeKeeper = { gameTimeMilliseconds: 499 };
+    const renderer = new AircraftAnnotationRenderer({}, {}, {}, {}, timeKeeper, () => '');
+    const pendingTarget = {
+        handoffModel: { shouldFlashControllerIdentifier: true }
+    };
+    const ownedTarget = {
+        handoffModel: { shouldFlashControllerIdentifier: false }
+    };
+
+    t.true(renderer._isControllerIdentifierVisible(pendingTarget));
+    timeKeeper.gameTimeMilliseconds = 500;
+    t.false(renderer._isControllerIdentifierVisible(pendingTarget));
+    t.true(renderer._isControllerIdentifierVisible(ownedTarget));
+});
+
 ava('_drawSingleDataBlock() skips the hidden phase of an inbound flash', (t) => {
     const renderer = new AircraftAnnotationRenderer({}, {}, {}, {}, {}, () => '');
     const radarTargetModel = {
@@ -216,6 +232,7 @@ ava('drawDataBlocks() preserves leader geometry and timed secondary text without
     };
     const radarTargetModel = {
         aircraftModel,
+        handoffModel: { shouldFlashControllerIdentifier: true },
         dataBlockLeaderDirection: 'ctr',
         dataBlockLeaderLength: 2,
         calculateDataBlockCenter: sinon.stub().returns([30, 40]),
@@ -274,7 +291,7 @@ ava('drawDataBlocks() preserves leader geometry and timed secondary text without
     t.true(aircraftModel.matchCallsign.calledOnceWithExactly('abc'));
     t.true(viewport.calculateRoundedCanvasPositionFromRelativePosition.calledOnceWithExactly([1, 2]));
     t.true(radarTargetModel.calculateDataBlockCenter.calledOnceWithExactly([10, 20]));
-    t.true(radarTargetModel.buildDataBlockRowOne.calledOnce);
+    t.true(radarTargetModel.buildDataBlockRowOne.calledOnceWithExactly(false));
     t.true(radarTargetModel.buildDataBlockRowTwoPrimaryInfo.calledOnce);
     t.true(radarTargetModel.buildDataBlockRowTwoSecondaryInfo.calledOnce);
     t.deepEqual(calls, [

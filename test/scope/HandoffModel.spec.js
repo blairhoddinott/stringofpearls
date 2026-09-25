@@ -54,8 +54,9 @@ ava('expiring a pending center handoff restores solid center ownership', (t) => 
 ava('requesting a tower handoff keeps player control and flashes T', (t) => {
     const model = new HandoffModel();
 
-    t.true(model.requestTowerHandoff());
+    t.true(model.requestTowerHandoff(42));
     t.is(model.state, HANDOFF_STATE.PLAYER_TO_TOWER);
+    t.is(model.towerHandoffRequestedAtSeconds, 42);
     t.true(model.isPlayerControlled);
     t.is(model.controllerIdentifier, 'T');
     t.false(model.shouldFlashDataBlock);
@@ -69,6 +70,7 @@ ava('tower acceptance removes player control and leaves a solid T', (t) => {
 
     t.true(model.acceptByTower());
     t.is(model.state, HANDOFF_STATE.TOWER_OWNED);
+    t.is(model.towerHandoffRequestedAtSeconds, null);
     t.false(model.isPlayerControlled);
     t.is(model.controllerIdentifier, 'T');
     t.false(model.shouldFlashDataBlock);
@@ -82,6 +84,7 @@ ava('cancelling a pending tower handoff restores player ownership', (t) => {
 
     t.true(model.cancelTowerHandoff());
     t.is(model.state, HANDOFF_STATE.PLAYER_OWNED);
+    t.is(model.towerHandoffRequestedAtSeconds, null);
     t.true(model.isPlayerControlled);
     t.is(model.controllerIdentifier, '');
     t.false(model.shouldFlashControllerIdentifier);

@@ -79,10 +79,17 @@ ava('retains an explicit center handoff fix in normalized form', (t) => {
     t.is(model.centerHandoffFix, 'GRNPA');
 });
 
-ava('defaults an arrival handoff fix to the first named route waypoint', (t) => {
-    const model = new SpawnPatternModel(ARRIVAL_PATTERN_MOCK);
+ava('rejects an arrival without an explicit center handoff fix', (t) => {
+    const arrivalWithoutHandoffFix = { ...ARRIVAL_PATTERN_MOCK };
 
-    t.is(model.centerHandoffFix, 'BETHL');
+    delete arrivalWithoutHandoffFix.centerHandoffFix;
+
+    const error = t.throws(() => new SpawnPatternModel(arrivalWithoutHandoffFix));
+
+    t.is(
+        error.message,
+        'arrival route BETHL.GRNPA1.KLAS07R requires centerHandoffFix'
+    );
 });
 
 ava('rejects an explicit handoff fix outside the resolved arrival route', (t) => {
@@ -94,6 +101,20 @@ ava('rejects an explicit handoff fix outside the resolved arrival route', (t) =>
     t.is(
         error.message,
         'centerHandoffFix NOTAFIX is not present in arrival route BETHL.GRNPA1.KLAS07R'
+    );
+});
+
+ava('rejects a center handoff fix without a following route segment', (t) => {
+    const validModel = new SpawnPatternModel(ARRIVAL_PATTERN_MOCK);
+    const terminalFix = validModel._routeModel.waypoints.at(-1).name;
+    const error = t.throws(() => new SpawnPatternModel({
+        ...ARRIVAL_PATTERN_MOCK,
+        centerHandoffFix: terminalFix
+    }));
+
+    t.is(
+        error.message,
+        `centerHandoffFix ${terminalFix} has no following segment in arrival route BETHL.GRNPA1.KLAS07R`
     );
 });
 
@@ -314,7 +335,8 @@ ava('._calculateSpawnHeading() returns bearing between route\'s first and second
         {},
         ARRIVAL_PATTERN_MOCK,
         {
-            route: 'JESJI..BAKRR'
+            route: 'JESJI..BAKRR',
+            centerHandoffFix: 'JESJI'
         }
     );
 

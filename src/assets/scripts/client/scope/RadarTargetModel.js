@@ -334,7 +334,7 @@ export default class RadarTargetModel {
      * @method buildDataBlockRowOne
      * @returns {string}
      */
-    buildDataBlockRowOne() {
+    buildDataBlockRowOne(showControllerIdentifier = true) {
         let dataBlockRowOne = this.aircraftModel.callsign;
 
         const wtc = Object.values(WAKE_TURBULENCE_CATEGORY).find((WTC) => WTC.LETTER === this.aircraftModel.model.weightClass) ??
@@ -345,7 +345,7 @@ export default class RadarTargetModel {
             dataBlockRowOne += ` ${wtc.LETTER}`;
         }
 
-        if (this.handoffModel.controllerIdentifier) {
+        if (showControllerIdentifier && this.handoffModel.controllerIdentifier) {
             dataBlockRowOne += ` ${this.handoffModel.controllerIdentifier}`;
         }
 

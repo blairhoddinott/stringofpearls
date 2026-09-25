@@ -184,6 +184,7 @@ _Note: The code block shown below is an abbreviated version of [ksea.json](https
             "destination": "KSEA",
             "category": "arrival",
             "route": "PDT.CHINS2.KSEA",
+            "centerHandoffFix": "PDT",
             "altitude": [18000, 36000],
             "speed": 320,
             "method": "random",
@@ -692,6 +693,10 @@ _At least one `spawnPattern` is required to get aircraft populating into the app
 ```
 
 Contains the parameters used to determine how and where aircraft are spawned into the simulation.  At least one `spawnPattern` is required so that aircraft can be added to the simulation.
+
+Arrival patterns participating in center handoffs require an explicit `centerHandoffFix`. It must name a non-vector waypoint in the resolved route and must have a following route segment. Select the waypoint immediately outside the controlled-airspace boundary whose following segment enters controlled airspace. Runtime code does not guess or substitute a fix.
+
+Use `node tools/audit-center-handoff-fixes.js` to inspect candidate fixes. `--write-obvious` writes only unambiguous candidates; entries reported under `reviewRequired` must be reviewed by a human before adding the field. Offer and decision distances are measured along the aircraft's remaining active route, not directly across turns.
 
 _see [spawnPatternReadme.md](spawnPatternReadme.md) for more detailed descriptions on data shape and format of a spawnPattern_
 

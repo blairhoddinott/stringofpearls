@@ -266,6 +266,14 @@ ava('.buildDataBlockRowOne() appends center ownership', (t) => {
     t.is(model.buildDataBlockRowOne(), 'AAL432 C');
 });
 
+ava('.buildDataBlockRowOne() can hide a pending tower identifier without hiding the callsign', (t) => {
+    const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
+    model.handoffModel.requestTowerHandoff();
+
+    t.is(model.buildDataBlockRowOne(), 'AAL432 T');
+    t.is(model.buildDataBlockRowOne(false), 'AAL432');
+});
+
 ava('.buildDataBlockRowOne() creates correct first row for Heavy', (t) => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK_HEAVY);
     const expectedValue = 'UAL99 H';

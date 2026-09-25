@@ -69,6 +69,7 @@ export const ARRIVAL_PATTERN_MOCK = {
     destination: 'KLAS',
     category: 'arrival',
     route: 'BETHL.GRNPA1.KLAS07R',
+    centerHandoffFix: 'BETHL',
     altitude: [30000, 40000],
     speed: 320,
     method: 'random',
@@ -98,6 +99,7 @@ export const ARRIVAL_PATTERN_MOCK_ALL_STRINGS = {
     destination: 'KLAS',
     category: 'arrival',
     route: 'BETHL.GRNPA1.KLAS07R',
+    centerHandoffFix: 'BETHL',
     altitude: '36000',
     speed: '320',
     method: 'random',
@@ -112,6 +114,7 @@ export const ARRIVAL_PATTERN_FLOAT_RATE_MOCK = {
     destination: 'KLAS',
     category: 'arrival',
     route: 'BETHL.GRNPA1.KLAS07R',
+    centerHandoffFix: 'BETHL',
     altitude: '36000',
     speed: '320',
     method: 'random',
@@ -125,7 +128,8 @@ export const ARRIVAL_PATTERN_ROUTE_STRING_MOCK = Object.assign(
     {},
     ARRIVAL_PATTERN_MOCK,
     {
-        route: 'COWBY..TRALR..GRNPA..PRINO'
+        route: 'COWBY..TRALR..GRNPA..PRINO',
+        centerHandoffFix: 'COWBY'
     }
 );
 
@@ -149,7 +153,8 @@ export const ARRIVAL_PATTERN_SINGLE_ENTRY_AND_RWY_MOCK = Object.assign(
     {},
     ARRIVAL_PATTERN_MOCK,
     {
-        route: 'MLF.GRNPA9.KLAS07R'
+        route: 'MLF.GRNPA9.KLAS07R',
+        centerHandoffFix: 'MLF'
     }
 );
 
@@ -168,6 +173,7 @@ export const SPAWN_PATTERN_MODEL_FOR_ARRIVAL_FIXTURE = {
     destination: 'KLAS',
     category: 'arrival',
     route: 'DAG.KEPEC3.KLAS07R',
+    centerHandoffFix: 'DAG',
     altitude: 28000,
     speed: 320,
     method: 'random',

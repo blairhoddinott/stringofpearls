@@ -1,11 +1,13 @@
 import _has from 'lodash/has';
 import _isNil from 'lodash/isNil';
 import GameController from '../game/GameController';
+import TimeKeeper from '../engine/TimeKeeper';
 import RadarTargetCollection from './RadarTargetCollection';
 import EventBus from '../lib/EventBus';
 import { EVENT } from '../constants/eventNames';
 import { GAME_OPTION_NAMES } from '../constants/gameOptionConstants';
 import { THEME } from '../constants/themes';
+import { FLIGHT_CATEGORY } from '../constants/aircraftConstants';
 import { DECIMAL_RADIX } from '../utilities/unitConverters';
 
 /**
@@ -20,7 +22,7 @@ export default class ScopeModel {
      * @for ScopeModel
      * @constructor
      */
-    constructor() {
+    constructor(clock = TimeKeeper) {
         /**
          * Local reference to the event bus
          *
@@ -30,6 +32,7 @@ export default class ScopeModel {
          * @private
          */
         this._eventBus = EventBus;
+        this._clock = clock;
 
         /**
          * Length of PTL lines (aka "vector lines") for all aircraft
@@ -264,6 +267,26 @@ export default class ScopeModel {
      */
     initiateHandoff(/* radarTargetModel, sectorCode */) {
         return [false, 'initiateHandoff command not yet available'];
+    }
+
+    initiateTowerHandoff(radarTargetModel) {
+        if (!radarTargetModel.handoffModel.isPlayerControlled) {
+            return [false, 'ERR: AIRCRAFT NOT UNDER YOUR CONTROL'];
+        }
+
+        if (radarTargetModel.aircraftModel.category !== FLIGHT_CATEGORY.ARRIVAL) {
+            return [false, 'ERR: TOWER HANDOFF ARRIVALS ONLY'];
+        }
+
+        if (!radarTargetModel.aircraftModel.isOnFinal()) {
+            return [false, 'ERR: AIRCRAFT NOT ON FINAL'];
+        }
+
+        if (!radarTargetModel.handoffModel.requestTowerHandoff(this._clock.accumulatedDeltaTime)) {
+            return [false, 'ERR: TOWER HANDOFF NOT AVAILABLE'];
+        }
+
+        return [true, 'HANDOFF TO TOWER INITIATED'];
     }
 
     /**

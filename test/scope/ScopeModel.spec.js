@@ -2,6 +2,7 @@ import ava from 'ava';
 import sinon from 'sinon';
 import GameController from '../../src/assets/scripts/client/game/GameController';
 import ScopeModel from '../../src/assets/scripts/client/scope/ScopeModel';
+import ScopeCommandModel from '../../src/assets/scripts/client/commands/scopeCommand/ScopeCommandModel';
 import RadarTargetCollection from '../../src/assets/scripts/client/scope/RadarTargetCollection';
 import {
     createRadarTargetArrivalMock,
@@ -208,6 +209,60 @@ ava('.initiateHandoff() returns message that command is unavailable', (t) => {
     t.deepEqual(result, expectedResult);
 });
 
+ava('.initiateTowerHandoff() starts a tower transfer for a player-owned arrival on final', (t) => {
+    const model = new ScopeModel({ accumulatedDeltaTime: 37 });
+    const radarTargetModel = createRadarTargetArrivalMock();
+
+    sandbox.stub(radarTargetModel.aircraftModel, 'isOnFinal').returns(true);
+
+    t.deepEqual(
+        model.initiateTowerHandoff(radarTargetModel),
+        [true, 'HANDOFF TO TOWER INITIATED']
+    );
+    t.true(radarTargetModel.handoffModel.shouldFlashControllerIdentifier);
+    t.is(radarTargetModel.handoffModel.towerHandoffRequestedAtSeconds, 37);
+});
+
+ava('.initiateTowerHandoff() rejects an arrival that is not on final', (t) => {
+    const model = new ScopeModel();
+    const radarTargetModel = createRadarTargetArrivalMock();
+
+    sandbox.stub(radarTargetModel.aircraftModel, 'isOnFinal').returns(false);
+
+    t.deepEqual(
+        model.initiateTowerHandoff(radarTargetModel),
+        [false, 'ERR: AIRCRAFT NOT ON FINAL']
+    );
+    t.true(radarTargetModel.handoffModel.isPlayerControlled);
+    t.false(radarTargetModel.handoffModel.shouldFlashControllerIdentifier);
+});
+
+ava('.initiateTowerHandoff() rejects aircraft not owned by the player', (t) => {
+    const model = new ScopeModel();
+    const radarTargetModel = createRadarTargetArrivalMock();
+
+    radarTargetModel.markAsNotOurControl();
+    sandbox.stub(radarTargetModel.aircraftModel, 'isOnFinal').returns(true);
+
+    t.deepEqual(
+        model.initiateTowerHandoff(radarTargetModel),
+        [false, 'ERR: AIRCRAFT NOT UNDER YOUR CONTROL']
+    );
+});
+
+ava('.initiateTowerHandoff() rejects departures', (t) => {
+    const model = new ScopeModel();
+    const radarTargetModel = createRadarTargetArrivalMock();
+
+    radarTargetModel.aircraftModel.category = 'departure';
+    sandbox.stub(radarTargetModel.aircraftModel, 'isOnFinal').returns(true);
+
+    t.deepEqual(
+        model.initiateTowerHandoff(radarTargetModel),
+        [false, 'ERR: TOWER HANDOFF ARRIVALS ONLY']
+    );
+});
+
 ava('.moveDataBlock() calls radarTargetModel.moveDataBlock() with correct parameters', (t) => {
     const model = new ScopeModel();
     const radarTargetArrivalMock = createRadarTargetArrivalMock();
@@ -276,6 +331,20 @@ ava('.runScopeCommand() calls the correct method specified in the ScopeCommandMo
 
     t.deepEqual(response, expectedResponse);
     t.true(scopeMethodSpy.calledOnce);
+});
+
+ava('.runScopeCommand() executes a literal tower handoff command', (t) => {
+    const scopeModel = new ScopeModel({ accumulatedDeltaTime: 12 });
+    const radarTargetModel = createRadarTargetArrivalMock();
+
+    sandbox.stub(radarTargetModel.aircraftModel, 'isOnFinal').returns(true);
+    scopeModel.radarTargetCollection.addRadarTargetModel(radarTargetModel);
+
+    t.deepEqual(
+        scopeModel.runScopeCommand(new ScopeCommandModel('T AAL432')),
+        [true, 'HANDOFF TO TOWER INITIATED']
+    );
+    t.is(radarTargetModel.handoffModel.towerHandoffRequestedAtSeconds, 12);
 });
 
 ava('.canIssueCommandsTo() rejects center-owned aircraft regardless of geography', (t) => {

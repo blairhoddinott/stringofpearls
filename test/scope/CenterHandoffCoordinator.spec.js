@@ -7,11 +7,18 @@ import CenterHandoffCoordinator, {
     CENTER_HANDOFF_REOFFER_SECONDS
 } from '../../src/assets/scripts/client/scope/CenterHandoffCoordinator';
 import HandoffModel, { HANDOFF_STATE } from '../../src/assets/scripts/client/scope/HandoffModel';
+import { GAME_EVENTS } from '../../src/assets/scripts/client/game/gameEventConstants';
 
 function buildHarness(distanceNm = 30) {
     const handoffModel = new HandoffModel(HANDOFF_STATE.CENTER_OWNED);
     const aircraftModel = {
         centerHandoffFix: 'BETHL',
+        fms: {
+            waypoints: [{
+                name: 'BETHL',
+                positionModel: {}
+            }]
+        },
         pilot: {
             initiateHoldingPattern: sinon.stub().returns([true, {}])
         },
@@ -33,9 +40,17 @@ function buildHarness(distanceNm = 30) {
         })
     };
     const clock = { accumulatedDeltaTime: 0 };
-    const coordinator = new CenterHandoffCoordinator(scopeModel, navigationLibrary, clock);
+    const gameState = {
+        events_recordNew: sinon.stub()
+    };
+    const coordinator = new CenterHandoffCoordinator(
+        scopeModel,
+        navigationLibrary,
+        clock,
+        gameState
+    );
 
-    return { aircraftModel, clock, coordinator, handoffModel };
+    return { aircraftModel, clock, coordinator, gameState, handoffModel };
 }
 
 ava('offers a center-owned arrival at the configured route distance', (t) => {
@@ -53,6 +68,50 @@ ava('offers a center-owned arrival at the configured route distance', (t) => {
     t.is(harness.handoffModel.state, HANDOFF_STATE.CENTER_TO_PLAYER);
 });
 
+ava('does not offer early when the route to the fix is longer than the direct distance', (t) => {
+    const harness = buildHarness(5);
+    const firstTurnPosition = {
+        distanceToPosition: () => 15
+    };
+    let finalSegmentDistanceNm = 15;
+
+    harness.aircraftModel.fms.waypoints = [
+        { name: 'TURN', positionModel: firstTurnPosition },
+        {
+            name: 'BETHL',
+            positionModel: {}
+        }
+    ];
+    harness.aircraftModel.positionModel.distanceToPosition = () => 15;
+    firstTurnPosition.distanceToPosition = () => finalSegmentDistanceNm;
+
+    harness.coordinator.update(harness.aircraftModel);
+    t.is(harness.handoffModel.state, HANDOFF_STATE.CENTER_OWNED);
+
+    finalSegmentDistanceNm = 10;
+    harness.coordinator.update(harness.aircraftModel);
+    t.is(harness.handoffModel.state, HANDOFF_STATE.CENTER_TO_PLAYER);
+});
+
+ava('does not traverse unresolved waypoints after the handoff fix has passed', (t) => {
+    const harness = buildHarness(5);
+
+    harness.aircraftModel.positionModel.distanceToPosition = (positionModel) => {
+        if (!positionModel) {
+            throw new TypeError('positionModel is required');
+        }
+
+        return 5;
+    };
+    harness.aircraftModel.fms.waypoints = [{
+        name: 'VECTOR',
+        positionModel: null
+    }];
+
+    t.notThrows(() => harness.coordinator.update(harness.aircraftModel));
+    t.is(harness.handoffModel.state, HANDOFF_STATE.CENTER_OWNED);
+});
+
 ava('expires an ignored offer and sends the arrival to hold at the configured fix', (t) => {
     const harness = buildHarness(CENTER_HANDOFF_HOLD_DISTANCE_NM);
 
@@ -65,6 +124,7 @@ ava('expires an ignored offer and sends the arrival to hold at the configured fi
         {},
         1.5
     ));
+    t.true(harness.gameState.events_recordNew.calledOnceWithExactly(GAME_EVENTS.MISSED_HANDOFF));
 });
 
 ava('reoffers a held arrival after sixty simulation seconds without reassigning the hold', (t) => {

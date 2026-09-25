@@ -10,9 +10,10 @@ While `callsign` is used in the examples to reference individual aircraft, you c
 
 ## Table of Contents
 
-- [~~Accept Handoff~~](#accept-handoff)
+- [Accept Handoff](#accept-handoff)
 - [~~Amend Altitude~~](#amend-altitude)
 - [~~Initiate Handoff~~](#initiate-handoff)
+- [Handoff to Tower](#handoff-to-tower)
 - [Move Data Block](#move-data-block)
 - [~~Propogate Data Block (and Point Out)~~](#propogate-data-block-and-point-out)
 - [~~Route~~](#route)
@@ -21,13 +22,13 @@ While `callsign` is used in the examples to reference individual aircraft, you c
 
 ---
 
-### ~~Accept Handoff~~
+### Accept Handoff
 
-~~_Syntax -_ `[callsign]`~~
+_Syntax -_ `[callsign]`
 
-~~_Description -_ This accepts a _pending, incoming_ handoff from another sector, thus giving the receiving sector control of the track.~~
+_Description -_ Entering the callsign of an aircraft with a flashing center handoff accepts the aircraft and gives the player command authority. Clicking the offered target also accepts it. A center-owned target displays `C`; its entire data block flashes while offered.
 
-**THIS COMMAND IS NOT YET AVAILABLE**
+If an offer is ignored until the route decision point, center sends the aircraft to the configured boundary fix and assigns a hold. The hold remains after a later acceptance until the player explicitly clears it.
 
 ### ~~Amend Altitude~~
 
@@ -46,6 +47,12 @@ While `callsign` is used in the examples to reference individual aircraft, you c
 ~~_Description -_ This initiates a handoff to another sector, which they must accept to transfer control of the track.~~
 
 **THIS COMMAND IS NOT YET AVAILABLE**
+
+### Handoff to Tower
+
+_Syntax -_ `T [callsign]`
+
+_Description -_ Initiates a tower handoff for a player-owned arrival established on final. The `T` identifier flashes while the transfer is pending. Tower accepts after three seconds of simulation time; pausing the simulation also pauses that delay. The aircraft remains commandable while pending. After acceptance, `T` is solid and ordinary player commands are rejected while the aircraft continues its approach and landing.
 
 ### Move Data Block
 

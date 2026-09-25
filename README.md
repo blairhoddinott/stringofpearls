@@ -100,9 +100,9 @@ The canonical roadmap lives at [documentation/development/roadmap.md](documentat
 
 - [ ] Use real-world traffic schedules
 - [x] Use real-world METAR weather for sustained wind and altimeter, with visible gusts, active runways, and deterministic fallback
-- [ ] Simulate handoffs from center controllers
+- [x] Simulate arrival ownership handoffs from center through player to tower
 - [ ] Model service to smaller airports in the surrounding area
-- [ ] Add operational holding instructions
+- [x] Add operational holding instructions for ignored arrival handoffs
 - [ ] Divide airspace into sectors and allow users to work selected sectors where the model makes sense
 - [x] Let users choose arrivals, departures, or both for the current simulator session
 

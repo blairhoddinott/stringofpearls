@@ -188,7 +188,9 @@ export default class AircraftAnnotationRenderer {
 
         const gap = 3;
         const lineheight = 4.5;
-        const row1text = radarTargetModel.buildDataBlockRowOne();
+        const row1text = radarTargetModel.buildDataBlockRowOne(
+            this._isControllerIdentifierVisible(radarTargetModel)
+        );
         let row2text = radarTargetModel.buildDataBlockRowTwoPrimaryInfo();
 
         if (this._shouldShowSecondaryDataBlock()) {
@@ -315,6 +317,14 @@ export default class AircraftAnnotationRenderer {
 
     _isDataBlockVisible(radarTargetModel) {
         if (!radarTargetModel.handoffModel?.shouldFlashDataBlock) {
+            return true;
+        }
+
+        return this._timeKeeper.gameTimeMilliseconds % 1000 < 500;
+    }
+
+    _isControllerIdentifierVisible(radarTargetModel) {
+        if (!radarTargetModel.handoffModel?.shouldFlashControllerIdentifier) {
             return true;
         }
 

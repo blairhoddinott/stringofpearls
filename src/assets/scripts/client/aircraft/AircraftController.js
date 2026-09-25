@@ -8,6 +8,7 @@ import NavigationLibrary from '../navigationLibrary/NavigationLibrary';
 import TimeKeeper from '../engine/TimeKeeper';
 import ScopeModel from '../scope/ScopeModel';
 import CenterHandoffCoordinator from '../scope/CenterHandoffCoordinator';
+import TowerHandoffCoordinator from '../scope/TowerHandoffCoordinator';
 import UiController from '../ui/UiController';
 import EventBus from '../lib/EventBus';
 import AircraftTypeDefinitionCollection from './AircraftTypeDefinitionCollection';
@@ -55,6 +56,7 @@ export default class AircraftController {
      * @param clock {TimeKeeper|SimulationClock} [optional] simulation time owner
      * @param gameState {GameController|SimulationGameState} [optional] score and simulation-option owner
      * @param centerHandoffCoordinator {CenterHandoffCoordinator} [optional] arrival transfer policy
+     * @param towerHandoffCoordinator {TowerHandoffCoordinator} [optional] tower transfer policy
      */
     constructor(
         aircraftTypeDefinitionList,
@@ -68,7 +70,8 @@ export default class AircraftController {
         navigationLibrary = NavigationLibrary,
         clock = TimeKeeper,
         gameState = GameController,
-        centerHandoffCoordinator
+        centerHandoffCoordinator,
+        towerHandoffCoordinator
     ) {
         if (_isNil(aircraftTypeDefinitionList) || _isNil(airlineController) || _isNil(scopeModel)) {
             throw new TypeError('Invalid parameter(s) passed to AircraftController constructor. ' +
@@ -135,6 +138,11 @@ export default class AircraftController {
         this._centerHandoffCoordinator = centerHandoffCoordinator ?? new CenterHandoffCoordinator(
             scopeModel,
             navigationLibrary,
+            clock,
+            gameState
+        );
+        this._towerHandoffCoordinator = towerHandoffCoordinator ?? new TowerHandoffCoordinator(
+            scopeModel,
             clock
         );
 
@@ -411,6 +419,7 @@ export default class AircraftController {
             aircraftModel.update();
             aircraftModel.updateWarning();
             this._centerHandoffCoordinator.update(aircraftModel);
+            this._towerHandoffCoordinator.update(aircraftModel);
 
             // TODO: conflict checking eats up a lot of resources when there are more than
             //       30 aircraft, exit early if we're still taxiing

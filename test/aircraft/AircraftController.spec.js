@@ -272,8 +272,9 @@ ava('retains an injected clock by exact identity', (t) => {
     t.is(controller._clock, clock);
 });
 
-ava('updates the injected center handoff coordinator for each aircraft', (t) => {
+ava('updates the injected handoff coordinators for each aircraft', (t) => {
     const centerHandoffCoordinator = { update: sinon.stub() };
+    const towerHandoffCoordinator = { update: sinon.stub() };
     const aircraftCollection = new AircraftCollection();
     const controller = new AircraftController(
         AIRCRAFT_DEFINITION_LIST_MOCK,
@@ -287,7 +288,8 @@ ava('updates the injected center handoff coordinator for each aircraft', (t) => 
         undefined,
         undefined,
         undefined,
-        centerHandoffCoordinator
+        centerHandoffCoordinator,
+        towerHandoffCoordinator
     );
     const aircraftModel = {
         isControllable: true,
@@ -300,6 +302,7 @@ ava('updates the injected center handoff coordinator for each aircraft', (t) => 
     controller.update();
 
     t.true(centerHandoffCoordinator.update.calledOnceWithExactly(aircraftModel));
+    t.true(towerHandoffCoordinator.update.calledOnceWithExactly(aircraftModel));
 });
 
 ava('retains an injected game state by exact identity', (t) => {
@@ -319,6 +322,7 @@ ava('retains an injected game state by exact identity', (t) => {
     );
 
     t.is(controller._gameState, gameState);
+    t.is(controller._centerHandoffCoordinator._gameState, gameState);
 });
 
 ava.serial('creates aircraft and conflicts with the exact injected service owners', (t) => {

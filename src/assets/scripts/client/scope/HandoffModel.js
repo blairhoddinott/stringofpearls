@@ -13,10 +13,15 @@ export default class HandoffModel {
         }
 
         this._state = initialState;
+        this._towerHandoffRequestedAtSeconds = null;
     }
 
     get state() {
         return this._state;
+    }
+
+    get towerHandoffRequestedAtSeconds() {
+        return this._towerHandoffRequestedAtSeconds;
     }
 
     get isPlayerControlled() {
@@ -80,12 +85,13 @@ export default class HandoffModel {
         return true;
     }
 
-    requestTowerHandoff() {
+    requestTowerHandoff(requestedAtSeconds = 0) {
         if (this._state !== HANDOFF_STATE.PLAYER_OWNED) {
             return false;
         }
 
         this._state = HANDOFF_STATE.PLAYER_TO_TOWER;
+        this._towerHandoffRequestedAtSeconds = requestedAtSeconds;
 
         return true;
     }
@@ -96,6 +102,7 @@ export default class HandoffModel {
         }
 
         this._state = HANDOFF_STATE.TOWER_OWNED;
+        this._towerHandoffRequestedAtSeconds = null;
 
         return true;
     }
@@ -106,6 +113,7 @@ export default class HandoffModel {
         }
 
         this._state = HANDOFF_STATE.PLAYER_OWNED;
+        this._towerHandoffRequestedAtSeconds = null;
 
         return true;
     }

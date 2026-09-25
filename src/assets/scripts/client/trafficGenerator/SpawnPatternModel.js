@@ -542,17 +542,32 @@ export default class SpawnPatternModel extends BaseModel {
 
         this._routeModel = new RouteModel(spawnPatternJson.route, this._navigationLibrary);
 
-        if (this.isArrival() && this.centerHandoffFix &&
-            !this._routeModel.hasWaypointName(this.centerHandoffFix)) {
+        if (this.isArrival() && !this.centerHandoffFix) {
+            throw new Error(`arrival route ${this.routeString} requires centerHandoffFix`);
+        }
+
+        const handoffWaypointIndex = this._routeModel.waypoints.findIndex(
+            (waypointModel) => waypointModel.name === this.centerHandoffFix
+        );
+
+        if (this.isArrival() && handoffWaypointIndex === -1) {
             throw new Error(
                 `centerHandoffFix ${this.centerHandoffFix} is not present in arrival route ${this.routeString}`
             );
         }
 
-        if (this.isArrival() && !this.centerHandoffFix) {
-            const firstNamedWaypoint = this._routeModel.waypoints.find((waypointModel) => !waypointModel.isVectorWaypoint);
+        const handoffWaypoint = this._routeModel.waypoints[handoffWaypointIndex];
 
-            this.centerHandoffFix = firstNamedWaypoint?.name ?? '';
+        if (this.isArrival() && handoffWaypoint.isVectorWaypoint) {
+            throw new Error(
+                `centerHandoffFix ${this.centerHandoffFix} must be a named non-vector waypoint in arrival route ${this.routeString}`
+            );
+        }
+
+        if (this.isArrival() && handoffWaypointIndex === this._routeModel.waypoints.length - 1) {
+            throw new Error(
+                `centerHandoffFix ${this.centerHandoffFix} has no following segment in arrival route ${this.routeString}`
+            );
         }
 
         this.cycleStartTime = 0;

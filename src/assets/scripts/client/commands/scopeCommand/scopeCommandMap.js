@@ -8,7 +8,8 @@ export const EXPLICIT_COMMANDS = {
     QP: 'propogateDataBlock',
     QP_J: 'setHalo',
     QU: 'route',
-    QZ: 'amendAltitude'
+    QZ: 'amendAltitude',
+    T: 'initiateTowerHandoff'
 };
 
 /**

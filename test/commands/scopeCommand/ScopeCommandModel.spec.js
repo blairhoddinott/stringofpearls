@@ -24,6 +24,14 @@ ava('sets correct property values for HANDOFF', (t) => {
     t.true(model.commandFunction === COMMAND_FUNCTIONS.INITIATE_HANDOFF);
 });
 
+ava('sets correct property values for a tower handoff', (t) => {
+    const model = new ScopeCommandModel('T AAL432');
+
+    t.is(model.aircraftReference, 'AAL432');
+    t.deepEqual(model.commandArguments, []);
+    t.is(model.commandFunction, COMMAND_FUNCTIONS.T);
+});
+
 ava('sets correct property values for MOVE_DATA_BLOCK (direction only)', (t) => {
     const commandMock = '1 167';
     const model = new ScopeCommandModel(commandMock);

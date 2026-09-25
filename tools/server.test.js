@@ -22,6 +22,7 @@ function request(port, requestPath) {
             response.on('data', (chunk) => chunks.push(chunk));
             response.on('end', () => resolve({
                 body: Buffer.concat(chunks).toString('utf8'),
+                headers: response.headers,
                 statusCode: response.statusCode
             }));
         });
@@ -121,17 +122,42 @@ async function main() {
 
     try {
         const port = await waitForBoundPort(child, exitPromise);
+        const health = await request(port, '/healthz');
+
+        assert.strictEqual(health.statusCode, 200);
+        assert.strictEqual(health.body, 'ok\n');
+
         const root = await request(port, '/');
 
         assert.strictEqual(root.statusCode, 200);
         assert.match(root.body, /<title>String of Pearls Air Traffic Control Simulator<\/title>/);
+        assert.strictEqual(root.headers['x-content-type-options'], 'nosniff');
+        assert.strictEqual(root.headers['referrer-policy'], 'strict-origin-when-cross-origin');
+        assert.strictEqual(root.headers['x-frame-options'], 'SAMEORIGIN');
+        assert.strictEqual(root.headers['x-powered-by'], undefined);
+        assert.strictEqual(root.headers['cache-control'], 'no-store, no-cache');
 
         const airportList = await request(port, '/assets/airports/airportLoadList.json');
         assert.strictEqual(airportList.statusCode, 200);
+        assert.strictEqual(airportList.headers['cache-control'], 'public, max-age=512000');
         assert.ok(Array.isArray(JSON.parse(airportList.body)));
 
-        const missing = await request(port, '/missing');
-        assert.strictEqual(missing.statusCode, 404);
+        const terrain = await request(port, '/assets/airports/terrain/kjfk.geojson');
+        assert.strictEqual(terrain.statusCode, 200);
+        assert.match(terrain.headers['content-type'], /^application\/json(?:;|$)/);
+
+        const invalidWeather = await request(port, '/api/weather/metar/ABC');
+        assert.strictEqual(invalidWeather.statusCode, 400);
+        assert.deepStrictEqual(JSON.parse(invalidWeather.body), { error: 'invalid-station' });
+
+        const missingApi = await request(port, '/api/not-a-route');
+        assert.strictEqual(missingApi.statusCode, 404);
+        assert.deepStrictEqual(JSON.parse(missingApi.body), { error: 'not-found' });
+
+        const fallback = await request(port, '/missing');
+        assert.strictEqual(fallback.statusCode, 200);
+        assert.strictEqual(fallback.headers['cache-control'], 'no-store, no-cache');
+        assert.match(fallback.body, /<title>String of Pearls Air Traffic Control Simulator<\/title>/);
 
         const traversal = await request(port, '/assets/%2e%2e/index.html');
         assert.strictEqual(traversal.statusCode, 404);

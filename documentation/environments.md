@@ -14,7 +14,7 @@ The development server is available at http://localhost:3003 and binds to the lo
 
 ## Production-like local environment
 
-The `app` service builds the static site and serves it from an unprivileged NGINX container:
+The `app` service builds the site and serves it, together with same-origin backend APIs, from an unprivileged Node 24 container:
 
 ```sh
 docker compose up --build app

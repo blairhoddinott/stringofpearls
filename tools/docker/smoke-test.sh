@@ -57,6 +57,12 @@ BASE_URL="http://127.0.0.1:${HOST_PORT}"
 curl --fail --silent --show-error "${BASE_URL}/healthz" | tr -d '\r' | diff -u <(printf 'ok\n') -
 curl --fail --silent --show-error --output /dev/null "${BASE_URL}/"
 curl --fail --silent --show-error --output /dev/null "${BASE_URL}/assets/airports/airportLoadList.json"
+WEATHER_STATUS=$(curl --silent --show-error --output /dev/null --write-out '%{http_code}' \
+    "${BASE_URL}/api/weather/metar/ABC")
+if [[ "${WEATHER_STATUS}" != "400" ]]; then
+    printf 'error: weather API returned HTTP %s instead of 400\n' "${WEATHER_STATUS}" >&2
+    exit 1
+fi
 
 HEADERS=$(curl --fail --silent --show-error --head "${BASE_URL}/")
 if [[ "${HEADERS}" != *"X-Content-Type-Options: nosniff"* ]]; then

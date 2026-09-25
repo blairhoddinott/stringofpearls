@@ -119,6 +119,7 @@ export default class TrafficRateController {
      */
     _setupHandlers() {
         this._onAirportChangeHandler = this.onAirportChange.bind(this);
+        this._onWeatherChangeHandler = this.onWeatherChange.bind(this);
         this._onChangeWindDirectionHandler = this.onChangeWindDirection.bind(this);
         this._onChangeWindSpeedHandler = this.onChangeWindSpeed.bind(this);
         this._onFormResetHandler = this.onFormReset.bind(this);
@@ -138,6 +139,7 @@ export default class TrafficRateController {
      */
     enable() {
         this._eventBus.on(EVENT.AIRPORT_CHANGE, this._onAirportChangeHandler);
+        this._eventBus.on(EVENT.WEATHER_CHANGE, this._onWeatherChangeHandler);
 
         return this;
     }
@@ -151,6 +153,7 @@ export default class TrafficRateController {
      */
     disable() {
         this._eventBus.off(EVENT.AIRPORT_CHANGE, this._onAirportChangeHandler);
+        this._eventBus.off(EVENT.WEATHER_CHANGE, this._onWeatherChangeHandler);
 
         return this;
     }
@@ -182,6 +185,13 @@ export default class TrafficRateController {
      */
     onAirportChange() {
         this._buildDialogBody();
+    }
+
+    onWeatherChange(weatherState) {
+        this._manualWindEnabled = !weatherState.usesLiveWeather;
+        this.$dialog
+            .find('input[name="wind direction"], input[name="wind speed"]')
+            .prop('disabled', weatherState.usesLiveWeather);
     }
 
     /**
@@ -300,6 +310,7 @@ export default class TrafficRateController {
             </div>`;
         const $element = $(template);
 
+        $element.find('input').prop('disabled', this._manualWindEnabled === false);
         $element.on('change', this._onChangeWindDirectionHandler);
 
         return $element;
@@ -325,6 +336,7 @@ export default class TrafficRateController {
             </div>`;
         const $element = $(template);
 
+        $element.find('input').prop('disabled', this._manualWindEnabled === false);
         $element.on('change', this._onChangeWindSpeedHandler);
 
         return $element;

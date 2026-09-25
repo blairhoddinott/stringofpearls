@@ -279,6 +279,8 @@ export default class AirportModel {
             angle: 0
         };
 
+        this.usesLiveWeather = false;
+
         /**
          * default wind settings for an airport
          * to preserve initial configuration
@@ -446,7 +448,8 @@ export default class AirportModel {
         this.buildRestrictedAreas(data.restricted);
         this.updateCurrentWind(data.wind);
 
-        this.eventBus.on(EVENT.WIND_CHANGE, this.updateCurrentWind.bind(this));
+        this.eventBus.on(EVENT.WIND_CHANGE, this.updateManualWind.bind(this));
+        this.eventBus.on(EVENT.WEATHER_CHANGE, this.updateCurrentWeather.bind(this));
     }
 
     /**
@@ -594,6 +597,37 @@ export default class AirportModel {
 
         this.wind.speed = currentWind.speed;
         this.wind.angle = degreesToRadians(currentWind.angle);
+    }
+
+    updateCurrentWeather(weatherState) {
+        if (weatherState.station.toLowerCase() !== this.icao) {
+            return;
+        }
+
+        if (!weatherState.usesLiveWeather) {
+            if (this.usesLiveWeather) {
+                this.wind.speed = this.defaultWind.speed;
+                this.wind.angle = this.defaultWind.angle;
+            }
+
+            this.usesLiveWeather = false;
+
+            return;
+        }
+
+        this.updateCurrentWind({
+            angle: weatherState.observation.wind.directionDegrees,
+            speed: weatherState.observation.wind.speedKnots
+        });
+        this.usesLiveWeather = true;
+    }
+
+    updateManualWind(currentWind) {
+        if (this.usesLiveWeather) {
+            return;
+        }
+
+        this.updateCurrentWind(currentWind);
     }
 
     /**

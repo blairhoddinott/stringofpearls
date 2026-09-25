@@ -38,6 +38,31 @@ async function main() {
             }
         });
 
+        await page.route('**/api/weather/metar/*', async (route) => {
+            const station = new URL(route.request().url()).pathname.split('/').pop().toUpperCase();
+            const raw = `${station} 251656Z 21012G19KT 10SM FEW120 32/08 A3003 RMK AO2 SLP169`;
+
+            await route.fulfill({
+                contentType: 'application/json',
+                body: JSON.stringify({
+                    observation: {
+                        station,
+                        observedAt: new Date().toISOString(),
+                        raw,
+                        wind: {
+                            directionDegrees: 210,
+                            speedKnots: 12,
+                            gustKnots: 19,
+                            variable: false
+                        },
+                        altimeterHpa: 1017,
+                        usableForSimulation: true
+                    }
+                }),
+                status: 200
+            });
+        });
+
         await page.addInitScript((version) => {
             localStorage.clear();
             localStorage.setItem('atc-last-version', version);
@@ -104,11 +129,43 @@ async function main() {
         await page.waitForFunction((icao) => localStorage.getItem('atc-last-airport') === icao, targetAirport);
         await page.evaluate(() => new Promise((resolve) => requestAnimationFrame(() => resolve())));
 
+        const targetStation = targetAirport.toUpperCase();
+        const expectedMetar = `${targetStation} 251656Z 21012G19KT 10SM FEW120 32/08 A3003 RMK AO2 SLP169`;
+        await page.waitForFunction((raw) => {
+            return document.querySelector('.js-airportInfo-metar-value')?.textContent === raw;
+        }, expectedMetar);
+        assert.strictEqual(await page.locator('.js-airportInfo-metar-value').textContent(), expectedMetar);
+        assert.match(await page.locator('.js-airportInfo-runways-value').textContent(), /^ARR \S+ \/ DEP \S+$/);
+        assert.strictEqual(await page.locator('.js-airportInfo-wind-value').textContent(), `${targetStation} 210 12 G19`);
+        assert.strictEqual(await page.locator('.js-airportInfo-altimeter-value').textContent(), `${targetStation} 30.03`);
+        assert(await page.locator('input[name="wind direction"]').isDisabled());
+        assert(await page.locator('input[name="wind speed"]').isDisabled());
+
+        const airportInfoLayout = await page.evaluate(() => {
+            const metar = document.querySelector('.js-airportInfo-metar-value').getBoundingClientRect();
+            const runways = document.querySelector('.js-airportInfo-runways-value').getBoundingClientRect();
+
+            return {
+                metarBottom: metar.bottom,
+                metarRight: metar.right,
+                runwaysTop: runways.top,
+                viewportWidth: window.innerWidth
+            };
+        });
+        assert(
+            airportInfoLayout.metarRight <= airportInfoLayout.viewportWidth,
+            `METAR overflows viewport: right=${airportInfoLayout.metarRight}, viewport=${airportInfoLayout.viewportWidth}`
+        );
+        assert(
+            airportInfoLayout.metarBottom <= airportInfoLayout.runwaysTop,
+            `METAR overlaps RWYS: metarBottom=${airportInfoLayout.metarBottom}, runwaysTop=${airportInfoLayout.runwaysTop}`
+        );
+
         await page.locator('.switch-airport').click();
         await page.locator(`.airport-list-item.mix-airport-list-item_isActive[data-icao="${targetAirport}"]`).waitFor({ state: 'visible' });
 
         assert.deepStrictEqual(errors, [], errors.join('\n'));
-        console.log(`Browser smoke test passed: traffic mode, startup, render frame, airport=${targetAirport}, uncaughtErrors=0`);
+        console.log(`Browser smoke test passed: traffic mode, startup, weather, render frame, airport=${targetAirport}, uncaughtErrors=0`);
     } finally {
         await browser.close();
     }

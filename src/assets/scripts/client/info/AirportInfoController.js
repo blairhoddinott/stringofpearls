@@ -9,6 +9,8 @@ import { EVENT } from '../constants/eventNames';
 import { AIRPORT_INFO_TEMPLATE } from './airportInfoTemplate';
 import { PERFORMANCE } from '../constants/aircraftConstants';
 
+const HPA_TO_INHG = 0.0295299830714;
+
 /**
  * @property INFO_VIEW_SELECTORS
  * @type {object<string, string>}
@@ -22,7 +24,9 @@ const INFO_VIEW_SELECTORS = {
     ALTIMETER_LABEL: '.js-airportInfo-altimeter-label',
     ALTIMETER_VALUE: '.js-airportInfo-altimeter-value',
     ELEVATION_LABEL: '.js-airportInfo-elevation-label',
-    ELEVATION_VALUE: '.js-airportInfo-elevation-value'
+    ELEVATION_VALUE: '.js-airportInfo-elevation-value',
+    METAR_VALUE: '.js-airportInfo-metar-value',
+    RUNWAYS_VALUE: '.js-airportInfo-runways-value'
 };
 
 /**
@@ -167,11 +171,16 @@ export default class AirportInfoController {
         this.$altimeterView = this.$template.find(INFO_VIEW_SELECTORS.ALTIMETER_VALUE);
         this.$clockView = this.$template.find(INFO_VIEW_SELECTORS.CLOCK_VALUE);
         this.$elevationView = this.$template.find(INFO_VIEW_SELECTORS.ELEVATION_VALUE);
+        this.$metarView = this.$template.find(INFO_VIEW_SELECTORS.METAR_VALUE);
+        this.$runwaysView = this.$template.find(INFO_VIEW_SELECTORS.RUNWAYS_VALUE);
         this.$windView = this.$template.find(INFO_VIEW_SELECTORS.WIND_VALUE);
         this.altimeter = INVALID_NUMBER;
         this.elevation = '';
         this.icao = '';
+        this.metar = 'LOADING';
+        this.runways = '';
         this.simClockController = new SimClockController(this._clockAdapter);
+        this.usesLiveWeather = false;
         this.wind = '';
         this._eventBus = EventBus;
 
@@ -203,6 +212,7 @@ export default class AirportInfoController {
     _setupHandlers() {
         this._onAirportChangeHandler = this.onAirportChange.bind(this);
         this._onWindChangeHandler = this.onWindChange.bind(this);
+        this._onWeatherChangeHandler = this.onWeatherChange.bind(this);
 
         return this;
     }
@@ -217,6 +227,7 @@ export default class AirportInfoController {
     enable() {
         this._eventBus.on(EVENT.AIRPORT_CHANGE, this._onAirportChangeHandler);
         this._eventBus.on(EVENT.WIND_CHANGE, this._onWindChangeHandler);
+        this._eventBus.on(EVENT.WEATHER_CHANGE, this._onWeatherChangeHandler);
 
         return this;
     }
@@ -231,6 +242,7 @@ export default class AirportInfoController {
     disable() {
         this._eventBus.off(EVENT.AIRPORT_CHANGE, this._onAirportChangeHandler);
         this._eventBus.off(EVENT.WIND_CHANGE, this._onWindChangeHandler);
+        this._eventBus.off(EVENT.WEATHER_CHANGE, this._onWeatherChangeHandler);
 
         return this;
     }
@@ -243,10 +255,15 @@ export default class AirportInfoController {
     reset() {
         this.$element = null;
         this.$template = null;
+        this.$metarView = null;
+        this.$runwaysView = null;
         this.altimeter = null;
         this.elevation = null;
         this.icao = null;
+        this.metar = null;
+        this.runways = null;
         this.simClockController = null;
+        this.usesLiveWeather = null;
         this.wind = null;
         this._eventBus = null;
 
@@ -264,12 +281,12 @@ export default class AirportInfoController {
      */
     onAirportChange() {
         const airport = AirportController.airport_get();
-        const windAngle = Math.round(radiansToDegrees(airport.wind.angle));
 
-        this.wind = this._buildWindAndGustReadout({ speed: airport.wind.speed, angle: windAngle });
-        this.altimeter = this._generateHighAltimeterReading(airport.wind.speed);
+        this._applyFallbackWeather(airport);
         this.elevation = `${airport.elevation}`;
         this.icao = airport.icao.toUpperCase();
+        this.metar = 'LOADING';
+        this.runways = this._buildRunwayReadout(airport);
 
         this._render();
     }
@@ -281,7 +298,35 @@ export default class AirportInfoController {
      * @method onWindChange
      */
     onWindChange(currentWind) {
+        if (this.usesLiveWeather) {
+            return;
+        }
+
         this.wind = this._buildWindAndGustReadout({ speed: currentWind.speed, angle: currentWind.angle });
+
+        this._render();
+    }
+
+    onWeatherChange(weatherState) {
+        if (weatherState.station !== this.icao) {
+            return;
+        }
+
+        this.metar = this._buildMetarReadout(weatherState);
+        this.usesLiveWeather = weatherState.usesLiveWeather;
+
+        if (weatherState.usesLiveWeather) {
+            const { observation } = weatherState;
+
+            this.wind = this._buildWindAndGustReadout({
+                angle: observation.wind.directionDegrees,
+                speed: observation.wind.speedKnots,
+                gust: observation.wind.gustKnots
+            });
+            this.altimeter = this._buildAltimeterReadout(observation.altimeterHpa);
+        } else {
+            this._applyFallbackWeather(AirportController.airport_get());
+        }
 
         this._render();
     }
@@ -300,6 +345,39 @@ export default class AirportInfoController {
 
     // ------------------------------ PRIVATE ------------------------------
 
+    _buildRunwayReadout(airport) {
+        return `ARR ${airport.arrivalRunwayModel.name} / DEP ${airport.departureRunwayModel.name}`;
+    }
+
+    _applyFallbackWeather(airport) {
+        this.wind = this._buildWindAndGustReadout({
+            angle: Math.round(radiansToDegrees(airport.wind.angle)),
+            speed: airport.wind.speed
+        });
+        this.altimeter = this._generateHighAltimeterReading();
+        this.usesLiveWeather = false;
+    }
+
+    _buildAltimeterReadout(altimeterHpa) {
+        return (altimeterHpa * HPA_TO_INHG).toFixed(2);
+    }
+
+    _buildMetarReadout(weatherState) {
+        if (weatherState.status === 'unavailable') {
+            return 'UNAVAILABLE';
+        }
+
+        if (weatherState.status === 'available') {
+            return weatherState.observation.raw;
+        }
+
+        if (weatherState.status === 'stale') {
+            return `STALE — ${weatherState.observation.raw}`;
+        }
+
+        return 'LOADING';
+    }
+
     /**
      * Formats the wind angle and speed from object into a string,
      * in the format `${newAngle} ${newSpeed}G${gustSpeed}`.
@@ -313,20 +391,16 @@ export default class AirportInfoController {
      * @private
      */
     _buildWindAndGustReadout(wind) {
-        const minGustStrength = 5;
         const { speed } = wind;
         const { angle } = wind;
         const newAngle = leftPad((angle || 360), 3);
         const newSpeed = leftPad(speed, 2);
-        // Creates a fake "gusting" speed
-        const gustStrength = speed * (this._randomSource ? this._randomSource.fraction() : 0);
-        const gustSpeed = leftPad(Math.round(speed + gustStrength), 2);
 
-        if (gustStrength < minGustStrength) {
-            return `${newAngle} ${newSpeed}`;
+        if (Number.isFinite(wind.gust)) {
+            return `${newAngle} ${newSpeed} G${leftPad(wind.gust, 2)}`;
         }
 
-        return `${newAngle} ${newSpeed} G${gustSpeed}`;
+        return `${newAngle} ${newSpeed}`;
     }
 
     /**
@@ -338,11 +412,8 @@ export default class AirportInfoController {
      * @returns {Number} the altimeter value (29.92 or above)
      * @private
      */
-    _generateHighAltimeterReading(windSpeed) {
-        const fraction = this._randomSource ? this._randomSource.fraction() : 0;
-        const pressure = PERFORMANCE.DEFAULT_ALTIMETER_IN_INHG + (windSpeed * fraction / 100);
-
-        return pressure.toFixed(2);
+    _generateHighAltimeterReading() {
+        return PERFORMANCE.DEFAULT_ALTIMETER_IN_INHG.toFixed(2);
     }
 
     /**
@@ -356,5 +427,7 @@ export default class AirportInfoController {
         this.$windView.text(`${this.icao} ${this.wind}`);
         this.$altimeterView.text(`${this.icao} ${this.altimeter}`);
         this.$elevationView.text(`${this.icao} ${this.elevation}`);
+        this.$metarView.text(this.metar);
+        this.$runwaysView.text(this.runways);
     }
 }

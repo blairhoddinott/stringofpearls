@@ -4,9 +4,9 @@ The repository provides separate container targets for development and runtime u
 
 - `development` contains Node.js 24, the repository-owned build toolchain, and the source tree.
 - `build` compiles the production assets and is not shipped.
-- `runtime` contains only the generated static site and unprivileged NGINX.
+- `runtime` contains Node.js 24, production-only dependencies, the generated site, and the unprivileged application service.
 
-The runtime image does not contain Node.js, npm, source files, or development dependencies.
+The runtime image does not contain npm build tooling, source files, or development dependencies. Node.js remains present because the service owns same-origin APIs, request limiting, and provider caching in addition to static delivery.
 
 ## Prerequisites
 
@@ -40,7 +40,7 @@ docker compose down
 
 The Compose service applies the following runtime restrictions:
 
-- unprivileged UID 101
+- unprivileged `node` user
 - read-only root filesystem
 - all Linux capabilities dropped
 - `no-new-privileges`
@@ -147,7 +147,10 @@ docker compose config --quiet
 
 - Container port: `8080`
 - Health endpoint: `/healthz`
-- Static root: `/usr/share/nginx/html`
+- Static root: `/app/public`
+- Weather endpoint: `/api/weather/metar/:station`
+- The endpoint queries only the requested four-character station, caches usable observations for 30 minutes, retries unusable or unavailable observations after five minutes, collapses concurrent station requests, and limits uncached upstream traffic to 90 requests per rolling minute.
+- Unknown `/api/*` paths return JSON `404` responses.
 - Missing `/assets/*` resources return `404`.
 - Other unknown routes fall back to `index.html`, matching the historical static-host configuration.
 - HTML is served with `Cache-Control: no-store, no-cache`.
@@ -168,6 +171,6 @@ GitHub Actions uses the repository-owned Docker runner described in [Local GitHu
 
 Production hosting, final-image scanning, immutable image publication, and deployment remain separate future delivery work. The current workflow does not claim to perform them.
 
-Both base images are pinned by digest in `Dockerfile`. Update the human-readable tag and digest together. The tags document intent; the digests determine what is actually built.
+The Node.js base image is pinned by digest in `Dockerfile`. Update the human-readable tag and digest together. The tag documents intent; the digest determines what is actually built.
 
 The Phase 2 production dependency audit is clean. A full development audit retains one moderately vulnerable Showdown package affected by three advisories, with no fixed release; its input is repository-controlled Markdown. Containerization does not magically remove dependency risk, so both audit scopes remain documented even though only the production gate is fail-closed.

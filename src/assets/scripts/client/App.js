@@ -14,6 +14,8 @@ import AnalyticsAdapter from './platform/AnalyticsAdapter';
 import SpeechSynthesisAdapter from './platform/SpeechSynthesisAdapter';
 import ClipboardAdapter from './platform/ClipboardAdapter';
 import PageVisibilityAdapter from './platform/PageVisibilityAdapter';
+import TimerScheduler from './platform/TimerScheduler';
+import WeatherClient from './platform/WeatherClient';
 import createAsyncErrorReporter from './platform/reportAsyncError';
 import EventBus from './lib/EventBus';
 import EventTracker from './EventTracker';
@@ -58,6 +60,8 @@ export default class App {
      * @param speechSynthesisAdapter {SpeechSynthesisAdapter|null} composition-root speech boundary backed by `window.speechSynthesis` and `SpeechSynthesisUtterance` when both are available, otherwise `null`
      * @param clipboardAdapter {ClipboardAdapter|null} composition-root clipboard boundary backed by a receiver-preserving wrapper around `window.navigator.clipboard.writeText` when callable, otherwise `null`
      * @param pageVisibilityAdapter {PageVisibilityAdapter} composition-root page focus/visibility boundary backed by wrappers around `window.addEventListener`, `document.addEventListener`, and `document.visibilityState`
+     * @param weatherClient {WeatherClient} composition-root same-origin weather transport
+     * @param timerScheduler {TimerScheduler} composition-root cancellable weather polling scheduler
      */
     constructor(
         element,
@@ -86,6 +90,11 @@ export default class App {
             (type, listener) => window.addEventListener(type, listener),
             (type, listener) => document.addEventListener(type, listener),
             () => document.visibilityState
+        ),
+        weatherClient = new WeatherClient((url, options) => window.fetch(url, options)),
+        timerScheduler = new TimerScheduler(
+            (callback, delay) => window.setTimeout(callback, delay),
+            (handle) => window.clearTimeout(handle)
         )
     ) {
         /**
@@ -142,7 +151,9 @@ export default class App {
             randomSource,
             speechSynthesisAdapter,
             clipboardAdapter,
-            pageVisibilityAdapter
+            pageVisibilityAdapter,
+            weatherClient,
+            timerScheduler
         );
         this.eventBus = EventBus;
 

@@ -20,6 +20,7 @@ import TrafficModeStartup from './trafficGenerator/TrafficModeStartup';
 import TrafficModeSelectionView from './ui/TrafficModeSelectionView';
 import TrafficModeStripView from './ui/TrafficModeStripView';
 import UiController from './ui/UiController';
+import WeatherController from './weather/WeatherController';
 import ScoreController from './game/ScoreController';
 import { speech_init } from './speech';
 import { EVENT } from './constants/eventNames';
@@ -49,6 +50,8 @@ export default class AppController {
      * @param speechSynthesisAdapter {SpeechSynthesisAdapter|null} composition-root speech boundary threaded to `speech_init` in `init`
      * @param clipboardAdapter {ClipboardAdapter|null} composition-root clipboard boundary threaded to `InputController` for the copy-coordinates command
      * @param pageVisibilityAdapter {PageVisibilityAdapter|null} composition-root page focus/visibility boundary threaded to `GameController` for pause/resume
+     * @param weatherClient {WeatherClient|null} same-origin weather transport
+     * @param timerScheduler {TimerScheduler|null} cancellable weather polling scheduler
      */
     constructor(
         element,
@@ -61,7 +64,9 @@ export default class AppController {
         randomSource,
         speechSynthesisAdapter,
         clipboardAdapter,
-        pageVisibilityAdapter
+        pageVisibilityAdapter,
+        weatherClient = null,
+        timerScheduler = null
     ) {
         /**
          * Root DOM element.
@@ -132,6 +137,9 @@ export default class AppController {
          * @type {PageVisibilityAdapter|null}
          */
         this._pageVisibilityAdapter = pageVisibilityAdapter ?? null;
+        this.weatherController = weatherClient && timerScheduler
+            ? new WeatherController(weatherClient, clockAdapter, timerScheduler, EventBus)
+            : null;
 
         this.$canvasesElement = null;
         this._eventBus = EventBus;
@@ -209,6 +217,10 @@ export default class AppController {
             this.trafficModeStartup.destroy();
         }
 
+        if (this.weatherController) {
+            this.weatherController.destroy();
+        }
+
         this.$element = null;
         this._assetLoader = null;
         this.$canvasesElement = null;
@@ -221,6 +233,7 @@ export default class AppController {
         this.canvasController = null;
         this.trafficModeSelectionView = null;
         this.trafficModeStartup = null;
+        this.weatherController = null;
 
         return this;
     }
@@ -281,6 +294,7 @@ export default class AppController {
             this._storageAdapter,
             this._asyncErrorReporter
         );
+        this.weatherController?.start(initialAirportIcao);
         NavigationLibrary.initRandomSource(this._randomSource);
         NavigationLibrary.init(initialAirportData);
         SpawnPatternCollection.initRandomSource(this._randomSource);

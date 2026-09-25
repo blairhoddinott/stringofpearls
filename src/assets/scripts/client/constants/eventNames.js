@@ -304,6 +304,15 @@ export const EVENT = {
     UNPAUSE: 'unpause',
 
     /**
+     * A normalized real-world weather state changed.
+     *
+     * @memberof EVENT
+     * @property WEATHER_CHANGE
+     * @type {string}
+     */
+    WEATHER_CHANGE: 'weather-change',
+
+    /**
      * @memberof EVENT
      * @property WIND_CHANGE
      * @type {string}

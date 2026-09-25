@@ -23,4 +23,12 @@ export const AIRPORT_INFO_TEMPLATE = '' +
 '        <div class="airportInfo-label js-airportInfo-elevation-label">ELEV</div>' +
 '        <div class="airportInfo-value js-airportInfo-elevation-value"></div>' +
 '    </div>' +
+'    <div class="airportInfo-line airportInfo-line--wide">' +
+'        <div class="airportInfo-label js-airportInfo-metar-label">METAR</div>' +
+'        <div class="airportInfo-value js-airportInfo-metar-value"></div>' +
+'    </div>' +
+'    <div class="airportInfo-line airportInfo-line--wide">' +
+'        <div class="airportInfo-label js-airportInfo-runways-label">RWYS</div>' +
+'        <div class="airportInfo-value js-airportInfo-runways-value"></div>' +
+'    </div>' +
 '</div>';

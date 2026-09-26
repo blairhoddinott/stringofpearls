@@ -42,19 +42,22 @@ speechSynthesis.getVoices().map(({ name, lang }) => ({ name, lang }))
 
 If this returns `[]`, the browser has no usable voice backend yet. Run `spd-conf` to test and configure Speech Dispatcher before troubleshooting the simulator. Once voices are available, enable **Speech** in the simulator options.
 
-## Traffic mode
+## Controller shifts
 
-Each browser session starts by asking whether you want to work **Arrivals**, **Departures**, or **Both**:
+Each session starts on a shift configuration screen. Choose an enabled airport, a 30- or 60-minute simulation-time shift, and the position you want to work:
 
-- **Arrivals** generates arrival traffic and shows only arrival flight strips.
-- **Departures** generates departure traffic and shows only departure flight strips.
-- **Both** preserves the combined traffic flow and shows both flight-strip sections.
+- **Approach** generates arrivals and shows arrival flight strips.
+- **Departure** generates departures and shows departure flight strips.
+- **Both** generates both traffic flows and shows both flight-strip sections.
 
-The selected mode remains active when traffic is reset or the airport changes. Reloading the application starts a new session and asks for the mode again.
+New traffic stops five simulation minutes before the scheduled end. At `00:00`, the shift enters clearing and ends automatically after all player-owned targets and flight strips are gone. You can end a shift immediately at any time; either path opens a detailed score and statistics screen.
+
+See [Controller shifts](documentation/controller-shifts.md) for timing, clearing, manual completion, results, and post-handoff speech behavior.
 
 ## Simulator documentation
 
 - [Command reference](documentation/commands.md)
+- [Controller shifts](documentation/controller-shifts.md)
 - [Airport guides](documentation/airport-guides/airport-guide-directory.md)
 - [Airport format](documentation/airport-format.md)
 - [Airport file standards](documentation/airport-file-standards.md)
@@ -122,8 +125,8 @@ The canonical roadmap lives at [documentation/development/roadmap.md](documentat
 - [x] Use real-world METAR weather for sustained wind and altimeter, with visible gusts, active runways, and deterministic fallback
 - [x] Simulate arrival ownership handoffs from center through player to tower
 - [ ] Model service to smaller airports in the surrounding area
-- [x] Let users choose arrivals, departures, or both for the current simulator session
-- [ ] Create a game-session concept of working a shift: select the airport, shift duration, sector, and other session options before play, then display a score screen when the shift ends
+- [x] Let users choose approach, departure, or both for the current controller shift
+- [x] Create controller shifts with airport, duration, and sector selection; simulation-time lifecycle and traffic cutoff; clearing/overtime; and detailed results
 
 ### Voice and interaction
 

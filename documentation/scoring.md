@@ -5,6 +5,19 @@ summing all of the variables after multiplying each one by its own
 unique factor (so that a fatal collision docks many more points than a
 crosswind landing, for example.)
 
+## Shift results
+
+Scoring resets when a controller shift begins. While the shift is active,
+the simulator records each scoring event with its simulation-time offset and
+point change. When the shift ends, the results screen shows the final score,
+the chronological scoring log, and statistics for aircraft handled, completed
+arrivals, handed-off departures, collision alerts, separation losses,
+collisions, missed handoffs, aircraft remaining, and score per aircraft.
+
+Ending a shift manually does not add a separate score penalty. Remaining
+player-owned aircraft are reported in the results instead. No results are
+currently published to an external leaderboard.
+
 ## Arrival
 
 Each arriving aircraft that is successfully landed gives you 10 points.

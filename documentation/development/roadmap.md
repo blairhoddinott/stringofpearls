@@ -42,8 +42,8 @@ This roadmap tracks the current direction of the project. The order may change a
 - [x] Use exact-station AviationWeather.gov METARs for sustained wind and altimeter, display reported gusts and active runways, and retain deterministic static/manual fallback
 - [x] Simulate arrival ownership handoffs from center through the player to tower
 - [ ] Model service to smaller airports in the surrounding area
-- [x] Let users work arrivals, departures, or both, with traffic generation and flight-strip presentation matched to the selection
-- [ ] Create a game-session concept of working a shift: select the airport, shift duration, sector, and other session options before play, then display a score screen when the shift ends
+- [x] Let users work approach, departure, or both, with traffic generation and flight-strip presentation matched to the selection
+- [x] Create controller shifts with airport, duration, and sector selection; simulation-time lifecycle and traffic cutoff; clearing/overtime; and detailed results
 
 ## Voice and interaction
 
@@ -56,7 +56,7 @@ This roadmap tracks the current direction of the project. The order may change a
 
 - [ ] Update the display to resemble the Raytheon STARS 6191 scope using the available manual
 - [ ] Create a maintainable submission and review process for new airports
-- [ ] Evaluate a leaderboard or other scoring system without turning the simulator into an arcade cabinet.
+- [ ] Evaluate and implement an external leaderboard or other shared scoring system without turning the simulator into an arcade cabinet; the controller-shift feature currently provides only an internal no-op submission boundary.
 
 ## Platform and delivery
 

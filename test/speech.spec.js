@@ -241,6 +241,19 @@ ava.serial('speech_say() forwards the exact assembled text and pilotVoice to the
     t.true(speechSynthesisAdapter.speak.calledOnceWithExactly(' descend  united one ', pilotVoice));
 });
 
+ava.serial('speech_say() suppresses an aircraft transmission when its eligibility callback rejects it', (t) => {
+    const speechSynthesisAdapter = buildSpeechSynthesisAdapter();
+    speech_init(buildStorageAdapter({ storedValue: true }), speechSynthesisAdapter);
+
+    speech_say(
+        [{ type: 'callsign', content: { getRadioCallsign: () => 'united one' } }],
+        { voice: 'Alice' },
+        () => false
+    );
+
+    t.false(speechSynthesisAdapter.speak.called);
+});
+
 ava.serial('speech_say() is a no-op when speech is disabled', (t) => {
     const speechSynthesisAdapter = buildSpeechSynthesisAdapter();
     speech_init(buildStorageAdapter({ storedValue: null }), speechSynthesisAdapter);

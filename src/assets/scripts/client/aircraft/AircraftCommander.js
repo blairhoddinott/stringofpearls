@@ -39,7 +39,8 @@ export default class AircraftCommander {
         gameState = GameController,
         canIssueCommandsTo = (aircraft) => aircraft.isControllable,
         initiateTowerHandoff = () => [false, 'tower handoff unavailable'],
-        initiateCenterHandoff = () => [false, 'center handoff unavailable']
+        initiateCenterHandoff = () => [false, 'center handoff unavailable'],
+        canTransmit = canIssueCommandsTo
     ) {
         this._eventBus = eventBus;
         this._airportController = airportController;
@@ -50,6 +51,7 @@ export default class AircraftCommander {
         this._canIssueCommandsTo = canIssueCommandsTo;
         this._initiateTowerHandoff = initiateTowerHandoff;
         this._initiateCenterHandoff = initiateCenterHandoff;
+        this._canTransmit = canTransmit;
     }
 
     /**
@@ -157,7 +159,8 @@ export default class AircraftCommander {
                     { type: 'callsign', content: aircraft },
                     { type: 'text', content: `${r_say} ${response_end}` }
                 ],
-                aircraft.pilotVoice
+                aircraft.pilotVoice,
+                () => this._canTransmit(aircraft)
             );
         }
 

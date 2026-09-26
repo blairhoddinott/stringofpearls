@@ -21,7 +21,9 @@ export default class TowerHandoffCoordinator {
             handoffModel.towerHandoffRequestedAtSeconds;
 
         if (elapsedSeconds >= TOWER_HANDOFF_ACCEPTANCE_DELAY_SECONDS) {
-            handoffModel.acceptByTower();
+            return handoffModel.acceptByTower();
         }
+
+        return false;
     }
 }

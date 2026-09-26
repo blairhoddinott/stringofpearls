@@ -8,6 +8,16 @@ import { EventBusClass } from '../../src/assets/scripts/client/lib/EventBus';
 import { NavigationLibraryClass } from '../../src/assets/scripts/client/navigationLibrary/NavigationLibrary';
 import SimulationGameState from '../../src/assets/scripts/client/simulation/SimulationGameState';
 import ScopeModel from '../../src/assets/scripts/client/scope/ScopeModel';
+import CenterHandoffCoordinator, {
+    CENTER_HANDOFF_ACCEPTANCE_DELAY_SECONDS
+} from '../../src/assets/scripts/client/scope/CenterHandoffCoordinator';
+import TowerHandoffCoordinator, {
+    TOWER_HANDOFF_ACCEPTANCE_DELAY_SECONDS
+} from '../../src/assets/scripts/client/scope/TowerHandoffCoordinator';
+import HandoffModel, { HANDOFF_STATE } from '../../src/assets/scripts/client/scope/HandoffModel';
+import UiController from '../../src/assets/scripts/client/ui/UiController';
+import SpeechSynthesisAdapter from '../../src/assets/scripts/client/platform/SpeechSynthesisAdapter';
+import { speech_init, speech_say } from '../../src/assets/scripts/client/speech';
 import {
     AIRCRAFT_DEFINITION_LIST_MOCK,
     DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK
@@ -366,6 +376,155 @@ ava('does not remove a player-owned strip merely because the aircraft is outside
     t.true(removeStripViewStub.notCalled);
 });
 
+ava.serial('does not transmit the ground-switch message after tower owns a landed arrival', (t) => {
+    const synthesis = { speak: sinon.stub(), discardIneligible: sinon.stub() };
+    speech_init({ get: sinon.stub().returns(true) }, synthesis);
+    t.teardown(() => speech_init());
+    const uiLogStub = sinon.stub(UiController, 'ui_log');
+    t.teardown(() => uiLogStub.restore());
+    const aircraftModel = {
+        callsign: 'UAL123',
+        pilotVoice: {},
+        hit: false,
+        fms: { arrivalRunwayModel: {} },
+        getRadioCallsign: sinon.stub().returns('united one twenty three'),
+        isArrival: sinon.stub().returns(true),
+        isStopped: sinon.stub().returns(true)
+    };
+    const controller = Object.create(AircraftController.prototype);
+    controller._scopeModel = { canIssueCommandsTo: sinon.stub().returns(false) };
+    controller._eventBus = { trigger: sinon.stub() };
+    controller._gameState = { events_recordNew: sinon.stub() };
+    controller.aircraft_remove = sinon.stub();
+
+    controller._updateAircraftVisibility(aircraftModel);
+
+    t.false(synthesis.speak.called);
+    t.false(uiLogStub.called);
+    t.true(controller.aircraft_remove.calledOnceWithExactly(aircraftModel));
+});
+
+ava.serial('preserves an authorized ground-switch message after normal aircraft removal', (t) => {
+    const firstUtterance = {};
+    const groundUtterance = {};
+    const utteranceFactory = sinon.stub();
+    utteranceFactory.onFirstCall().returns(firstUtterance);
+    utteranceFactory.onSecondCall().returns(groundUtterance);
+    const synthesis = {
+        getVoices: sinon.stub().returns([]),
+        speak: sinon.stub(),
+        cancel: sinon.stub()
+    };
+    const speechAdapter = new SpeechSynthesisAdapter(synthesis, utteranceFactory);
+    speech_init({ get: sinon.stub().returns(true) }, speechAdapter);
+    t.teardown(() => speech_init());
+    const uiLogStub = sinon.stub(UiController, 'ui_log');
+    t.teardown(() => uiLogStub.restore());
+    const canIssueCommandsTo = sinon.stub().returns(true);
+    const aircraftModel = {
+        callsign: 'UAL123',
+        pilotVoice: {},
+        isRadioSilent: false,
+        hit: false,
+        fms: { arrivalRunwayModel: {} },
+        getRadioCallsign: sinon.stub().returns('united one twenty three'),
+        isArrival: sinon.stub().returns(true),
+        isStopped: sinon.stub().returns(true)
+    };
+    const controller = Object.create(AircraftController.prototype);
+    controller._scopeModel = { canIssueCommandsTo };
+    controller._eventBus = { trigger: sinon.stub() };
+    controller._gameState = { events_recordNew: sinon.stub() };
+    controller.aircraft_remove = sinon.stub().callsFake(() => canIssueCommandsTo.returns(false));
+    speech_say([{ type: 'text', content: 'other aircraft' }], {});
+
+    controller._updateAircraftVisibility(aircraftModel);
+    firstUtterance.onend();
+
+    t.true(synthesis.speak.calledTwice);
+    t.true(utteranceFactory.secondCall.args[0].includes('switching to ground'));
+    t.false(synthesis.cancel.called);
+});
+
+ava.serial('real center and tower acceptance stop active and queued aircraft speech', (t) => {
+    const cases = [
+        {
+            name: 'center',
+            delay: CENTER_HANDOFF_ACCEPTANCE_DELAY_SECONDS,
+            request: (handoffModel) => handoffModel.requestCenterHandoff(0),
+            buildCoordinators: (scopeModel, clock) => [
+                new CenterHandoffCoordinator(scopeModel, {}, clock, {}),
+                new TowerHandoffCoordinator(scopeModel, clock)
+            ],
+            expectedState: HANDOFF_STATE.CENTER_OWNED
+        },
+        {
+            name: 'tower',
+            delay: TOWER_HANDOFF_ACCEPTANCE_DELAY_SECONDS,
+            request: (handoffModel) => handoffModel.requestTowerHandoff(0),
+            buildCoordinators: (scopeModel, clock) => [
+                new CenterHandoffCoordinator(scopeModel, {}, clock, {}),
+                new TowerHandoffCoordinator(scopeModel, clock)
+            ],
+            expectedState: HANDOFF_STATE.TOWER_OWNED
+        }
+    ];
+
+    for (const testCase of cases) {
+        const utterance = {};
+        const synthesis = {
+            getVoices: sinon.stub().returns([]),
+            speak: sinon.stub(),
+            cancel: sinon.stub()
+        };
+        speech_init(
+            { get: sinon.stub().returns(true) },
+            new SpeechSynthesisAdapter(synthesis, sinon.stub().returns(utterance))
+        );
+        const handoffModel = new HandoffModel();
+        const aircraftModel = {
+            isRadioSilent: false,
+            isArrival: sinon.stub().returns(false),
+            isTaxiing: sinon.stub().returns(true),
+            update: sinon.stub(),
+            updateWarning: sinon.stub()
+        };
+        const radarTargetModel = { aircraftModel, handoffModel };
+        const scopeModel = {
+            radarTargetCollection: {
+                findRadarTargetModelForAircraftModel: sinon.stub().returns(radarTargetModel)
+            }
+        };
+        const clock = { accumulatedDeltaTime: testCase.delay };
+        const [centerCoordinator, towerCoordinator] = testCase.buildCoordinators(scopeModel, clock);
+        const controller = Object.create(AircraftController.prototype);
+        controller.aircraft = { list: [aircraftModel] };
+        controller._centerHandoffCoordinator = centerCoordinator;
+        controller._towerHandoffCoordinator = towerCoordinator;
+        controller._scopeModel = scopeModel;
+        testCase.request(handoffModel);
+        speech_say(
+            [{ type: 'text', content: `${testCase.name} active` }],
+            {},
+            () => aircraftModel.isRadioSilent !== true
+        );
+        speech_say(
+            [{ type: 'text', content: `${testCase.name} queued` }],
+            {},
+            () => aircraftModel.isRadioSilent !== true
+        );
+
+        controller.update();
+
+        t.is(handoffModel.state, testCase.expectedState, testCase.name);
+        t.true(aircraftModel.isRadioSilent, testCase.name);
+        t.true(synthesis.cancel.calledOnceWithExactly(), testCase.name);
+        t.true(synthesis.speak.calledOnceWithExactly(utterance), testCase.name);
+    }
+
+    speech_init();
+});
+
 ava('retains an injected game state by exact identity', (t) => {
     const gameState = {};
     const controller = new AircraftController(
@@ -431,6 +590,11 @@ ava.serial('creates aircraft and conflicts with the exact injected service owner
     t.is(aircraftCollection.list[0]._clock, clock);
     t.is(aircraftCollection.list[0]._eventBus, eventBus);
     t.is(aircraftCollection.list[0]._gameState, gameState);
+    t.true(aircraftCollection.list[0]._canTransmit(aircraftCollection.list[0]));
+    t.true(controller._aircraftCommander._canTransmit(aircraftCollection.list[0]));
+    aircraftCollection.list[0].isRadioSilent = true;
+    t.false(aircraftCollection.list[0]._canTransmit(aircraftCollection.list[0]));
+    t.false(controller._aircraftCommander._canTransmit(aircraftCollection.list[0]));
     t.is(controller.conflicts.length, 1);
     t.is(controller.conflicts[0]._clock, clock);
     t.is(controller.conflicts[0]._eventBus, eventBus);

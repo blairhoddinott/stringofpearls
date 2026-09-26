@@ -1,0 +1,53 @@
+.shift-status {
+    align-items: center;
+    display: flex;
+    gap: @spacing-2x;
+    opacity: 0.35;
+    padding: 0 @spacing-2x;
+    transition: opacity 0.15s ease;
+}
+
+.shift-status.shift-status_active {
+    opacity: 1;
+}
+
+.shift-status-countdown {
+    color: @light-gray;
+    font-variant-numeric: tabular-nums;
+    min-width: 48px;
+    text-align: right;
+}
+
+.shift-status.shift-status_clearing .shift-status-countdown {
+    color: @red;
+    font-weight: bold;
+}
+
+.shift-status-end-button {
+    background-color: @red;
+    border: none;
+    border-radius: 4px;
+    color: @dark;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 90%;
+    font-weight: bold;
+    min-height: 32px;
+    padding: 0 @spacing-2x;
+    text-transform: uppercase;
+    transition: filter 0.15s ease;
+}
+
+.shift-status:not(.shift-status_active) .shift-status-end-button {
+    display: none;
+}
+
+.shift-status-end-button:hover,
+.shift-status-end-button:focus {
+    filter: brightness(1.15);
+}
+
+.shift-status-end-button:focus {
+    outline: 2px solid @white;
+    outline-offset: 2px;
+}

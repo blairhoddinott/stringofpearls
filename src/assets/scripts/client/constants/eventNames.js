@@ -125,6 +125,37 @@ export const EVENT = {
     REMOVE_AIRCRAFT_CONFLICT: 'remove-aircraft-conflict',
 
     /**
+     * A scoring event was recorded by the `GameController`
+     *
+     * The observer receives the `GAME_EVENTS` key that was recorded.
+     *
+     * @memberof EVENT
+     * @property SCORE_EVENT_RECORDED
+     * @type {string}
+     */
+    SCORE_EVENT_RECORDED: 'score-event-recorded',
+
+    /**
+     * A pair of aircraft transitioned into an active proximity conflict
+     * (a conflict-alert activation), fired once per activation.
+     *
+     * @memberof EVENT
+     * @property PROXIMITY_CONFLICT_ALARM
+     * @type {string}
+     */
+    PROXIMITY_CONFLICT_ALARM: 'proximity-conflict-alarm',
+
+    /**
+     * A pair of aircraft transitioned into an active separation violation,
+     * fired once per activation.
+     *
+     * @memberof EVENT
+     * @property SEPARATION_LOSS_ALARM
+     * @type {string}
+     */
+    SEPARATION_LOSS_ALARM: 'separation-loss-alarm',
+
+    /**
      * An aircraft has been located and needs to be centered in the view
      *
      * @memberof EVENT

@@ -1,0 +1,34 @@
+<section
+    id="shift-results"
+    class="shift-results notSelectable"
+    role="dialog"
+    aria-modal="true"
+    aria-hidden="true"
+    aria-labelledby="shift-results-title"
+    hidden
+>
+    <div class="shift-results-panel">
+        <h1 id="shift-results-title" class="shift-results-title">Shift complete</h1>
+        <div class="shift-results-score">
+            <span class="shift-results-score-label">Final score</span>
+            <span class="shift-results-score-value" data-shift-final-score>-</span>
+        </div>
+        <dl class="shift-results-config" data-shift-config-root>
+            <div class="shift-results-config-item" data-shift-config="airport"><dt>Airport</dt><dd></dd></div>
+            <div class="shift-results-config-item" data-shift-config="sector"><dt>Sector</dt><dd></dd></div>
+            <div class="shift-results-config-item" data-shift-config="scheduledDuration"><dt>Scheduled</dt><dd></dd></div>
+            <div class="shift-results-config-item" data-shift-config="elapsedDuration"><dt>Time worked</dt><dd></dd></div>
+        </dl>
+        <div class="shift-results-body">
+            <div class="shift-results-section">
+                <h2 class="shift-results-heading">Statistics</h2>
+                <dl class="shift-results-stats" data-shift-stats></dl>
+            </div>
+            <div class="shift-results-section">
+                <h2 class="shift-results-heading">Scoring events</h2>
+                <ol class="shift-results-log nice-scrollbar" data-shift-log></ol>
+            </div>
+        </div>
+        <button type="button" class="shift-results-button" data-shift-start-another>Start another shift</button>
+    </div>
+</section>

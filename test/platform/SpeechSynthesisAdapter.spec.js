@@ -108,6 +108,87 @@ ava('.speak() lets a backend speak() error propagate with the exact error identi
     t.is(thrown, failure);
 });
 
+ava('.speak() recovers its queue after a synchronous backend error', (t) => {
+    const failure = new Error('speak unavailable');
+    const firstUtterance = buildUtterance();
+    const secondUtterance = buildUtterance();
+    const utteranceFactory = sinon.stub();
+    utteranceFactory.onFirstCall().returns(firstUtterance);
+    utteranceFactory.onSecondCall().returns(secondUtterance);
+    const synthesis = buildSynthesis({ voices: [] });
+    synthesis.speak.onFirstCall().throws(failure);
+    const adapter = new SpeechSynthesisAdapter(synthesis, utteranceFactory);
+
+    t.throws(() => adapter.speak('failed', buildPilotVoice()), { is: failure });
+    adapter.speak('next', buildPilotVoice());
+
+    t.true(synthesis.speak.calledTwice);
+    t.true(synthesis.speak.secondCall.calledWithExactly(secondUtterance));
+});
+
+ava('.speak() advances past a synchronous failure to an item already waiting in the queue', (t) => {
+    const failure = new Error('queued speak unavailable');
+    const activeUtterance = buildUtterance();
+    const failedUtterance = buildUtterance();
+    const waitingUtterance = buildUtterance();
+    const utteranceFactory = sinon.stub();
+    utteranceFactory.onFirstCall().returns(activeUtterance);
+    utteranceFactory.onSecondCall().returns(failedUtterance);
+    utteranceFactory.onThirdCall().returns(waitingUtterance);
+    const synthesis = buildSynthesis({ voices: [] });
+    synthesis.speak.onSecondCall().throws(failure);
+    const adapter = new SpeechSynthesisAdapter(synthesis, utteranceFactory);
+
+    adapter.speak('active', buildPilotVoice());
+    adapter.speak('fails', buildPilotVoice());
+    adapter.speak('waiting', buildPilotVoice());
+    t.throws(() => activeUtterance.onend(), { is: failure });
+
+    t.true(synthesis.speak.calledThrice);
+    t.true(synthesis.speak.thirdCall.calledWithExactly(waitingUtterance));
+    t.is(adapter._current.text, 'waiting');
+    t.deepEqual(adapter._queue, []);
+});
+
+ava('.speak() drops queued speech that becomes ineligible before playback', (t) => {
+    const firstUtterance = buildUtterance();
+    const secondUtterance = buildUtterance();
+    const utteranceFactory = sinon.stub();
+    utteranceFactory.onFirstCall().returns(firstUtterance);
+    utteranceFactory.onSecondCall().returns(secondUtterance);
+    const synthesis = buildSynthesis({ voices: [{ name: 'Alice' }] });
+    const adapter = new SpeechSynthesisAdapter(synthesis, utteranceFactory);
+    let secondIsEligible = true;
+
+    adapter.speak('first', buildPilotVoice(), () => true);
+    adapter.speak('second', buildPilotVoice(), () => secondIsEligible);
+    secondIsEligible = false;
+    firstUtterance.onend();
+
+    t.true(synthesis.speak.calledOnceWithExactly(firstUtterance));
+    t.true(utteranceFactory.calledOnceWithExactly('first'));
+});
+
+ava('.discardIneligible() stops ineligible active speech and continues with eligible queued speech', (t) => {
+    const firstUtterance = buildUtterance();
+    const secondUtterance = buildUtterance();
+    const utteranceFactory = sinon.stub();
+    utteranceFactory.onFirstCall().returns(firstUtterance);
+    utteranceFactory.onSecondCall().returns(secondUtterance);
+    const synthesis = buildSynthesis({ voices: [{ name: 'Alice' }] });
+    const adapter = new SpeechSynthesisAdapter(synthesis, utteranceFactory);
+    let firstIsEligible = true;
+
+    adapter.speak('first', buildPilotVoice(), () => firstIsEligible);
+    adapter.speak('second', buildPilotVoice(), () => true);
+    firstIsEligible = false;
+    adapter.discardIneligible();
+
+    t.true(synthesis.cancel.calledOnceWithExactly());
+    t.true(synthesis.speak.calledTwice);
+    t.true(synthesis.speak.secondCall.calledWithExactly(secondUtterance));
+});
+
 ava('.speak() returns undefined without side effects when the backend is omitted', (t) => {
     const utteranceFactory = buildUtteranceFactory(buildUtterance());
     const adapter = new SpeechSynthesisAdapter(null, utteranceFactory);

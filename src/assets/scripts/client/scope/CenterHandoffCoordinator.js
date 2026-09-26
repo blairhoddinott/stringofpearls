@@ -50,10 +50,10 @@ export default class CenterHandoffCoordinator {
                 handoffModel.centerHandoffRequestedAtSeconds;
 
             if (elapsedSeconds >= CENTER_HANDOFF_ACCEPTANCE_DELAY_SECONDS) {
-                handoffModel.acceptByCenter();
+                return handoffModel.acceptByCenter();
             }
 
-            return;
+            return false;
         }
 
         if (!aircraftModel.isArrival()) {

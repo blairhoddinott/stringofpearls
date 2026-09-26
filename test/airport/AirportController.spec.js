@@ -39,6 +39,37 @@ ava('constructible controllers isolate airport selection and event dispatch', (t
     t.true(firstAirport.set.calledOnceWithExactly(null));
 });
 
+ava('.airport_set() rejects a guarded change before mutating or loading state', (t) => {
+    const eventBus = new EventBusClass();
+    const controller = new AirportControllerClass(eventBus);
+    const currentAirport = { icao: 'kaaa' };
+    const nextAirport = { icao: 'kbbb', loaded: false, set: sinon.stub() };
+    controller.airport_add(currentAirport);
+    controller.airport_add(nextAirport);
+    controller.current = currentAirport;
+    controller.setAirportSelectionGuard(() => false);
+    const eventObserver = sinon.stub();
+    eventBus.on(EVENT.AIRPORT_CHANGE, eventObserver);
+
+    controller.airport_set('kbbb');
+
+    t.is(controller.current, currentAirport);
+    t.true(nextAirport.set.notCalled);
+    t.true(eventObserver.notCalled);
+});
+
+ava('.airport_set() accepts a change when the selection guard allows it', (t) => {
+    const controller = new AirportControllerClass(new EventBusClass());
+    const airport = { icao: 'kaaa', loaded: false, set: sinon.stub() };
+    controller.airport_add(airport);
+    controller.setAirportSelectionGuard(() => true);
+
+    controller.airport_set('kaaa');
+
+    t.is(controller.current, airport);
+    t.true(airport.set.calledOnceWithExactly(null));
+});
+
 ava('reset retains a constructible controller event bus for subsequent selections', (t) => {
     const eventBus = new EventBusClass();
     const controller = new AirportControllerClass(eventBus);

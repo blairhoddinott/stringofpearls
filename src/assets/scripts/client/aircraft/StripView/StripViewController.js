@@ -126,6 +126,15 @@ export default class StripViewController {
     }
 
     /**
+     * Number of live progress strips currently owned by the player.
+     *
+     * @return {number}
+     */
+    get activeStripCount() {
+        return this._collection.length;
+    }
+
+    /**
      * Provides a way to check if a `StripViewModel` exists for a given `AircraftModel`
      *
      * @for StripViewController

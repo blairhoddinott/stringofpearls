@@ -1,0 +1,36 @@
+<section
+    id="shift-start"
+    class="shift-start notSelectable"
+    role="dialog"
+    aria-modal="true"
+    aria-hidden="true"
+    aria-labelledby="shift-start-title"
+    hidden
+>
+    <div class="shift-start-panel">
+        <h1 id="shift-start-title" class="shift-start-title">Start your shift</h1>
+        <p class="shift-start-intro">Configure your position, then start your shift.</p>
+        <form class="shift-start-form" data-shift-start-form>
+            <div class="shift-start-field">
+                <label class="shift-start-label" for="shift-start-sector">Sector</label>
+                <select id="shift-start-sector" class="shift-start-select" data-shift-sector>
+                    <option value="approach">Approach</option>
+                    <option value="departure">Departure</option>
+                    <option value="both" selected>Both</option>
+                </select>
+            </div>
+            <div class="shift-start-field">
+                <label class="shift-start-label" for="shift-start-airport">Airport</label>
+                <select id="shift-start-airport" class="shift-start-select" data-shift-airport></select>
+            </div>
+            <div class="shift-start-field">
+                <label class="shift-start-label" for="shift-start-length">Shift length</label>
+                <select id="shift-start-length" class="shift-start-select" data-shift-length>
+                    <option value="30" selected>30 minutes</option>
+                    <option value="60">60 minutes</option>
+                </select>
+            </div>
+            <button type="submit" class="shift-start-button" data-shift-start-button>Start shift</button>
+        </form>
+    </div>
+</section>

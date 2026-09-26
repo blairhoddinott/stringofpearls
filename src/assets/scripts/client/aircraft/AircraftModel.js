@@ -105,6 +105,7 @@ export default class AircraftModel {
      * @param clock {TimeKeeper|SimulationClock} [optional]
      * @param eventBus {EventBus} [optional]
      * @param gameState {GameController|SimulationGameState} [optional]
+     * @param canTransmit {Function} [optional] ownership-aware radio eligibility boundary
      */
     constructor(
         options = {},
@@ -112,13 +113,16 @@ export default class AircraftModel {
         airportController = AirportController,
         clock = TimeKeeper,
         eventBus = EventBus,
-        gameState = GameController
+        gameState = GameController,
+        canTransmit = () => true
     ) {
         this._navigationLibrary = navigationLibrary;
         this._airportController = airportController;
         this._clock = clock;
         this._eventBus = eventBus;
         this._gameState = gameState;
+        this._canTransmit = canTransmit;
+        this.isRadioSilent = false;
 
         /**
          * Unique id
@@ -1245,7 +1249,8 @@ export default class AircraftModel {
                 type: 'text',
                 content: logMessage(spokenCallsign)
             }],
-            this.pilotVoice
+            this.pilotVoice,
+            () => this._canTransmit(this)
         );
     }
 
@@ -1298,7 +1303,8 @@ export default class AircraftModel {
                     { type: 'callsign', content: this },
                     { type: 'text', content: `with you ${alt_say}` }
                 ],
-                this.pilotVoice
+                this.pilotVoice,
+                () => this._canTransmit(this)
             );
         } else {
             UiController.ui_log(`${this._airportController.airport_get().radio.twr}, ${this.callsign}, ready to taxi`);
@@ -1308,7 +1314,8 @@ export default class AircraftModel {
                     { type: 'callsign', content: this },
                     { type: 'text', content: ', ready to taxi' }
                 ],
-                this.pilotVoice
+                this.pilotVoice,
+                () => this._canTransmit(this)
             );
         }
     }
@@ -2714,7 +2721,8 @@ export default class AircraftModel {
                                     { type: 'callsign', content: this },
                                     { type: 'text', content: ', we\'re going down!' }
                                 ],
-                                this.pilotVoice
+                                this.pilotVoice,
+                                () => this._canTransmit(this)
                             );
 
                             this._gameState.events_recordNew(GAME_EVENTS.COLLISION);

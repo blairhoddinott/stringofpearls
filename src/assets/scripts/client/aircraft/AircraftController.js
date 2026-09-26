@@ -23,7 +23,7 @@ import { airlineNameAndFleetHelper } from '../airline/airlineHelpers';
 import { convertStaticPositionToDynamic } from '../base/staticPositionToDynamicPositionHelper';
 import { abs } from '../math/core';
 import { distance2d } from '../math/distance';
-import { speech_say } from '../speech';
+import { speech_discardIneligible, speech_say } from '../speech';
 import { generateTransponderCode, isDiscreteTransponderCode, isValidTransponderCode } from '../utilities/transponderUtilities';
 import { km } from '../utilities/unitConverters';
 import { isEmptyOrNotArray } from '../utilities/validatorUtilities';
@@ -121,7 +121,8 @@ export default class AircraftController {
             gameState,
             scopeModel.canIssueCommandsTo.bind(scopeModel),
             scopeModel.contactTower.bind(scopeModel),
-            scopeModel.contactCenter.bind(scopeModel)
+            scopeModel.contactCenter.bind(scopeModel),
+            (aircraftModel) => aircraftModel.isRadioSilent !== true
         );
 
         /**
@@ -214,6 +215,15 @@ export default class AircraftController {
      */
     get aircraftCommander() {
         return this._aircraftCommander;
+    }
+
+    /**
+     * Number of live player-owned progress strips.
+     *
+     * @return {number}
+     */
+    get activeStripCount() {
+        return this._stripViewController.activeStripCount;
     }
 
     /**
@@ -420,8 +430,13 @@ export default class AircraftController {
 
             aircraftModel.update();
             aircraftModel.updateWarning();
-            this._centerHandoffCoordinator.update(aircraftModel);
-            this._towerHandoffCoordinator.update(aircraftModel);
+            const centerAcceptedHandoff = this._centerHandoffCoordinator.update(aircraftModel);
+            const towerAcceptedHandoff = this._towerHandoffCoordinator.update(aircraftModel);
+
+            if (centerAcceptedHandoff || towerAcceptedHandoff) {
+                aircraftModel.isRadioSilent = true;
+                speech_discardIneligible();
+            }
 
             // TODO: conflict checking eats up a lot of resources when there are more than
             //       30 aircraft, exit early if we're still taxiing
@@ -634,7 +649,8 @@ export default class AircraftController {
             this._airportController,
             this._clock,
             this._eventBus,
-            this._gameState
+            this._gameState,
+            (candidate) => candidate.isRadioSilent !== true
         );
         const isDeparture = initializationProps.category === 'departure';
         const isArrival = initializationProps.category === 'arrival';
@@ -959,14 +975,17 @@ export default class AircraftController {
         if (aircraftModel.isArrival() && aircraftModel.isStopped() && !aircraftModel.hit) {
             this._eventBus.trigger(AIRCRAFT_EVENT.FULLSTOP, aircraftModel, aircraftModel.fms.arrivalRunwayModel);
 
-            UiController.ui_log(`${aircraftModel.callsign} switching to ground, good day`);
-            speech_say(
-                [
-                    { type: 'callsign', content: aircraftModel },
-                    { type: 'text', content: ', switching to ground, good day' }
-                ],
-                aircraftModel.pilotVoice
-            );
+            if (this._scopeModel.canIssueCommandsTo(aircraftModel)) {
+                UiController.ui_log(`${aircraftModel.callsign} switching to ground, good day`);
+                speech_say(
+                    [
+                        { type: 'callsign', content: aircraftModel },
+                        { type: 'text', content: ', switching to ground, good day' }
+                    ],
+                    aircraftModel.pilotVoice,
+                    () => aircraftModel.isRadioSilent !== true
+                );
+            }
 
             this._gameState.events_recordNew(GAME_EVENTS.ARRIVAL);
             this.aircraft_remove(aircraftModel);
@@ -983,7 +1002,8 @@ export default class AircraftController {
                     { type: 'callsign', content: aircraftModel },
                     { type: 'text', content: ', radar contact lost' }
                 ],
-                aircraftModel.pilotVoice
+                aircraftModel.pilotVoice,
+                () => aircraftModel.isRadioSilent !== true
             );
         }
 

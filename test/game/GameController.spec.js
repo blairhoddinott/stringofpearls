@@ -2,6 +2,9 @@ import ava from 'ava';
 import sinon from 'sinon';
 import GameController, { GameControllerClass } from '../../src/assets/scripts/client/game/GameController';
 import SimulationContext from '../../src/assets/scripts/client/simulation/SimulationContext';
+import { EventBusClass } from '../../src/assets/scripts/client/lib/EventBus';
+import { EVENT } from '../../src/assets/scripts/client/constants/eventNames';
+import { GAME_EVENTS } from '../../src/assets/scripts/client/game/gameEventConstants';
 
 // Build a storage adapter stub exposing only the `get(key)`/`set(key, value)`
 // contract, so the option-persistence seam is exercised without a global
@@ -130,6 +133,20 @@ ava.serial('.enable() is a safe, browser-free no-op when no page-visibility adap
     GameController.setupHandlers();
 
     t.notThrows(() => GameController.enable());
+});
+
+ava('.events_recordNew() emits SCORE_EVENT_RECORDED through the controller event bus', (t) => {
+    const eventBus = new EventBusClass();
+    const controller = new GameControllerClass(undefined, eventBus);
+    // Isolate the notification behavior from the DOM-bound score rendering.
+    sinon.stub(controller, 'game_updateScore');
+    sinon.stub(controller, 'updateScoreHistory');
+    const observer = sinon.spy();
+    eventBus.on(EVENT.SCORE_EVENT_RECORDED, observer);
+
+    controller.events_recordNew(GAME_EVENTS.ARRIVAL);
+
+    t.true(observer.calledOnceWithExactly(GAME_EVENTS.ARRIVAL));
 });
 
 ava('a constructible controller delegates legacy timeouts to a context-owned queue', (t) => {

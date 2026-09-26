@@ -1,0 +1,111 @@
+.shift-start {
+    align-items: center;
+    background-color: @dark-085;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    opacity: 0;
+    padding: @spacing-4x;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: opacity 0.25s ease, visibility 0s linear 0.25s;
+    visibility: hidden;
+    z-index: @shift-z;
+}
+
+.shift-start.open {
+    opacity: 1;
+    pointer-events: auto;
+    transition-delay: 0s;
+    visibility: visible;
+}
+
+.shift-start-panel {
+    background-color: @dark;
+    border: 6px solid @blue-medium;
+    border-radius: 8px;
+    box-shadow: 0 0 50px -10px rgba(0, 0, 0, 0.7);
+    box-sizing: border-box;
+    color: @light-gray;
+    max-width: 560px;
+    padding: @spacing-4x;
+    text-align: center;
+    width: 100%;
+}
+
+.shift-start-title {
+    color: @white;
+    font-size: 170%;
+    font-weight: normal;
+    margin: 0 0 @spacing-2x;
+    text-transform: uppercase;
+}
+
+.shift-start-intro {
+    color: @medium-light-gray;
+    margin: 0 0 @spacing-4x;
+}
+
+.shift-start-form {
+    display: flex;
+    flex-direction: column;
+    gap: @spacing-3x;
+}
+
+.shift-start-field {
+    display: flex;
+    flex-direction: column;
+    gap: @spacing-1x;
+    text-align: left;
+}
+
+.shift-start-label {
+    color: @medium-light-gray;
+    font-size: 90%;
+    text-transform: uppercase;
+}
+
+.shift-start-select {
+    background-color: @blue-very-dark;
+    border: 2px solid @blue-medium;
+    border-radius: 4px;
+    color: @light-gray;
+    font-family: inherit;
+    font-size: 105%;
+    min-height: 44px;
+    padding: @spacing-1x @spacing-2x;
+}
+
+.shift-start-select:focus {
+    border-color: @blue;
+    outline: 2px solid @blue;
+    outline-offset: 2px;
+}
+
+.shift-start-button {
+    background-color: @green;
+    border: none;
+    border-radius: 4px;
+    color: @dark;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 120%;
+    font-weight: bold;
+    margin-top: @spacing-2x;
+    min-height: 56px;
+    text-transform: uppercase;
+    transition: filter 0.15s ease;
+}
+
+.shift-start-button:hover,
+.shift-start-button:focus {
+    filter: brightness(1.15);
+}
+
+.shift-start-button:focus {
+    outline: 2px solid @white;
+    outline-offset: 3px;
+}

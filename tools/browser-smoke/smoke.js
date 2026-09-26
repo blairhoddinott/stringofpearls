@@ -73,37 +73,86 @@ async function main() {
         const response = await page.goto(baseUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
         assert(response && response.ok(), `startup returned HTTP ${response ? response.status() : 'no response'}`);
 
-        const trafficModeDialog = page.locator('#traffic-mode-selection');
-        await trafficModeDialog.waitFor({ state: 'visible', timeout: 30000 });
-        const trafficModeLabels = await trafficModeDialog.locator('[data-traffic-mode]').allTextContents();
-        assert.deepStrictEqual(trafficModeLabels, ['Arrivals', 'Departures', 'Both']);
-        assert.strictEqual(await page.locator(':focus').getAttribute('data-traffic-mode'), 'arrivals');
-        await page.keyboard.press('Enter');
-        await trafficModeDialog.waitFor({ state: 'hidden', timeout: 30000 });
+        const shiftStartDialog = page.locator('#shift-start');
+        const shiftResultsDialog = page.locator('#shift-results');
+        const sectorSelect = shiftStartDialog.locator('[data-shift-sector]');
+        const airportSelect = shiftStartDialog.locator('[data-shift-airport]');
+        const lengthSelect = shiftStartDialog.locator('[data-shift-length]');
+        const startShiftButton = shiftStartDialog.locator('[data-shift-start-button]');
+
+        await shiftStartDialog.waitFor({ state: 'visible', timeout: 30000 });
+        assert.strictEqual(await shiftStartDialog.getAttribute('hidden'), null);
+        assert.strictEqual(await page.locator('#canvases').evaluate((element) => element.inert), true);
+        assert.deepStrictEqual(await sectorSelect.locator('option').allTextContents(), ['Approach', 'Departure', 'Both']);
+        assert.deepStrictEqual(await lengthSelect.locator('option').allTextContents(), ['30 minutes', '60 minutes']);
+        assert.strictEqual(await airportSelect.inputValue(), 'ksea');
+        assert.strictEqual(await lengthSelect.inputValue(), '30');
+        assert.strictEqual(await page.locator(':focus').getAttribute('data-shift-sector'), '');
+        assert.notStrictEqual(await sectorSelect.evaluate((element) => getComputedStyle(element).outlineStyle), 'none');
+
+        // The landing-page focus trap includes every control and wraps both ways.
+        await page.keyboard.press('Tab');
+        assert.strictEqual(await page.locator(':focus').getAttribute('data-shift-airport'), '');
+        await page.keyboard.press('Tab');
+        assert.strictEqual(await page.locator(':focus').getAttribute('data-shift-length'), '');
+        await page.keyboard.press('Tab');
+        assert.strictEqual(await page.locator(':focus').getAttribute('data-shift-start-button'), '');
+        await page.keyboard.press('Tab');
+        assert.strictEqual(await page.locator(':focus').getAttribute('data-shift-sector'), '');
+        await page.keyboard.press('Shift+Tab');
+        assert.strictEqual(await page.locator(':focus').getAttribute('data-shift-start-button'), '');
+
+        // First shift: Approach at the already-loaded default airport.
+        await sectorSelect.selectOption('approach');
+        await startShiftButton.click();
+        await shiftStartDialog.waitFor({ state: 'hidden', timeout: 30000 });
         await page.locator('.js-stripViewArrivals-section').waitFor({ state: 'visible' });
         await page.locator('.js-stripViewDepartures-section').waitFor({ state: 'hidden' });
+        await page.locator('[data-shift-countdown]').waitFor({ state: 'visible' });
+        assert.strictEqual(await page.locator('[data-shift-countdown]').getAttribute('aria-live'), 'polite');
+        assert.match(await page.locator('[data-shift-countdown]').textContent(), /^29:\d{2}$/);
 
-        await page.reload({ waitUntil: 'domcontentloaded', timeout: 30000 });
-        await trafficModeDialog.waitFor({ state: 'visible', timeout: 30000 });
-        await trafficModeDialog.locator('[data-traffic-mode="departures"]').click();
-        await trafficModeDialog.waitFor({ state: 'hidden', timeout: 30000 });
+        // Manual end produces results with the chosen configuration and a restart path.
+        await page.locator('[data-shift-end-button]').click();
+        await shiftResultsDialog.waitFor({ state: 'visible', timeout: 30000 });
+        assert.strictEqual(await shiftResultsDialog.getAttribute('hidden'), null);
+        assert.strictEqual(await page.locator('#canvases').evaluate((element) => element.inert), true);
+        assert.strictEqual(await shiftResultsDialog.locator('[data-shift-config="airport"] dd').textContent(), 'KSEA');
+        assert.strictEqual(await shiftResultsDialog.locator('[data-shift-config="sector"] dd').textContent(), 'Approach');
+        assert.strictEqual(
+            await shiftResultsDialog.locator('[data-shift-config="scheduledDuration"] dd').textContent(),
+            '30:00'
+        );
+        await shiftResultsDialog.locator('[data-shift-start-another]').click();
+        await shiftStartDialog.waitFor({ state: 'visible', timeout: 30000 });
+
+        // Second shift: Departure at an airport that must load through the real lifecycle.
+        await sectorSelect.selectOption('departure');
+        await airportSelect.selectOption(targetAirport);
+        const selectedAirportResponse = page.waitForResponse((candidate) => {
+            return new URL(candidate.url()).pathname.endsWith(`/assets/airports/${targetAirport}.json`) && candidate.status() === 200;
+        });
+        await startShiftButton.click();
+        await selectedAirportResponse;
+        await shiftStartDialog.waitFor({ state: 'hidden', timeout: 30000 });
         await page.locator('.js-stripViewArrivals-section').waitFor({ state: 'hidden' });
         await page.locator('.js-stripViewDepartures-section').waitFor({ state: 'visible' });
+        assert.match(await page.locator('[data-shift-countdown]').textContent(), /^29:\d{2}$/);
 
-        await page.reload({ waitUntil: 'domcontentloaded', timeout: 30000 });
-        await trafficModeDialog.waitFor({ state: 'visible', timeout: 30000 });
-        await page.keyboard.press('Tab');
-        assert.strictEqual(await page.locator(':focus').getAttribute('data-traffic-mode'), 'departures');
-        await page.keyboard.press('Tab');
-        assert.strictEqual(await page.locator(':focus').getAttribute('data-traffic-mode'), 'both');
-        await page.keyboard.press('Tab');
-        assert.strictEqual(await page.locator(':focus').getAttribute('data-traffic-mode'), 'arrivals');
-        await page.keyboard.press('Shift+Tab');
-        assert.strictEqual(await page.locator(':focus').getAttribute('data-traffic-mode'), 'both');
-        await page.keyboard.press('Enter');
-        await trafficModeDialog.waitFor({ state: 'hidden', timeout: 30000 });
+        await page.locator('[data-shift-end-button]').click();
+        await shiftResultsDialog.waitFor({ state: 'visible', timeout: 30000 });
+        await shiftResultsDialog.locator('[data-shift-start-another]').click();
+        await shiftStartDialog.waitFor({ state: 'visible', timeout: 30000 });
+
+        // Third shift: Both, proving the reset path resumes simulation and both strip sections.
+        await sectorSelect.selectOption('both');
+        await airportSelect.selectOption('ksea');
+        await startShiftButton.click();
+        await shiftStartDialog.waitFor({ state: 'hidden', timeout: 30000 });
         await page.locator('.js-stripViewArrivals-section').waitFor({ state: 'visible' });
         await page.locator('.js-stripViewDepartures-section').waitFor({ state: 'visible' });
+        await page.waitForTimeout(1100);
+        assert.notStrictEqual(await page.locator('[data-shift-countdown]').textContent(), '30:00');
 
         await page.waitForFunction(() => window.prop && window.prop.complete === true, null, { timeout: 30000 });
         await page.locator('.js-loadingView').waitFor({ state: 'hidden', timeout: 30000 });
@@ -117,15 +166,24 @@ async function main() {
             assert(canvas.width > 0 && canvas.height > 0, `canvas ${index} has invalid dimensions`);
         });
 
-        await page.evaluate(() => new Promise((resolve) => requestAnimationFrame(() => resolve())));
+        // Airport changes are rejected while a shift is active; this protects
+        // timing, score, ownership, and result configuration from corruption.
         await page.locator('.switch-airport').click();
         await page.locator(`.airport-list-item[data-icao="${targetAirport}"]`).waitFor({ state: 'visible' });
-
-        const airportResponse = page.waitForResponse((candidate) => {
-            return new URL(candidate.url()).pathname.endsWith(`/assets/airports/${targetAirport}.json`) && candidate.status() === 200;
-        });
         await page.locator(`.airport-list-item[data-icao="${targetAirport}"]`).click();
-        await airportResponse;
+        await page.waitForTimeout(500);
+        assert.strictEqual(await page.evaluate(() => localStorage.getItem('atc-last-airport')), 'ksea');
+
+        // End the protected shift, then select the already-loaded target through
+        // the landing page, where airport changes are intentionally allowed.
+        await page.locator('[data-shift-end-button]').click();
+        await shiftResultsDialog.waitFor({ state: 'visible', timeout: 30000 });
+        await shiftResultsDialog.locator('[data-shift-start-another]').click();
+        await shiftStartDialog.waitFor({ state: 'visible', timeout: 30000 });
+        await sectorSelect.selectOption('both');
+        await airportSelect.selectOption(targetAirport);
+        await startShiftButton.click();
+        await shiftStartDialog.waitFor({ state: 'hidden', timeout: 30000 });
         await page.waitForFunction((icao) => localStorage.getItem('atc-last-airport') === icao, targetAirport);
         await page.evaluate(() => new Promise((resolve) => requestAnimationFrame(() => resolve())));
 
@@ -165,7 +223,7 @@ async function main() {
         await page.locator(`.airport-list-item.mix-airport-list-item_isActive[data-icao="${targetAirport}"]`).waitFor({ state: 'visible' });
 
         assert.deepStrictEqual(errors, [], errors.join('\n'));
-        console.log(`Browser smoke test passed: traffic mode, startup, weather, render frame, airport=${targetAirport}, uncaughtErrors=0`);
+        console.log(`Browser smoke test passed: shift lifecycle, sectors, results, restart, weather, render frame, airport=${targetAirport}, uncaughtErrors=0`);
     } finally {
         await browser.close();
     }

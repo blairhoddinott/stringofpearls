@@ -48,6 +48,83 @@ export class SpawnSchedulerClass {
          * @private
          */
         this._aircraftController = aircraftController;
+
+        /**
+         * When `true`, all new spawn scheduling and pre-spawning is suppressed.
+         *
+         * Used to stop generating new aircraft near the end of a shift without
+         * disturbing traffic that is already active.
+         *
+         * @property _spawnHalted
+         * @type {boolean}
+         * @default false
+         * @private
+         */
+        this._spawnHalted = false;
+        this._spawnCutoffTime = null;
+    }
+
+    /**
+     * Whether new spawn generation is currently suppressed.
+     *
+     * @property isSpawningHalted
+     * @type {boolean}
+     */
+    get isSpawningHalted() {
+        return this._spawnHalted;
+    }
+
+    /**
+     * Stop generating new aircraft, cancelling any scheduled spawn timers.
+     *
+     * Active/airborne traffic is untouched; only pending and future generation
+     * is prevented. Safe to call more than once.
+     *
+     * @for SpawnScheduler
+     * @method haltSpawning
+     * @chainable
+     */
+    haltSpawning() {
+        this._spawnHalted = true;
+
+        _forEach(this._spawnPatternCollection.spawnPatternModels, (spawnPatternModel) => {
+            const { scheduleId } = spawnPatternModel;
+
+            if (scheduleId && scheduleId !== INVALID_NUMBER) {
+                this._timerQueue.destroyTimer(scheduleId);
+                spawnPatternModel.scheduleId = null;
+            }
+        });
+
+        return this;
+    }
+
+    /**
+     * Allow spawn generation to resume (e.g. when starting another shift).
+     *
+     * @for SpawnScheduler
+     * @method resumeSpawning
+     * @chainable
+     */
+    resumeSpawning() {
+        this._spawnHalted = false;
+        this._spawnCutoffTime = null;
+
+        return this;
+    }
+
+    /**
+     * Set the absolute simulation time at which no callback may spawn or re-arm.
+     * The boundary guard prevents a large simulation tick from firing a due
+     * timer before the shift controller gets its next update.
+     *
+     * @param cutoffTime {number}
+     * @chainable
+     */
+    setSpawnCutoffTime(cutoffTime) {
+        this._spawnCutoffTime = cutoffTime;
+
+        return this;
     }
 
     /**
@@ -73,6 +150,23 @@ export class SpawnSchedulerClass {
     }
 
     /**
+     * Store the `AircraftController` without starting the scheduler.
+     *
+     * Used when the spawn start is driven by the airport change/load lifecycle
+     * (`AppController.onAirportChange`) rather than directly by `init()`.
+     *
+     * @for SpawnScheduler
+     * @method setAircraftController
+     * @param aircraftController {AircraftController}
+     * @chainable
+     */
+    setAircraftController(aircraftController) {
+        this._aircraftController = aircraftController;
+
+        return this;
+    }
+
+    /**
      * Starts the scheduler and prespawns departures
      *
      * @for SpawnScheduler
@@ -93,6 +187,10 @@ export class SpawnSchedulerClass {
      * @method createSchedulesFromList
      */
     createSchedulesFromList() {
+        if (!this._canSpawn()) {
+            return;
+        }
+
         _forEach(this._spawnPatternCollection.spawnPatternModels, (spawnPatternModel) => {
             if (!this._trafficMode.allows(spawnPatternModel.category)) {
                 return;
@@ -114,6 +212,10 @@ export class SpawnSchedulerClass {
      * @method resetAirborneTraffic
      */
     resetAirborneTraffic() {
+        if (!this._canSpawn()) {
+            return;
+        }
+
         this._spawnPatternCollection.spawnPatternModels
             .filter((spawnPatternModel) => this._trafficMode.allows(spawnPatternModel.category))
             .filter((spawnPatternModel) => spawnPatternModel.isAirborneAtSpawn())
@@ -137,6 +239,10 @@ export class SpawnSchedulerClass {
      * @method createPreSpawnDepartures
      */
     createPreSpawnDepartures() {
+        if (!this._canSpawn()) {
+            return;
+        }
+
         if (!this._trafficMode.allows(FLIGHT_CATEGORY.DEPARTURE)) {
             return;
         }
@@ -159,6 +265,10 @@ export class SpawnSchedulerClass {
      * @return {array}
      */
     createNextSchedule(spawnPatternModel) {
+        if (!this._canSpawn()) {
+            return null;
+        }
+
         const delay = spawnPatternModel.getNextDelayValue(this._clock.accumulatedDeltaTime);
 
         return this._createTimeout(spawnPatternModel, delay);
@@ -183,7 +293,7 @@ export class SpawnSchedulerClass {
             spawnPatternModel.scheduleId = null;
         }
 
-        if (!this._trafficMode.allows(spawnPatternModel.category)) {
+        if (!this._canSpawn() || !this._trafficMode.allows(spawnPatternModel.category)) {
             return;
         }
 
@@ -240,6 +350,12 @@ export class SpawnSchedulerClass {
         const spawnPatternModel = args[0][0];
         const aircraftController = args[0][1];
 
+        if (!this._canSpawn()) {
+            spawnPatternModel.scheduleId = null;
+
+            return;
+        }
+
         if (!this._trafficMode.allows(spawnPatternModel.category)) {
             spawnPatternModel.scheduleId = null;
 
@@ -250,6 +366,19 @@ export class SpawnSchedulerClass {
 
         spawnPatternModel.scheduleId = this.createNextSchedule(spawnPatternModel);
     };
+
+    /**
+     * Whether the scheduler may create or schedule another aircraft at the
+     * current authoritative simulation time.
+     *
+     * @return {boolean}
+     * @private
+     */
+    _canSpawn() {
+        return !this._spawnHalted
+            && (this._spawnCutoffTime === null
+                || this._clock.accumulatedDeltaTime < this._spawnCutoffTime);
+    }
 }
 
 

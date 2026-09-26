@@ -11,9 +11,9 @@
  * it is safe to construct with either capability omitted: a nullish backend or
  * factory is normalized to `null` and the dependent method becomes a no-op that
  * returns `undefined` with no ambient fallback. When the required capability is
- * present the backend is driven with the exact operation order and argument
- * shapes the legacy inline speech code used, its return value is forwarded
- * verbatim, and any thrown error propagates unchanged.
+ * present, this adapter serializes utterances itself so eligibility can be
+ * rechecked immediately before playback and stale aircraft transmissions can
+ * be removed without allowing later queued speech to leak through.
  *
  * @class SpeechSynthesisAdapter
  */
@@ -41,6 +41,8 @@ export default class SpeechSynthesisAdapter {
          * @private
          */
         this._utteranceFactory = utteranceFactory == null ? null : utteranceFactory;
+        this._queue = [];
+        this._current = null;
     }
 
     /**
@@ -58,23 +60,97 @@ export default class SpeechSynthesisAdapter {
      * @method speak
      * @param text {string}
      * @param pilotVoice {object}  `{ voice, rate, pitch }`
+     * @param isEligible {Function} callback rechecked immediately before playback
      * @return {*}
      */
-    speak(text, pilotVoice) {
+    speak(text, pilotVoice, isEligible = () => true) {
         if (this._synthesis === null || this._utteranceFactory === null) {
             return undefined;
         }
 
-        const utterance = this._utteranceFactory(text);
+        if (!isEligible()) {
+            return undefined;
+        }
+
+        this._queue.push({ text, pilotVoice, isEligible });
+
+        return this._speakNext();
+    }
+
+    _speakNext() {
+        if (this._current !== null) {
+            return undefined;
+        }
+
+        let item = this._queue.shift();
+
+        while (item && !item.isEligible()) {
+            item = this._queue.shift();
+        }
+
+        if (!item) {
+            return undefined;
+        }
+
+        const utterance = this._utteranceFactory(item.text);
 
         utterance.lang = 'en-US';
         utterance.voice = this._synthesis.getVoices().filter((voice) => {
-            return voice.name === pilotVoice.voice;
+            return voice.name === item.pilotVoice.voice;
         })[0];
-        utterance.rate = pilotVoice.rate;
-        utterance.pitch = pilotVoice.pitch;
+        utterance.rate = item.pilotVoice.rate;
+        utterance.pitch = item.pilotVoice.pitch;
+        item.utterance = utterance;
+        utterance.onend = () => this._finish(item);
+        utterance.onerror = () => this._finish(item);
+        this._current = item;
 
-        return this._synthesis.speak(utterance);
+        try {
+            return this._synthesis.speak(utterance);
+        } catch (error) {
+            if (this._current === item) {
+                this._current = null;
+            }
+
+            try {
+                this._speakNext();
+            } catch {
+                // Nested failures perform the same queue recovery. Preserve
+                // this operation's original backend error for its caller.
+            }
+
+            throw error;
+        }
+    }
+
+    _finish(item) {
+        if (this._current !== item) {
+            return;
+        }
+
+        this._current = null;
+        this._speakNext();
+    }
+
+    /**
+     * Remove queued speech whose eligibility has expired. If the active
+     * utterance is no longer eligible, stop it and continue with the next
+     * eligible item.
+     *
+     * @return {*}
+     */
+    discardIneligible() {
+        this._queue = this._queue.filter((item) => item.isEligible());
+
+        if (this._current === null || this._current.isEligible()) {
+            return undefined;
+        }
+
+        this._current = null;
+        const result = this._synthesis.cancel();
+        this._speakNext();
+
+        return result;
     }
 
     /**
@@ -92,6 +168,9 @@ export default class SpeechSynthesisAdapter {
         if (this._synthesis === null) {
             return undefined;
         }
+
+        this._queue = [];
+        this._current = null;
 
         return this._synthesis.cancel();
     }

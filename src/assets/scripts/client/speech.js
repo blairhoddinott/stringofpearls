@@ -119,9 +119,12 @@ export const randomizePilotVoice = () => {
  *
  * @function speech_say
  * @param sentence
+ * @param pilotVoice
+ * @param isEligible {Function} [optional] live transmission authorization check
  */
-export const speech_say = (sentence, pilotVoice) => {
-    if (_speechSynthesisAdapter !== null && prop.speech.enabled) {
+export const speech_say = (sentence, pilotVoice, isEligible) => {
+    if (_speechSynthesisAdapter !== null && prop.speech.enabled &&
+        (isEligible === undefined || isEligible())) {
         let textToSay = '';
 
         for (let i = 0; i < sentence.length; i++) {
@@ -147,7 +150,18 @@ export const speech_say = (sentence, pilotVoice) => {
 
         // Delegate utterance construction, voice selection, and speaking to the
         // synthesis boundary so no browser speech global is touched here.
-        _speechSynthesisAdapter.speak(textToSay, pilotVoice);
+        if (isEligible === undefined) {
+            _speechSynthesisAdapter.speak(textToSay, pilotVoice);
+        } else {
+            _speechSynthesisAdapter.speak(textToSay, pilotVoice, isEligible);
+        }
+    }
+};
+
+export const speech_discardIneligible = () => {
+    if (_speechSynthesisAdapter !== null &&
+        typeof _speechSynthesisAdapter.discardIneligible === 'function') {
+        _speechSynthesisAdapter.discardIneligible();
     }
 };
 

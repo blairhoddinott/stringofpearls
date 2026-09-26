@@ -28,7 +28,7 @@ _Syntax -_ `[callsign]`
 
 _Description -_ Entering the callsign of an aircraft with a flashing center handoff accepts the aircraft and gives the player command authority. Clicking the offered target also accepts it. A center-owned target displays `C`; its entire data block flashes while offered.
 
-If an offer is ignored until the route decision point, center sends the aircraft to the configured boundary fix and assigns a hold. The hold remains after a later acceptance until the player explicitly clears it.
+If an offer is ignored until the route decision point, center sends the aircraft to the configured boundary fix and assigns a hold. The hold remains after a later acceptance until the player explicitly clears it. See [Center handoff, holding, and airport compliance](development/center-handoff-airport-compliance.md) for the timing, inherited holding behavior, and airport support status.
 
 ### ~~Amend Altitude~~
 

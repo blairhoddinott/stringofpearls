@@ -696,7 +696,7 @@ Contains the parameters used to determine how and where aircraft are spawned int
 
 Arrival patterns participating in center handoffs require an explicit `centerHandoffFix`. It must name a non-vector waypoint in the resolved route and must have a following route segment. Select the waypoint immediately outside the controlled-airspace boundary whose following segment enters controlled airspace. Runtime code does not guess or substitute a fix. Arrival patterns without this field retain legacy player ownership until they have been reviewed and migrated.
 
-Use `node tools/audit-center-handoff-fixes.js` to inspect candidate fixes. `--write-obvious` writes only unambiguous candidates; entries reported under `reviewRequired` must be reviewed by a human before adding the field. Offer and decision distances are measured along the aircraft's remaining active route, not directly across turns.
+Use `node tools/audit-center-handoff-fixes.js` to inspect candidate fixes. `--write-obvious` writes only unambiguous candidates; entries reported under `reviewRequired` must be reviewed by a human before adding the field. Offer and decision distances are measured along the aircraft's remaining active route, not directly across turns. See [Center handoff, holding, and airport compliance](development/center-handoff-airport-compliance.md) for operational behavior and the current airport migration list.
 
 _see [spawnPatternReadme.md](spawnPatternReadme.md) for more detailed descriptions on data shape and format of a spawnPattern_
 

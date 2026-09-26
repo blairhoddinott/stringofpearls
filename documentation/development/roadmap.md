@@ -40,11 +40,10 @@ This roadmap tracks the current direction of the project. The order may change a
 
 - [ ] Use real-world traffic schedules
 - [x] Use exact-station AviationWeather.gov METARs for sustained wind and altimeter, display reported gusts and active runways, and retain deterministic static/manual fallback
-- [ ] Simulate handoffs from center controllers
+- [x] Simulate arrival ownership handoffs from center through the player to tower
 - [ ] Model service to smaller airports in the surrounding area
-- [ ] Add operational holding instructions
-- [ ] Divide airspace into sectors and allow users to work selected sectors where the model makes sense
 - [x] Let users work arrivals, departures, or both, with traffic generation and flight-strip presentation matched to the selection
+- [ ] Create a game-session concept of working a shift: select the airport, shift duration, sector, and other session options before play, then display a score screen when the shift ends
 
 ## Voice and interaction
 

@@ -102,9 +102,8 @@ The canonical roadmap lives at [documentation/development/roadmap.md](documentat
 - [x] Use real-world METAR weather for sustained wind and altimeter, with visible gusts, active runways, and deterministic fallback
 - [x] Simulate arrival ownership handoffs from center through player to tower
 - [ ] Model service to smaller airports in the surrounding area
-- [x] Add operational holding instructions for ignored arrival handoffs
-- [ ] Divide airspace into sectors and allow users to work selected sectors where the model makes sense
 - [x] Let users choose arrivals, departures, or both for the current simulator session
+- [ ] Create a game-session concept of working a shift: select the airport, shift duration, sector, and other session options before play, then display a score screen when the shift ends
 
 ### Voice and interaction
 

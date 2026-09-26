@@ -217,6 +217,15 @@ export default class AircraftController {
     }
 
     /**
+     * Number of live player-owned progress strips.
+     *
+     * @return {number}
+     */
+    get activeStripCount() {
+        return this._stripViewController.activeStripCount;
+    }
+
+    /**
      * @for AircraftController
      * @method init
      * @chainable

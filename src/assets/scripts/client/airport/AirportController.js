@@ -89,6 +89,7 @@ export class AirportControllerClass {
          * @default null
          */
         this.current = null;
+        this._airportSelectionGuard = null;
     }
 
     /**
@@ -183,6 +184,17 @@ export class AirportControllerClass {
         this._airportListToLoad = [];
         this.airports = {};
         this.current = null;
+        this._airportSelectionGuard = null;
+    }
+
+    /**
+     * Install or remove a policy boundary consulted before airport state is
+     * mutated. Returning false rejects the requested selection.
+     *
+     * @param guard {Function|null}
+     */
+    setAirportSelectionGuard(guard) {
+        this._airportSelectionGuard = guard;
     }
 
     /**
@@ -200,6 +212,10 @@ export class AirportControllerClass {
         if (!this.airports[icao]) {
             console.warn(`${icao}: no such airport`);
 
+            return;
+        }
+
+        if (this._airportSelectionGuard && !this._airportSelectionGuard(icao)) {
             return;
         }
 

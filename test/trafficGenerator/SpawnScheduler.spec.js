@@ -375,3 +375,120 @@ ava('.selectTrafficMode() delegates validation and returns the selected mode', (
 //     t.true(createAircraftWithSpawnPatternModelStub.notCalled);
 //     t.true(_createTimeoutStub.calledWithExactly(spawnPatternModel, oldTimerValue + (15)));
 // });
+
+ava('.haltSpawning() cancels each pattern\'s armed timer and marks spawning halted', (t) => {
+    const arrival = { category: 'arrival', scheduleId: ['timer-a'] };
+    const departure = { category: 'departure', scheduleId: null };
+    const destroyTimer = sinon.stub();
+    const scheduler = new SpawnSchedulerClass(
+        { spawnPatternModels: [arrival, departure] },
+        { accumulatedDeltaTime: 0 },
+        { scheduleTimeout: sinon.stub(), destroyTimer },
+        aircraftControllerStub
+    );
+
+    scheduler.haltSpawning();
+
+    t.true(scheduler.isSpawningHalted);
+    t.true(destroyTimer.calledOnceWithExactly(['timer-a']));
+    t.is(arrival.scheduleId, null);
+});
+
+ava('a halted scheduler does not re-arm or spawn from a fired timer callback', (t) => {
+    const spawnPatternModel = { category: 'arrival', scheduleId: ['timer'] };
+    const localAircraftController = { createAircraftWithSpawnPatternModel: sinon.stub() };
+    const scheduler = new SpawnSchedulerClass(
+        { spawnPatternModels: [spawnPatternModel] },
+        { accumulatedDeltaTime: 0 },
+        { scheduleTimeout: sinon.stub(), destroyTimer: sinon.stub() },
+        localAircraftController
+    );
+    scheduler.haltSpawning();
+
+    scheduler.createAircraftAndRegisterNextTimeout([spawnPatternModel, localAircraftController]);
+
+    t.true(localAircraftController.createAircraftWithSpawnPatternModel.notCalled);
+    t.is(spawnPatternModel.scheduleId, null);
+});
+
+ava('a halted scheduler creates no new schedules or pre-spawn departures', (t) => {
+    const arrival = {
+        category: 'arrival',
+        createPreSpawnAircraft: sinon.stub(),
+        cycleStart: sinon.stub(),
+        getNextDelayValue: sinon.stub().returns(10),
+        scheduleId: null
+    };
+    const getDepartureModelsForPreSpawn = sinon.stub().returns([{ category: 'departure' }]);
+    const scheduleTimeout = sinon.stub().returns(['schedule']);
+    const localAircraftController = { createAircraftWithSpawnPatternModel: sinon.stub() };
+    const scheduler = new SpawnSchedulerClass(
+        { spawnPatternModels: [arrival], getDepartureModelsForPreSpawn },
+        { accumulatedDeltaTime: 0 },
+        { scheduleTimeout, destroyTimer: sinon.stub() },
+        localAircraftController
+    );
+    scheduler.haltSpawning();
+
+    scheduler.createSchedulesFromList();
+    scheduler.createPreSpawnDepartures();
+
+    t.true(scheduleTimeout.notCalled);
+    t.true(arrival.createPreSpawnAircraft.notCalled);
+    t.true(getDepartureModelsForPreSpawn.notCalled);
+    t.true(localAircraftController.createAircraftWithSpawnPatternModel.notCalled);
+});
+
+ava('a timer firing on a frame that crosses the cutoff cannot spawn or re-arm', (t) => {
+    const clock = { accumulatedDeltaTime: 1499 };
+    const timerQueue = { scheduleTimeout: sinon.stub().returns(['schedule']), destroyTimer: sinon.stub() };
+    const localAircraftController = { createAircraftWithSpawnPatternModel: sinon.stub() };
+    const spawnPatternModel = {
+        category: 'arrival',
+        getNextDelayValue: sinon.stub().returns(1),
+        scheduleId: ['schedule']
+    };
+    const scheduler = new SpawnSchedulerClass(
+        { spawnPatternModels: [spawnPatternModel] },
+        clock,
+        timerQueue,
+        localAircraftController
+    );
+    scheduler.setSpawnCutoffTime(1500);
+    clock.accumulatedDeltaTime = 1500;
+
+    scheduler.createAircraftAndRegisterNextTimeout([spawnPatternModel, localAircraftController]);
+
+    t.true(localAircraftController.createAircraftWithSpawnPatternModel.notCalled);
+    t.true(timerQueue.scheduleTimeout.notCalled);
+    t.is(spawnPatternModel.scheduleId, null);
+});
+
+ava('.resumeSpawning() clears the halted flag so spawning can begin again', (t) => {
+    const scheduler = new SpawnSchedulerClass(
+        { spawnPatternModels: [] },
+        { accumulatedDeltaTime: 0 },
+        { scheduleTimeout: sinon.stub(), destroyTimer: sinon.stub() },
+        aircraftControllerStub
+    );
+    scheduler.haltSpawning();
+
+    scheduler.resumeSpawning();
+
+    t.false(scheduler.isSpawningHalted);
+});
+
+ava('.setAircraftController() stores the controller without starting the scheduler', (t) => {
+    const scheduleTimeout = sinon.stub();
+    const scheduler = new SpawnSchedulerClass(
+        { spawnPatternModels: [] },
+        { accumulatedDeltaTime: 0 },
+        { scheduleTimeout, destroyTimer: sinon.stub() }
+    );
+
+    const result = scheduler.setAircraftController(aircraftControllerStub);
+
+    t.is(result, scheduler);
+    t.is(scheduler._aircraftController, aircraftControllerStub);
+    t.true(scheduleTimeout.notCalled);
+});

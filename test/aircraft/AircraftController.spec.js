@@ -17,6 +17,13 @@ import { airlineControllerFixture } from '../fixtures/airlineFixtures';
 import { scopeModelFixture } from '../fixtures/scopeFixtures';
 import { spawnPatternModelArrivalFixture } from '../fixtures/trafficGeneratorFixtures';
 
+ava('activeStripCount delegates to the owned strip controller', (t) => {
+    const controller = Object.create(AircraftController.prototype);
+    controller._stripViewController = { activeStripCount: 2 };
+
+    t.is(controller.activeStripCount, 2);
+});
+
 ava('throws when called with missing parameters', (t) => {
     const expectedMessage = /Invalid parameter\(s\) passed to AircraftController constructor\. Expected aircraftTypeDefinitionList, airlineController and scopeModel to be defined, but received .*/;
 

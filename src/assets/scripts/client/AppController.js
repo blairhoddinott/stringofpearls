@@ -16,9 +16,11 @@ import NavigationLibrary from './navigationLibrary/NavigationLibrary';
 import ScopeModel from './scope/ScopeModel';
 import SpawnPatternCollection from './trafficGenerator/SpawnPatternCollection';
 import SpawnScheduler from './trafficGenerator/SpawnScheduler';
-import TrafficModeStartup from './trafficGenerator/TrafficModeStartup';
-import TrafficModeSelectionView from './ui/TrafficModeSelectionView';
 import TrafficModeStripView from './ui/TrafficModeStripView';
+import ShiftController from './shift/ShiftController';
+import ShiftStartView from './ui/ShiftStartView';
+import ShiftResultsView from './ui/ShiftResultsView';
+import ShiftStatusView from './ui/ShiftStatusView';
 import UiController from './ui/UiController';
 import WeatherController from './weather/WeatherController';
 import ScoreController from './game/ScoreController';
@@ -150,8 +152,7 @@ export default class AppController {
         this.inputController = null;
         this.canvasController = null;
         this.changelogController = null;
-        this.trafficModeSelectionView = null;
-        this.trafficModeStartup = null;
+        this.shiftController = null;
 
         return this._init()
             .setupHandlers()
@@ -213,8 +214,8 @@ export default class AppController {
      */
     destroy() {
         // TODO: add static class.destroy() here
-        if (this.trafficModeStartup) {
-            this.trafficModeStartup.destroy();
+        if (this.shiftController) {
+            this.shiftController.destroy();
         }
 
         if (this.weatherController) {
@@ -231,8 +232,7 @@ export default class AppController {
         this.airportGuideController = null;
         this.inputController = null;
         this.canvasController = null;
-        this.trafficModeSelectionView = null;
-        this.trafficModeStartup = null;
+        this.shiftController = null;
         this.weatherController = null;
 
         return this;
@@ -356,18 +356,22 @@ export default class AppController {
 
         this.updateViewControls();
 
-        this.trafficModeSelectionView = new TrafficModeSelectionView(
-            this.$element.find(SELECTORS.DOM_SELECTORS.TRAFFIC_MODE_SELECTION)
-        );
         const trafficModeStripView = new TrafficModeStripView(
             this.$element.find(SELECTORS.DOM_SELECTORS.STRIP_VIEW_ARRIVALS_SECTION),
             this.$element.find(SELECTORS.DOM_SELECTORS.STRIP_VIEW_DEPARTURES_SECTION)
         );
-        this.trafficModeStartup = new TrafficModeStartup(
-            this.trafficModeSelectionView,
-            SpawnScheduler,
-            trafficModeStripView
-        );
+        this.shiftController = new ShiftController({
+            eventBus: this._eventBus,
+            scheduler: SpawnScheduler,
+            aircraftController: this.aircraftController,
+            scopeModel: this.scopeModel,
+            gameController: GameController,
+            stripView: trafficModeStripView,
+            airportController: AirportController,
+            startView: new ShiftStartView(this.$element.find(SELECTORS.DOM_SELECTORS.SHIFT_START)),
+            resultsView: new ShiftResultsView(this.$element.find(SELECTORS.DOM_SELECTORS.SHIFT_RESULTS)),
+            statusView: new ShiftStatusView(this.$element.find(SELECTORS.DOM_SELECTORS.SHIFT_STATUS))
+        });
     }
 
     /**
@@ -413,7 +417,7 @@ export default class AppController {
         GameController.complete();
         this.canvasController.canvas_complete();
         UiController.ui_complete();
-        this.trafficModeStartup.start(this.aircraftController);
+        this.shiftController.promptStart();
     }
 
     /**
@@ -424,6 +428,7 @@ export default class AppController {
         this.airportInfoController.updateClock();
         GameController.update_pre();
         this.aircraftController.update();
+        this.shiftController.update();
     }
 
     /**

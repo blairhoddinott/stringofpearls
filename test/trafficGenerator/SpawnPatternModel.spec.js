@@ -79,17 +79,14 @@ ava('retains an explicit center handoff fix in normalized form', (t) => {
     t.is(model.centerHandoffFix, 'GRNPA');
 });
 
-ava('rejects an arrival without an explicit center handoff fix', (t) => {
+ava('leaves center handoff disabled when an arrival has no explicit fix', (t) => {
     const arrivalWithoutHandoffFix = { ...ARRIVAL_PATTERN_MOCK };
 
     delete arrivalWithoutHandoffFix.centerHandoffFix;
 
-    const error = t.throws(() => new SpawnPatternModel(arrivalWithoutHandoffFix));
+    const model = new SpawnPatternModel(arrivalWithoutHandoffFix);
 
-    t.is(
-        error.message,
-        'arrival route BETHL.GRNPA1.KLAS07R requires centerHandoffFix'
-    );
+    t.is(model.centerHandoffFix, '');
 });
 
 ava('rejects an explicit handoff fix outside the resolved arrival route', (t) => {

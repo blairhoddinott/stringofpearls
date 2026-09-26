@@ -55,14 +55,37 @@ ava('.addRadarTargetModelForAircraftModel() adds new radar target to collection 
     t.deepEqual(collection._items[0].aircraftModel, ARRIVAL_AIRCRAFT_MODEL_MOCK);
 });
 
-ava('.addRadarTargetModelForAircraftModel() gives outside arrivals solid center ownership', (t) => {
+ava('.addRadarTargetModelForAircraftModel() gives audited outside arrivals solid center ownership', (t) => {
     const collection = new RadarTargetCollection(THEME.DEFAULT);
-    ARRIVAL_AIRCRAFT_MODEL_MOCK.isControllable = false;
+    const aircraftModel = Object.assign(
+        Object.create(Object.getPrototypeOf(ARRIVAL_AIRCRAFT_MODEL_MOCK)),
+        ARRIVAL_AIRCRAFT_MODEL_MOCK,
+        {
+            centerHandoffFix: 'BETHL',
+            isControllable: false
+        }
+    );
 
-    collection.addRadarTargetModelForAircraftModel(ARRIVAL_AIRCRAFT_MODEL_MOCK);
+    collection.addRadarTargetModelForAircraftModel(aircraftModel);
 
     t.is(collection._items[0].handoffModel.state, HANDOFF_STATE.CENTER_OWNED);
     t.false(collection._items[0].handoffModel.shouldFlashDataBlock);
+});
+
+ava('.addRadarTargetModelForAircraftModel() keeps unaudited outside arrivals player-owned', (t) => {
+    const collection = new RadarTargetCollection(THEME.DEFAULT);
+    const aircraftModel = Object.assign(
+        Object.create(Object.getPrototypeOf(ARRIVAL_AIRCRAFT_MODEL_MOCK)),
+        ARRIVAL_AIRCRAFT_MODEL_MOCK,
+        {
+            centerHandoffFix: '',
+            isControllable: false
+        }
+    );
+
+    collection.addRadarTargetModelForAircraftModel(aircraftModel);
+
+    t.is(collection._items[0].handoffModel.state, HANDOFF_STATE.PLAYER_OWNED);
 });
 
 ava('.findRadarTargetModelForAircraftModel() returns undefined when aircraft has no corresponding radar target', (t) => {

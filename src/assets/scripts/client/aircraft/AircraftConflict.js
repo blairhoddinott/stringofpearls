@@ -108,6 +108,54 @@ export default class AircraftConflict {
     }
 
     /**
+     * Update the active proximity-conflict flag, emitting a conflict alarm on
+     * the false-to-true transition.
+     *
+     * A conflict alarm is counted once per activation. When the conflict clears
+     * and later reactivates, the next false-to-true transition is a new alarm.
+     *
+     * @for AircraftConflict
+     * @method _updateConflictState
+     * @param isActive {boolean}
+     */
+    _updateConflictState(isActive) {
+        if (isActive && !this.conflicts.proximityConflict) {
+            this._eventBus.trigger(EVENT.PROXIMITY_CONFLICT_ALARM, this);
+        }
+
+        this.conflicts.proximityConflict = isActive;
+    }
+
+    /**
+     * Update the active separation-violation flag, emitting a separation-loss
+     * alarm on the false-to-true transition.
+     *
+     * Counted once per activation, distinct from a proximity-conflict alarm.
+     *
+     * @for AircraftConflict
+     * @method _updateViolationState
+     * @param isActive {boolean}
+     */
+    _updateViolationState(isActive) {
+        if (isActive && !this.violations.proximityViolation) {
+            this._eventBus.trigger(EVENT.SEPARATION_LOSS_ALARM, this);
+        }
+
+        this.violations.proximityViolation = isActive;
+    }
+
+    /**
+     * Clear alert state whenever this pair is temporarily ineligible for
+     * proximity evaluation, preserving later false-to-true activations.
+     *
+     * @private
+     */
+    _clearAlertState() {
+        this._updateConflictState(false);
+        this._updateViolationState(false);
+    }
+
+    /**
      * Recalculates and updates values for `this.distance`, `this.distance_delta`, and `this.altitude`
      *
      * @for AircraftConflict
@@ -132,6 +180,8 @@ export default class AircraftConflict {
 
         // Avoid triggering any more conflicts if the two aircraft have collided
         if (this.collided) {
+            this._clearAlertState();
+
             return;
         }
 
@@ -143,6 +193,8 @@ export default class AircraftConflict {
         const gameTime = this._clock.accumulatedDeltaTime;
         if (((this.aircraft[0].altitude - airportElevation) < 990) ||
             ((this.aircraft[1].altitude - airportElevation) < 990)) {
+            this._clearAlertState();
+
             return;
         }
 
@@ -150,6 +202,8 @@ export default class AircraftConflict {
         // Ignore aircraft in the first minute of their flight
         if (gameTime - this.aircraft[0].takeoffTime < 90 ||
             gameTime - this.aircraft[1].takeoffTime < 90) {
+            this._clearAlertState();
+
             return;
         }
 
@@ -194,8 +248,8 @@ export default class AircraftConflict {
     checkProximity() {
         // No conflict or warning if vertical separation is present
         if (this.altitude >= SEPARATION.VERTICAL_FT) {
-            this.conflicts.proximityConflict = false;
-            this.conflicts.proximityViolation = false;
+            this._updateConflictState(false);
+            this._updateViolationState(false);
 
             return;
         }
@@ -277,19 +331,9 @@ export default class AircraftConflict {
         // TODO: if conflict and violation both return booleans, remove the if/else blocks below and
         // set with those values
 
-        // Update Conflicts
-        if (conflict) {
-            this.conflicts.proximityConflict = true;
-        } else {
-            this.conflicts.proximityConflict = false;
-        }
-
-        if (violation) {
-            this.violations.proximityViolation = true;
-            // TODO: Add score penalty for 'SEPARATION_LOSS', but only ONCE
-        } else {
-            this.violations.proximityViolation = false;
-        }
+        // Update Conflicts, emitting a conflict/separation alarm on activation
+        this._updateConflictState(Boolean(conflict));
+        this._updateViolationState(Boolean(violation));
     }
 
     /**

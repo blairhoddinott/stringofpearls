@@ -3,6 +3,16 @@ import sinon from 'sinon';
 
 import StripViewController from '../../src/assets/scripts/client/aircraft/StripView/StripViewController';
 
+ava('activeStripCount reports the live strip collection size', (t) => {
+    const controller = new StripViewController();
+    controller._collection.addItem({ aircraftId: 'one' });
+
+    t.is(controller.activeStripCount, 1);
+
+    controller._collection.reset();
+    t.is(controller.activeStripCount, 0);
+});
+
 ava('update() creates a strip for player-owned aircraft outside geographic control', (t) => {
     const scopeModel = {
         canIssueCommandsTo: sinon.stub().returns(true)

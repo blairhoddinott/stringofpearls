@@ -28,7 +28,7 @@ export class GameControllerClass {
     /**
      * @constructor
      */
-    constructor(timerQueue = new SimulationTimerQueue(TimeKeeper)) {
+    constructor(timerQueue = new SimulationTimerQueue(TimeKeeper), eventBus = EventBus) {
         this._timerQueue = timerQueue;
 
         // TODO: the below $elements _should_ be used instead of the inline vars currently in use but
@@ -80,7 +80,7 @@ export class GameControllerClass {
          */
         this._pageVisibilityAdapter = null;
 
-        this._eventBus = EventBus;
+        this._eventBus = eventBus;
     }
 
     /**
@@ -254,6 +254,12 @@ export class GameControllerClass {
 
         this.game_updateScore();
         this.updateScoreHistory(gameEvent);
+
+        // Publish the scoring event so observers (e.g. the shift scoring log)
+        // can capture the event with its own simulation-time context. This is
+        // the incremental step toward moving scoring notifications onto the
+        // `EventBus` noted above.
+        this._eventBus.trigger(EVENT.SCORE_EVENT_RECORDED, gameEvent);
     }
 
 

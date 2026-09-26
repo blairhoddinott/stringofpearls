@@ -322,6 +322,43 @@ ava('updates the injected handoff coordinators for each aircraft', (t) => {
     t.true(towerHandoffCoordinator.update.calledOnceWithExactly(aircraftModel));
 });
 
+ava('does not remove a player-owned strip merely because the aircraft is outside geographic control', (t) => {
+    const scopeModel = new ScopeModel();
+    const canIssueCommandsToStub = sinon.stub(scopeModel, 'canIssueCommandsTo').returns(true);
+    const aircraftCollection = new AircraftCollection();
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModel,
+        undefined,
+        undefined,
+        aircraftCollection,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        { update: sinon.stub() },
+        { update: sinon.stub() }
+    );
+    const aircraftModel = {
+        isControllable: false,
+        isTaxiing: sinon.stub().returns(false),
+        update: sinon.stub(),
+        updateWarning: sinon.stub()
+    };
+
+    sinon.stub(controller, '_updateAircraftConflicts');
+    sinon.stub(controller, '_updateAircraftVisibility');
+    const removeStripViewStub = sinon.stub(controller, 'removeStripView');
+    aircraftCollection.list.push(aircraftModel);
+
+    controller.update();
+
+    t.true(canIssueCommandsToStub.calledOnceWithExactly(aircraftModel));
+    t.true(removeStripViewStub.notCalled);
+});
+
 ava('retains an injected game state by exact identity', (t) => {
     const gameState = {};
     const controller = new AircraftController(

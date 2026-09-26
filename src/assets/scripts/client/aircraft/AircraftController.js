@@ -432,7 +432,7 @@ export default class AircraftController {
             this._updateAircraftConflicts(aircraftModel, i);
             this._updateAircraftVisibility(aircraftModel);
 
-            if (!aircraftModel.isControllable) {
+            if (!this._scopeModel.canIssueCommandsTo(aircraftModel)) {
                 this.removeStripView(aircraftModel);
             }
         }

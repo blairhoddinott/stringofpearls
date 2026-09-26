@@ -161,6 +161,8 @@ export default class StripViewController {
                 aircraftModel.isControllable;
 
             if (!isPlayerOwned) {
+                this.removeStripView(aircraftModel);
+
                 continue;
             }
 

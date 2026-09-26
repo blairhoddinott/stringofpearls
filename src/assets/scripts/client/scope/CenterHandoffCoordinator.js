@@ -2,7 +2,7 @@ import { HANDOFF_STATE } from './HandoffModel';
 import GameController from '../game/GameController';
 import { GAME_EVENTS } from '../game/gameEventConstants';
 
-export const CENTER_HANDOFF_OFFER_DISTANCE_NM = 25;
+export const CENTER_HANDOFF_OFFER_DISTANCE_NM = 10;
 export const CENTER_HANDOFF_HOLD_DISTANCE_NM = 8;
 export const CENTER_HANDOFF_MINIMUM_RESPONSE_SECONDS = 10;
 export const CENTER_HANDOFF_REOFFER_SECONDS = 60;
@@ -56,7 +56,34 @@ export default class CenterHandoffCoordinator {
             return;
         }
 
+        if (!aircraftModel.isArrival()) {
+            return;
+        }
+
         if (!handoffModel?.controllerIdentifier || handoffModel.controllerIdentifier !== 'C') {
+            return;
+        }
+
+        const arrivalState = this._arrivalState.get(aircraftModel);
+
+        if (arrivalState?.holdAssigned) {
+            if (handoffModel.state === HANDOFF_STATE.CENTER_OWNED &&
+                this._clock.accumulatedDeltaTime >= arrivalState.nextOfferAt) {
+                handoffModel.offerFromCenter();
+            }
+
+            return;
+        }
+
+        if (handoffModel.state === HANDOFF_STATE.CENTER_OWNED &&
+            aircraftModel.centerHandoffFix &&
+            aircraftModel.isControllable) {
+            handoffModel.offerFromCenter();
+            this._arrivalState.set(aircraftModel, {
+                holdAssigned: false,
+                offeredAt: this._clock.accumulatedDeltaTime
+            });
+
             return;
         }
 
@@ -70,16 +97,6 @@ export default class CenterHandoffCoordinator {
             aircraftModel,
             aircraftModel.centerHandoffFix
         );
-        const arrivalState = this._arrivalState.get(aircraftModel);
-
-        if (arrivalState?.holdAssigned) {
-            if (handoffModel.state === HANDOFF_STATE.CENTER_OWNED &&
-                this._clock.accumulatedDeltaTime >= arrivalState.nextOfferAt) {
-                handoffModel.offerFromCenter();
-            }
-
-            return;
-        }
 
         if (handoffModel.state === HANDOFF_STATE.CENTER_TO_PLAYER &&
             distanceToFixNm <= CENTER_HANDOFF_HOLD_DISTANCE_NM &&

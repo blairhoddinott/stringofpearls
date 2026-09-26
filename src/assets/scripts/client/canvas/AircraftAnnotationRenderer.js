@@ -184,6 +184,22 @@ export default class AircraftAnnotationRenderer {
         const dataBlockCenterCanvasPosition = radarTargetModel.calculateDataBlockCenter(leaderIntersectionWithBlock);
 
         cc.translate(...dataBlockCenterCanvasPosition);
+
+        if (radarTargetModel.handoffModel.isPlayerControlled === false) {
+            cc.fillStyle = theme.DATA_BLOCK.TEXT_OUT_OF_RANGE;
+            cc.font = theme.DATA_BLOCK.TEXT_FONT;
+            cc.textAlign = 'left';
+            cc.fillText(
+                `${radarTargetModel.handoffModel.controllerIdentifier} - ${aircraftModel.callsign}`,
+                -theme.DATA_BLOCK.HALF_WIDTH + paddingLR,
+                0
+            );
+            cc.font = BASE_CANVAS_FONT;
+            cc.restore();
+
+            return;
+        }
+
         this._drawLegacyDataBlock(cc, theme, aircraftModel);
 
         const gap = 3;

@@ -12,6 +12,27 @@ at `1.0.0`. New releases use the [Keep a Changelog](https://keepachangelog.com/)
 The `# X.Y.Z (Month D, YYYY)` sections below this preamble are the preserved
 inherited openScope history and are retained verbatim for attribution.
 
+## [1.2.0] - 2026-09-26
+
+### Features
+
+- **handoffs:** add callsign-first transfer commands ([`8058eb3`](https://github.com/blairhoddinott/stringofpearls/commit/8058eb3a42e49ccab7e1cfb2d23bd26cff04f7b2))
+- **handoffs:** complete arrival ownership lifecycle ([`432a213`](https://github.com/blairhoddinott/stringofpearls/commit/432a2130176a298c53d9f025fc70a00bd8c0bf08))
+- **handoffs:** hold unaccepted arrivals ([`831abe9`](https://github.com/blairhoddinott/stringofpearls/commit/831abe91cf8d6ce6c1231cf11aa7c9a806b2d120))
+- **handoffs:** accept center transfers ([`18b9ae5`](https://github.com/blairhoddinott/stringofpearls/commit/18b9ae5e20c33328b0a7c52c3f2f18276b50aed5))
+- **handoffs:** model controller ownership ([`015a4ca`](https://github.com/blairhoddinott/stringofpearls/commit/015a4caab5a9c102bad141c231d0e4c612277253))
+
+### Bug Fixes
+
+- **handoffs:** align ownership display and timing ([`f1d9bee`](https://github.com/blairhoddinott/stringofpearls/commit/f1d9beea32c93a5925adbe3e0b648e9e33ecb87d))
+- **handoffs:** complete inbound ownership transfer ([`a952bd8`](https://github.com/blairhoddinott/stringofpearls/commit/a952bd84ab4641b05879a2b2f5f5d9b64d771b67))
+- **handoffs:** preserve unaudited arrival ownership ([`f0dad74`](https://github.com/blairhoddinott/stringofpearls/commit/f0dad74a0848fb1e9549e1813e1ffba13299c899))
+
+### Documentation
+
+- document pilot speech requirements ([`a7a49ea`](https://github.com/blairhoddinott/stringofpearls/commit/a7a49eaa70659c2506936a8d7b08fb1c4a554eff))
+- **handoffs:** document airport compliance ([`6e18ffb`](https://github.com/blairhoddinott/stringofpearls/commit/6e18ffba68b4922ae85a0cd385504b86b32de66a))
+
 ## [1.1.0] - 2026-09-25
 
 ### Features

@@ -10,22 +10,25 @@ signed `vX.Y.Z` tag and a matching GitHub Release.
 - All releases: [https://github.com/blairhoddinott/stringofpearls/releases](https://github.com/blairhoddinott/stringofpearls/releases)
 - How releases work: [Release automation](releases.md)
 
-## Latest release — v1.1.0 (September 25, 2026)
+## Latest release — v1.2.0 (September 26, 2026)
 
 ### Features
 
-- **weather:** display live airport weather ([`2275b4a`](https://github.com/blairhoddinott/stringofpearls/commit/2275b4a4e037534509aa1403b1717a642637b146))
-- **weather:** apply live wind to simulation ([`c526b0f`](https://github.com/blairhoddinott/stringofpearls/commit/c526b0f41d50bcac864d257d5970f357dc9db6bd))
-- **weather:** add client weather lifecycle ([`2ab3363`](https://github.com/blairhoddinott/stringofpearls/commit/2ab3363ad51df4ee0f05b91b88bdb723d0d886a0))
-- **server:** serve weather from production runtime ([`9c93693`](https://github.com/blairhoddinott/stringofpearls/commit/9c93693a637065262da70bb5c5bccefdd79f584d))
-- **weather:** add METAR service backend ([`429db4e`](https://github.com/blairhoddinott/stringofpearls/commit/429db4e6d5a97e10cb4e3abaa6806cf5ecbace94))
+- **handoffs:** add callsign-first transfer commands ([`8058eb3`](https://github.com/blairhoddinott/stringofpearls/commit/8058eb3a42e49ccab7e1cfb2d23bd26cff04f7b2))
+- **handoffs:** complete arrival ownership lifecycle ([`432a213`](https://github.com/blairhoddinott/stringofpearls/commit/432a2130176a298c53d9f025fc70a00bd8c0bf08))
+- **handoffs:** hold unaccepted arrivals ([`831abe9`](https://github.com/blairhoddinott/stringofpearls/commit/831abe91cf8d6ce6c1231cf11aa7c9a806b2d120))
+- **handoffs:** accept center transfers ([`18b9ae5`](https://github.com/blairhoddinott/stringofpearls/commit/18b9ae5e20c33328b0a7c52c3f2f18276b50aed5))
+- **handoffs:** model controller ownership ([`015a4ca`](https://github.com/blairhoddinott/stringofpearls/commit/015a4caab5a9c102bad141c231d0e4c612277253))
 
 ### Bug Fixes
 
-- **weather:** align wind direction contract ([`b638b58`](https://github.com/blairhoddinott/stringofpearls/commit/b638b58ad2133af58b128c6b32d1263a2daef41a))
+- **handoffs:** align ownership display and timing ([`f1d9bee`](https://github.com/blairhoddinott/stringofpearls/commit/f1d9beea32c93a5925adbe3e0b648e9e33ecb87d))
+- **handoffs:** complete inbound ownership transfer ([`a952bd8`](https://github.com/blairhoddinott/stringofpearls/commit/a952bd84ab4641b05879a2b2f5f5d9b64d771b67))
+- **handoffs:** preserve unaudited arrival ownership ([`f0dad74`](https://github.com/blairhoddinott/stringofpearls/commit/f0dad74a0848fb1e9549e1813e1ffba13299c899))
 
 ### Documentation
 
-- **weather:** document live METAR behavior ([`5d0ce89`](https://github.com/blairhoddinott/stringofpearls/commit/5d0ce8969833b9f7bf0711bdcafc26fea2af051c))
+- document pilot speech requirements ([`a7a49ea`](https://github.com/blairhoddinott/stringofpearls/commit/a7a49eaa70659c2506936a8d7b08fb1c4a554eff))
+- **handoffs:** document airport compliance ([`6e18ffb`](https://github.com/blairhoddinott/stringofpearls/commit/6e18ffba68b4922ae85a0cd385504b86b32de66a))
 
-[View v1.1.0 on GitHub](https://github.com/blairhoddinott/stringofpearls/releases/tag/v1.1.0)
+[View v1.2.0 on GitHub](https://github.com/blairhoddinott/stringofpearls/releases/tag/v1.2.0)

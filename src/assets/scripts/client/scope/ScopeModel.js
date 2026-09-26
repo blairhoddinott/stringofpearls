@@ -1,11 +1,13 @@
 import _has from 'lodash/has';
 import _isNil from 'lodash/isNil';
 import GameController from '../game/GameController';
+import TimeKeeper from '../engine/TimeKeeper';
 import RadarTargetCollection from './RadarTargetCollection';
 import EventBus from '../lib/EventBus';
 import { EVENT } from '../constants/eventNames';
 import { GAME_OPTION_NAMES } from '../constants/gameOptionConstants';
 import { THEME } from '../constants/themes';
+import { FLIGHT_CATEGORY } from '../constants/aircraftConstants';
 import { DECIMAL_RADIX } from '../utilities/unitConverters';
 
 /**
@@ -20,7 +22,7 @@ export default class ScopeModel {
      * @for ScopeModel
      * @constructor
      */
-    constructor() {
+    constructor(clock = TimeKeeper) {
         /**
          * Local reference to the event bus
          *
@@ -30,6 +32,7 @@ export default class ScopeModel {
          * @private
          */
         this._eventBus = EventBus;
+        this._clock = clock;
 
         /**
          * Length of PTL lines (aka "vector lines") for all aircraft
@@ -128,8 +131,60 @@ export default class ScopeModel {
      * @param radarTargetModel {RadarTargetModel}
      * @return result {array} [success of operation, system's response]
      */
-    acceptHandoff(/* radarTargetModel */) {
-        return [false, 'acceptHandoff command not yet available'];
+    acceptHandoff(radarTargetModel) {
+        if (!radarTargetModel.handoffModel.acceptFromCenter()) {
+            return [false, 'ERR: NO INBOUND HANDOFF'];
+        }
+
+        radarTargetModel.aircraftModel.deferCallUpUntilHandoff = false;
+        radarTargetModel.aircraftModel.checkInWithPlayer();
+
+        return [true, 'HANDOFF ACCEPTED'];
+    }
+
+    /**
+     * Accept a pending inbound handoff selected directly on the scope.
+     *
+     * @param aircraftModel {AircraftModel}
+     * @return {boolean}
+     */
+    acceptHandoffIfOffered(aircraftModel) {
+        const radarTargetModel = this.radarTargetCollection.findRadarTargetModelForAircraftModel(aircraftModel);
+
+        if (radarTargetModel?.handoffModel.isInboundHandoffPending !== true) {
+            return false;
+        }
+
+        return this.acceptHandoff(radarTargetModel)[0];
+    }
+
+    /**
+     * Determine whether the player owns the specified aircraft and may issue
+     * flight commands to it. Geographic airspace containment is deliberately
+     * not part of this decision.
+     *
+     * @param aircraftModel {AircraftModel}
+     * @return {boolean}
+     */
+    canIssueCommandsTo(aircraftModel) {
+        const radarTargetModel = this.radarTargetCollection.findRadarTargetModelForAircraftModel(aircraftModel);
+
+        return radarTargetModel?.handoffModel.isPlayerControlled === true;
+    }
+
+    /**
+     * Determine whether an aircraft may be selected for interaction. Player-owned
+     * aircraft and pending inbound handoffs are selectable regardless of geography.
+     *
+     * @param aircraftModel {AircraftModel}
+     * @return {boolean}
+     */
+    canSelectAircraft(aircraftModel) {
+        const radarTargetModel = this.radarTargetCollection.findRadarTargetModelForAircraftModel(aircraftModel);
+        const handoffModel = radarTargetModel?.handoffModel;
+
+        return handoffModel?.isPlayerControlled === true ||
+            handoffModel?.isInboundHandoffPending === true;
     }
 
     /**
@@ -202,6 +257,42 @@ export default class ScopeModel {
         this.changePtlLength(direction);
     }
 
+    contactTower(aircraftModel) {
+        const radarTargetModel = this.radarTargetCollection
+            .findRadarTargetModelForAircraftModel(aircraftModel);
+
+        if (!radarTargetModel) {
+            return [false, 'unable, no radar target'];
+        }
+
+        const [successful, response] = this.initiateTowerHandoff(radarTargetModel);
+
+        return successful ? [true, 'contact tower'] : [false, response];
+    }
+
+    contactCenter(aircraftModel) {
+        const radarTargetModel = this.radarTargetCollection
+            .findRadarTargetModelForAircraftModel(aircraftModel);
+
+        if (!radarTargetModel?.handoffModel.isPlayerControlled) {
+            return [false, 'unable, aircraft is not under your control'];
+        }
+
+        if (aircraftModel.category !== FLIGHT_CATEGORY.DEPARTURE) {
+            return [false, 'unable, center handoff departures only'];
+        }
+
+        if (!aircraftModel.isAirborne()) {
+            return [false, 'unable, aircraft is not airborne'];
+        }
+
+        if (!radarTargetModel.handoffModel.requestCenterHandoff(this._clock.accumulatedDeltaTime)) {
+            return [false, 'unable, center handoff not available'];
+        }
+
+        return [true, 'contact center'];
+    }
+
     /**
      * Initiate a handoff to another sector
      *
@@ -215,6 +306,26 @@ export default class ScopeModel {
      */
     initiateHandoff(/* radarTargetModel, sectorCode */) {
         return [false, 'initiateHandoff command not yet available'];
+    }
+
+    initiateTowerHandoff(radarTargetModel) {
+        if (!radarTargetModel.handoffModel.isPlayerControlled) {
+            return [false, 'ERR: AIRCRAFT NOT UNDER YOUR CONTROL'];
+        }
+
+        if (radarTargetModel.aircraftModel.category !== FLIGHT_CATEGORY.ARRIVAL) {
+            return [false, 'ERR: TOWER HANDOFF ARRIVALS ONLY'];
+        }
+
+        if (!radarTargetModel.aircraftModel.isOnFinal()) {
+            return [false, 'ERR: AIRCRAFT NOT ON FINAL'];
+        }
+
+        if (!radarTargetModel.handoffModel.requestTowerHandoff(this._clock.accumulatedDeltaTime)) {
+            return [false, 'ERR: TOWER HANDOFF NOT AVAILABLE'];
+        }
+
+        return [true, 'HANDOFF TO TOWER INITIATED'];
     }
 
     /**

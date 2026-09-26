@@ -5,6 +5,7 @@ import BaseCollection from '../base/BaseCollection';
 import EventBus from '../lib/EventBus';
 import { EVENT } from '../constants/eventNames';
 import { THEME } from '../constants/themes';
+import { FLIGHT_CATEGORY } from '../constants/aircraftConstants';
 
 /**
  * Collection of `RadarTargetModel`s
@@ -111,6 +112,18 @@ export default class RadarTargetCollection extends BaseCollection {
      */
     addRadarTargetModelForAircraftModel = (aircraftModel) => {
         const radarTargetModel = new RadarTargetModel(this._theme, aircraftModel);
+
+        const handoffFixIsAhead = aircraftModel.fms?.waypoints?.some(
+            (waypointModel) => waypointModel.name === aircraftModel.centerHandoffFix
+        ) === true;
+
+        // SpawnPatternModel validates every explicit fix before it reaches an aircraft.
+        if (aircraftModel.category === FLIGHT_CATEGORY.ARRIVAL &&
+            !aircraftModel.isControllable && aircraftModel.centerHandoffFix &&
+            handoffFixIsAhead) {
+            radarTargetModel.markAsNotOurControl();
+            aircraftModel.deferCallUpUntilHandoff = true;
+        }
 
         this.addRadarTargetModel(radarTargetModel);
     };

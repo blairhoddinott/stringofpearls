@@ -53,6 +53,18 @@ ava('aliases, noop parser and zeroArgumentsValidator used by clearedAsFiled', t 
     test_aliases(t, AIRCRAFT_COMMAND_MAP, 'clearedAsFiled', ['caf', 'clearedAsFiled']);
 });
 
+ava('aliases, noop parser and zeroArgumentsValidator used by contactTower', t => {
+    const [parse, validate] = extractParseAndValidate(t, 'contactTower');
+    t.true(parse === noopParse() && validate === zeroArgVal());
+    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'contactTower', ['ct', 'contacttower']);
+});
+
+ava('aliases, noop parser and zeroArgumentsValidator used by contactCenter', t => {
+    const [parse, validate] = extractParseAndValidate(t, 'contactCenter');
+    t.true(parse === noopParse() && validate === zeroArgVal());
+    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'contactCenter', ['cc', 'contactcenter']);
+});
+
 
 ava('aliases, noop parser and zeroArgumentsValidator used by delete', t => {
     const [parse, validate] = extractParseAndValidate(t, 'delete');
@@ -253,7 +265,7 @@ ava('aliases, optionalAltitudeParser and optionalAltitudeValidator used by climb
     test_aliases(t, AIRCRAFT_COMMAND_MAP, 'climbViaSid', ['climbViaSid', 'cvs']);
 });
 
-ava('make sure we test all 32 aircraft commands', t => {
+ava('make sure we test all 34 aircraft commands', t => {
     t.true(Object.values(AIRCRAFT_COMMAND_MAP)
-        .filter(val => !val.isSystemCommand).length === 32);
+        .filter(val => !val.isSystemCommand).length === 34);
 });

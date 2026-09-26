@@ -146,6 +146,57 @@ ava('drawCompass() preserves selected-aircraft filtering and compass mark cadenc
     t.deepEqual(calls.at(-1), ['restore']);
 });
 
+ava('_isDataBlockVisible() flashes inbound handoffs on simulation time', (t) => {
+    const timeKeeper = { gameTimeMilliseconds: 499 };
+    const renderer = new AircraftAnnotationRenderer({}, {}, {}, {}, timeKeeper, () => '');
+    const radarTargetModel = {
+        handoffModel: { shouldFlashDataBlock: true }
+    };
+
+    t.true(renderer._isDataBlockVisible(radarTargetModel));
+
+    timeKeeper.gameTimeMilliseconds = 500;
+    t.false(renderer._isDataBlockVisible(radarTargetModel));
+
+    timeKeeper.gameTimeMilliseconds = 1000;
+    t.true(renderer._isDataBlockVisible(radarTargetModel));
+});
+
+ava('_isControllerIdentifierVisible() flashes only a pending outbound identifier', (t) => {
+    const timeKeeper = { gameTimeMilliseconds: 499 };
+    const renderer = new AircraftAnnotationRenderer({}, {}, {}, {}, timeKeeper, () => '');
+    const pendingTarget = {
+        handoffModel: { shouldFlashControllerIdentifier: true }
+    };
+    const ownedTarget = {
+        handoffModel: { shouldFlashControllerIdentifier: false }
+    };
+
+    t.true(renderer._isControllerIdentifierVisible(pendingTarget));
+    timeKeeper.gameTimeMilliseconds = 500;
+    t.false(renderer._isControllerIdentifierVisible(pendingTarget));
+    t.true(renderer._isControllerIdentifierVisible(ownedTarget));
+});
+
+ava('_drawSingleDataBlock() skips the hidden phase of an inbound flash', (t) => {
+    const renderer = new AircraftAnnotationRenderer({}, {}, {}, {}, {}, () => '');
+    const radarTargetModel = {
+        aircraftModel: {
+            hit: false,
+            isVisible: sinon.stub().returns(true)
+        }
+    };
+    const visibilityStub = sinon.stub(renderer, '_isDataBlockVisible').returns(false);
+    const unreadableCanvas = new Proxy({}, {
+        get() {
+            throw new Error('canvas should not be read during hidden flash phase');
+        }
+    });
+
+    t.is(renderer._drawSingleDataBlock(unreadableCanvas, {}, radarTargetModel), undefined);
+    t.true(visibilityStub.calledOnceWithExactly(radarTargetModel));
+});
+
 ava('drawDataBlocks() preserves empty-collection translation and canvas state order', (t) => {
     const renderer = new AircraftAnnotationRenderer(
         { halfWidth: 100.4, halfHeight: 80.6 },
@@ -181,6 +232,10 @@ ava('drawDataBlocks() preserves leader geometry and timed secondary text without
     };
     const radarTargetModel = {
         aircraftModel,
+        handoffModel: {
+            isPlayerControlled: true,
+            shouldFlashControllerIdentifier: true
+        },
         dataBlockLeaderDirection: 'ctr',
         dataBlockLeaderLength: 2,
         calculateDataBlockCenter: sinon.stub().returns([30, 40]),
@@ -239,7 +294,7 @@ ava('drawDataBlocks() preserves leader geometry and timed secondary text without
     t.true(aircraftModel.matchCallsign.calledOnceWithExactly('abc'));
     t.true(viewport.calculateRoundedCanvasPositionFromRelativePosition.calledOnceWithExactly([1, 2]));
     t.true(radarTargetModel.calculateDataBlockCenter.calledOnceWithExactly([10, 20]));
-    t.true(radarTargetModel.buildDataBlockRowOne.calledOnce);
+    t.true(radarTargetModel.buildDataBlockRowOne.calledOnceWithExactly(false));
     t.true(radarTargetModel.buildDataBlockRowTwoPrimaryInfo.calledOnce);
     t.true(radarTargetModel.buildDataBlockRowTwoSecondaryInfo.calledOnce);
     t.deepEqual(calls, [
@@ -251,6 +306,85 @@ ava('drawDataBlocks() preserves leader geometry and timed secondary text without
         ['fillText', 'ROW1', -15, -6], ['fillText', 'SECONDARY', -15, 6],
         ['font', '10px monoOne, monospace'], ['restore'], ['restore']
     ]);
+});
+
+ava('_drawSingleDataBlock() renders only position and callsign for non-player-owned traffic', (t) => {
+    for (const controllerIdentifier of ['C', 'T']) {
+        const aircraftModel = {
+            callsign: 'AAL123',
+            relativePosition: [1, 2],
+            hit: false,
+            isVisible: sinon.stub().returns(true),
+            matchCallsign: sinon.stub(),
+            pilot: { hasApproachClearance: false }
+        };
+        const radarTargetModel = {
+            aircraftModel,
+            handoffModel: {
+                controllerIdentifier,
+                isPlayerControlled: false,
+                shouldFlashDataBlock: false,
+                shouldFlashControllerIdentifier: false
+            },
+            dataBlockLeaderDirection: 'ctr',
+            dataBlockLeaderLength: 2,
+            calculateDataBlockCenter: sinon.stub().returns([30, 40]),
+            buildDataBlockRowOne: sinon.stub(),
+            buildDataBlockRowTwoPrimaryInfo: sinon.stub(),
+            buildDataBlockRowTwoSecondaryInfo: sinon.stub()
+        };
+        const viewport = {
+            calculateRoundedCanvasPositionFromRelativePosition: sinon.stub().returns([10, 20])
+        };
+        const renderer = new AircraftAnnotationRenderer(
+            viewport,
+            {},
+            {},
+            {},
+            { gameTimeMilliseconds: 0 },
+            () => ''
+        );
+        const calls = [];
+        const context = new Proxy({
+            save: () => calls.push(['save']),
+            restore: () => calls.push(['restore']),
+            translate: (...args) => calls.push(['translate', ...args]),
+            beginPath: () => calls.push(['beginPath']),
+            moveTo: (...args) => calls.push(['moveTo', ...args]),
+            lineTo: (...args) => calls.push(['lineTo', ...args]),
+            stroke: () => calls.push(['stroke']),
+            fillText: (...args) => calls.push(['fillText', ...args])
+        }, {
+            set(object, property, value) {
+                calls.push([String(property), value]);
+                object[property] = value;
+
+                return true;
+            }
+        });
+        const theme = {
+            DATA_BLOCK: {
+                TEXT_OUT_OF_RANGE: 'out-range',
+                LEADER_DIRECTION: 45,
+                LEADER_LENGTH_INCREMENT_PIXELS: 10,
+                LEADER_LENGTH_ADJUSTMENT_PIXELS: 4,
+                LEADER_PADDING_FROM_BLOCK_PX: 2,
+                LEADER_PADDING_FROM_TARGET_PX: 1,
+                HALF_WIDTH: 20,
+                TEXT_FONT: 'font'
+            }
+        };
+
+        renderer._drawSingleDataBlock(context, theme, radarTargetModel);
+
+        t.deepEqual(
+            calls.filter(([name]) => name === 'fillText'),
+            [['fillText', `${controllerIdentifier} - AAL123`, -15, 0]]
+        );
+        t.true(radarTargetModel.buildDataBlockRowOne.notCalled);
+        t.true(radarTargetModel.buildDataBlockRowTwoPrimaryInfo.notCalled);
+        t.true(radarTargetModel.buildDataBlockRowTwoSecondaryInfo.notCalled);
+    }
 });
 
 ava('_drawLegacyDataBlock() preserves selected departure fill and early return', (t) => {

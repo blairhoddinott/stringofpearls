@@ -60,6 +60,31 @@ ava('select() invokes the exact deselect callback for missing or uncontrollable 
     ]);
 });
 
+ava('select() allows an ownership-authorized aircraft outside the airspace', (t) => {
+    const calls = [];
+    const aircraft = { callsign: 'AAL1', isControllable: false };
+    const interaction = new AircraftSelectionInteraction(
+        {},
+        { val: (value) => calls.push(['val', value]), is: () => true },
+        { trigger: (...args) => calls.push(['trigger', ...args]) },
+        {},
+        () => ({}),
+        (candidate) => {
+            calls.push(['canSelect', candidate]);
+
+            return true;
+        }
+    );
+
+    interaction.select(aircraft, () => calls.push(['deselect']));
+
+    t.deepEqual(calls, [
+        ['canSelect', aircraft],
+        ['val', 'AAL1 '],
+        ['trigger', EVENT.SELECT_AIRCRAFT, aircraft]
+    ]);
+});
+
 ava('select() writes state, command value, focus, then publishes the exact aircraft', (t) => {
     const calls = [];
     const legacyInput = {};

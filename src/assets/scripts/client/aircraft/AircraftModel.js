@@ -415,6 +415,25 @@ export default class AircraftModel {
         this.isControllable = false;
 
         /**
+         * Whether geographic airspace entry must defer arrival check-in until the
+         * player accepts a pending center handoff.
+         *
+         * @property deferCallUpUntilHandoff
+         * @type {boolean}
+         * @default false
+         */
+        this.deferCallUpUntilHandoff = false;
+
+        /**
+         * Whether this aircraft has already completed its player-controller check-in.
+         *
+         * @property hasCheckedInWithPlayer
+         * @type {boolean}
+         * @default false
+         */
+        this.hasCheckedInWithPlayer = false;
+
+        /**
          * List of aircraft that MAY be in conflict (bounding box)
          *
          * @for AircraftModel
@@ -468,6 +487,7 @@ export default class AircraftModel {
         this.relativePositionHistory = [];
 
         this.category = options.category; // 'arrival' or 'departure'
+        this.centerHandoffFix = options.centerHandoffFix ?? '';
 
         // target represents what the pilot makes of the tower's commands. It is
         // most important when the plane is in a 'guided' situation, that is it is
@@ -1230,6 +1250,23 @@ export default class AircraftModel {
     }
 
     /**
+     * Perform the player-controller check-in at most once.
+     *
+     * @for AircraftModel
+     * @method checkInWithPlayer
+     */
+    checkInWithPlayer() {
+        if (this.hasCheckedInWithPlayer) {
+            return;
+        }
+
+        this.hasCheckedInWithPlayer = true;
+        this.callUp();
+    }
+
+    /**
+     * Emit the aircraft's radio call-up.
+     *
      * @for AircraftModel
      * @method callUp
      */
@@ -2768,9 +2805,10 @@ export default class AircraftModel {
      * @private
      */
     _contactAircraftAfterControllabilityChange() {
-        // Crossing into the center
         if (this.isControllable) {
-            this.callUp();
+            if (!this.deferCallUpUntilHandoff) {
+                this.checkInWithPlayer();
+            }
 
             return;
         }

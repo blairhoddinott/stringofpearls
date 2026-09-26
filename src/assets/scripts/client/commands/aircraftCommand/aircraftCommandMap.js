@@ -54,6 +54,16 @@ export const AIRCRAFT_COMMAND_MAP = {
         functionName: 'runClearedAsFiled',
         isSystemCommand: false
     },
+    contactCenter: {
+        aliases: ['cc', 'contactcenter'],
+        functionName: 'runContactCenter',
+        isSystemCommand: false
+    },
+    contactTower: {
+        aliases: ['ct', 'contacttower'],
+        functionName: 'runContactTower',
+        isSystemCommand: false
+    },
     climbViaSid: {
         aliases: ['climbViaSid', 'cvs'],
         functionName: 'runClimbViaSID',

@@ -2,12 +2,20 @@ import { EVENT } from '../constants/eventNames';
 import { clamp } from '../math/core';
 
 export default class AircraftSelectionInteraction {
-    constructor(inputState, commandInput, eventBus, aircraftController, legacyInputProvider) {
+    constructor(
+        inputState,
+        commandInput,
+        eventBus,
+        aircraftController,
+        legacyInputProvider,
+        canSelectAircraft = (aircraftModel) => aircraftModel.isControllable
+    ) {
         this._inputState = inputState;
         this._commandInput = commandInput;
         this._eventBus = eventBus;
         this._aircraftController = aircraftController;
         this._legacyInputProvider = legacyInputProvider;
+        this._canSelectAircraft = canSelectAircraft;
     }
 
     deselect() {
@@ -18,7 +26,7 @@ export default class AircraftSelectionInteraction {
     }
 
     select(aircraftModel, deselect) {
-        if (!aircraftModel || !aircraftModel.isControllable) {
+        if (!aircraftModel || !this._canSelectAircraft(aircraftModel)) {
             deselect();
 
             return;

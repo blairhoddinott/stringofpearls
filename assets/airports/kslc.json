@@ -1010,6 +1010,7 @@
             "destination": "kslc",
             "category": "arrival",
             "route": "BCE.DELTA6.KSLC16L",
+            "centerHandoffFix": "JAMMN",
             "commands": {
                 "16L": "x JAMMN A170 dvs"
             },
@@ -1042,6 +1043,7 @@
             "destination": "kslc",
             "category": "arrival",
             "route": "EKR.LEEHY5.KSLC16L",
+            "centerHandoffFix": "LEEHY",
             "commands": {
                 "16L": "x SPANE A190 dvs"
             },
@@ -1074,6 +1076,7 @@
             "destination": "kslc",
             "category": "arrival",
             "route": "JAC.NORDK6.KSLC16L",
+            "centerHandoffFix": "CARTR",
             "commands": {
                 "16L": "x CARTR A150 dvs"
             },
@@ -1106,6 +1109,7 @@
             "destination": "kslc",
             "category": "arrival",
             "route": "PIH.SKEES5.KSLC16L",
+            "centerHandoffFix": "SKEES",
             "commands": {
                 "16L": "x BEARR A160 dvs"
             },
@@ -1138,6 +1142,7 @@
             "destination": "kslc",
             "category": "arrival",
             "route": "BVL.WAATS5.KSLC16L",
+            "centerHandoffFix": "KNOLE",
             "commands": {
                 "16L": "x KNOLE A170 dvs"
             },

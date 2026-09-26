@@ -19,6 +19,10 @@ with a clearance onto their filed departure route earns you 10 points.
 You lose 200 points for every arriving aircraft that leaves the area
 (and therefore hasn't landed).
 
+## Missed center handoff
+
+You lose 25 points when a center handoff is ignored until its decision point and the aircraft is successfully sent to its configured hold. A failed hold assignment does not record the penalty because the offer remains active.
+
 ## Failed Departures
 
 We must clear all aircraft onto their flightplan route before they leave

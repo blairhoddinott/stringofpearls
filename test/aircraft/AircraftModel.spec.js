@@ -67,6 +67,15 @@ ava('does not throw with valid parameters', (t) => {
     t.notThrows(() => new AircraftModel(DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK));
 });
 
+ava('retains its center handoff fix', (t) => {
+    const model = new AircraftModel({
+        ...ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK,
+        centerHandoffFix: 'DAG'
+    });
+
+    t.is(model.centerHandoffFix, 'DAG');
+});
+
 ava('passes explicit navigation and airport owners to its FMS', (t) => {
     const navigationLibrary = new NavigationLibraryClass();
     const airportController = {
@@ -368,6 +377,17 @@ ava('.getViewModel() includes an altitude that has not been rounded beyond the n
     const { assignedAltitude: result } = model.getViewModel();
 
     t.true(result === 77.77);
+});
+
+ava('._contactAircraftAfterControllabilityChange() defers arrival contact while center owns the aircraft', (t) => {
+    const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
+    const callUpStub = sandbox.stub(model, 'callUp');
+    model.isControllable = true;
+    model.deferCallUpUntilHandoff = true;
+
+    model._contactAircraftAfterControllabilityChange();
+
+    t.true(callUpStub.notCalled);
 });
 
 ava('.isAboveGlidepath() returns false when aircraft altitude is below glideslope altitude', (t) => {

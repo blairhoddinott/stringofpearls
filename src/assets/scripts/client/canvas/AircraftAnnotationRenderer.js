@@ -124,7 +124,7 @@ export default class AircraftAnnotationRenderer {
     _drawSingleDataBlock(cc, theme, radarTargetModel) {
         const { aircraftModel } = radarTargetModel;
 
-        if (!aircraftModel.isVisible() || aircraftModel.hit) {
+        if (!aircraftModel.isVisible() || aircraftModel.hit || !this._isDataBlockVisible(radarTargetModel)) {
             return;
         }
 
@@ -184,11 +184,29 @@ export default class AircraftAnnotationRenderer {
         const dataBlockCenterCanvasPosition = radarTargetModel.calculateDataBlockCenter(leaderIntersectionWithBlock);
 
         cc.translate(...dataBlockCenterCanvasPosition);
+
+        if (radarTargetModel.handoffModel.isPlayerControlled === false) {
+            cc.fillStyle = theme.DATA_BLOCK.TEXT_OUT_OF_RANGE;
+            cc.font = theme.DATA_BLOCK.TEXT_FONT;
+            cc.textAlign = 'left';
+            cc.fillText(
+                `${radarTargetModel.handoffModel.controllerIdentifier} - ${aircraftModel.callsign}`,
+                -theme.DATA_BLOCK.HALF_WIDTH + paddingLR,
+                0
+            );
+            cc.font = BASE_CANVAS_FONT;
+            cc.restore();
+
+            return;
+        }
+
         this._drawLegacyDataBlock(cc, theme, aircraftModel);
 
         const gap = 3;
         const lineheight = 4.5;
-        const row1text = radarTargetModel.buildDataBlockRowOne();
+        const row1text = radarTargetModel.buildDataBlockRowOne(
+            this._isControllerIdentifierVisible(radarTargetModel)
+        );
         let row2text = radarTargetModel.buildDataBlockRowTwoPrimaryInfo();
 
         if (this._shouldShowSecondaryDataBlock()) {
@@ -311,6 +329,22 @@ export default class AircraftAnnotationRenderer {
 
     _shouldShowSecondaryDataBlock() {
         return _inRange(this._timeKeeper.gameTimeMilliseconds % 3000, 2000, 3000);
+    }
+
+    _isDataBlockVisible(radarTargetModel) {
+        if (!radarTargetModel.handoffModel?.shouldFlashDataBlock) {
+            return true;
+        }
+
+        return this._timeKeeper.gameTimeMilliseconds % 1000 < 500;
+    }
+
+    _isControllerIdentifierVisible(radarTargetModel) {
+        if (!radarTargetModel.handoffModel?.shouldFlashControllerIdentifier) {
+            return true;
+        }
+
+        return this._timeKeeper.gameTimeMilliseconds % 1000 < 500;
     }
 
     _calculateLeaderLength(theme, dataBlockLeaderLength) {

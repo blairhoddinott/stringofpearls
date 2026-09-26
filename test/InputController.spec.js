@@ -340,6 +340,10 @@ ava('._createAircraftSelectionInteraction() composes exact controller-owned depe
     controller.$commandInput = {};
     controller._eventBus = {};
     controller._aircraftController = {};
+    const aircraftModel = { isControllable: false };
+    controller._scopeModel = {
+        canSelectAircraft: (candidate) => candidate === aircraftModel
+    };
 
     const interaction = controller._createAircraftSelectionInteraction();
 
@@ -349,6 +353,7 @@ ava('._createAircraftSelectionInteraction() composes exact controller-owned depe
     t.is(interaction._eventBus, controller._eventBus);
     t.is(interaction._aircraftController, controller._aircraftController);
     t.is(typeof interaction._legacyInputProvider, 'function');
+    t.true(interaction._canSelectAircraft(aircraftModel));
 });
 
 ava.serial('constructor retains an explicitly supplied trailing aircraft-selection interaction', (t) => {
@@ -362,6 +367,34 @@ ava.serial('constructor retains an explicitly supplied trailing aircraft-selecti
         );
 
         t.is(controller._selectionInteraction, selectionInteraction);
+    } finally {
+        inputInit.restore();
+        autocompleteInit.restore();
+    }
+});
+
+ava.serial('selectAircraft() accepts an offered handoff before selecting it', (t) => {
+    const inputInit = sinon.stub(InputController.prototype, '_init');
+    const autocompleteInit = sinon.stub(AutocompleteController.prototype, '_init');
+    const calls = [];
+    const aircraftModel = {};
+    const scopeModel = {
+        acceptHandoffIfOffered: (aircraft) => calls.push(['accept', aircraft])
+    };
+    const selectionInteraction = {
+        select: (...args) => calls.push(['select', ...args])
+    };
+
+    try {
+        const controller = new InputController(
+            {}, {}, scopeModel, {}, null, null, null, {}, {}, selectionInteraction
+        );
+
+        controller.selectAircraft(aircraftModel);
+
+        t.deepEqual(calls.map(([name]) => name), ['accept', 'select']);
+        t.is(calls[0][1], aircraftModel);
+        t.is(calls[1][1], aircraftModel);
     } finally {
         inputInit.restore();
         autocompleteInit.restore();

@@ -7,6 +7,8 @@ import AirportController from '../airport/AirportController';
 import NavigationLibrary from '../navigationLibrary/NavigationLibrary';
 import TimeKeeper from '../engine/TimeKeeper';
 import ScopeModel from '../scope/ScopeModel';
+import CenterHandoffCoordinator from '../scope/CenterHandoffCoordinator';
+import TowerHandoffCoordinator from '../scope/TowerHandoffCoordinator';
 import UiController from '../ui/UiController';
 import EventBus from '../lib/EventBus';
 import AircraftTypeDefinitionCollection from './AircraftTypeDefinitionCollection';
@@ -53,6 +55,8 @@ export default class AircraftController {
      * @param navigationLibrary {NavigationLibrary} [optional] navigation state owner
      * @param clock {TimeKeeper|SimulationClock} [optional] simulation time owner
      * @param gameState {GameController|SimulationGameState} [optional] score and simulation-option owner
+     * @param centerHandoffCoordinator {CenterHandoffCoordinator} [optional] arrival transfer policy
+     * @param towerHandoffCoordinator {TowerHandoffCoordinator} [optional] tower transfer policy
      */
     constructor(
         aircraftTypeDefinitionList,
@@ -65,7 +69,9 @@ export default class AircraftController {
         airportController = AirportController,
         navigationLibrary = NavigationLibrary,
         clock = TimeKeeper,
-        gameState = GameController
+        gameState = GameController,
+        centerHandoffCoordinator,
+        towerHandoffCoordinator
     ) {
         if (_isNil(aircraftTypeDefinitionList) || _isNil(airlineController) || _isNil(scopeModel)) {
             throw new TypeError('Invalid parameter(s) passed to AircraftController constructor. ' +
@@ -112,7 +118,10 @@ export default class AircraftController {
             eventBus,
             airportController,
             navigationLibrary,
-            gameState
+            gameState,
+            scopeModel.canIssueCommandsTo.bind(scopeModel),
+            scopeModel.contactTower.bind(scopeModel),
+            scopeModel.contactCenter.bind(scopeModel)
         );
 
         /**
@@ -128,6 +137,16 @@ export default class AircraftController {
         this._navigationLibrary = navigationLibrary;
         this._clock = clock;
         this._gameState = gameState;
+        this._centerHandoffCoordinator = centerHandoffCoordinator ?? new CenterHandoffCoordinator(
+            scopeModel,
+            navigationLibrary,
+            clock,
+            gameState
+        );
+        this._towerHandoffCoordinator = towerHandoffCoordinator ?? new TowerHandoffCoordinator(
+            scopeModel,
+            clock
+        );
 
         /**
          * Reference to an `AircraftTypeDefinitionCollection` instance
@@ -179,7 +198,7 @@ export default class AircraftController {
          * @type {StripViewController}
          * @private
          */
-        this._stripViewController = new StripViewController(delayScheduler, randomSource);
+        this._stripViewController = new StripViewController(delayScheduler, randomSource, scopeModel);
 
         return this.init()
             ._setupHandlers()
@@ -401,6 +420,8 @@ export default class AircraftController {
 
             aircraftModel.update();
             aircraftModel.updateWarning();
+            this._centerHandoffCoordinator.update(aircraftModel);
+            this._towerHandoffCoordinator.update(aircraftModel);
 
             // TODO: conflict checking eats up a lot of resources when there are more than
             //       30 aircraft, exit early if we're still taxiing
@@ -411,7 +432,7 @@ export default class AircraftController {
             this._updateAircraftConflicts(aircraftModel, i);
             this._updateAircraftVisibility(aircraftModel);
 
-            if (!aircraftModel.isControllable) {
+            if (!this._scopeModel.canIssueCommandsTo(aircraftModel)) {
                 this.removeStripView(aircraftModel);
             }
         }
@@ -689,6 +710,7 @@ export default class AircraftController {
             destination: spawnPatternModel.destination,
             callsign: flightNumber,
             category: spawnPatternModel.category,
+            centerHandoffFix: spawnPatternModel.centerHandoffFix,
             airline: airlineModel.icao,
             airlineCallsign: airlineModel.radioName,
             speed: spawnPatternModel.speed,

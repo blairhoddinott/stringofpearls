@@ -1566,6 +1566,7 @@
             "destination": "kjfk",
             "category": "arrival",
             "route": "BGR..ENE.PARCH3.KJFK31R",
+            "centerHandoffFix": "CCC",
             "commands": {
                 "4L":  "cross TRAIT A240 cross CCC A120 S250",
                 "4R":  "cross TRAIT A240 cross CCC A120 S250",

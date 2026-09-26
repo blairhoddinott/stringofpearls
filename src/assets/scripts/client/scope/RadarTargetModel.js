@@ -15,6 +15,7 @@ import {
 } from '../constants/scopeConstants';
 import { THEME } from '../constants/themes';
 import { WAKE_TURBULENCE_CATEGORY } from '../constants/aircraftConstants';
+import HandoffModel, { HANDOFF_STATE } from './HandoffModel';
 
 /**
  * A single radar target observed by the radar system and shown on the scope
@@ -123,18 +124,14 @@ export default class RadarTargetModel {
          */
         this._interimAltitude = INVALID_NUMBER;
 
-        // TODO: This will be replaced with `this._sectorInControl` or something
-        // when handoffs become possible. For now, just marking whether or not "we"
-        // are the sector with control of the track.
         /**
-         * Boolean value representing whether the track of this target is under
-         * control of this particular scope.
+         * Controller ownership and handoff state for this radar target.
          *
          * @for RadarTargetModel
-         * @property _isUnderOurControl
-         * @type {boolean}
+         * @property handoffModel
+         * @type {HandoffModel}
          */
-        this._isUnderOurControl = true;
+        this.handoffModel = new HandoffModel();
 
         // TODO: Store the aircraft's initial route here. Yes, we want to intentionally
         // make a copy of the route and store it here, not point to the aircraft's route.
@@ -311,7 +308,7 @@ export default class RadarTargetModel {
         this._haloRadius = INVALID_NUMBER;
         this._hasSuppressedDataBlock = false;
         this._interimAltitude = INVALID_NUMBER;
-        this._isUnderOurControl = true;
+        this.handoffModel = new HandoffModel();
         this._routeString = '';
 
         return this;
@@ -337,7 +334,7 @@ export default class RadarTargetModel {
      * @method buildDataBlockRowOne
      * @returns {string}
      */
-    buildDataBlockRowOne() {
+    buildDataBlockRowOne(showControllerIdentifier = true) {
         let dataBlockRowOne = this.aircraftModel.callsign;
 
         const wtc = Object.values(WAKE_TURBULENCE_CATEGORY).find((WTC) => WTC.LETTER === this.aircraftModel.model.weightClass) ??
@@ -346,6 +343,10 @@ export default class RadarTargetModel {
         if (wtc.APPEND) {
             // NOTE: using empty space before the letter on purpose so this gets rendered appropriately within a canvas
             dataBlockRowOne += ` ${wtc.LETTER}`;
+        }
+
+        if (showControllerIdentifier && this.handoffModel.controllerIdentifier) {
+            dataBlockRowOne += ` ${this.handoffModel.controllerIdentifier}`;
         }
 
         return dataBlockRowOne;
@@ -422,7 +423,7 @@ export default class RadarTargetModel {
     * @method markAsNotOurControl
     */
     markAsNotOurControl() {
-        this._isUnderOurControl = false;
+        this.handoffModel = new HandoffModel(HANDOFF_STATE.CENTER_OWNED);
     }
 
     /**
@@ -434,7 +435,7 @@ export default class RadarTargetModel {
      * @method markAsOurControl
      */
     markAsOurControl() {
-        this._isUnderOurControl = true;
+        this.handoffModel = new HandoffModel(HANDOFF_STATE.PLAYER_OWNED);
     }
 
     /**

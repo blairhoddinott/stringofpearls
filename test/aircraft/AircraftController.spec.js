@@ -7,6 +7,7 @@ import AirportController from '../../src/assets/scripts/client/airport/AirportCo
 import { EventBusClass } from '../../src/assets/scripts/client/lib/EventBus';
 import { NavigationLibraryClass } from '../../src/assets/scripts/client/navigationLibrary/NavigationLibrary';
 import SimulationGameState from '../../src/assets/scripts/client/simulation/SimulationGameState';
+import ScopeModel from '../../src/assets/scripts/client/scope/ScopeModel';
 import {
     AIRCRAFT_DEFINITION_LIST_MOCK,
     DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK
@@ -14,7 +15,7 @@ import {
 import { AIRPORT_JSON_KLAS_MOCK } from '../airport/_mocks/airportJsonMock';
 import { airlineControllerFixture } from '../fixtures/airlineFixtures';
 import { scopeModelFixture } from '../fixtures/scopeFixtures';
-// import { spawnPatternModelArrivalFixture } from '../fixtures/trafficGeneratorFixtures';
+import { spawnPatternModelArrivalFixture } from '../fixtures/trafficGeneratorFixtures';
 
 ava('throws when called with missing parameters', (t) => {
     const expectedMessage = /Invalid parameter\(s\) passed to AircraftController constructor\. Expected aircraftTypeDefinitionList, airlineController and scopeModel to be defined, but received .*/;
@@ -154,6 +155,37 @@ ava('threads the randomSource by identity to StripViewController after the delay
     t.is(controller._stripViewController._randomSource, randomSource);
 });
 
+ava('threads scope ownership policy to AircraftCommander', (t) => {
+    const scopeModel = new ScopeModel();
+    const canIssueCommandsToStub = sinon.stub(scopeModel, 'canIssueCommandsTo').returns(false);
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModel
+    );
+    const aircraftModel = {};
+
+    t.false(controller._aircraftCommander._canIssueCommandsTo(aircraftModel));
+    t.true(canIssueCommandsToStub.calledOnceWithExactly(aircraftModel));
+});
+
+ava('threads tower and center handoff commands to ScopeModel', (t) => {
+    const scopeModel = new ScopeModel();
+    const contactTowerStub = sinon.stub(scopeModel, 'contactTower').returns([true, 'contact tower']);
+    const contactCenterStub = sinon.stub(scopeModel, 'contactCenter').returns([true, 'contact center']);
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModel
+    );
+    const aircraftModel = {};
+
+    t.deepEqual(controller._aircraftCommander._initiateTowerHandoff(aircraftModel), [true, 'contact tower']);
+    t.deepEqual(controller._aircraftCommander._initiateCenterHandoff(aircraftModel), [true, 'contact center']);
+    t.true(contactTowerStub.calledOnceWithExactly(aircraftModel));
+    t.true(contactCenterStub.calledOnceWithExactly(aircraftModel));
+});
+
 ava('retains an injected aircraft collection by exact identity', (t) => {
     const aircraftCollection = new AircraftCollection();
     const controller = new AircraftController(
@@ -257,6 +289,76 @@ ava('retains an injected clock by exact identity', (t) => {
     t.is(controller._clock, clock);
 });
 
+ava('updates the injected handoff coordinators for each aircraft', (t) => {
+    const centerHandoffCoordinator = { update: sinon.stub() };
+    const towerHandoffCoordinator = { update: sinon.stub() };
+    const aircraftCollection = new AircraftCollection();
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture,
+        undefined,
+        undefined,
+        aircraftCollection,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        centerHandoffCoordinator,
+        towerHandoffCoordinator
+    );
+    const aircraftModel = {
+        isControllable: true,
+        isTaxiing: () => true,
+        update: sinon.stub(),
+        updateWarning: sinon.stub()
+    };
+
+    aircraftCollection.list.push(aircraftModel);
+    controller.update();
+
+    t.true(centerHandoffCoordinator.update.calledOnceWithExactly(aircraftModel));
+    t.true(towerHandoffCoordinator.update.calledOnceWithExactly(aircraftModel));
+});
+
+ava('does not remove a player-owned strip merely because the aircraft is outside geographic control', (t) => {
+    const scopeModel = new ScopeModel();
+    const canIssueCommandsToStub = sinon.stub(scopeModel, 'canIssueCommandsTo').returns(true);
+    const aircraftCollection = new AircraftCollection();
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModel,
+        undefined,
+        undefined,
+        aircraftCollection,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        { update: sinon.stub() },
+        { update: sinon.stub() }
+    );
+    const aircraftModel = {
+        isControllable: false,
+        isTaxiing: sinon.stub().returns(false),
+        update: sinon.stub(),
+        updateWarning: sinon.stub()
+    };
+
+    sinon.stub(controller, '_updateAircraftConflicts');
+    sinon.stub(controller, '_updateAircraftVisibility');
+    const removeStripViewStub = sinon.stub(controller, 'removeStripView');
+    aircraftCollection.list.push(aircraftModel);
+
+    controller.update();
+
+    t.true(canIssueCommandsToStub.calledOnceWithExactly(aircraftModel));
+    t.true(removeStripViewStub.notCalled);
+});
+
 ava('retains an injected game state by exact identity', (t) => {
     const gameState = {};
     const controller = new AircraftController(
@@ -274,6 +376,7 @@ ava('retains an injected game state by exact identity', (t) => {
     );
 
     t.is(controller._gameState, gameState);
+    t.is(controller._centerHandoffCoordinator._gameState, gameState);
 });
 
 ava.serial('creates aircraft and conflicts with the exact injected service owners', (t) => {
@@ -349,6 +452,21 @@ ava('generates distinct deterministic CIDs when randomSource is omitted', (t) =>
 
 ava('does not throw when passed valid parameters', (t) => {
     t.notThrows(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, airlineControllerFixture, scopeModelFixture));
+});
+
+ava('preserves the center handoff fix in aircraft initialization props', (t) => {
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModelFixture,
+        undefined,
+        { integer: (lower) => lower, real: (lower) => lower }
+    );
+    sinon.stub(controller, '_generateUniqueTransponderCode').returns('1000');
+
+    const aircraftProps = controller._buildAircraftProps(spawnPatternModelArrivalFixture);
+
+    t.is(aircraftProps.centerHandoffFix, spawnPatternModelArrivalFixture.centerHandoffFix);
 });
 
 // ava('.createAircraftWithSpawnPatternModel() calls ._buildAircraftProps()', (t) => {

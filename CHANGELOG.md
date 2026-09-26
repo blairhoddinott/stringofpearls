@@ -12,6 +12,20 @@ at `1.0.0`. New releases use the [Keep a Changelog](https://keepachangelog.com/)
 The `# X.Y.Z (Month D, YYYY)` sections below this preamble are the preserved
 inherited openScope history and are retained verbatim for attribution.
 
+## [1.3.0] - 2026-09-26
+
+### Features
+
+- add controller shift lifecycle ([`d7fcb7d`](https://github.com/blairhoddinott/stringofpearls/commit/d7fcb7df549b9adc1e60a8405017f39c769e70e2))
+
+### Bug Fixes
+
+- silence aircraft after completed handoff ([`4ce3bb7`](https://github.com/blairhoddinott/stringofpearls/commit/4ce3bb7083980f65d5b3892c95958925037f5d9b))
+
+### Documentation
+
+- document controller shift lifecycle ([`2a48d01`](https://github.com/blairhoddinott/stringofpearls/commit/2a48d0169c804382b1ba82eb464783865f4eb119))
+
 ## [1.2.0] - 2026-09-26
 
 ### Features

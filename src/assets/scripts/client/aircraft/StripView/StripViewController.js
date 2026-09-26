@@ -26,8 +26,9 @@ export default class StripViewController {
      * @constructor
      * @param delayScheduler {DelayScheduler} delayed-callback boundary; optional
      * @param randomSource {RandomSource} randomness boundary used for CID generation; optional
+     * @param scopeModel {ScopeModel} controller-ownership authority; optional
      */
-    constructor(delayScheduler, randomSource) {
+    constructor(delayScheduler, randomSource, scopeModel) {
         /**
          * Collection class used to manage instances of `StripViewModel`s
          *
@@ -79,6 +80,7 @@ export default class StripViewController {
 
         this._delayScheduler = delayScheduler ?? null;
         this._randomSource = randomSource ?? null;
+        this._scopeModel = scopeModel ?? null;
 
         return this._init()
             .enable();
@@ -155,7 +157,10 @@ export default class StripViewController {
         for (let i = 0; i < aircraftList.length; i++) {
             const aircraftModel = aircraftList[i];
 
-            if (!aircraftModel.isControllable) {
+            const isPlayerOwned = this._scopeModel?.canIssueCommandsTo(aircraftModel) ??
+                aircraftModel.isControllable;
+
+            if (!isPlayerOwned) {
                 continue;
             }
 
@@ -165,6 +170,10 @@ export default class StripViewController {
             // "controllable". By contrast, departure strips are created immediately.
             if (typeof stripViewModel === 'undefined') {
                 stripViewModel = this.createStripView(aircraftModel);
+
+                if (!aircraftModel.isDeparture() && !aircraftModel.isControllable) {
+                    this._addViewToStripList(stripViewModel);
+                }
             }
 
             stripViewModel.update(aircraftModel);

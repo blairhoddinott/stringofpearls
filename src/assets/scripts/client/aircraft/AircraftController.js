@@ -196,7 +196,7 @@ export default class AircraftController {
          * @type {StripViewController}
          * @private
          */
-        this._stripViewController = new StripViewController(delayScheduler, randomSource);
+        this._stripViewController = new StripViewController(delayScheduler, randomSource, scopeModel);
 
         return this.init()
             ._setupHandlers()

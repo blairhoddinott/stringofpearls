@@ -1,0 +1,28 @@
+import ava from 'ava';
+import sinon from 'sinon';
+
+import StripViewController from '../../src/assets/scripts/client/aircraft/StripView/StripViewController';
+
+ava('update() creates a strip for player-owned aircraft outside geographic control', (t) => {
+    const scopeModel = {
+        canIssueCommandsTo: sinon.stub().returns(true)
+    };
+    const controller = new StripViewController(undefined, undefined, scopeModel);
+    const stripViewModel = {
+        update: sinon.stub()
+    };
+    const createStripViewStub = sinon.stub(controller, 'createStripView').returns(stripViewModel);
+    const addViewStub = sinon.stub(controller, '_addViewToStripList');
+    const aircraftModel = {
+        id: 'arrival-1',
+        isControllable: false,
+        isDeparture: sinon.stub().returns(false)
+    };
+
+    controller.update([aircraftModel]);
+
+    t.true(scopeModel.canIssueCommandsTo.calledOnceWithExactly(aircraftModel));
+    t.true(createStripViewStub.calledOnceWithExactly(aircraftModel));
+    t.true(addViewStub.calledOnceWithExactly(stripViewModel));
+    t.true(stripViewModel.update.calledOnceWithExactly(aircraftModel));
+});

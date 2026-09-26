@@ -57,19 +57,30 @@ ava('.addRadarTargetModelForAircraftModel() adds new radar target to collection 
 
 ava('.addRadarTargetModelForAircraftModel() gives audited outside arrivals solid center ownership', (t) => {
     const collection = new RadarTargetCollection(THEME.DEFAULT);
+    const fms = Object.assign(
+        Object.create(Object.getPrototypeOf(ARRIVAL_AIRCRAFT_MODEL_MOCK.fms)),
+        ARRIVAL_AIRCRAFT_MODEL_MOCK.fms
+    );
+    Object.defineProperty(fms, 'waypoints', {
+        value: [{ name: 'BETHL' }]
+    });
     const aircraftModel = Object.assign(
         Object.create(Object.getPrototypeOf(ARRIVAL_AIRCRAFT_MODEL_MOCK)),
         ARRIVAL_AIRCRAFT_MODEL_MOCK,
         {
             centerHandoffFix: 'BETHL',
+            fms,
             isControllable: false
         }
     );
+    const callUpStub = sinon.stub(aircraftModel, 'callUp');
 
     collection.addRadarTargetModelForAircraftModel(aircraftModel);
 
     t.is(collection._items[0].handoffModel.state, HANDOFF_STATE.CENTER_OWNED);
     t.false(collection._items[0].handoffModel.shouldFlashDataBlock);
+    t.true(callUpStub.notCalled);
+    t.true(aircraftModel.deferCallUpUntilHandoff);
 });
 
 ava('.addRadarTargetModelForAircraftModel() keeps unaudited outside arrivals player-owned', (t) => {
@@ -82,10 +93,38 @@ ava('.addRadarTargetModelForAircraftModel() keeps unaudited outside arrivals pla
             isControllable: false
         }
     );
+    const callUpStub = sinon.stub(aircraftModel, 'callUp');
 
     collection.addRadarTargetModelForAircraftModel(aircraftModel);
 
     t.is(collection._items[0].handoffModel.state, HANDOFF_STATE.PLAYER_OWNED);
+    t.true(callUpStub.notCalled);
+});
+
+ava('.addRadarTargetModelForAircraftModel() keeps arrivals player-owned after the handoff fix has passed', (t) => {
+    const collection = new RadarTargetCollection(THEME.DEFAULT);
+    const fms = Object.assign(
+        Object.create(Object.getPrototypeOf(ARRIVAL_AIRCRAFT_MODEL_MOCK.fms)),
+        ARRIVAL_AIRCRAFT_MODEL_MOCK.fms
+    );
+    Object.defineProperty(fms, 'waypoints', {
+        value: [{ name: 'NEXT' }]
+    });
+    const aircraftModel = Object.assign(
+        Object.create(Object.getPrototypeOf(ARRIVAL_AIRCRAFT_MODEL_MOCK)),
+        ARRIVAL_AIRCRAFT_MODEL_MOCK,
+        {
+            centerHandoffFix: 'MALNR',
+            fms,
+            isControllable: false
+        }
+    );
+    const callUpStub = sinon.stub(aircraftModel, 'callUp');
+
+    collection.addRadarTargetModelForAircraftModel(aircraftModel);
+
+    t.is(collection._items[0].handoffModel.state, HANDOFF_STATE.PLAYER_OWNED);
+    t.true(callUpStub.notCalled);
 });
 
 ava('.findRadarTargetModelForAircraftModel() returns undefined when aircraft has no corresponding radar target', (t) => {

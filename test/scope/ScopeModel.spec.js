@@ -61,9 +61,11 @@ ava('.disable() deregisters event handlers', (t) => {
     t.true(eventBusOffStub.callCount === expectedEventsToDeregister);
 });
 
-ava('.acceptHandoff() accepts a pending center handoff', (t) => {
+ava('.acceptHandoff() accepts a pending center handoff and triggers its check-in', (t) => {
     const model = new ScopeModel();
     const radarTargetModel = createRadarTargetArrivalMock();
+    const callUpStub = sandbox.stub(radarTargetModel.aircraftModel, 'callUp');
+    radarTargetModel.aircraftModel.deferCallUpUntilHandoff = true;
     radarTargetModel.markAsNotOurControl();
     radarTargetModel.handoffModel.offerFromCenter();
     const expectedResult = [true, 'HANDOFF ACCEPTED'];
@@ -72,6 +74,13 @@ ava('.acceptHandoff() accepts a pending center handoff', (t) => {
 
     t.deepEqual(result, expectedResult);
     t.true(radarTargetModel.handoffModel.isPlayerControlled);
+    t.false(radarTargetModel.aircraftModel.deferCallUpUntilHandoff);
+    t.true(callUpStub.calledOnceWithExactly());
+
+    radarTargetModel.aircraftModel.isControllable = true;
+    radarTargetModel.aircraftModel._contactAircraftAfterControllabilityChange();
+
+    t.true(callUpStub.calledOnceWithExactly());
 });
 
 ava('.acceptHandoff() rejects aircraft without a pending inbound handoff', (t) => {
@@ -87,12 +96,14 @@ ava('.acceptHandoff() rejects aircraft without a pending inbound handoff', (t) =
 ava('.acceptHandoffIfOffered() resolves and accepts an offered aircraft', (t) => {
     const model = new ScopeModel();
     const radarTargetModel = createRadarTargetArrivalMock();
+    const callUpStub = sandbox.stub(radarTargetModel.aircraftModel, 'callUp');
     radarTargetModel.markAsNotOurControl();
     radarTargetModel.handoffModel.offerFromCenter();
     model.radarTargetCollection.addRadarTargetModel(radarTargetModel);
 
     t.true(model.acceptHandoffIfOffered(radarTargetModel.aircraftModel));
     t.true(radarTargetModel.handoffModel.isPlayerControlled);
+    t.true(callUpStub.calledOnceWithExactly());
 });
 
 ava('.amendAltitude() accepts {string} number and passes {number} number to radarTargetModel.amendAltitude()', (t) => {

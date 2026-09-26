@@ -3,6 +3,7 @@ import sinon from 'sinon';
 
 import CenterHandoffCoordinator, {
     CENTER_HANDOFF_HOLD_DISTANCE_NM,
+    CENTER_HANDOFF_MINIMUM_RESPONSE_SECONDS,
     CENTER_HANDOFF_OFFER_DISTANCE_NM,
     CENTER_HANDOFF_REOFFER_SECONDS
 } from '../../src/assets/scripts/client/scope/CenterHandoffCoordinator';
@@ -112,10 +113,21 @@ ava('does not traverse unresolved waypoints after the handoff fix has passed', (
     t.is(harness.handoffModel.state, HANDOFF_STATE.CENTER_OWNED);
 });
 
+ava('gives a late-visible arrival time to accept before assigning the hold', (t) => {
+    const harness = buildHarness(CENTER_HANDOFF_HOLD_DISTANCE_NM);
+
+    harness.coordinator.update(harness.aircraftModel);
+    harness.coordinator.update(harness.aircraftModel);
+
+    t.is(harness.handoffModel.state, HANDOFF_STATE.CENTER_TO_PLAYER);
+    t.true(harness.aircraftModel.pilot.initiateHoldingPattern.notCalled);
+});
+
 ava('expires an ignored offer and sends the arrival to hold at the configured fix', (t) => {
     const harness = buildHarness(CENTER_HANDOFF_HOLD_DISTANCE_NM);
 
-    harness.handoffModel.offerFromCenter();
+    harness.coordinator.update(harness.aircraftModel);
+    harness.clock.accumulatedDeltaTime = CENTER_HANDOFF_MINIMUM_RESPONSE_SECONDS;
     harness.coordinator.update(harness.aircraftModel);
 
     t.is(harness.handoffModel.state, HANDOFF_STATE.CENTER_OWNED);
@@ -130,14 +142,17 @@ ava('expires an ignored offer and sends the arrival to hold at the configured fi
 ava('reoffers a held arrival after sixty simulation seconds without reassigning the hold', (t) => {
     const harness = buildHarness(CENTER_HANDOFF_HOLD_DISTANCE_NM);
 
-    harness.handoffModel.offerFromCenter();
+    harness.coordinator.update(harness.aircraftModel);
+    harness.clock.accumulatedDeltaTime = CENTER_HANDOFF_MINIMUM_RESPONSE_SECONDS;
     harness.coordinator.update(harness.aircraftModel);
 
-    harness.clock.accumulatedDeltaTime = CENTER_HANDOFF_REOFFER_SECONDS - 1;
+    harness.clock.accumulatedDeltaTime = CENTER_HANDOFF_MINIMUM_RESPONSE_SECONDS +
+        CENTER_HANDOFF_REOFFER_SECONDS - 1;
     harness.coordinator.update(harness.aircraftModel);
     t.is(harness.handoffModel.state, HANDOFF_STATE.CENTER_OWNED);
 
-    harness.clock.accumulatedDeltaTime = CENTER_HANDOFF_REOFFER_SECONDS;
+    harness.clock.accumulatedDeltaTime = CENTER_HANDOFF_MINIMUM_RESPONSE_SECONDS +
+        CENTER_HANDOFF_REOFFER_SECONDS;
     harness.coordinator.update(harness.aircraftModel);
 
     t.is(harness.handoffModel.state, HANDOFF_STATE.CENTER_TO_PLAYER);
@@ -147,9 +162,11 @@ ava('reoffers a held arrival after sixty simulation seconds without reassigning 
 ava('keeps the assigned hold after a late handoff acceptance', (t) => {
     const harness = buildHarness(CENTER_HANDOFF_HOLD_DISTANCE_NM);
 
-    harness.handoffModel.offerFromCenter();
     harness.coordinator.update(harness.aircraftModel);
-    harness.clock.accumulatedDeltaTime = CENTER_HANDOFF_REOFFER_SECONDS;
+    harness.clock.accumulatedDeltaTime = CENTER_HANDOFF_MINIMUM_RESPONSE_SECONDS;
+    harness.coordinator.update(harness.aircraftModel);
+    harness.clock.accumulatedDeltaTime = CENTER_HANDOFF_MINIMUM_RESPONSE_SECONDS +
+        CENTER_HANDOFF_REOFFER_SECONDS;
     harness.coordinator.update(harness.aircraftModel);
     harness.handoffModel.acceptFromCenter();
     harness.coordinator.update(harness.aircraftModel);
@@ -162,7 +179,8 @@ ava('keeps the center offer active when the FMS rejects the hold', (t) => {
     const harness = buildHarness(CENTER_HANDOFF_HOLD_DISTANCE_NM);
 
     harness.aircraftModel.pilot.initiateHoldingPattern.returns([false, 'unable']);
-    harness.handoffModel.offerFromCenter();
+    harness.coordinator.update(harness.aircraftModel);
+    harness.clock.accumulatedDeltaTime = CENTER_HANDOFF_MINIMUM_RESPONSE_SECONDS;
     harness.coordinator.update(harness.aircraftModel);
 
     t.is(harness.handoffModel.state, HANDOFF_STATE.CENTER_TO_PLAYER);

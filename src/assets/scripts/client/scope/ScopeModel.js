@@ -136,6 +136,9 @@ export default class ScopeModel {
             return [false, 'ERR: NO INBOUND HANDOFF'];
         }
 
+        radarTargetModel.aircraftModel.deferCallUpUntilHandoff = false;
+        radarTargetModel.aircraftModel.checkInWithPlayer();
+
         return [true, 'HANDOFF ACCEPTED'];
     }
 

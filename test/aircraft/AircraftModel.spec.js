@@ -379,6 +379,17 @@ ava('.getViewModel() includes an altitude that has not been rounded beyond the n
     t.true(result === 77.77);
 });
 
+ava('._contactAircraftAfterControllabilityChange() defers arrival contact while center owns the aircraft', (t) => {
+    const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
+    const callUpStub = sandbox.stub(model, 'callUp');
+    model.isControllable = true;
+    model.deferCallUpUntilHandoff = true;
+
+    model._contactAircraftAfterControllabilityChange();
+
+    t.true(callUpStub.notCalled);
+});
+
 ava('.isAboveGlidepath() returns false when aircraft altitude is below glideslope altitude', (t) => {
     const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     model.altitude = 3000;

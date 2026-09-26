@@ -4,6 +4,7 @@ import { GAME_EVENTS } from '../game/gameEventConstants';
 
 export const CENTER_HANDOFF_OFFER_DISTANCE_NM = 25;
 export const CENTER_HANDOFF_HOLD_DISTANCE_NM = 8;
+export const CENTER_HANDOFF_MINIMUM_RESPONSE_SECONDS = 10;
 export const CENTER_HANDOFF_REOFFER_SECONDS = 60;
 
 function remainingRouteDistanceToFixNm(aircraftModel, fixName) {
@@ -69,7 +70,10 @@ export default class CenterHandoffCoordinator {
         }
 
         if (handoffModel.state === HANDOFF_STATE.CENTER_TO_PLAYER &&
-            distanceToFixNm <= CENTER_HANDOFF_HOLD_DISTANCE_NM) {
+            distanceToFixNm <= CENTER_HANDOFF_HOLD_DISTANCE_NM &&
+            arrivalState?.offeredAt != null &&
+            this._clock.accumulatedDeltaTime >=
+                arrivalState.offeredAt + CENTER_HANDOFF_MINIMUM_RESPONSE_SECONDS) {
             const fallbackInboundHeading = handoffFix.positionModel
                 .bearingFromPosition(aircraftModel.positionModel);
             const [holdAccepted] = aircraftModel.pilot.initiateHoldingPattern(
@@ -93,6 +97,10 @@ export default class CenterHandoffCoordinator {
         if (handoffModel.state === HANDOFF_STATE.CENTER_OWNED &&
             distanceToFixNm <= CENTER_HANDOFF_OFFER_DISTANCE_NM) {
             handoffModel.offerFromCenter();
+            this._arrivalState.set(aircraftModel, {
+                holdAssigned: false,
+                offeredAt: this._clock.accumulatedDeltaTime
+            });
         }
     }
 }

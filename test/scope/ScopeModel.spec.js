@@ -4,8 +4,10 @@ import GameController from '../../src/assets/scripts/client/game/GameController'
 import ScopeModel from '../../src/assets/scripts/client/scope/ScopeModel';
 import ScopeCommandModel from '../../src/assets/scripts/client/commands/scopeCommand/ScopeCommandModel';
 import RadarTargetCollection from '../../src/assets/scripts/client/scope/RadarTargetCollection';
+import { HANDOFF_STATE } from '../../src/assets/scripts/client/scope/HandoffModel';
 import {
     createRadarTargetArrivalMock,
+    createRadarTargetDepartureMock,
     createRadarCollectionMock
 } from './_mocks/radarTargetMocks';
 import { createScopeCommandMock } from './_mocks/scopeCommandMocks';
@@ -104,6 +106,34 @@ ava('.acceptHandoffIfOffered() resolves and accepts an offered aircraft', (t) =>
     t.true(model.acceptHandoffIfOffered(radarTargetModel.aircraftModel));
     t.true(radarTargetModel.handoffModel.isPlayerControlled);
     t.true(callUpStub.calledOnceWithExactly());
+});
+
+ava('.contactTower() initiates a tower handoff for an arrival on final', (t) => {
+    const clock = { accumulatedDeltaTime: 42 };
+    const model = new ScopeModel(clock);
+    const radarTargetModel = createRadarTargetArrivalMock();
+    sandbox.stub(radarTargetModel.aircraftModel, 'isOnFinal').returns(true);
+    model.radarTargetCollection.addRadarTargetModel(radarTargetModel);
+
+    const result = model.contactTower(radarTargetModel.aircraftModel);
+
+    t.deepEqual(result, [true, 'contact tower']);
+    t.is(radarTargetModel.handoffModel.state, HANDOFF_STATE.PLAYER_TO_TOWER);
+    t.is(radarTargetModel.handoffModel.towerHandoffRequestedAtSeconds, 42);
+});
+
+ava('.contactCenter() initiates a center handoff for an airborne departure', (t) => {
+    const clock = { accumulatedDeltaTime: 42 };
+    const model = new ScopeModel(clock);
+    const radarTargetModel = createRadarTargetDepartureMock();
+    sandbox.stub(radarTargetModel.aircraftModel, 'isAirborne').returns(true);
+    model.radarTargetCollection.addRadarTargetModel(radarTargetModel);
+
+    const result = model.contactCenter(radarTargetModel.aircraftModel);
+
+    t.deepEqual(result, [true, 'contact center']);
+    t.is(radarTargetModel.handoffModel.state, HANDOFF_STATE.PLAYER_TO_CENTER);
+    t.is(radarTargetModel.handoffModel.centerHandoffRequestedAtSeconds, 42);
 });
 
 ava('.amendAltitude() accepts {string} number and passes {number} number to radarTargetModel.amendAltitude()', (t) => {

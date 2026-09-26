@@ -257,6 +257,42 @@ export default class ScopeModel {
         this.changePtlLength(direction);
     }
 
+    contactTower(aircraftModel) {
+        const radarTargetModel = this.radarTargetCollection
+            .findRadarTargetModelForAircraftModel(aircraftModel);
+
+        if (!radarTargetModel) {
+            return [false, 'unable, no radar target'];
+        }
+
+        const [successful, response] = this.initiateTowerHandoff(radarTargetModel);
+
+        return successful ? [true, 'contact tower'] : [false, response];
+    }
+
+    contactCenter(aircraftModel) {
+        const radarTargetModel = this.radarTargetCollection
+            .findRadarTargetModelForAircraftModel(aircraftModel);
+
+        if (!radarTargetModel?.handoffModel.isPlayerControlled) {
+            return [false, 'unable, aircraft is not under your control'];
+        }
+
+        if (aircraftModel.category !== FLIGHT_CATEGORY.DEPARTURE) {
+            return [false, 'unable, center handoff departures only'];
+        }
+
+        if (!aircraftModel.isAirborne()) {
+            return [false, 'unable, aircraft is not airborne'];
+        }
+
+        if (!radarTargetModel.handoffModel.requestCenterHandoff(this._clock.accumulatedDeltaTime)) {
+            return [false, 'unable, center handoff not available'];
+        }
+
+        return [true, 'contact center'];
+    }
+
     /**
      * Initiate a handoff to another sector
      *

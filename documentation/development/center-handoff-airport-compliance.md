@@ -16,6 +16,8 @@ Accepting a handoff gives the player command authority, triggers the aircraft's 
 
 All timing uses simulation time, so pause and timewarp affect offer and reoffer timing consistently.
 
+For outbound traffic, a player-owned airborne departure can be handed to center with `<callsign> cc`. The `C` identifier flashes while pending, center accepts after three simulation seconds, and the departure remains commandable until acceptance. Arrivals established on final use `<callsign> ct` for the equivalent tower transfer.
+
 ## Existing holding support
 
 Center handoffs reuse the inherited FMS and pilot holding implementation; they do not introduce a second flight-dynamics path.

@@ -71,6 +71,16 @@ ava('sets #command with identical name when provided an alias of a system comman
     t.is(twModel.command, timewarpModel.command);
 });
 
+ava('parses callsign-first tower and center handoff commands', (t) => {
+    const towerCommand = new CommandParser('AAL123 ct').parse();
+    const centerCommand = new CommandParser('AAL123 cc').parse();
+
+    t.is(towerCommand.callsign, 'aal123');
+    t.deepEqual(towerCommand.args, [['contactTower']]);
+    t.is(centerCommand.callsign, 'aal123');
+    t.deepEqual(centerCommand.args, [['contactCenter']]);
+});
+
 ava('sets #command with the correct name when provided a transmit command', t => {
     const commandStringMock = buildCommandString(CAF_MOCK, CVS_MOCK, TAKEOFF_MOCK);
     const model = new CommandParser(commandStringMock);

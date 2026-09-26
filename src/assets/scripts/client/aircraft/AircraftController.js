@@ -119,7 +119,9 @@ export default class AircraftController {
             airportController,
             navigationLibrary,
             gameState,
-            scopeModel.canIssueCommandsTo.bind(scopeModel)
+            scopeModel.canIssueCommandsTo.bind(scopeModel),
+            scopeModel.contactTower.bind(scopeModel),
+            scopeModel.contactCenter.bind(scopeModel)
         );
 
         /**

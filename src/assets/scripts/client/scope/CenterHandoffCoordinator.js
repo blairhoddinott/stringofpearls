@@ -6,6 +6,7 @@ export const CENTER_HANDOFF_OFFER_DISTANCE_NM = 25;
 export const CENTER_HANDOFF_HOLD_DISTANCE_NM = 8;
 export const CENTER_HANDOFF_MINIMUM_RESPONSE_SECONDS = 10;
 export const CENTER_HANDOFF_REOFFER_SECONDS = 60;
+export const CENTER_HANDOFF_ACCEPTANCE_DELAY_SECONDS = 3;
 
 function remainingRouteDistanceToFixNm(aircraftModel, fixName) {
     const waypoints = aircraftModel.fms?.waypoints ?? [];
@@ -43,6 +44,17 @@ export default class CenterHandoffCoordinator {
         const radarTargetModel = this._scopeModel.radarTargetCollection
             .findRadarTargetModelForAircraftModel(aircraftModel);
         const handoffModel = radarTargetModel?.handoffModel;
+
+        if (handoffModel?.state === HANDOFF_STATE.PLAYER_TO_CENTER) {
+            const elapsedSeconds = this._clock.accumulatedDeltaTime -
+                handoffModel.centerHandoffRequestedAtSeconds;
+
+            if (elapsedSeconds >= CENTER_HANDOFF_ACCEPTANCE_DELAY_SECONDS) {
+                handoffModel.acceptByCenter();
+            }
+
+            return;
+        }
 
         if (!handoffModel?.controllerIdentifier || handoffModel.controllerIdentifier !== 'C') {
             return;

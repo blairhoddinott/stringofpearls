@@ -2,6 +2,7 @@ export const HANDOFF_STATE = Object.freeze({
     CENTER_OWNED: 'CENTER_OWNED',
     CENTER_TO_PLAYER: 'CENTER_TO_PLAYER',
     PLAYER_OWNED: 'PLAYER_OWNED',
+    PLAYER_TO_CENTER: 'PLAYER_TO_CENTER',
     PLAYER_TO_TOWER: 'PLAYER_TO_TOWER',
     TOWER_OWNED: 'TOWER_OWNED'
 });
@@ -13,6 +14,7 @@ export default class HandoffModel {
         }
 
         this._state = initialState;
+        this._centerHandoffRequestedAtSeconds = null;
         this._towerHandoffRequestedAtSeconds = null;
     }
 
@@ -24,14 +26,20 @@ export default class HandoffModel {
         return this._towerHandoffRequestedAtSeconds;
     }
 
+    get centerHandoffRequestedAtSeconds() {
+        return this._centerHandoffRequestedAtSeconds;
+    }
+
     get isPlayerControlled() {
         return this._state === HANDOFF_STATE.PLAYER_OWNED ||
+            this._state === HANDOFF_STATE.PLAYER_TO_CENTER ||
             this._state === HANDOFF_STATE.PLAYER_TO_TOWER;
     }
 
     get controllerIdentifier() {
         if (this._state === HANDOFF_STATE.CENTER_OWNED ||
-            this._state === HANDOFF_STATE.CENTER_TO_PLAYER) {
+            this._state === HANDOFF_STATE.CENTER_TO_PLAYER ||
+            this._state === HANDOFF_STATE.PLAYER_TO_CENTER) {
             return 'C';
         }
 
@@ -52,7 +60,8 @@ export default class HandoffModel {
     }
 
     get shouldFlashControllerIdentifier() {
-        return this._state === HANDOFF_STATE.PLAYER_TO_TOWER;
+        return this._state === HANDOFF_STATE.PLAYER_TO_CENTER ||
+            this._state === HANDOFF_STATE.PLAYER_TO_TOWER;
     }
 
     offerFromCenter() {
@@ -81,6 +90,28 @@ export default class HandoffModel {
         }
 
         this._state = HANDOFF_STATE.CENTER_OWNED;
+
+        return true;
+    }
+
+    requestCenterHandoff(requestedAtSeconds = 0) {
+        if (this._state !== HANDOFF_STATE.PLAYER_OWNED) {
+            return false;
+        }
+
+        this._state = HANDOFF_STATE.PLAYER_TO_CENTER;
+        this._centerHandoffRequestedAtSeconds = requestedAtSeconds;
+
+        return true;
+    }
+
+    acceptByCenter() {
+        if (this._state !== HANDOFF_STATE.PLAYER_TO_CENTER) {
+            return false;
+        }
+
+        this._state = HANDOFF_STATE.CENTER_OWNED;
+        this._centerHandoffRequestedAtSeconds = null;
 
         return true;
     }

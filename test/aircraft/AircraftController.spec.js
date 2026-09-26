@@ -169,6 +169,23 @@ ava('threads scope ownership policy to AircraftCommander', (t) => {
     t.true(canIssueCommandsToStub.calledOnceWithExactly(aircraftModel));
 });
 
+ava('threads tower and center handoff commands to ScopeModel', (t) => {
+    const scopeModel = new ScopeModel();
+    const contactTowerStub = sinon.stub(scopeModel, 'contactTower').returns([true, 'contact tower']);
+    const contactCenterStub = sinon.stub(scopeModel, 'contactCenter').returns([true, 'contact center']);
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineControllerFixture,
+        scopeModel
+    );
+    const aircraftModel = {};
+
+    t.deepEqual(controller._aircraftCommander._initiateTowerHandoff(aircraftModel), [true, 'contact tower']);
+    t.deepEqual(controller._aircraftCommander._initiateCenterHandoff(aircraftModel), [true, 'contact center']);
+    t.true(contactTowerStub.calledOnceWithExactly(aircraftModel));
+    t.true(contactCenterStub.calledOnceWithExactly(aircraftModel));
+});
+
 ava('retains an injected aircraft collection by exact identity', (t) => {
     const aircraftCollection = new AircraftCollection();
     const controller = new AircraftController(

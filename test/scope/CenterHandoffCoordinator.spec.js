@@ -2,6 +2,7 @@ import ava from 'ava';
 import sinon from 'sinon';
 
 import CenterHandoffCoordinator, {
+    CENTER_HANDOFF_ACCEPTANCE_DELAY_SECONDS,
     CENTER_HANDOFF_HOLD_DISTANCE_NM,
     CENTER_HANDOFF_MINIMUM_RESPONSE_SECONDS,
     CENTER_HANDOFF_OFFER_DISTANCE_NM,
@@ -10,8 +11,8 @@ import CenterHandoffCoordinator, {
 import HandoffModel, { HANDOFF_STATE } from '../../src/assets/scripts/client/scope/HandoffModel';
 import { GAME_EVENTS } from '../../src/assets/scripts/client/game/gameEventConstants';
 
-function buildHarness(distanceNm = 30) {
-    const handoffModel = new HandoffModel(HANDOFF_STATE.CENTER_OWNED);
+function buildHarness(distanceNm = 30, initialState = HANDOFF_STATE.CENTER_OWNED) {
+    const handoffModel = new HandoffModel(initialState);
     const aircraftModel = {
         centerHandoffFix: 'BETHL',
         fms: {
@@ -53,6 +54,22 @@ function buildHarness(distanceNm = 30) {
 
     return { aircraftModel, clock, coordinator, gameState, handoffModel };
 }
+
+ava('accepts an outbound center handoff after exactly three simulation seconds', (t) => {
+    const harness = buildHarness(30, HANDOFF_STATE.PLAYER_OWNED);
+    harness.clock.accumulatedDeltaTime = 10;
+    harness.handoffModel.requestCenterHandoff(harness.clock.accumulatedDeltaTime);
+
+    harness.clock.accumulatedDeltaTime = 10 + CENTER_HANDOFF_ACCEPTANCE_DELAY_SECONDS - 0.001;
+    harness.coordinator.update(harness.aircraftModel);
+    t.is(harness.handoffModel.state, HANDOFF_STATE.PLAYER_TO_CENTER);
+    t.true(harness.handoffModel.isPlayerControlled);
+
+    harness.clock.accumulatedDeltaTime = 10 + CENTER_HANDOFF_ACCEPTANCE_DELAY_SECONDS;
+    harness.coordinator.update(harness.aircraftModel);
+    t.is(harness.handoffModel.state, HANDOFF_STATE.CENTER_OWNED);
+    t.false(harness.handoffModel.isPlayerControlled);
+});
 
 ava('offers a center-owned arrival at the configured route distance', (t) => {
     let distanceNm = CENTER_HANDOFF_OFFER_DISTANCE_NM + 1;

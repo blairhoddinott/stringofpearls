@@ -162,7 +162,7 @@ ava('_isDataBlockVisible() flashes inbound handoffs on simulation time', (t) => 
     t.true(renderer._isDataBlockVisible(radarTargetModel));
 });
 
-ava('_isControllerIdentifierVisible() flashes only a pending tower identifier', (t) => {
+ava('_isControllerIdentifierVisible() flashes only a pending outbound identifier', (t) => {
     const timeKeeper = { gameTimeMilliseconds: 499 };
     const renderer = new AircraftAnnotationRenderer({}, {}, {}, {}, timeKeeper, () => '');
     const pendingTarget = {

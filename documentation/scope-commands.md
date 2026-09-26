@@ -2,6 +2,8 @@
 
 Below is a detailed list outlining all of the available scope commands, including what they do, how to use them, and information on how they fit into the workflow of an air traffic controller.
 
+Scope commands use a separate input mode. Press the backquote key (`` ` ``) to switch the command input from aircraft mode to scope mode; the placeholder changes to `enter scope command`. Press backquote again to return to normal aircraft-command entry. Outbound tower and center handoffs are ordinary aircraft commands and do not require scope mode; see [Aircraft Command Reference](aircraft-commands.md#handoff-commands).
+
 Other than moving the data block or accepting handoffs, most commands require that the radar target be under your scope's control.
 
 Please note that the bracketed words (and brackets themselves) used in the syntax examples should be replaced with the appropriate data. Note that in lieu of having to manually type the `callsign` into the command input, it is also possible to click on the aircraft on the radar scope; doing so will automatically append its callsign to the command input and execute the completed command.
@@ -13,7 +15,6 @@ While `callsign` is used in the examples to reference individual aircraft, you c
 - [Accept Handoff](#accept-handoff)
 - [~~Amend Altitude~~](#amend-altitude)
 - [~~Initiate Handoff~~](#initiate-handoff)
-- [Handoff to Tower](#handoff-to-tower)
 - [Move Data Block](#move-data-block)
 - [~~Propogate Data Block (and Point Out)~~](#propogate-data-block-and-point-out)
 - [~~Route~~](#route)
@@ -47,12 +48,6 @@ If an offer is ignored until the route decision point, center sends the aircraft
 ~~_Description -_ This initiates a handoff to another sector, which they must accept to transfer control of the track.~~
 
 **THIS COMMAND IS NOT YET AVAILABLE**
-
-### Handoff to Tower
-
-_Syntax -_ `T [callsign]`
-
-_Description -_ Initiates a tower handoff for a player-owned arrival established on final. The `T` identifier flashes while the transfer is pending. Tower accepts after three seconds of simulation time; pausing the simulation also pauses that delay. The aircraft remains commandable while pending. After acceptance, `T` is solid and ordinary player commands are rejected while the aircraft continues its approach and landing.
 
 ### Move Data Block
 

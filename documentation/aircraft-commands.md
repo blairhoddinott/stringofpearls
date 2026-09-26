@@ -15,6 +15,11 @@
 - [Descend via STAR](#descend-via-star)
 - [ILS](#ils)
 
+[Handoff Commands](#handoff-commands)
+
+- [Contact Tower](#contact-tower)
+- [Contact Center](#contact-center)
+
 [Routing Commands](#routing-commands)
 
 - [~~Fix~~](#fix)
@@ -153,6 +158,26 @@ the glideslope and land.
 Note: This replaces the old `land` / `l` command.
 
 _Syntax -_ `AAL123 i [runway]`
+
+## Handoff Commands
+
+These are normal aircraft commands entered callsign-first in the main command input. They do not use the separate scope-command mode.
+
+### Contact Tower
+
+_Aliases -_ `ct`, `contacttower`
+
+_Syntax -_ `AAL123 ct`
+
+_Information -_ Initiates a tower handoff for a player-owned arrival established on final. The `T` identifier flashes while the transfer is pending. Tower accepts after three seconds of simulation time; pausing the simulation also pauses that delay. The aircraft remains under player control while pending. After acceptance, `T` becomes solid and ordinary player commands are rejected while the aircraft continues its approach and landing.
+
+### Contact Center
+
+_Aliases -_ `cc`, `contactcenter`
+
+_Syntax -_ `AAL123 cc`
+
+_Information -_ Initiates a center handoff for a player-owned airborne departure. The `C` identifier flashes while the transfer is pending. Center accepts after three seconds of simulation time; pausing the simulation also pauses that delay. The aircraft remains under player control while pending. After acceptance, `C` becomes solid and ordinary player commands are rejected.
 
 ## Routing Commands
 

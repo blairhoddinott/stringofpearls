@@ -37,7 +37,9 @@ export default class AircraftCommander {
         airportController = AirportController,
         navigationLibrary = NavigationLibrary,
         gameState = GameController,
-        canIssueCommandsTo = (aircraft) => aircraft.isControllable
+        canIssueCommandsTo = (aircraft) => aircraft.isControllable,
+        initiateTowerHandoff = () => [false, 'tower handoff unavailable'],
+        initiateCenterHandoff = () => [false, 'center handoff unavailable']
     ) {
         this._eventBus = eventBus;
         this._airportController = airportController;
@@ -46,6 +48,8 @@ export default class AircraftCommander {
         this._findAircraftById = findAircraftById;
         this._onChangeTransponderCode = onChangeTransponderCode;
         this._canIssueCommandsTo = canIssueCommandsTo;
+        this._initiateTowerHandoff = initiateTowerHandoff;
+        this._initiateCenterHandoff = initiateCenterHandoff;
     }
 
     /**
@@ -251,6 +255,14 @@ export default class AircraftCommander {
      */
     runClearedAsFiled(aircraft) {
         return aircraft.pilot.clearedAsFiled();
+    }
+
+    runContactTower(aircraft) {
+        return this._initiateTowerHandoff(aircraft);
+    }
+
+    runContactCenter(aircraft) {
+        return this._initiateCenterHandoff(aircraft);
     }
 
     /**

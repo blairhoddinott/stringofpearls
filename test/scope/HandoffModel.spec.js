@@ -51,6 +51,29 @@ ava('expiring a pending center handoff restores solid center ownership', (t) => 
     t.false(model.expireCenterOffer());
 });
 
+ava('requesting a center handoff keeps player control and flashes C', (t) => {
+    const model = new HandoffModel();
+
+    t.true(model.requestCenterHandoff(42));
+    t.is(model.state, HANDOFF_STATE.PLAYER_TO_CENTER);
+    t.true(model.isPlayerControlled);
+    t.is(model.controllerIdentifier, 'C');
+    t.true(model.shouldFlashControllerIdentifier);
+    t.is(model.centerHandoffRequestedAtSeconds, 42);
+});
+
+ava('center acceptance transfers control and clears its request timestamp', (t) => {
+    const model = new HandoffModel();
+    model.requestCenterHandoff(42);
+
+    t.true(model.acceptByCenter());
+    t.is(model.state, HANDOFF_STATE.CENTER_OWNED);
+    t.false(model.isPlayerControlled);
+    t.is(model.controllerIdentifier, 'C');
+    t.false(model.shouldFlashControllerIdentifier);
+    t.is(model.centerHandoffRequestedAtSeconds, null);
+});
+
 ava('requesting a tower handoff keeps player control and flashes T', (t) => {
     const model = new HandoffModel();
 

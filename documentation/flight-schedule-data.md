@@ -7,7 +7,7 @@ String of Pearls ships normalized representative-day flight schedules as indepen
 The schedule covers Seattle–Tacoma International Airport (`KSEA`) as a repeating, representative 24-hour profile. Its exact slots use Wednesday, 15 July 2026, while supplemental carrier and route volumes use May 2026 monthly aggregates. It contains:
 
 - 1,208 scheduled movements;
-- 605 arrivals and 603 departures;
+- 604 arrivals and 604 departures;
 - 1,038 exact On-Time movements and 170 synthesized T-100 representative movements;
 - 40 usable airline identities, including international passenger and all-cargo operators;
 - 120 remote airports;
@@ -16,7 +16,7 @@ The schedule covers Seattle–Tacoma International Airport (`KSEA`) as a repeati
 The normalized asset is `assets/schedules/ksea.json`. Its SHA-256 is:
 
 ```text
-d6f1bb5eab122ef69846847ecd9b5788085b11a6ae86249124c8855426fa6794
+84bcc5e2b00e9bd3a06923044e7cecc5997fed8ac7f218f2b940d5022624faaa
 ```
 
 CI verifies this hash, both provenance populations, the category and carrier counts, and the remote-airport census. An accidental edit therefore cannot quietly redefine the reviewed profile.
@@ -84,7 +84,7 @@ The first importer strictly normalizes the 15 July On-Time records. The enrichme
 5. computes a 1,208-movement daily target by rounding 37,435 performed monthly movements over 31 days;
 6. preserves all 1,038 exact On-Time records without altering their slots or identities;
 7. synthesizes only carriers absent from the exact baseline, preserving every positive rounded carrier quota before reducing the largest missing-carrier quota to the 170-slot volume budget;
-8. allocates carrier and route quotas by performed-departure weight, then rebalances them to the airport-wide arrival/departure target;
+8. allocates carrier and route quotas by performed-departure weight, then rebalances them so the completed representative profile has equal arrivals and departures when the selected carriers can supply both directions;
 9. distributes synthesized times across the exact arrival or departure time distribution with deterministic hash-based ordering and a bounded minute offset;
 10. creates stable `t100-...` IDs and collision-free deterministic flight numbers, resolves carrier and airport identifiers through explicit reviewed mappings, sorts canonically, and writes atomically.
 

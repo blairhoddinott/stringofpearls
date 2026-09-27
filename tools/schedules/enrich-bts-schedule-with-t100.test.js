@@ -211,8 +211,7 @@ assert.deepStrictEqual(
 
 const insufficientQuotaInput = [
     inputHeader,
-    '0,600,AS,19930,ALASKA AIRLINES INC.,AS,ALASKA AIRLINES INC.,SEA,BOI,612,6,2026,4,F,DU',
-    '0,600,AS,19930,ALASKA AIRLINES INC.,AS,ALASKA AIRLINES INC.,BOI,SEA,612,6,2026,4,F,DU',
+    '0,1200,AS,19930,ALASKA AIRLINES INC.,AS,ALASKA AIRLINES INC.,SEA,BOI,612,6,2026,4,F,DU',
     '0,30,QX,19687,HORIZON AIR INDUSTRIES INC.,QX,HORIZON AIR INDUSTRIES INC.,SEA,PDX,612,6,2026,4,F,DU',
     '0,30,QX,19687,HORIZON AIR INDUSTRIES INC.,QX,HORIZON AIR INDUSTRIES INC.,PDX,SEA,612,6,2026,4,F,DU'
 ].join('\n');
@@ -226,6 +225,16 @@ assert.strictEqual(
     partiallyFilledBudget.flights.filter((flight) => flight.id.startsWith('t100-')).length,
     2,
     'the addition budget is a cap and does not fabricate traffic beyond available missing-carrier quota'
+);
+assert.deepStrictEqual(
+    partiallyFilledBudget.flights
+        .filter((flight) => flight.id.startsWith('t100-'))
+        .reduce((counts, flight) => {
+            counts[flight.category] = (counts[flight.category] || 0) + 1;
+            return counts;
+        }, {}),
+    { arrival: 1, departure: 1 },
+    'the completed representative profile is direction-balanced when selected carriers can supply both directions'
 );
 
 const oneDirectionMissingCarrierInput = [

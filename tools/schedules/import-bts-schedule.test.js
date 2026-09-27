@@ -525,7 +525,7 @@ assert.match(cliResult.stderr, /Usage:/);
     assert.strictEqual(shipped.flights.length, 1208);
     assert.strictEqual(synthesizedCount, 170);
     assert.strictEqual(remoteAirportCount, 120);
-    assert.deepStrictEqual(categoryCounts, { arrival: 605, departure: 603 });
+    assert.deepStrictEqual(categoryCounts, { arrival: 604, departure: 604 });
     assert.deepStrictEqual(airlineCounts, {
         aal: 46,
         aar: 1,
@@ -570,7 +570,7 @@ assert.match(cliResult.stderr, /Usage:/);
     });
     assert.strictEqual(
         crypto.createHash('sha256').update(contents).digest('hex'),
-        'd6f1bb5eab122ef69846847ecd9b5788085b11a6ae86249124c8855426fa6794'
+        '84bcc5e2b00e9bd3a06923044e7cecc5997fed8ac7f218f2b940d5022624faaa'
     );
 }());
 

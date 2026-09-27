@@ -442,45 +442,20 @@ function enrichScheduleWithT100({
     });
     const carrierQuotas = capCarrierQuotas(requestedQuotas, additionBudget);
     const allocatedAdditionCount = [...carrierQuotas.values()].reduce((sum, quota) => sum + quota, 0);
-    const directionDefinitions = ['arrival', 'departure'].map((category) => ({
-        category,
-        performed: aggregates
-            .filter((record) => record.category === category)
-            .reduce((sum, record) => sum + record.performed, 0)
-    }));
-    const fullDirectionTargets = allocateByWeight(
-        directionDefinitions,
-        dailyVolumeTarget,
-        (direction) => direction.performed,
-        (direction) => direction.category
-    );
     const baseDirectionCounts = baseSchedule.flights.reduce((counts, flight) => {
         counts[flight.category] += 1;
         return counts;
     }, { arrival: 0, departure: 0 });
-    directionDefinitions.forEach((direction) => {
-        direction.deficit = Math.max(
-            0,
-            fullDirectionTargets.get(direction) - baseDirectionCounts[direction.category]
-        );
-    });
-    if (allocatedAdditionCount > 0 && directionDefinitions.every((direction) => direction.deficit === 0)) {
-        directionDefinitions.forEach((direction) => {
-            direction.deficit = direction.performed;
-        });
-    }
-    const additionDirectionAllocations = allocateByWeight(
-        directionDefinitions,
+    const completedMovementCount = baseSchedule.flights.length + allocatedAdditionCount;
+    const balancedArrivalTarget = Math.floor(completedMovementCount / 2);
+    const desiredArrivalAdditions = Math.min(
         allocatedAdditionCount,
-        (direction) => direction.deficit,
-        (direction) => direction.category
+        Math.max(0, balancedArrivalTarget - baseDirectionCounts.arrival)
     );
-    const desiredAdditionDirectionTargets = Object.fromEntries(
-        directionDefinitions.map((direction) => [
-            direction.category,
-            additionDirectionAllocations.get(direction)
-        ])
-    );
+    const desiredAdditionDirectionTargets = {
+        arrival: desiredArrivalAdditions,
+        departure: allocatedAdditionCount - desiredArrivalAdditions
+    };
     const carrierDirectionWeights = new Map();
     const initialCarrierDirections = new Map();
     carrierQuotas.forEach((quota, carrier) => {

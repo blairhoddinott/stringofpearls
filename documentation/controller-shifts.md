@@ -10,7 +10,17 @@ Choose one of the following positions:
 - **Departure** generates departures and shows departure flight strips.
 - **Both** generates both traffic flows and shows both flight-strip sections.
 
-Select any enabled airport and a **30-minute** or **60-minute** shift. The configured airport loads before the shift clock and traffic generation begin. The airport cannot be changed while a shift is active.
+Select any enabled airport, a **30-minute** or **60-minute** shift, and a traffic volume of **25%**, **50%**, **75%**, or **100%**. Traffic volume defaults to **100%** each time the shift configuration screen opens. The configured airport loads before the shift clock and traffic generation begin. The airport cannot be changed while a shift is pending or active.
+
+## Scheduled traffic
+
+Airports with a reviewed historical schedule use it as the sole traffic plan for the shift. `KSEA` is the first supported airport. Its representative 24-hour day starts at Seattle's current IANA-local time and repeats every 24 simulation hours. Pausing pauses scheduled traffic, and timewarp advances it with the rest of simulation time.
+
+The volume control selects deterministic, nested subsets of the schedule: every flight present at 25% is also present at 50%, every 50% flight is present at 75%, and every 75% flight is present at 100%. Repeating the same volume does not roll a new random subset.
+
+Scheduled identity and timing are kept when the airline and optional aircraft type can be resolved. Airport-authored spawn patterns remain authoritative for local routes, positions, altitudes, and movement behavior. If a scheduled identity cannot be mapped completely, the simulator generates a compatible replacement in the exact scheduled slot instead of constructing a hybrid scheduled/generated identity. If no compatible local pattern exists, plan construction fails rather than silently dropping the movement.
+
+Airports without a reviewed schedule continue to use their existing generated traffic. Scheduled and legacy random timers are never run in parallel for the same shift.
 
 ## Shift timing
 
@@ -42,6 +52,8 @@ The results screen contains:
 - a chronological log of scoring events and point changes.
 
 Select **Start another shift** to reset the score and session state and return to the shift configuration screen.
+
+The representative day is currently fixed. Choosing a historical date, weekday/weekend profile, season, holiday profile, or custom local start time is deferred. Those controls will require additional reviewed assets; the simulator does not pretend that one Wednesday is all of aviation.
 
 The application currently has an internal leaderboard integration boundary, but it does not publish results to an external leaderboard.
 

@@ -38,7 +38,8 @@ This roadmap tracks the current direction of the project. The order may change a
 
 ## Simulation and realism
 
-- [ ] Use real-world traffic schedules
+- [x] Use reviewed representative historical traffic schedules with deterministic volume selection and same-slot generated fallback, beginning with KSEA
+- [ ] Add selectable schedule date, weekday/weekend, season, holiday profile, and airport-local start time after additional reviewed schedule assets exist
 - [x] Use exact-station AviationWeather.gov METARs for sustained wind and altimeter, display reported gusts and active runways, and retain deterministic static/manual fallback
 - [x] Simulate arrival ownership handoffs from center through the player to tower
 - [ ] Model service to smaller airports in the surrounding area

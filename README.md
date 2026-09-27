@@ -44,7 +44,7 @@ If this returns `[]`, the browser has no usable voice backend yet. Run `spd-conf
 
 ## Controller shifts
 
-Each session starts on a shift configuration screen. Choose an enabled airport, a 30- or 60-minute simulation-time shift, and the position you want to work:
+Each session starts on a shift configuration screen. Choose an enabled airport, a 30- or 60-minute simulation-time shift, a traffic volume of 25%, 50%, 75%, or 100%, and the position you want to work:
 
 - **Approach** generates arrivals and shows arrival flight strips.
 - **Departure** generates departures and shows departure flight strips.
@@ -52,7 +52,9 @@ Each session starts on a shift configuration screen. Choose an enabled airport, 
 
 New traffic stops five simulation minutes before the scheduled end. At `00:00`, the shift enters clearing and ends automatically after all player-owned targets and flight strips are gone. You can end a shift immediately at any time; either path opens a detailed score and statistics screen.
 
-See [Controller shifts](documentation/controller-shifts.md) for timing, clearing, manual completion, results, and post-handoff speech behavior.
+`KSEA` uses a reviewed representative historical day aligned to Seattle's current local time and repeated every 24 simulation hours. Lower volume settings select deterministic nested subsets. Unsupported airports retain generated traffic, and an unmappable scheduled identity is replaced by a compatible generated flight in the same slot.
+
+See [Controller shifts](documentation/controller-shifts.md) for runtime behavior and [Historical flight schedule data](documentation/flight-schedule-data.md) for provenance, limitations, and asset authoring.
 
 ## Simulator documentation
 
@@ -121,7 +123,7 @@ The canonical roadmap lives at [documentation/development/roadmap.md](documentat
 
 ### Simulation and realism
 
-- [ ] Use real-world traffic schedules
+- [x] Use representative historical traffic schedules, beginning with KSEA
 - [x] Use real-world METAR weather for sustained wind and altimeter, with visible gusts, active runways, and deterministic fallback
 - [x] Simulate arrival ownership handoffs from center through player to tower
 - [ ] Model service to smaller airports in the surrounding area

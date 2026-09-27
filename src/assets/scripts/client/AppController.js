@@ -370,6 +370,7 @@ export default class AppController {
             scopeModel: this.scopeModel,
             gameController: GameController,
             stripView: trafficModeStripView,
+            scopeView: UiController,
             airportController: AirportController,
             startView: new ShiftStartView(this.$element.find(SELECTORS.DOM_SELECTORS.SHIFT_START)),
             resultsView: new ShiftResultsView(this.$element.find(SELECTORS.DOM_SELECTORS.SHIFT_RESULTS)),

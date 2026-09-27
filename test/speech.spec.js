@@ -148,18 +148,28 @@ ava.serial('speech_init() enables speech and adds the ACTIVE class only for a ra
     t.true(toggleHasActiveClass());
 });
 
-ava.serial('speech_init() leaves speech disabled for the string "true" (inherited strict comparison)', (t) => {
+ava.serial('speech_init() enables speech by default when no preference has been stored', (t) => {
+    mountToggleElement();
+    const storageAdapter = buildStorageAdapter();
+
+    speech_init(storageAdapter);
+
+    t.true(prop.speech.enabled);
+    t.true(toggleHasActiveClass());
+});
+
+ava.serial('speech_init() restores the string "true" written by Web Storage', (t) => {
     mountToggleElement();
     const storageAdapter = buildStorageAdapter({ storedValue: 'true' });
 
     speech_init(storageAdapter);
 
-    t.false(prop.speech.enabled);
-    t.false(toggleHasActiveClass());
+    t.true(prop.speech.enabled);
+    t.true(toggleHasActiveClass());
 });
 
-ava.serial('speech_init() leaves speech disabled and unmarked for non-true raw values', (t) => {
-    const nonTrueValues = [null, undefined, false, 'false', 1];
+ava.serial('speech_init() leaves speech disabled and unmarked for explicit false or malformed values', (t) => {
+    const nonTrueValues = [false, 'false', 1];
 
     nonTrueValues.forEach((storedValue) => {
         mountToggleElement();
@@ -202,7 +212,7 @@ ava.serial('speech_init() does not read the window speech synthesis globals', (t
 });
 
 ava.serial('speech_init() retains the exact adapter so speech_toggle persists through it', (t) => {
-    const storageAdapter = buildStorageAdapter();
+    const storageAdapter = buildStorageAdapter({ storedValue: false });
     const speechSynthesisAdapter = buildSpeechSynthesisAdapter();
 
     speech_init(storageAdapter, speechSynthesisAdapter);
@@ -256,7 +266,7 @@ ava.serial('speech_say() suppresses an aircraft transmission when its eligibilit
 
 ava.serial('speech_say() is a no-op when speech is disabled', (t) => {
     const speechSynthesisAdapter = buildSpeechSynthesisAdapter();
-    speech_init(buildStorageAdapter({ storedValue: null }), speechSynthesisAdapter);
+    speech_init(buildStorageAdapter({ storedValue: false }), speechSynthesisAdapter);
 
     speech_say([{ type: 'text', content: 'ignored' }], { voice: 'Alice' });
 
@@ -290,7 +300,7 @@ ava.serial('speech_say() does not read the window speech synthesis globals', (t)
 
 ava.serial('speech_toggle() persists the raw boolean true when enabling speech', (t) => {
     mountToggleElement();
-    const storageAdapter = buildStorageAdapter({ storedValue: null });
+    const storageAdapter = buildStorageAdapter({ storedValue: false });
     speech_init(storageAdapter, buildSpeechSynthesisAdapter());
     const recordEventStub = sinon.stub(EventTracker, 'recordEvent');
     t.teardown(() => recordEventStub.restore());
@@ -319,7 +329,7 @@ ava.serial('speech_toggle() persists the raw boolean false and cancels synthesis
 
 ava.serial('speech_toggle() persists after the class mutation and before recording analytics', (t) => {
     mountToggleElement();
-    const storageAdapter = buildStorageAdapter({ storedValue: null });
+    const storageAdapter = buildStorageAdapter({ storedValue: false });
     speech_init(storageAdapter, buildSpeechSynthesisAdapter());
     const recordEventStub = sinon.stub(EventTracker, 'recordEvent');
     t.teardown(() => recordEventStub.restore());
@@ -332,7 +342,7 @@ ava.serial('speech_toggle() persists after the class mutation and before recordi
 
 ava.serial('speech_toggle() records the OPTIONS/speech analytics event with the hasClass label', (t) => {
     mountToggleElement();
-    const storageAdapter = buildStorageAdapter({ storedValue: null });
+    const storageAdapter = buildStorageAdapter({ storedValue: false });
     speech_init(storageAdapter, buildSpeechSynthesisAdapter());
     const recordEventStub = sinon.stub(EventTracker, 'recordEvent');
     t.teardown(() => recordEventStub.restore());
@@ -344,7 +354,7 @@ ava.serial('speech_toggle() records the OPTIONS/speech analytics event with the 
 
 ava.serial('speech_toggle() without a synthesis adapter preserves flip, class toggle, and analytics', (t) => {
     mountToggleElement();
-    speech_init(buildStorageAdapter({ storedValue: null }));
+    speech_init(buildStorageAdapter({ storedValue: false }));
     // Simulate an already-enabled session so the toggle exercises the disabling path.
     prop.speech.enabled = true;
     toggleElement().classList.add(SELECTORS.CLASSNAMES.ACTIVE);
@@ -361,7 +371,7 @@ ava.serial('speech_toggle() without a synthesis adapter preserves flip, class to
 });
 
 ava.serial('speech_toggle() returns undefined', (t) => {
-    const storageAdapter = buildStorageAdapter({ storedValue: null });
+    const storageAdapter = buildStorageAdapter({ storedValue: false });
     speech_init(storageAdapter, buildSpeechSynthesisAdapter());
     const recordEventStub = sinon.stub(EventTracker, 'recordEvent');
     t.teardown(() => recordEventStub.restore());

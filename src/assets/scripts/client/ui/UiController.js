@@ -12,6 +12,7 @@ import { speech_toggle } from '../speech';
 import { EVENT } from '../constants/eventNames';
 import { SELECTORS } from '../constants/selectors';
 import { TRACKABLE_EVENT } from '../constants/trackableEvents';
+import { SHIFT_SECTOR } from '../shift/shiftConstants';
 
 /**
  * Listens for events that occur in the UI and delegates work to the correct place
@@ -886,6 +887,24 @@ class UiController {
             `${this.$toggleLabels.hasClass(SELECTORS.CLASSNAMES.ACTIVE)}`
         );
         this._eventBus.trigger(EVENT.TOGGLE_LABELS);
+    }
+
+    /**
+     * Apply the scope presentation defaults for a newly selected controller sector.
+     * User toggles remain available after the shift begins.
+     *
+     * @param sector {string}
+     */
+    applyShiftDefaults(sector) {
+        const shouldDrawSids = sector === SHIFT_SECTOR.DEPARTURE || sector === SHIFT_SECTOR.BOTH;
+        const shouldDrawStars = sector === SHIFT_SECTOR.APPROACH || sector === SHIFT_SECTOR.BOTH;
+
+        this.$toggleLabels.toggleClass(SELECTORS.CLASSNAMES.ACTIVE, true);
+        this.$toggleSids.toggleClass(SELECTORS.CLASSNAMES.ACTIVE, shouldDrawSids);
+        this.$toggleStars.toggleClass(SELECTORS.CLASSNAMES.ACTIVE, shouldDrawStars);
+        this._eventBus.trigger(EVENT.TOGGLE_LABELS, true);
+        this._eventBus.trigger(EVENT.TOGGLE_SID_MAP, shouldDrawSids);
+        this._eventBus.trigger(EVENT.TOGGLE_STAR_MAP, shouldDrawStars);
     }
 
     /**

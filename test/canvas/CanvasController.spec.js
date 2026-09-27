@@ -635,3 +635,35 @@ ava.serial('default airport renderers resolve live airport and range-ring state 
         enableStub.restore();
     }
 });
+
+ava('scope display events accept explicit state without flipping an already-correct value', (t) => {
+    const { controller } = buildController();
+
+    controller._shouldDrawFixLabels = true;
+    controller._shouldDrawSidMap = true;
+    controller._shouldDrawStarMap = false;
+
+    controller._onToggleLabels(true);
+    controller._onToggleSidMap(false);
+    controller._onToggleStarMap(true);
+
+    t.true(controller._shouldDrawFixLabels);
+    t.false(controller._shouldDrawSidMap);
+    t.true(controller._shouldDrawStarMap);
+});
+
+ava('scope display events retain toggle behavior when no explicit state is supplied', (t) => {
+    const { controller } = buildController();
+
+    controller._shouldDrawFixLabels = false;
+    controller._shouldDrawSidMap = false;
+    controller._shouldDrawStarMap = false;
+
+    controller._onToggleLabels();
+    controller._onToggleSidMap();
+    controller._onToggleStarMap();
+
+    t.true(controller._shouldDrawFixLabels);
+    t.true(controller._shouldDrawSidMap);
+    t.true(controller._shouldDrawStarMap);
+});

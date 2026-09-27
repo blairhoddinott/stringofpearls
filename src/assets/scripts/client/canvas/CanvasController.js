@@ -687,8 +687,10 @@ export default class CanvasController {
      * @returns undefined
      * @private
      */
-    _onToggleLabels() {
-        this._shouldDrawFixLabels = !this._shouldDrawFixLabels;
+    _onToggleLabels(shouldDraw) {
+        this._shouldDrawFixLabels = typeof shouldDraw === 'boolean'
+            ? shouldDraw
+            : !this._shouldDrawFixLabels;
 
         this._markDeepRender();
     }
@@ -721,8 +723,10 @@ export default class CanvasController {
      * @returns undefined
      * @private
      */
-    _onToggleSidMap() {
-        this._shouldDrawSidMap = !this._shouldDrawSidMap;
+    _onToggleSidMap(shouldDraw) {
+        this._shouldDrawSidMap = typeof shouldDraw === 'boolean'
+            ? shouldDraw
+            : !this._shouldDrawSidMap;
 
         this._markDeepRender();
     }
@@ -738,8 +742,10 @@ export default class CanvasController {
      * @returns undefined
      * @private
      */
-    _onToggleStarMap() {
-        this._shouldDrawStarMap = !this._shouldDrawStarMap;
+    _onToggleStarMap(shouldDraw) {
+        this._shouldDrawStarMap = typeof shouldDraw === 'boolean'
+            ? shouldDraw
+            : !this._shouldDrawStarMap;
 
         this._markDeepRender();
     }

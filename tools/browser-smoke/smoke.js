@@ -67,7 +67,6 @@ async function main() {
             localStorage.clear();
             localStorage.setItem('atc-last-version', version);
             localStorage.setItem('first-run-time', '0');
-            localStorage.setItem('atc-speech-enabled', 'false');
         }, appVersion);
 
         const response = await page.goto(baseUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
@@ -87,6 +86,7 @@ async function main() {
         assert.strictEqual(await page.locator('#canvases').evaluate((element) => element.inert), true);
         assert.deepStrictEqual(await sectorSelect.locator('option').allTextContents(), ['Approach', 'Departure', 'Both']);
         assert.deepStrictEqual(await lengthSelect.locator('option').allTextContents(), ['30 minutes', '60 minutes']);
+        assert.strictEqual(await sectorSelect.inputValue(), 'approach');
         assert.strictEqual(await airportSelect.inputValue(), 'ksea');
         assert.strictEqual(await lengthSelect.inputValue(), '30');
         assert.strictEqual(await trafficVolumeRange.getAttribute('min'), '25');
@@ -96,6 +96,7 @@ async function main() {
         assert.strictEqual(await trafficVolumeOutput.textContent(), '100%');
         assert.strictEqual(await page.locator(':focus').getAttribute('data-shift-sector'), '');
         assert.notStrictEqual(await sectorSelect.evaluate((element) => getComputedStyle(element).outlineStyle), 'none');
+        assert(await page.locator('.toggle-speech').evaluate((element) => element.classList.contains('active')));
 
         // The landing-page focus trap includes every control and wraps both ways.
         await page.keyboard.press('Tab');
@@ -119,6 +120,9 @@ async function main() {
         await shiftStartDialog.waitFor({ state: 'hidden', timeout: 30000 });
         await page.locator('.js-stripViewArrivals-section').waitFor({ state: 'visible' });
         await page.locator('.js-stripViewDepartures-section').waitFor({ state: 'hidden' });
+        assert(await page.locator('.toggle-labels').evaluate((element) => element.classList.contains('active')));
+        assert(!await page.locator('.toggle-sids').evaluate((element) => element.classList.contains('active')));
+        assert(await page.locator('.toggle-stars').evaluate((element) => element.classList.contains('active')));
         await page.locator('[data-shift-countdown]').waitFor({ state: 'visible' });
         assert.strictEqual(await page.locator('[data-shift-countdown]').getAttribute('aria-live'), 'polite');
         assert.match(await page.locator('[data-shift-countdown]').textContent(), /^29:\d{2}$/);
@@ -136,6 +140,7 @@ async function main() {
         );
         await shiftResultsDialog.locator('[data-shift-start-another]').click();
         await shiftStartDialog.waitFor({ state: 'visible', timeout: 30000 });
+        assert.strictEqual(await sectorSelect.inputValue(), 'approach');
         assert.strictEqual(await trafficVolumeRange.inputValue(), '100');
         assert.strictEqual(await trafficVolumeOutput.textContent(), '100%');
 
@@ -152,6 +157,9 @@ async function main() {
         await shiftStartDialog.waitFor({ state: 'hidden', timeout: 30000 });
         await page.locator('.js-stripViewArrivals-section').waitFor({ state: 'hidden' });
         await page.locator('.js-stripViewDepartures-section').waitFor({ state: 'visible' });
+        assert(await page.locator('.toggle-labels').evaluate((element) => element.classList.contains('active')));
+        assert(await page.locator('.toggle-sids').evaluate((element) => element.classList.contains('active')));
+        assert(!await page.locator('.toggle-stars').evaluate((element) => element.classList.contains('active')));
         assert.match(await page.locator('[data-shift-countdown]').textContent(), /^29:\d{2}$/);
 
         await page.locator('[data-shift-end-button]').click();
@@ -166,6 +174,9 @@ async function main() {
         await shiftStartDialog.waitFor({ state: 'hidden', timeout: 30000 });
         await page.locator('.js-stripViewArrivals-section').waitFor({ state: 'visible' });
         await page.locator('.js-stripViewDepartures-section').waitFor({ state: 'visible' });
+        assert(await page.locator('.toggle-labels').evaluate((element) => element.classList.contains('active')));
+        assert(await page.locator('.toggle-sids').evaluate((element) => element.classList.contains('active')));
+        assert(await page.locator('.toggle-stars').evaluate((element) => element.classList.contains('active')));
         await page.waitForTimeout(1100);
         assert.notStrictEqual(await page.locator('[data-shift-countdown]').textContent(), '30:00');
 

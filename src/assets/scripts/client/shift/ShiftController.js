@@ -43,6 +43,7 @@ export default class ShiftController {
         scopeModel,
         gameController = GameController,
         stripView,
+        scopeView = null,
         airportController = AirportController,
         leaderboardAdapter = LeaderboardAdapter,
         startView,
@@ -58,6 +59,7 @@ export default class ShiftController {
         this._scopeModel = scopeModel;
         this._gameController = gameController;
         this._stripView = stripView;
+        this._scopeView = scopeView;
         this._airportController = airportController;
         this._leaderboardAdapter = leaderboardAdapter;
         this._startView = startView;
@@ -149,6 +151,7 @@ export default class ShiftController {
         this._aircraftController = null;
         this._scopeModel = null;
         this._stripView = null;
+        this._scopeView = null;
         this._startView = null;
         this._resultsView = null;
         this._statusView = null;
@@ -195,6 +198,7 @@ export default class ShiftController {
         }
 
         this._pendingConfig = config;
+        this._scopeView?.applyShiftDefaults(config.sector);
         this._scheduler.selectTrafficMode(trafficMode);
         this._stripView.apply(trafficMode);
         this._scheduler.resumeSpawning();

@@ -81,6 +81,7 @@ export default class ShiftStartView {
         this._previouslyFocusedElement = this.$element[0].ownerDocument.activeElement;
         this._isolateBackground();
         this._renderAirportOptions(airportOptions, defaultIcao);
+        this.$element.find('[data-shift-sector]').val('approach');
         this.$element.find('[data-shift-traffic-volume]').val('100');
         this.$element.find('[data-shift-traffic-volume-output]').text('100%');
 

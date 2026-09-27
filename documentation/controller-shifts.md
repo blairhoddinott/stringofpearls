@@ -14,7 +14,7 @@ Select any enabled airport, a **30-minute** or **60-minute** shift, and a traffi
 
 ## Scheduled traffic
 
-Airports with a reviewed historical schedule use it as the sole traffic plan for the shift. `KSEA` is the first supported airport. Its representative 24-hour day starts at Seattle's current IANA-local time and repeats every 24 simulation hours. Pausing pauses scheduled traffic, and timewarp advances it with the rest of simulation time.
+Airports with a reviewed representative schedule use it as the sole traffic plan for the shift. `KSEA` is the first supported airport. Its 24-hour profile combines exact historical slots with aggregate-derived international and cargo additions, starts at Seattle's current IANA-local time, and repeats every 24 simulation hours. Pausing pauses scheduled traffic, and timewarp advances it with the rest of simulation time.
 
 The volume control selects deterministic, nested subsets of the schedule: every flight present at 25% is also present at 50%, every 50% flight is present at 75%, and every 75% flight is present at 100%. Repeating the same volume does not roll a new random subset.
 
@@ -53,7 +53,7 @@ The results screen contains:
 
 Select **Start another shift** to reset the score and session state and return to the shift configuration screen.
 
-The representative day is currently fixed. Choosing a historical date, weekday/weekend profile, season, holiday profile, or custom local start time is deferred. Those controls will require additional reviewed assets; the simulator does not pretend that one Wednesday is all of aviation.
+The representative profile is currently fixed. Choosing a historical date, weekday/weekend profile, season, holiday profile, or custom local start time is deferred. Those controls will require additional reviewed assets; the simulator models plausible traffic rather than pretending one mixed-source profile is a literal day of aviation.
 
 The application currently has an internal leaderboard integration boundary, but it does not publish results to an external leaderboard.
 

@@ -20,7 +20,7 @@
     "release:check": "node tools/release/cli.js --check",
     "release:prepare": "node tools/release/cli.js --prepare",
     "release:test": "node --test tools/release/*.test.js tools/build-changelog.test.js tools/ci/classify-master-acceptance.test.js",
-    "schedule:test": "node tools/schedules/import-bts-schedule.test.js",
+    "schedule:test": "node tools/schedules/import-bts-schedule.test.js && node tools/schedules/enrich-bts-schedule-with-t100.test.js",
     "server": "npm run start",
     "server:test": "npm run weather:test && npm run build && node tools/server.test.js",
     "start": "node public/assets/scripts/server/index.js",

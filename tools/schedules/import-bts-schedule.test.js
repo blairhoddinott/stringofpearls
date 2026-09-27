@@ -500,8 +500,8 @@ assert.match(cliResult.stderr, /Usage:/);
     }
 }());
 
-// Corpus audit: the shipped normalized derivative is the reviewed 2026-07-15
-// KSEA representative day, not a hand-written miniature that merely fits the schema.
+// Corpus audit: the shipped normalized derivative retains the reviewed 2026-07-15
+// On-Time baseline and adds the deterministic 2026-05 T-100 representative profile.
 (function shippedKseaCorpusMatchesReviewedImport() {
     const filename = path.join(__dirname, '..', '..', 'assets', 'schedules', 'ksea.json');
     const contents = fs.readFileSync(filename);
@@ -511,28 +511,66 @@ assert.match(cliResult.stderr, /Usage:/);
         return counts;
     }, {});
     const airlineCounts = shipped.flights.reduce((counts, flight) => {
-        counts[flight.airlineIcao] = (counts[flight.airlineIcao] || 0) + 1;
+        const airline = flight.airlineIcao || 'generated';
+        counts[airline] = (counts[airline] || 0) + 1;
         return counts;
     }, {});
+    const synthesizedCount = shipped.flights.filter((flight) => flight.id.startsWith('t100-')).length;
+    const remoteAirportCount = new Set(shipped.flights.map((flight) =>
+        flight.category === 'arrival' ? flight.originIcao : flight.destinationIcao
+    )).size;
 
     assert.strictEqual(shipped.sampleDate, '2026-07-15');
     assert.strictEqual(shipped.timezone, 'America/Los_Angeles');
-    assert.strictEqual(shipped.flights.length, 1038);
-    assert.deepStrictEqual(categoryCounts, { arrival: 519, departure: 519 });
+    assert.strictEqual(shipped.flights.length, 1208);
+    assert.strictEqual(synthesizedCount, 170);
+    assert.strictEqual(remoteAirportCount, 120);
+    assert.deepStrictEqual(categoryCounts, { arrival: 605, departure: 603 });
     assert.deepStrictEqual(airlineCounts, {
         aal: 46,
+        aar: 1,
+        abx: 7,
+        aca: 2,
+        afr: 1,
+        aih: 2,
+        amx: 2,
+        ana: 2,
         asa: 480,
+        baw: 4,
+        box: 1,
+        cal: 3,
+        chh: 1,
+        cpa: 1,
         dal: 196,
+        dlh: 3,
+        ein: 2,
         eny: 8,
+        eva: 3,
+        fdx: 11,
         fft: 10,
+        ice: 4,
+        jal: 2,
         jbu: 6,
+        jza: 7,
+        kal: 3,
+        lco: 1,
+        pal: 1,
+        qtr: 1,
+        qxe: 90,
+        scx: 2,
+        sia: 1,
+        sjx: 2,
         skw: 165,
         swa: 62,
-        ual: 65
+        thy: 2,
+        ual: 65,
+        vir: 2,
+        voi: 2,
+        wja: 4
     });
     assert.strictEqual(
         crypto.createHash('sha256').update(contents).digest('hex'),
-        '1219e8a53efafb06f18396084bc7c47d8fac04975e3ffdcc6383deaaa3cf1933'
+        'd6f1bb5eab122ef69846847ecd9b5788085b11a6ae86249124c8855426fa6794'
     );
 }());
 

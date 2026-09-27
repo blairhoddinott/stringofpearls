@@ -4,13 +4,31 @@
   "timezone": "America/Los_Angeles",
   "sampleDate": "2026-07-15",
   "source": {
-    "name": "US DOT BTS Reporting Carrier On-Time Performance",
-    "url": "https://transtats.bts.gov/PREZIP/On_Time_Reporting_Carrier_On_Time_Performance_1987_present_2026_7.zip",
-    "retrievedAt": "2026-09-26",
+    "name": "US DOT BTS On-Time Performance + T-100 Segment (All Carriers)",
+    "url": "https://transtats.bts.gov/DL_SelectFields.aspx?QO_fu146_anzr=Nv4+Pn44vr45&gnoyr_VQ=FMG",
+    "retrievedAt": "2026-09-27",
     "license": "U.S. Government work in the public domain (17 U.S.C. §105); OurAirports code data is public domain.",
-    "coverage": "Domestic scheduled passenger service reported by U.S. certificated carriers with at least 0.5% of domestic scheduled passenger revenue; excludes international, cargo, general aviation, and below-threshold carriers, so it is a representative reporting-carrier baseline rather than the airport’s entire traffic. Airport IATA-to-ICAO mappings come from the public-domain OurAirports dataset at https://ourairports.com/data/."
+    "coverage": "Exact On-Time movements are retained; 170 representative movements were deterministically synthesized from 2026-05 T-100 performed-departure aggregates. General aviation is excluded."
   },
   "flights": [
+    {
+      "id": "t100-qk-arrival-cyvr-f-002",
+      "scheduledTime": "00:00",
+      "category": "arrival",
+      "originIcao": "CYVR",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "jza",
+      "flightNumber": "8973"
+    },
+    {
+      "id": "t100-abx-departure-kafw-g-001",
+      "scheduledTime": "00:01",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KAFW",
+      "airlineIcao": "abx",
+      "flightNumber": "9994"
+    },
     {
       "id": "arrival-aa3252-mia-sea",
       "category": "arrival",
@@ -46,6 +64,15 @@
       "flightNumber": "4144",
       "originIcao": "KMDW",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-qk-arrival-cyvr-f-001",
+      "scheduledTime": "00:33",
+      "category": "arrival",
+      "originIcao": "CYVR",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "jza",
+      "flightNumber": "6212"
     },
     {
       "id": "arrival-wn4196-las-sea",
@@ -138,6 +165,24 @@
       "destinationIcao": "KMDW"
     },
     {
+      "id": "t100-ba-departure-egll-f-002",
+      "scheduledTime": "05:01",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "EGLL",
+      "airlineIcao": "baw",
+      "flightNumber": "3359"
+    },
+    {
+      "id": "t100-ci-arrival-rctp-f-001",
+      "scheduledTime": "05:03",
+      "category": "arrival",
+      "originIcao": "RCTP",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "cal",
+      "flightNumber": "4886"
+    },
+    {
       "id": "departure-aa2748-sea-dfw",
       "category": "departure",
       "scheduledTime": "05:05",
@@ -181,6 +226,15 @@
       "flightNumber": "1498",
       "originIcao": "PANC",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-abx-departure-kcvg-g-001",
+      "scheduledTime": "05:29",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KCVG",
+      "airlineIcao": "abx",
+      "flightNumber": "8045"
     },
     {
       "id": "departure-dl1128-sea-slc",
@@ -300,6 +354,15 @@
       "destinationIcao": "KMSP"
     },
     {
+      "id": "t100-3s-departure-eddf-g-001",
+      "scheduledTime": "06:06",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "EDDF",
+      "airlineIcao": "box",
+      "flightNumber": "8804"
+    },
+    {
       "id": "arrival-as259-koa-sea",
       "category": "arrival",
       "scheduledTime": "06:12",
@@ -334,6 +397,15 @@
       "flightNumber": "3792",
       "originIcao": "KSEA",
       "destinationIcao": "KPHX"
+    },
+    {
+      "id": "t100-qx-arrival-ksbp-f-001",
+      "scheduledTime": "06:16",
+      "category": "arrival",
+      "originIcao": "KSBP",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "5277"
     },
     {
       "id": "arrival-as206-ogg-sea",
@@ -390,6 +462,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-fi-arrival-bikf-f-002",
+      "scheduledTime": "06:36",
+      "category": "arrival",
+      "originIcao": "BIKF",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "ice",
+      "flightNumber": "5934"
+    },
+    {
       "id": "arrival-dl2218-geg-sea",
       "category": "arrival",
       "scheduledTime": "06:40",
@@ -424,6 +505,15 @@
       "flightNumber": "699",
       "originIcao": "KSEA",
       "destinationIcao": "KSNA"
+    },
+    {
+      "id": "t100-sq-departure-wsss-f-001",
+      "scheduledTime": "06:42",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "WSSS",
+      "airlineIcao": "sia",
+      "flightNumber": "9017"
     },
     {
       "id": "arrival-dl485-koa-sea",
@@ -534,6 +624,15 @@
       "destinationIcao": "KOAK"
     },
     {
+      "id": "t100-ba-arrival-egll-f-002",
+      "scheduledTime": "07:01",
+      "category": "arrival",
+      "originIcao": "EGLL",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "baw",
+      "flightNumber": "8966"
+    },
+    {
       "id": "departure-as65-sea-ktn",
       "category": "departure",
       "scheduledTime": "07:03",
@@ -550,6 +649,15 @@
       "flightNumber": "725",
       "originIcao": "KSEA",
       "destinationIcao": "KSFO"
+    },
+    {
+      "id": "t100-cx-departure-vhhh-f-001",
+      "scheduledTime": "07:03",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "VHHH",
+      "airlineIcao": "cpa",
+      "flightNumber": "9416"
     },
     {
       "id": "departure-as239-sea-ewr",
@@ -606,6 +714,15 @@
       "destinationIcao": "KCLT"
     },
     {
+      "id": "t100-vs-departure-egll-f-001",
+      "scheduledTime": "07:11",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "EGLL",
+      "airlineIcao": "vir",
+      "flightNumber": "6433"
+    },
+    {
       "id": "arrival-as213-lih-sea",
       "category": "arrival",
       "scheduledTime": "07:12",
@@ -622,6 +739,15 @@
       "flightNumber": "533",
       "originIcao": "KSEA",
       "destinationIcao": "KOAK"
+    },
+    {
+      "id": "t100-qx-departure-kgtf-f-001",
+      "scheduledTime": "07:13",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KGTF",
+      "airlineIcao": "qxe",
+      "flightNumber": "9361"
     },
     {
       "id": "arrival-oo3026-rdm-sea",
@@ -759,6 +885,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-qx-departure-kpuw-f-002",
+      "scheduledTime": "07:24",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KPUW",
+      "airlineIcao": "qxe",
+      "flightNumber": "1900"
+    },
+    {
       "id": "departure-dl2922-sea-las",
       "category": "departure",
       "scheduledTime": "07:25",
@@ -793,6 +928,24 @@
       "flightNumber": "717",
       "originIcao": "KSEA",
       "destinationIcao": "KLAX"
+    },
+    {
+      "id": "t100-qx-departure-cyvr-f-003",
+      "scheduledTime": "07:26",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "CYVR",
+      "airlineIcao": "qxe",
+      "flightNumber": "7347"
+    },
+    {
+      "id": "t100-y4-departure-mmgl-f-001",
+      "scheduledTime": "07:26",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "MMGL",
+      "airlineIcao": "voi",
+      "flightNumber": "7517"
     },
     {
       "id": "departure-as682-sea-smf",
@@ -885,6 +1038,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-qx-arrival-kida-f-001",
+      "scheduledTime": "07:37",
+      "category": "arrival",
+      "originIcao": "KIDA",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "7214"
+    },
+    {
       "id": "arrival-oo4128-eug-sea",
       "category": "arrival",
       "scheduledTime": "07:38",
@@ -919,6 +1081,15 @@
       "flightNumber": "295",
       "originIcao": "KSEA",
       "destinationIcao": "KMCO"
+    },
+    {
+      "id": "t100-qx-departure-kgeg-f-003",
+      "scheduledTime": "07:44",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KGEG",
+      "airlineIcao": "qxe",
+      "flightNumber": "9603"
     },
     {
       "id": "departure-as340-sea-dfw",
@@ -984,6 +1155,15 @@
       "destinationIcao": "PANC"
     },
     {
+      "id": "t100-qx-arrival-kpsc-f-001",
+      "scheduledTime": "07:54",
+      "category": "arrival",
+      "originIcao": "KPSC",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "8112"
+    },
+    {
       "id": "departure-as618-sea-stl",
       "category": "departure",
       "scheduledTime": "07:55",
@@ -1045,6 +1225,15 @@
       "flightNumber": "323",
       "originIcao": "KRNO",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-ac-departure-cyyz-f-001",
+      "scheduledTime": "08:02",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "CYYZ",
+      "airlineIcao": "aca",
+      "flightNumber": "1309"
     },
     {
       "id": "departure-as375-sea-den",
@@ -1119,6 +1308,15 @@
       "destinationIcao": "KMIA"
     },
     {
+      "id": "t100-fx-arrival-kmem-g-001",
+      "scheduledTime": "08:09",
+      "category": "arrival",
+      "originIcao": "KMEM",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "fdx",
+      "flightNumber": "4022"
+    },
+    {
       "id": "arrival-as1529-abq-sea",
       "category": "arrival",
       "scheduledTime": "08:10",
@@ -1173,6 +1371,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-nh-departure-rjtt-f-001",
+      "scheduledTime": "08:14",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "RJTT",
+      "airlineIcao": "ana",
+      "flightNumber": "1377"
+    },
+    {
       "id": "arrival-oo4471-pdx-sea",
       "category": "arrival",
       "scheduledTime": "08:15",
@@ -1189,6 +1396,15 @@
       "flightNumber": "2463",
       "originIcao": "KSEA",
       "destinationIcao": "KIAD"
+    },
+    {
+      "id": "t100-qx-arrival-keug-f-002",
+      "scheduledTime": "08:15",
+      "category": "arrival",
+      "originIcao": "KEUG",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "2544"
     },
     {
       "id": "arrival-as1409-smf-sea",
@@ -1281,6 +1497,15 @@
       "destinationIcao": "KFLL"
     },
     {
+      "id": "t100-qk-departure-cyvr-f-003",
+      "scheduledTime": "08:24",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "CYVR",
+      "airlineIcao": "jza",
+      "flightNumber": "6801"
+    },
+    {
       "id": "departure-dl2419-sea-phx",
       "category": "departure",
       "scheduledTime": "08:25",
@@ -1344,6 +1569,24 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-qx-arrival-cyyc-f-001",
+      "scheduledTime": "08:26",
+      "category": "arrival",
+      "originIcao": "CYYC",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "5084"
+    },
+    {
+      "id": "t100-qx-departure-kpdx-f-001",
+      "scheduledTime": "08:26",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "qxe",
+      "flightNumber": "4164"
+    },
+    {
       "id": "departure-as442-sea-phl",
       "category": "departure",
       "scheduledTime": "08:28",
@@ -1380,6 +1623,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-tk-departure-ltfm-f-001",
+      "scheduledTime": "08:31",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "LTFM",
+      "airlineIcao": "thy",
+      "flightNumber": "2063"
+    },
+    {
       "id": "departure-as1364-sea-ont",
       "category": "departure",
       "scheduledTime": "08:33",
@@ -1387,6 +1639,15 @@
       "flightNumber": "1364",
       "originIcao": "KSEA",
       "destinationIcao": "KONT"
+    },
+    {
+      "id": "t100-ei-arrival-eidw-f-001",
+      "scheduledTime": "08:33",
+      "category": "arrival",
+      "originIcao": "EIDW",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "ein",
+      "flightNumber": "5365"
     },
     {
       "id": "arrival-as1314-sjc-sea",
@@ -1551,6 +1812,15 @@
       "destinationIcao": "KSFO"
     },
     {
+      "id": "t100-qx-arrival-cyvr-f-003",
+      "scheduledTime": "08:45",
+      "category": "arrival",
+      "originIcao": "CYVR",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "6113"
+    },
+    {
       "id": "arrival-dl804-dfw-sea",
       "category": "arrival",
       "scheduledTime": "08:46",
@@ -1596,6 +1866,15 @@
       "destinationIcao": "KSLC"
     },
     {
+      "id": "t100-abx-arrival-kpdx-g-001",
+      "scheduledTime": "08:48",
+      "category": "arrival",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "abx",
+      "flightNumber": "5028"
+    },
+    {
       "id": "arrival-wn3632-sjc-sea",
       "category": "arrival",
       "scheduledTime": "08:50",
@@ -1621,6 +1900,15 @@
       "flightNumber": "328",
       "originIcao": "KSEA",
       "destinationIcao": "KMCO"
+    },
+    {
+      "id": "t100-qx-departure-kelp-f-001",
+      "scheduledTime": "08:51",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KELP",
+      "airlineIcao": "qxe",
+      "flightNumber": "9161"
     },
     {
       "id": "arrival-as625-ind-sea",
@@ -1695,6 +1983,15 @@
       "destinationIcao": "KBOI"
     },
     {
+      "id": "t100-qx-departure-ktul-f-001",
+      "scheduledTime": "09:01",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KTUL",
+      "airlineIcao": "qxe",
+      "flightNumber": "9292"
+    },
+    {
       "id": "arrival-dl2874-slc-sea",
       "category": "arrival",
       "scheduledTime": "09:02",
@@ -1758,6 +2055,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-qx-arrival-kbil-f-001",
+      "scheduledTime": "09:08",
+      "category": "arrival",
+      "originIcao": "KBIL",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "125"
+    },
+    {
       "id": "departure-as500-sea-ind",
       "category": "departure",
       "scheduledTime": "09:09",
@@ -1765,6 +2071,15 @@
       "flightNumber": "500",
       "originIcao": "KSEA",
       "destinationIcao": "KIND"
+    },
+    {
+      "id": "t100-abx-departure-kcvg-g-002",
+      "scheduledTime": "09:09",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KCVG",
+      "airlineIcao": "abx",
+      "flightNumber": "1414"
     },
     {
       "id": "departure-as216-sea-cle",
@@ -1902,6 +2217,33 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-oz-departure-rksi-f-001",
+      "scheduledTime": "09:23",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "RKSI",
+      "airlineIcao": "aar",
+      "flightNumber": "9855"
+    },
+    {
+      "id": "t100-abx-arrival-kcvg-g-001",
+      "scheduledTime": "09:24",
+      "category": "arrival",
+      "originIcao": "KCVG",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "abx",
+      "flightNumber": "197"
+    },
+    {
+      "id": "t100-qx-arrival-ktul-f-001",
+      "scheduledTime": "09:24",
+      "category": "arrival",
+      "originIcao": "KTUL",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "8801"
+    },
+    {
       "id": "arrival-aa707-dfw-sea",
       "category": "arrival",
       "scheduledTime": "09:25",
@@ -2028,6 +2370,15 @@
       "destinationIcao": "KGEG"
     },
     {
+      "id": "t100-qx-departure-kboi-f-001",
+      "scheduledTime": "09:35",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KBOI",
+      "airlineIcao": "qxe",
+      "flightNumber": "313"
+    },
+    {
       "id": "departure-as568-sea-msy",
       "category": "departure",
       "scheduledTime": "09:37",
@@ -2062,6 +2413,15 @@
       "flightNumber": "450",
       "originIcao": "KSEA",
       "destinationIcao": "KCMH"
+    },
+    {
+      "id": "t100-qx-departure-kict-f-001",
+      "scheduledTime": "09:41",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KICT",
+      "airlineIcao": "qxe",
+      "flightNumber": "4487"
     },
     {
       "id": "arrival-as1325-sna-sea",
@@ -2154,6 +2514,15 @@
       "destinationIcao": "KMCO"
     },
     {
+      "id": "t100-qk-arrival-cyvr-f-004",
+      "scheduledTime": "09:48",
+      "category": "arrival",
+      "originIcao": "CYVR",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "jza",
+      "flightNumber": "5836"
+    },
+    {
       "id": "arrival-as748-lax-sea",
       "category": "arrival",
       "scheduledTime": "09:49",
@@ -2188,6 +2557,15 @@
       "flightNumber": "2905",
       "originIcao": "KSEA",
       "destinationIcao": "KLAS"
+    },
+    {
+      "id": "t100-qx-arrival-kgeg-f-003",
+      "scheduledTime": "09:52",
+      "category": "arrival",
+      "originIcao": "KGEG",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "2815"
     },
     {
       "id": "arrival-as786-bwi-sea",
@@ -2233,6 +2611,15 @@
       "flightNumber": "1321",
       "originIcao": "KSEA",
       "destinationIcao": "KSTS"
+    },
+    {
+      "id": "t100-qx-departure-koak-f-001",
+      "scheduledTime": "09:54",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KOAK",
+      "airlineIcao": "qxe",
+      "flightNumber": "2037"
     },
     {
       "id": "arrival-as670-rdu-sea",
@@ -2298,6 +2685,24 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-qx-arrival-kboi-f-001",
+      "scheduledTime": "10:02",
+      "category": "arrival",
+      "originIcao": "KBOI",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "961"
+    },
+    {
+      "id": "t100-qx-departure-cyvr-f-004",
+      "scheduledTime": "10:02",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "CYVR",
+      "airlineIcao": "qxe",
+      "flightNumber": "6799"
+    },
+    {
       "id": "departure-as1367-sea-lax",
       "category": "departure",
       "scheduledTime": "10:03",
@@ -2314,6 +2719,15 @@
       "flightNumber": "467",
       "originIcao": "KSEA",
       "destinationIcao": "KSAN"
+    },
+    {
+      "id": "t100-qx-arrival-cyvr-f-004",
+      "scheduledTime": "10:03",
+      "category": "arrival",
+      "originIcao": "CYVR",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "5991"
     },
     {
       "id": "arrival-as281-bna-sea",
@@ -2487,6 +2901,15 @@
       "destinationIcao": "KBOS"
     },
     {
+      "id": "t100-ba-arrival-egll-f-001",
+      "scheduledTime": "10:13",
+      "category": "arrival",
+      "originIcao": "EGLL",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "baw",
+      "flightNumber": "9323"
+    },
+    {
       "id": "arrival-dl699-jfk-sea",
       "category": "arrival",
       "scheduledTime": "10:14",
@@ -2523,6 +2946,15 @@
       "destinationIcao": "PHOG"
     },
     {
+      "id": "t100-qx-departure-kmfr-f-001",
+      "scheduledTime": "10:15",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KMFR",
+      "airlineIcao": "qxe",
+      "flightNumber": "2306"
+    },
+    {
       "id": "arrival-as21-jfk-sea",
       "category": "arrival",
       "scheduledTime": "10:16",
@@ -2539,6 +2971,15 @@
       "flightNumber": "451",
       "originIcao": "KMSY",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-fx-departure-koak-g-001",
+      "scheduledTime": "10:18",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KOAK",
+      "airlineIcao": "fdx",
+      "flightNumber": "6385"
     },
     {
       "id": "departure-as648-sea-tus",
@@ -2593,6 +3034,15 @@
       "flightNumber": "707",
       "originIcao": "KSEA",
       "destinationIcao": "KDFW"
+    },
+    {
+      "id": "t100-y4-arrival-mmgl-f-001",
+      "scheduledTime": "10:23",
+      "category": "arrival",
+      "originIcao": "MMGL",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "voi",
+      "flightNumber": "9593"
     },
     {
       "id": "arrival-as651-sit-sea",
@@ -2703,6 +3153,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-qk-departure-cyvr-f-001",
+      "scheduledTime": "10:32",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "CYVR",
+      "airlineIcao": "jza",
+      "flightNumber": "9778"
+    },
+    {
       "id": "arrival-b6397-bos-sea",
       "category": "arrival",
       "scheduledTime": "10:33",
@@ -2728,6 +3187,15 @@
       "flightNumber": "1178",
       "originIcao": "KSEA",
       "destinationIcao": "KLAX"
+    },
+    {
+      "id": "t100-qx-arrival-kict-f-001",
+      "scheduledTime": "10:34",
+      "category": "arrival",
+      "originIcao": "KICT",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "2496"
     },
     {
       "id": "arrival-as299-ewr-sea",
@@ -2820,6 +3288,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-br-arrival-rctp-f-001",
+      "scheduledTime": "10:38",
+      "category": "arrival",
+      "originIcao": "RCTP",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "eva",
+      "flightNumber": "4195"
+    },
+    {
       "id": "arrival-f92407-las-sea",
       "category": "arrival",
       "scheduledTime": "10:39",
@@ -2865,6 +3342,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-fx-arrival-kbli-g-001",
+      "scheduledTime": "10:42",
+      "category": "arrival",
+      "originIcao": "KBLI",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "fdx",
+      "flightNumber": "2144"
+    },
+    {
       "id": "departure-dl1061-sea-fai",
       "category": "departure",
       "scheduledTime": "10:45",
@@ -2881,6 +3367,15 @@
       "flightNumber": "3081",
       "originIcao": "KSEA",
       "destinationIcao": "KMDW"
+    },
+    {
+      "id": "t100-qx-departure-kpsc-f-001",
+      "scheduledTime": "10:46",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KPSC",
+      "airlineIcao": "qxe",
+      "flightNumber": "9173"
     },
     {
       "id": "arrival-ua2654-iah-sea",
@@ -2917,6 +3412,15 @@
       "flightNumber": "3754",
       "originIcao": "KSEA",
       "destinationIcao": "KGEG"
+    },
+    {
+      "id": "t100-abx-arrival-ksck-g-001",
+      "scheduledTime": "10:51",
+      "category": "arrival",
+      "originIcao": "KSCK",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "abx",
+      "flightNumber": "6436"
     },
     {
       "id": "departure-as438-sea-iah",
@@ -2991,6 +3495,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-qx-departure-kbzn-f-001",
+      "scheduledTime": "10:56",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KBZN",
+      "airlineIcao": "qxe",
+      "flightNumber": "562"
+    },
+    {
       "id": "arrival-as1-dca-sea",
       "category": "arrival",
       "scheduledTime": "10:58",
@@ -3054,6 +3567,15 @@
       "destinationIcao": "KDEN"
     },
     {
+      "id": "t100-fx-departure-kclm-g-001",
+      "scheduledTime": "11:04",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KCLM",
+      "airlineIcao": "fdx",
+      "flightNumber": "5147"
+    },
+    {
       "id": "departure-dl2880-sea-las",
       "category": "departure",
       "scheduledTime": "11:05",
@@ -3108,6 +3630,15 @@
       "destinationIcao": "KAUS"
     },
     {
+      "id": "t100-qx-arrival-kpdx-f-001",
+      "scheduledTime": "11:11",
+      "category": "arrival",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "2781"
+    },
+    {
       "id": "arrival-as1327-sfo-sea",
       "category": "arrival",
       "scheduledTime": "11:15",
@@ -3151,6 +3682,15 @@
       "flightNumber": "384",
       "originIcao": "KBOS",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-qx-arrival-kgpi-f-001",
+      "scheduledTime": "11:19",
+      "category": "arrival",
+      "originIcao": "KGPI",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "8650"
     },
     {
       "id": "arrival-as348-atl-sea",
@@ -3205,6 +3745,15 @@
       "flightNumber": "3088",
       "originIcao": "KSEA",
       "destinationIcao": "KMFR"
+    },
+    {
+      "id": "t100-sy-departure-kmsp-f-001",
+      "scheduledTime": "11:20",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KMSP",
+      "airlineIcao": "scx",
+      "flightNumber": "3749"
     },
     {
       "id": "departure-oo3735-sea-rdm",
@@ -3279,6 +3828,15 @@
       "destinationIcao": "PHKO"
     },
     {
+      "id": "t100-qx-departure-keat-f-001",
+      "scheduledTime": "11:27",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KEAT",
+      "airlineIcao": "qxe",
+      "flightNumber": "6279"
+    },
+    {
       "id": "departure-as258-sea-lih",
       "category": "departure",
       "scheduledTime": "11:28",
@@ -3315,6 +3873,15 @@
       "destinationIcao": "KLAS"
     },
     {
+      "id": "t100-jl-departure-rjaa-f-001",
+      "scheduledTime": "11:31",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "RJAA",
+      "airlineIcao": "jal",
+      "flightNumber": "1190"
+    },
+    {
       "id": "departure-dl415-sea-jfk",
       "category": "departure",
       "scheduledTime": "11:34",
@@ -3349,6 +3916,15 @@
       "flightNumber": "2099",
       "originIcao": "KORD",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-fx-departure-kbli-g-001",
+      "scheduledTime": "11:38",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KBLI",
+      "airlineIcao": "fdx",
+      "flightNumber": "4233"
     },
     {
       "id": "departure-as83-sea-anc",
@@ -3441,6 +4017,15 @@
       "destinationIcao": "KDEN"
     },
     {
+      "id": "t100-qx-departure-cyvr-f-002",
+      "scheduledTime": "11:44",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "CYVR",
+      "airlineIcao": "qxe",
+      "flightNumber": "7353"
+    },
+    {
       "id": "departure-b6398-sea-bos",
       "category": "departure",
       "scheduledTime": "11:45",
@@ -3484,6 +4069,15 @@
       "flightNumber": "604",
       "originIcao": "KSEA",
       "destinationIcao": "KAUS"
+    },
+    {
+      "id": "t100-ws-arrival-cyyc-f-001",
+      "scheduledTime": "11:46",
+      "category": "arrival",
+      "originIcao": "CYYC",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "wja",
+      "flightNumber": "2037"
     },
     {
       "id": "arrival-dl356-fll-sea",
@@ -3594,6 +4188,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-qx-departure-krdm-f-002",
+      "scheduledTime": "11:57",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KRDM",
+      "airlineIcao": "qxe",
+      "flightNumber": "1987"
+    },
+    {
       "id": "departure-dl554-sea-atl",
       "category": "departure",
       "scheduledTime": "11:59",
@@ -3630,6 +4233,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-fi-departure-bikf-f-002",
+      "scheduledTime": "12:02",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "BIKF",
+      "airlineIcao": "ice",
+      "flightNumber": "9175"
+    },
+    {
       "id": "arrival-wn3051-den-sea",
       "category": "arrival",
       "scheduledTime": "12:05",
@@ -3655,6 +4267,15 @@
       "flightNumber": "3294",
       "originIcao": "KSEA",
       "destinationIcao": "KBLI"
+    },
+    {
+      "id": "t100-qx-arrival-keat-f-001",
+      "scheduledTime": "12:06",
+      "category": "arrival",
+      "originIcao": "KEAT",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "7749"
     },
     {
       "id": "arrival-aa2529-clt-sea",
@@ -3727,6 +4348,15 @@
       "flightNumber": "657",
       "originIcao": "KSEA",
       "destinationIcao": "PANC"
+    },
+    {
+      "id": "t100-qx-arrival-kpdx-f-003",
+      "scheduledTime": "12:19",
+      "category": "arrival",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "7141"
     },
     {
       "id": "arrival-as60-ktn-sea",
@@ -3846,6 +4476,15 @@
       "destinationIcao": "KBOI"
     },
     {
+      "id": "t100-ke-arrival-rksi-f-001",
+      "scheduledTime": "12:32",
+      "category": "arrival",
+      "originIcao": "RKSI",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "kal",
+      "flightNumber": "7664"
+    },
+    {
       "id": "arrival-ua2192-sfo-sea",
       "category": "arrival",
       "scheduledTime": "12:34",
@@ -3882,6 +4521,15 @@
       "destinationIcao": "KDEN"
     },
     {
+      "id": "t100-vs-arrival-egll-f-001",
+      "scheduledTime": "12:36",
+      "category": "arrival",
+      "originIcao": "EGLL",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "vir",
+      "flightNumber": "9343"
+    },
+    {
       "id": "departure-as502-sea-lax",
       "category": "departure",
       "scheduledTime": "12:38",
@@ -3889,6 +4537,15 @@
       "flightNumber": "502",
       "originIcao": "KSEA",
       "destinationIcao": "KLAX"
+    },
+    {
+      "id": "t100-qx-departure-kpdx-f-003",
+      "scheduledTime": "12:38",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "qxe",
+      "flightNumber": "4974"
     },
     {
       "id": "departure-aa2534-sea-phl",
@@ -3927,6 +4584,15 @@
       "destinationIcao": "KLAS"
     },
     {
+      "id": "t100-qx-arrival-kgeg-f-001",
+      "scheduledTime": "12:46",
+      "category": "arrival",
+      "originIcao": "KGEG",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "6694"
+    },
+    {
       "id": "arrival-ua2205-iah-sea",
       "category": "arrival",
       "scheduledTime": "12:47",
@@ -3961,6 +4627,15 @@
       "flightNumber": "2995",
       "originIcao": "KSLC",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-br-departure-rctp-f-001",
+      "scheduledTime": "12:49",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "RCTP",
+      "airlineIcao": "eva",
+      "flightNumber": "4723"
     },
     {
       "id": "arrival-wn1876-mdw-sea",
@@ -4107,6 +4782,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-qx-departure-ksbp-f-001",
+      "scheduledTime": "13:08",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KSBP",
+      "airlineIcao": "qxe",
+      "flightNumber": "5846"
+    },
+    {
       "id": "departure-aa2529-sea-clt",
       "category": "departure",
       "scheduledTime": "13:10",
@@ -4123,6 +4807,15 @@
       "flightNumber": "410",
       "originIcao": "KSEA",
       "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-qx-arrival-koak-f-001",
+      "scheduledTime": "13:11",
+      "category": "arrival",
+      "originIcao": "KOAK",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "8430"
     },
     {
       "id": "arrival-as629-las-sea",
@@ -4188,6 +4881,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-qx-arrival-kpdx-f-004",
+      "scheduledTime": "13:24",
+      "category": "arrival",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "3648"
+    },
+    {
       "id": "departure-as497-sea-mci",
       "category": "departure",
       "scheduledTime": "13:30",
@@ -4249,6 +4951,15 @@
       "flightNumber": "242",
       "originIcao": "KSEA",
       "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-qx-departure-cyyc-f-001",
+      "scheduledTime": "13:33",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "CYYC",
+      "airlineIcao": "qxe",
+      "flightNumber": "5205"
     },
     {
       "id": "arrival-oo3802-pdx-sea",
@@ -4332,6 +5043,15 @@
       "destinationIcao": "KMSO"
     },
     {
+      "id": "t100-qx-departure-krdd-f-001",
+      "scheduledTime": "13:39",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KRDD",
+      "airlineIcao": "qxe",
+      "flightNumber": "246"
+    },
+    {
       "id": "departure-dl928-sea-anc",
       "category": "departure",
       "scheduledTime": "13:40",
@@ -4348,6 +5068,15 @@
       "flightNumber": "3891",
       "originIcao": "KSEA",
       "destinationIcao": "KPSC"
+    },
+    {
+      "id": "t100-qx-departure-kgpi-f-002",
+      "scheduledTime": "13:40",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KGPI",
+      "airlineIcao": "qxe",
+      "flightNumber": "6641"
     },
     {
       "id": "arrival-as315-anc-sea",
@@ -4404,6 +5133,15 @@
       "destinationIcao": "KPDX"
     },
     {
+      "id": "t100-qx-arrival-cyvr-f-001",
+      "scheduledTime": "13:45",
+      "category": "arrival",
+      "originIcao": "CYVR",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "5607"
+    },
+    {
       "id": "departure-as2-sea-dca",
       "category": "departure",
       "scheduledTime": "13:46",
@@ -4429,6 +5167,15 @@
       "flightNumber": "773",
       "originIcao": "KSEA",
       "destinationIcao": "KSNA"
+    },
+    {
+      "id": "t100-qk-departure-cyvr-f-002",
+      "scheduledTime": "13:49",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "CYVR",
+      "airlineIcao": "jza",
+      "flightNumber": "8053"
     },
     {
       "id": "arrival-oo3992-psc-sea",
@@ -4494,6 +5241,15 @@
       "destinationIcao": "KORD"
     },
     {
+      "id": "t100-qx-departure-kida-f-001",
+      "scheduledTime": "13:57",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KIDA",
+      "airlineIcao": "qxe",
+      "flightNumber": "4930"
+    },
+    {
       "id": "arrival-oo4139-eug-sea",
       "category": "arrival",
       "scheduledTime": "13:58",
@@ -4557,6 +5313,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-fx-arrival-kbvs-g-001",
+      "scheduledTime": "14:04",
+      "category": "arrival",
+      "originIcao": "KBVS",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "fdx",
+      "flightNumber": "4440"
+    },
+    {
       "id": "departure-aa2520-sea-ord",
       "category": "departure",
       "scheduledTime": "14:09",
@@ -4600,6 +5365,15 @@
       "flightNumber": "1289",
       "originIcao": "KEWR",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-qx-arrival-khln-f-001",
+      "scheduledTime": "14:16",
+      "category": "arrival",
+      "originIcao": "KHLN",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "9305"
     },
     {
       "id": "departure-as571-sea-ont",
@@ -4683,6 +5457,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-lh-departure-eddf-f-001",
+      "scheduledTime": "14:28",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "EDDF",
+      "airlineIcao": "dlh",
+      "flightNumber": "3411"
+    },
+    {
       "id": "arrival-dl728-dtw-sea",
       "category": "arrival",
       "scheduledTime": "14:29",
@@ -4764,6 +5547,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-jx-arrival-rctp-f-001",
+      "scheduledTime": "14:32",
+      "category": "arrival",
+      "originIcao": "RCTP",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "sjx",
+      "flightNumber": "8560"
+    },
+    {
       "id": "departure-ua333-sea-den",
       "category": "departure",
       "scheduledTime": "14:33",
@@ -4807,6 +5599,24 @@
       "flightNumber": "325",
       "originIcao": "KLAX",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-qx-departure-kbil-f-001",
+      "scheduledTime": "14:37",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KBIL",
+      "airlineIcao": "qxe",
+      "flightNumber": "1373"
+    },
+    {
+      "id": "t100-qx-arrival-kmso-f-001",
+      "scheduledTime": "14:39",
+      "category": "arrival",
+      "originIcao": "KMSO",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "342"
     },
     {
       "id": "arrival-as293-geg-sea",
@@ -4944,6 +5754,15 @@
       "destinationIcao": "KBOI"
     },
     {
+      "id": "t100-qx-arrival-kbzn-f-001",
+      "scheduledTime": "14:50",
+      "category": "arrival",
+      "originIcao": "KBZN",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "2801"
+    },
+    {
       "id": "arrival-oo4070-ont-sea",
       "category": "arrival",
       "scheduledTime": "14:51",
@@ -4951,6 +5770,15 @@
       "flightNumber": "4070",
       "originIcao": "KONT",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-qx-arrival-krdd-f-001",
+      "scheduledTime": "14:51",
+      "category": "arrival",
+      "originIcao": "KRDD",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "9056"
     },
     {
       "id": "arrival-as381-den-sea",
@@ -5007,6 +5835,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-jx-departure-rctp-f-001",
+      "scheduledTime": "14:58",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "RCTP",
+      "airlineIcao": "sjx",
+      "flightNumber": "1461"
+    },
+    {
       "id": "departure-dl344-sea-ogg",
       "category": "departure",
       "scheduledTime": "14:59",
@@ -5043,6 +5880,15 @@
       "destinationIcao": "KDAL"
     },
     {
+      "id": "t100-qx-arrival-kpuw-f-001",
+      "scheduledTime": "15:01",
+      "category": "arrival",
+      "originIcao": "KPUW",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "3154"
+    },
+    {
       "id": "arrival-dl1358-den-sea",
       "category": "arrival",
       "scheduledTime": "15:05",
@@ -5077,6 +5923,15 @@
       "flightNumber": "4125",
       "originIcao": "KSMF",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-qx-departure-kbil-f-002",
+      "scheduledTime": "15:09",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KBIL",
+      "airlineIcao": "qxe",
+      "flightNumber": "1697"
     },
     {
       "id": "departure-as331-sea-bur",
@@ -5169,6 +6024,15 @@
       "destinationIcao": "KEWR"
     },
     {
+      "id": "t100-qx-arrival-krno-f-001",
+      "scheduledTime": "15:23",
+      "category": "arrival",
+      "originIcao": "KRNO",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "145"
+    },
+    {
       "id": "arrival-dl2419-phx-sea",
       "category": "arrival",
       "scheduledTime": "15:25",
@@ -5185,6 +6049,15 @@
       "flightNumber": "4130",
       "originIcao": "KSEA",
       "destinationIcao": "KSJC"
+    },
+    {
+      "id": "t100-qx-departure-kpuw-f-001",
+      "scheduledTime": "15:25",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KPUW",
+      "airlineIcao": "qxe",
+      "flightNumber": "1926"
     },
     {
       "id": "departure-aa2524-sea-ord",
@@ -5304,6 +6177,24 @@
       "destinationIcao": "KSJC"
     },
     {
+      "id": "t100-qx-arrival-kgpi-f-002",
+      "scheduledTime": "15:43",
+      "category": "arrival",
+      "originIcao": "KGPI",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "4192"
+    },
+    {
+      "id": "t100-qx-departure-kpdx-f-002",
+      "scheduledTime": "15:43",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "qxe",
+      "flightNumber": "1312"
+    },
+    {
       "id": "arrival-dl1564-ord-sea",
       "category": "arrival",
       "scheduledTime": "15:44",
@@ -5376,6 +6267,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-qx-departure-krdm-f-001",
+      "scheduledTime": "15:52",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KRDM",
+      "airlineIcao": "qxe",
+      "flightNumber": "695"
+    },
+    {
       "id": "arrival-ua2241-iad-sea",
       "category": "arrival",
       "scheduledTime": "15:55",
@@ -5401,6 +6301,15 @@
       "flightNumber": "489",
       "originIcao": "KSEA",
       "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-ci-departure-rctp-g-001",
+      "scheduledTime": "15:55",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "RCTP",
+      "airlineIcao": "cal",
+      "flightNumber": "8763"
     },
     {
       "id": "arrival-as446-jnu-sea",
@@ -5493,6 +6402,15 @@
       "destinationIcao": "KPDX"
     },
     {
+      "id": "t100-qx-arrival-ksts-f-001",
+      "scheduledTime": "16:00",
+      "category": "arrival",
+      "originIcao": "KSTS",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "7032"
+    },
+    {
       "id": "departure-as406-sea-iad",
       "category": "departure",
       "scheduledTime": "16:01",
@@ -5500,6 +6418,15 @@
       "flightNumber": "406",
       "originIcao": "KSEA",
       "destinationIcao": "KIAD"
+    },
+    {
+      "id": "t100-ws-departure-cyyc-f-002",
+      "scheduledTime": "16:01",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "CYYC",
+      "airlineIcao": "wja",
+      "flightNumber": "6554"
     },
     {
       "id": "arrival-as580-bur-sea",
@@ -5664,6 +6591,24 @@
       "destinationIcao": "PHNL"
     },
     {
+      "id": "t100-abx-arrival-kafw-g-001",
+      "scheduledTime": "16:20",
+      "category": "arrival",
+      "originIcao": "KAFW",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "abx",
+      "flightNumber": "6785"
+    },
+    {
+      "id": "t100-qx-departure-keug-f-001",
+      "scheduledTime": "16:23",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KEUG",
+      "airlineIcao": "qxe",
+      "flightNumber": "6929"
+    },
+    {
       "id": "departure-dl2955-sea-las",
       "category": "departure",
       "scheduledTime": "16:25",
@@ -5671,6 +6616,15 @@
       "flightNumber": "2955",
       "originIcao": "KSEA",
       "destinationIcao": "KLAS"
+    },
+    {
+      "id": "t100-lh-arrival-eddm-f-001",
+      "scheduledTime": "16:25",
+      "category": "arrival",
+      "originIcao": "EDDM",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "dlh",
+      "flightNumber": "6974"
     },
     {
       "id": "departure-as602-sea-den",
@@ -5763,6 +6717,15 @@
       "destinationIcao": "KSFO"
     },
     {
+      "id": "t100-qx-arrival-kpuw-f-002",
+      "scheduledTime": "16:37",
+      "category": "arrival",
+      "originIcao": "KPUW",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "5500"
+    },
+    {
       "id": "arrival-oo4062-pdx-sea",
       "category": "arrival",
       "scheduledTime": "16:38",
@@ -5835,6 +6798,15 @@
       "destinationIcao": "KDEN"
     },
     {
+      "id": "t100-qx-departure-cyeg-f-001",
+      "scheduledTime": "16:45",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "CYEG",
+      "airlineIcao": "qxe",
+      "flightNumber": "6388"
+    },
+    {
       "id": "arrival-aa727-dfw-sea",
       "category": "arrival",
       "scheduledTime": "16:47",
@@ -5889,6 +6861,15 @@
       "destinationIcao": "PAJN"
     },
     {
+      "id": "t100-qx-arrival-krdm-f-001",
+      "scheduledTime": "16:50",
+      "category": "arrival",
+      "originIcao": "KRDM",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "6392"
+    },
+    {
       "id": "arrival-as405-okc-sea",
       "category": "arrival",
       "scheduledTime": "16:53",
@@ -5896,6 +6877,15 @@
       "flightNumber": "405",
       "originIcao": "KOKC",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-qx-arrival-krdm-f-002",
+      "scheduledTime": "16:54",
+      "category": "arrival",
+      "originIcao": "KRDM",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "1165"
     },
     {
       "id": "arrival-as330-abq-sea",
@@ -5941,6 +6931,15 @@
       "flightNumber": "312",
       "originIcao": "KOMA",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-qx-arrival-kbil-f-002",
+      "scheduledTime": "16:57",
+      "category": "arrival",
+      "originIcao": "KBIL",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "6026"
     },
     {
       "id": "arrival-as465-san-sea",
@@ -6042,6 +7041,15 @@
       "destinationIcao": "KLAX"
     },
     {
+      "id": "t100-fx-departure-kmem-g-001",
+      "scheduledTime": "17:04",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3492"
+    },
+    {
       "id": "arrival-as740-boi-sea",
       "category": "arrival",
       "scheduledTime": "17:06",
@@ -6094,6 +7102,15 @@
       "flightNumber": "734",
       "originIcao": "KSLC",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-jl-arrival-rjaa-f-001",
+      "scheduledTime": "17:16",
+      "category": "arrival",
+      "originIcao": "RJAA",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "jal",
+      "flightNumber": "9393"
     },
     {
       "id": "arrival-as618-stl-sea",
@@ -6150,6 +7167,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-qx-departure-kmso-f-001",
+      "scheduledTime": "17:21",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KMSO",
+      "airlineIcao": "qxe",
+      "flightNumber": "2885"
+    },
+    {
       "id": "arrival-as507-mke-sea",
       "category": "arrival",
       "scheduledTime": "17:24",
@@ -6184,6 +7210,15 @@
       "flightNumber": "4141",
       "originIcao": "KSEA",
       "destinationIcao": "KRDM"
+    },
+    {
+      "id": "t100-qx-departure-kpdx-f-004",
+      "scheduledTime": "17:28",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "qxe",
+      "flightNumber": "7555"
     },
     {
       "id": "arrival-as652-sit-sea",
@@ -6229,6 +7264,15 @@
       "flightNumber": "931",
       "originIcao": "KSEA",
       "destinationIcao": "PANC"
+    },
+    {
+      "id": "t100-br-arrival-rctp-f-002",
+      "scheduledTime": "17:30",
+      "category": "arrival",
+      "originIcao": "RCTP",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "eva",
+      "flightNumber": "2124"
     },
     {
       "id": "departure-as416-sea-bna",
@@ -6321,6 +7365,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-qx-departure-kgeg-f-001",
+      "scheduledTime": "17:42",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KGEG",
+      "airlineIcao": "qxe",
+      "flightNumber": "3746"
+    },
+    {
       "id": "arrival-as425-phx-sea",
       "category": "arrival",
       "scheduledTime": "17:43",
@@ -6364,6 +7417,24 @@
       "flightNumber": "3225",
       "originIcao": "KSEA",
       "destinationIcao": "KTUS"
+    },
+    {
+      "id": "t100-nh-arrival-rjtt-f-001",
+      "scheduledTime": "17:45",
+      "category": "arrival",
+      "originIcao": "RJTT",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "ana",
+      "flightNumber": "8712"
+    },
+    {
+      "id": "t100-qx-departure-krno-f-001",
+      "scheduledTime": "17:47",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KRNO",
+      "airlineIcao": "qxe",
+      "flightNumber": "6818"
     },
     {
       "id": "departure-as538-sea-ord",
@@ -6483,6 +7554,15 @@
       "destinationIcao": "KBUR"
     },
     {
+      "id": "t100-af-departure-lfpg-f-001",
+      "scheduledTime": "17:58",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "LFPG",
+      "airlineIcao": "afr",
+      "flightNumber": "203"
+    },
+    {
       "id": "arrival-ua2013-den-sea",
       "category": "arrival",
       "scheduledTime": "17:59",
@@ -6546,6 +7626,15 @@
       "destinationIcao": "KMSP"
     },
     {
+      "id": "t100-qx-arrival-cyvr-f-002",
+      "scheduledTime": "18:06",
+      "category": "arrival",
+      "originIcao": "CYVR",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "4406"
+    },
+    {
       "id": "departure-as307-sea-mke",
       "category": "departure",
       "scheduledTime": "18:09",
@@ -6562,6 +7651,15 @@
       "flightNumber": "524",
       "originIcao": "KSEA",
       "destinationIcao": "KLAX"
+    },
+    {
+      "id": "t100-fx-departure-kmem-g-002",
+      "scheduledTime": "18:12",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "316"
     },
     {
       "id": "departure-as237-sea-lih",
@@ -6645,6 +7743,15 @@
       "destinationIcao": "PHNL"
     },
     {
+      "id": "t100-qx-departure-ksts-f-001",
+      "scheduledTime": "18:26",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KSTS",
+      "airlineIcao": "qxe",
+      "flightNumber": "8"
+    },
+    {
       "id": "departure-as564-sea-mci",
       "category": "departure",
       "scheduledTime": "18:27",
@@ -6679,6 +7786,15 @@
       "flightNumber": "478",
       "originIcao": "KSEA",
       "destinationIcao": "KLAS"
+    },
+    {
+      "id": "t100-qx-arrival-kpdx-f-002",
+      "scheduledTime": "18:32",
+      "category": "arrival",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "2969"
     },
     {
       "id": "arrival-as430-pdx-sea",
@@ -6771,6 +7887,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-ci-departure-rctp-f-001",
+      "scheduledTime": "18:44",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "RCTP",
+      "airlineIcao": "cal",
+      "flightNumber": "2137"
+    },
+    {
       "id": "arrival-as218-atl-sea",
       "category": "arrival",
       "scheduledTime": "18:46",
@@ -6816,6 +7941,15 @@
       "destinationIcao": "KOMA"
     },
     {
+      "id": "t100-fx-arrival-kclm-g-001",
+      "scheduledTime": "18:48",
+      "category": "arrival",
+      "originIcao": "KCLM",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "fdx",
+      "flightNumber": "5756"
+    },
+    {
       "id": "arrival-wn2328-oak-sea",
       "category": "arrival",
       "scheduledTime": "18:50",
@@ -6850,6 +7984,15 @@
       "flightNumber": "296",
       "originIcao": "KBOI",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-qx-arrival-kpsc-f-003",
+      "scheduledTime": "18:54",
+      "category": "arrival",
+      "originIcao": "KPSC",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "3074"
     },
     {
       "id": "arrival-oo3770-mfr-sea",
@@ -6922,6 +8065,15 @@
       "flightNumber": "202",
       "originIcao": "KSEA",
       "destinationIcao": "PHOG"
+    },
+    {
+      "id": "t100-hu-departure-zbaa-f-001",
+      "scheduledTime": "18:59",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "ZBAA",
+      "airlineIcao": "chh",
+      "flightNumber": "3820"
     },
     {
       "id": "arrival-as214-ktn-sea",
@@ -7005,6 +8157,15 @@
       "destinationIcao": "KSFO"
     },
     {
+      "id": "t100-qx-arrival-kboi-f-002",
+      "scheduledTime": "19:05",
+      "category": "arrival",
+      "originIcao": "KBOI",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "2229"
+    },
+    {
       "id": "arrival-as289-phx-sea",
       "category": "arrival",
       "scheduledTime": "19:06",
@@ -7048,6 +8209,15 @@
       "flightNumber": "3298",
       "originIcao": "KSEA",
       "destinationIcao": "KSLC"
+    },
+    {
+      "id": "t100-qx-arrival-kgeg-f-002",
+      "scheduledTime": "19:07",
+      "category": "arrival",
+      "originIcao": "KGEG",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "1906"
     },
     {
       "id": "arrival-as500-ind-sea",
@@ -7122,6 +8292,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-qx-arrival-kalw-f-001",
+      "scheduledTime": "19:13",
+      "category": "arrival",
+      "originIcao": "KALW",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "4309"
+    },
+    {
       "id": "arrival-as226-anc-sea",
       "category": "arrival",
       "scheduledTime": "19:18",
@@ -7138,6 +8317,15 @@
       "flightNumber": "4717",
       "originIcao": "KLAS",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-qx-departure-cyvr-f-001",
+      "scheduledTime": "19:22",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "CYVR",
+      "airlineIcao": "qxe",
+      "flightNumber": "5403"
     },
     {
       "id": "departure-as1408-sea-bur",
@@ -7174,6 +8362,15 @@
       "flightNumber": "1061",
       "originIcao": "PAFA",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-qx-arrival-cyeg-f-001",
+      "scheduledTime": "19:28",
+      "category": "arrival",
+      "originIcao": "CYEG",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "1003"
     },
     {
       "id": "arrival-as443-phl-sea",
@@ -7248,6 +8445,15 @@
       "destinationIcao": "KBOI"
     },
     {
+      "id": "t100-am-arrival-mmmx-f-001",
+      "scheduledTime": "19:40",
+      "category": "arrival",
+      "originIcao": "MMMX",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "amx",
+      "flightNumber": "9900"
+    },
+    {
       "id": "arrival-as216-cle-sea",
       "category": "arrival",
       "scheduledTime": "19:41",
@@ -7309,6 +8515,15 @@
       "flightNumber": "356",
       "originIcao": "KEWR",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-ei-departure-eidw-f-001",
+      "scheduledTime": "19:49",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "EIDW",
+      "airlineIcao": "ein",
+      "flightNumber": "2243"
     },
     {
       "id": "departure-as1342-sea-geg",
@@ -7399,6 +8614,33 @@
       "flightNumber": "2890",
       "originIcao": "KSEA",
       "destinationIcao": "KOAK"
+    },
+    {
+      "id": "t100-fi-departure-bikf-f-001",
+      "scheduledTime": "19:55",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "BIKF",
+      "airlineIcao": "ice",
+      "flightNumber": "2690"
+    },
+    {
+      "id": "t100-fx-arrival-kmem-g-002",
+      "scheduledTime": "19:56",
+      "category": "arrival",
+      "originIcao": "KMEM",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "fdx",
+      "flightNumber": "1789"
+    },
+    {
+      "id": "t100-qx-departure-khln-f-001",
+      "scheduledTime": "19:56",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KHLN",
+      "airlineIcao": "qxe",
+      "flightNumber": "9196"
     },
     {
       "id": "departure-oo3677-sea-geg",
@@ -7509,6 +8751,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-fx-arrival-koak-g-001",
+      "scheduledTime": "20:10",
+      "category": "arrival",
+      "originIcao": "KOAK",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "fdx",
+      "flightNumber": "6998"
+    },
+    {
       "id": "arrival-dl714-atl-sea",
       "category": "arrival",
       "scheduledTime": "20:11",
@@ -7554,6 +8805,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-qx-departure-kboi-f-002",
+      "scheduledTime": "20:14",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KBOI",
+      "airlineIcao": "qxe",
+      "flightNumber": "9893"
+    },
+    {
       "id": "arrival-as450-cmh-sea",
       "category": "arrival",
       "scheduledTime": "20:15",
@@ -7597,6 +8857,15 @@
       "flightNumber": "272",
       "originIcao": "PANC",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-sy-arrival-kmsp-f-001",
+      "scheduledTime": "20:18",
+      "category": "arrival",
+      "originIcao": "KMSP",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "scx",
+      "flightNumber": "6512"
     },
     {
       "id": "arrival-as249-den-sea",
@@ -7716,6 +8985,15 @@
       "destinationIcao": "KSMF"
     },
     {
+      "id": "t100-qx-arrival-keug-f-001",
+      "scheduledTime": "20:25",
+      "category": "arrival",
+      "originIcao": "KEUG",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "9010"
+    },
+    {
       "id": "arrival-dl2640-lax-sea",
       "category": "arrival",
       "scheduledTime": "20:27",
@@ -7723,6 +9001,15 @@
       "flightNumber": "2640",
       "originIcao": "KLAX",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-am-departure-mmmx-f-001",
+      "scheduledTime": "20:27",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "MMMX",
+      "airlineIcao": "amx",
+      "flightNumber": "4956"
     },
     {
       "id": "departure-as1880-sea-fai",
@@ -7851,6 +9138,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-kj-departure-rksi-g-001",
+      "scheduledTime": "20:35",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "RKSI",
+      "airlineIcao": "aih",
+      "flightNumber": "9241"
+    },
+    {
       "id": "arrival-as1508-fai-sea",
       "category": "arrival",
       "scheduledTime": "20:36",
@@ -7867,6 +9163,15 @@
       "flightNumber": "740",
       "originIcao": "KJFK",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-fi-arrival-bikf-f-001",
+      "scheduledTime": "20:36",
+      "category": "arrival",
+      "originIcao": "BIKF",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "ice",
+      "flightNumber": "3584"
     },
     {
       "id": "arrival-aa3105-ord-sea",
@@ -7923,6 +9228,15 @@
       "destinationIcao": "KMIA"
     },
     {
+      "id": "t100-ke-arrival-kord-g-001",
+      "scheduledTime": "20:45",
+      "category": "arrival",
+      "originIcao": "KORD",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "kal",
+      "flightNumber": "9183"
+    },
+    {
       "id": "arrival-dl2442-phx-sea",
       "category": "arrival",
       "scheduledTime": "20:46",
@@ -7948,6 +9262,15 @@
       "flightNumber": "326",
       "originIcao": "KIAD",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-qx-arrival-kgtf-f-001",
+      "scheduledTime": "20:47",
+      "category": "arrival",
+      "originIcao": "KGTF",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "1537"
     },
     {
       "id": "arrival-dl881-msp-sea",
@@ -7984,6 +9307,15 @@
       "flightNumber": "644",
       "originIcao": "KSEA",
       "destinationIcao": "KPHX"
+    },
+    {
+      "id": "t100-ws-departure-cyyc-f-001",
+      "scheduledTime": "20:51",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "CYYC",
+      "airlineIcao": "wja",
+      "flightNumber": "9923"
     },
     {
       "id": "departure-as736-sea-rno",
@@ -8076,6 +9408,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-pr-arrival-rpll-f-001",
+      "scheduledTime": "21:04",
+      "category": "arrival",
+      "originIcao": "RPLL",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "pal",
+      "flightNumber": "5688"
+    },
+    {
       "id": "arrival-as268-anc-sea",
       "category": "arrival",
       "scheduledTime": "21:05",
@@ -8092,6 +9433,15 @@
       "flightNumber": "4307",
       "originIcao": "KPHX",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-l7-arrival-klax-g-001",
+      "scheduledTime": "21:05",
+      "category": "arrival",
+      "originIcao": "KLAX",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "lco",
+      "flightNumber": "1949"
     },
     {
       "id": "arrival-as469-bna-sea",
@@ -8157,6 +9507,15 @@
       "destinationIcao": "PASI"
     },
     {
+      "id": "t100-qx-departure-kpsc-f-002",
+      "scheduledTime": "21:19",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KPSC",
+      "airlineIcao": "qxe",
+      "flightNumber": "3830"
+    },
+    {
       "id": "arrival-as703-bur-sea",
       "category": "arrival",
       "scheduledTime": "21:20",
@@ -8200,6 +9559,15 @@
       "flightNumber": "234",
       "originIcao": "PHLI",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-kj-arrival-kdfw-g-001",
+      "scheduledTime": "21:21",
+      "category": "arrival",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "aih",
+      "flightNumber": "1729"
     },
     {
       "id": "arrival-oo3832-geg-sea",
@@ -8274,6 +9642,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-qx-departure-keug-f-002",
+      "scheduledTime": "21:30",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KEUG",
+      "airlineIcao": "qxe",
+      "flightNumber": "1380"
+    },
+    {
       "id": "departure-as394-sea-mco",
       "category": "departure",
       "scheduledTime": "21:33",
@@ -8308,6 +9685,15 @@
       "flightNumber": "822",
       "originIcao": "PHNL",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-ac-arrival-cyyz-f-001",
+      "scheduledTime": "21:34",
+      "category": "arrival",
+      "originIcao": "CYYZ",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "aca",
+      "flightNumber": "6465"
     },
     {
       "id": "arrival-aa2522-phl-sea",
@@ -8391,6 +9777,15 @@
       "destinationIcao": "KBWI"
     },
     {
+      "id": "t100-ke-departure-rksi-f-001",
+      "scheduledTime": "21:36",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "RKSI",
+      "airlineIcao": "kal",
+      "flightNumber": "8969"
+    },
+    {
       "id": "departure-dl2635-sea-sfo",
       "category": "departure",
       "scheduledTime": "21:39",
@@ -8452,6 +9847,15 @@
       "flightNumber": "2956",
       "originIcao": "KLAS",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-qx-arrival-kelp-f-001",
+      "scheduledTime": "21:52",
+      "category": "arrival",
+      "originIcao": "KELP",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "9202"
     },
     {
       "id": "arrival-oo3923-pdx-sea",
@@ -8589,6 +9993,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-qx-arrival-kpsc-f-002",
+      "scheduledTime": "22:00",
+      "category": "arrival",
+      "originIcao": "KPSC",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "6459"
+    },
+    {
       "id": "departure-as522-sea-phl",
       "category": "departure",
       "scheduledTime": "22:02",
@@ -8605,6 +10018,15 @@
       "flightNumber": "2613",
       "originIcao": "KSAN",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-qx-arrival-kykm-f-001",
+      "scheduledTime": "22:04",
+      "category": "arrival",
+      "originIcao": "KYKM",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "982"
     },
     {
       "id": "arrival-dl1551-lax-sea",
@@ -8641,6 +10063,24 @@
       "flightNumber": "298",
       "originIcao": "KSEA",
       "destinationIcao": "KCVG"
+    },
+    {
+      "id": "t100-ws-arrival-cyyc-f-002",
+      "scheduledTime": "22:06",
+      "category": "arrival",
+      "originIcao": "CYYC",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "wja",
+      "flightNumber": "5926"
+    },
+    {
+      "id": "t100-ba-departure-egll-f-001",
+      "scheduledTime": "22:08",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "EGLL",
+      "airlineIcao": "baw",
+      "flightNumber": "1094"
     },
     {
       "id": "arrival-dl506-mia-sea",
@@ -8742,6 +10182,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-qx-departure-kgeg-f-002",
+      "scheduledTime": "22:33",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KGEG",
+      "airlineIcao": "qxe",
+      "flightNumber": "7570"
+    },
+    {
       "id": "departure-aa2522-sea-phl",
       "category": "departure",
       "scheduledTime": "22:35",
@@ -8758,6 +10207,15 @@
       "flightNumber": "3855",
       "originIcao": "KSEA",
       "destinationIcao": "KEUG"
+    },
+    {
+      "id": "t100-qx-arrival-kmfr-f-001",
+      "scheduledTime": "22:35",
+      "category": "arrival",
+      "originIcao": "KMFR",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "9299"
     },
     {
       "id": "departure-as77-sea-pit",
@@ -8868,6 +10326,15 @@
       "destinationIcao": "KBNA"
     },
     {
+      "id": "t100-qx-departure-kpsc-f-003",
+      "scheduledTime": "22:47",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KPSC",
+      "airlineIcao": "qxe",
+      "flightNumber": "8683"
+    },
+    {
       "id": "departure-oo4472-sea-pdx",
       "category": "departure",
       "scheduledTime": "22:50",
@@ -8911,6 +10378,24 @@
       "flightNumber": "3259",
       "originIcao": "KPHL",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-lh-arrival-eddf-f-001",
+      "scheduledTime": "22:56",
+      "category": "arrival",
+      "originIcao": "EDDF",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "dlh",
+      "flightNumber": "6264"
+    },
+    {
+      "id": "t100-qx-departure-kalw-f-001",
+      "scheduledTime": "22:57",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KALW",
+      "airlineIcao": "qxe",
+      "flightNumber": "7765"
     },
     {
       "id": "arrival-as614-lax-sea",
@@ -9030,6 +10515,15 @@
       "destinationIcao": "KSEA"
     },
     {
+      "id": "t100-qk-arrival-cyvr-f-003",
+      "scheduledTime": "23:07",
+      "category": "arrival",
+      "originIcao": "CYVR",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "jza",
+      "flightNumber": "3677"
+    },
+    {
       "id": "arrival-dl688-jfk-sea",
       "category": "arrival",
       "scheduledTime": "23:08",
@@ -9075,6 +10569,24 @@
       "destinationIcao": "KORD"
     },
     {
+      "id": "t100-qr-arrival-othh-f-001",
+      "scheduledTime": "23:12",
+      "category": "arrival",
+      "originIcao": "OTHH",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qtr",
+      "flightNumber": "8622"
+    },
+    {
+      "id": "t100-qx-departure-kykm-f-001",
+      "scheduledTime": "23:12",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KYKM",
+      "airlineIcao": "qxe",
+      "flightNumber": "5868"
+    },
+    {
       "id": "departure-as490-sea-msy",
       "category": "departure",
       "scheduledTime": "23:13",
@@ -9082,6 +10594,15 @@
       "flightNumber": "490",
       "originIcao": "KSEA",
       "destinationIcao": "KMSY"
+    },
+    {
+      "id": "t100-qx-departure-kgpi-f-001",
+      "scheduledTime": "23:14",
+      "category": "departure",
+      "originIcao": "KSEA",
+      "destinationIcao": "KGPI",
+      "airlineIcao": "qxe",
+      "flightNumber": "3053"
     },
     {
       "id": "arrival-wn1843-oak-sea",
@@ -9217,6 +10738,15 @@
       "flightNumber": "3856",
       "originIcao": "KDEN",
       "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-tk-arrival-ltfm-f-001",
+      "scheduledTime": "23:35",
+      "category": "arrival",
+      "originIcao": "LTFM",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "thy",
+      "flightNumber": "3507"
     },
     {
       "id": "arrival-as1333-anc-sea",

@@ -646,4 +646,4 @@ if (require.main === module) {
     main();
 }
 
-module.exports = { validateAssets };
+module.exports = { validateAssets, validateScheduleDocument };

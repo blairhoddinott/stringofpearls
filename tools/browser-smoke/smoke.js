@@ -78,6 +78,8 @@ async function main() {
         const sectorSelect = shiftStartDialog.locator('[data-shift-sector]');
         const airportSelect = shiftStartDialog.locator('[data-shift-airport]');
         const lengthSelect = shiftStartDialog.locator('[data-shift-length]');
+        const trafficVolumeRange = shiftStartDialog.locator('[data-shift-traffic-volume]');
+        const trafficVolumeOutput = shiftStartDialog.locator('[data-shift-traffic-volume-output]');
         const startShiftButton = shiftStartDialog.locator('[data-shift-start-button]');
 
         await shiftStartDialog.waitFor({ state: 'visible', timeout: 30000 });
@@ -87,6 +89,11 @@ async function main() {
         assert.deepStrictEqual(await lengthSelect.locator('option').allTextContents(), ['30 minutes', '60 minutes']);
         assert.strictEqual(await airportSelect.inputValue(), 'ksea');
         assert.strictEqual(await lengthSelect.inputValue(), '30');
+        assert.strictEqual(await trafficVolumeRange.getAttribute('min'), '25');
+        assert.strictEqual(await trafficVolumeRange.getAttribute('max'), '100');
+        assert.strictEqual(await trafficVolumeRange.getAttribute('step'), '25');
+        assert.strictEqual(await trafficVolumeRange.inputValue(), '100');
+        assert.strictEqual(await trafficVolumeOutput.textContent(), '100%');
         assert.strictEqual(await page.locator(':focus').getAttribute('data-shift-sector'), '');
         assert.notStrictEqual(await sectorSelect.evaluate((element) => getComputedStyle(element).outlineStyle), 'none');
 
@@ -96,6 +103,8 @@ async function main() {
         await page.keyboard.press('Tab');
         assert.strictEqual(await page.locator(':focus').getAttribute('data-shift-length'), '');
         await page.keyboard.press('Tab');
+        assert.strictEqual(await page.locator(':focus').getAttribute('data-shift-traffic-volume'), '');
+        await page.keyboard.press('Tab');
         assert.strictEqual(await page.locator(':focus').getAttribute('data-shift-start-button'), '');
         await page.keyboard.press('Tab');
         assert.strictEqual(await page.locator(':focus').getAttribute('data-shift-sector'), '');
@@ -104,6 +113,8 @@ async function main() {
 
         // First shift: Approach at the already-loaded default airport.
         await sectorSelect.selectOption('approach');
+        await trafficVolumeRange.fill('25');
+        assert.strictEqual(await trafficVolumeOutput.textContent(), '25%');
         await startShiftButton.click();
         await shiftStartDialog.waitFor({ state: 'hidden', timeout: 30000 });
         await page.locator('.js-stripViewArrivals-section').waitFor({ state: 'visible' });
@@ -125,10 +136,14 @@ async function main() {
         );
         await shiftResultsDialog.locator('[data-shift-start-another]').click();
         await shiftStartDialog.waitFor({ state: 'visible', timeout: 30000 });
+        assert.strictEqual(await trafficVolumeRange.inputValue(), '100');
+        assert.strictEqual(await trafficVolumeOutput.textContent(), '100%');
 
         // Second shift: Departure at an airport that must load through the real lifecycle.
         await sectorSelect.selectOption('departure');
         await airportSelect.selectOption(targetAirport);
+        await trafficVolumeRange.fill('50');
+        assert.strictEqual(await trafficVolumeOutput.textContent(), '50%');
         const selectedAirportResponse = page.waitForResponse((candidate) => {
             return new URL(candidate.url()).pathname.endsWith(`/assets/airports/${targetAirport}.json`) && candidate.status() === 200;
         });

@@ -1,0 +1,1554 @@
+{
+  "schemaVersion": 1,
+  "airportIcao": "KRIC",
+  "timezone": "America/New_York",
+  "sampleDate": "2026-07-15",
+  "source": {
+    "name": "US DOT BTS On-Time Performance + T-100 Segment (All Carriers)",
+    "url": "https://transtats.bts.gov/DL_SelectFields.aspx?QO_fu146_anzr=Nv4+Pn44vr45&gnoyr_VQ=FMG",
+    "retrievedAt": "2026-09-27",
+    "license": "U.S. Government work in the public domain (17 U.S.C. §105); OurAirports code data is public domain.",
+    "coverage": "Exact On-Time movements are retained; 65 representative movements were deterministically synthesized from 2026-05 T-100 performed-departure aggregates. General aviation is excluded."
+  },
+  "flights": [
+    {
+      "id": "t100-g7-arrival-kewr-f-001",
+      "scheduledTime": "00:03",
+      "category": "arrival",
+      "originIcao": "KEWR",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "gjs",
+      "flightNumber": "9835"
+    },
+    {
+      "id": "arrival-aa1882-clt-ric",
+      "category": "arrival",
+      "scheduledTime": "00:04",
+      "airlineIcao": "aal",
+      "flightNumber": "1882",
+      "originIcao": "KCLT",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "arrival-yx4698-ord-ric",
+      "category": "arrival",
+      "scheduledTime": "00:39",
+      "airlineIcao": "rpa",
+      "flightNumber": "4698",
+      "originIcao": "KORD",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "arrival-dl1175-atl-ric",
+      "category": "arrival",
+      "scheduledTime": "00:51",
+      "airlineIcao": "dal",
+      "flightNumber": "1175",
+      "originIcao": "KATL",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-9e-arrival-kjfk-f-001",
+      "scheduledTime": "00:52",
+      "category": "arrival",
+      "originIcao": "KJFK",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "edv",
+      "flightNumber": "9812"
+    },
+    {
+      "id": "t100-9e-departure-kjfk-f-002",
+      "scheduledTime": "05:00",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KJFK",
+      "airlineIcao": "edv",
+      "flightNumber": "7254"
+    },
+    {
+      "id": "departure-aa549-ric-clt",
+      "category": "departure",
+      "scheduledTime": "05:02",
+      "airlineIcao": "aal",
+      "flightNumber": "549",
+      "originIcao": "KRIC",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-dl1460-ric-atl",
+      "category": "departure",
+      "scheduledTime": "05:45",
+      "airlineIcao": "dal",
+      "flightNumber": "1460",
+      "originIcao": "KRIC",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-mq-departure-kord-f-002",
+      "scheduledTime": "05:58",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KORD",
+      "airlineIcao": "eny",
+      "flightNumber": "821"
+    },
+    {
+      "id": "t100-mx-departure-ktpa-f-001",
+      "scheduledTime": "05:58",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KTPA",
+      "airlineIcao": "mxy",
+      "flightNumber": "2547"
+    },
+    {
+      "id": "departure-ua224-ric-ord",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "ual",
+      "flightNumber": "224",
+      "originIcao": "KRIC",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-yx4451-ric-lga",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "rpa",
+      "flightNumber": "4451",
+      "originIcao": "KRIC",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-yx5811-ric-lga",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "rpa",
+      "flightNumber": "5811",
+      "originIcao": "KRIC",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-yx5697-ric-bos",
+      "category": "departure",
+      "scheduledTime": "06:04",
+      "airlineIcao": "rpa",
+      "flightNumber": "5697",
+      "originIcao": "KRIC",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "t100-pt-departure-kphl-f-005",
+      "scheduledTime": "06:07",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KPHL",
+      "airlineIcao": "pdt",
+      "flightNumber": "3368"
+    },
+    {
+      "id": "departure-wn3438-ric-bwi",
+      "category": "departure",
+      "scheduledTime": "06:10",
+      "airlineIcao": "swa",
+      "flightNumber": "3438",
+      "originIcao": "KRIC",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "departure-ua2464-ric-iah",
+      "category": "departure",
+      "scheduledTime": "06:15",
+      "airlineIcao": "ual",
+      "flightNumber": "2464",
+      "originIcao": "KRIC",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "t100-g7-departure-kiad-f-003",
+      "scheduledTime": "06:18",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KIAD",
+      "airlineIcao": "gjs",
+      "flightNumber": "2903"
+    },
+    {
+      "id": "t100-g7-departure-kewr-f-003",
+      "scheduledTime": "06:24",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KEWR",
+      "airlineIcao": "gjs",
+      "flightNumber": "5667"
+    },
+    {
+      "id": "departure-aa604-ric-mia",
+      "category": "departure",
+      "scheduledTime": "06:25",
+      "airlineIcao": "aal",
+      "flightNumber": "604",
+      "originIcao": "KRIC",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa1063-ric-clt",
+      "category": "departure",
+      "scheduledTime": "06:30",
+      "airlineIcao": "aal",
+      "flightNumber": "1063",
+      "originIcao": "KRIC",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-dl1402-ric-atl",
+      "category": "departure",
+      "scheduledTime": "06:55",
+      "airlineIcao": "dal",
+      "flightNumber": "1402",
+      "originIcao": "KRIC",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-yv-departure-kiah-f-002",
+      "scheduledTime": "06:59",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KIAH",
+      "airlineIcao": "ash",
+      "flightNumber": "4948"
+    },
+    {
+      "id": "departure-yx4688-ric-ord",
+      "category": "departure",
+      "scheduledTime": "07:02",
+      "airlineIcao": "rpa",
+      "flightNumber": "4688",
+      "originIcao": "KRIC",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-5x-departure-korf-g-001",
+      "scheduledTime": "07:06",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KORF",
+      "airlineIcao": "ups",
+      "flightNumber": "3773"
+    },
+    {
+      "id": "departure-aa2204-ric-dfw",
+      "category": "departure",
+      "scheduledTime": "07:08",
+      "airlineIcao": "aal",
+      "flightNumber": "2204",
+      "originIcao": "KRIC",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-wn1102-ric-mdw",
+      "category": "departure",
+      "scheduledTime": "07:25",
+      "airlineIcao": "swa",
+      "flightNumber": "1102",
+      "originIcao": "KRIC",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "t100-9e-departure-kdtw-f-001",
+      "scheduledTime": "07:26",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KDTW",
+      "airlineIcao": "edv",
+      "flightNumber": "4358"
+    },
+    {
+      "id": "departure-dl1415-ric-atl",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "dal",
+      "flightNumber": "1415",
+      "originIcao": "KRIC",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-mq-departure-kmia-f-001",
+      "scheduledTime": "08:08",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "eny",
+      "flightNumber": "3132"
+    },
+    {
+      "id": "departure-b61145-ric-fll",
+      "category": "departure",
+      "scheduledTime": "08:10",
+      "airlineIcao": "jbu",
+      "flightNumber": "1145",
+      "originIcao": "KRIC",
+      "destinationIcao": "KFLL"
+    },
+    {
+      "id": "departure-ua2493-ric-den",
+      "category": "departure",
+      "scheduledTime": "08:15",
+      "airlineIcao": "ual",
+      "flightNumber": "2493",
+      "originIcao": "KRIC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-pt-departure-kphl-f-003",
+      "scheduledTime": "08:17",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KPHL",
+      "airlineIcao": "pdt",
+      "flightNumber": "9593"
+    },
+    {
+      "id": "arrival-aa2415-clt-ric",
+      "category": "arrival",
+      "scheduledTime": "08:21",
+      "airlineIcao": "aal",
+      "flightNumber": "2415",
+      "originIcao": "KCLT",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "arrival-b61281-bos-ric",
+      "category": "arrival",
+      "scheduledTime": "08:48",
+      "airlineIcao": "jbu",
+      "flightNumber": "1281",
+      "originIcao": "KBOS",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-pt-arrival-kphl-f-001",
+      "scheduledTime": "08:48",
+      "category": "arrival",
+      "originIcao": "KPHL",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "pdt",
+      "flightNumber": "3092"
+    },
+    {
+      "id": "arrival-yx5664-lga-ric",
+      "category": "arrival",
+      "scheduledTime": "08:55",
+      "airlineIcao": "rpa",
+      "flightNumber": "5664",
+      "originIcao": "KLGA",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-fx-arrival-kmem-g-001",
+      "scheduledTime": "08:59",
+      "category": "arrival",
+      "originIcao": "KMEM",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "fdx",
+      "flightNumber": "4022"
+    },
+    {
+      "id": "arrival-b6770-mco-ric",
+      "category": "arrival",
+      "scheduledTime": "09:03",
+      "airlineIcao": "jbu",
+      "flightNumber": "770",
+      "originIcao": "KMCO",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "departure-aa2415-ric-clt",
+      "category": "departure",
+      "scheduledTime": "09:07",
+      "airlineIcao": "aal",
+      "flightNumber": "2415",
+      "originIcao": "KRIC",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "arrival-dl1462-atl-ric",
+      "category": "arrival",
+      "scheduledTime": "09:12",
+      "airlineIcao": "dal",
+      "flightNumber": "1462",
+      "originIcao": "KATL",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-pt-arrival-kphl-f-003",
+      "scheduledTime": "09:13",
+      "category": "arrival",
+      "originIcao": "KPHL",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "pdt",
+      "flightNumber": "4435"
+    },
+    {
+      "id": "arrival-yx4486-lga-ric",
+      "category": "arrival",
+      "scheduledTime": "09:32",
+      "airlineIcao": "rpa",
+      "flightNumber": "4486",
+      "originIcao": "KLGA",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "departure-yx5664-ric-lga",
+      "category": "departure",
+      "scheduledTime": "09:35",
+      "airlineIcao": "rpa",
+      "flightNumber": "5664",
+      "originIcao": "KRIC",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "t100-9e-departure-klga-f-002",
+      "scheduledTime": "09:36",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KLGA",
+      "airlineIcao": "edv",
+      "flightNumber": "6004"
+    },
+    {
+      "id": "departure-b61282-ric-bos",
+      "category": "departure",
+      "scheduledTime": "09:38",
+      "airlineIcao": "jbu",
+      "flightNumber": "1282",
+      "originIcao": "KRIC",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "arrival-yx3639-ewr-ric",
+      "category": "arrival",
+      "scheduledTime": "09:49",
+      "airlineIcao": "rpa",
+      "flightNumber": "3639",
+      "originIcao": "KEWR",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-mq-arrival-kord-f-002",
+      "scheduledTime": "09:49",
+      "category": "arrival",
+      "originIcao": "KORD",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "eny",
+      "flightNumber": "9791"
+    },
+    {
+      "id": "t100-g7-departure-kiad-f-001",
+      "scheduledTime": "09:55",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KIAD",
+      "airlineIcao": "gjs",
+      "flightNumber": "1468"
+    },
+    {
+      "id": "departure-b6769-ric-mco",
+      "category": "departure",
+      "scheduledTime": "09:58",
+      "airlineIcao": "jbu",
+      "flightNumber": "769",
+      "originIcao": "KRIC",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-yx4486-ric-lga",
+      "category": "departure",
+      "scheduledTime": "10:03",
+      "airlineIcao": "rpa",
+      "flightNumber": "4486",
+      "originIcao": "KRIC",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "t100-g7-departure-kord-f-001",
+      "scheduledTime": "10:03",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KORD",
+      "airlineIcao": "gjs",
+      "flightNumber": "1605"
+    },
+    {
+      "id": "departure-dl1462-ric-atl",
+      "category": "departure",
+      "scheduledTime": "10:19",
+      "airlineIcao": "dal",
+      "flightNumber": "1462",
+      "originIcao": "KRIC",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-mx-departure-kpvd-f-001",
+      "scheduledTime": "10:27",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KPVD",
+      "airlineIcao": "mxy",
+      "flightNumber": "8673"
+    },
+    {
+      "id": "departure-yx3595-ric-ord",
+      "category": "departure",
+      "scheduledTime": "10:30",
+      "airlineIcao": "rpa",
+      "flightNumber": "3595",
+      "originIcao": "KRIC",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-yx5622-bos-ric",
+      "category": "arrival",
+      "scheduledTime": "10:53",
+      "airlineIcao": "rpa",
+      "flightNumber": "5622",
+      "originIcao": "KBOS",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-mx-arrival-klas-f-001",
+      "scheduledTime": "10:55",
+      "category": "arrival",
+      "originIcao": "KLAS",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "mxy",
+      "flightNumber": "6124"
+    },
+    {
+      "id": "arrival-b61246-fll-ric",
+      "category": "arrival",
+      "scheduledTime": "11:27",
+      "airlineIcao": "jbu",
+      "flightNumber": "1246",
+      "originIcao": "KFLL",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "arrival-yx4500-ord-ric",
+      "category": "arrival",
+      "scheduledTime": "11:30",
+      "airlineIcao": "rpa",
+      "flightNumber": "4500",
+      "originIcao": "KORD",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-g7-arrival-kiad-f-002",
+      "scheduledTime": "11:31",
+      "category": "arrival",
+      "originIcao": "KIAD",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "gjs",
+      "flightNumber": "6335"
+    },
+    {
+      "id": "departure-yx5622-ric-bos",
+      "category": "departure",
+      "scheduledTime": "11:36",
+      "airlineIcao": "rpa",
+      "flightNumber": "5622",
+      "originIcao": "KRIC",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "t100-yv-departure-kiah-f-001",
+      "scheduledTime": "11:37",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KIAH",
+      "airlineIcao": "ash",
+      "flightNumber": "7928"
+    },
+    {
+      "id": "arrival-wn705-bwi-ric",
+      "category": "arrival",
+      "scheduledTime": "11:40",
+      "airlineIcao": "swa",
+      "flightNumber": "705",
+      "originIcao": "KBWI",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "arrival-dl3166-dtw-ric",
+      "category": "arrival",
+      "scheduledTime": "11:47",
+      "airlineIcao": "dal",
+      "flightNumber": "3166",
+      "originIcao": "KDTW",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-5x-arrival-ksdf-g-001",
+      "scheduledTime": "11:51",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "ups",
+      "flightNumber": "7745"
+    },
+    {
+      "id": "arrival-dl2650-atl-ric",
+      "category": "arrival",
+      "scheduledTime": "11:56",
+      "airlineIcao": "dal",
+      "flightNumber": "2650",
+      "originIcao": "KATL",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "departure-yx4500-ric-ord",
+      "category": "departure",
+      "scheduledTime": "12:00",
+      "airlineIcao": "rpa",
+      "flightNumber": "4500",
+      "originIcao": "KRIC",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-mx-arrival-kpvd-f-001",
+      "scheduledTime": "12:00",
+      "category": "arrival",
+      "originIcao": "KPVD",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "mxy",
+      "flightNumber": "2718"
+    },
+    {
+      "id": "departure-b61245-ric-fll",
+      "category": "departure",
+      "scheduledTime": "12:17",
+      "airlineIcao": "jbu",
+      "flightNumber": "1245",
+      "originIcao": "KRIC",
+      "destinationIcao": "KFLL"
+    },
+    {
+      "id": "departure-wn705-ric-bna",
+      "category": "departure",
+      "scheduledTime": "12:20",
+      "airlineIcao": "swa",
+      "flightNumber": "705",
+      "originIcao": "KRIC",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-pt-departure-kphl-f-002",
+      "scheduledTime": "12:20",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KPHL",
+      "airlineIcao": "pdt",
+      "flightNumber": "5904"
+    },
+    {
+      "id": "arrival-oh5368-clt-ric",
+      "category": "arrival",
+      "scheduledTime": "12:32",
+      "airlineIcao": "jia",
+      "flightNumber": "5368",
+      "originIcao": "KCLT",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "departure-dl3166-ric-dtw",
+      "category": "departure",
+      "scheduledTime": "12:32",
+      "airlineIcao": "dal",
+      "flightNumber": "3166",
+      "originIcao": "KRIC",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "t100-pt-departure-kphl-f-001",
+      "scheduledTime": "12:32",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KPHL",
+      "airlineIcao": "pdt",
+      "flightNumber": "271"
+    },
+    {
+      "id": "arrival-yx4501-lga-ric",
+      "category": "arrival",
+      "scheduledTime": "12:41",
+      "airlineIcao": "rpa",
+      "flightNumber": "4501",
+      "originIcao": "KLGA",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-g7-arrival-kiad-f-001",
+      "scheduledTime": "12:44",
+      "category": "arrival",
+      "originIcao": "KIAD",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "gjs",
+      "flightNumber": "7661"
+    },
+    {
+      "id": "t100-5x-departure-ksdf-g-001",
+      "scheduledTime": "12:59",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KSDF",
+      "airlineIcao": "ups",
+      "flightNumber": "7831"
+    },
+    {
+      "id": "departure-dl2650-ric-atl",
+      "category": "departure",
+      "scheduledTime": "13:03",
+      "airlineIcao": "dal",
+      "flightNumber": "2650",
+      "originIcao": "KRIC",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-oh5368-ric-clt",
+      "category": "departure",
+      "scheduledTime": "13:08",
+      "airlineIcao": "jia",
+      "flightNumber": "5368",
+      "originIcao": "KRIC",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-yx4501-ric-lga",
+      "category": "departure",
+      "scheduledTime": "13:32",
+      "airlineIcao": "rpa",
+      "flightNumber": "4501",
+      "originIcao": "KRIC",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "t100-9e-departure-kjfk-f-001",
+      "scheduledTime": "13:33",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KJFK",
+      "airlineIcao": "edv",
+      "flightNumber": "938"
+    },
+    {
+      "id": "arrival-b6670-mco-ric",
+      "category": "arrival",
+      "scheduledTime": "13:40",
+      "airlineIcao": "jbu",
+      "flightNumber": "670",
+      "originIcao": "KMCO",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-9e-arrival-klga-f-002",
+      "scheduledTime": "13:55",
+      "category": "arrival",
+      "originIcao": "KLGA",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "edv",
+      "flightNumber": "6289"
+    },
+    {
+      "id": "arrival-yx3704-ord-ric",
+      "category": "arrival",
+      "scheduledTime": "13:57",
+      "airlineIcao": "rpa",
+      "flightNumber": "3704",
+      "originIcao": "KORD",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-mx-arrival-ktpa-f-001",
+      "scheduledTime": "14:01",
+      "category": "arrival",
+      "originIcao": "KTPA",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "mxy",
+      "flightNumber": "5042"
+    },
+    {
+      "id": "arrival-dl1437-atl-ric",
+      "category": "arrival",
+      "scheduledTime": "14:05",
+      "airlineIcao": "dal",
+      "flightNumber": "1437",
+      "originIcao": "KATL",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "arrival-aa2413-dfw-ric",
+      "category": "arrival",
+      "scheduledTime": "14:24",
+      "airlineIcao": "aal",
+      "flightNumber": "2413",
+      "originIcao": "KDFW",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-mq-departure-kord-f-001",
+      "scheduledTime": "14:26",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KORD",
+      "airlineIcao": "eny",
+      "flightNumber": "728"
+    },
+    {
+      "id": "departure-b6969-ric-mco",
+      "category": "departure",
+      "scheduledTime": "14:30",
+      "airlineIcao": "jbu",
+      "flightNumber": "969",
+      "originIcao": "KRIC",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-yx3415-ric-ewr",
+      "category": "departure",
+      "scheduledTime": "14:38",
+      "airlineIcao": "rpa",
+      "flightNumber": "3415",
+      "originIcao": "KRIC",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "t100-g7-arrival-kord-f-001",
+      "scheduledTime": "14:56",
+      "category": "arrival",
+      "originIcao": "KORD",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "gjs",
+      "flightNumber": "1772"
+    },
+    {
+      "id": "arrival-wn267-bna-ric",
+      "category": "arrival",
+      "scheduledTime": "15:00",
+      "airlineIcao": "swa",
+      "flightNumber": "267",
+      "originIcao": "KBNA",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "arrival-oh5370-clt-ric",
+      "category": "arrival",
+      "scheduledTime": "15:08",
+      "airlineIcao": "jia",
+      "flightNumber": "5370",
+      "originIcao": "KCLT",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "departure-dl1437-ric-atl",
+      "category": "departure",
+      "scheduledTime": "15:10",
+      "airlineIcao": "dal",
+      "flightNumber": "1437",
+      "originIcao": "KRIC",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-fx-departure-kmem-g-001",
+      "scheduledTime": "15:10",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3492"
+    },
+    {
+      "id": "departure-aa2413-ric-dfw",
+      "category": "departure",
+      "scheduledTime": "15:19",
+      "airlineIcao": "aal",
+      "flightNumber": "2413",
+      "originIcao": "KRIC",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "t100-pt-departure-kphl-f-004",
+      "scheduledTime": "15:38",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KPHL",
+      "airlineIcao": "pdt",
+      "flightNumber": "2283"
+    },
+    {
+      "id": "departure-oh5370-ric-clt",
+      "category": "departure",
+      "scheduledTime": "15:39",
+      "airlineIcao": "jia",
+      "flightNumber": "5370",
+      "originIcao": "KRIC",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-wn2557-ric-den",
+      "category": "departure",
+      "scheduledTime": "15:40",
+      "airlineIcao": "swa",
+      "flightNumber": "2557",
+      "originIcao": "KRIC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-g7-departure-kiad-f-002",
+      "scheduledTime": "15:41",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KIAD",
+      "airlineIcao": "gjs",
+      "flightNumber": "8977"
+    },
+    {
+      "id": "arrival-wn1693-den-ric",
+      "category": "arrival",
+      "scheduledTime": "16:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1693",
+      "originIcao": "KDEN",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-g4-arrival-kpie-f-001",
+      "scheduledTime": "16:17",
+      "category": "arrival",
+      "originIcao": "KPIE",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "aay",
+      "flightNumber": "9917"
+    },
+    {
+      "id": "t100-g7-arrival-kewr-f-003",
+      "scheduledTime": "16:20",
+      "category": "arrival",
+      "originIcao": "KEWR",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "gjs",
+      "flightNumber": "3208"
+    },
+    {
+      "id": "arrival-oo4096-dtw-ric",
+      "category": "arrival",
+      "scheduledTime": "16:21",
+      "airlineIcao": "skw",
+      "flightNumber": "4096",
+      "originIcao": "KDTW",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "arrival-dl1214-atl-ric",
+      "category": "arrival",
+      "scheduledTime": "16:23",
+      "airlineIcao": "dal",
+      "flightNumber": "1214",
+      "originIcao": "KATL",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-mq-arrival-kord-f-001",
+      "scheduledTime": "16:23",
+      "category": "arrival",
+      "originIcao": "KORD",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "eny",
+      "flightNumber": "9729"
+    },
+    {
+      "id": "arrival-yx3610-ewr-ric",
+      "category": "arrival",
+      "scheduledTime": "16:27",
+      "airlineIcao": "rpa",
+      "flightNumber": "3610",
+      "originIcao": "KEWR",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "departure-wn1693-ric-bwi",
+      "category": "departure",
+      "scheduledTime": "16:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1693",
+      "originIcao": "KRIC",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "departure-oo4096-ric-dtw",
+      "category": "departure",
+      "scheduledTime": "17:01",
+      "airlineIcao": "skw",
+      "flightNumber": "4096",
+      "originIcao": "KRIC",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "t100-mx-departure-klax-f-001",
+      "scheduledTime": "17:02",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KLAX",
+      "airlineIcao": "mxy",
+      "flightNumber": "2132"
+    },
+    {
+      "id": "departure-yx3635-ric-ord",
+      "category": "departure",
+      "scheduledTime": "17:24",
+      "airlineIcao": "rpa",
+      "flightNumber": "3635",
+      "originIcao": "KRIC",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-dl3152-atl-ric",
+      "category": "arrival",
+      "scheduledTime": "17:25",
+      "airlineIcao": "dal",
+      "flightNumber": "3152",
+      "originIcao": "KATL",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-mx-arrival-krsw-f-001",
+      "scheduledTime": "17:25",
+      "category": "arrival",
+      "originIcao": "KRSW",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "mxy",
+      "flightNumber": "2606"
+    },
+    {
+      "id": "t100-mx-departure-klas-f-001",
+      "scheduledTime": "17:26",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KLAS",
+      "airlineIcao": "mxy",
+      "flightNumber": "4015"
+    },
+    {
+      "id": "departure-dl1214-ric-atl",
+      "category": "departure",
+      "scheduledTime": "17:28",
+      "airlineIcao": "dal",
+      "flightNumber": "1214",
+      "originIcao": "KRIC",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-b6781-bos-ric",
+      "category": "arrival",
+      "scheduledTime": "17:29",
+      "airlineIcao": "jbu",
+      "flightNumber": "781",
+      "originIcao": "KBOS",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "arrival-oh5478-clt-ric",
+      "category": "arrival",
+      "scheduledTime": "17:38",
+      "airlineIcao": "jia",
+      "flightNumber": "5478",
+      "originIcao": "KCLT",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-pt-arrival-kphl-f-004",
+      "scheduledTime": "17:39",
+      "category": "arrival",
+      "originIcao": "KPHL",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "pdt",
+      "flightNumber": "6320"
+    },
+    {
+      "id": "arrival-yx3523-ord-ric",
+      "category": "arrival",
+      "scheduledTime": "17:49",
+      "airlineIcao": "rpa",
+      "flightNumber": "3523",
+      "originIcao": "KORD",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "arrival-f91582-den-ric",
+      "category": "arrival",
+      "scheduledTime": "17:52",
+      "airlineIcao": "fft",
+      "flightNumber": "1582",
+      "originIcao": "KDEN",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-5x-arrival-kphl-g-001",
+      "scheduledTime": "17:56",
+      "category": "arrival",
+      "originIcao": "KPHL",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "ups",
+      "flightNumber": "7186"
+    },
+    {
+      "id": "t100-g7-departure-kewr-f-001",
+      "scheduledTime": "18:11",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KEWR",
+      "airlineIcao": "gjs",
+      "flightNumber": "3207"
+    },
+    {
+      "id": "t100-9e-arrival-kjfk-f-002",
+      "scheduledTime": "18:13",
+      "category": "arrival",
+      "originIcao": "KJFK",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "edv",
+      "flightNumber": "9277"
+    },
+    {
+      "id": "departure-oh5478-ric-clt",
+      "category": "departure",
+      "scheduledTime": "18:14",
+      "airlineIcao": "jia",
+      "flightNumber": "5478",
+      "originIcao": "KRIC",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "arrival-yx5665-bos-ric",
+      "category": "arrival",
+      "scheduledTime": "18:17",
+      "airlineIcao": "rpa",
+      "flightNumber": "5665",
+      "originIcao": "KBOS",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "departure-b6782-ric-bos",
+      "category": "departure",
+      "scheduledTime": "18:20",
+      "airlineIcao": "jbu",
+      "flightNumber": "782",
+      "originIcao": "KRIC",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "t100-g7-departure-kewr-f-002",
+      "scheduledTime": "18:26",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KEWR",
+      "airlineIcao": "gjs",
+      "flightNumber": "4556"
+    },
+    {
+      "id": "t100-9e-departure-klga-f-001",
+      "scheduledTime": "18:28",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KLGA",
+      "airlineIcao": "edv",
+      "flightNumber": "7477"
+    },
+    {
+      "id": "departure-dl3152-ric-atl",
+      "category": "departure",
+      "scheduledTime": "18:30",
+      "airlineIcao": "dal",
+      "flightNumber": "3152",
+      "originIcao": "KRIC",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-yx3476-ric-ewr",
+      "category": "departure",
+      "scheduledTime": "18:30",
+      "airlineIcao": "rpa",
+      "flightNumber": "3476",
+      "originIcao": "KRIC",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "arrival-aa2416-dfw-ric",
+      "category": "arrival",
+      "scheduledTime": "18:36",
+      "airlineIcao": "aal",
+      "flightNumber": "2416",
+      "originIcao": "KDFW",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "departure-f91581-ric-den",
+      "category": "departure",
+      "scheduledTime": "18:47",
+      "airlineIcao": "fft",
+      "flightNumber": "1581",
+      "originIcao": "KRIC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-dl1348-atl-ric",
+      "category": "arrival",
+      "scheduledTime": "18:53",
+      "airlineIcao": "dal",
+      "flightNumber": "1348",
+      "originIcao": "KATL",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-9e-arrival-kdtw-f-001",
+      "scheduledTime": "18:56",
+      "category": "arrival",
+      "originIcao": "KDTW",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "edv",
+      "flightNumber": "4179"
+    },
+    {
+      "id": "departure-yx5665-ric-bos",
+      "category": "departure",
+      "scheduledTime": "18:59",
+      "airlineIcao": "rpa",
+      "flightNumber": "5665",
+      "originIcao": "KRIC",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "arrival-yx4503-lga-ric",
+      "category": "arrival",
+      "scheduledTime": "19:00",
+      "airlineIcao": "rpa",
+      "flightNumber": "4503",
+      "originIcao": "KLGA",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-5x-departure-kphl-g-001",
+      "scheduledTime": "19:03",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KPHL",
+      "airlineIcao": "ups",
+      "flightNumber": "363"
+    },
+    {
+      "id": "t100-pt-arrival-kphl-f-002",
+      "scheduledTime": "19:15",
+      "category": "arrival",
+      "originIcao": "KPHL",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "pdt",
+      "flightNumber": "4015"
+    },
+    {
+      "id": "arrival-yx5760-lga-ric",
+      "category": "arrival",
+      "scheduledTime": "19:17",
+      "airlineIcao": "rpa",
+      "flightNumber": "5760",
+      "originIcao": "KLGA",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-yv-arrival-kiah-f-001",
+      "scheduledTime": "19:17",
+      "category": "arrival",
+      "originIcao": "KIAH",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "ash",
+      "flightNumber": "3042"
+    },
+    {
+      "id": "arrival-aa2412-clt-ric",
+      "category": "arrival",
+      "scheduledTime": "19:21",
+      "airlineIcao": "aal",
+      "flightNumber": "2412",
+      "originIcao": "KCLT",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "departure-aa2416-ric-dfw",
+      "category": "departure",
+      "scheduledTime": "19:28",
+      "airlineIcao": "aal",
+      "flightNumber": "2416",
+      "originIcao": "KRIC",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-yx4503-ric-lga",
+      "category": "departure",
+      "scheduledTime": "19:30",
+      "airlineIcao": "rpa",
+      "flightNumber": "4503",
+      "originIcao": "KRIC",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "arrival-oo6285-ord-ric",
+      "category": "arrival",
+      "scheduledTime": "19:31",
+      "airlineIcao": "skw",
+      "flightNumber": "6285",
+      "originIcao": "KORD",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-9e-departure-kmsp-f-001",
+      "scheduledTime": "19:32",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KMSP",
+      "airlineIcao": "edv",
+      "flightNumber": "5874"
+    },
+    {
+      "id": "t100-mx-departure-kbdl-f-001",
+      "scheduledTime": "19:52",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KBDL",
+      "airlineIcao": "mxy",
+      "flightNumber": "8103"
+    },
+    {
+      "id": "departure-yx5760-ric-lga",
+      "category": "departure",
+      "scheduledTime": "19:56",
+      "airlineIcao": "rpa",
+      "flightNumber": "5760",
+      "originIcao": "KRIC",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-oo6285-ric-ord",
+      "category": "departure",
+      "scheduledTime": "20:01",
+      "airlineIcao": "skw",
+      "flightNumber": "6285",
+      "originIcao": "KRIC",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-aa2412-ric-clt",
+      "category": "departure",
+      "scheduledTime": "20:13",
+      "airlineIcao": "aal",
+      "flightNumber": "2412",
+      "originIcao": "KRIC",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "t100-mx-departure-krsw-f-001",
+      "scheduledTime": "20:14",
+      "category": "departure",
+      "originIcao": "KRIC",
+      "destinationIcao": "KRSW",
+      "airlineIcao": "mxy",
+      "flightNumber": "4174"
+    },
+    {
+      "id": "arrival-wn2829-mdw-ric",
+      "category": "arrival",
+      "scheduledTime": "21:10",
+      "airlineIcao": "swa",
+      "flightNumber": "2829",
+      "originIcao": "KMDW",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-5x-arrival-korf-g-001",
+      "scheduledTime": "21:13",
+      "category": "arrival",
+      "originIcao": "KORF",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "ups",
+      "flightNumber": "9029"
+    },
+    {
+      "id": "arrival-ua1583-ord-ric",
+      "category": "arrival",
+      "scheduledTime": "21:27",
+      "airlineIcao": "ual",
+      "flightNumber": "1583",
+      "originIcao": "KORD",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "arrival-dl1263-atl-ric",
+      "category": "arrival",
+      "scheduledTime": "21:54",
+      "airlineIcao": "dal",
+      "flightNumber": "1263",
+      "originIcao": "KATL",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-pt-arrival-kphl-f-005",
+      "scheduledTime": "21:58",
+      "category": "arrival",
+      "originIcao": "KPHL",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "pdt",
+      "flightNumber": "4394"
+    },
+    {
+      "id": "t100-9e-arrival-kjfk-f-003",
+      "scheduledTime": "22:19",
+      "category": "arrival",
+      "originIcao": "KJFK",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "edv",
+      "flightNumber": "6253"
+    },
+    {
+      "id": "arrival-wn2353-bwi-ric",
+      "category": "arrival",
+      "scheduledTime": "22:20",
+      "airlineIcao": "swa",
+      "flightNumber": "2353",
+      "originIcao": "KBWI",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "arrival-aa993-clt-ric",
+      "category": "arrival",
+      "scheduledTime": "22:50",
+      "airlineIcao": "aal",
+      "flightNumber": "993",
+      "originIcao": "KCLT",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "arrival-ua1259-iah-ric",
+      "category": "arrival",
+      "scheduledTime": "22:51",
+      "airlineIcao": "ual",
+      "flightNumber": "1259",
+      "originIcao": "KIAH",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-9e-arrival-klga-f-001",
+      "scheduledTime": "22:55",
+      "category": "arrival",
+      "originIcao": "KLGA",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "edv",
+      "flightNumber": "2831"
+    },
+    {
+      "id": "arrival-aa3037-dfw-ric",
+      "category": "arrival",
+      "scheduledTime": "22:57",
+      "airlineIcao": "aal",
+      "flightNumber": "3037",
+      "originIcao": "KDFW",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-9e-arrival-kmsp-f-001",
+      "scheduledTime": "22:57",
+      "category": "arrival",
+      "originIcao": "KMSP",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "edv",
+      "flightNumber": "8858"
+    },
+    {
+      "id": "arrival-yx4345-lga-ric",
+      "category": "arrival",
+      "scheduledTime": "22:58",
+      "airlineIcao": "rpa",
+      "flightNumber": "4345",
+      "originIcao": "KLGA",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-mx-arrival-kbdl-f-001",
+      "scheduledTime": "22:58",
+      "category": "arrival",
+      "originIcao": "KBDL",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "mxy",
+      "flightNumber": "431"
+    },
+    {
+      "id": "arrival-yx5815-lga-ric",
+      "category": "arrival",
+      "scheduledTime": "23:01",
+      "airlineIcao": "rpa",
+      "flightNumber": "5815",
+      "originIcao": "KLGA",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "arrival-b61146-fll-ric",
+      "category": "arrival",
+      "scheduledTime": "23:18",
+      "airlineIcao": "jbu",
+      "flightNumber": "1146",
+      "originIcao": "KFLL",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "arrival-ua1534-den-ric",
+      "category": "arrival",
+      "scheduledTime": "23:25",
+      "airlineIcao": "ual",
+      "flightNumber": "1534",
+      "originIcao": "KDEN",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-pt-arrival-kphl-f-006",
+      "scheduledTime": "23:29",
+      "category": "arrival",
+      "originIcao": "KPHL",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "pdt",
+      "flightNumber": "2426"
+    },
+    {
+      "id": "arrival-yx5676-bos-ric",
+      "category": "arrival",
+      "scheduledTime": "23:32",
+      "airlineIcao": "rpa",
+      "flightNumber": "5676",
+      "originIcao": "KBOS",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "arrival-aa983-mia-ric",
+      "category": "arrival",
+      "scheduledTime": "23:37",
+      "airlineIcao": "aal",
+      "flightNumber": "983",
+      "originIcao": "KMIA",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "t100-g7-arrival-kewr-f-002",
+      "scheduledTime": "23:40",
+      "category": "arrival",
+      "originIcao": "KEWR",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "gjs",
+      "flightNumber": "2526"
+    }
+  ]
+}

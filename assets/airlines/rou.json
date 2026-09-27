@@ -1,0 +1,6 @@
+{
+    "icao": "rou",
+    "name": "Air Canada Rouge",
+    "callsign": { "name": "Rouge", "callsignFormats": ["###"] },
+    "fleets": { "default": [["A319", 1]] }
+}

@@ -1,0 +1,964 @@
+{
+    "schemaVersion": 2,
+    "profileType": "authored",
+    "airportIcao": "EINN",
+    "timezone": "Europe/Dublin",
+    "sampleDate": "2026-07-15",
+    "source": {
+        "name": "stringofpearls airport-authored spawn patterns",
+        "url": "https://github.com/blairhoddinott/stringofpearls/tree/master/assets/airports",
+        "retrievedAt": "2026-09-27",
+        "license": "MIT",
+        "coverage": "Deterministic representative profile compiled from reviewed airport-authored rates, routes, geometry, and airline rules; movements are generated and are not observed historical flights."
+    },
+    "flights": [
+        {
+            "id": "auth-einn-bbeaa804-0021",
+            "category": "arrival",
+            "scheduledTime": "00:02",
+            "spawnPatternKey": "bbeaa804"
+        },
+        {
+            "id": "auth-einn-62debf78-0021",
+            "category": "arrival",
+            "scheduledTime": "00:29",
+            "spawnPatternKey": "62debf78"
+        },
+        {
+            "id": "auth-einn-10a4bf8a-0008",
+            "category": "departure",
+            "scheduledTime": "00:34",
+            "spawnPatternKey": "10a4bf8a"
+        },
+        {
+            "id": "auth-einn-db9cd572-0005",
+            "category": "departure",
+            "scheduledTime": "00:53",
+            "spawnPatternKey": "db9cd572"
+        },
+        {
+            "id": "auth-einn-38a452f7-0006",
+            "category": "departure",
+            "scheduledTime": "00:55",
+            "spawnPatternKey": "38a452f7"
+        },
+        {
+            "id": "auth-einn-bbeaa804-0022",
+            "category": "arrival",
+            "scheduledTime": "01:02",
+            "spawnPatternKey": "bbeaa804"
+        },
+        {
+            "id": "auth-einn-4d9e246e-0002",
+            "category": "arrival",
+            "scheduledTime": "01:09",
+            "spawnPatternKey": "4d9e246e"
+        },
+        {
+            "id": "auth-einn-2b1e2019-0001",
+            "category": "departure",
+            "scheduledTime": "01:11",
+            "spawnPatternKey": "2b1e2019"
+        },
+        {
+            "id": "auth-einn-37033767-0005",
+            "category": "arrival",
+            "scheduledTime": "01:11",
+            "spawnPatternKey": "37033767"
+        },
+        {
+            "id": "auth-einn-62debf78-0022",
+            "category": "arrival",
+            "scheduledTime": "01:29",
+            "spawnPatternKey": "62debf78"
+        },
+        {
+            "id": "auth-einn-750f4637-0005",
+            "category": "arrival",
+            "scheduledTime": "01:31",
+            "spawnPatternKey": "750f4637"
+        },
+        {
+            "id": "auth-einn-10a4bf8a-0009",
+            "category": "departure",
+            "scheduledTime": "01:34",
+            "spawnPatternKey": "10a4bf8a"
+        },
+        {
+            "id": "auth-einn-0be237e3-0003",
+            "category": "departure",
+            "scheduledTime": "01:38",
+            "spawnPatternKey": "0be237e3"
+        },
+        {
+            "id": "auth-einn-d3802faa-0002",
+            "category": "arrival",
+            "scheduledTime": "01:54",
+            "spawnPatternKey": "d3802faa"
+        },
+        {
+            "id": "auth-einn-38a452f7-0007",
+            "category": "departure",
+            "scheduledTime": "01:55",
+            "spawnPatternKey": "38a452f7"
+        },
+        {
+            "id": "auth-einn-bbeaa804-0023",
+            "category": "arrival",
+            "scheduledTime": "02:02",
+            "spawnPatternKey": "bbeaa804"
+        },
+        {
+            "id": "auth-einn-62debf78-0023",
+            "category": "arrival",
+            "scheduledTime": "02:29",
+            "spawnPatternKey": "62debf78"
+        },
+        {
+            "id": "auth-einn-10a4bf8a-0010",
+            "category": "departure",
+            "scheduledTime": "02:34",
+            "spawnPatternKey": "10a4bf8a"
+        },
+        {
+            "id": "auth-einn-2af17076-0005",
+            "category": "departure",
+            "scheduledTime": "02:47",
+            "spawnPatternKey": "2af17076"
+        },
+        {
+            "id": "auth-einn-44621ea8-0004",
+            "category": "arrival",
+            "scheduledTime": "02:50",
+            "spawnPatternKey": "44621ea8"
+        },
+        {
+            "id": "auth-einn-38a452f7-0008",
+            "category": "departure",
+            "scheduledTime": "02:55",
+            "spawnPatternKey": "38a452f7"
+        },
+        {
+            "id": "auth-einn-bbeaa804-0024",
+            "category": "arrival",
+            "scheduledTime": "03:02",
+            "spawnPatternKey": "bbeaa804"
+        },
+        {
+            "id": "auth-einn-62debf78-0024",
+            "category": "arrival",
+            "scheduledTime": "03:29",
+            "spawnPatternKey": "62debf78"
+        },
+        {
+            "id": "auth-einn-ed9b2acf-0002",
+            "category": "departure",
+            "scheduledTime": "03:31",
+            "spawnPatternKey": "ed9b2acf"
+        },
+        {
+            "id": "auth-einn-10a4bf8a-0011",
+            "category": "departure",
+            "scheduledTime": "03:34",
+            "spawnPatternKey": "10a4bf8a"
+        },
+        {
+            "id": "auth-einn-38a452f7-0009",
+            "category": "departure",
+            "scheduledTime": "03:55",
+            "spawnPatternKey": "38a452f7"
+        },
+        {
+            "id": "auth-einn-bbeaa804-0001",
+            "category": "arrival",
+            "scheduledTime": "04:02",
+            "spawnPatternKey": "bbeaa804"
+        },
+        {
+            "id": "auth-einn-fa4f101a-0003",
+            "category": "arrival",
+            "scheduledTime": "04:13",
+            "spawnPatternKey": "fa4f101a"
+        },
+        {
+            "id": "auth-einn-53c35931-0001",
+            "category": "departure",
+            "scheduledTime": "04:21",
+            "spawnPatternKey": "53c35931"
+        },
+        {
+            "id": "auth-einn-f47ed8da-0003",
+            "category": "departure",
+            "scheduledTime": "04:24",
+            "spawnPatternKey": "f47ed8da"
+        },
+        {
+            "id": "auth-einn-62debf78-0001",
+            "category": "arrival",
+            "scheduledTime": "04:29",
+            "spawnPatternKey": "62debf78"
+        },
+        {
+            "id": "auth-einn-10a4bf8a-0012",
+            "category": "departure",
+            "scheduledTime": "04:34",
+            "spawnPatternKey": "10a4bf8a"
+        },
+        {
+            "id": "auth-einn-4d9e246e-0003",
+            "category": "arrival",
+            "scheduledTime": "04:35",
+            "spawnPatternKey": "4d9e246e"
+        },
+        {
+            "id": "auth-einn-38a452f7-0010",
+            "category": "departure",
+            "scheduledTime": "04:55",
+            "spawnPatternKey": "38a452f7"
+        },
+        {
+            "id": "auth-einn-bbeaa804-0002",
+            "category": "arrival",
+            "scheduledTime": "05:02",
+            "spawnPatternKey": "bbeaa804"
+        },
+        {
+            "id": "auth-einn-62debf78-0002",
+            "category": "arrival",
+            "scheduledTime": "05:29",
+            "spawnPatternKey": "62debf78"
+        },
+        {
+            "id": "auth-einn-10a4bf8a-0013",
+            "category": "departure",
+            "scheduledTime": "05:34",
+            "spawnPatternKey": "10a4bf8a"
+        },
+        {
+            "id": "auth-einn-db9cd572-0001",
+            "category": "departure",
+            "scheduledTime": "05:41",
+            "spawnPatternKey": "db9cd572"
+        },
+        {
+            "id": "auth-einn-38a452f7-0011",
+            "category": "departure",
+            "scheduledTime": "05:55",
+            "spawnPatternKey": "38a452f7"
+        },
+        {
+            "id": "auth-einn-2b1e2019-0002",
+            "category": "departure",
+            "scheduledTime": "05:59",
+            "spawnPatternKey": "2b1e2019"
+        },
+        {
+            "id": "auth-einn-37033767-0001",
+            "category": "arrival",
+            "scheduledTime": "05:59",
+            "spawnPatternKey": "37033767"
+        },
+        {
+            "id": "auth-einn-bbeaa804-0003",
+            "category": "arrival",
+            "scheduledTime": "06:02",
+            "spawnPatternKey": "bbeaa804"
+        },
+        {
+            "id": "auth-einn-750f4637-0001",
+            "category": "arrival",
+            "scheduledTime": "06:19",
+            "spawnPatternKey": "750f4637"
+        },
+        {
+            "id": "auth-einn-0be237e3-0004",
+            "category": "departure",
+            "scheduledTime": "06:26",
+            "spawnPatternKey": "0be237e3"
+        },
+        {
+            "id": "auth-einn-62debf78-0003",
+            "category": "arrival",
+            "scheduledTime": "06:29",
+            "spawnPatternKey": "62debf78"
+        },
+        {
+            "id": "auth-einn-10a4bf8a-0014",
+            "category": "departure",
+            "scheduledTime": "06:34",
+            "spawnPatternKey": "10a4bf8a"
+        },
+        {
+            "id": "auth-einn-d3802faa-0003",
+            "category": "arrival",
+            "scheduledTime": "06:42",
+            "spawnPatternKey": "d3802faa"
+        },
+        {
+            "id": "auth-einn-38a452f7-0012",
+            "category": "departure",
+            "scheduledTime": "06:55",
+            "spawnPatternKey": "38a452f7"
+        },
+        {
+            "id": "auth-einn-bbeaa804-0004",
+            "category": "arrival",
+            "scheduledTime": "07:02",
+            "spawnPatternKey": "bbeaa804"
+        },
+        {
+            "id": "auth-einn-62debf78-0004",
+            "category": "arrival",
+            "scheduledTime": "07:29",
+            "spawnPatternKey": "62debf78"
+        },
+        {
+            "id": "auth-einn-10a4bf8a-0015",
+            "category": "departure",
+            "scheduledTime": "07:34",
+            "spawnPatternKey": "10a4bf8a"
+        },
+        {
+            "id": "auth-einn-2af17076-0001",
+            "category": "departure",
+            "scheduledTime": "07:35",
+            "spawnPatternKey": "2af17076"
+        },
+        {
+            "id": "auth-einn-44621ea8-0005",
+            "category": "arrival",
+            "scheduledTime": "07:38",
+            "spawnPatternKey": "44621ea8"
+        },
+        {
+            "id": "auth-einn-38a452f7-0013",
+            "category": "departure",
+            "scheduledTime": "07:55",
+            "spawnPatternKey": "38a452f7"
+        },
+        {
+            "id": "auth-einn-4d9e246e-0004",
+            "category": "arrival",
+            "scheduledTime": "08:01",
+            "spawnPatternKey": "4d9e246e"
+        },
+        {
+            "id": "auth-einn-bbeaa804-0005",
+            "category": "arrival",
+            "scheduledTime": "08:02",
+            "spawnPatternKey": "bbeaa804"
+        },
+        {
+            "id": "auth-einn-62debf78-0005",
+            "category": "arrival",
+            "scheduledTime": "08:29",
+            "spawnPatternKey": "62debf78"
+        },
+        {
+            "id": "auth-einn-10a4bf8a-0016",
+            "category": "departure",
+            "scheduledTime": "08:34",
+            "spawnPatternKey": "10a4bf8a"
+        },
+        {
+            "id": "auth-einn-38a452f7-0014",
+            "category": "departure",
+            "scheduledTime": "08:55",
+            "spawnPatternKey": "38a452f7"
+        },
+        {
+            "id": "auth-einn-bbeaa804-0006",
+            "category": "arrival",
+            "scheduledTime": "09:02",
+            "spawnPatternKey": "bbeaa804"
+        },
+        {
+            "id": "auth-einn-53c35931-0002",
+            "category": "departure",
+            "scheduledTime": "09:09",
+            "spawnPatternKey": "53c35931"
+        },
+        {
+            "id": "auth-einn-62debf78-0006",
+            "category": "arrival",
+            "scheduledTime": "09:29",
+            "spawnPatternKey": "62debf78"
+        },
+        {
+            "id": "auth-einn-10a4bf8a-0017",
+            "category": "departure",
+            "scheduledTime": "09:34",
+            "spawnPatternKey": "10a4bf8a"
+        },
+        {
+            "id": "auth-einn-38a452f7-0015",
+            "category": "departure",
+            "scheduledTime": "09:55",
+            "spawnPatternKey": "38a452f7"
+        },
+        {
+            "id": "auth-einn-bbeaa804-0007",
+            "category": "arrival",
+            "scheduledTime": "10:02",
+            "spawnPatternKey": "bbeaa804"
+        },
+        {
+            "id": "auth-einn-fa4f101a-0004",
+            "category": "arrival",
+            "scheduledTime": "10:13",
+            "spawnPatternKey": "fa4f101a"
+        },
+        {
+            "id": "auth-einn-f47ed8da-0004",
+            "category": "departure",
+            "scheduledTime": "10:24",
+            "spawnPatternKey": "f47ed8da"
+        },
+        {
+            "id": "auth-einn-62debf78-0007",
+            "category": "arrival",
+            "scheduledTime": "10:29",
+            "spawnPatternKey": "62debf78"
+        },
+        {
+            "id": "auth-einn-db9cd572-0002",
+            "category": "departure",
+            "scheduledTime": "10:29",
+            "spawnPatternKey": "db9cd572"
+        },
+        {
+            "id": "auth-einn-10a4bf8a-0018",
+            "category": "departure",
+            "scheduledTime": "10:34",
+            "spawnPatternKey": "10a4bf8a"
+        },
+        {
+            "id": "auth-einn-2b1e2019-0003",
+            "category": "departure",
+            "scheduledTime": "10:47",
+            "spawnPatternKey": "2b1e2019"
+        },
+        {
+            "id": "auth-einn-37033767-0002",
+            "category": "arrival",
+            "scheduledTime": "10:47",
+            "spawnPatternKey": "37033767"
+        },
+        {
+            "id": "auth-einn-38a452f7-0016",
+            "category": "departure",
+            "scheduledTime": "10:55",
+            "spawnPatternKey": "38a452f7"
+        },
+        {
+            "id": "auth-einn-bbeaa804-0008",
+            "category": "arrival",
+            "scheduledTime": "11:02",
+            "spawnPatternKey": "bbeaa804"
+        },
+        {
+            "id": "auth-einn-750f4637-0002",
+            "category": "arrival",
+            "scheduledTime": "11:07",
+            "spawnPatternKey": "750f4637"
+        },
+        {
+            "id": "auth-einn-0be237e3-0005",
+            "category": "departure",
+            "scheduledTime": "11:14",
+            "spawnPatternKey": "0be237e3"
+        },
+        {
+            "id": "auth-einn-4d9e246e-0005",
+            "category": "arrival",
+            "scheduledTime": "11:26",
+            "spawnPatternKey": "4d9e246e"
+        },
+        {
+            "id": "auth-einn-62debf78-0008",
+            "category": "arrival",
+            "scheduledTime": "11:29",
+            "spawnPatternKey": "62debf78"
+        },
+        {
+            "id": "auth-einn-d3802faa-0004",
+            "category": "arrival",
+            "scheduledTime": "11:30",
+            "spawnPatternKey": "d3802faa"
+        },
+        {
+            "id": "auth-einn-10a4bf8a-0019",
+            "category": "departure",
+            "scheduledTime": "11:34",
+            "spawnPatternKey": "10a4bf8a"
+        },
+        {
+            "id": "auth-einn-38a452f7-0017",
+            "category": "departure",
+            "scheduledTime": "11:55",
+            "spawnPatternKey": "38a452f7"
+        },
+        {
+            "id": "auth-einn-bbeaa804-0009",
+            "category": "arrival",
+            "scheduledTime": "12:02",
+            "spawnPatternKey": "bbeaa804"
+        },
+        {
+            "id": "auth-einn-2af17076-0002",
+            "category": "departure",
+            "scheduledTime": "12:23",
+            "spawnPatternKey": "2af17076"
+        },
+        {
+            "id": "auth-einn-44621ea8-0001",
+            "category": "arrival",
+            "scheduledTime": "12:26",
+            "spawnPatternKey": "44621ea8"
+        },
+        {
+            "id": "auth-einn-62debf78-0009",
+            "category": "arrival",
+            "scheduledTime": "12:29",
+            "spawnPatternKey": "62debf78"
+        },
+        {
+            "id": "auth-einn-10a4bf8a-0020",
+            "category": "departure",
+            "scheduledTime": "12:34",
+            "spawnPatternKey": "10a4bf8a"
+        },
+        {
+            "id": "auth-einn-38a452f7-0018",
+            "category": "departure",
+            "scheduledTime": "12:55",
+            "spawnPatternKey": "38a452f7"
+        },
+        {
+            "id": "auth-einn-bbeaa804-0010",
+            "category": "arrival",
+            "scheduledTime": "13:02",
+            "spawnPatternKey": "bbeaa804"
+        },
+        {
+            "id": "auth-einn-62debf78-0010",
+            "category": "arrival",
+            "scheduledTime": "13:29",
+            "spawnPatternKey": "62debf78"
+        },
+        {
+            "id": "auth-einn-10a4bf8a-0021",
+            "category": "departure",
+            "scheduledTime": "13:34",
+            "spawnPatternKey": "10a4bf8a"
+        },
+        {
+            "id": "auth-einn-38a452f7-0019",
+            "category": "departure",
+            "scheduledTime": "13:55",
+            "spawnPatternKey": "38a452f7"
+        },
+        {
+            "id": "auth-einn-53c35931-0003",
+            "category": "departure",
+            "scheduledTime": "13:57",
+            "spawnPatternKey": "53c35931"
+        },
+        {
+            "id": "auth-einn-bbeaa804-0011",
+            "category": "arrival",
+            "scheduledTime": "14:02",
+            "spawnPatternKey": "bbeaa804"
+        },
+        {
+            "id": "auth-einn-62debf78-0011",
+            "category": "arrival",
+            "scheduledTime": "14:29",
+            "spawnPatternKey": "62debf78"
+        },
+        {
+            "id": "auth-einn-10a4bf8a-0022",
+            "category": "departure",
+            "scheduledTime": "14:34",
+            "spawnPatternKey": "10a4bf8a"
+        },
+        {
+            "id": "auth-einn-4d9e246e-0006",
+            "category": "arrival",
+            "scheduledTime": "14:52",
+            "spawnPatternKey": "4d9e246e"
+        },
+        {
+            "id": "auth-einn-38a452f7-0020",
+            "category": "departure",
+            "scheduledTime": "14:55",
+            "spawnPatternKey": "38a452f7"
+        },
+        {
+            "id": "auth-einn-bbeaa804-0012",
+            "category": "arrival",
+            "scheduledTime": "15:02",
+            "spawnPatternKey": "bbeaa804"
+        },
+        {
+            "id": "auth-einn-db9cd572-0003",
+            "category": "departure",
+            "scheduledTime": "15:17",
+            "spawnPatternKey": "db9cd572"
+        },
+        {
+            "id": "auth-einn-62debf78-0012",
+            "category": "arrival",
+            "scheduledTime": "15:29",
+            "spawnPatternKey": "62debf78"
+        },
+        {
+            "id": "auth-einn-ed9b2acf-0001",
+            "category": "departure",
+            "scheduledTime": "15:31",
+            "spawnPatternKey": "ed9b2acf"
+        },
+        {
+            "id": "auth-einn-10a4bf8a-0023",
+            "category": "departure",
+            "scheduledTime": "15:34",
+            "spawnPatternKey": "10a4bf8a"
+        },
+        {
+            "id": "auth-einn-2b1e2019-0004",
+            "category": "departure",
+            "scheduledTime": "15:35",
+            "spawnPatternKey": "2b1e2019"
+        },
+        {
+            "id": "auth-einn-37033767-0003",
+            "category": "arrival",
+            "scheduledTime": "15:35",
+            "spawnPatternKey": "37033767"
+        },
+        {
+            "id": "auth-einn-38a452f7-0021",
+            "category": "departure",
+            "scheduledTime": "15:55",
+            "spawnPatternKey": "38a452f7"
+        },
+        {
+            "id": "auth-einn-750f4637-0003",
+            "category": "arrival",
+            "scheduledTime": "15:55",
+            "spawnPatternKey": "750f4637"
+        },
+        {
+            "id": "auth-einn-0be237e3-0001",
+            "category": "departure",
+            "scheduledTime": "16:02",
+            "spawnPatternKey": "0be237e3"
+        },
+        {
+            "id": "auth-einn-bbeaa804-0013",
+            "category": "arrival",
+            "scheduledTime": "16:02",
+            "spawnPatternKey": "bbeaa804"
+        },
+        {
+            "id": "auth-einn-fa4f101a-0001",
+            "category": "arrival",
+            "scheduledTime": "16:13",
+            "spawnPatternKey": "fa4f101a"
+        },
+        {
+            "id": "auth-einn-d3802faa-0005",
+            "category": "arrival",
+            "scheduledTime": "16:18",
+            "spawnPatternKey": "d3802faa"
+        },
+        {
+            "id": "auth-einn-f47ed8da-0001",
+            "category": "departure",
+            "scheduledTime": "16:24",
+            "spawnPatternKey": "f47ed8da"
+        },
+        {
+            "id": "auth-einn-62debf78-0013",
+            "category": "arrival",
+            "scheduledTime": "16:29",
+            "spawnPatternKey": "62debf78"
+        },
+        {
+            "id": "auth-einn-10a4bf8a-0024",
+            "category": "departure",
+            "scheduledTime": "16:34",
+            "spawnPatternKey": "10a4bf8a"
+        },
+        {
+            "id": "auth-einn-38a452f7-0022",
+            "category": "departure",
+            "scheduledTime": "16:55",
+            "spawnPatternKey": "38a452f7"
+        },
+        {
+            "id": "auth-einn-bbeaa804-0014",
+            "category": "arrival",
+            "scheduledTime": "17:02",
+            "spawnPatternKey": "bbeaa804"
+        },
+        {
+            "id": "auth-einn-2af17076-0003",
+            "category": "departure",
+            "scheduledTime": "17:11",
+            "spawnPatternKey": "2af17076"
+        },
+        {
+            "id": "auth-einn-44621ea8-0002",
+            "category": "arrival",
+            "scheduledTime": "17:14",
+            "spawnPatternKey": "44621ea8"
+        },
+        {
+            "id": "auth-einn-62debf78-0014",
+            "category": "arrival",
+            "scheduledTime": "17:29",
+            "spawnPatternKey": "62debf78"
+        },
+        {
+            "id": "auth-einn-10a4bf8a-0001",
+            "category": "departure",
+            "scheduledTime": "17:34",
+            "spawnPatternKey": "10a4bf8a"
+        },
+        {
+            "id": "auth-einn-38a452f7-0023",
+            "category": "departure",
+            "scheduledTime": "17:55",
+            "spawnPatternKey": "38a452f7"
+        },
+        {
+            "id": "auth-einn-bbeaa804-0015",
+            "category": "arrival",
+            "scheduledTime": "18:02",
+            "spawnPatternKey": "bbeaa804"
+        },
+        {
+            "id": "auth-einn-4d9e246e-0007",
+            "category": "arrival",
+            "scheduledTime": "18:18",
+            "spawnPatternKey": "4d9e246e"
+        },
+        {
+            "id": "auth-einn-62debf78-0015",
+            "category": "arrival",
+            "scheduledTime": "18:29",
+            "spawnPatternKey": "62debf78"
+        },
+        {
+            "id": "auth-einn-10a4bf8a-0002",
+            "category": "departure",
+            "scheduledTime": "18:34",
+            "spawnPatternKey": "10a4bf8a"
+        },
+        {
+            "id": "auth-einn-53c35931-0004",
+            "category": "departure",
+            "scheduledTime": "18:45",
+            "spawnPatternKey": "53c35931"
+        },
+        {
+            "id": "auth-einn-38a452f7-0024",
+            "category": "departure",
+            "scheduledTime": "18:55",
+            "spawnPatternKey": "38a452f7"
+        },
+        {
+            "id": "auth-einn-bbeaa804-0016",
+            "category": "arrival",
+            "scheduledTime": "19:02",
+            "spawnPatternKey": "bbeaa804"
+        },
+        {
+            "id": "auth-einn-62debf78-0016",
+            "category": "arrival",
+            "scheduledTime": "19:29",
+            "spawnPatternKey": "62debf78"
+        },
+        {
+            "id": "auth-einn-10a4bf8a-0003",
+            "category": "departure",
+            "scheduledTime": "19:34",
+            "spawnPatternKey": "10a4bf8a"
+        },
+        {
+            "id": "auth-einn-38a452f7-0001",
+            "category": "departure",
+            "scheduledTime": "19:55",
+            "spawnPatternKey": "38a452f7"
+        },
+        {
+            "id": "auth-einn-bbeaa804-0017",
+            "category": "arrival",
+            "scheduledTime": "20:02",
+            "spawnPatternKey": "bbeaa804"
+        },
+        {
+            "id": "auth-einn-db9cd572-0004",
+            "category": "departure",
+            "scheduledTime": "20:05",
+            "spawnPatternKey": "db9cd572"
+        },
+        {
+            "id": "auth-einn-2b1e2019-0005",
+            "category": "departure",
+            "scheduledTime": "20:23",
+            "spawnPatternKey": "2b1e2019"
+        },
+        {
+            "id": "auth-einn-37033767-0004",
+            "category": "arrival",
+            "scheduledTime": "20:23",
+            "spawnPatternKey": "37033767"
+        },
+        {
+            "id": "auth-einn-62debf78-0017",
+            "category": "arrival",
+            "scheduledTime": "20:29",
+            "spawnPatternKey": "62debf78"
+        },
+        {
+            "id": "auth-einn-10a4bf8a-0004",
+            "category": "departure",
+            "scheduledTime": "20:34",
+            "spawnPatternKey": "10a4bf8a"
+        },
+        {
+            "id": "auth-einn-750f4637-0004",
+            "category": "arrival",
+            "scheduledTime": "20:43",
+            "spawnPatternKey": "750f4637"
+        },
+        {
+            "id": "auth-einn-0be237e3-0002",
+            "category": "departure",
+            "scheduledTime": "20:50",
+            "spawnPatternKey": "0be237e3"
+        },
+        {
+            "id": "auth-einn-38a452f7-0002",
+            "category": "departure",
+            "scheduledTime": "20:55",
+            "spawnPatternKey": "38a452f7"
+        },
+        {
+            "id": "auth-einn-bbeaa804-0018",
+            "category": "arrival",
+            "scheduledTime": "21:02",
+            "spawnPatternKey": "bbeaa804"
+        },
+        {
+            "id": "auth-einn-d3802faa-0001",
+            "category": "arrival",
+            "scheduledTime": "21:06",
+            "spawnPatternKey": "d3802faa"
+        },
+        {
+            "id": "auth-einn-62debf78-0018",
+            "category": "arrival",
+            "scheduledTime": "21:29",
+            "spawnPatternKey": "62debf78"
+        },
+        {
+            "id": "auth-einn-10a4bf8a-0005",
+            "category": "departure",
+            "scheduledTime": "21:34",
+            "spawnPatternKey": "10a4bf8a"
+        },
+        {
+            "id": "auth-einn-4d9e246e-0001",
+            "category": "arrival",
+            "scheduledTime": "21:44",
+            "spawnPatternKey": "4d9e246e"
+        },
+        {
+            "id": "auth-einn-38a452f7-0003",
+            "category": "departure",
+            "scheduledTime": "21:55",
+            "spawnPatternKey": "38a452f7"
+        },
+        {
+            "id": "auth-einn-2af17076-0004",
+            "category": "departure",
+            "scheduledTime": "21:59",
+            "spawnPatternKey": "2af17076"
+        },
+        {
+            "id": "auth-einn-44621ea8-0003",
+            "category": "arrival",
+            "scheduledTime": "22:02",
+            "spawnPatternKey": "44621ea8"
+        },
+        {
+            "id": "auth-einn-bbeaa804-0019",
+            "category": "arrival",
+            "scheduledTime": "22:02",
+            "spawnPatternKey": "bbeaa804"
+        },
+        {
+            "id": "auth-einn-fa4f101a-0002",
+            "category": "arrival",
+            "scheduledTime": "22:13",
+            "spawnPatternKey": "fa4f101a"
+        },
+        {
+            "id": "auth-einn-f47ed8da-0002",
+            "category": "departure",
+            "scheduledTime": "22:24",
+            "spawnPatternKey": "f47ed8da"
+        },
+        {
+            "id": "auth-einn-62debf78-0019",
+            "category": "arrival",
+            "scheduledTime": "22:29",
+            "spawnPatternKey": "62debf78"
+        },
+        {
+            "id": "auth-einn-10a4bf8a-0006",
+            "category": "departure",
+            "scheduledTime": "22:34",
+            "spawnPatternKey": "10a4bf8a"
+        },
+        {
+            "id": "auth-einn-38a452f7-0004",
+            "category": "departure",
+            "scheduledTime": "22:55",
+            "spawnPatternKey": "38a452f7"
+        },
+        {
+            "id": "auth-einn-bbeaa804-0020",
+            "category": "arrival",
+            "scheduledTime": "23:02",
+            "spawnPatternKey": "bbeaa804"
+        },
+        {
+            "id": "auth-einn-62debf78-0020",
+            "category": "arrival",
+            "scheduledTime": "23:29",
+            "spawnPatternKey": "62debf78"
+        },
+        {
+            "id": "auth-einn-53c35931-0005",
+            "category": "departure",
+            "scheduledTime": "23:33",
+            "spawnPatternKey": "53c35931"
+        },
+        {
+            "id": "auth-einn-10a4bf8a-0007",
+            "category": "departure",
+            "scheduledTime": "23:34",
+            "spawnPatternKey": "10a4bf8a"
+        },
+        {
+            "id": "auth-einn-38a452f7-0005",
+            "category": "departure",
+            "scheduledTime": "23:55",
+            "spawnPatternKey": "38a452f7"
+        }
+    ]
+}

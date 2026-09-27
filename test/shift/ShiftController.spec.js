@@ -28,6 +28,8 @@ const buildHarness = (overrides = {}) => {
         resumeSpawning: sinon.stub(),
         setSpawnCutoffTime: sinon.stub(),
         setAircraftController: sinon.stub(),
+        setSpawnPatternCollection: sinon.stub(),
+        startScheduler: sinon.stub(),
         isSpawningHalted: false,
         haltSpawning: sinon.stub().callsFake(function halt() {
             this.isSpawningHalted = true;
@@ -87,7 +89,12 @@ const buildHarness = (overrides = {}) => {
     };
 };
 
-const APPROACH_CONFIG = { sector: SHIFT_SECTOR.APPROACH, airportIcao: 'klas', shiftLengthMinutes: 30 };
+const APPROACH_CONFIG = {
+    sector: SHIFT_SECTOR.APPROACH,
+    airportIcao: 'klas',
+    shiftLengthMinutes: 30,
+    trafficVolumePercent: 100
+};
 
 const beginRunningShift = (h, config = APPROACH_CONFIG) => {
     h.controller.beginShift(config);
@@ -124,6 +131,7 @@ ava('.beginShift() rejects malformed or unavailable configuration before side ef
     const invalidConfigs = [
         { ...APPROACH_CONFIG, sector: 'tower' },
         { ...APPROACH_CONFIG, shiftLengthMinutes: 45 },
+        { ...APPROACH_CONFIG, trafficVolumePercent: 30 },
         { ...APPROACH_CONFIG, airportIcao: 'kzzz' }
     ];
 
@@ -132,6 +140,17 @@ ava('.beginShift() rejects malformed or unavailable configuration before side ef
     });
     t.true(h.scheduler.selectTrafficMode.notCalled);
     t.true(h.airportController.airport_set.notCalled);
+});
+
+ava('.beginShift() rejects a second start while an airport load is pending', (t) => {
+    const h = buildHarness();
+
+    h.controller.beginShift(APPROACH_CONFIG);
+
+    t.throws(() => h.controller.beginShift({ ...APPROACH_CONFIG, airportIcao: 'ksea' }), {
+        instanceOf: RangeError
+    });
+    t.true(h.airportController.airport_set.calledOnceWithExactly('klas'));
 });
 
 ava('.beginShift() selects the mode, applies strips, and routes airport before starting the clock', (t) => {
@@ -160,6 +179,38 @@ ava('the shift clock starts once the airport change lifecycle completes', (t) =>
     t.true(h.scheduler.setSpawnCutoffTime.calledOnceWithExactly(1620));
     t.true(h.gameController.game_reset_score_and_events.called);
     t.true(h.startView.hide.called);
+});
+
+ava('airport readiness resolves and starts exactly one configured traffic plan', (t) => {
+    const collection = { spawnPatternModels: [], getDepartureModelsForPreSpawn: () => [] };
+    const trafficPlanResolver = sinon.stub().returns({ mode: 'scheduled', collection });
+    const h = buildHarness({ trafficPlanResolver });
+
+    h.controller.beginShift(APPROACH_CONFIG);
+    h.eventBus.trigger(EVENT.AIRPORT_CHANGE, { icao: 'klas' });
+
+    t.true(trafficPlanResolver.calledOnceWithExactly(APPROACH_CONFIG, 0));
+    t.true(h.scheduler.setSpawnPatternCollection.calledOnceWithExactly(collection));
+    t.true(h.scheduler.startScheduler.calledOnce);
+    t.true(h.scheduler.setSpawnPatternCollection.calledBefore(h.scheduler.startScheduler));
+});
+
+ava('airport readiness ignores an event for a different pending airport', (t) => {
+    const collection = { spawnPatternModels: [], getDepartureModelsForPreSpawn: () => [] };
+    const trafficPlanResolver = sinon.stub().returns({ mode: 'scheduled', collection });
+    const h = buildHarness({ trafficPlanResolver });
+
+    h.controller.beginShift(APPROACH_CONFIG);
+    h.eventBus.trigger(EVENT.AIRPORT_CHANGE, { icao: 'ksea' });
+
+    t.true(trafficPlanResolver.notCalled);
+    t.true(h.scheduler.startScheduler.notCalled);
+    t.is(h.shiftModel.state, SHIFT_STATE.PENDING);
+
+    h.eventBus.trigger(EVENT.AIRPORT_CHANGE, { icao: 'KLAS' });
+
+    t.true(trafficPlanResolver.calledOnce);
+    t.is(h.shiftModel.state, SHIFT_STATE.RUNNING);
 });
 
 ava('a later airport change does not restart an already-running shift', (t) => {

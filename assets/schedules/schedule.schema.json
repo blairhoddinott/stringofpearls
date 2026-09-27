@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "http://openscope.io/assets/schedules/schedule.schema.json",
+  "title": "String of Pearls ATC simulator representative schedule schema",
+  "description": "One normalized representative-day schedule for a single supported airport",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "description": "Schedule contract version: version 1 contains sourced flight identity; version 2 contains airport-authored generated slots",
+      "type": "integer",
+      "enum": [1, 2]
+    },
+    "profileType": {
+      "description": "Explicit profile semantics for version 2 schedules",
+      "const": "authored"
+    },
+    "airportIcao": {
+      "description": "ICAO identifier of the schedule airport in uppercase",
+      "type": "string",
+      "pattern": "^[A-Z]{4}$"
+    },
+    "timezone": {
+      "description": "IANA time zone name for the airport's local scheduledTime values",
+      "$comment": "The asset validator resolves this value through Intl.DateTimeFormat and fails on unknown zones.",
+      "type": "string",
+      "minLength": 1
+    },
+    "sampleDate": {
+      "description": "Representative day or profile anchor date, as a real YYYY-MM-DD calendar date",
+      "type": "string",
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "source": {
+      "$ref": "#source"
+    },
+    "flights": {
+      "description": "Deterministically ordered movements (by scheduledTime then id) for the representative day",
+      "type": "array",
+      "minItems": 1
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "airportIcao",
+    "timezone",
+    "sampleDate",
+    "source",
+    "flights"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "schemaVersion": { "const": 1 }
+        }
+      },
+      "then": {
+        "not": { "required": ["profileType"] },
+        "properties": {
+          "flights": {
+            "items": { "$ref": "#observedFlight" }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "schemaVersion": { "const": 2 }
+        }
+      },
+      "then": {
+        "required": ["profileType"],
+        "properties": {
+          "profileType": { "const": "authored" },
+          "flights": {
+            "items": { "$ref": "#authoredSlot" }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "source": {
+      "$anchor": "source",
+      "description": "Provenance for the schedule data",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Human-readable name of the data source",
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "description": "URL the data was obtained from",
+          "type": "string",
+          "format": "uri",
+          "minLength": 1
+        },
+        "retrievedAt": {
+          "description": "When the data was retrieved or reviewed",
+          "type": "string",
+          "format": "date",
+          "minLength": 1
+        },
+        "license": {
+          "description": "License or usage terms for the data",
+          "type": "string",
+          "minLength": 1
+        },
+        "coverage": {
+          "description": "Honest description of what the data does and does not cover",
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": ["name", "url", "retrievedAt", "license", "coverage"],
+      "additionalProperties": false
+    },
+    "commonMovement": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Stable identifier, unique within the schedule",
+          "type": "string",
+          "minLength": 1
+        },
+        "category": {
+          "description": "Whether the movement arrives at or departs from the schedule airport",
+          "type": "string",
+          "enum": ["arrival", "departure"]
+        },
+        "scheduledTime": {
+          "description": "Local HH:mm time of the movement",
+          "type": "string",
+          "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$"
+        }
+      },
+      "required": ["id", "category", "scheduledTime"]
+    },
+    "observedFlight": {
+      "$anchor": "observedFlight",
+      "description": "A sourced movement with normalized operating identity and route endpoints",
+      "allOf": [
+        { "$ref": "#/$defs/commonMovement" },
+        {
+          "type": "object",
+          "properties": {
+            "id": true,
+            "category": true,
+            "scheduledTime": true,
+            "airlineIcao": { "type": "string", "pattern": "^[a-z]{3}$" },
+            "flightNumber": { "type": "string", "pattern": "^[0-9A-Za-z]+$" },
+            "originIcao": { "type": "string", "pattern": "^[A-Z]{4}$" },
+            "destinationIcao": { "type": "string", "pattern": "^[A-Z]{4}$" },
+            "aircraftTypeIcao": { "type": "string", "pattern": "^[0-9A-Z]+$" }
+          },
+          "required": ["airlineIcao", "flightNumber", "originIcao", "destinationIcao"],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "authoredSlot": {
+      "$anchor": "authoredSlot",
+      "description": "A representative local slot mapped to one reviewed airport-authored spawn pattern; identity and route endpoints are generated by that pattern",
+      "allOf": [
+        { "$ref": "#/$defs/commonMovement" },
+        {
+          "type": "object",
+          "properties": {
+            "id": true,
+            "category": true,
+            "scheduledTime": true,
+            "spawnPatternKey": {
+              "description": "Stable key of the exact airport-authored spawn pattern",
+              "type": "string",
+              "pattern": "^[0-9a-f]{8}$"
+            }
+          },
+          "required": ["spawnPatternKey"],
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

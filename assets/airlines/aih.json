@@ -1,0 +1,20 @@
+{
+    "icao": "aih",
+    "name": "AirZeta",
+    "callsign": {
+        "name": "Quantum Sky",
+        "callsignFormats": [
+            "####",
+            "###",
+            "##"
+        ]
+    },
+    "fleets": {
+        "default": [
+            ["B744", 1]
+        ],
+        "long": [
+            ["B744", 1]
+        ]
+    }
+}

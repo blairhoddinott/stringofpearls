@@ -1,0 +1,6 @@
+{
+    "icao": "nos",
+    "name": "Neos",
+    "callsign": { "name": "Moonflower", "callsignFormats": ["###"] },
+    "fleets": { "default": [["B738", 1], ["B789", 1]] }
+}

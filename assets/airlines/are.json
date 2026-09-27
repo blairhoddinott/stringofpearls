@@ -1,0 +1,6 @@
+{
+    "icao": "are",
+    "name": "LATAM Airlines Colombia",
+    "callsign": { "name": "Lan Colombia", "callsignFormats": ["###"] },
+    "fleets": { "default": [["A320", 1]] }
+}

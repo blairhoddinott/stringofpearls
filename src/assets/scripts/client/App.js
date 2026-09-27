@@ -227,14 +227,15 @@ export default class App {
      */
     loadInitialAirport(airportLoadList, initialAirportToLoad) {
         return this._startupAssetLoader.loadInitialAssets(initialAirportToLoad, DEFAULT_AIRPORT_ICAO)
-            .then(({ aircraft, airlines, airport, guides, icao }) => {
+            .then(({ aircraft, airlines, airport, guides, icao, schedulesByAirport }) => {
                 this.setupChildrenHandler(
                     airportLoadList,
                     icao,
                     airport,
                     airlines,
                     aircraft,
-                    guides
+                    guides,
+                    schedulesByAirport
                 );
             });
     }
@@ -256,6 +257,7 @@ export default class App {
      * @param airlineList {array}             List of all Airline definitions
      * @param aircraftTypeDefinitionList {array}  List of all Aircraft definitions
      * @param airportGuides {object}          Airport guide JSON
+     * @param schedulesByAirport {object}     Normalized schedules keyed by lowercase ICAO
      */
     setupChildren(
         airportLoadList,
@@ -263,7 +265,8 @@ export default class App {
         initialAirportData,
         airlineList,
         aircraftTypeDefinitionList,
-        airportGuides
+        airportGuides,
+        schedulesByAirport
     ) {
         this._appController.setupChildren(
             airportLoadList,
@@ -271,7 +274,8 @@ export default class App {
             initialAirportData,
             airlineList,
             aircraftTypeDefinitionList,
-            airportGuides
+            airportGuides,
+            schedulesByAirport
         );
 
         this.enable();

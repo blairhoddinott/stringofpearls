@@ -690,22 +690,34 @@ export default class AircraftController {
      * @private
      */
     _buildAircraftProps(spawnPatternModel, isPreSpawn = false) {
-        const airlineId = spawnPatternModel.getRandomAirlineForSpawn();
+        // A schedule-backed spawn pattern may carry an exact identity to honour; a
+        // legacy/generated pattern does not expose this hook and behaves as before.
+        const scheduledIdentity = typeof spawnPatternModel.getScheduledIdentity === 'function'
+            ? spawnPatternModel.getScheduledIdentity()
+            : null;
+        let airlineId = spawnPatternModel.getRandomAirlineForSpawn();
         // TODO: update `airlineNameAndFleetHelper` to accept a string
-        const { name, fleet } = airlineNameAndFleetHelper([airlineId]);
+        const { name } = airlineNameAndFleetHelper([airlineId]);
         let airlineModel = this._airlineController.findAirlineById(name);
 
         if (typeof airlineModel === 'undefined') {
             console.warn(`Expected airline "${name}" to be defined, but it is not! Using AAL instead.`);
 
             airlineModel = this._airlineController.findAirlineById('aal');
+            // Realign the airline id with the fallback airline so fleet resolution and the
+            // returned props stay coherent; the unknown airline's fleet (e.g. `foo/long`)
+            // may not exist on AAL and must not be requested from it.
+            airlineId = airlineModel.icao;
         }
+
+        // resolve the fleet from the (possibly realigned) airline id so it matches the airlineModel
+        const { fleet } = airlineNameAndFleetHelper([airlineId]);
 
         // TODO: impove the `airlineModel` logic here
         // this seems inefficient to find the model here and then pass it back to the controller but
         // since we already have it, it makes little sense to look for it again in the controller
-        const flightNumber = this._airlineController.generateFlightNumberWithAirlineModel(airlineModel);
-        const aircraftTypeDefinition = this._getRandomAircraftTypeDefinitionForAirlineId(airlineId, airlineModel);
+        const flightNumber = this._resolveFlightNumber(scheduledIdentity, airlineModel);
+        const aircraftTypeDefinition = this._resolveAircraftTypeDefinition(scheduledIdentity, airlineId, airlineModel);
         // TODO: this may need to be reworked.
         // if we are building a preSpawn aircraft, cap the altitude at 18000 so aircraft that spawn closer to
         // airspace can safely enter controlled airspace properly
@@ -777,6 +789,58 @@ export default class AircraftController {
      */
     _getRandomAircraftTypeDefinitionForAirlineId(airlineId, airlineModel) {
         return this.aircraftTypeDefinitionCollection.getAircraftDefinitionForAirlineId(airlineId, airlineModel);
+    }
+
+    /**
+     * Resolve the flight number for a spawning aircraft.
+     *
+     * When a schedule-backed pattern supplies an exact flight number, that number is
+     * used and registered so it participates in the unique-flight-number bookkeeping;
+     * otherwise a unique number is generated as before.
+     *
+     * @for AircraftController
+     * @method _resolveFlightNumber
+     * @param scheduledIdentity {object|null}
+     * @param airlineModel {AirlineModel}
+     * @return {string}
+     * @private
+     */
+    _resolveFlightNumber(scheduledIdentity, airlineModel) {
+        if (scheduledIdentity !== null && scheduledIdentity.flightNumber) {
+            airlineModel.addFlightNumberToInUse(scheduledIdentity.flightNumber);
+
+            return scheduledIdentity.flightNumber;
+        }
+
+        return this._airlineController.generateFlightNumberWithAirlineModel(airlineModel);
+    }
+
+    /**
+     * Resolve the aircraft type definition for a spawning aircraft.
+     *
+     * A schedule-backed pattern may request an exact aircraft type; it is used only
+     * when it resolves to a known type definition, otherwise a random type for the
+     * airline is used.
+     *
+     * @for AircraftController
+     * @method _resolveAircraftTypeDefinition
+     * @param scheduledIdentity {object|null}
+     * @param airlineId {string}
+     * @param airlineModel {AirlineModel}
+     * @return {AircraftTypeDefinitionModel}
+     * @private
+     */
+    _resolveAircraftTypeDefinition(scheduledIdentity, airlineId, airlineModel) {
+        if (scheduledIdentity !== null && scheduledIdentity.aircraftTypeIcao) {
+            const scheduledType = this.aircraftTypeDefinitionCollection
+                .findAircraftTypeDefinitionModelByIcao(scheduledIdentity.aircraftTypeIcao);
+
+            if (typeof scheduledType !== 'undefined') {
+                return scheduledType;
+            }
+        }
+
+        return this._getRandomAircraftTypeDefinitionForAirlineId(airlineId, airlineModel);
     }
 
     /**

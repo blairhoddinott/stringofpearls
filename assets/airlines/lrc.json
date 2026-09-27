@@ -1,0 +1,6 @@
+{
+    "icao": "lrc",
+    "name": "Avianca Costa Rica",
+    "callsign": { "name": "LACSA", "callsignFormats": ["###"] },
+    "fleets": { "default": [["A320", 1]] }
+}

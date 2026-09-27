@@ -1,0 +1,6342 @@
+{
+  "schemaVersion": 1,
+  "airportIcao": "KSLC",
+  "timezone": "America/Denver",
+  "sampleDate": "2026-07-15",
+  "source": {
+    "name": "US DOT BTS On-Time Performance + T-100 Segment (All Carriers)",
+    "url": "https://transtats.bts.gov/DL_SelectFields.aspx?QO_fu146_anzr=Nv4+Pn44vr45&gnoyr_VQ=FMG",
+    "retrievedAt": "2026-09-27",
+    "license": "U.S. Government work in the public domain (17 U.S.C. §105); OurAirports code data is public domain.",
+    "coverage": "Exact On-Time movements are retained; 26 representative movements were deterministically synthesized from 2026-05 T-100 performed-departure aggregates. General aviation is excluded."
+  },
+  "flights": [
+    {
+      "id": "arrival-wn4161-las-slc",
+      "category": "arrival",
+      "scheduledTime": "00:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4161",
+      "originIcao": "KLAS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-wn4792-phx-slc",
+      "category": "arrival",
+      "scheduledTime": "00:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4792",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl453-atl-slc",
+      "category": "arrival",
+      "scheduledTime": "00:26",
+      "airlineIcao": "dal",
+      "flightNumber": "453",
+      "originIcao": "KATL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-aa2378-dfw-slc",
+      "category": "arrival",
+      "scheduledTime": "00:36",
+      "airlineIcao": "aal",
+      "flightNumber": "2378",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-aa1214-slc-dfw",
+      "category": "departure",
+      "scheduledTime": "05:00",
+      "airlineIcao": "aal",
+      "flightNumber": "1214",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-oo5683-slc-den",
+      "category": "departure",
+      "scheduledTime": "05:15",
+      "airlineIcao": "skw",
+      "flightNumber": "5683",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-dl534-hnl-slc",
+      "category": "arrival",
+      "scheduledTime": "05:46",
+      "airlineIcao": "dal",
+      "flightNumber": "534",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-wn3295-slc-phx",
+      "category": "departure",
+      "scheduledTime": "05:50",
+      "airlineIcao": "swa",
+      "flightNumber": "3295",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "arrival-dl397-ogg-slc",
+      "category": "arrival",
+      "scheduledTime": "06:00",
+      "airlineIcao": "dal",
+      "flightNumber": "397",
+      "originIcao": "PHOG",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl2289-slc-dtw",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "dal",
+      "flightNumber": "2289",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "departure-wn3737-slc-den",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "swa",
+      "flightNumber": "3737",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-f93220-slc-den",
+      "category": "departure",
+      "scheduledTime": "06:05",
+      "airlineIcao": "fft",
+      "flightNumber": "3220",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-oo4763-slc-sfo",
+      "category": "departure",
+      "scheduledTime": "06:05",
+      "airlineIcao": "skw",
+      "flightNumber": "4763",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-aa1327-slc-ord",
+      "category": "departure",
+      "scheduledTime": "06:07",
+      "airlineIcao": "aal",
+      "flightNumber": "1327",
+      "originIcao": "KSLC",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-wn3436-slc-dal",
+      "category": "departure",
+      "scheduledTime": "06:10",
+      "airlineIcao": "swa",
+      "flightNumber": "3436",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "departure-as1444-slc-sea",
+      "category": "departure",
+      "scheduledTime": "06:23",
+      "airlineIcao": "asa",
+      "flightNumber": "1444",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-wn4205-slc-las",
+      "category": "departure",
+      "scheduledTime": "06:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4205",
+      "originIcao": "KSLC",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "arrival-dl491-bzn-slc",
+      "category": "arrival",
+      "scheduledTime": "06:34",
+      "airlineIcao": "dal",
+      "flightNumber": "491",
+      "originIcao": "KBZN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-wn4981-slc-smf",
+      "category": "departure",
+      "scheduledTime": "06:35",
+      "airlineIcao": "swa",
+      "flightNumber": "4981",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSMF"
+    },
+    {
+      "id": "arrival-dl1360-bil-slc",
+      "category": "arrival",
+      "scheduledTime": "06:44",
+      "airlineIcao": "dal",
+      "flightNumber": "1360",
+      "originIcao": "KBIL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-ua2366-slc-iah",
+      "category": "departure",
+      "scheduledTime": "06:45",
+      "airlineIcao": "ual",
+      "flightNumber": "2366",
+      "originIcao": "KSLC",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-wn4932-slc-aus",
+      "category": "departure",
+      "scheduledTime": "06:45",
+      "airlineIcao": "swa",
+      "flightNumber": "4932",
+      "originIcao": "KSLC",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "t100-am-departure-mmgl-f-001",
+      "scheduledTime": "06:46",
+      "category": "departure",
+      "originIcao": "KSLC",
+      "destinationIcao": "MMGL",
+      "airlineIcao": "amx",
+      "flightNumber": "6244"
+    },
+    {
+      "id": "departure-aa2604-slc-dfw",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "aal",
+      "flightNumber": "2604",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-as1430-slc-hnl",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "asa",
+      "flightNumber": "1430",
+      "originIcao": "KSLC",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-dl907-slc-atl",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "dal",
+      "flightNumber": "907",
+      "originIcao": "KSLC",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-ua1232-slc-den",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "ual",
+      "flightNumber": "1232",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-aa3057-slc-phl",
+      "category": "departure",
+      "scheduledTime": "07:01",
+      "airlineIcao": "aal",
+      "flightNumber": "3057",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "arrival-dl2335-ida-slc",
+      "category": "arrival",
+      "scheduledTime": "07:04",
+      "airlineIcao": "dal",
+      "flightNumber": "2335",
+      "originIcao": "KIDA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3901-hln-slc",
+      "category": "arrival",
+      "scheduledTime": "07:04",
+      "airlineIcao": "skw",
+      "flightNumber": "3901",
+      "originIcao": "KHLN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4235-sgu-slc",
+      "category": "arrival",
+      "scheduledTime": "07:04",
+      "airlineIcao": "skw",
+      "flightNumber": "4235",
+      "originIcao": "KSGU",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2795-mso-slc",
+      "category": "arrival",
+      "scheduledTime": "07:06",
+      "airlineIcao": "dal",
+      "flightNumber": "2795",
+      "originIcao": "KMSO",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3862-gtf-slc",
+      "category": "arrival",
+      "scheduledTime": "07:10",
+      "airlineIcao": "skw",
+      "flightNumber": "3862",
+      "originIcao": "KGTF",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2173-boi-slc",
+      "category": "arrival",
+      "scheduledTime": "07:11",
+      "airlineIcao": "dal",
+      "flightNumber": "2173",
+      "originIcao": "KBOI",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2223-anc-slc",
+      "category": "arrival",
+      "scheduledTime": "07:11",
+      "airlineIcao": "dal",
+      "flightNumber": "2223",
+      "originIcao": "PANC",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4322-twf-slc",
+      "category": "arrival",
+      "scheduledTime": "07:12",
+      "airlineIcao": "skw",
+      "flightNumber": "4322",
+      "originIcao": "KTWF",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2544-den-slc",
+      "category": "arrival",
+      "scheduledTime": "07:13",
+      "airlineIcao": "dal",
+      "flightNumber": "2544",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-oo6327-slc-phx",
+      "category": "departure",
+      "scheduledTime": "07:13",
+      "airlineIcao": "skw",
+      "flightNumber": "6327",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "t100-fx-arrival-kmem-g-001",
+      "scheduledTime": "07:15",
+      "category": "arrival",
+      "originIcao": "KMEM",
+      "destinationIcao": "KSLC",
+      "airlineIcao": "fdx",
+      "flightNumber": "4022"
+    },
+    {
+      "id": "departure-wn2744-slc-mdw",
+      "category": "departure",
+      "scheduledTime": "07:20",
+      "airlineIcao": "swa",
+      "flightNumber": "2744",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "arrival-f93219-den-slc",
+      "category": "arrival",
+      "scheduledTime": "07:31",
+      "airlineIcao": "fft",
+      "flightNumber": "3219",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-oo3018-slc-san",
+      "category": "departure",
+      "scheduledTime": "07:40",
+      "airlineIcao": "skw",
+      "flightNumber": "3018",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "departure-dl1177-slc-san",
+      "category": "departure",
+      "scheduledTime": "07:45",
+      "airlineIcao": "dal",
+      "flightNumber": "1177",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "departure-dl1203-slc-pdx",
+      "category": "departure",
+      "scheduledTime": "07:45",
+      "airlineIcao": "dal",
+      "flightNumber": "1203",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-dl1317-slc-den",
+      "category": "departure",
+      "scheduledTime": "07:45",
+      "airlineIcao": "dal",
+      "flightNumber": "1317",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-dl2671-slc-aus",
+      "category": "departure",
+      "scheduledTime": "07:45",
+      "airlineIcao": "dal",
+      "flightNumber": "2671",
+      "originIcao": "KSLC",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-oo3719-slc-rno",
+      "category": "departure",
+      "scheduledTime": "07:45",
+      "airlineIcao": "skw",
+      "flightNumber": "3719",
+      "originIcao": "KSLC",
+      "destinationIcao": "KRNO"
+    },
+    {
+      "id": "departure-oo4318-slc-cdc",
+      "category": "departure",
+      "scheduledTime": "07:45",
+      "airlineIcao": "skw",
+      "flightNumber": "4318",
+      "originIcao": "KSLC",
+      "destinationIcao": "KCDC"
+    },
+    {
+      "id": "departure-oo5408-slc-lax",
+      "category": "departure",
+      "scheduledTime": "07:45",
+      "airlineIcao": "skw",
+      "flightNumber": "5408",
+      "originIcao": "KSLC",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "arrival-oo4004-rdm-slc",
+      "category": "arrival",
+      "scheduledTime": "07:48",
+      "airlineIcao": "skw",
+      "flightNumber": "4004",
+      "originIcao": "KRDM",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl2247-slc-ord",
+      "category": "departure",
+      "scheduledTime": "07:50",
+      "airlineIcao": "dal",
+      "flightNumber": "2247",
+      "originIcao": "KSLC",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-dl2874-slc-sea",
+      "category": "departure",
+      "scheduledTime": "07:50",
+      "airlineIcao": "dal",
+      "flightNumber": "2874",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-dl920-slc-sfo",
+      "category": "departure",
+      "scheduledTime": "07:50",
+      "airlineIcao": "dal",
+      "flightNumber": "920",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "arrival-dl1650-rno-slc",
+      "category": "arrival",
+      "scheduledTime": "07:52",
+      "airlineIcao": "dal",
+      "flightNumber": "1650",
+      "originIcao": "KRNO",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl1087-slc-lax",
+      "category": "departure",
+      "scheduledTime": "07:53",
+      "airlineIcao": "dal",
+      "flightNumber": "1087",
+      "originIcao": "KSLC",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-dl2798-slc-dfw",
+      "category": "departure",
+      "scheduledTime": "07:55",
+      "airlineIcao": "dal",
+      "flightNumber": "2798",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-oo3681-slc-bur",
+      "category": "departure",
+      "scheduledTime": "07:55",
+      "airlineIcao": "skw",
+      "flightNumber": "3681",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBUR"
+    },
+    {
+      "id": "departure-oo4026-slc-sjc",
+      "category": "departure",
+      "scheduledTime": "07:55",
+      "airlineIcao": "skw",
+      "flightNumber": "4026",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSJC"
+    },
+    {
+      "id": "departure-wn3738-slc-den",
+      "category": "departure",
+      "scheduledTime": "07:55",
+      "airlineIcao": "swa",
+      "flightNumber": "3738",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-fx-departure-kpih-g-001",
+      "scheduledTime": "07:56",
+      "category": "departure",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPIH",
+      "airlineIcao": "fdx",
+      "flightNumber": "6412"
+    },
+    {
+      "id": "departure-aa2195-slc-dfw",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "aal",
+      "flightNumber": "2195",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-dl1198-slc-sna",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "dal",
+      "flightNumber": "1198",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSNA"
+    },
+    {
+      "id": "departure-dl1302-slc-ont",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "dal",
+      "flightNumber": "1302",
+      "originIcao": "KSLC",
+      "destinationIcao": "KONT"
+    },
+    {
+      "id": "departure-dl2916-slc-msp",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "dal",
+      "flightNumber": "2916",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "departure-ua1502-slc-ord",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "ual",
+      "flightNumber": "1502",
+      "originIcao": "KSLC",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-dl1440-geg-slc",
+      "category": "arrival",
+      "scheduledTime": "08:02",
+      "airlineIcao": "dal",
+      "flightNumber": "1440",
+      "originIcao": "KGEG",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl1447-slc-phx",
+      "category": "departure",
+      "scheduledTime": "08:05",
+      "airlineIcao": "dal",
+      "flightNumber": "1447",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-oo3786-slc-fat",
+      "category": "departure",
+      "scheduledTime": "08:05",
+      "airlineIcao": "skw",
+      "flightNumber": "3786",
+      "originIcao": "KSLC",
+      "destinationIcao": "KFAT"
+    },
+    {
+      "id": "arrival-oo3769-mfr-slc",
+      "category": "arrival",
+      "scheduledTime": "08:08",
+      "airlineIcao": "skw",
+      "flightNumber": "3769",
+      "originIcao": "KMFR",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl1367-slc-smf",
+      "category": "departure",
+      "scheduledTime": "08:10",
+      "airlineIcao": "dal",
+      "flightNumber": "1367",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSMF"
+    },
+    {
+      "id": "departure-dl897-slc-atl",
+      "category": "departure",
+      "scheduledTime": "08:10",
+      "airlineIcao": "dal",
+      "flightNumber": "897",
+      "originIcao": "KSLC",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-dl1526-smf-slc",
+      "category": "arrival",
+      "scheduledTime": "08:12",
+      "airlineIcao": "dal",
+      "flightNumber": "1526",
+      "originIcao": "KSMF",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl1744-slc-boi",
+      "category": "departure",
+      "scheduledTime": "08:15",
+      "airlineIcao": "dal",
+      "flightNumber": "1744",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBOI"
+    },
+    {
+      "id": "departure-oo3694-slc-psc",
+      "category": "departure",
+      "scheduledTime": "08:15",
+      "airlineIcao": "skw",
+      "flightNumber": "3694",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPSC"
+    },
+    {
+      "id": "departure-oo4444-slc-geg",
+      "category": "departure",
+      "scheduledTime": "08:15",
+      "airlineIcao": "skw",
+      "flightNumber": "4444",
+      "originIcao": "KSLC",
+      "destinationIcao": "KGEG"
+    },
+    {
+      "id": "departure-f93862-slc-den",
+      "category": "departure",
+      "scheduledTime": "08:16",
+      "airlineIcao": "fft",
+      "flightNumber": "3862",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-dl2674-las-slc",
+      "category": "arrival",
+      "scheduledTime": "08:19",
+      "airlineIcao": "dal",
+      "flightNumber": "2674",
+      "originIcao": "KLAS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-oo3004-slc-pdx",
+      "category": "departure",
+      "scheduledTime": "08:20",
+      "airlineIcao": "skw",
+      "flightNumber": "3004",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-dl2592-sat-slc",
+      "category": "arrival",
+      "scheduledTime": "08:21",
+      "airlineIcao": "dal",
+      "flightNumber": "2592",
+      "originIcao": "KSAT",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl1698-slc-las",
+      "category": "departure",
+      "scheduledTime": "08:25",
+      "airlineIcao": "dal",
+      "flightNumber": "1698",
+      "originIcao": "KSLC",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "arrival-oo4037-sun-slc",
+      "category": "arrival",
+      "scheduledTime": "08:27",
+      "airlineIcao": "skw",
+      "flightNumber": "4037",
+      "originIcao": "KSUN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1128-sea-slc",
+      "category": "arrival",
+      "scheduledTime": "08:30",
+      "airlineIcao": "dal",
+      "flightNumber": "1128",
+      "originIcao": "KSEA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2906-lax-slc",
+      "category": "arrival",
+      "scheduledTime": "08:30",
+      "airlineIcao": "dal",
+      "flightNumber": "2906",
+      "originIcao": "KLAX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-oo5642-slc-den",
+      "category": "departure",
+      "scheduledTime": "08:30",
+      "airlineIcao": "skw",
+      "flightNumber": "5642",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-dl1270-pdx-slc",
+      "category": "arrival",
+      "scheduledTime": "08:33",
+      "airlineIcao": "dal",
+      "flightNumber": "1270",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4311-eko-slc",
+      "category": "arrival",
+      "scheduledTime": "08:33",
+      "airlineIcao": "skw",
+      "flightNumber": "4311",
+      "originIcao": "KEKO",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1581-den-slc",
+      "category": "arrival",
+      "scheduledTime": "08:36",
+      "airlineIcao": "dal",
+      "flightNumber": "1581",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1535-phx-slc",
+      "category": "arrival",
+      "scheduledTime": "08:37",
+      "airlineIcao": "dal",
+      "flightNumber": "1535",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1331-sfo-slc",
+      "category": "arrival",
+      "scheduledTime": "08:40",
+      "airlineIcao": "dal",
+      "flightNumber": "1331",
+      "originIcao": "KSFO",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-wn3339-phx-slc",
+      "category": "arrival",
+      "scheduledTime": "08:40",
+      "airlineIcao": "swa",
+      "flightNumber": "3339",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2897-mci-slc",
+      "category": "arrival",
+      "scheduledTime": "08:41",
+      "airlineIcao": "dal",
+      "flightNumber": "2897",
+      "originIcao": "KMCI",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4138-fat-slc",
+      "category": "arrival",
+      "scheduledTime": "08:41",
+      "airlineIcao": "skw",
+      "flightNumber": "4138",
+      "originIcao": "KFAT",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4230-gjt-slc",
+      "category": "arrival",
+      "scheduledTime": "08:45",
+      "airlineIcao": "skw",
+      "flightNumber": "4230",
+      "originIcao": "KGJT",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2708-ont-slc",
+      "category": "arrival",
+      "scheduledTime": "08:48",
+      "airlineIcao": "dal",
+      "flightNumber": "2708",
+      "originIcao": "KONT",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1645-psc-slc",
+      "category": "arrival",
+      "scheduledTime": "08:50",
+      "airlineIcao": "dal",
+      "flightNumber": "1645",
+      "originIcao": "KPSC",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4022-jac-slc",
+      "category": "arrival",
+      "scheduledTime": "08:50",
+      "airlineIcao": "skw",
+      "flightNumber": "4022",
+      "originIcao": "KJAC",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4069-sba-slc",
+      "category": "arrival",
+      "scheduledTime": "08:50",
+      "airlineIcao": "skw",
+      "flightNumber": "4069",
+      "originIcao": "KSBA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl3229-dtw-slc",
+      "category": "arrival",
+      "scheduledTime": "08:53",
+      "airlineIcao": "dal",
+      "flightNumber": "3229",
+      "originIcao": "KDTW",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3708-eug-slc",
+      "category": "arrival",
+      "scheduledTime": "08:53",
+      "airlineIcao": "skw",
+      "flightNumber": "3708",
+      "originIcao": "KEUG",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4030-psp-slc",
+      "category": "arrival",
+      "scheduledTime": "08:54",
+      "airlineIcao": "skw",
+      "flightNumber": "4030",
+      "originIcao": "KPSP",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1314-sjc-slc",
+      "category": "arrival",
+      "scheduledTime": "08:55",
+      "airlineIcao": "dal",
+      "flightNumber": "1314",
+      "originIcao": "KSJC",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2876-cvg-slc",
+      "category": "arrival",
+      "scheduledTime": "08:55",
+      "airlineIcao": "dal",
+      "flightNumber": "2876",
+      "originIcao": "KCVG",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4061-oak-slc",
+      "category": "arrival",
+      "scheduledTime": "08:55",
+      "airlineIcao": "skw",
+      "flightNumber": "4061",
+      "originIcao": "KOAK",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "t100-am-arrival-mmgl-f-001",
+      "scheduledTime": "08:56",
+      "category": "arrival",
+      "originIcao": "MMGL",
+      "destinationIcao": "KSLC",
+      "airlineIcao": "amx",
+      "flightNumber": "2699"
+    },
+    {
+      "id": "arrival-dl892-jfk-slc",
+      "category": "arrival",
+      "scheduledTime": "09:03",
+      "airlineIcao": "dal",
+      "flightNumber": "892",
+      "originIcao": "KJFK",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-oo3381-slc-sea",
+      "category": "departure",
+      "scheduledTime": "09:10",
+      "airlineIcao": "skw",
+      "flightNumber": "3381",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "arrival-dl1977-tpa-slc",
+      "category": "arrival",
+      "scheduledTime": "09:13",
+      "airlineIcao": "dal",
+      "flightNumber": "1977",
+      "originIcao": "KTPA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl859-bos-slc",
+      "category": "arrival",
+      "scheduledTime": "09:17",
+      "airlineIcao": "dal",
+      "flightNumber": "859",
+      "originIcao": "KBOS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-ua2264-slc-iad",
+      "category": "departure",
+      "scheduledTime": "09:20",
+      "airlineIcao": "ual",
+      "flightNumber": "2264",
+      "originIcao": "KSLC",
+      "destinationIcao": "KIAD"
+    },
+    {
+      "id": "departure-wn403-slc-phx",
+      "category": "departure",
+      "scheduledTime": "09:20",
+      "airlineIcao": "swa",
+      "flightNumber": "403",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "arrival-dl1117-san-slc",
+      "category": "arrival",
+      "scheduledTime": "09:21",
+      "airlineIcao": "dal",
+      "flightNumber": "1117",
+      "originIcao": "KSAN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2142-cmh-slc",
+      "category": "arrival",
+      "scheduledTime": "09:21",
+      "airlineIcao": "dal",
+      "flightNumber": "2142",
+      "originIcao": "KCMH",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2716-mke-slc",
+      "category": "arrival",
+      "scheduledTime": "09:25",
+      "airlineIcao": "dal",
+      "flightNumber": "2716",
+      "originIcao": "KMKE",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl2100-slc-msy",
+      "category": "departure",
+      "scheduledTime": "09:25",
+      "airlineIcao": "dal",
+      "flightNumber": "2100",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMSY"
+    },
+    {
+      "id": "departure-dl2214-slc-bna",
+      "category": "departure",
+      "scheduledTime": "09:25",
+      "airlineIcao": "dal",
+      "flightNumber": "2214",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-oo3718-slc-tus",
+      "category": "departure",
+      "scheduledTime": "09:25",
+      "airlineIcao": "skw",
+      "flightNumber": "3718",
+      "originIcao": "KSLC",
+      "destinationIcao": "KTUS"
+    },
+    {
+      "id": "arrival-dl2137-ind-slc",
+      "category": "arrival",
+      "scheduledTime": "09:26",
+      "airlineIcao": "dal",
+      "flightNumber": "2137",
+      "originIcao": "KIND",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2207-cle-slc",
+      "category": "arrival",
+      "scheduledTime": "09:26",
+      "airlineIcao": "dal",
+      "flightNumber": "2207",
+      "originIcao": "KCLE",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-f93016-las-slc",
+      "category": "arrival",
+      "scheduledTime": "09:26",
+      "airlineIcao": "fft",
+      "flightNumber": "3016",
+      "originIcao": "KLAS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl2502-slc-iah",
+      "category": "departure",
+      "scheduledTime": "09:27",
+      "airlineIcao": "dal",
+      "flightNumber": "2502",
+      "originIcao": "KSLC",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-oo4308-slc-sgu",
+      "category": "departure",
+      "scheduledTime": "09:30",
+      "airlineIcao": "skw",
+      "flightNumber": "4308",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSGU"
+    },
+    {
+      "id": "arrival-dl1291-dfw-slc",
+      "category": "arrival",
+      "scheduledTime": "09:31",
+      "airlineIcao": "dal",
+      "flightNumber": "1291",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "t100-5x-departure-kont-g-001",
+      "scheduledTime": "09:31",
+      "category": "departure",
+      "originIcao": "KSLC",
+      "destinationIcao": "KONT",
+      "airlineIcao": "ups",
+      "flightNumber": "8263"
+    },
+    {
+      "id": "arrival-dl2290-mem-slc",
+      "category": "arrival",
+      "scheduledTime": "09:33",
+      "airlineIcao": "dal",
+      "flightNumber": "2290",
+      "originIcao": "KMEM",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl1095-slc-lax",
+      "category": "departure",
+      "scheduledTime": "09:35",
+      "airlineIcao": "dal",
+      "flightNumber": "1095",
+      "originIcao": "KSLC",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-dl2032-slc-mco",
+      "category": "departure",
+      "scheduledTime": "09:35",
+      "airlineIcao": "dal",
+      "flightNumber": "2032",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-oo3944-slc-ida",
+      "category": "departure",
+      "scheduledTime": "09:35",
+      "airlineIcao": "skw",
+      "flightNumber": "3944",
+      "originIcao": "KSLC",
+      "destinationIcao": "KIDA"
+    },
+    {
+      "id": "departure-oo4114-slc-oma",
+      "category": "departure",
+      "scheduledTime": "09:35",
+      "airlineIcao": "skw",
+      "flightNumber": "4114",
+      "originIcao": "KSLC",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-oo4470-slc-jac",
+      "category": "departure",
+      "scheduledTime": "09:35",
+      "airlineIcao": "skw",
+      "flightNumber": "4470",
+      "originIcao": "KSLC",
+      "destinationIcao": "KJAC"
+    },
+    {
+      "id": "arrival-ua497-den-slc",
+      "category": "arrival",
+      "scheduledTime": "09:37",
+      "airlineIcao": "ual",
+      "flightNumber": "497",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-wn1408-dal-slc",
+      "category": "arrival",
+      "scheduledTime": "09:40",
+      "airlineIcao": "swa",
+      "flightNumber": "1408",
+      "originIcao": "KDAL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-wn452-den-slc",
+      "category": "arrival",
+      "scheduledTime": "09:40",
+      "airlineIcao": "swa",
+      "flightNumber": "452",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl2273-slc-cvg",
+      "category": "departure",
+      "scheduledTime": "09:40",
+      "airlineIcao": "dal",
+      "flightNumber": "2273",
+      "originIcao": "KSLC",
+      "destinationIcao": "KCVG"
+    },
+    {
+      "id": "departure-dl2455-slc-stl",
+      "category": "departure",
+      "scheduledTime": "09:40",
+      "airlineIcao": "dal",
+      "flightNumber": "2455",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-oo4038-slc-bil",
+      "category": "departure",
+      "scheduledTime": "09:40",
+      "airlineIcao": "skw",
+      "flightNumber": "4038",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBIL"
+    },
+    {
+      "id": "arrival-dl580-rdu-slc",
+      "category": "arrival",
+      "scheduledTime": "09:42",
+      "airlineIcao": "dal",
+      "flightNumber": "580",
+      "originIcao": "KRDU",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3796-xna-slc",
+      "category": "arrival",
+      "scheduledTime": "09:43",
+      "airlineIcao": "skw",
+      "flightNumber": "3796",
+      "originIcao": "KXNA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3607-boi-slc",
+      "category": "arrival",
+      "scheduledTime": "09:44",
+      "airlineIcao": "skw",
+      "flightNumber": "3607",
+      "originIcao": "KBOI",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4152-abq-slc",
+      "category": "arrival",
+      "scheduledTime": "09:44",
+      "airlineIcao": "skw",
+      "flightNumber": "4152",
+      "originIcao": "KABQ",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl2236-slc-dtw",
+      "category": "departure",
+      "scheduledTime": "09:45",
+      "airlineIcao": "dal",
+      "flightNumber": "2236",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "departure-oo4323-slc-twf",
+      "category": "departure",
+      "scheduledTime": "09:45",
+      "airlineIcao": "skw",
+      "flightNumber": "4323",
+      "originIcao": "KSLC",
+      "destinationIcao": "KTWF"
+    },
+    {
+      "id": "arrival-dl1583-iah-slc",
+      "category": "arrival",
+      "scheduledTime": "09:48",
+      "airlineIcao": "dal",
+      "flightNumber": "1583",
+      "originIcao": "KIAH",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-oo5970-slc-sfo",
+      "category": "departure",
+      "scheduledTime": "09:49",
+      "airlineIcao": "skw",
+      "flightNumber": "5970",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "arrival-dl1176-bwi-slc",
+      "category": "arrival",
+      "scheduledTime": "09:50",
+      "airlineIcao": "dal",
+      "flightNumber": "1176",
+      "originIcao": "KBWI",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl2800-slc-dfw",
+      "category": "departure",
+      "scheduledTime": "09:50",
+      "airlineIcao": "dal",
+      "flightNumber": "2800",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-dl3123-slc-sat",
+      "category": "departure",
+      "scheduledTime": "09:50",
+      "airlineIcao": "dal",
+      "flightNumber": "3123",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-dl657-slc-bos",
+      "category": "departure",
+      "scheduledTime": "09:50",
+      "airlineIcao": "dal",
+      "flightNumber": "657",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-oo4326-slc-pih",
+      "category": "departure",
+      "scheduledTime": "09:50",
+      "airlineIcao": "skw",
+      "flightNumber": "4326",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPIH"
+    },
+    {
+      "id": "arrival-oo3874-oma-slc",
+      "category": "arrival",
+      "scheduledTime": "09:52",
+      "airlineIcao": "skw",
+      "flightNumber": "3874",
+      "originIcao": "KOMA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl3135-lgb-slc",
+      "category": "arrival",
+      "scheduledTime": "09:53",
+      "airlineIcao": "dal",
+      "flightNumber": "3135",
+      "originIcao": "KLGB",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl432-iad-slc",
+      "category": "arrival",
+      "scheduledTime": "09:54",
+      "airlineIcao": "dal",
+      "flightNumber": "432",
+      "originIcao": "KIAD",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2025-mco-slc",
+      "category": "arrival",
+      "scheduledTime": "09:55",
+      "airlineIcao": "dal",
+      "flightNumber": "2025",
+      "originIcao": "KMCO",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4006-tul-slc",
+      "category": "arrival",
+      "scheduledTime": "09:55",
+      "airlineIcao": "skw",
+      "flightNumber": "4006",
+      "originIcao": "KTUL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl1971-slc-bzn",
+      "category": "departure",
+      "scheduledTime": "09:55",
+      "airlineIcao": "dal",
+      "flightNumber": "1971",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBZN"
+    },
+    {
+      "id": "departure-dl835-slc-atl",
+      "category": "departure",
+      "scheduledTime": "09:55",
+      "airlineIcao": "dal",
+      "flightNumber": "835",
+      "originIcao": "KSLC",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-dl2021-mia-slc",
+      "category": "arrival",
+      "scheduledTime": "09:56",
+      "airlineIcao": "dal",
+      "flightNumber": "2021",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2628-msp-slc",
+      "category": "arrival",
+      "scheduledTime": "09:59",
+      "airlineIcao": "dal",
+      "flightNumber": "2628",
+      "originIcao": "KMSP",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl1792-slc-jfk",
+      "category": "departure",
+      "scheduledTime": "09:59",
+      "airlineIcao": "dal",
+      "flightNumber": "1792",
+      "originIcao": "KSLC",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "t100-5x-arrival-ksdf-g-001",
+      "scheduledTime": "09:59",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KSLC",
+      "airlineIcao": "ups",
+      "flightNumber": "7745"
+    },
+    {
+      "id": "arrival-ua2630-ewr-slc",
+      "category": "arrival",
+      "scheduledTime": "10:00",
+      "airlineIcao": "ual",
+      "flightNumber": "2630",
+      "originIcao": "KEWR",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2582-bur-slc",
+      "category": "arrival",
+      "scheduledTime": "10:01",
+      "airlineIcao": "dal",
+      "flightNumber": "2582",
+      "originIcao": "KBUR",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-oo4084-slc-abq",
+      "category": "departure",
+      "scheduledTime": "10:01",
+      "airlineIcao": "skw",
+      "flightNumber": "4084",
+      "originIcao": "KSLC",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-oo3745-tus-slc",
+      "category": "arrival",
+      "scheduledTime": "10:07",
+      "airlineIcao": "skw",
+      "flightNumber": "3745",
+      "originIcao": "KTUS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4029-okc-slc",
+      "category": "arrival",
+      "scheduledTime": "10:07",
+      "airlineIcao": "skw",
+      "flightNumber": "4029",
+      "originIcao": "KOKC",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4237-sgu-slc",
+      "category": "arrival",
+      "scheduledTime": "10:08",
+      "airlineIcao": "skw",
+      "flightNumber": "4237",
+      "originIcao": "KSGU",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3940-cos-slc",
+      "category": "arrival",
+      "scheduledTime": "10:09",
+      "airlineIcao": "skw",
+      "flightNumber": "3940",
+      "originIcao": "KCOS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1318-lax-slc",
+      "category": "arrival",
+      "scheduledTime": "10:10",
+      "airlineIcao": "dal",
+      "flightNumber": "1318",
+      "originIcao": "KLAX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2023-phl-slc",
+      "category": "arrival",
+      "scheduledTime": "10:10",
+      "airlineIcao": "dal",
+      "flightNumber": "2023",
+      "originIcao": "KPHL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-wn2957-las-slc",
+      "category": "arrival",
+      "scheduledTime": "10:10",
+      "airlineIcao": "swa",
+      "flightNumber": "2957",
+      "originIcao": "KLAS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2363-stl-slc",
+      "category": "arrival",
+      "scheduledTime": "10:12",
+      "airlineIcao": "dal",
+      "flightNumber": "2363",
+      "originIcao": "KSTL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2618-aus-slc",
+      "category": "arrival",
+      "scheduledTime": "10:12",
+      "airlineIcao": "dal",
+      "flightNumber": "2618",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1009-ewr-slc",
+      "category": "arrival",
+      "scheduledTime": "10:13",
+      "airlineIcao": "dal",
+      "flightNumber": "1009",
+      "originIcao": "KEWR",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1185-sna-slc",
+      "category": "arrival",
+      "scheduledTime": "10:13",
+      "airlineIcao": "dal",
+      "flightNumber": "1185",
+      "originIcao": "KSNA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl830-atl-slc",
+      "category": "arrival",
+      "scheduledTime": "10:14",
+      "airlineIcao": "dal",
+      "flightNumber": "830",
+      "originIcao": "KATL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1068-bna-slc",
+      "category": "arrival",
+      "scheduledTime": "10:15",
+      "airlineIcao": "dal",
+      "flightNumber": "1068",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2231-ord-slc",
+      "category": "arrival",
+      "scheduledTime": "10:15",
+      "airlineIcao": "dal",
+      "flightNumber": "2231",
+      "originIcao": "KORD",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-wn1885-hou-slc",
+      "category": "arrival",
+      "scheduledTime": "10:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1885",
+      "originIcao": "KHOU",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl1553-slc-den",
+      "category": "departure",
+      "scheduledTime": "10:15",
+      "airlineIcao": "dal",
+      "flightNumber": "1553",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-f94129-slc-lax",
+      "category": "departure",
+      "scheduledTime": "10:20",
+      "airlineIcao": "fft",
+      "flightNumber": "4129",
+      "originIcao": "KSLC",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-wn2408-slc-las",
+      "category": "departure",
+      "scheduledTime": "10:20",
+      "airlineIcao": "swa",
+      "flightNumber": "2408",
+      "originIcao": "KSLC",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-wn2698-slc-oak",
+      "category": "departure",
+      "scheduledTime": "10:20",
+      "airlineIcao": "swa",
+      "flightNumber": "2698",
+      "originIcao": "KSLC",
+      "destinationIcao": "KOAK"
+    },
+    {
+      "id": "arrival-dl698-dtw-slc",
+      "category": "arrival",
+      "scheduledTime": "10:21",
+      "airlineIcao": "dal",
+      "flightNumber": "698",
+      "originIcao": "KDTW",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-aa2607-dfw-slc",
+      "category": "arrival",
+      "scheduledTime": "10:22",
+      "airlineIcao": "aal",
+      "flightNumber": "2607",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2858-sea-slc",
+      "category": "arrival",
+      "scheduledTime": "10:26",
+      "airlineIcao": "dal",
+      "flightNumber": "2858",
+      "originIcao": "KSEA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-as292-sea-slc",
+      "category": "arrival",
+      "scheduledTime": "10:27",
+      "airlineIcao": "asa",
+      "flightNumber": "292",
+      "originIcao": "KSEA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl2033-slc-ewr",
+      "category": "departure",
+      "scheduledTime": "10:29",
+      "airlineIcao": "dal",
+      "flightNumber": "2033",
+      "originIcao": "KSLC",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "departure-dl820-slc-dca",
+      "category": "departure",
+      "scheduledTime": "10:29",
+      "airlineIcao": "dal",
+      "flightNumber": "820",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "arrival-wn2414-aus-slc",
+      "category": "arrival",
+      "scheduledTime": "10:30",
+      "airlineIcao": "swa",
+      "flightNumber": "2414",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "t100-5x-departure-krfd-g-001",
+      "scheduledTime": "10:30",
+      "category": "departure",
+      "originIcao": "KSLC",
+      "destinationIcao": "KRFD",
+      "airlineIcao": "ups",
+      "flightNumber": "997"
+    },
+    {
+      "id": "departure-dl2882-slc-mci",
+      "category": "departure",
+      "scheduledTime": "10:34",
+      "airlineIcao": "dal",
+      "flightNumber": "2882",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMCI"
+    },
+    {
+      "id": "arrival-oo4318-cdc-slc",
+      "category": "arrival",
+      "scheduledTime": "10:37",
+      "airlineIcao": "skw",
+      "flightNumber": "4318",
+      "originIcao": "KCDC",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-ua2004-slc-den",
+      "category": "departure",
+      "scheduledTime": "10:39",
+      "airlineIcao": "ual",
+      "flightNumber": "2004",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-dl1188-slc-pit",
+      "category": "departure",
+      "scheduledTime": "10:45",
+      "airlineIcao": "dal",
+      "flightNumber": "1188",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPIT"
+    },
+    {
+      "id": "departure-dl745-slc-fll",
+      "category": "departure",
+      "scheduledTime": "10:45",
+      "airlineIcao": "dal",
+      "flightNumber": "745",
+      "originIcao": "KSLC",
+      "destinationIcao": "KFLL"
+    },
+    {
+      "id": "departure-oo3727-slc-rdm",
+      "category": "departure",
+      "scheduledTime": "10:45",
+      "airlineIcao": "skw",
+      "flightNumber": "3727",
+      "originIcao": "KSLC",
+      "destinationIcao": "KRDM"
+    },
+    {
+      "id": "departure-oo3806-slc-mfr",
+      "category": "departure",
+      "scheduledTime": "10:45",
+      "airlineIcao": "skw",
+      "flightNumber": "3806",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMFR"
+    },
+    {
+      "id": "departure-oo3880-slc-hln",
+      "category": "departure",
+      "scheduledTime": "10:45",
+      "airlineIcao": "skw",
+      "flightNumber": "3880",
+      "originIcao": "KSLC",
+      "destinationIcao": "KHLN"
+    },
+    {
+      "id": "departure-oo3933-slc-bur",
+      "category": "departure",
+      "scheduledTime": "10:45",
+      "airlineIcao": "skw",
+      "flightNumber": "3933",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBUR"
+    },
+    {
+      "id": "departure-oo3955-slc-aus",
+      "category": "departure",
+      "scheduledTime": "10:45",
+      "airlineIcao": "skw",
+      "flightNumber": "3955",
+      "originIcao": "KSLC",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-oo4042-slc-psp",
+      "category": "departure",
+      "scheduledTime": "10:45",
+      "airlineIcao": "skw",
+      "flightNumber": "4042",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPSP"
+    },
+    {
+      "id": "departure-oo4134-slc-oak",
+      "category": "departure",
+      "scheduledTime": "10:45",
+      "airlineIcao": "skw",
+      "flightNumber": "4134",
+      "originIcao": "KSLC",
+      "destinationIcao": "KOAK"
+    },
+    {
+      "id": "departure-oo4135-slc-eug",
+      "category": "departure",
+      "scheduledTime": "10:45",
+      "airlineIcao": "skw",
+      "flightNumber": "4135",
+      "originIcao": "KSLC",
+      "destinationIcao": "KEUG"
+    },
+    {
+      "id": "departure-oo3833-slc-lws",
+      "category": "departure",
+      "scheduledTime": "10:50",
+      "airlineIcao": "skw",
+      "flightNumber": "3833",
+      "originIcao": "KSLC",
+      "destinationIcao": "KLWS"
+    },
+    {
+      "id": "departure-oo3841-slc-sba",
+      "category": "departure",
+      "scheduledTime": "10:50",
+      "airlineIcao": "skw",
+      "flightNumber": "3841",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSBA"
+    },
+    {
+      "id": "departure-wn3739-slc-den",
+      "category": "departure",
+      "scheduledTime": "10:50",
+      "airlineIcao": "swa",
+      "flightNumber": "3739",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-wn4027-den-slc",
+      "category": "arrival",
+      "scheduledTime": "10:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4027",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl1835-slc-sna",
+      "category": "departure",
+      "scheduledTime": "10:55",
+      "airlineIcao": "dal",
+      "flightNumber": "1835",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSNA"
+    },
+    {
+      "id": "departure-dl2070-slc-clt",
+      "category": "departure",
+      "scheduledTime": "10:55",
+      "airlineIcao": "dal",
+      "flightNumber": "2070",
+      "originIcao": "KSLC",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-oo3768-slc-fat",
+      "category": "departure",
+      "scheduledTime": "10:55",
+      "airlineIcao": "skw",
+      "flightNumber": "3768",
+      "originIcao": "KSLC",
+      "destinationIcao": "KFAT"
+    },
+    {
+      "id": "departure-oo3859-slc-gtf",
+      "category": "departure",
+      "scheduledTime": "10:55",
+      "airlineIcao": "skw",
+      "flightNumber": "3859",
+      "originIcao": "KSLC",
+      "destinationIcao": "KGTF"
+    },
+    {
+      "id": "departure-oo4112-slc-mso",
+      "category": "departure",
+      "scheduledTime": "10:55",
+      "airlineIcao": "skw",
+      "flightNumber": "4112",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMSO"
+    },
+    {
+      "id": "departure-wn1092-slc-lgb",
+      "category": "departure",
+      "scheduledTime": "10:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1092",
+      "originIcao": "KSLC",
+      "destinationIcao": "KLGB"
+    },
+    {
+      "id": "t100-qx-departure-kpdx-f-001",
+      "scheduledTime": "10:58",
+      "category": "departure",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "qxe",
+      "flightNumber": "4164"
+    },
+    {
+      "id": "departure-dl1442-slc-boi",
+      "category": "departure",
+      "scheduledTime": "11:00",
+      "airlineIcao": "dal",
+      "flightNumber": "1442",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBOI"
+    },
+    {
+      "id": "departure-dl902-slc-sfo",
+      "category": "departure",
+      "scheduledTime": "11:00",
+      "airlineIcao": "dal",
+      "flightNumber": "902",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-dl1116-slc-lgb",
+      "category": "departure",
+      "scheduledTime": "11:05",
+      "airlineIcao": "dal",
+      "flightNumber": "1116",
+      "originIcao": "KSLC",
+      "destinationIcao": "KLGB"
+    },
+    {
+      "id": "departure-dl885-slc-atl",
+      "category": "departure",
+      "scheduledTime": "11:05",
+      "airlineIcao": "dal",
+      "flightNumber": "885",
+      "originIcao": "KSLC",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-dl1296-slc-san",
+      "category": "departure",
+      "scheduledTime": "11:10",
+      "airlineIcao": "dal",
+      "flightNumber": "1296",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "departure-dl2282-slc-jac",
+      "category": "departure",
+      "scheduledTime": "11:10",
+      "airlineIcao": "dal",
+      "flightNumber": "2282",
+      "originIcao": "KSLC",
+      "destinationIcao": "KJAC"
+    },
+    {
+      "id": "departure-dl2924-slc-msp",
+      "category": "departure",
+      "scheduledTime": "11:10",
+      "airlineIcao": "dal",
+      "flightNumber": "2924",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "departure-oo4320-slc-wys",
+      "category": "departure",
+      "scheduledTime": "11:10",
+      "airlineIcao": "skw",
+      "flightNumber": "4320",
+      "originIcao": "KSLC",
+      "destinationIcao": "KWYS"
+    },
+    {
+      "id": "departure-wn552-slc-lax",
+      "category": "departure",
+      "scheduledTime": "11:10",
+      "airlineIcao": "swa",
+      "flightNumber": "552",
+      "originIcao": "KSLC",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-ua1845-slc-ewr",
+      "category": "departure",
+      "scheduledTime": "11:12",
+      "airlineIcao": "ual",
+      "flightNumber": "1845",
+      "originIcao": "KSLC",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "arrival-wn1066-bwi-slc",
+      "category": "arrival",
+      "scheduledTime": "11:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1066",
+      "originIcao": "KBWI",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl1209-slc-pdx",
+      "category": "departure",
+      "scheduledTime": "11:15",
+      "airlineIcao": "dal",
+      "flightNumber": "1209",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-oo3973-slc-sun",
+      "category": "departure",
+      "scheduledTime": "11:15",
+      "airlineIcao": "skw",
+      "flightNumber": "3973",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSUN"
+    },
+    {
+      "id": "t100-fx-arrival-kpih-g-001",
+      "scheduledTime": "11:15",
+      "category": "arrival",
+      "originIcao": "KPIH",
+      "destinationIcao": "KSLC",
+      "airlineIcao": "fdx",
+      "flightNumber": "5405"
+    },
+    {
+      "id": "departure-as796-slc-sea",
+      "category": "departure",
+      "scheduledTime": "11:17",
+      "airlineIcao": "asa",
+      "flightNumber": "796",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-aa2607-slc-dfw",
+      "category": "departure",
+      "scheduledTime": "11:18",
+      "airlineIcao": "aal",
+      "flightNumber": "2607",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-aa2602-clt-slc",
+      "category": "arrival",
+      "scheduledTime": "11:20",
+      "airlineIcao": "aal",
+      "flightNumber": "2602",
+      "originIcao": "KCLT",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl2022-slc-phl",
+      "category": "departure",
+      "scheduledTime": "11:20",
+      "airlineIcao": "dal",
+      "flightNumber": "2022",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "departure-dl3172-slc-ont",
+      "category": "departure",
+      "scheduledTime": "11:21",
+      "airlineIcao": "dal",
+      "flightNumber": "3172",
+      "originIcao": "KSLC",
+      "destinationIcao": "KONT"
+    },
+    {
+      "id": "departure-oo4253-slc-sgu",
+      "category": "departure",
+      "scheduledTime": "11:21",
+      "airlineIcao": "skw",
+      "flightNumber": "4253",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSGU"
+    },
+    {
+      "id": "departure-dl2024-slc-mco",
+      "category": "departure",
+      "scheduledTime": "11:23",
+      "airlineIcao": "dal",
+      "flightNumber": "2024",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-dl1431-slc-phx",
+      "category": "departure",
+      "scheduledTime": "11:30",
+      "airlineIcao": "dal",
+      "flightNumber": "1431",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-dl1452-slc-geg",
+      "category": "departure",
+      "scheduledTime": "11:30",
+      "airlineIcao": "dal",
+      "flightNumber": "1452",
+      "originIcao": "KSLC",
+      "destinationIcao": "KGEG"
+    },
+    {
+      "id": "departure-dl623-slc-ogg",
+      "category": "departure",
+      "scheduledTime": "11:30",
+      "airlineIcao": "dal",
+      "flightNumber": "623",
+      "originIcao": "KSLC",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "departure-dl829-slc-lax",
+      "category": "departure",
+      "scheduledTime": "11:30",
+      "airlineIcao": "dal",
+      "flightNumber": "829",
+      "originIcao": "KSLC",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-dl1423-slc-smf",
+      "category": "departure",
+      "scheduledTime": "11:35",
+      "airlineIcao": "dal",
+      "flightNumber": "1423",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSMF"
+    },
+    {
+      "id": "departure-dl1659-slc-las",
+      "category": "departure",
+      "scheduledTime": "11:35",
+      "airlineIcao": "dal",
+      "flightNumber": "1659",
+      "originIcao": "KSLC",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-dl2995-slc-sea",
+      "category": "departure",
+      "scheduledTime": "11:35",
+      "airlineIcao": "dal",
+      "flightNumber": "2995",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-wn3751-slc-phx",
+      "category": "departure",
+      "scheduledTime": "11:35",
+      "airlineIcao": "swa",
+      "flightNumber": "3751",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "t100-sy-departure-kmsp-f-001",
+      "scheduledTime": "11:35",
+      "category": "departure",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMSP",
+      "airlineIcao": "scx",
+      "flightNumber": "3749"
+    },
+    {
+      "id": "arrival-oo6422-phx-slc",
+      "category": "arrival",
+      "scheduledTime": "11:37",
+      "airlineIcao": "skw",
+      "flightNumber": "6422",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-ua1972-ord-slc",
+      "category": "arrival",
+      "scheduledTime": "11:39",
+      "airlineIcao": "ual",
+      "flightNumber": "1972",
+      "originIcao": "KORD",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3719-rno-slc",
+      "category": "arrival",
+      "scheduledTime": "11:40",
+      "airlineIcao": "skw",
+      "flightNumber": "3719",
+      "originIcao": "KRNO",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl1254-slc-sjc",
+      "category": "departure",
+      "scheduledTime": "11:40",
+      "airlineIcao": "dal",
+      "flightNumber": "1254",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSJC"
+    },
+    {
+      "id": "departure-dl1595-slc-rno",
+      "category": "departure",
+      "scheduledTime": "11:40",
+      "airlineIcao": "dal",
+      "flightNumber": "1595",
+      "originIcao": "KSLC",
+      "destinationIcao": "KRNO"
+    },
+    {
+      "id": "departure-dl316-slc-hnl",
+      "category": "departure",
+      "scheduledTime": "11:45",
+      "airlineIcao": "dal",
+      "flightNumber": "316",
+      "originIcao": "KSLC",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-oo5605-sfo-slc",
+      "category": "arrival",
+      "scheduledTime": "11:49",
+      "airlineIcao": "skw",
+      "flightNumber": "5605",
+      "originIcao": "KSFO",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-f93872-phx-slc",
+      "category": "arrival",
+      "scheduledTime": "11:52",
+      "airlineIcao": "fft",
+      "flightNumber": "3872",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-as360-sea-slc",
+      "category": "arrival",
+      "scheduledTime": "11:55",
+      "airlineIcao": "asa",
+      "flightNumber": "360",
+      "originIcao": "KSEA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-wn3384-slc-bna",
+      "category": "departure",
+      "scheduledTime": "11:55",
+      "airlineIcao": "swa",
+      "flightNumber": "3384",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-ua756-iah-slc",
+      "category": "arrival",
+      "scheduledTime": "11:59",
+      "airlineIcao": "ual",
+      "flightNumber": "756",
+      "originIcao": "KIAH",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3122-san-slc",
+      "category": "arrival",
+      "scheduledTime": "12:09",
+      "airlineIcao": "skw",
+      "flightNumber": "3122",
+      "originIcao": "KSAN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl387-atl-slc",
+      "category": "arrival",
+      "scheduledTime": "12:10",
+      "airlineIcao": "dal",
+      "flightNumber": "387",
+      "originIcao": "KATL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-aa2602-slc-clt",
+      "category": "departure",
+      "scheduledTime": "12:15",
+      "airlineIcao": "aal",
+      "flightNumber": "2602",
+      "originIcao": "KSLC",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-oo6422-slc-phx",
+      "category": "departure",
+      "scheduledTime": "12:17",
+      "airlineIcao": "skw",
+      "flightNumber": "6422",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "arrival-dl1447-phx-slc",
+      "category": "arrival",
+      "scheduledTime": "12:21",
+      "airlineIcao": "dal",
+      "flightNumber": "1447",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-oo3892-slc-psc",
+      "category": "departure",
+      "scheduledTime": "12:24",
+      "airlineIcao": "skw",
+      "flightNumber": "3892",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPSC"
+    },
+    {
+      "id": "arrival-dl1367-smf-slc",
+      "category": "arrival",
+      "scheduledTime": "12:27",
+      "airlineIcao": "dal",
+      "flightNumber": "1367",
+      "originIcao": "KSMF",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1302-ont-slc",
+      "category": "arrival",
+      "scheduledTime": "12:28",
+      "airlineIcao": "dal",
+      "flightNumber": "1302",
+      "originIcao": "KONT",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1698-las-slc",
+      "category": "arrival",
+      "scheduledTime": "12:29",
+      "airlineIcao": "dal",
+      "flightNumber": "1698",
+      "originIcao": "KLAS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3786-fat-slc",
+      "category": "arrival",
+      "scheduledTime": "12:29",
+      "airlineIcao": "skw",
+      "flightNumber": "3786",
+      "originIcao": "KFAT",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3944-ida-slc",
+      "category": "arrival",
+      "scheduledTime": "12:30",
+      "airlineIcao": "skw",
+      "flightNumber": "3944",
+      "originIcao": "KIDA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-wn2951-mdw-slc",
+      "category": "arrival",
+      "scheduledTime": "12:30",
+      "airlineIcao": "swa",
+      "flightNumber": "2951",
+      "originIcao": "KMDW",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1203-pdx-slc",
+      "category": "arrival",
+      "scheduledTime": "12:33",
+      "airlineIcao": "dal",
+      "flightNumber": "1203",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4323-twf-slc",
+      "category": "arrival",
+      "scheduledTime": "12:33",
+      "airlineIcao": "skw",
+      "flightNumber": "4323",
+      "originIcao": "KTWF",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-aa2616-ord-slc",
+      "category": "arrival",
+      "scheduledTime": "12:35",
+      "airlineIcao": "aal",
+      "flightNumber": "2616",
+      "originIcao": "KORD",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-ua1178-slc-ord",
+      "category": "departure",
+      "scheduledTime": "12:35",
+      "airlineIcao": "ual",
+      "flightNumber": "1178",
+      "originIcao": "KSLC",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-dl1016-sea-slc",
+      "category": "arrival",
+      "scheduledTime": "12:36",
+      "airlineIcao": "dal",
+      "flightNumber": "1016",
+      "originIcao": "KSEA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4326-pih-slc",
+      "category": "arrival",
+      "scheduledTime": "12:38",
+      "airlineIcao": "skw",
+      "flightNumber": "4326",
+      "originIcao": "KPIH",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4470-jac-slc",
+      "category": "arrival",
+      "scheduledTime": "12:38",
+      "airlineIcao": "skw",
+      "flightNumber": "4470",
+      "originIcao": "KJAC",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "t100-qx-arrival-kpdx-f-001",
+      "scheduledTime": "12:39",
+      "category": "arrival",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSLC",
+      "airlineIcao": "qxe",
+      "flightNumber": "2781"
+    },
+    {
+      "id": "arrival-wn3827-smf-slc",
+      "category": "arrival",
+      "scheduledTime": "12:40",
+      "airlineIcao": "swa",
+      "flightNumber": "3827",
+      "originIcao": "KSMF",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4026-sjc-slc",
+      "category": "arrival",
+      "scheduledTime": "12:41",
+      "airlineIcao": "skw",
+      "flightNumber": "4026",
+      "originIcao": "KSJC",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4308-sgu-slc",
+      "category": "arrival",
+      "scheduledTime": "12:41",
+      "airlineIcao": "skw",
+      "flightNumber": "4308",
+      "originIcao": "KSGU",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4444-geg-slc",
+      "category": "arrival",
+      "scheduledTime": "12:41",
+      "airlineIcao": "skw",
+      "flightNumber": "4444",
+      "originIcao": "KGEG",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3694-psc-slc",
+      "category": "arrival",
+      "scheduledTime": "12:42",
+      "airlineIcao": "skw",
+      "flightNumber": "3694",
+      "originIcao": "KPSC",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3681-bur-slc",
+      "category": "arrival",
+      "scheduledTime": "12:43",
+      "airlineIcao": "skw",
+      "flightNumber": "3681",
+      "originIcao": "KBUR",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl920-sfo-slc",
+      "category": "arrival",
+      "scheduledTime": "12:44",
+      "airlineIcao": "dal",
+      "flightNumber": "920",
+      "originIcao": "KSFO",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1434-lax-slc",
+      "category": "arrival",
+      "scheduledTime": "12:45",
+      "airlineIcao": "dal",
+      "flightNumber": "1434",
+      "originIcao": "KLAX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1198-sna-slc",
+      "category": "arrival",
+      "scheduledTime": "12:46",
+      "airlineIcao": "dal",
+      "flightNumber": "1198",
+      "originIcao": "KSNA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-oo3117-slc-pdx",
+      "category": "departure",
+      "scheduledTime": "12:46",
+      "airlineIcao": "skw",
+      "flightNumber": "3117",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-f93871-slc-phx",
+      "category": "departure",
+      "scheduledTime": "12:47",
+      "airlineIcao": "fft",
+      "flightNumber": "3871",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "arrival-dl1177-san-slc",
+      "category": "arrival",
+      "scheduledTime": "12:50",
+      "airlineIcao": "dal",
+      "flightNumber": "1177",
+      "originIcao": "KSAN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-as664-slc-sea",
+      "category": "departure",
+      "scheduledTime": "12:51",
+      "airlineIcao": "asa",
+      "flightNumber": "664",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-oo4720-slc-den",
+      "category": "departure",
+      "scheduledTime": "13:00",
+      "airlineIcao": "skw",
+      "flightNumber": "4720",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-ua497-slc-iah",
+      "category": "departure",
+      "scheduledTime": "13:00",
+      "airlineIcao": "ual",
+      "flightNumber": "497",
+      "originIcao": "KSLC",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "arrival-f91268-lax-slc",
+      "category": "arrival",
+      "scheduledTime": "13:02",
+      "airlineIcao": "fft",
+      "flightNumber": "1268",
+      "originIcao": "KLAX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1754-boi-slc",
+      "category": "arrival",
+      "scheduledTime": "13:06",
+      "airlineIcao": "dal",
+      "flightNumber": "1754",
+      "originIcao": "KBOI",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-aa2613-dfw-slc",
+      "category": "arrival",
+      "scheduledTime": "13:10",
+      "airlineIcao": "aal",
+      "flightNumber": "2613",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-wn3591-slc-den",
+      "category": "departure",
+      "scheduledTime": "13:10",
+      "airlineIcao": "swa",
+      "flightNumber": "3591",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-ua1963-den-slc",
+      "category": "arrival",
+      "scheduledTime": "13:13",
+      "airlineIcao": "ual",
+      "flightNumber": "1963",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl1623-slc-den",
+      "category": "departure",
+      "scheduledTime": "13:20",
+      "airlineIcao": "dal",
+      "flightNumber": "1623",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-dl2921-slc-sea",
+      "category": "departure",
+      "scheduledTime": "13:20",
+      "airlineIcao": "dal",
+      "flightNumber": "2921",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-wn3750-slc-mdw",
+      "category": "departure",
+      "scheduledTime": "13:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3750",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "arrival-dl2031-mco-slc",
+      "category": "arrival",
+      "scheduledTime": "13:21",
+      "airlineIcao": "dal",
+      "flightNumber": "2031",
+      "originIcao": "KMCO",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4038-bil-slc",
+      "category": "arrival",
+      "scheduledTime": "13:22",
+      "airlineIcao": "skw",
+      "flightNumber": "4038",
+      "originIcao": "KBIL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl2680-slc-sat",
+      "category": "departure",
+      "scheduledTime": "13:25",
+      "airlineIcao": "dal",
+      "flightNumber": "2680",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-oo3689-slc-sun",
+      "category": "departure",
+      "scheduledTime": "13:25",
+      "airlineIcao": "skw",
+      "flightNumber": "3689",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSUN"
+    },
+    {
+      "id": "departure-aa2616-slc-ord",
+      "category": "departure",
+      "scheduledTime": "13:28",
+      "airlineIcao": "aal",
+      "flightNumber": "2616",
+      "originIcao": "KSLC",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-oo3765-slc-ida",
+      "category": "departure",
+      "scheduledTime": "13:30",
+      "airlineIcao": "skw",
+      "flightNumber": "3765",
+      "originIcao": "KSLC",
+      "destinationIcao": "KIDA"
+    },
+    {
+      "id": "departure-oo3896-slc-oma",
+      "category": "departure",
+      "scheduledTime": "13:30",
+      "airlineIcao": "skw",
+      "flightNumber": "3896",
+      "originIcao": "KSLC",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-oo4321-slc-sgu",
+      "category": "departure",
+      "scheduledTime": "13:30",
+      "airlineIcao": "skw",
+      "flightNumber": "4321",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSGU"
+    },
+    {
+      "id": "departure-dl906-slc-atl",
+      "category": "departure",
+      "scheduledTime": "13:35",
+      "airlineIcao": "dal",
+      "flightNumber": "906",
+      "originIcao": "KSLC",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-oo4324-slc-twf",
+      "category": "departure",
+      "scheduledTime": "13:35",
+      "airlineIcao": "skw",
+      "flightNumber": "4324",
+      "originIcao": "KSLC",
+      "destinationIcao": "KTWF"
+    },
+    {
+      "id": "t100-yv-departure-kiah-f-001",
+      "scheduledTime": "13:36",
+      "category": "departure",
+      "originIcao": "KSLC",
+      "destinationIcao": "KIAH",
+      "airlineIcao": "ash",
+      "flightNumber": "7928"
+    },
+    {
+      "id": "arrival-dl1971-bzn-slc",
+      "category": "arrival",
+      "scheduledTime": "13:39",
+      "airlineIcao": "dal",
+      "flightNumber": "1971",
+      "originIcao": "KBZN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-wn302-phx-slc",
+      "category": "arrival",
+      "scheduledTime": "13:40",
+      "airlineIcao": "swa",
+      "flightNumber": "302",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl2149-slc-cvg",
+      "category": "departure",
+      "scheduledTime": "13:40",
+      "airlineIcao": "dal",
+      "flightNumber": "2149",
+      "originIcao": "KSLC",
+      "destinationIcao": "KCVG"
+    },
+    {
+      "id": "departure-dl2515-slc-mem",
+      "category": "departure",
+      "scheduledTime": "13:40",
+      "airlineIcao": "dal",
+      "flightNumber": "2515",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "departure-dl2903-slc-mci",
+      "category": "departure",
+      "scheduledTime": "13:40",
+      "airlineIcao": "dal",
+      "flightNumber": "2903",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMCI"
+    },
+    {
+      "id": "departure-oo3882-slc-okc",
+      "category": "departure",
+      "scheduledTime": "13:40",
+      "airlineIcao": "skw",
+      "flightNumber": "3882",
+      "originIcao": "KSLC",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-dl1299-slc-iah",
+      "category": "departure",
+      "scheduledTime": "13:45",
+      "airlineIcao": "dal",
+      "flightNumber": "1299",
+      "originIcao": "KSLC",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-dl2205-slc-bna",
+      "category": "departure",
+      "scheduledTime": "13:45",
+      "airlineIcao": "dal",
+      "flightNumber": "2205",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-f92575-slc-las",
+      "category": "departure",
+      "scheduledTime": "13:47",
+      "airlineIcao": "fft",
+      "flightNumber": "2575",
+      "originIcao": "KSLC",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "arrival-dl663-atl-slc",
+      "category": "arrival",
+      "scheduledTime": "13:50",
+      "airlineIcao": "dal",
+      "flightNumber": "663",
+      "originIcao": "KATL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl2244-slc-dtw",
+      "category": "departure",
+      "scheduledTime": "13:50",
+      "airlineIcao": "dal",
+      "flightNumber": "2244",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "departure-dl2811-slc-dfw",
+      "category": "departure",
+      "scheduledTime": "13:50",
+      "airlineIcao": "dal",
+      "flightNumber": "2811",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-oo3906-slc-bzn",
+      "category": "departure",
+      "scheduledTime": "13:50",
+      "airlineIcao": "skw",
+      "flightNumber": "3906",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBZN"
+    },
+    {
+      "id": "arrival-wn1731-den-slc",
+      "category": "arrival",
+      "scheduledTime": "13:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1731",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3112-pdx-slc",
+      "category": "arrival",
+      "scheduledTime": "13:59",
+      "airlineIcao": "skw",
+      "flightNumber": "3112",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-aa2613-slc-dfw",
+      "category": "departure",
+      "scheduledTime": "14:00",
+      "airlineIcao": "aal",
+      "flightNumber": "2613",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-dl2936-slc-msp",
+      "category": "departure",
+      "scheduledTime": "14:00",
+      "airlineIcao": "dal",
+      "flightNumber": "2936",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "departure-dl2581-slc-aus",
+      "category": "departure",
+      "scheduledTime": "14:08",
+      "airlineIcao": "dal",
+      "flightNumber": "2581",
+      "originIcao": "KSLC",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-dl2671-aus-slc",
+      "category": "arrival",
+      "scheduledTime": "14:09",
+      "airlineIcao": "dal",
+      "flightNumber": "2671",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-oo3820-slc-abq",
+      "category": "departure",
+      "scheduledTime": "14:10",
+      "airlineIcao": "skw",
+      "flightNumber": "3820",
+      "originIcao": "KSLC",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-dl935-dtw-slc",
+      "category": "arrival",
+      "scheduledTime": "14:11",
+      "airlineIcao": "dal",
+      "flightNumber": "935",
+      "originIcao": "KDTW",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4084-abq-slc",
+      "category": "arrival",
+      "scheduledTime": "14:11",
+      "airlineIcao": "skw",
+      "flightNumber": "4084",
+      "originIcao": "KABQ",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3718-tus-slc",
+      "category": "arrival",
+      "scheduledTime": "14:13",
+      "airlineIcao": "skw",
+      "flightNumber": "3718",
+      "originIcao": "KTUS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl678-cvg-slc",
+      "category": "arrival",
+      "scheduledTime": "14:14",
+      "airlineIcao": "dal",
+      "flightNumber": "678",
+      "originIcao": "KCVG",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1265-sea-slc",
+      "category": "arrival",
+      "scheduledTime": "14:15",
+      "airlineIcao": "dal",
+      "flightNumber": "1265",
+      "originIcao": "KSEA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1442-boi-slc",
+      "category": "arrival",
+      "scheduledTime": "14:18",
+      "airlineIcao": "dal",
+      "flightNumber": "1442",
+      "originIcao": "KBOI",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2651-msp-slc",
+      "category": "arrival",
+      "scheduledTime": "14:19",
+      "airlineIcao": "dal",
+      "flightNumber": "2651",
+      "originIcao": "KMSP",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1553-den-slc",
+      "category": "arrival",
+      "scheduledTime": "14:20",
+      "airlineIcao": "dal",
+      "flightNumber": "1553",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2798-dfw-slc",
+      "category": "arrival",
+      "scheduledTime": "14:20",
+      "airlineIcao": "dal",
+      "flightNumber": "2798",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl464-bos-slc",
+      "category": "arrival",
+      "scheduledTime": "14:20",
+      "airlineIcao": "dal",
+      "flightNumber": "464",
+      "originIcao": "KBOS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl917-jfk-slc",
+      "category": "arrival",
+      "scheduledTime": "14:21",
+      "airlineIcao": "dal",
+      "flightNumber": "917",
+      "originIcao": "KJFK",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4019-sun-slc",
+      "category": "arrival",
+      "scheduledTime": "14:21",
+      "airlineIcao": "skw",
+      "flightNumber": "4019",
+      "originIcao": "KSUN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2282-jac-slc",
+      "category": "arrival",
+      "scheduledTime": "14:22",
+      "airlineIcao": "dal",
+      "flightNumber": "2282",
+      "originIcao": "KJAC",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3815-oma-slc",
+      "category": "arrival",
+      "scheduledTime": "14:24",
+      "airlineIcao": "skw",
+      "flightNumber": "3815",
+      "originIcao": "KOMA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4320-wys-slc",
+      "category": "arrival",
+      "scheduledTime": "14:24",
+      "airlineIcao": "skw",
+      "flightNumber": "4320",
+      "originIcao": "KWYS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "t100-5x-arrival-ksdf-g-002",
+      "scheduledTime": "14:24",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KSLC",
+      "airlineIcao": "ups",
+      "flightNumber": "1562"
+    },
+    {
+      "id": "departure-wn3595-slc-hou",
+      "category": "departure",
+      "scheduledTime": "14:25",
+      "airlineIcao": "swa",
+      "flightNumber": "3595",
+      "originIcao": "KSLC",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "departure-ua1662-slc-den",
+      "category": "departure",
+      "scheduledTime": "14:28",
+      "airlineIcao": "ual",
+      "flightNumber": "1662",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-dl1194-lax-slc",
+      "category": "arrival",
+      "scheduledTime": "14:30",
+      "airlineIcao": "dal",
+      "flightNumber": "1194",
+      "originIcao": "KLAX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl930-sat-slc",
+      "category": "arrival",
+      "scheduledTime": "14:30",
+      "airlineIcao": "dal",
+      "flightNumber": "930",
+      "originIcao": "KSAT",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3880-hln-slc",
+      "category": "arrival",
+      "scheduledTime": "14:30",
+      "airlineIcao": "skw",
+      "flightNumber": "3880",
+      "originIcao": "KHLN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4253-sgu-slc",
+      "category": "arrival",
+      "scheduledTime": "14:30",
+      "airlineIcao": "skw",
+      "flightNumber": "4253",
+      "originIcao": "KSGU",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-wn4198-oak-slc",
+      "category": "arrival",
+      "scheduledTime": "14:30",
+      "airlineIcao": "swa",
+      "flightNumber": "4198",
+      "originIcao": "KOAK",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl671-slc-jfk",
+      "category": "departure",
+      "scheduledTime": "14:35",
+      "airlineIcao": "dal",
+      "flightNumber": "671",
+      "originIcao": "KSLC",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "departure-dl2377-slc-ord",
+      "category": "departure",
+      "scheduledTime": "14:40",
+      "airlineIcao": "dal",
+      "flightNumber": "2377",
+      "originIcao": "KSLC",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-wn3754-slc-san",
+      "category": "departure",
+      "scheduledTime": "14:40",
+      "airlineIcao": "swa",
+      "flightNumber": "3754",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "arrival-f93277-dfw-slc",
+      "category": "arrival",
+      "scheduledTime": "14:55",
+      "airlineIcao": "fft",
+      "flightNumber": "3277",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-f93981-den-slc",
+      "category": "arrival",
+      "scheduledTime": "14:55",
+      "airlineIcao": "fft",
+      "flightNumber": "3981",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3859-gtf-slc",
+      "category": "arrival",
+      "scheduledTime": "14:55",
+      "airlineIcao": "skw",
+      "flightNumber": "3859",
+      "originIcao": "KGTF",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4112-mso-slc",
+      "category": "arrival",
+      "scheduledTime": "14:57",
+      "airlineIcao": "skw",
+      "flightNumber": "4112",
+      "originIcao": "KMSO",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl1210-slc-san",
+      "category": "departure",
+      "scheduledTime": "15:00",
+      "airlineIcao": "dal",
+      "flightNumber": "1210",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "departure-oo3717-slc-tus",
+      "category": "departure",
+      "scheduledTime": "15:00",
+      "airlineIcao": "skw",
+      "flightNumber": "3717",
+      "originIcao": "KSLC",
+      "destinationIcao": "KTUS"
+    },
+    {
+      "id": "departure-oo3853-slc-sba",
+      "category": "departure",
+      "scheduledTime": "15:00",
+      "airlineIcao": "skw",
+      "flightNumber": "3853",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSBA"
+    },
+    {
+      "id": "t100-5x-departure-ksdf-g-001",
+      "scheduledTime": "15:01",
+      "category": "departure",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSDF",
+      "airlineIcao": "ups",
+      "flightNumber": "7831"
+    },
+    {
+      "id": "arrival-oo3833-lws-slc",
+      "category": "arrival",
+      "scheduledTime": "15:02",
+      "airlineIcao": "skw",
+      "flightNumber": "3833",
+      "originIcao": "KLWS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-oo4105-slc-eug",
+      "category": "departure",
+      "scheduledTime": "15:02",
+      "airlineIcao": "skw",
+      "flightNumber": "4105",
+      "originIcao": "KSLC",
+      "destinationIcao": "KEUG"
+    },
+    {
+      "id": "arrival-as733-sea-slc",
+      "category": "arrival",
+      "scheduledTime": "15:04",
+      "airlineIcao": "asa",
+      "flightNumber": "733",
+      "originIcao": "KSEA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3727-rdm-slc",
+      "category": "arrival",
+      "scheduledTime": "15:04",
+      "airlineIcao": "skw",
+      "flightNumber": "3727",
+      "originIcao": "KRDM",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-oo3693-slc-bur",
+      "category": "departure",
+      "scheduledTime": "15:05",
+      "airlineIcao": "skw",
+      "flightNumber": "3693",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBUR"
+    },
+    {
+      "id": "departure-oo3793-slc-lgb",
+      "category": "departure",
+      "scheduledTime": "15:05",
+      "airlineIcao": "skw",
+      "flightNumber": "3793",
+      "originIcao": "KSLC",
+      "destinationIcao": "KLGB"
+    },
+    {
+      "id": "departure-dl1088-slc-sfo",
+      "category": "departure",
+      "scheduledTime": "15:10",
+      "airlineIcao": "dal",
+      "flightNumber": "1088",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-dl1260-slc-sjc",
+      "category": "departure",
+      "scheduledTime": "15:10",
+      "airlineIcao": "dal",
+      "flightNumber": "1260",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSJC"
+    },
+    {
+      "id": "departure-dl1492-slc-stl",
+      "category": "departure",
+      "scheduledTime": "15:10",
+      "airlineIcao": "dal",
+      "flightNumber": "1492",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn3740-slc-den",
+      "category": "departure",
+      "scheduledTime": "15:10",
+      "airlineIcao": "swa",
+      "flightNumber": "3740",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-oo4042-psp-slc",
+      "category": "arrival",
+      "scheduledTime": "15:11",
+      "airlineIcao": "skw",
+      "flightNumber": "4042",
+      "originIcao": "KPSP",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-ua1840-den-slc",
+      "category": "arrival",
+      "scheduledTime": "15:13",
+      "airlineIcao": "ual",
+      "flightNumber": "1840",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl1277-slc-sna",
+      "category": "departure",
+      "scheduledTime": "15:15",
+      "airlineIcao": "dal",
+      "flightNumber": "1277",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSNA"
+    },
+    {
+      "id": "departure-dl2817-slc-sea",
+      "category": "departure",
+      "scheduledTime": "15:15",
+      "airlineIcao": "dal",
+      "flightNumber": "2817",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-dl1244-slc-pdx",
+      "category": "departure",
+      "scheduledTime": "15:17",
+      "airlineIcao": "dal",
+      "flightNumber": "1244",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-dl1738-slc-phx",
+      "category": "departure",
+      "scheduledTime": "15:20",
+      "airlineIcao": "dal",
+      "flightNumber": "1738",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-oo3903-slc-oak",
+      "category": "departure",
+      "scheduledTime": "15:20",
+      "airlineIcao": "skw",
+      "flightNumber": "3903",
+      "originIcao": "KSLC",
+      "destinationIcao": "KOAK"
+    },
+    {
+      "id": "arrival-oo3768-fat-slc",
+      "category": "arrival",
+      "scheduledTime": "15:21",
+      "airlineIcao": "skw",
+      "flightNumber": "3768",
+      "originIcao": "KFAT",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4134-oak-slc",
+      "category": "arrival",
+      "scheduledTime": "15:22",
+      "airlineIcao": "skw",
+      "flightNumber": "4134",
+      "originIcao": "KOAK",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-ua1955-ord-slc",
+      "category": "arrival",
+      "scheduledTime": "15:22",
+      "airlineIcao": "ual",
+      "flightNumber": "1955",
+      "originIcao": "KORD",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl1342-slc-smf",
+      "category": "departure",
+      "scheduledTime": "15:25",
+      "airlineIcao": "dal",
+      "flightNumber": "1342",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSMF"
+    },
+    {
+      "id": "departure-dl1503-slc-geg",
+      "category": "departure",
+      "scheduledTime": "15:25",
+      "airlineIcao": "dal",
+      "flightNumber": "1503",
+      "originIcao": "KSLC",
+      "destinationIcao": "KGEG"
+    },
+    {
+      "id": "departure-dl1672-slc-las",
+      "category": "departure",
+      "scheduledTime": "15:30",
+      "airlineIcao": "dal",
+      "flightNumber": "1672",
+      "originIcao": "KSLC",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-oo4312-slc-btm",
+      "category": "departure",
+      "scheduledTime": "15:30",
+      "airlineIcao": "skw",
+      "flightNumber": "4312",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBTM"
+    },
+    {
+      "id": "departure-dl875-slc-atl",
+      "category": "departure",
+      "scheduledTime": "15:31",
+      "airlineIcao": "dal",
+      "flightNumber": "875",
+      "originIcao": "KSLC",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-oo3933-bur-slc",
+      "category": "arrival",
+      "scheduledTime": "15:33",
+      "airlineIcao": "skw",
+      "flightNumber": "3933",
+      "originIcao": "KBUR",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1595-rno-slc",
+      "category": "arrival",
+      "scheduledTime": "15:34",
+      "airlineIcao": "dal",
+      "flightNumber": "1595",
+      "originIcao": "KRNO",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-oo4443-slc-ont",
+      "category": "departure",
+      "scheduledTime": "15:35",
+      "airlineIcao": "skw",
+      "flightNumber": "4443",
+      "originIcao": "KSLC",
+      "destinationIcao": "KONT"
+    },
+    {
+      "id": "departure-oo3123-slc-san",
+      "category": "departure",
+      "scheduledTime": "15:37",
+      "airlineIcao": "skw",
+      "flightNumber": "3123",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "departure-dl841-slc-lax",
+      "category": "departure",
+      "scheduledTime": "15:40",
+      "airlineIcao": "dal",
+      "flightNumber": "841",
+      "originIcao": "KSLC",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-oo3852-slc-psp",
+      "category": "departure",
+      "scheduledTime": "15:40",
+      "airlineIcao": "skw",
+      "flightNumber": "3852",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPSP"
+    },
+    {
+      "id": "arrival-oo3841-sba-slc",
+      "category": "arrival",
+      "scheduledTime": "15:41",
+      "airlineIcao": "skw",
+      "flightNumber": "3841",
+      "originIcao": "KSBA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-f93278-slc-dfw",
+      "category": "departure",
+      "scheduledTime": "15:41",
+      "airlineIcao": "fft",
+      "flightNumber": "3278",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-f93982-slc-den",
+      "category": "departure",
+      "scheduledTime": "15:41",
+      "airlineIcao": "fft",
+      "flightNumber": "3982",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-oo3777-slc-fat",
+      "category": "departure",
+      "scheduledTime": "15:43",
+      "airlineIcao": "skw",
+      "flightNumber": "3777",
+      "originIcao": "KSLC",
+      "destinationIcao": "KFAT"
+    },
+    {
+      "id": "arrival-dl1659-las-slc",
+      "category": "arrival",
+      "scheduledTime": "15:44",
+      "airlineIcao": "dal",
+      "flightNumber": "1659",
+      "originIcao": "KLAS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl3172-ont-slc",
+      "category": "arrival",
+      "scheduledTime": "15:47",
+      "airlineIcao": "dal",
+      "flightNumber": "3172",
+      "originIcao": "KONT",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "t100-fx-arrival-kida-g-001",
+      "scheduledTime": "15:47",
+      "category": "arrival",
+      "originIcao": "KIDA",
+      "destinationIcao": "KSLC",
+      "airlineIcao": "fdx",
+      "flightNumber": "6441"
+    },
+    {
+      "id": "arrival-oo5371-lax-slc",
+      "category": "arrival",
+      "scheduledTime": "15:48",
+      "airlineIcao": "skw",
+      "flightNumber": "5371",
+      "originIcao": "KLAX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1116-lgb-slc",
+      "category": "arrival",
+      "scheduledTime": "15:49",
+      "airlineIcao": "dal",
+      "flightNumber": "1116",
+      "originIcao": "KLGB",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "t100-qx-departure-ksea-f-001",
+      "scheduledTime": "15:49",
+      "category": "departure",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "8886"
+    },
+    {
+      "id": "arrival-wn2411-lgb-slc",
+      "category": "arrival",
+      "scheduledTime": "15:50",
+      "airlineIcao": "swa",
+      "flightNumber": "2411",
+      "originIcao": "KLGB",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl423-atl-slc",
+      "category": "arrival",
+      "scheduledTime": "15:51",
+      "airlineIcao": "dal",
+      "flightNumber": "423",
+      "originIcao": "KATL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-oo4449-slc-cos",
+      "category": "departure",
+      "scheduledTime": "15:51",
+      "airlineIcao": "skw",
+      "flightNumber": "4449",
+      "originIcao": "KSLC",
+      "destinationIcao": "KCOS"
+    },
+    {
+      "id": "arrival-aa2594-dfw-slc",
+      "category": "arrival",
+      "scheduledTime": "15:52",
+      "airlineIcao": "aal",
+      "flightNumber": "2594",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-oo3728-slc-psc",
+      "category": "departure",
+      "scheduledTime": "15:52",
+      "airlineIcao": "skw",
+      "flightNumber": "3728",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPSC"
+    },
+    {
+      "id": "departure-dl417-slc-jac",
+      "category": "departure",
+      "scheduledTime": "15:55",
+      "airlineIcao": "dal",
+      "flightNumber": "417",
+      "originIcao": "KSLC",
+      "destinationIcao": "KJAC"
+    },
+    {
+      "id": "arrival-dl1431-phx-slc",
+      "category": "arrival",
+      "scheduledTime": "15:58",
+      "airlineIcao": "dal",
+      "flightNumber": "1431",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-as734-slc-sea",
+      "category": "departure",
+      "scheduledTime": "16:00",
+      "airlineIcao": "asa",
+      "flightNumber": "734",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "arrival-dl736-msy-slc",
+      "category": "arrival",
+      "scheduledTime": "16:01",
+      "airlineIcao": "dal",
+      "flightNumber": "736",
+      "originIcao": "KMSY",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-aa2780-ord-slc",
+      "category": "arrival",
+      "scheduledTime": "16:03",
+      "airlineIcao": "aal",
+      "flightNumber": "2780",
+      "originIcao": "KORD",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1647-lax-slc",
+      "category": "arrival",
+      "scheduledTime": "16:03",
+      "airlineIcao": "dal",
+      "flightNumber": "1647",
+      "originIcao": "KLAX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-oo3800-slc-gtf",
+      "category": "departure",
+      "scheduledTime": "16:05",
+      "airlineIcao": "skw",
+      "flightNumber": "3800",
+      "originIcao": "KSLC",
+      "destinationIcao": "KGTF"
+    },
+    {
+      "id": "departure-oo3808-slc-mso",
+      "category": "departure",
+      "scheduledTime": "16:05",
+      "airlineIcao": "skw",
+      "flightNumber": "3808",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMSO"
+    },
+    {
+      "id": "arrival-dl1209-pdx-slc",
+      "category": "arrival",
+      "scheduledTime": "16:07",
+      "airlineIcao": "dal",
+      "flightNumber": "1209",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1423-smf-slc",
+      "category": "arrival",
+      "scheduledTime": "16:13",
+      "airlineIcao": "dal",
+      "flightNumber": "1423",
+      "originIcao": "KSMF",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1452-geg-slc",
+      "category": "arrival",
+      "scheduledTime": "16:14",
+      "airlineIcao": "dal",
+      "flightNumber": "1452",
+      "originIcao": "KGEG",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl849-sfo-slc",
+      "category": "arrival",
+      "scheduledTime": "16:14",
+      "airlineIcao": "dal",
+      "flightNumber": "849",
+      "originIcao": "KSFO",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-oo3732-slc-rno",
+      "category": "departure",
+      "scheduledTime": "16:15",
+      "airlineIcao": "skw",
+      "flightNumber": "3732",
+      "originIcao": "KSLC",
+      "destinationIcao": "KRNO"
+    },
+    {
+      "id": "arrival-dl2658-msp-slc",
+      "category": "arrival",
+      "scheduledTime": "16:16",
+      "airlineIcao": "dal",
+      "flightNumber": "2658",
+      "originIcao": "KMSP",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-f92526-phx-slc",
+      "category": "arrival",
+      "scheduledTime": "16:17",
+      "airlineIcao": "fft",
+      "flightNumber": "2526",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1296-san-slc",
+      "category": "arrival",
+      "scheduledTime": "16:18",
+      "airlineIcao": "dal",
+      "flightNumber": "1296",
+      "originIcao": "KSAN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2800-dfw-slc",
+      "category": "arrival",
+      "scheduledTime": "16:18",
+      "airlineIcao": "dal",
+      "flightNumber": "2800",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-ua2072-slc-ord",
+      "category": "departure",
+      "scheduledTime": "16:18",
+      "airlineIcao": "ual",
+      "flightNumber": "2072",
+      "originIcao": "KSLC",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-wn3310-las-slc",
+      "category": "arrival",
+      "scheduledTime": "16:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3310",
+      "originIcao": "KLAS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-ua1955-slc-sfo",
+      "category": "departure",
+      "scheduledTime": "16:21",
+      "airlineIcao": "ual",
+      "flightNumber": "1955",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "arrival-oo3690-sun-slc",
+      "category": "arrival",
+      "scheduledTime": "16:24",
+      "airlineIcao": "skw",
+      "flightNumber": "3690",
+      "originIcao": "KSUN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4324-twf-slc",
+      "category": "arrival",
+      "scheduledTime": "16:25",
+      "airlineIcao": "skw",
+      "flightNumber": "4324",
+      "originIcao": "KTWF",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-oo3828-slc-bil",
+      "category": "departure",
+      "scheduledTime": "16:25",
+      "airlineIcao": "skw",
+      "flightNumber": "3828",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBIL"
+    },
+    {
+      "id": "arrival-oo3765-ida-slc",
+      "category": "arrival",
+      "scheduledTime": "16:30",
+      "airlineIcao": "skw",
+      "flightNumber": "3765",
+      "originIcao": "KIDA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-wn3733-slc-aus",
+      "category": "departure",
+      "scheduledTime": "16:30",
+      "airlineIcao": "swa",
+      "flightNumber": "3733",
+      "originIcao": "KSLC",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-dl2882-mci-slc",
+      "category": "arrival",
+      "scheduledTime": "16:32",
+      "airlineIcao": "dal",
+      "flightNumber": "2882",
+      "originIcao": "KMCI",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1254-sjc-slc",
+      "category": "arrival",
+      "scheduledTime": "16:33",
+      "airlineIcao": "dal",
+      "flightNumber": "1254",
+      "originIcao": "KSJC",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1532-iah-slc",
+      "category": "arrival",
+      "scheduledTime": "16:33",
+      "airlineIcao": "dal",
+      "flightNumber": "1532",
+      "originIcao": "KIAH",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3892-psc-slc",
+      "category": "arrival",
+      "scheduledTime": "16:34",
+      "airlineIcao": "skw",
+      "flightNumber": "3892",
+      "originIcao": "KPSC",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3801-mfr-slc",
+      "category": "arrival",
+      "scheduledTime": "16:36",
+      "airlineIcao": "skw",
+      "flightNumber": "3801",
+      "originIcao": "KMFR",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4321-sgu-slc",
+      "category": "arrival",
+      "scheduledTime": "16:36",
+      "airlineIcao": "skw",
+      "flightNumber": "4321",
+      "originIcao": "KSGU",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1593-bna-slc",
+      "category": "arrival",
+      "scheduledTime": "16:37",
+      "airlineIcao": "dal",
+      "flightNumber": "1593",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2249-ord-slc",
+      "category": "arrival",
+      "scheduledTime": "16:37",
+      "airlineIcao": "dal",
+      "flightNumber": "2249",
+      "originIcao": "KORD",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2455-stl-slc",
+      "category": "arrival",
+      "scheduledTime": "16:37",
+      "airlineIcao": "dal",
+      "flightNumber": "2455",
+      "originIcao": "KSTL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl2920-slc-boi",
+      "category": "departure",
+      "scheduledTime": "16:37",
+      "airlineIcao": "dal",
+      "flightNumber": "2920",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBOI"
+    },
+    {
+      "id": "arrival-oo3908-aus-slc",
+      "category": "arrival",
+      "scheduledTime": "16:39",
+      "airlineIcao": "skw",
+      "flightNumber": "3908",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4155-eug-slc",
+      "category": "arrival",
+      "scheduledTime": "16:39",
+      "airlineIcao": "skw",
+      "flightNumber": "4155",
+      "originIcao": "KEUG",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1120-sea-slc",
+      "category": "arrival",
+      "scheduledTime": "16:40",
+      "airlineIcao": "dal",
+      "flightNumber": "1120",
+      "originIcao": "KSEA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1159-sna-slc",
+      "category": "arrival",
+      "scheduledTime": "16:40",
+      "airlineIcao": "dal",
+      "flightNumber": "1159",
+      "originIcao": "KSNA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3916-bzn-slc",
+      "category": "arrival",
+      "scheduledTime": "16:40",
+      "airlineIcao": "skw",
+      "flightNumber": "3916",
+      "originIcao": "KBZN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-wn4867-phx-slc",
+      "category": "arrival",
+      "scheduledTime": "16:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4867",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "t100-5x-arrival-kbil-g-001",
+      "scheduledTime": "16:40",
+      "category": "arrival",
+      "originIcao": "KBIL",
+      "destinationIcao": "KSLC",
+      "airlineIcao": "ups",
+      "flightNumber": "3404"
+    },
+    {
+      "id": "departure-aa2594-slc-dfw",
+      "category": "departure",
+      "scheduledTime": "16:42",
+      "airlineIcao": "aal",
+      "flightNumber": "2594",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-oo5456-slc-lax",
+      "category": "departure",
+      "scheduledTime": "16:42",
+      "airlineIcao": "skw",
+      "flightNumber": "5456",
+      "originIcao": "KSLC",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "arrival-wn843-san-slc",
+      "category": "arrival",
+      "scheduledTime": "16:45",
+      "airlineIcao": "swa",
+      "flightNumber": "843",
+      "originIcao": "KSAN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-ua2017-sfo-slc",
+      "category": "arrival",
+      "scheduledTime": "16:55",
+      "airlineIcao": "ual",
+      "flightNumber": "2017",
+      "originIcao": "KSFO",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-aa2780-slc-ord",
+      "category": "departure",
+      "scheduledTime": "16:56",
+      "airlineIcao": "aal",
+      "flightNumber": "2780",
+      "originIcao": "KSLC",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-wn3741-slc-den",
+      "category": "departure",
+      "scheduledTime": "17:00",
+      "airlineIcao": "swa",
+      "flightNumber": "3741",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-f93393-slc-sfo",
+      "category": "departure",
+      "scheduledTime": "17:02",
+      "airlineIcao": "fft",
+      "flightNumber": "3393",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-dl1161-slc-lax",
+      "category": "departure",
+      "scheduledTime": "17:10",
+      "airlineIcao": "dal",
+      "flightNumber": "1161",
+      "originIcao": "KSLC",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-dl1252-slc-san",
+      "category": "departure",
+      "scheduledTime": "17:10",
+      "airlineIcao": "dal",
+      "flightNumber": "1252",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "departure-dl697-slc-jfk",
+      "category": "departure",
+      "scheduledTime": "17:10",
+      "airlineIcao": "dal",
+      "flightNumber": "697",
+      "originIcao": "KSLC",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "departure-oo3825-slc-tul",
+      "category": "departure",
+      "scheduledTime": "17:10",
+      "airlineIcao": "skw",
+      "flightNumber": "3825",
+      "originIcao": "KSLC",
+      "destinationIcao": "KTUL"
+    },
+    {
+      "id": "departure-oo3895-slc-ida",
+      "category": "departure",
+      "scheduledTime": "17:10",
+      "airlineIcao": "skw",
+      "flightNumber": "3895",
+      "originIcao": "KSLC",
+      "destinationIcao": "KIDA"
+    },
+    {
+      "id": "departure-oo4246-slc-gjt",
+      "category": "departure",
+      "scheduledTime": "17:10",
+      "airlineIcao": "skw",
+      "flightNumber": "4246",
+      "originIcao": "KSLC",
+      "destinationIcao": "KGJT"
+    },
+    {
+      "id": "departure-dl702-slc-bos",
+      "category": "departure",
+      "scheduledTime": "17:15",
+      "airlineIcao": "dal",
+      "flightNumber": "702",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "arrival-dl526-atl-slc",
+      "category": "arrival",
+      "scheduledTime": "17:18",
+      "airlineIcao": "dal",
+      "flightNumber": "526",
+      "originIcao": "KATL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl871-slc-sea",
+      "category": "departure",
+      "scheduledTime": "17:20",
+      "airlineIcao": "dal",
+      "flightNumber": "871",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-oo3620-slc-xna",
+      "category": "departure",
+      "scheduledTime": "17:20",
+      "airlineIcao": "skw",
+      "flightNumber": "3620",
+      "originIcao": "KSLC",
+      "destinationIcao": "KXNA"
+    },
+    {
+      "id": "departure-oo3676-slc-bzn",
+      "category": "departure",
+      "scheduledTime": "17:20",
+      "airlineIcao": "skw",
+      "flightNumber": "3676",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBZN"
+    },
+    {
+      "id": "departure-oo4327-slc-pih",
+      "category": "departure",
+      "scheduledTime": "17:20",
+      "airlineIcao": "skw",
+      "flightNumber": "4327",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPIH"
+    },
+    {
+      "id": "departure-wn3736-slc-dal",
+      "category": "departure",
+      "scheduledTime": "17:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3736",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "departure-dl2413-slc-ord",
+      "category": "departure",
+      "scheduledTime": "17:21",
+      "airlineIcao": "dal",
+      "flightNumber": "2413",
+      "originIcao": "KSLC",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-dl2935-slc-msp",
+      "category": "departure",
+      "scheduledTime": "17:21",
+      "airlineIcao": "dal",
+      "flightNumber": "2935",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "t100-5x-departure-ksdf-g-002",
+      "scheduledTime": "17:21",
+      "category": "departure",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSDF",
+      "airlineIcao": "ups",
+      "flightNumber": "7801"
+    },
+    {
+      "id": "departure-dl1238-slc-pdx",
+      "category": "departure",
+      "scheduledTime": "17:25",
+      "airlineIcao": "dal",
+      "flightNumber": "1238",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-dl1451-slc-phx",
+      "category": "departure",
+      "scheduledTime": "17:25",
+      "airlineIcao": "dal",
+      "flightNumber": "1451",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-dl2056-slc-mco",
+      "category": "departure",
+      "scheduledTime": "17:25",
+      "airlineIcao": "dal",
+      "flightNumber": "2056",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-dl2230-slc-cmh",
+      "category": "departure",
+      "scheduledTime": "17:25",
+      "airlineIcao": "dal",
+      "flightNumber": "2230",
+      "originIcao": "KSLC",
+      "destinationIcao": "KCMH"
+    },
+    {
+      "id": "departure-dl2291-slc-cvg",
+      "category": "departure",
+      "scheduledTime": "17:25",
+      "airlineIcao": "dal",
+      "flightNumber": "2291",
+      "originIcao": "KSLC",
+      "destinationIcao": "KCVG"
+    },
+    {
+      "id": "departure-dl2855-slc-cle",
+      "category": "departure",
+      "scheduledTime": "17:25",
+      "airlineIcao": "dal",
+      "flightNumber": "2855",
+      "originIcao": "KSLC",
+      "destinationIcao": "KCLE"
+    },
+    {
+      "id": "departure-oo3726-slc-abq",
+      "category": "departure",
+      "scheduledTime": "17:25",
+      "airlineIcao": "skw",
+      "flightNumber": "3726",
+      "originIcao": "KSLC",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-oo3856-slc-sna",
+      "category": "departure",
+      "scheduledTime": "17:25",
+      "airlineIcao": "skw",
+      "flightNumber": "3856",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSNA"
+    },
+    {
+      "id": "departure-oo3937-slc-sjc",
+      "category": "departure",
+      "scheduledTime": "17:25",
+      "airlineIcao": "skw",
+      "flightNumber": "3937",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSJC"
+    },
+    {
+      "id": "departure-oo4263-slc-sgu",
+      "category": "departure",
+      "scheduledTime": "17:25",
+      "airlineIcao": "skw",
+      "flightNumber": "4263",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSGU"
+    },
+    {
+      "id": "departure-wn4338-slc-las",
+      "category": "departure",
+      "scheduledTime": "17:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4338",
+      "originIcao": "KSLC",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "arrival-oo3120-pdx-slc",
+      "category": "arrival",
+      "scheduledTime": "17:29",
+      "airlineIcao": "skw",
+      "flightNumber": "3120",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl1024-slc-geg",
+      "category": "departure",
+      "scheduledTime": "17:30",
+      "airlineIcao": "dal",
+      "flightNumber": "1024",
+      "originIcao": "KSLC",
+      "destinationIcao": "KGEG"
+    },
+    {
+      "id": "departure-dl1409-slc-rdu",
+      "category": "departure",
+      "scheduledTime": "17:30",
+      "airlineIcao": "dal",
+      "flightNumber": "1409",
+      "originIcao": "KSLC",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-dl847-slc-iad",
+      "category": "departure",
+      "scheduledTime": "17:30",
+      "airlineIcao": "dal",
+      "flightNumber": "847",
+      "originIcao": "KSLC",
+      "destinationIcao": "KIAD"
+    },
+    {
+      "id": "departure-oo4317-slc-eko",
+      "category": "departure",
+      "scheduledTime": "17:30",
+      "airlineIcao": "skw",
+      "flightNumber": "4317",
+      "originIcao": "KSLC",
+      "destinationIcao": "KEKO"
+    },
+    {
+      "id": "arrival-dl1623-den-slc",
+      "category": "arrival",
+      "scheduledTime": "17:32",
+      "airlineIcao": "dal",
+      "flightNumber": "1623",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl2585-slc-smf",
+      "category": "departure",
+      "scheduledTime": "17:35",
+      "airlineIcao": "dal",
+      "flightNumber": "2585",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSMF"
+    },
+    {
+      "id": "departure-dl1690-slc-las",
+      "category": "departure",
+      "scheduledTime": "17:40",
+      "airlineIcao": "dal",
+      "flightNumber": "1690",
+      "originIcao": "KSLC",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-dl2796-slc-dfw",
+      "category": "departure",
+      "scheduledTime": "17:40",
+      "airlineIcao": "dal",
+      "flightNumber": "2796",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-dl2514-slc-iah",
+      "category": "departure",
+      "scheduledTime": "17:45",
+      "airlineIcao": "dal",
+      "flightNumber": "2514",
+      "originIcao": "KSLC",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-dl2619-slc-mke",
+      "category": "departure",
+      "scheduledTime": "17:45",
+      "airlineIcao": "dal",
+      "flightNumber": "2619",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMKE"
+    },
+    {
+      "id": "departure-dl2728-slc-aus",
+      "category": "departure",
+      "scheduledTime": "17:45",
+      "airlineIcao": "dal",
+      "flightNumber": "2728",
+      "originIcao": "KSLC",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "t100-fx-departure-kmem-g-001",
+      "scheduledTime": "17:45",
+      "category": "departure",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3492"
+    },
+    {
+      "id": "arrival-as368-sea-slc",
+      "category": "arrival",
+      "scheduledTime": "17:48",
+      "airlineIcao": "asa",
+      "flightNumber": "368",
+      "originIcao": "KSEA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl2228-slc-ind",
+      "category": "departure",
+      "scheduledTime": "17:50",
+      "airlineIcao": "dal",
+      "flightNumber": "2228",
+      "originIcao": "KSLC",
+      "destinationIcao": "KIND"
+    },
+    {
+      "id": "departure-dl905-slc-atl",
+      "category": "departure",
+      "scheduledTime": "17:55",
+      "airlineIcao": "dal",
+      "flightNumber": "905",
+      "originIcao": "KSLC",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-ua1910-slc-den",
+      "category": "departure",
+      "scheduledTime": "17:57",
+      "airlineIcao": "ual",
+      "flightNumber": "1910",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-oo3019-slc-san",
+      "category": "departure",
+      "scheduledTime": "18:06",
+      "airlineIcao": "skw",
+      "flightNumber": "3019",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "arrival-oo4928-phx-slc",
+      "category": "arrival",
+      "scheduledTime": "18:10",
+      "airlineIcao": "skw",
+      "flightNumber": "4928",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo5261-den-slc",
+      "category": "arrival",
+      "scheduledTime": "18:10",
+      "airlineIcao": "skw",
+      "flightNumber": "5261",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-wn1732-den-slc",
+      "category": "arrival",
+      "scheduledTime": "18:10",
+      "airlineIcao": "swa",
+      "flightNumber": "1732",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-wn2344-lax-slc",
+      "category": "arrival",
+      "scheduledTime": "18:15",
+      "airlineIcao": "swa",
+      "flightNumber": "2344",
+      "originIcao": "KLAX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3820-abq-slc",
+      "category": "arrival",
+      "scheduledTime": "18:26",
+      "airlineIcao": "skw",
+      "flightNumber": "3820",
+      "originIcao": "KABQ",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl2255-slc-dtw",
+      "category": "departure",
+      "scheduledTime": "18:28",
+      "airlineIcao": "dal",
+      "flightNumber": "2255",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "departure-dl1586-slc-den",
+      "category": "departure",
+      "scheduledTime": "18:30",
+      "airlineIcao": "dal",
+      "flightNumber": "1586",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-oo4025-slc-jac",
+      "category": "departure",
+      "scheduledTime": "18:30",
+      "airlineIcao": "skw",
+      "flightNumber": "4025",
+      "originIcao": "KSLC",
+      "destinationIcao": "KJAC"
+    },
+    {
+      "id": "departure-as665-slc-sea",
+      "category": "departure",
+      "scheduledTime": "18:44",
+      "airlineIcao": "asa",
+      "flightNumber": "665",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-dl2317-slc-bna",
+      "category": "departure",
+      "scheduledTime": "18:45",
+      "airlineIcao": "dal",
+      "flightNumber": "2317",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-oo4928-slc-phx",
+      "category": "departure",
+      "scheduledTime": "18:50",
+      "airlineIcao": "skw",
+      "flightNumber": "4928",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-wn1533-slc-phx",
+      "category": "departure",
+      "scheduledTime": "18:50",
+      "airlineIcao": "swa",
+      "flightNumber": "1533",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-wn3757-slc-smf",
+      "category": "departure",
+      "scheduledTime": "18:55",
+      "airlineIcao": "swa",
+      "flightNumber": "3757",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSMF"
+    },
+    {
+      "id": "arrival-oo3488-san-slc",
+      "category": "arrival",
+      "scheduledTime": "19:02",
+      "airlineIcao": "skw",
+      "flightNumber": "3488",
+      "originIcao": "KSAN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-ua543-sfo-slc",
+      "category": "arrival",
+      "scheduledTime": "19:11",
+      "airlineIcao": "ual",
+      "flightNumber": "543",
+      "originIcao": "KSFO",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl417-jac-slc",
+      "category": "arrival",
+      "scheduledTime": "19:15",
+      "airlineIcao": "dal",
+      "flightNumber": "417",
+      "originIcao": "KJAC",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-wn1733-den-slc",
+      "category": "arrival",
+      "scheduledTime": "19:20",
+      "airlineIcao": "swa",
+      "flightNumber": "1733",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1672-las-slc",
+      "category": "arrival",
+      "scheduledTime": "19:25",
+      "airlineIcao": "dal",
+      "flightNumber": "1672",
+      "originIcao": "KLAS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo5762-den-slc",
+      "category": "arrival",
+      "scheduledTime": "19:25",
+      "airlineIcao": "skw",
+      "flightNumber": "5762",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-wn4791-bna-slc",
+      "category": "arrival",
+      "scheduledTime": "19:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4791",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4312-btm-slc",
+      "category": "arrival",
+      "scheduledTime": "19:28",
+      "airlineIcao": "skw",
+      "flightNumber": "4312",
+      "originIcao": "KBTM",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3737-tus-slc",
+      "category": "arrival",
+      "scheduledTime": "19:29",
+      "airlineIcao": "skw",
+      "flightNumber": "3737",
+      "originIcao": "KTUS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2036-mco-slc",
+      "category": "arrival",
+      "scheduledTime": "19:30",
+      "airlineIcao": "dal",
+      "flightNumber": "2036",
+      "originIcao": "KMCO",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3896-oma-slc",
+      "category": "arrival",
+      "scheduledTime": "19:31",
+      "airlineIcao": "skw",
+      "flightNumber": "3896",
+      "originIcao": "KOMA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl765-dtw-slc",
+      "category": "arrival",
+      "scheduledTime": "19:34",
+      "airlineIcao": "dal",
+      "flightNumber": "765",
+      "originIcao": "KDTW",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "t100-kl-arrival-eham-f-001",
+      "scheduledTime": "19:34",
+      "category": "arrival",
+      "originIcao": "EHAM",
+      "destinationIcao": "KSLC",
+      "airlineIcao": "klm",
+      "flightNumber": "384"
+    },
+    {
+      "id": "arrival-oo3882-okc-slc",
+      "category": "arrival",
+      "scheduledTime": "19:38",
+      "airlineIcao": "skw",
+      "flightNumber": "3882",
+      "originIcao": "KOKC",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-oo3280-slc-pdx",
+      "category": "departure",
+      "scheduledTime": "19:39",
+      "airlineIcao": "skw",
+      "flightNumber": "3280",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-dl1342-smf-slc",
+      "category": "arrival",
+      "scheduledTime": "19:41",
+      "airlineIcao": "dal",
+      "flightNumber": "1342",
+      "originIcao": "KSMF",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2903-mci-slc",
+      "category": "arrival",
+      "scheduledTime": "19:41",
+      "airlineIcao": "dal",
+      "flightNumber": "2903",
+      "originIcao": "KMCI",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4105-eug-slc",
+      "category": "arrival",
+      "scheduledTime": "19:41",
+      "airlineIcao": "skw",
+      "flightNumber": "4105",
+      "originIcao": "KEUG",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1738-phx-slc",
+      "category": "arrival",
+      "scheduledTime": "19:43",
+      "airlineIcao": "dal",
+      "flightNumber": "1738",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-as373-sea-slc",
+      "category": "arrival",
+      "scheduledTime": "19:47",
+      "airlineIcao": "asa",
+      "flightNumber": "373",
+      "originIcao": "KSEA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1188-pit-slc",
+      "category": "arrival",
+      "scheduledTime": "19:49",
+      "airlineIcao": "dal",
+      "flightNumber": "1188",
+      "originIcao": "KPIT",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3693-bur-slc",
+      "category": "arrival",
+      "scheduledTime": "19:50",
+      "airlineIcao": "skw",
+      "flightNumber": "3693",
+      "originIcao": "KBUR",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3853-sba-slc",
+      "category": "arrival",
+      "scheduledTime": "19:51",
+      "airlineIcao": "skw",
+      "flightNumber": "3853",
+      "originIcao": "KSBA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1260-sjc-slc",
+      "category": "arrival",
+      "scheduledTime": "19:54",
+      "airlineIcao": "dal",
+      "flightNumber": "1260",
+      "originIcao": "KSJC",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1503-geg-slc",
+      "category": "arrival",
+      "scheduledTime": "19:55",
+      "airlineIcao": "dal",
+      "flightNumber": "1503",
+      "originIcao": "KGEG",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl887-jfk-slc",
+      "category": "arrival",
+      "scheduledTime": "19:55",
+      "airlineIcao": "dal",
+      "flightNumber": "887",
+      "originIcao": "KJFK",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4327-pih-slc",
+      "category": "arrival",
+      "scheduledTime": "19:56",
+      "airlineIcao": "skw",
+      "flightNumber": "4327",
+      "originIcao": "KPIH",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2920-boi-slc",
+      "category": "arrival",
+      "scheduledTime": "19:57",
+      "airlineIcao": "dal",
+      "flightNumber": "2920",
+      "originIcao": "KBOI",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3903-oak-slc",
+      "category": "arrival",
+      "scheduledTime": "19:57",
+      "airlineIcao": "skw",
+      "flightNumber": "3903",
+      "originIcao": "KOAK",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1277-sna-slc",
+      "category": "arrival",
+      "scheduledTime": "19:58",
+      "airlineIcao": "dal",
+      "flightNumber": "1277",
+      "originIcao": "KSNA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2311-lax-slc",
+      "category": "arrival",
+      "scheduledTime": "19:58",
+      "airlineIcao": "dal",
+      "flightNumber": "2311",
+      "originIcao": "KLAX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3777-fat-slc",
+      "category": "arrival",
+      "scheduledTime": "19:58",
+      "airlineIcao": "skw",
+      "flightNumber": "3777",
+      "originIcao": "KFAT",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3793-lgb-slc",
+      "category": "arrival",
+      "scheduledTime": "19:58",
+      "airlineIcao": "skw",
+      "flightNumber": "3793",
+      "originIcao": "KLGB",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1210-san-slc",
+      "category": "arrival",
+      "scheduledTime": "19:59",
+      "airlineIcao": "dal",
+      "flightNumber": "1210",
+      "originIcao": "KSAN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2685-sat-slc",
+      "category": "arrival",
+      "scheduledTime": "19:59",
+      "airlineIcao": "dal",
+      "flightNumber": "2685",
+      "originIcao": "KSAT",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1088-sfo-slc",
+      "category": "arrival",
+      "scheduledTime": "20:00",
+      "airlineIcao": "dal",
+      "flightNumber": "1088",
+      "originIcao": "KSFO",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2812-dfw-slc",
+      "category": "arrival",
+      "scheduledTime": "20:00",
+      "airlineIcao": "dal",
+      "flightNumber": "2812",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3852-psp-slc",
+      "category": "arrival",
+      "scheduledTime": "20:00",
+      "airlineIcao": "skw",
+      "flightNumber": "3852",
+      "originIcao": "KPSP",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-wn3753-slc-phx",
+      "category": "departure",
+      "scheduledTime": "20:00",
+      "airlineIcao": "swa",
+      "flightNumber": "3753",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "arrival-dl653-atl-slc",
+      "category": "arrival",
+      "scheduledTime": "20:02",
+      "airlineIcao": "dal",
+      "flightNumber": "653",
+      "originIcao": "KATL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4443-ont-slc",
+      "category": "arrival",
+      "scheduledTime": "20:03",
+      "airlineIcao": "skw",
+      "flightNumber": "4443",
+      "originIcao": "KONT",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-wn3745-slc-las",
+      "category": "departure",
+      "scheduledTime": "20:05",
+      "airlineIcao": "swa",
+      "flightNumber": "3745",
+      "originIcao": "KSLC",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "t100-fx-arrival-koak-g-001",
+      "scheduledTime": "20:05",
+      "category": "arrival",
+      "originIcao": "KOAK",
+      "destinationIcao": "KSLC",
+      "airlineIcao": "fdx",
+      "flightNumber": "6998"
+    },
+    {
+      "id": "arrival-dl1244-pdx-slc",
+      "category": "arrival",
+      "scheduledTime": "20:06",
+      "airlineIcao": "dal",
+      "flightNumber": "1244",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-f93394-sfo-slc",
+      "category": "arrival",
+      "scheduledTime": "20:06",
+      "airlineIcao": "fft",
+      "flightNumber": "3394",
+      "originIcao": "KSFO",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3728-psc-slc",
+      "category": "arrival",
+      "scheduledTime": "20:06",
+      "airlineIcao": "skw",
+      "flightNumber": "3728",
+      "originIcao": "KPSC",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3800-gtf-slc",
+      "category": "arrival",
+      "scheduledTime": "20:06",
+      "airlineIcao": "skw",
+      "flightNumber": "3800",
+      "originIcao": "KGTF",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2607-msp-slc",
+      "category": "arrival",
+      "scheduledTime": "20:07",
+      "airlineIcao": "dal",
+      "flightNumber": "2607",
+      "originIcao": "KMSP",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3732-rno-slc",
+      "category": "arrival",
+      "scheduledTime": "20:07",
+      "airlineIcao": "skw",
+      "flightNumber": "3732",
+      "originIcao": "KRNO",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4246-gjt-slc",
+      "category": "arrival",
+      "scheduledTime": "20:07",
+      "airlineIcao": "skw",
+      "flightNumber": "4246",
+      "originIcao": "KGJT",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-ua2097-slc-sfo",
+      "category": "departure",
+      "scheduledTime": "20:08",
+      "airlineIcao": "ual",
+      "flightNumber": "2097",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "arrival-oo3808-mso-slc",
+      "category": "arrival",
+      "scheduledTime": "20:09",
+      "airlineIcao": "skw",
+      "flightNumber": "3808",
+      "originIcao": "KMSO",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3828-bil-slc",
+      "category": "arrival",
+      "scheduledTime": "20:09",
+      "airlineIcao": "skw",
+      "flightNumber": "3828",
+      "originIcao": "KBIL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3895-ida-slc",
+      "category": "arrival",
+      "scheduledTime": "20:09",
+      "airlineIcao": "skw",
+      "flightNumber": "3895",
+      "originIcao": "KIDA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo4449-cos-slc",
+      "category": "arrival",
+      "scheduledTime": "20:09",
+      "airlineIcao": "skw",
+      "flightNumber": "4449",
+      "originIcao": "KCOS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2070-clt-slc",
+      "category": "arrival",
+      "scheduledTime": "20:29",
+      "airlineIcao": "dal",
+      "flightNumber": "2070",
+      "originIcao": "KCLT",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl1667-slc-den",
+      "category": "departure",
+      "scheduledTime": "20:30",
+      "airlineIcao": "dal",
+      "flightNumber": "1667",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-dl2713-slc-anc",
+      "category": "departure",
+      "scheduledTime": "20:30",
+      "airlineIcao": "dal",
+      "flightNumber": "2713",
+      "originIcao": "KSLC",
+      "destinationIcao": "PANC"
+    },
+    {
+      "id": "departure-oo3703-slc-okc",
+      "category": "departure",
+      "scheduledTime": "20:30",
+      "airlineIcao": "skw",
+      "flightNumber": "3703",
+      "originIcao": "KSLC",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-oo3774-slc-fat",
+      "category": "departure",
+      "scheduledTime": "20:30",
+      "airlineIcao": "skw",
+      "flightNumber": "3774",
+      "originIcao": "KSLC",
+      "destinationIcao": "KFAT"
+    },
+    {
+      "id": "departure-oo4054-slc-tus",
+      "category": "departure",
+      "scheduledTime": "20:30",
+      "airlineIcao": "skw",
+      "flightNumber": "4054",
+      "originIcao": "KSLC",
+      "destinationIcao": "KTUS"
+    },
+    {
+      "id": "arrival-aa558-dfw-slc",
+      "category": "arrival",
+      "scheduledTime": "20:34",
+      "airlineIcao": "aal",
+      "flightNumber": "558",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "t100-fx-departure-kind-g-001",
+      "scheduledTime": "20:39",
+      "category": "departure",
+      "originIcao": "KSLC",
+      "destinationIcao": "KIND",
+      "airlineIcao": "fdx",
+      "flightNumber": "3041"
+    },
+    {
+      "id": "departure-dl1142-slc-lax",
+      "category": "departure",
+      "scheduledTime": "20:40",
+      "airlineIcao": "dal",
+      "flightNumber": "1142",
+      "originIcao": "KSLC",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-dl2797-slc-sat",
+      "category": "departure",
+      "scheduledTime": "20:40",
+      "airlineIcao": "dal",
+      "flightNumber": "2797",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-dl3124-slc-lgb",
+      "category": "departure",
+      "scheduledTime": "20:40",
+      "airlineIcao": "dal",
+      "flightNumber": "3124",
+      "originIcao": "KSLC",
+      "destinationIcao": "KLGB"
+    },
+    {
+      "id": "departure-oo3706-slc-oma",
+      "category": "departure",
+      "scheduledTime": "20:40",
+      "airlineIcao": "skw",
+      "flightNumber": "3706",
+      "originIcao": "KSLC",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-dl820-dca-slc",
+      "category": "arrival",
+      "scheduledTime": "20:41",
+      "airlineIcao": "dal",
+      "flightNumber": "820",
+      "originIcao": "KDCA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3291-pdx-slc",
+      "category": "arrival",
+      "scheduledTime": "20:41",
+      "airlineIcao": "skw",
+      "flightNumber": "3291",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl2016-slc-sea",
+      "category": "departure",
+      "scheduledTime": "20:44",
+      "airlineIcao": "dal",
+      "flightNumber": "2016",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-oo3729-slc-abq",
+      "category": "departure",
+      "scheduledTime": "20:45",
+      "airlineIcao": "skw",
+      "flightNumber": "3729",
+      "originIcao": "KSLC",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-oo4045-slc-psp",
+      "category": "departure",
+      "scheduledTime": "20:45",
+      "airlineIcao": "skw",
+      "flightNumber": "4045",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPSP"
+    },
+    {
+      "id": "departure-oo4279-slc-sgu",
+      "category": "departure",
+      "scheduledTime": "20:45",
+      "airlineIcao": "skw",
+      "flightNumber": "4279",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSGU"
+    },
+    {
+      "id": "arrival-ua2410-iad-slc",
+      "category": "arrival",
+      "scheduledTime": "20:46",
+      "airlineIcao": "ual",
+      "flightNumber": "2410",
+      "originIcao": "KIAD",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-as719-slc-sea",
+      "category": "departure",
+      "scheduledTime": "20:46",
+      "airlineIcao": "asa",
+      "flightNumber": "719",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "arrival-dl2663-den-slc",
+      "category": "arrival",
+      "scheduledTime": "20:49",
+      "airlineIcao": "dal",
+      "flightNumber": "2663",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl2666-slc-stl",
+      "category": "departure",
+      "scheduledTime": "20:50",
+      "airlineIcao": "dal",
+      "flightNumber": "2666",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-dl2993-slc-mci",
+      "category": "departure",
+      "scheduledTime": "20:50",
+      "airlineIcao": "dal",
+      "flightNumber": "2993",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMCI"
+    },
+    {
+      "id": "departure-dl339-slc-bur",
+      "category": "departure",
+      "scheduledTime": "20:50",
+      "airlineIcao": "dal",
+      "flightNumber": "339",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBUR"
+    },
+    {
+      "id": "departure-oo4234-slc-gjt",
+      "category": "departure",
+      "scheduledTime": "20:50",
+      "airlineIcao": "skw",
+      "flightNumber": "4234",
+      "originIcao": "KSLC",
+      "destinationIcao": "KGJT"
+    },
+    {
+      "id": "departure-oo4446-slc-boi",
+      "category": "departure",
+      "scheduledTime": "20:50",
+      "airlineIcao": "skw",
+      "flightNumber": "4446",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBOI"
+    },
+    {
+      "id": "arrival-oo3676-bzn-slc",
+      "category": "arrival",
+      "scheduledTime": "20:55",
+      "airlineIcao": "skw",
+      "flightNumber": "3676",
+      "originIcao": "KBZN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-ua2769-den-slc",
+      "category": "arrival",
+      "scheduledTime": "20:56",
+      "airlineIcao": "ual",
+      "flightNumber": "2769",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl2762-slc-sfo",
+      "category": "departure",
+      "scheduledTime": "20:59",
+      "airlineIcao": "dal",
+      "flightNumber": "2762",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-oo3788-slc-cos",
+      "category": "departure",
+      "scheduledTime": "20:59",
+      "airlineIcao": "skw",
+      "flightNumber": "3788",
+      "originIcao": "KSLC",
+      "destinationIcao": "KCOS"
+    },
+    {
+      "id": "arrival-wn4225-las-slc",
+      "category": "arrival",
+      "scheduledTime": "21:05",
+      "airlineIcao": "swa",
+      "flightNumber": "4225",
+      "originIcao": "KLAS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl1173-slc-msp",
+      "category": "departure",
+      "scheduledTime": "21:05",
+      "airlineIcao": "dal",
+      "flightNumber": "1173",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "departure-dl1304-slc-sna",
+      "category": "departure",
+      "scheduledTime": "21:05",
+      "airlineIcao": "dal",
+      "flightNumber": "1304",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSNA"
+    },
+    {
+      "id": "departure-oo3803-slc-sba",
+      "category": "departure",
+      "scheduledTime": "21:05",
+      "airlineIcao": "skw",
+      "flightNumber": "3803",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSBA"
+    },
+    {
+      "id": "departure-oo3845-slc-gtf",
+      "category": "departure",
+      "scheduledTime": "21:05",
+      "airlineIcao": "skw",
+      "flightNumber": "3845",
+      "originIcao": "KSLC",
+      "destinationIcao": "KGTF"
+    },
+    {
+      "id": "departure-oo3985-slc-sun",
+      "category": "departure",
+      "scheduledTime": "21:05",
+      "airlineIcao": "skw",
+      "flightNumber": "3985",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSUN"
+    },
+    {
+      "id": "arrival-dl1165-sea-slc",
+      "category": "arrival",
+      "scheduledTime": "21:06",
+      "airlineIcao": "dal",
+      "flightNumber": "1165",
+      "originIcao": "KSEA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-f94949-slc-phx",
+      "category": "departure",
+      "scheduledTime": "21:10",
+      "airlineIcao": "fft",
+      "flightNumber": "4949",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "arrival-aa2611-clt-slc",
+      "category": "arrival",
+      "scheduledTime": "21:12",
+      "airlineIcao": "aal",
+      "flightNumber": "2611",
+      "originIcao": "KCLT",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1299-iah-slc",
+      "category": "arrival",
+      "scheduledTime": "21:15",
+      "airlineIcao": "dal",
+      "flightNumber": "1299",
+      "originIcao": "KIAH",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-oo3839-slc-hln",
+      "category": "departure",
+      "scheduledTime": "21:15",
+      "airlineIcao": "skw",
+      "flightNumber": "3839",
+      "originIcao": "KSLC",
+      "destinationIcao": "KHLN"
+    },
+    {
+      "id": "arrival-as1417-hnl-slc",
+      "category": "arrival",
+      "scheduledTime": "21:16",
+      "airlineIcao": "asa",
+      "flightNumber": "1417",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-oo4325-slc-twf",
+      "category": "departure",
+      "scheduledTime": "21:20",
+      "airlineIcao": "skw",
+      "flightNumber": "4325",
+      "originIcao": "KSLC",
+      "destinationIcao": "KTWF"
+    },
+    {
+      "id": "arrival-dl2033-ewr-slc",
+      "category": "arrival",
+      "scheduledTime": "21:21",
+      "airlineIcao": "dal",
+      "flightNumber": "2033",
+      "originIcao": "KEWR",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2581-aus-slc",
+      "category": "arrival",
+      "scheduledTime": "21:21",
+      "airlineIcao": "dal",
+      "flightNumber": "2581",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "t100-qx-departure-ksan-f-001",
+      "scheduledTime": "21:24",
+      "category": "departure",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSAN",
+      "airlineIcao": "qxe",
+      "flightNumber": "8409"
+    },
+    {
+      "id": "departure-dl1340-slc-bil",
+      "category": "departure",
+      "scheduledTime": "21:25",
+      "airlineIcao": "dal",
+      "flightNumber": "1340",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBIL"
+    },
+    {
+      "id": "departure-dl2608-slc-ida",
+      "category": "departure",
+      "scheduledTime": "21:30",
+      "airlineIcao": "dal",
+      "flightNumber": "2608",
+      "originIcao": "KSLC",
+      "destinationIcao": "KIDA"
+    },
+    {
+      "id": "arrival-dl660-atl-slc",
+      "category": "arrival",
+      "scheduledTime": "21:37",
+      "airlineIcao": "dal",
+      "flightNumber": "660",
+      "originIcao": "KATL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl745-fll-slc",
+      "category": "arrival",
+      "scheduledTime": "21:38",
+      "airlineIcao": "dal",
+      "flightNumber": "745",
+      "originIcao": "KFLL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl863-jfk-slc",
+      "category": "arrival",
+      "scheduledTime": "21:39",
+      "airlineIcao": "dal",
+      "flightNumber": "863",
+      "originIcao": "KJFK",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-wn4225-slc-den",
+      "category": "departure",
+      "scheduledTime": "21:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4225",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-yv-arrival-kiah-f-001",
+      "scheduledTime": "21:40",
+      "category": "arrival",
+      "originIcao": "KIAH",
+      "destinationIcao": "KSLC",
+      "airlineIcao": "ash",
+      "flightNumber": "3042"
+    },
+    {
+      "id": "arrival-dl2149-cvg-slc",
+      "category": "arrival",
+      "scheduledTime": "21:44",
+      "airlineIcao": "dal",
+      "flightNumber": "2149",
+      "originIcao": "KCVG",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo5430-sfo-slc",
+      "category": "arrival",
+      "scheduledTime": "21:44",
+      "airlineIcao": "skw",
+      "flightNumber": "5430",
+      "originIcao": "KSFO",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3726-abq-slc",
+      "category": "arrival",
+      "scheduledTime": "21:46",
+      "airlineIcao": "skw",
+      "flightNumber": "3726",
+      "originIcao": "KABQ",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-b671-jfk-slc",
+      "category": "arrival",
+      "scheduledTime": "21:49",
+      "airlineIcao": "jbu",
+      "flightNumber": "71",
+      "originIcao": "KJFK",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1024-geg-slc",
+      "category": "arrival",
+      "scheduledTime": "21:55",
+      "airlineIcao": "dal",
+      "flightNumber": "1024",
+      "originIcao": "KGEG",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1451-phx-slc",
+      "category": "arrival",
+      "scheduledTime": "21:59",
+      "airlineIcao": "dal",
+      "flightNumber": "1451",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2585-smf-slc",
+      "category": "arrival",
+      "scheduledTime": "22:02",
+      "airlineIcao": "dal",
+      "flightNumber": "2585",
+      "originIcao": "KSMF",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1483-lax-slc",
+      "category": "arrival",
+      "scheduledTime": "22:04",
+      "airlineIcao": "dal",
+      "flightNumber": "1483",
+      "originIcao": "KLAX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3017-san-slc",
+      "category": "arrival",
+      "scheduledTime": "22:04",
+      "airlineIcao": "skw",
+      "flightNumber": "3017",
+      "originIcao": "KSAN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1492-stl-slc",
+      "category": "arrival",
+      "scheduledTime": "22:05",
+      "airlineIcao": "dal",
+      "flightNumber": "1492",
+      "originIcao": "KSTL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3937-sjc-slc",
+      "category": "arrival",
+      "scheduledTime": "22:06",
+      "airlineIcao": "skw",
+      "flightNumber": "3937",
+      "originIcao": "KSJC",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3856-sna-slc",
+      "category": "arrival",
+      "scheduledTime": "22:09",
+      "airlineIcao": "skw",
+      "flightNumber": "3856",
+      "originIcao": "KSNA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2209-bna-slc",
+      "category": "arrival",
+      "scheduledTime": "22:10",
+      "airlineIcao": "dal",
+      "flightNumber": "2209",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-wn254-phx-slc",
+      "category": "arrival",
+      "scheduledTime": "22:10",
+      "airlineIcao": "swa",
+      "flightNumber": "254",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-wn2646-den-slc",
+      "category": "arrival",
+      "scheduledTime": "22:10",
+      "airlineIcao": "swa",
+      "flightNumber": "2646",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1691-mco-slc",
+      "category": "arrival",
+      "scheduledTime": "22:11",
+      "airlineIcao": "dal",
+      "flightNumber": "1691",
+      "originIcao": "KMCO",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2376-ord-slc",
+      "category": "arrival",
+      "scheduledTime": "22:11",
+      "airlineIcao": "dal",
+      "flightNumber": "2376",
+      "originIcao": "KORD",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl445-bos-slc",
+      "category": "arrival",
+      "scheduledTime": "22:11",
+      "airlineIcao": "dal",
+      "flightNumber": "445",
+      "originIcao": "KBOS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-aa3133-ord-slc",
+      "category": "arrival",
+      "scheduledTime": "22:13",
+      "airlineIcao": "aal",
+      "flightNumber": "3133",
+      "originIcao": "KORD",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1051-msp-slc",
+      "category": "arrival",
+      "scheduledTime": "22:13",
+      "airlineIcao": "dal",
+      "flightNumber": "1051",
+      "originIcao": "KMSP",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1238-pdx-slc",
+      "category": "arrival",
+      "scheduledTime": "22:13",
+      "airlineIcao": "dal",
+      "flightNumber": "1238",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2652-sfo-slc",
+      "category": "arrival",
+      "scheduledTime": "22:14",
+      "airlineIcao": "dal",
+      "flightNumber": "2652",
+      "originIcao": "KSFO",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo3298-sea-slc",
+      "category": "arrival",
+      "scheduledTime": "22:14",
+      "airlineIcao": "skw",
+      "flightNumber": "3298",
+      "originIcao": "KSEA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl1590-las-slc",
+      "category": "arrival",
+      "scheduledTime": "22:15",
+      "airlineIcao": "dal",
+      "flightNumber": "1590",
+      "originIcao": "KLAS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2117-dtw-slc",
+      "category": "arrival",
+      "scheduledTime": "22:15",
+      "airlineIcao": "dal",
+      "flightNumber": "2117",
+      "originIcao": "KDTW",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl833-san-slc",
+      "category": "arrival",
+      "scheduledTime": "22:15",
+      "airlineIcao": "dal",
+      "flightNumber": "833",
+      "originIcao": "KSAN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-wn1160-dal-slc",
+      "category": "arrival",
+      "scheduledTime": "22:35",
+      "airlineIcao": "swa",
+      "flightNumber": "1160",
+      "originIcao": "KDAL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-b6372-slc-jfk",
+      "category": "departure",
+      "scheduledTime": "22:39",
+      "airlineIcao": "jbu",
+      "flightNumber": "372",
+      "originIcao": "KSLC",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "arrival-ua2157-iah-slc",
+      "category": "arrival",
+      "scheduledTime": "22:43",
+      "airlineIcao": "ual",
+      "flightNumber": "2157",
+      "originIcao": "KIAH",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo5646-den-slc",
+      "category": "arrival",
+      "scheduledTime": "22:44",
+      "airlineIcao": "skw",
+      "flightNumber": "5646",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-wn952-aus-slc",
+      "category": "arrival",
+      "scheduledTime": "22:45",
+      "airlineIcao": "swa",
+      "flightNumber": "952",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl1197-slc-lax",
+      "category": "departure",
+      "scheduledTime": "22:45",
+      "airlineIcao": "dal",
+      "flightNumber": "1197",
+      "originIcao": "KSLC",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-dl1272-slc-sjc",
+      "category": "departure",
+      "scheduledTime": "22:45",
+      "airlineIcao": "dal",
+      "flightNumber": "1272",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSJC"
+    },
+    {
+      "id": "departure-dl1496-slc-phx",
+      "category": "departure",
+      "scheduledTime": "22:45",
+      "airlineIcao": "dal",
+      "flightNumber": "1496",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-dl2998-slc-sea",
+      "category": "departure",
+      "scheduledTime": "22:45",
+      "airlineIcao": "dal",
+      "flightNumber": "2998",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "arrival-ua1710-ord-slc",
+      "category": "arrival",
+      "scheduledTime": "22:48",
+      "airlineIcao": "ual",
+      "flightNumber": "1710",
+      "originIcao": "KORD",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "t100-qx-arrival-ksan-f-001",
+      "scheduledTime": "22:49",
+      "category": "arrival",
+      "originIcao": "KSAN",
+      "destinationIcao": "KSLC",
+      "airlineIcao": "qxe",
+      "flightNumber": "135"
+    },
+    {
+      "id": "departure-dl1091-slc-sfo",
+      "category": "departure",
+      "scheduledTime": "22:50",
+      "airlineIcao": "dal",
+      "flightNumber": "1091",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-dl1373-slc-pdx",
+      "category": "departure",
+      "scheduledTime": "22:50",
+      "airlineIcao": "dal",
+      "flightNumber": "1373",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-dl2111-slc-boi",
+      "category": "departure",
+      "scheduledTime": "22:50",
+      "airlineIcao": "dal",
+      "flightNumber": "2111",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBOI"
+    },
+    {
+      "id": "departure-oo3797-slc-oak",
+      "category": "departure",
+      "scheduledTime": "22:50",
+      "airlineIcao": "skw",
+      "flightNumber": "3797",
+      "originIcao": "KSLC",
+      "destinationIcao": "KOAK"
+    },
+    {
+      "id": "arrival-dl1239-sea-slc",
+      "category": "arrival",
+      "scheduledTime": "22:55",
+      "airlineIcao": "dal",
+      "flightNumber": "1239",
+      "originIcao": "KSEA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl1202-slc-san",
+      "category": "departure",
+      "scheduledTime": "22:55",
+      "airlineIcao": "dal",
+      "flightNumber": "1202",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "departure-dl1723-slc-mso",
+      "category": "departure",
+      "scheduledTime": "22:55",
+      "airlineIcao": "dal",
+      "flightNumber": "1723",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMSO"
+    },
+    {
+      "id": "departure-oo3721-slc-eug",
+      "category": "departure",
+      "scheduledTime": "22:55",
+      "airlineIcao": "skw",
+      "flightNumber": "3721",
+      "originIcao": "KSLC",
+      "destinationIcao": "KEUG"
+    },
+    {
+      "id": "arrival-aa2993-dfw-slc",
+      "category": "arrival",
+      "scheduledTime": "22:59",
+      "airlineIcao": "aal",
+      "flightNumber": "2993",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-b6247-bos-slc",
+      "category": "arrival",
+      "scheduledTime": "22:59",
+      "airlineIcao": "jbu",
+      "flightNumber": "247",
+      "originIcao": "KBOS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl1614-slc-ont",
+      "category": "departure",
+      "scheduledTime": "22:59",
+      "airlineIcao": "dal",
+      "flightNumber": "1614",
+      "originIcao": "KSLC",
+      "destinationIcao": "KONT"
+    },
+    {
+      "id": "departure-oo3722-slc-mfr",
+      "category": "departure",
+      "scheduledTime": "22:59",
+      "airlineIcao": "skw",
+      "flightNumber": "3722",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMFR"
+    },
+    {
+      "id": "departure-dl2040-slc-mia",
+      "category": "departure",
+      "scheduledTime": "23:00",
+      "airlineIcao": "dal",
+      "flightNumber": "2040",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-oo4921-phx-slc",
+      "category": "arrival",
+      "scheduledTime": "23:03",
+      "airlineIcao": "skw",
+      "flightNumber": "4921",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl1582-slc-smf",
+      "category": "departure",
+      "scheduledTime": "23:04",
+      "airlineIcao": "dal",
+      "flightNumber": "1582",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSMF"
+    },
+    {
+      "id": "departure-dl2046-slc-bzn",
+      "category": "departure",
+      "scheduledTime": "23:05",
+      "airlineIcao": "dal",
+      "flightNumber": "2046",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBZN"
+    },
+    {
+      "id": "departure-oo3756-slc-rdm",
+      "category": "departure",
+      "scheduledTime": "23:07",
+      "airlineIcao": "skw",
+      "flightNumber": "3756",
+      "originIcao": "KSLC",
+      "destinationIcao": "KRDM"
+    },
+    {
+      "id": "arrival-aa2610-phl-slc",
+      "category": "arrival",
+      "scheduledTime": "23:08",
+      "airlineIcao": "aal",
+      "flightNumber": "2610",
+      "originIcao": "KPHL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo5744-lax-slc",
+      "category": "arrival",
+      "scheduledTime": "23:11",
+      "airlineIcao": "skw",
+      "flightNumber": "5744",
+      "originIcao": "KLAX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl8771-atl-slc",
+      "category": "arrival",
+      "scheduledTime": "23:15",
+      "airlineIcao": "dal",
+      "flightNumber": "8771",
+      "originIcao": "KATL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl1466-slc-geg",
+      "category": "departure",
+      "scheduledTime": "23:15",
+      "airlineIcao": "dal",
+      "flightNumber": "1466",
+      "originIcao": "KSLC",
+      "destinationIcao": "KGEG"
+    },
+    {
+      "id": "departure-dl1662-slc-las",
+      "category": "departure",
+      "scheduledTime": "23:15",
+      "airlineIcao": "dal",
+      "flightNumber": "1662",
+      "originIcao": "KSLC",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-dl1712-slc-psc",
+      "category": "departure",
+      "scheduledTime": "23:15",
+      "airlineIcao": "dal",
+      "flightNumber": "1712",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPSC"
+    },
+    {
+      "id": "arrival-wn1737-den-slc",
+      "category": "arrival",
+      "scheduledTime": "23:20",
+      "airlineIcao": "swa",
+      "flightNumber": "1737",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl1607-slc-rno",
+      "category": "departure",
+      "scheduledTime": "23:20",
+      "airlineIcao": "dal",
+      "flightNumber": "1607",
+      "originIcao": "KSLC",
+      "destinationIcao": "KRNO"
+    },
+    {
+      "id": "t100-fx-departure-kida-g-001",
+      "scheduledTime": "23:20",
+      "category": "departure",
+      "originIcao": "KSLC",
+      "destinationIcao": "KIDA",
+      "airlineIcao": "fdx",
+      "flightNumber": "1467"
+    },
+    {
+      "id": "departure-aa2611-slc-clt",
+      "category": "departure",
+      "scheduledTime": "23:25",
+      "airlineIcao": "aal",
+      "flightNumber": "2611",
+      "originIcao": "KSLC",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-dl2079-slc-bwi",
+      "category": "departure",
+      "scheduledTime": "23:27",
+      "airlineIcao": "dal",
+      "flightNumber": "2079",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "arrival-wn410-smf-slc",
+      "category": "arrival",
+      "scheduledTime": "23:30",
+      "airlineIcao": "swa",
+      "flightNumber": "410",
+      "originIcao": "KSMF",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl696-slc-bos",
+      "category": "departure",
+      "scheduledTime": "23:32",
+      "airlineIcao": "dal",
+      "flightNumber": "696",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "arrival-wn1490-mdw-slc",
+      "category": "arrival",
+      "scheduledTime": "23:35",
+      "airlineIcao": "swa",
+      "flightNumber": "1490",
+      "originIcao": "KMDW",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl912-slc-atl",
+      "category": "departure",
+      "scheduledTime": "23:35",
+      "airlineIcao": "dal",
+      "flightNumber": "912",
+      "originIcao": "KSLC",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-wn3735-slc-bwi",
+      "category": "departure",
+      "scheduledTime": "23:35",
+      "airlineIcao": "swa",
+      "flightNumber": "3735",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "arrival-as1459-sea-slc",
+      "category": "arrival",
+      "scheduledTime": "23:36",
+      "airlineIcao": "asa",
+      "flightNumber": "1459",
+      "originIcao": "KSEA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl2069-slc-mco",
+      "category": "departure",
+      "scheduledTime": "23:36",
+      "airlineIcao": "dal",
+      "flightNumber": "2069",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "arrival-aa1134-mia-slc",
+      "category": "arrival",
+      "scheduledTime": "23:37",
+      "airlineIcao": "aal",
+      "flightNumber": "1134",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl2038-slc-ewr",
+      "category": "departure",
+      "scheduledTime": "23:38",
+      "airlineIcao": "dal",
+      "flightNumber": "2038",
+      "originIcao": "KSLC",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "arrival-f94251-den-slc",
+      "category": "arrival",
+      "scheduledTime": "23:44",
+      "airlineIcao": "fft",
+      "flightNumber": "4251",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl2077-slc-tpa",
+      "category": "departure",
+      "scheduledTime": "23:50",
+      "airlineIcao": "dal",
+      "flightNumber": "2077",
+      "originIcao": "KSLC",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "departure-dl2841-slc-dtw",
+      "category": "departure",
+      "scheduledTime": "23:50",
+      "airlineIcao": "dal",
+      "flightNumber": "2841",
+      "originIcao": "KSLC",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "departure-aa3070-slc-mia",
+      "category": "departure",
+      "scheduledTime": "23:59",
+      "airlineIcao": "aal",
+      "flightNumber": "3070",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-b6248-slc-bos",
+      "category": "departure",
+      "scheduledTime": "23:59",
+      "airlineIcao": "jbu",
+      "flightNumber": "248",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-dl705-slc-jfk",
+      "category": "departure",
+      "scheduledTime": "23:59",
+      "airlineIcao": "dal",
+      "flightNumber": "705",
+      "originIcao": "KSLC",
+      "destinationIcao": "KJFK"
+    }
+  ]
+}

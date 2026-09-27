@@ -1,0 +1,6 @@
+{
+    "icao": "tzp",
+    "name": "ZIPAIR Tokyo",
+    "callsign": { "name": "Zippy", "callsignFormats": ["###"] },
+    "fleets": { "default": [["B788", 1]] }
+}

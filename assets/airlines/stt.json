@@ -1,0 +1,6 @@
+{
+    "icao": "stt",
+    "name": "Lānaʻi Air",
+    "callsign": { "name": "Sawtooth", "callsignFormats": ["###"] },
+    "fleets": { "default": [["PC12", 1]] }
+}

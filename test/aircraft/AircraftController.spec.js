@@ -3,6 +3,7 @@ import sinon from 'sinon';
 
 import AircraftController from '../../src/assets/scripts/client/aircraft/AircraftController';
 import AircraftCollection from '../../src/assets/scripts/client/aircraft/AircraftCollection';
+import AirlineController from '../../src/assets/scripts/client/airline/AirlineController';
 import AirportController from '../../src/assets/scripts/client/airport/AirportController';
 import { EventBusClass } from '../../src/assets/scripts/client/lib/EventBus';
 import { NavigationLibraryClass } from '../../src/assets/scripts/client/navigationLibrary/NavigationLibrary';
@@ -638,6 +639,36 @@ ava('preserves the center handoff fix in aircraft initialization props', (t) => 
     const aircraftProps = controller._buildAircraftProps(spawnPatternModelArrivalFixture);
 
     t.is(aircraftProps.centerHandoffFix, spawnPatternModelArrivalFixture.centerHandoffFix);
+});
+
+ava('falls back coherently when a spawn pattern airline is unknown and carries a fleet the fallback airline lacks', (t) => {
+    // AAL here defines only a `default` fleet, reproducing the production case where a
+    // spawn pattern references an airline (with a fleet suffix) that is absent from the
+    // corpus. The airline-not-found fallback must not then ask AAL for a fleet it lacks.
+    const airlineController = new AirlineController([
+        { name: 'American', icao: 'aal', callsignFormats: ['###'], fleets: { default: [['B737', 1]] } }
+    ]);
+    const controller = new AircraftController(
+        AIRCRAFT_DEFINITION_LIST_MOCK,
+        airlineController,
+        scopeModelFixture,
+        undefined,
+        { integer: (lower) => lower, real: (lower) => lower }
+    );
+    sinon.stub(controller, '_generateUniqueTransponderCode').returns('1000');
+    const getRandomAirlineForSpawnStub = sinon
+        .stub(spawnPatternModelArrivalFixture, 'getRandomAirlineForSpawn')
+        .returns('zzz/long');
+
+    let aircraftProps;
+    t.notThrows(() => {
+        aircraftProps = controller._buildAircraftProps(spawnPatternModelArrivalFixture);
+    });
+    t.is(aircraftProps.airline, 'aal');
+    t.is(aircraftProps.fleet, 'default');
+    t.is(aircraftProps.icao, 'B737');
+
+    getRandomAirlineForSpawnStub.restore();
 });
 
 // ava('.createAircraftWithSpawnPatternModel() calls ._buildAircraftProps()', (t) => {

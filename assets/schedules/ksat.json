@@ -1,0 +1,2382 @@
+{
+  "schemaVersion": 1,
+  "airportIcao": "KSAT",
+  "timezone": "America/Chicago",
+  "sampleDate": "2026-07-15",
+  "source": {
+    "name": "US DOT BTS On-Time Performance + T-100 Segment (All Carriers)",
+    "url": "https://transtats.bts.gov/DL_SelectFields.aspx?QO_fu146_anzr=Nv4+Pn44vr45&gnoyr_VQ=FMG",
+    "retrievedAt": "2026-09-27",
+    "license": "U.S. Government work in the public domain (17 U.S.C. §105); OurAirports code data is public domain.",
+    "coverage": "Exact On-Time movements are retained; 35 representative movements were deterministically synthesized from 2026-05 T-100 performed-departure aggregates. General aviation is excluded."
+  },
+  "flights": [
+    {
+      "id": "arrival-aa431-ord-sat",
+      "category": "arrival",
+      "scheduledTime": "00:10",
+      "airlineIcao": "aal",
+      "flightNumber": "431",
+      "originIcao": "KORD",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-dl1508-atl-sat",
+      "category": "arrival",
+      "scheduledTime": "00:20",
+      "airlineIcao": "dal",
+      "flightNumber": "1508",
+      "originIcao": "KATL",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-wn3530-san-sat",
+      "category": "arrival",
+      "scheduledTime": "00:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3530",
+      "originIcao": "KSAN",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "t100-m6-arrival-ksdf-g-002",
+      "scheduledTime": "00:24",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KSAT",
+      "airlineIcao": "ajt",
+      "flightNumber": "5042"
+    },
+    {
+      "id": "arrival-dl2797-slc-sat",
+      "category": "arrival",
+      "scheduledTime": "00:26",
+      "airlineIcao": "dal",
+      "flightNumber": "2797",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-oo6036-sfo-sat",
+      "category": "arrival",
+      "scheduledTime": "00:29",
+      "airlineIcao": "skw",
+      "flightNumber": "6036",
+      "originIcao": "KSFO",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-wn2335-las-sat",
+      "category": "arrival",
+      "scheduledTime": "00:35",
+      "airlineIcao": "swa",
+      "flightNumber": "2335",
+      "originIcao": "KLAS",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-as520-sea-sat",
+      "category": "arrival",
+      "scheduledTime": "05:00",
+      "airlineIcao": "asa",
+      "flightNumber": "520",
+      "originIcao": "KSEA",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-aa1604-sat-mia",
+      "category": "departure",
+      "scheduledTime": "05:01",
+      "airlineIcao": "aal",
+      "flightNumber": "1604",
+      "originIcao": "KSAT",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2342-sat-dfw",
+      "category": "departure",
+      "scheduledTime": "05:01",
+      "airlineIcao": "aal",
+      "flightNumber": "2342",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-wn4608-sat-mco",
+      "category": "departure",
+      "scheduledTime": "05:05",
+      "airlineIcao": "swa",
+      "flightNumber": "4608",
+      "originIcao": "KSAT",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-dl2497-sat-dtw",
+      "category": "departure",
+      "scheduledTime": "05:15",
+      "airlineIcao": "dal",
+      "flightNumber": "2497",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "departure-wn3559-sat-bwi",
+      "category": "departure",
+      "scheduledTime": "05:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3559",
+      "originIcao": "KSAT",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "t100-mx-departure-krdu-f-001",
+      "scheduledTime": "05:17",
+      "category": "departure",
+      "originIcao": "KSAT",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "mxy",
+      "flightNumber": "7741"
+    },
+    {
+      "id": "departure-dl1073-sat-atl",
+      "category": "departure",
+      "scheduledTime": "05:20",
+      "airlineIcao": "dal",
+      "flightNumber": "1073",
+      "originIcao": "KSAT",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-ua469-sat-iah",
+      "category": "departure",
+      "scheduledTime": "05:30",
+      "airlineIcao": "ual",
+      "flightNumber": "469",
+      "originIcao": "KSAT",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-wn1349-sat-dal",
+      "category": "departure",
+      "scheduledTime": "05:30",
+      "airlineIcao": "swa",
+      "flightNumber": "1349",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "departure-ua1464-sat-den",
+      "category": "departure",
+      "scheduledTime": "05:40",
+      "airlineIcao": "ual",
+      "flightNumber": "1464",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-y4-departure-mmgl-f-001",
+      "scheduledTime": "05:41",
+      "category": "departure",
+      "originIcao": "KSAT",
+      "destinationIcao": "MMGL",
+      "airlineIcao": "voi",
+      "flightNumber": "7517"
+    },
+    {
+      "id": "departure-wn3565-sat-den",
+      "category": "departure",
+      "scheduledTime": "05:45",
+      "airlineIcao": "swa",
+      "flightNumber": "3565",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-wn3443-sat-las",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "swa",
+      "flightNumber": "3443",
+      "originIcao": "KSAT",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-aa1119-sat-clt",
+      "category": "departure",
+      "scheduledTime": "06:01",
+      "airlineIcao": "aal",
+      "flightNumber": "1119",
+      "originIcao": "KSAT",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-aa2266-sat-dfw",
+      "category": "departure",
+      "scheduledTime": "06:01",
+      "airlineIcao": "aal",
+      "flightNumber": "2266",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-dl2717-sat-msp",
+      "category": "departure",
+      "scheduledTime": "06:05",
+      "airlineIcao": "dal",
+      "flightNumber": "2717",
+      "originIcao": "KSAT",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "departure-wn4392-sat-hou",
+      "category": "departure",
+      "scheduledTime": "06:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4392",
+      "originIcao": "KSAT",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "t100-ac-departure-cyyz-f-001",
+      "scheduledTime": "06:17",
+      "category": "departure",
+      "originIcao": "KSAT",
+      "destinationIcao": "CYYZ",
+      "airlineIcao": "aca",
+      "flightNumber": "1309"
+    },
+    {
+      "id": "departure-wn1146-sat-san",
+      "category": "departure",
+      "scheduledTime": "06:20",
+      "airlineIcao": "swa",
+      "flightNumber": "1146",
+      "originIcao": "KSAT",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "departure-aa632-sat-ord",
+      "category": "departure",
+      "scheduledTime": "06:24",
+      "airlineIcao": "aal",
+      "flightNumber": "632",
+      "originIcao": "KSAT",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-ua2233-sat-ewr",
+      "category": "departure",
+      "scheduledTime": "06:27",
+      "airlineIcao": "ual",
+      "flightNumber": "2233",
+      "originIcao": "KSAT",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "departure-dl2592-sat-slc",
+      "category": "departure",
+      "scheduledTime": "06:30",
+      "airlineIcao": "dal",
+      "flightNumber": "2592",
+      "originIcao": "KSAT",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-wn4582-sat-elp",
+      "category": "departure",
+      "scheduledTime": "06:30",
+      "airlineIcao": "swa",
+      "flightNumber": "4582",
+      "originIcao": "KSAT",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "t100-fx-departure-kafw-g-001",
+      "scheduledTime": "06:39",
+      "category": "departure",
+      "originIcao": "KSAT",
+      "destinationIcao": "KAFW",
+      "airlineIcao": "fdx",
+      "flightNumber": "9403"
+    },
+    {
+      "id": "departure-aa1718-sat-dca",
+      "category": "departure",
+      "scheduledTime": "06:40",
+      "airlineIcao": "aal",
+      "flightNumber": "1718",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-dl1066-sat-atl",
+      "category": "departure",
+      "scheduledTime": "06:40",
+      "airlineIcao": "dal",
+      "flightNumber": "1066",
+      "originIcao": "KSAT",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-ua1332-sat-ord",
+      "category": "departure",
+      "scheduledTime": "06:40",
+      "airlineIcao": "ual",
+      "flightNumber": "1332",
+      "originIcao": "KSAT",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-wn4123-sat-phx",
+      "category": "departure",
+      "scheduledTime": "06:45",
+      "airlineIcao": "swa",
+      "flightNumber": "4123",
+      "originIcao": "KSAT",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-aa3098-sat-dfw",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "aal",
+      "flightNumber": "3098",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-oo4951-sat-lax",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "skw",
+      "flightNumber": "4951",
+      "originIcao": "KSAT",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-oo5479-sat-sfo",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "skw",
+      "flightNumber": "5479",
+      "originIcao": "KSAT",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-ua471-sat-iad",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "ual",
+      "flightNumber": "471",
+      "originIcao": "KSAT",
+      "destinationIcao": "KIAD"
+    },
+    {
+      "id": "departure-wn3557-sat-bna",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "swa",
+      "flightNumber": "3557",
+      "originIcao": "KSAT",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-as519-sat-sea",
+      "category": "departure",
+      "scheduledTime": "07:02",
+      "airlineIcao": "asa",
+      "flightNumber": "519",
+      "originIcao": "KSAT",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-yv-departure-kiah-f-002",
+      "scheduledTime": "07:04",
+      "category": "departure",
+      "originIcao": "KSAT",
+      "destinationIcao": "KIAH",
+      "airlineIcao": "ash",
+      "flightNumber": "4948"
+    },
+    {
+      "id": "departure-wn1356-sat-dal",
+      "category": "departure",
+      "scheduledTime": "07:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1356",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "departure-dl2534-sat-lax",
+      "category": "departure",
+      "scheduledTime": "07:19",
+      "airlineIcao": "dal",
+      "flightNumber": "2534",
+      "originIcao": "KSAT",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-aa3293-sat-phl",
+      "category": "departure",
+      "scheduledTime": "07:23",
+      "airlineIcao": "aal",
+      "flightNumber": "3293",
+      "originIcao": "KSAT",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "arrival-wn2395-dal-sat",
+      "category": "arrival",
+      "scheduledTime": "07:25",
+      "airlineIcao": "swa",
+      "flightNumber": "2395",
+      "originIcao": "KDAL",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-wn4809-sat-stl",
+      "category": "departure",
+      "scheduledTime": "07:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4809",
+      "originIcao": "KSAT",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-dl998-sat-atl",
+      "category": "departure",
+      "scheduledTime": "07:40",
+      "airlineIcao": "dal",
+      "flightNumber": "998",
+      "originIcao": "KSAT",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-abx-departure-kiah-g-001",
+      "scheduledTime": "07:42",
+      "category": "departure",
+      "originIcao": "KSAT",
+      "destinationIcao": "KIAH",
+      "airlineIcao": "abx",
+      "flightNumber": "3262"
+    },
+    {
+      "id": "departure-ua410-sat-iah",
+      "category": "departure",
+      "scheduledTime": "07:43",
+      "airlineIcao": "ual",
+      "flightNumber": "410",
+      "originIcao": "KSAT",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-aa2377-sat-dfw",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "aal",
+      "flightNumber": "2377",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-aa3297-sat-clt",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "aal",
+      "flightNumber": "3297",
+      "originIcao": "KSAT",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-wn4512-sat-dal",
+      "category": "departure",
+      "scheduledTime": "08:20",
+      "airlineIcao": "swa",
+      "flightNumber": "4512",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "departure-wn4678-sat-den",
+      "category": "departure",
+      "scheduledTime": "08:20",
+      "airlineIcao": "swa",
+      "flightNumber": "4678",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-wn287-mco-sat",
+      "category": "arrival",
+      "scheduledTime": "08:25",
+      "airlineIcao": "swa",
+      "flightNumber": "287",
+      "originIcao": "KMCO",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-ua2250-iah-sat",
+      "category": "arrival",
+      "scheduledTime": "08:27",
+      "airlineIcao": "ual",
+      "flightNumber": "2250",
+      "originIcao": "KIAH",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-mq3593-dfw-sat",
+      "category": "arrival",
+      "scheduledTime": "08:30",
+      "airlineIcao": "eny",
+      "flightNumber": "3593",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "t100-y4-arrival-mmmx-f-001",
+      "scheduledTime": "08:32",
+      "category": "arrival",
+      "originIcao": "MMMX",
+      "destinationIcao": "KSAT",
+      "airlineIcao": "voi",
+      "flightNumber": "9260"
+    },
+    {
+      "id": "arrival-wn485-dal-sat",
+      "category": "arrival",
+      "scheduledTime": "08:40",
+      "airlineIcao": "swa",
+      "flightNumber": "485",
+      "originIcao": "KDAL",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-mq3906-sat-phx",
+      "category": "departure",
+      "scheduledTime": "08:41",
+      "airlineIcao": "eny",
+      "flightNumber": "3906",
+      "originIcao": "KSAT",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-ua2853-sat-den",
+      "category": "departure",
+      "scheduledTime": "08:53",
+      "airlineIcao": "ual",
+      "flightNumber": "2853",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-yv-departure-kiah-f-001",
+      "scheduledTime": "08:54",
+      "category": "departure",
+      "originIcao": "KSAT",
+      "destinationIcao": "KIAH",
+      "airlineIcao": "ash",
+      "flightNumber": "7928"
+    },
+    {
+      "id": "arrival-aa2487-clt-sat",
+      "category": "arrival",
+      "scheduledTime": "09:02",
+      "airlineIcao": "aal",
+      "flightNumber": "2487",
+      "originIcao": "KCLT",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-mq3568-sat-dfw",
+      "category": "departure",
+      "scheduledTime": "09:06",
+      "airlineIcao": "eny",
+      "flightNumber": "3568",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-wn3583-sat-mdw",
+      "category": "departure",
+      "scheduledTime": "09:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3583",
+      "originIcao": "KSAT",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "departure-ua2827-sat-iah",
+      "category": "departure",
+      "scheduledTime": "09:37",
+      "airlineIcao": "ual",
+      "flightNumber": "2827",
+      "originIcao": "KSAT",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "arrival-dl1676-atl-sat",
+      "category": "arrival",
+      "scheduledTime": "09:43",
+      "airlineIcao": "dal",
+      "flightNumber": "1676",
+      "originIcao": "KATL",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-aa2487-sat-clt",
+      "category": "departure",
+      "scheduledTime": "09:55",
+      "airlineIcao": "aal",
+      "flightNumber": "2487",
+      "originIcao": "KSAT",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "arrival-wn2712-elp-sat",
+      "category": "arrival",
+      "scheduledTime": "10:05",
+      "airlineIcao": "swa",
+      "flightNumber": "2712",
+      "originIcao": "KELP",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-aa413-dfw-sat",
+      "category": "arrival",
+      "scheduledTime": "10:08",
+      "airlineIcao": "aal",
+      "flightNumber": "413",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "t100-5x-arrival-kdfw-g-001",
+      "scheduledTime": "10:17",
+      "category": "arrival",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSAT",
+      "airlineIcao": "ups",
+      "flightNumber": "6871"
+    },
+    {
+      "id": "arrival-wn663-bna-sat",
+      "category": "arrival",
+      "scheduledTime": "10:20",
+      "airlineIcao": "swa",
+      "flightNumber": "663",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-dl788-dtw-sat",
+      "category": "arrival",
+      "scheduledTime": "10:34",
+      "airlineIcao": "dal",
+      "flightNumber": "788",
+      "originIcao": "KDTW",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-wn148-stl-sat",
+      "category": "arrival",
+      "scheduledTime": "10:35",
+      "airlineIcao": "swa",
+      "flightNumber": "148",
+      "originIcao": "KSTL",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "t100-y4-departure-mmgl-f-002",
+      "scheduledTime": "10:36",
+      "category": "departure",
+      "originIcao": "KSAT",
+      "destinationIcao": "MMGL",
+      "airlineIcao": "voi",
+      "flightNumber": "5479"
+    },
+    {
+      "id": "departure-dl1676-sat-atl",
+      "category": "departure",
+      "scheduledTime": "10:38",
+      "airlineIcao": "dal",
+      "flightNumber": "1676",
+      "originIcao": "KSAT",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-wn2712-sat-msy",
+      "category": "departure",
+      "scheduledTime": "10:40",
+      "airlineIcao": "swa",
+      "flightNumber": "2712",
+      "originIcao": "KSAT",
+      "destinationIcao": "KMSY"
+    },
+    {
+      "id": "arrival-wn3424-bwi-sat",
+      "category": "arrival",
+      "scheduledTime": "10:45",
+      "airlineIcao": "swa",
+      "flightNumber": "3424",
+      "originIcao": "KBWI",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-ua1789-iad-sat",
+      "category": "arrival",
+      "scheduledTime": "10:59",
+      "airlineIcao": "ual",
+      "flightNumber": "1789",
+      "originIcao": "KIAD",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-wn3587-sat-phx",
+      "category": "departure",
+      "scheduledTime": "11:00",
+      "airlineIcao": "swa",
+      "flightNumber": "3587",
+      "originIcao": "KSAT",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-aa413-sat-dfw",
+      "category": "departure",
+      "scheduledTime": "11:04",
+      "airlineIcao": "aal",
+      "flightNumber": "413",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-dl1121-atl-sat",
+      "category": "arrival",
+      "scheduledTime": "11:09",
+      "airlineIcao": "dal",
+      "flightNumber": "1121",
+      "originIcao": "KATL",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-wn738-dal-sat",
+      "category": "arrival",
+      "scheduledTime": "11:10",
+      "airlineIcao": "swa",
+      "flightNumber": "738",
+      "originIcao": "KDAL",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-wn2343-sat-las",
+      "category": "departure",
+      "scheduledTime": "11:15",
+      "airlineIcao": "swa",
+      "flightNumber": "2343",
+      "originIcao": "KSAT",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "arrival-wn2664-den-sat",
+      "category": "arrival",
+      "scheduledTime": "11:20",
+      "airlineIcao": "swa",
+      "flightNumber": "2664",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "t100-fx-arrival-kmem-g-001",
+      "scheduledTime": "11:24",
+      "category": "arrival",
+      "originIcao": "KMEM",
+      "destinationIcao": "KSAT",
+      "airlineIcao": "fdx",
+      "flightNumber": "4022"
+    },
+    {
+      "id": "departure-wn3446-sat-mci",
+      "category": "departure",
+      "scheduledTime": "11:25",
+      "airlineIcao": "swa",
+      "flightNumber": "3446",
+      "originIcao": "KSAT",
+      "destinationIcao": "KMCI"
+    },
+    {
+      "id": "departure-dl788-sat-dtw",
+      "category": "departure",
+      "scheduledTime": "11:29",
+      "airlineIcao": "dal",
+      "flightNumber": "788",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "arrival-wn1432-hou-sat",
+      "category": "arrival",
+      "scheduledTime": "11:30",
+      "airlineIcao": "swa",
+      "flightNumber": "1432",
+      "originIcao": "KHOU",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-wn4178-las-sat",
+      "category": "arrival",
+      "scheduledTime": "11:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4178",
+      "originIcao": "KLAS",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-dl1166-jfk-sat",
+      "category": "arrival",
+      "scheduledTime": "11:42",
+      "airlineIcao": "dal",
+      "flightNumber": "1166",
+      "originIcao": "KJFK",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "t100-5x-departure-ksdf-g-001",
+      "scheduledTime": "11:46",
+      "category": "departure",
+      "originIcao": "KSAT",
+      "destinationIcao": "KSDF",
+      "airlineIcao": "ups",
+      "flightNumber": "7831"
+    },
+    {
+      "id": "arrival-dl2667-msp-sat",
+      "category": "arrival",
+      "scheduledTime": "11:49",
+      "airlineIcao": "dal",
+      "flightNumber": "2667",
+      "originIcao": "KMSP",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-wn2076-sat-bwi",
+      "category": "departure",
+      "scheduledTime": "11:50",
+      "airlineIcao": "swa",
+      "flightNumber": "2076",
+      "originIcao": "KSAT",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "arrival-mq3778-dfw-sat",
+      "category": "arrival",
+      "scheduledTime": "11:52",
+      "airlineIcao": "eny",
+      "flightNumber": "3778",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-wn4195-sat-dal",
+      "category": "departure",
+      "scheduledTime": "12:00",
+      "airlineIcao": "swa",
+      "flightNumber": "4195",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "departure-ua2250-sat-iad",
+      "category": "departure",
+      "scheduledTime": "12:01",
+      "airlineIcao": "ual",
+      "flightNumber": "2250",
+      "originIcao": "KSAT",
+      "destinationIcao": "KIAD"
+    },
+    {
+      "id": "departure-dl1121-sat-atl",
+      "category": "departure",
+      "scheduledTime": "12:04",
+      "airlineIcao": "dal",
+      "flightNumber": "1121",
+      "originIcao": "KSAT",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-wn1432-sat-mco",
+      "category": "departure",
+      "scheduledTime": "12:05",
+      "airlineIcao": "swa",
+      "flightNumber": "1432",
+      "originIcao": "KSAT",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "arrival-wn4081-phx-sat",
+      "category": "arrival",
+      "scheduledTime": "12:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4081",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-wn3427-sat-bna",
+      "category": "departure",
+      "scheduledTime": "12:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3427",
+      "originIcao": "KSAT",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-dl816-bos-sat",
+      "category": "arrival",
+      "scheduledTime": "12:24",
+      "airlineIcao": "dal",
+      "flightNumber": "816",
+      "originIcao": "KBOS",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-mq3778-sat-dfw",
+      "category": "departure",
+      "scheduledTime": "12:26",
+      "airlineIcao": "eny",
+      "flightNumber": "3778",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "t100-vb-arrival-mmmx-f-001",
+      "scheduledTime": "12:27",
+      "category": "arrival",
+      "originIcao": "MMMX",
+      "destinationIcao": "KSAT",
+      "airlineIcao": "viv",
+      "flightNumber": "1673"
+    },
+    {
+      "id": "arrival-ua490-ord-sat",
+      "category": "arrival",
+      "scheduledTime": "12:29",
+      "airlineIcao": "ual",
+      "flightNumber": "490",
+      "originIcao": "KORD",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-ua591-ewr-sat",
+      "category": "arrival",
+      "scheduledTime": "12:30",
+      "airlineIcao": "ual",
+      "flightNumber": "591",
+      "originIcao": "KEWR",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-dl1166-sat-jfk",
+      "category": "departure",
+      "scheduledTime": "12:37",
+      "airlineIcao": "dal",
+      "flightNumber": "1166",
+      "originIcao": "KSAT",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "t100-fx-departure-kmem-g-001",
+      "scheduledTime": "12:37",
+      "category": "departure",
+      "originIcao": "KSAT",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3492"
+    },
+    {
+      "id": "departure-dl930-sat-slc",
+      "category": "departure",
+      "scheduledTime": "12:39",
+      "airlineIcao": "dal",
+      "flightNumber": "930",
+      "originIcao": "KSAT",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-ua2625-den-sat",
+      "category": "arrival",
+      "scheduledTime": "12:43",
+      "airlineIcao": "ual",
+      "flightNumber": "2625",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-wn1400-dal-sat",
+      "category": "arrival",
+      "scheduledTime": "12:45",
+      "airlineIcao": "swa",
+      "flightNumber": "1400",
+      "originIcao": "KDAL",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-aa2486-ord-sat",
+      "category": "arrival",
+      "scheduledTime": "12:50",
+      "airlineIcao": "aal",
+      "flightNumber": "2486",
+      "originIcao": "KORD",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-wn3566-sat-hou",
+      "category": "departure",
+      "scheduledTime": "12:55",
+      "airlineIcao": "swa",
+      "flightNumber": "3566",
+      "originIcao": "KSAT",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "arrival-wn1437-mdw-sat",
+      "category": "arrival",
+      "scheduledTime": "13:05",
+      "airlineIcao": "swa",
+      "flightNumber": "1437",
+      "originIcao": "KMDW",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "t100-5x-arrival-ksdf-g-001",
+      "scheduledTime": "13:09",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KSAT",
+      "airlineIcao": "ups",
+      "flightNumber": "7745"
+    },
+    {
+      "id": "arrival-mq4084-dfw-sat",
+      "category": "arrival",
+      "scheduledTime": "13:11",
+      "airlineIcao": "eny",
+      "flightNumber": "4084",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-wn2499-san-sat",
+      "category": "arrival",
+      "scheduledTime": "13:20",
+      "airlineIcao": "swa",
+      "flightNumber": "2499",
+      "originIcao": "KSAN",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-dl816-sat-bos",
+      "category": "departure",
+      "scheduledTime": "13:20",
+      "airlineIcao": "dal",
+      "flightNumber": "816",
+      "originIcao": "KSAT",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-wn3433-sat-dal",
+      "category": "departure",
+      "scheduledTime": "13:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3433",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "departure-ua2824-sat-ord",
+      "category": "departure",
+      "scheduledTime": "13:25",
+      "airlineIcao": "ual",
+      "flightNumber": "2824",
+      "originIcao": "KSAT",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-aa2489-phl-sat",
+      "category": "arrival",
+      "scheduledTime": "13:30",
+      "airlineIcao": "aal",
+      "flightNumber": "2489",
+      "originIcao": "KPHL",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "t100-m6-departure-ksdf-g-001",
+      "scheduledTime": "13:30",
+      "category": "departure",
+      "originIcao": "KSAT",
+      "destinationIcao": "KSDF",
+      "airlineIcao": "ajt",
+      "flightNumber": "7061"
+    },
+    {
+      "id": "departure-aa2486-sat-ord",
+      "category": "departure",
+      "scheduledTime": "13:32",
+      "airlineIcao": "aal",
+      "flightNumber": "2486",
+      "originIcao": "KSAT",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-ua1261-sat-ewr",
+      "category": "departure",
+      "scheduledTime": "13:35",
+      "airlineIcao": "ual",
+      "flightNumber": "1261",
+      "originIcao": "KSAT",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "arrival-dl3123-slc-sat",
+      "category": "arrival",
+      "scheduledTime": "13:36",
+      "airlineIcao": "dal",
+      "flightNumber": "3123",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-dl1408-atl-sat",
+      "category": "arrival",
+      "scheduledTime": "13:38",
+      "airlineIcao": "dal",
+      "flightNumber": "1408",
+      "originIcao": "KATL",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-ua1007-sat-den",
+      "category": "departure",
+      "scheduledTime": "13:39",
+      "airlineIcao": "ual",
+      "flightNumber": "1007",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-wn342-sat-den",
+      "category": "departure",
+      "scheduledTime": "13:40",
+      "airlineIcao": "swa",
+      "flightNumber": "342",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-mq4084-sat-dfw",
+      "category": "departure",
+      "scheduledTime": "13:44",
+      "airlineIcao": "eny",
+      "flightNumber": "4084",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-wn3149-den-sat",
+      "category": "arrival",
+      "scheduledTime": "14:00",
+      "airlineIcao": "swa",
+      "flightNumber": "3149",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-wn3584-sat-mdw",
+      "category": "departure",
+      "scheduledTime": "14:00",
+      "airlineIcao": "swa",
+      "flightNumber": "3584",
+      "originIcao": "KSAT",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "t100-y4-arrival-mmgl-f-001",
+      "scheduledTime": "14:00",
+      "category": "arrival",
+      "originIcao": "MMGL",
+      "destinationIcao": "KSAT",
+      "airlineIcao": "voi",
+      "flightNumber": "9593"
+    },
+    {
+      "id": "arrival-aa450-phx-sat",
+      "category": "arrival",
+      "scheduledTime": "14:03",
+      "airlineIcao": "aal",
+      "flightNumber": "450",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "t100-vb-departure-mmmx-f-001",
+      "scheduledTime": "14:07",
+      "category": "departure",
+      "originIcao": "KSAT",
+      "destinationIcao": "MMMX",
+      "airlineIcao": "viv",
+      "flightNumber": "5615"
+    },
+    {
+      "id": "departure-aa2489-sat-phl",
+      "category": "departure",
+      "scheduledTime": "14:10",
+      "airlineIcao": "aal",
+      "flightNumber": "2489",
+      "originIcao": "KSAT",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "departure-dl2528-sat-msp",
+      "category": "departure",
+      "scheduledTime": "14:26",
+      "airlineIcao": "dal",
+      "flightNumber": "2528",
+      "originIcao": "KSAT",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "arrival-oo6307-lax-sat",
+      "category": "arrival",
+      "scheduledTime": "14:34",
+      "airlineIcao": "skw",
+      "flightNumber": "6307",
+      "originIcao": "KLAX",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-wn1401-dal-sat",
+      "category": "arrival",
+      "scheduledTime": "14:35",
+      "airlineIcao": "swa",
+      "flightNumber": "1401",
+      "originIcao": "KDAL",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-dl1408-sat-atl",
+      "category": "departure",
+      "scheduledTime": "14:35",
+      "airlineIcao": "dal",
+      "flightNumber": "1408",
+      "originIcao": "KSAT",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-wn4045-tpa-sat",
+      "category": "arrival",
+      "scheduledTime": "14:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4045",
+      "originIcao": "KTPA",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-wn3434-sat-dal",
+      "category": "departure",
+      "scheduledTime": "14:40",
+      "airlineIcao": "swa",
+      "flightNumber": "3434",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "departure-aa2609-sat-dfw",
+      "category": "departure",
+      "scheduledTime": "14:48",
+      "airlineIcao": "aal",
+      "flightNumber": "2609",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-dl2568-lax-sat",
+      "category": "arrival",
+      "scheduledTime": "14:53",
+      "airlineIcao": "dal",
+      "flightNumber": "2568",
+      "originIcao": "KLAX",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-aa1539-dfw-sat",
+      "category": "arrival",
+      "scheduledTime": "14:56",
+      "airlineIcao": "aal",
+      "flightNumber": "1539",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-wn174-phx-sat",
+      "category": "arrival",
+      "scheduledTime": "15:00",
+      "airlineIcao": "swa",
+      "flightNumber": "174",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "t100-fx-arrival-kafw-g-001",
+      "scheduledTime": "15:07",
+      "category": "arrival",
+      "originIcao": "KAFW",
+      "destinationIcao": "KSAT",
+      "airlineIcao": "fdx",
+      "flightNumber": "1375"
+    },
+    {
+      "id": "departure-oo6307-sat-lax",
+      "category": "departure",
+      "scheduledTime": "15:09",
+      "airlineIcao": "skw",
+      "flightNumber": "6307",
+      "originIcao": "KSAT",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "arrival-dl2009-atl-sat",
+      "category": "arrival",
+      "scheduledTime": "15:10",
+      "airlineIcao": "dal",
+      "flightNumber": "2009",
+      "originIcao": "KATL",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-wn3561-sat-bwi",
+      "category": "departure",
+      "scheduledTime": "15:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3561",
+      "originIcao": "KSAT",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "arrival-wn311-msy-sat",
+      "category": "arrival",
+      "scheduledTime": "15:20",
+      "airlineIcao": "swa",
+      "flightNumber": "311",
+      "originIcao": "KMSY",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-wn3575-sat-las",
+      "category": "departure",
+      "scheduledTime": "15:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3575",
+      "originIcao": "KSAT",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "arrival-ua515-ewr-sat",
+      "category": "arrival",
+      "scheduledTime": "15:21",
+      "airlineIcao": "ual",
+      "flightNumber": "515",
+      "originIcao": "KEWR",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "t100-am-departure-mmmx-f-001",
+      "scheduledTime": "15:22",
+      "category": "departure",
+      "originIcao": "KSAT",
+      "destinationIcao": "MMMX",
+      "airlineIcao": "amx",
+      "flightNumber": "4956"
+    },
+    {
+      "id": "departure-wn174-sat-stl",
+      "category": "departure",
+      "scheduledTime": "15:35",
+      "airlineIcao": "swa",
+      "flightNumber": "174",
+      "originIcao": "KSAT",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-ua1819-iah-sat",
+      "category": "arrival",
+      "scheduledTime": "15:39",
+      "airlineIcao": "ual",
+      "flightNumber": "1819",
+      "originIcao": "KIAH",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-wn484-lax-sat",
+      "category": "arrival",
+      "scheduledTime": "15:45",
+      "airlineIcao": "swa",
+      "flightNumber": "484",
+      "originIcao": "KLAX",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-as494-sea-sat",
+      "category": "arrival",
+      "scheduledTime": "15:46",
+      "airlineIcao": "asa",
+      "flightNumber": "494",
+      "originIcao": "KSEA",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-aa2495-sat-phx",
+      "category": "departure",
+      "scheduledTime": "15:46",
+      "airlineIcao": "aal",
+      "flightNumber": "2495",
+      "originIcao": "KSAT",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "t100-m6-arrival-ksdf-g-001",
+      "scheduledTime": "15:48",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KSAT",
+      "airlineIcao": "ajt",
+      "flightNumber": "8821"
+    },
+    {
+      "id": "arrival-wn2552-mci-sat",
+      "category": "arrival",
+      "scheduledTime": "15:50",
+      "airlineIcao": "swa",
+      "flightNumber": "2552",
+      "originIcao": "KMCI",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-dl2458-dtw-sat",
+      "category": "arrival",
+      "scheduledTime": "15:51",
+      "airlineIcao": "dal",
+      "flightNumber": "2458",
+      "originIcao": "KDTW",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-mq3777-dfw-sat",
+      "category": "arrival",
+      "scheduledTime": "15:55",
+      "airlineIcao": "eny",
+      "flightNumber": "3777",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-wn311-sat-lax",
+      "category": "departure",
+      "scheduledTime": "15:55",
+      "airlineIcao": "swa",
+      "flightNumber": "311",
+      "originIcao": "KSAT",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-dl2598-sat-dtw",
+      "category": "departure",
+      "scheduledTime": "16:00",
+      "airlineIcao": "dal",
+      "flightNumber": "2598",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "departure-ua404-sat-iah",
+      "category": "departure",
+      "scheduledTime": "16:18",
+      "airlineIcao": "ual",
+      "flightNumber": "404",
+      "originIcao": "KSAT",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "t100-sy-departure-mmun-f-001",
+      "scheduledTime": "16:21",
+      "category": "departure",
+      "originIcao": "KSAT",
+      "destinationIcao": "MMUN",
+      "airlineIcao": "scx",
+      "flightNumber": "6787"
+    },
+    {
+      "id": "departure-mq3777-sat-dfw",
+      "category": "departure",
+      "scheduledTime": "16:25",
+      "airlineIcao": "eny",
+      "flightNumber": "3777",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-wn2074-sat-tpa",
+      "category": "departure",
+      "scheduledTime": "16:25",
+      "airlineIcao": "swa",
+      "flightNumber": "2074",
+      "originIcao": "KSAT",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "departure-wn4193-sat-bna",
+      "category": "departure",
+      "scheduledTime": "16:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4193",
+      "originIcao": "KSAT",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-ua2844-ord-sat",
+      "category": "arrival",
+      "scheduledTime": "16:29",
+      "airlineIcao": "ual",
+      "flightNumber": "2844",
+      "originIcao": "KORD",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-ua2479-sat-den",
+      "category": "departure",
+      "scheduledTime": "16:35",
+      "airlineIcao": "ual",
+      "flightNumber": "2479",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-aa2497-phx-sat",
+      "category": "arrival",
+      "scheduledTime": "16:42",
+      "airlineIcao": "aal",
+      "flightNumber": "2497",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-as494-sat-sea",
+      "category": "departure",
+      "scheduledTime": "16:44",
+      "airlineIcao": "asa",
+      "flightNumber": "494",
+      "originIcao": "KSAT",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-dl2588-sat-lax",
+      "category": "departure",
+      "scheduledTime": "16:46",
+      "airlineIcao": "dal",
+      "flightNumber": "2588",
+      "originIcao": "KSAT",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "arrival-ua1022-den-sat",
+      "category": "arrival",
+      "scheduledTime": "16:55",
+      "airlineIcao": "ual",
+      "flightNumber": "1022",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-aa2496-clt-sat",
+      "category": "arrival",
+      "scheduledTime": "16:57",
+      "airlineIcao": "aal",
+      "flightNumber": "2496",
+      "originIcao": "KCLT",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-dl2009-sat-atl",
+      "category": "departure",
+      "scheduledTime": "17:00",
+      "airlineIcao": "dal",
+      "flightNumber": "2009",
+      "originIcao": "KSAT",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-vb-departure-mmmy-f-001",
+      "scheduledTime": "17:00",
+      "category": "departure",
+      "originIcao": "KSAT",
+      "destinationIcao": "MMMY",
+      "airlineIcao": "viv",
+      "flightNumber": "3007"
+    },
+    {
+      "id": "arrival-dl2580-msp-sat",
+      "category": "arrival",
+      "scheduledTime": "17:11",
+      "airlineIcao": "dal",
+      "flightNumber": "2580",
+      "originIcao": "KMSP",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "t100-vb-arrival-mmmy-f-001",
+      "scheduledTime": "17:13",
+      "category": "arrival",
+      "originIcao": "MMMY",
+      "destinationIcao": "KSAT",
+      "airlineIcao": "viv",
+      "flightNumber": "9528"
+    },
+    {
+      "id": "arrival-dl2680-slc-sat",
+      "category": "arrival",
+      "scheduledTime": "17:14",
+      "airlineIcao": "dal",
+      "flightNumber": "2680",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-wn1221-las-sat",
+      "category": "arrival",
+      "scheduledTime": "17:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1221",
+      "originIcao": "KLAS",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-dl1465-atl-sat",
+      "category": "arrival",
+      "scheduledTime": "17:29",
+      "airlineIcao": "dal",
+      "flightNumber": "1465",
+      "originIcao": "KATL",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-wn3573-sat-hou",
+      "category": "departure",
+      "scheduledTime": "17:30",
+      "airlineIcao": "swa",
+      "flightNumber": "3573",
+      "originIcao": "KSAT",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "departure-ua1316-sat-ord",
+      "category": "departure",
+      "scheduledTime": "17:32",
+      "airlineIcao": "ual",
+      "flightNumber": "1316",
+      "originIcao": "KSAT",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-wn4834-mco-sat",
+      "category": "arrival",
+      "scheduledTime": "17:35",
+      "airlineIcao": "swa",
+      "flightNumber": "4834",
+      "originIcao": "KMCO",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-aa3311-sat-dfw",
+      "category": "departure",
+      "scheduledTime": "17:35",
+      "airlineIcao": "aal",
+      "flightNumber": "3311",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-oo5379-iah-sat",
+      "category": "arrival",
+      "scheduledTime": "17:44",
+      "airlineIcao": "skw",
+      "flightNumber": "5379",
+      "originIcao": "KIAH",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-aa2496-sat-clt",
+      "category": "departure",
+      "scheduledTime": "17:47",
+      "airlineIcao": "aal",
+      "flightNumber": "2496",
+      "originIcao": "KSAT",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "arrival-aa2374-dfw-sat",
+      "category": "arrival",
+      "scheduledTime": "17:49",
+      "airlineIcao": "aal",
+      "flightNumber": "2374",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-wn1402-dal-sat",
+      "category": "arrival",
+      "scheduledTime": "17:50",
+      "airlineIcao": "swa",
+      "flightNumber": "1402",
+      "originIcao": "KDAL",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "t100-vb-arrival-mmmy-f-002",
+      "scheduledTime": "17:52",
+      "category": "arrival",
+      "originIcao": "MMMY",
+      "destinationIcao": "KSAT",
+      "airlineIcao": "viv",
+      "flightNumber": "5017"
+    },
+    {
+      "id": "arrival-wn4565-bwi-sat",
+      "category": "arrival",
+      "scheduledTime": "17:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4565",
+      "originIcao": "KBWI",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-wn3454-sat-phx",
+      "category": "departure",
+      "scheduledTime": "17:55",
+      "airlineIcao": "swa",
+      "flightNumber": "3454",
+      "originIcao": "KSAT",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-ua2323-sat-iah",
+      "category": "departure",
+      "scheduledTime": "17:57",
+      "airlineIcao": "ual",
+      "flightNumber": "2323",
+      "originIcao": "KSAT",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "arrival-mq4176-ord-sat",
+      "category": "arrival",
+      "scheduledTime": "18:03",
+      "airlineIcao": "eny",
+      "flightNumber": "4176",
+      "originIcao": "KORD",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-dl2685-sat-slc",
+      "category": "departure",
+      "scheduledTime": "18:03",
+      "airlineIcao": "dal",
+      "flightNumber": "2685",
+      "originIcao": "KSAT",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl2675-sat-msp",
+      "category": "departure",
+      "scheduledTime": "18:05",
+      "airlineIcao": "dal",
+      "flightNumber": "2675",
+      "originIcao": "KSAT",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "t100-5x-departure-kiah-g-001",
+      "scheduledTime": "18:05",
+      "category": "departure",
+      "originIcao": "KSAT",
+      "destinationIcao": "KIAH",
+      "airlineIcao": "ups",
+      "flightNumber": "1923"
+    },
+    {
+      "id": "departure-wn1822-sat-elp",
+      "category": "departure",
+      "scheduledTime": "18:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1822",
+      "originIcao": "KSAT",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "departure-wn1338-sat-dal",
+      "category": "departure",
+      "scheduledTime": "18:25",
+      "airlineIcao": "swa",
+      "flightNumber": "1338",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "departure-wn3568-sat-den",
+      "category": "departure",
+      "scheduledTime": "18:35",
+      "airlineIcao": "swa",
+      "flightNumber": "3568",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-mq3781-dfw-sat",
+      "category": "arrival",
+      "scheduledTime": "18:36",
+      "airlineIcao": "eny",
+      "flightNumber": "3781",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-wn4371-bna-sat",
+      "category": "arrival",
+      "scheduledTime": "18:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4371",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-f92356-den-sat",
+      "category": "arrival",
+      "scheduledTime": "18:44",
+      "airlineIcao": "fft",
+      "flightNumber": "2356",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-mq4176-sat-ord",
+      "category": "departure",
+      "scheduledTime": "18:57",
+      "airlineIcao": "eny",
+      "flightNumber": "4176",
+      "originIcao": "KSAT",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-aa2053-sat-phx",
+      "category": "departure",
+      "scheduledTime": "19:04",
+      "airlineIcao": "aal",
+      "flightNumber": "2053",
+      "originIcao": "KSAT",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "t100-y4-departure-mmmx-f-001",
+      "scheduledTime": "19:06",
+      "category": "departure",
+      "originIcao": "KSAT",
+      "destinationIcao": "MMMX",
+      "airlineIcao": "voi",
+      "flightNumber": "2182"
+    },
+    {
+      "id": "departure-mq3878-sat-dfw",
+      "category": "departure",
+      "scheduledTime": "19:08",
+      "airlineIcao": "eny",
+      "flightNumber": "3878",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-wn2758-dal-sat",
+      "category": "arrival",
+      "scheduledTime": "19:20",
+      "airlineIcao": "swa",
+      "flightNumber": "2758",
+      "originIcao": "KDAL",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-oo5658-sat-iah",
+      "category": "departure",
+      "scheduledTime": "19:20",
+      "airlineIcao": "skw",
+      "flightNumber": "5658",
+      "originIcao": "KSAT",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-wn3545-sat-san",
+      "category": "departure",
+      "scheduledTime": "19:25",
+      "airlineIcao": "swa",
+      "flightNumber": "3545",
+      "originIcao": "KSAT",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "departure-f93707-sat-den",
+      "category": "departure",
+      "scheduledTime": "19:39",
+      "airlineIcao": "fft",
+      "flightNumber": "3707",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-am-arrival-mmmx-f-001",
+      "scheduledTime": "19:42",
+      "category": "arrival",
+      "originIcao": "MMMX",
+      "destinationIcao": "KSAT",
+      "airlineIcao": "amx",
+      "flightNumber": "9900"
+    },
+    {
+      "id": "arrival-aa499-dfw-sat",
+      "category": "arrival",
+      "scheduledTime": "19:43",
+      "airlineIcao": "aal",
+      "flightNumber": "499",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-ua1477-iah-sat",
+      "category": "arrival",
+      "scheduledTime": "19:50",
+      "airlineIcao": "ual",
+      "flightNumber": "1477",
+      "originIcao": "KIAH",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-wn859-den-sat",
+      "category": "arrival",
+      "scheduledTime": "19:50",
+      "airlineIcao": "swa",
+      "flightNumber": "859",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-wn2758-sat-las",
+      "category": "departure",
+      "scheduledTime": "19:55",
+      "airlineIcao": "swa",
+      "flightNumber": "2758",
+      "originIcao": "KSAT",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "arrival-wn1230-phx-sat",
+      "category": "arrival",
+      "scheduledTime": "20:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1230",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-ua1869-iad-sat",
+      "category": "arrival",
+      "scheduledTime": "20:22",
+      "airlineIcao": "ual",
+      "flightNumber": "1869",
+      "originIcao": "KIAD",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-aa499-sat-dfw",
+      "category": "departure",
+      "scheduledTime": "20:23",
+      "airlineIcao": "aal",
+      "flightNumber": "499",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "t100-5x-departure-kdfw-g-001",
+      "scheduledTime": "20:24",
+      "category": "departure",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDFW",
+      "airlineIcao": "ups",
+      "flightNumber": "5587"
+    },
+    {
+      "id": "departure-wn1090-sat-phx",
+      "category": "departure",
+      "scheduledTime": "20:25",
+      "airlineIcao": "swa",
+      "flightNumber": "1090",
+      "originIcao": "KSAT",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "t100-yv-arrival-kiah-f-001",
+      "scheduledTime": "20:33",
+      "category": "arrival",
+      "originIcao": "KIAH",
+      "destinationIcao": "KSAT",
+      "airlineIcao": "ash",
+      "flightNumber": "3042"
+    },
+    {
+      "id": "arrival-dl2893-atl-sat",
+      "category": "arrival",
+      "scheduledTime": "20:37",
+      "airlineIcao": "dal",
+      "flightNumber": "2893",
+      "originIcao": "KATL",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-f93418-las-sat",
+      "category": "arrival",
+      "scheduledTime": "20:37",
+      "airlineIcao": "fft",
+      "flightNumber": "3418",
+      "originIcao": "KLAS",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-aa1258-clt-sat",
+      "category": "arrival",
+      "scheduledTime": "20:40",
+      "airlineIcao": "aal",
+      "flightNumber": "1258",
+      "originIcao": "KCLT",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-wn1230-sat-dal",
+      "category": "departure",
+      "scheduledTime": "20:45",
+      "airlineIcao": "swa",
+      "flightNumber": "1230",
+      "originIcao": "KSAT",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "arrival-aa3301-phl-sat",
+      "category": "arrival",
+      "scheduledTime": "20:46",
+      "airlineIcao": "aal",
+      "flightNumber": "3301",
+      "originIcao": "KPHL",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-ua2819-den-sat",
+      "category": "arrival",
+      "scheduledTime": "20:54",
+      "airlineIcao": "ual",
+      "flightNumber": "2819",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-aa546-dfw-sat",
+      "category": "arrival",
+      "scheduledTime": "21:03",
+      "airlineIcao": "aal",
+      "flightNumber": "546",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-aa1947-dca-sat",
+      "category": "arrival",
+      "scheduledTime": "21:13",
+      "airlineIcao": "aal",
+      "flightNumber": "1947",
+      "originIcao": "KDCA",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-ua1542-iah-sat",
+      "category": "arrival",
+      "scheduledTime": "21:13",
+      "airlineIcao": "ual",
+      "flightNumber": "1542",
+      "originIcao": "KIAH",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-dl2773-msp-sat",
+      "category": "arrival",
+      "scheduledTime": "21:26",
+      "airlineIcao": "dal",
+      "flightNumber": "2773",
+      "originIcao": "KMSP",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "t100-5x-arrival-klrd-g-001",
+      "scheduledTime": "21:26",
+      "category": "arrival",
+      "originIcao": "KLRD",
+      "destinationIcao": "KSAT",
+      "airlineIcao": "ups",
+      "flightNumber": "3368"
+    },
+    {
+      "id": "departure-f93417-sat-las",
+      "category": "departure",
+      "scheduledTime": "21:32",
+      "airlineIcao": "fft",
+      "flightNumber": "3417",
+      "originIcao": "KSAT",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "arrival-wn614-bwi-sat",
+      "category": "arrival",
+      "scheduledTime": "21:40",
+      "airlineIcao": "swa",
+      "flightNumber": "614",
+      "originIcao": "KBWI",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-aa1406-dfw-sat",
+      "category": "arrival",
+      "scheduledTime": "22:00",
+      "airlineIcao": "aal",
+      "flightNumber": "1406",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-wn4404-mco-sat",
+      "category": "arrival",
+      "scheduledTime": "22:05",
+      "airlineIcao": "swa",
+      "flightNumber": "4404",
+      "originIcao": "KMCO",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-aa2441-clt-sat",
+      "category": "arrival",
+      "scheduledTime": "22:16",
+      "airlineIcao": "aal",
+      "flightNumber": "2441",
+      "originIcao": "KCLT",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-wn3846-las-sat",
+      "category": "arrival",
+      "scheduledTime": "22:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3846",
+      "originIcao": "KLAS",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-dl1365-dtw-sat",
+      "category": "arrival",
+      "scheduledTime": "22:22",
+      "airlineIcao": "dal",
+      "flightNumber": "1365",
+      "originIcao": "KDTW",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "t100-yv-arrival-kiah-f-002",
+      "scheduledTime": "22:22",
+      "category": "arrival",
+      "originIcao": "KIAH",
+      "destinationIcao": "KSAT",
+      "airlineIcao": "ash",
+      "flightNumber": "9348"
+    },
+    {
+      "id": "arrival-wn4451-hou-sat",
+      "category": "arrival",
+      "scheduledTime": "22:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4451",
+      "originIcao": "KHOU",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-wn4260-elp-sat",
+      "category": "arrival",
+      "scheduledTime": "22:30",
+      "airlineIcao": "swa",
+      "flightNumber": "4260",
+      "originIcao": "KELP",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-ua2198-iah-sat",
+      "category": "arrival",
+      "scheduledTime": "22:42",
+      "airlineIcao": "ual",
+      "flightNumber": "2198",
+      "originIcao": "KIAH",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-wn1623-phx-sat",
+      "category": "arrival",
+      "scheduledTime": "22:50",
+      "airlineIcao": "swa",
+      "flightNumber": "1623",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-ua1394-ord-sat",
+      "category": "arrival",
+      "scheduledTime": "22:57",
+      "airlineIcao": "ual",
+      "flightNumber": "1394",
+      "originIcao": "KORD",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-wn2617-dal-sat",
+      "category": "arrival",
+      "scheduledTime": "23:00",
+      "airlineIcao": "swa",
+      "flightNumber": "2617",
+      "originIcao": "KDAL",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "t100-fx-arrival-kaus-g-001",
+      "scheduledTime": "23:02",
+      "category": "arrival",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSAT",
+      "airlineIcao": "fdx",
+      "flightNumber": "5247"
+    },
+    {
+      "id": "arrival-aa3097-dfw-sat",
+      "category": "arrival",
+      "scheduledTime": "23:04",
+      "airlineIcao": "aal",
+      "flightNumber": "3097",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-wn2073-den-sat",
+      "category": "arrival",
+      "scheduledTime": "23:20",
+      "airlineIcao": "swa",
+      "flightNumber": "2073",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-oo4962-lax-sat",
+      "category": "arrival",
+      "scheduledTime": "23:29",
+      "airlineIcao": "skw",
+      "flightNumber": "4962",
+      "originIcao": "KLAX",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-wn3979-stl-sat",
+      "category": "arrival",
+      "scheduledTime": "23:30",
+      "airlineIcao": "swa",
+      "flightNumber": "3979",
+      "originIcao": "KSTL",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-wn3229-mdw-sat",
+      "category": "arrival",
+      "scheduledTime": "23:45",
+      "airlineIcao": "swa",
+      "flightNumber": "3229",
+      "originIcao": "KMDW",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "t100-y4-arrival-mmgl-f-002",
+      "scheduledTime": "23:52",
+      "category": "arrival",
+      "originIcao": "MMGL",
+      "destinationIcao": "KSAT",
+      "airlineIcao": "voi",
+      "flightNumber": "257"
+    },
+    {
+      "id": "arrival-dl2686-lax-sat",
+      "category": "arrival",
+      "scheduledTime": "23:54",
+      "airlineIcao": "dal",
+      "flightNumber": "2686",
+      "originIcao": "KLAX",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-ua395-den-sat",
+      "category": "arrival",
+      "scheduledTime": "23:55",
+      "airlineIcao": "ual",
+      "flightNumber": "395",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-wn665-bna-sat",
+      "category": "arrival",
+      "scheduledTime": "23:55",
+      "airlineIcao": "swa",
+      "flightNumber": "665",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-aa1599-dfw-sat",
+      "category": "arrival",
+      "scheduledTime": "23:58",
+      "airlineIcao": "aal",
+      "flightNumber": "1599",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-mq3832-phx-sat",
+      "category": "arrival",
+      "scheduledTime": "23:58",
+      "airlineIcao": "eny",
+      "flightNumber": "3832",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-aa1468-mia-sat",
+      "category": "arrival",
+      "scheduledTime": "23:59",
+      "airlineIcao": "aal",
+      "flightNumber": "1468",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSAT"
+    }
+  ]
+}

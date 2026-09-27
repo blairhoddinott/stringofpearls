@@ -1,0 +1,6 @@
+{
+    "icao": "ubt",
+    "name": "Norse Atlantic UK",
+    "callsign": { "name": "Longboat", "callsignFormats": ["###"] },
+    "fleets": { "default": [["B789", 1]] }
+}

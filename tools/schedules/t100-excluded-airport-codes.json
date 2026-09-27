@@ -1,0 +1,3 @@
+{
+  "T82": "FAA local identifier for Gillespie County Airport resolves to KT82, which is not a four-letter ICAO location indicator accepted by the schedule contract. The May 2026 selected corpus contains two performed FedEx departures from T82 to AUS; they are excluded rather than assigned a fabricated endpoint."
+}

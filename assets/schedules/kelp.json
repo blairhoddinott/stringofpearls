@@ -1,0 +1,969 @@
+{
+  "schemaVersion": 1,
+  "airportIcao": "KELP",
+  "timezone": "America/Denver",
+  "sampleDate": "2026-07-15",
+  "source": {
+    "name": "US DOT BTS On-Time Performance + T-100 Segment (All Carriers)",
+    "url": "https://transtats.bts.gov/DL_SelectFields.aspx?QO_fu146_anzr=Nv4+Pn44vr45&gnoyr_VQ=FMG",
+    "retrievedAt": "2026-09-27",
+    "license": "U.S. Government work in the public domain (17 U.S.C. §105); OurAirports code data is public domain.",
+    "coverage": "Exact On-Time movements are retained; 13 representative movements were deterministically synthesized from 2026-05 T-100 performed-departure aggregates. General aviation is excluded."
+  },
+  "flights": [
+    {
+      "id": "arrival-wn4340-las-elp",
+      "category": "arrival",
+      "scheduledTime": "00:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4340",
+      "originIcao": "KLAS",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "departure-wn3706-elp-den",
+      "category": "departure",
+      "scheduledTime": "05:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3706",
+      "originIcao": "KELP",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-wn4856-elp-aus",
+      "category": "departure",
+      "scheduledTime": "05:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4856",
+      "originIcao": "KELP",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn200-elp-dal",
+      "category": "departure",
+      "scheduledTime": "05:40",
+      "airlineIcao": "swa",
+      "flightNumber": "200",
+      "originIcao": "KELP",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "departure-mq3882-elp-phx",
+      "category": "departure",
+      "scheduledTime": "05:49",
+      "airlineIcao": "eny",
+      "flightNumber": "3882",
+      "originIcao": "KELP",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "t100-yv-departure-kiah-f-002",
+      "scheduledTime": "05:53",
+      "category": "departure",
+      "originIcao": "KELP",
+      "destinationIcao": "KIAH",
+      "airlineIcao": "ash",
+      "flightNumber": "4948"
+    },
+    {
+      "id": "departure-dl1741-elp-atl",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "dal",
+      "flightNumber": "1741",
+      "originIcao": "KELP",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-wn3958-elp-las",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "swa",
+      "flightNumber": "3958",
+      "originIcao": "KELP",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-aa1091-elp-dfw",
+      "category": "departure",
+      "scheduledTime": "06:01",
+      "airlineIcao": "aal",
+      "flightNumber": "1091",
+      "originIcao": "KELP",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-oo4910-elp-lax",
+      "category": "departure",
+      "scheduledTime": "06:01",
+      "airlineIcao": "skw",
+      "flightNumber": "4910",
+      "originIcao": "KELP",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-wn4702-elp-hou",
+      "category": "departure",
+      "scheduledTime": "06:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4702",
+      "originIcao": "KELP",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "departure-wn4224-elp-phx",
+      "category": "departure",
+      "scheduledTime": "06:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4224",
+      "originIcao": "KELP",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "t100-c5-departure-kiah-f-001",
+      "scheduledTime": "06:42",
+      "category": "departure",
+      "originIcao": "KELP",
+      "destinationIcao": "KIAH",
+      "airlineIcao": "uca",
+      "flightNumber": "4254"
+    },
+    {
+      "id": "departure-mq3872-elp-ord",
+      "category": "departure",
+      "scheduledTime": "06:49",
+      "airlineIcao": "eny",
+      "flightNumber": "3872",
+      "originIcao": "KELP",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-wn1752-elp-san",
+      "category": "departure",
+      "scheduledTime": "06:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1752",
+      "originIcao": "KELP",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "arrival-wn4582-sat-elp",
+      "category": "arrival",
+      "scheduledTime": "07:00",
+      "airlineIcao": "swa",
+      "flightNumber": "4582",
+      "originIcao": "KSAT",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "departure-ua724-elp-den",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "ual",
+      "flightNumber": "724",
+      "originIcao": "KELP",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-aa2029-elp-dfw",
+      "category": "departure",
+      "scheduledTime": "07:05",
+      "airlineIcao": "aal",
+      "flightNumber": "2029",
+      "originIcao": "KELP",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-wn2712-elp-sat",
+      "category": "departure",
+      "scheduledTime": "07:35",
+      "airlineIcao": "swa",
+      "flightNumber": "2712",
+      "originIcao": "KELP",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-oo5659-elp-ord",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "skw",
+      "flightNumber": "5659",
+      "originIcao": "KELP",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-wn1309-dal-elp",
+      "category": "arrival",
+      "scheduledTime": "09:05",
+      "airlineIcao": "swa",
+      "flightNumber": "1309",
+      "originIcao": "KDAL",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "arrival-wn4481-hou-elp",
+      "category": "arrival",
+      "scheduledTime": "09:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4481",
+      "originIcao": "KHOU",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "t100-fx-arrival-kmem-g-001",
+      "scheduledTime": "09:14",
+      "category": "arrival",
+      "originIcao": "KMEM",
+      "destinationIcao": "KELP",
+      "airlineIcao": "fdx",
+      "flightNumber": "4022"
+    },
+    {
+      "id": "arrival-aa1801-dfw-elp",
+      "category": "arrival",
+      "scheduledTime": "09:19",
+      "airlineIcao": "aal",
+      "flightNumber": "1801",
+      "originIcao": "KDFW",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "arrival-wn2006-aus-elp",
+      "category": "arrival",
+      "scheduledTime": "09:25",
+      "airlineIcao": "swa",
+      "flightNumber": "2006",
+      "originIcao": "KAUS",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "departure-wn4332-elp-den",
+      "category": "departure",
+      "scheduledTime": "09:45",
+      "airlineIcao": "swa",
+      "flightNumber": "4332",
+      "originIcao": "KELP",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-yv-departure-kiah-f-001",
+      "scheduledTime": "09:46",
+      "category": "departure",
+      "originIcao": "KELP",
+      "destinationIcao": "KIAH",
+      "airlineIcao": "ash",
+      "flightNumber": "7928"
+    },
+    {
+      "id": "departure-wn1813-elp-mdw",
+      "category": "departure",
+      "scheduledTime": "09:50",
+      "airlineIcao": "swa",
+      "flightNumber": "1813",
+      "originIcao": "KELP",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "departure-aa1801-elp-dfw",
+      "category": "departure",
+      "scheduledTime": "10:04",
+      "airlineIcao": "aal",
+      "flightNumber": "1801",
+      "originIcao": "KELP",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-wn1401-elp-dal",
+      "category": "departure",
+      "scheduledTime": "10:05",
+      "airlineIcao": "swa",
+      "flightNumber": "1401",
+      "originIcao": "KELP",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "arrival-wn121-las-elp",
+      "category": "arrival",
+      "scheduledTime": "10:30",
+      "airlineIcao": "swa",
+      "flightNumber": "121",
+      "originIcao": "KLAS",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "departure-wn121-elp-aus",
+      "category": "departure",
+      "scheduledTime": "11:05",
+      "airlineIcao": "swa",
+      "flightNumber": "121",
+      "originIcao": "KELP",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-oo4978-phx-elp",
+      "category": "arrival",
+      "scheduledTime": "11:17",
+      "airlineIcao": "skw",
+      "flightNumber": "4978",
+      "originIcao": "KPHX",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "arrival-aa2210-dfw-elp",
+      "category": "arrival",
+      "scheduledTime": "11:27",
+      "airlineIcao": "aal",
+      "flightNumber": "2210",
+      "originIcao": "KDFW",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "arrival-oo4977-lax-elp",
+      "category": "arrival",
+      "scheduledTime": "11:34",
+      "airlineIcao": "skw",
+      "flightNumber": "4977",
+      "originIcao": "KLAX",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "departure-oo4978-elp-phx",
+      "category": "departure",
+      "scheduledTime": "11:47",
+      "airlineIcao": "skw",
+      "flightNumber": "4978",
+      "originIcao": "KELP",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "t100-5x-departure-ksdf-g-001",
+      "scheduledTime": "12:03",
+      "category": "departure",
+      "originIcao": "KELP",
+      "destinationIcao": "KSDF",
+      "airlineIcao": "ups",
+      "flightNumber": "7831"
+    },
+    {
+      "id": "departure-oo4977-elp-lax",
+      "category": "departure",
+      "scheduledTime": "12:05",
+      "airlineIcao": "skw",
+      "flightNumber": "4977",
+      "originIcao": "KELP",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-aa2210-elp-dfw",
+      "category": "departure",
+      "scheduledTime": "12:07",
+      "airlineIcao": "aal",
+      "flightNumber": "2210",
+      "originIcao": "KELP",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-wn1201-den-elp",
+      "category": "arrival",
+      "scheduledTime": "12:45",
+      "airlineIcao": "swa",
+      "flightNumber": "1201",
+      "originIcao": "KDEN",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "arrival-wn2774-mdw-elp",
+      "category": "arrival",
+      "scheduledTime": "13:00",
+      "airlineIcao": "swa",
+      "flightNumber": "2774",
+      "originIcao": "KMDW",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "t100-5x-arrival-ksdf-g-001",
+      "scheduledTime": "13:04",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KELP",
+      "airlineIcao": "ups",
+      "flightNumber": "7745"
+    },
+    {
+      "id": "arrival-mq3506-dfw-elp",
+      "category": "arrival",
+      "scheduledTime": "13:08",
+      "airlineIcao": "eny",
+      "flightNumber": "3506",
+      "originIcao": "KDFW",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "arrival-dl1002-atl-elp",
+      "category": "arrival",
+      "scheduledTime": "13:20",
+      "airlineIcao": "dal",
+      "flightNumber": "1002",
+      "originIcao": "KATL",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "arrival-wn1310-dal-elp",
+      "category": "arrival",
+      "scheduledTime": "13:20",
+      "airlineIcao": "swa",
+      "flightNumber": "1310",
+      "originIcao": "KDAL",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "departure-wn1201-elp-phx",
+      "category": "departure",
+      "scheduledTime": "13:20",
+      "airlineIcao": "swa",
+      "flightNumber": "1201",
+      "originIcao": "KELP",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "arrival-ua792-den-elp",
+      "category": "arrival",
+      "scheduledTime": "13:35",
+      "airlineIcao": "ual",
+      "flightNumber": "792",
+      "originIcao": "KDEN",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "arrival-wn5064-aus-elp",
+      "category": "arrival",
+      "scheduledTime": "13:35",
+      "airlineIcao": "swa",
+      "flightNumber": "5064",
+      "originIcao": "KAUS",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "departure-wn1745-elp-lax",
+      "category": "departure",
+      "scheduledTime": "13:40",
+      "airlineIcao": "swa",
+      "flightNumber": "1745",
+      "originIcao": "KELP",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-mq3506-elp-dfw",
+      "category": "departure",
+      "scheduledTime": "13:41",
+      "airlineIcao": "eny",
+      "flightNumber": "3506",
+      "originIcao": "KELP",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-wn1795-phx-elp",
+      "category": "arrival",
+      "scheduledTime": "13:45",
+      "airlineIcao": "swa",
+      "flightNumber": "1795",
+      "originIcao": "KPHX",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "departure-wn4944-elp-dal",
+      "category": "departure",
+      "scheduledTime": "13:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4944",
+      "originIcao": "KELP",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "departure-wn5065-elp-aus",
+      "category": "departure",
+      "scheduledTime": "14:15",
+      "airlineIcao": "swa",
+      "flightNumber": "5065",
+      "originIcao": "KELP",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "t100-qx-departure-ksea-f-001",
+      "scheduledTime": "14:22",
+      "category": "departure",
+      "originIcao": "KELP",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "8886"
+    },
+    {
+      "id": "departure-dl1002-elp-atl",
+      "category": "departure",
+      "scheduledTime": "14:25",
+      "airlineIcao": "dal",
+      "flightNumber": "1002",
+      "originIcao": "KELP",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-wn4595-elp-las",
+      "category": "departure",
+      "scheduledTime": "14:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4595",
+      "originIcao": "KELP",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-ua1728-elp-den",
+      "category": "departure",
+      "scheduledTime": "14:32",
+      "airlineIcao": "ual",
+      "flightNumber": "1728",
+      "originIcao": "KELP",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-wn2306-lax-elp",
+      "category": "arrival",
+      "scheduledTime": "14:50",
+      "airlineIcao": "swa",
+      "flightNumber": "2306",
+      "originIcao": "KLAX",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "departure-wn3320-elp-hou",
+      "category": "departure",
+      "scheduledTime": "15:30",
+      "airlineIcao": "swa",
+      "flightNumber": "3320",
+      "originIcao": "KELP",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "arrival-aa1802-dfw-elp",
+      "category": "arrival",
+      "scheduledTime": "15:34",
+      "airlineIcao": "aal",
+      "flightNumber": "1802",
+      "originIcao": "KDFW",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "arrival-wn1979-hou-elp",
+      "category": "arrival",
+      "scheduledTime": "15:35",
+      "airlineIcao": "swa",
+      "flightNumber": "1979",
+      "originIcao": "KHOU",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "t100-5x-arrival-ksdf-g-002",
+      "scheduledTime": "15:37",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KELP",
+      "airlineIcao": "ups",
+      "flightNumber": "1562"
+    },
+    {
+      "id": "arrival-wn946-aus-elp",
+      "category": "arrival",
+      "scheduledTime": "16:10",
+      "airlineIcao": "swa",
+      "flightNumber": "946",
+      "originIcao": "KAUS",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "departure-wn1798-elp-den",
+      "category": "departure",
+      "scheduledTime": "16:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1798",
+      "originIcao": "KELP",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-aa1802-elp-dfw",
+      "category": "departure",
+      "scheduledTime": "16:19",
+      "airlineIcao": "aal",
+      "flightNumber": "1802",
+      "originIcao": "KELP",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-wn4396-dal-elp",
+      "category": "arrival",
+      "scheduledTime": "16:35",
+      "airlineIcao": "swa",
+      "flightNumber": "4396",
+      "originIcao": "KDAL",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "departure-wn2255-elp-dal",
+      "category": "departure",
+      "scheduledTime": "16:50",
+      "airlineIcao": "swa",
+      "flightNumber": "2255",
+      "originIcao": "KELP",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "arrival-mq3504-dfw-elp",
+      "category": "arrival",
+      "scheduledTime": "17:01",
+      "airlineIcao": "eny",
+      "flightNumber": "3504",
+      "originIcao": "KDFW",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "departure-wn4972-elp-phx",
+      "category": "departure",
+      "scheduledTime": "17:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4972",
+      "originIcao": "KELP",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "t100-fx-departure-kmem-g-001",
+      "scheduledTime": "17:15",
+      "category": "departure",
+      "originIcao": "KELP",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3492"
+    },
+    {
+      "id": "departure-mq3504-elp-dfw",
+      "category": "departure",
+      "scheduledTime": "17:32",
+      "airlineIcao": "eny",
+      "flightNumber": "3504",
+      "originIcao": "KELP",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-wn1530-den-elp",
+      "category": "arrival",
+      "scheduledTime": "17:35",
+      "airlineIcao": "swa",
+      "flightNumber": "1530",
+      "originIcao": "KDEN",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "arrival-f92261-den-elp",
+      "category": "arrival",
+      "scheduledTime": "18:14",
+      "airlineIcao": "fft",
+      "flightNumber": "2261",
+      "originIcao": "KDEN",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "arrival-aa2034-dfw-elp",
+      "category": "arrival",
+      "scheduledTime": "18:19",
+      "airlineIcao": "aal",
+      "flightNumber": "2034",
+      "originIcao": "KDFW",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "departure-wn2260-elp-dal",
+      "category": "departure",
+      "scheduledTime": "18:25",
+      "airlineIcao": "swa",
+      "flightNumber": "2260",
+      "originIcao": "KELP",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "t100-qx-arrival-ksea-f-001",
+      "scheduledTime": "18:41",
+      "category": "arrival",
+      "originIcao": "KSEA",
+      "destinationIcao": "KELP",
+      "airlineIcao": "qxe",
+      "flightNumber": "1978"
+    },
+    {
+      "id": "arrival-wn1822-sat-elp",
+      "category": "arrival",
+      "scheduledTime": "18:45",
+      "airlineIcao": "swa",
+      "flightNumber": "1822",
+      "originIcao": "KSAT",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "arrival-oo4970-phx-elp",
+      "category": "arrival",
+      "scheduledTime": "18:47",
+      "airlineIcao": "skw",
+      "flightNumber": "4970",
+      "originIcao": "KPHX",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "departure-f94418-elp-den",
+      "category": "departure",
+      "scheduledTime": "18:59",
+      "airlineIcao": "fft",
+      "flightNumber": "4418",
+      "originIcao": "KELP",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-wn4052-phx-elp",
+      "category": "arrival",
+      "scheduledTime": "19:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4052",
+      "originIcao": "KPHX",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "departure-oo4970-elp-phx",
+      "category": "departure",
+      "scheduledTime": "19:18",
+      "airlineIcao": "skw",
+      "flightNumber": "4970",
+      "originIcao": "KELP",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "arrival-f93450-las-elp",
+      "category": "arrival",
+      "scheduledTime": "19:19",
+      "airlineIcao": "fft",
+      "flightNumber": "3450",
+      "originIcao": "KLAS",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "arrival-wn1951-las-elp",
+      "category": "arrival",
+      "scheduledTime": "19:20",
+      "airlineIcao": "swa",
+      "flightNumber": "1951",
+      "originIcao": "KLAS",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "departure-wn1793-elp-aus",
+      "category": "departure",
+      "scheduledTime": "19:25",
+      "airlineIcao": "swa",
+      "flightNumber": "1793",
+      "originIcao": "KELP",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn1122-dal-elp",
+      "category": "arrival",
+      "scheduledTime": "19:40",
+      "airlineIcao": "swa",
+      "flightNumber": "1122",
+      "originIcao": "KDAL",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "t100-fx-departure-kind-g-001",
+      "scheduledTime": "19:54",
+      "category": "departure",
+      "originIcao": "KELP",
+      "destinationIcao": "KIND",
+      "airlineIcao": "fdx",
+      "flightNumber": "3041"
+    },
+    {
+      "id": "departure-wn1808-elp-las",
+      "category": "departure",
+      "scheduledTime": "19:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1808",
+      "originIcao": "KELP",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-wn4260-elp-sat",
+      "category": "departure",
+      "scheduledTime": "19:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4260",
+      "originIcao": "KELP",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-f93449-elp-las",
+      "category": "departure",
+      "scheduledTime": "20:14",
+      "airlineIcao": "fft",
+      "flightNumber": "3449",
+      "originIcao": "KELP",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-wn1122-elp-phx",
+      "category": "departure",
+      "scheduledTime": "20:20",
+      "airlineIcao": "swa",
+      "flightNumber": "1122",
+      "originIcao": "KELP",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "arrival-dl1713-atl-elp",
+      "category": "arrival",
+      "scheduledTime": "20:50",
+      "airlineIcao": "dal",
+      "flightNumber": "1713",
+      "originIcao": "KATL",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "arrival-aa841-dfw-elp",
+      "category": "arrival",
+      "scheduledTime": "20:55",
+      "airlineIcao": "aal",
+      "flightNumber": "841",
+      "originIcao": "KDFW",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "t100-yv-arrival-kiah-f-001",
+      "scheduledTime": "21:07",
+      "category": "arrival",
+      "originIcao": "KIAH",
+      "destinationIcao": "KELP",
+      "airlineIcao": "ash",
+      "flightNumber": "3042"
+    },
+    {
+      "id": "arrival-ua333-den-elp",
+      "category": "arrival",
+      "scheduledTime": "21:11",
+      "airlineIcao": "ual",
+      "flightNumber": "333",
+      "originIcao": "KDEN",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "arrival-wn441-aus-elp",
+      "category": "arrival",
+      "scheduledTime": "21:30",
+      "airlineIcao": "swa",
+      "flightNumber": "441",
+      "originIcao": "KAUS",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "arrival-oo4905-lax-elp",
+      "category": "arrival",
+      "scheduledTime": "21:34",
+      "airlineIcao": "skw",
+      "flightNumber": "4905",
+      "originIcao": "KLAX",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "arrival-oo5533-ord-elp",
+      "category": "arrival",
+      "scheduledTime": "22:28",
+      "airlineIcao": "skw",
+      "flightNumber": "5533",
+      "originIcao": "KORD",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "arrival-wn1980-hou-elp",
+      "category": "arrival",
+      "scheduledTime": "22:30",
+      "airlineIcao": "swa",
+      "flightNumber": "1980",
+      "originIcao": "KHOU",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "arrival-wn1088-san-elp",
+      "category": "arrival",
+      "scheduledTime": "22:35",
+      "airlineIcao": "swa",
+      "flightNumber": "1088",
+      "originIcao": "KSAN",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "arrival-wn931-phx-elp",
+      "category": "arrival",
+      "scheduledTime": "22:35",
+      "airlineIcao": "swa",
+      "flightNumber": "931",
+      "originIcao": "KPHX",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "arrival-wn3373-dal-elp",
+      "category": "arrival",
+      "scheduledTime": "22:40",
+      "airlineIcao": "swa",
+      "flightNumber": "3373",
+      "originIcao": "KDAL",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "t100-yv-arrival-kiah-f-002",
+      "scheduledTime": "23:07",
+      "category": "arrival",
+      "originIcao": "KIAH",
+      "destinationIcao": "KELP",
+      "airlineIcao": "ash",
+      "flightNumber": "9348"
+    },
+    {
+      "id": "arrival-wn1319-den-elp",
+      "category": "arrival",
+      "scheduledTime": "23:10",
+      "airlineIcao": "swa",
+      "flightNumber": "1319",
+      "originIcao": "KDEN",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "arrival-mq3895-ord-elp",
+      "category": "arrival",
+      "scheduledTime": "23:45",
+      "airlineIcao": "eny",
+      "flightNumber": "3895",
+      "originIcao": "KORD",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "arrival-aa1607-dfw-elp",
+      "category": "arrival",
+      "scheduledTime": "23:46",
+      "airlineIcao": "aal",
+      "flightNumber": "1607",
+      "originIcao": "KDFW",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "arrival-mq3874-phx-elp",
+      "category": "arrival",
+      "scheduledTime": "23:59",
+      "airlineIcao": "eny",
+      "flightNumber": "3874",
+      "originIcao": "KPHX",
+      "destinationIcao": "KELP"
+    }
+  ]
+}

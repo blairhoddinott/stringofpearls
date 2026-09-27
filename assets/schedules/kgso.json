@@ -1,0 +1,933 @@
+{
+  "schemaVersion": 1,
+  "airportIcao": "KGSO",
+  "timezone": "America/New_York",
+  "sampleDate": "2026-07-15",
+  "source": {
+    "name": "US DOT BTS On-Time Performance + T-100 Segment (All Carriers)",
+    "url": "https://transtats.bts.gov/DL_SelectFields.aspx?QO_fu146_anzr=Nv4+Pn44vr45&gnoyr_VQ=FMG",
+    "retrievedAt": "2026-09-27",
+    "license": "U.S. Government work in the public domain (17 U.S.C. §105); OurAirports code data is public domain.",
+    "coverage": "Exact On-Time movements are retained; 50 representative movements were deterministically synthesized from 2026-05 T-100 performed-departure aggregates. General aviation is excluded."
+  },
+  "flights": [
+    {
+      "id": "t100-9e-arrival-kdtw-f-002",
+      "scheduledTime": "00:01",
+      "category": "arrival",
+      "originIcao": "KDTW",
+      "destinationIcao": "KGSO",
+      "airlineIcao": "edv",
+      "flightNumber": "4550"
+    },
+    {
+      "id": "t100-pt-departure-kclt-f-004",
+      "scheduledTime": "05:08",
+      "category": "departure",
+      "originIcao": "KGSO",
+      "destinationIcao": "KCLT",
+      "airlineIcao": "pdt",
+      "flightNumber": "120"
+    },
+    {
+      "id": "departure-oh5121-gso-clt",
+      "category": "departure",
+      "scheduledTime": "05:10",
+      "airlineIcao": "jia",
+      "flightNumber": "5121",
+      "originIcao": "KGSO",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "t100-fx-departure-katl-g-001",
+      "scheduledTime": "05:21",
+      "category": "departure",
+      "originIcao": "KGSO",
+      "destinationIcao": "KATL",
+      "airlineIcao": "fdx",
+      "flightNumber": "7171"
+    },
+    {
+      "id": "departure-dl3018-gso-atl",
+      "category": "departure",
+      "scheduledTime": "05:25",
+      "airlineIcao": "dal",
+      "flightNumber": "3018",
+      "originIcao": "KGSO",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-yx4578-gso-lga",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "rpa",
+      "flightNumber": "4578",
+      "originIcao": "KGSO",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "t100-5x-departure-kcae-g-001",
+      "scheduledTime": "06:00",
+      "category": "departure",
+      "originIcao": "KGSO",
+      "destinationIcao": "KCAE",
+      "airlineIcao": "ups",
+      "flightNumber": "9106"
+    },
+    {
+      "id": "t100-pt-departure-kclt-f-002",
+      "scheduledTime": "06:33",
+      "category": "departure",
+      "originIcao": "KGSO",
+      "destinationIcao": "KCLT",
+      "airlineIcao": "pdt",
+      "flightNumber": "8850"
+    },
+    {
+      "id": "departure-dl3004-gso-atl",
+      "category": "departure",
+      "scheduledTime": "06:35",
+      "airlineIcao": "dal",
+      "flightNumber": "3004",
+      "originIcao": "KGSO",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-aa3291-gso-dfw",
+      "category": "departure",
+      "scheduledTime": "06:36",
+      "airlineIcao": "aal",
+      "flightNumber": "3291",
+      "originIcao": "KGSO",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "t100-pt-departure-kclt-f-001",
+      "scheduledTime": "06:36",
+      "category": "departure",
+      "originIcao": "KGSO",
+      "destinationIcao": "KCLT",
+      "airlineIcao": "pdt",
+      "flightNumber": "4586"
+    },
+    {
+      "id": "t100-9e-departure-kdtw-f-002",
+      "scheduledTime": "07:00",
+      "category": "departure",
+      "originIcao": "KGSO",
+      "destinationIcao": "KDTW",
+      "airlineIcao": "edv",
+      "flightNumber": "4538"
+    },
+    {
+      "id": "departure-mq3640-gso-mia",
+      "category": "departure",
+      "scheduledTime": "07:02",
+      "airlineIcao": "eny",
+      "flightNumber": "3640",
+      "originIcao": "KGSO",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-mq3965-gso-clt",
+      "category": "departure",
+      "scheduledTime": "07:24",
+      "airlineIcao": "eny",
+      "flightNumber": "3965",
+      "originIcao": "KGSO",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "t100-9e-departure-kdtw-f-001",
+      "scheduledTime": "07:25",
+      "category": "departure",
+      "originIcao": "KGSO",
+      "destinationIcao": "KDTW",
+      "airlineIcao": "edv",
+      "flightNumber": "4358"
+    },
+    {
+      "id": "departure-mq3413-gso-ord",
+      "category": "departure",
+      "scheduledTime": "07:27",
+      "airlineIcao": "eny",
+      "flightNumber": "3413",
+      "originIcao": "KGSO",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-pt-departure-kphl-f-003",
+      "scheduledTime": "07:29",
+      "category": "departure",
+      "originIcao": "KGSO",
+      "destinationIcao": "KPHL",
+      "airlineIcao": "pdt",
+      "flightNumber": "9593"
+    },
+    {
+      "id": "departure-dl1085-gso-atl",
+      "category": "departure",
+      "scheduledTime": "08:14",
+      "airlineIcao": "dal",
+      "flightNumber": "1085",
+      "originIcao": "KGSO",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-9e-departure-klga-f-002",
+      "scheduledTime": "08:15",
+      "category": "departure",
+      "originIcao": "KGSO",
+      "destinationIcao": "KLGA",
+      "airlineIcao": "edv",
+      "flightNumber": "6004"
+    },
+    {
+      "id": "t100-g7-arrival-kewr-f-001",
+      "scheduledTime": "09:26",
+      "category": "arrival",
+      "originIcao": "KEWR",
+      "destinationIcao": "KGSO",
+      "airlineIcao": "gjs",
+      "flightNumber": "9835"
+    },
+    {
+      "id": "arrival-dl3173-atl-gso",
+      "category": "arrival",
+      "scheduledTime": "09:27",
+      "airlineIcao": "dal",
+      "flightNumber": "3173",
+      "originIcao": "KATL",
+      "destinationIcao": "KGSO"
+    },
+    {
+      "id": "arrival-oh5252-dca-gso",
+      "category": "arrival",
+      "scheduledTime": "09:54",
+      "airlineIcao": "jia",
+      "flightNumber": "5252",
+      "originIcao": "KDCA",
+      "destinationIcao": "KGSO"
+    },
+    {
+      "id": "t100-pt-arrival-kphl-f-001",
+      "scheduledTime": "09:54",
+      "category": "arrival",
+      "originIcao": "KPHL",
+      "destinationIcao": "KGSO",
+      "airlineIcao": "pdt",
+      "flightNumber": "3092"
+    },
+    {
+      "id": "arrival-yx4483-lga-gso",
+      "category": "arrival",
+      "scheduledTime": "10:08",
+      "airlineIcao": "rpa",
+      "flightNumber": "4483",
+      "originIcao": "KLGA",
+      "destinationIcao": "KGSO"
+    },
+    {
+      "id": "t100-g7-departure-kiad-f-001",
+      "scheduledTime": "10:11",
+      "category": "departure",
+      "originIcao": "KGSO",
+      "destinationIcao": "KIAD",
+      "airlineIcao": "gjs",
+      "flightNumber": "1468"
+    },
+    {
+      "id": "t100-fx-arrival-kmem-g-001",
+      "scheduledTime": "10:12",
+      "category": "arrival",
+      "originIcao": "KMEM",
+      "destinationIcao": "KGSO",
+      "airlineIcao": "fdx",
+      "flightNumber": "4022"
+    },
+    {
+      "id": "departure-dl3173-gso-atl",
+      "category": "departure",
+      "scheduledTime": "10:14",
+      "airlineIcao": "dal",
+      "flightNumber": "3173",
+      "originIcao": "KGSO",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-oh5252-gso-dca",
+      "category": "departure",
+      "scheduledTime": "10:24",
+      "airlineIcao": "jia",
+      "flightNumber": "5252",
+      "originIcao": "KGSO",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "t100-g7-departure-kord-f-001",
+      "scheduledTime": "10:24",
+      "category": "departure",
+      "originIcao": "KGSO",
+      "destinationIcao": "KORD",
+      "airlineIcao": "gjs",
+      "flightNumber": "1605"
+    },
+    {
+      "id": "departure-yx4483-gso-lga",
+      "category": "departure",
+      "scheduledTime": "10:38",
+      "airlineIcao": "rpa",
+      "flightNumber": "4483",
+      "originIcao": "KGSO",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "t100-5x-departure-kroa-g-001",
+      "scheduledTime": "10:41",
+      "category": "departure",
+      "originIcao": "KGSO",
+      "destinationIcao": "KROA",
+      "airlineIcao": "ups",
+      "flightNumber": "36"
+    },
+    {
+      "id": "t100-pt-arrival-kclt-f-001",
+      "scheduledTime": "11:32",
+      "category": "arrival",
+      "originIcao": "KCLT",
+      "destinationIcao": "KGSO",
+      "airlineIcao": "pdt",
+      "flightNumber": "8656"
+    },
+    {
+      "id": "arrival-dl3052-atl-gso",
+      "category": "arrival",
+      "scheduledTime": "11:34",
+      "airlineIcao": "dal",
+      "flightNumber": "3052",
+      "originIcao": "KATL",
+      "destinationIcao": "KGSO"
+    },
+    {
+      "id": "departure-dl3052-gso-atl",
+      "category": "departure",
+      "scheduledTime": "12:29",
+      "airlineIcao": "dal",
+      "flightNumber": "3052",
+      "originIcao": "KGSO",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-mq3744-ord-gso",
+      "category": "arrival",
+      "scheduledTime": "13:34",
+      "airlineIcao": "eny",
+      "flightNumber": "3744",
+      "originIcao": "KORD",
+      "destinationIcao": "KGSO"
+    },
+    {
+      "id": "t100-pt-arrival-kphl-f-003",
+      "scheduledTime": "13:35",
+      "category": "arrival",
+      "originIcao": "KPHL",
+      "destinationIcao": "KGSO",
+      "airlineIcao": "pdt",
+      "flightNumber": "4435"
+    },
+    {
+      "id": "arrival-mq3554-dfw-gso",
+      "category": "arrival",
+      "scheduledTime": "13:37",
+      "airlineIcao": "eny",
+      "flightNumber": "3554",
+      "originIcao": "KDFW",
+      "destinationIcao": "KGSO"
+    },
+    {
+      "id": "t100-oo-arrival-kord-f-001",
+      "scheduledTime": "13:39",
+      "category": "arrival",
+      "originIcao": "KORD",
+      "destinationIcao": "KGSO",
+      "airlineIcao": "skw",
+      "flightNumber": "6740"
+    },
+    {
+      "id": "t100-5x-arrival-ksdf-g-001",
+      "scheduledTime": "13:41",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KGSO",
+      "airlineIcao": "ups",
+      "flightNumber": "7745"
+    },
+    {
+      "id": "arrival-yx5862-lga-gso",
+      "category": "arrival",
+      "scheduledTime": "13:42",
+      "airlineIcao": "rpa",
+      "flightNumber": "5862",
+      "originIcao": "KLGA",
+      "destinationIcao": "KGSO"
+    },
+    {
+      "id": "arrival-dl3060-atl-gso",
+      "category": "arrival",
+      "scheduledTime": "14:04",
+      "airlineIcao": "dal",
+      "flightNumber": "3060",
+      "originIcao": "KATL",
+      "destinationIcao": "KGSO"
+    },
+    {
+      "id": "departure-mq3744-gso-ord",
+      "category": "departure",
+      "scheduledTime": "14:04",
+      "airlineIcao": "eny",
+      "flightNumber": "3744",
+      "originIcao": "KGSO",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-c5-departure-kiad-f-001",
+      "scheduledTime": "14:06",
+      "category": "departure",
+      "originIcao": "KGSO",
+      "destinationIcao": "KIAD",
+      "airlineIcao": "uca",
+      "flightNumber": "5342"
+    },
+    {
+      "id": "t100-fx-arrival-kgsp-g-001",
+      "scheduledTime": "14:06",
+      "category": "arrival",
+      "originIcao": "KGSP",
+      "destinationIcao": "KGSO",
+      "airlineIcao": "fdx",
+      "flightNumber": "4938"
+    },
+    {
+      "id": "departure-mq3554-gso-dfw",
+      "category": "departure",
+      "scheduledTime": "14:09",
+      "airlineIcao": "eny",
+      "flightNumber": "3554",
+      "originIcao": "KGSO",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "t100-pt-departure-kphl-f-002",
+      "scheduledTime": "14:12",
+      "category": "departure",
+      "originIcao": "KGSO",
+      "destinationIcao": "KPHL",
+      "airlineIcao": "pdt",
+      "flightNumber": "5904"
+    },
+    {
+      "id": "departure-yx5862-gso-lga",
+      "category": "departure",
+      "scheduledTime": "14:25",
+      "airlineIcao": "rpa",
+      "flightNumber": "5862",
+      "originIcao": "KGSO",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "t100-pt-departure-kphl-f-001",
+      "scheduledTime": "14:25",
+      "category": "departure",
+      "originIcao": "KGSO",
+      "destinationIcao": "KPHL",
+      "airlineIcao": "pdt",
+      "flightNumber": "271"
+    },
+    {
+      "id": "t100-5x-departure-ksdf-g-001",
+      "scheduledTime": "14:55",
+      "category": "departure",
+      "originIcao": "KGSO",
+      "destinationIcao": "KSDF",
+      "airlineIcao": "ups",
+      "flightNumber": "7831"
+    },
+    {
+      "id": "departure-dl3060-gso-atl",
+      "category": "departure",
+      "scheduledTime": "14:59",
+      "airlineIcao": "dal",
+      "flightNumber": "3060",
+      "originIcao": "KGSO",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-9e-arrival-klga-f-002",
+      "scheduledTime": "15:28",
+      "category": "arrival",
+      "originIcao": "KLGA",
+      "destinationIcao": "KGSO",
+      "airlineIcao": "edv",
+      "flightNumber": "6289"
+    },
+    {
+      "id": "arrival-yx4514-dca-gso",
+      "category": "arrival",
+      "scheduledTime": "15:29",
+      "airlineIcao": "rpa",
+      "flightNumber": "4514",
+      "originIcao": "KDCA",
+      "destinationIcao": "KGSO"
+    },
+    {
+      "id": "arrival-dl2539-atl-gso",
+      "category": "arrival",
+      "scheduledTime": "15:30",
+      "airlineIcao": "dal",
+      "flightNumber": "2539",
+      "originIcao": "KATL",
+      "destinationIcao": "KGSO"
+    },
+    {
+      "id": "t100-g7-arrival-kiad-f-001",
+      "scheduledTime": "15:32",
+      "category": "arrival",
+      "originIcao": "KIAD",
+      "destinationIcao": "KGSO",
+      "airlineIcao": "gjs",
+      "flightNumber": "7661"
+    },
+    {
+      "id": "t100-pt-departure-kclt-f-005",
+      "scheduledTime": "15:56",
+      "category": "departure",
+      "originIcao": "KGSO",
+      "destinationIcao": "KCLT",
+      "airlineIcao": "pdt",
+      "flightNumber": "853"
+    },
+    {
+      "id": "departure-yx4514-gso-dca",
+      "category": "departure",
+      "scheduledTime": "15:59",
+      "airlineIcao": "rpa",
+      "flightNumber": "4514",
+      "originIcao": "KGSO",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-dl2539-gso-atl",
+      "category": "departure",
+      "scheduledTime": "16:15",
+      "airlineIcao": "dal",
+      "flightNumber": "2539",
+      "originIcao": "KGSO",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-fx-departure-kmem-g-001",
+      "scheduledTime": "16:15",
+      "category": "departure",
+      "originIcao": "KGSO",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3492"
+    },
+    {
+      "id": "t100-g7-arrival-kord-f-001",
+      "scheduledTime": "16:55",
+      "category": "arrival",
+      "originIcao": "KORD",
+      "destinationIcao": "KGSO",
+      "airlineIcao": "gjs",
+      "flightNumber": "1772"
+    },
+    {
+      "id": "arrival-oh5518-phl-gso",
+      "category": "arrival",
+      "scheduledTime": "16:59",
+      "airlineIcao": "jia",
+      "flightNumber": "5518",
+      "originIcao": "KPHL",
+      "destinationIcao": "KGSO"
+    },
+    {
+      "id": "departure-oh5518-gso-phl",
+      "category": "departure",
+      "scheduledTime": "17:29",
+      "airlineIcao": "jia",
+      "flightNumber": "5518",
+      "originIcao": "KGSO",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "t100-fx-departure-kcae-g-001",
+      "scheduledTime": "17:32",
+      "category": "departure",
+      "originIcao": "KGSO",
+      "destinationIcao": "KCAE",
+      "airlineIcao": "fdx",
+      "flightNumber": "8991"
+    },
+    {
+      "id": "arrival-aa1895-clt-gso",
+      "category": "arrival",
+      "scheduledTime": "17:47",
+      "airlineIcao": "aal",
+      "flightNumber": "1895",
+      "originIcao": "KCLT",
+      "destinationIcao": "KGSO"
+    },
+    {
+      "id": "arrival-yx4421-lga-gso",
+      "category": "arrival",
+      "scheduledTime": "17:47",
+      "airlineIcao": "rpa",
+      "flightNumber": "4421",
+      "originIcao": "KLGA",
+      "destinationIcao": "KGSO"
+    },
+    {
+      "id": "t100-fx-arrival-kcae-g-001",
+      "scheduledTime": "17:49",
+      "category": "arrival",
+      "originIcao": "KCAE",
+      "destinationIcao": "KGSO",
+      "airlineIcao": "fdx",
+      "flightNumber": "2694"
+    },
+    {
+      "id": "arrival-dl3050-atl-gso",
+      "category": "arrival",
+      "scheduledTime": "17:50",
+      "airlineIcao": "dal",
+      "flightNumber": "3050",
+      "originIcao": "KATL",
+      "destinationIcao": "KGSO"
+    },
+    {
+      "id": "t100-g4-arrival-kpie-f-001",
+      "scheduledTime": "17:52",
+      "category": "arrival",
+      "originIcao": "KPIE",
+      "destinationIcao": "KGSO",
+      "airlineIcao": "aay",
+      "flightNumber": "9917"
+    },
+    {
+      "id": "arrival-aa1894-dfw-gso",
+      "category": "arrival",
+      "scheduledTime": "18:04",
+      "airlineIcao": "aal",
+      "flightNumber": "1894",
+      "originIcao": "KDFW",
+      "destinationIcao": "KGSO"
+    },
+    {
+      "id": "t100-9e-arrival-klga-f-003",
+      "scheduledTime": "18:08",
+      "category": "arrival",
+      "originIcao": "KLGA",
+      "destinationIcao": "KGSO",
+      "airlineIcao": "edv",
+      "flightNumber": "8768"
+    },
+    {
+      "id": "t100-c5-arrival-kiad-f-001",
+      "scheduledTime": "18:08",
+      "category": "arrival",
+      "originIcao": "KIAD",
+      "destinationIcao": "KGSO",
+      "airlineIcao": "uca",
+      "flightNumber": "3020"
+    },
+    {
+      "id": "arrival-mq3932-ord-gso",
+      "category": "arrival",
+      "scheduledTime": "18:12",
+      "airlineIcao": "eny",
+      "flightNumber": "3932",
+      "originIcao": "KORD",
+      "destinationIcao": "KGSO"
+    },
+    {
+      "id": "t100-9e-departure-klga-f-001",
+      "scheduledTime": "18:16",
+      "category": "departure",
+      "originIcao": "KGSO",
+      "destinationIcao": "KLGA",
+      "airlineIcao": "edv",
+      "flightNumber": "7477"
+    },
+    {
+      "id": "departure-yx4421-gso-lga",
+      "category": "departure",
+      "scheduledTime": "18:18",
+      "airlineIcao": "rpa",
+      "flightNumber": "4421",
+      "originIcao": "KGSO",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-dl3050-gso-atl",
+      "category": "departure",
+      "scheduledTime": "18:36",
+      "airlineIcao": "dal",
+      "flightNumber": "3050",
+      "originIcao": "KGSO",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-pt-departure-kclt-f-003",
+      "scheduledTime": "18:36",
+      "category": "departure",
+      "originIcao": "KGSO",
+      "destinationIcao": "KCLT",
+      "airlineIcao": "pdt",
+      "flightNumber": "8195"
+    },
+    {
+      "id": "departure-aa1895-gso-clt",
+      "category": "departure",
+      "scheduledTime": "18:39",
+      "airlineIcao": "aal",
+      "flightNumber": "1895",
+      "originIcao": "KGSO",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "t100-9e-departure-klga-f-003",
+      "scheduledTime": "18:41",
+      "category": "departure",
+      "originIcao": "KGSO",
+      "destinationIcao": "KLGA",
+      "airlineIcao": "edv",
+      "flightNumber": "855"
+    },
+    {
+      "id": "departure-mq3932-gso-ord",
+      "category": "departure",
+      "scheduledTime": "18:43",
+      "airlineIcao": "eny",
+      "flightNumber": "3932",
+      "originIcao": "KGSO",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-oo-departure-kord-f-002",
+      "scheduledTime": "18:43",
+      "category": "departure",
+      "originIcao": "KGSO",
+      "destinationIcao": "KORD",
+      "airlineIcao": "skw",
+      "flightNumber": "4735"
+    },
+    {
+      "id": "arrival-aa2126-clt-gso",
+      "category": "arrival",
+      "scheduledTime": "19:10",
+      "airlineIcao": "aal",
+      "flightNumber": "2126",
+      "originIcao": "KCLT",
+      "destinationIcao": "KGSO"
+    },
+    {
+      "id": "arrival-dl3017-atl-gso",
+      "category": "arrival",
+      "scheduledTime": "19:11",
+      "airlineIcao": "dal",
+      "flightNumber": "3017",
+      "originIcao": "KATL",
+      "destinationIcao": "KGSO"
+    },
+    {
+      "id": "t100-pt-arrival-kclt-f-004",
+      "scheduledTime": "19:11",
+      "category": "arrival",
+      "originIcao": "KCLT",
+      "destinationIcao": "KGSO",
+      "airlineIcao": "pdt",
+      "flightNumber": "6378"
+    },
+    {
+      "id": "t100-fx-arrival-kewr-g-001",
+      "scheduledTime": "19:14",
+      "category": "arrival",
+      "originIcao": "KEWR",
+      "destinationIcao": "KGSO",
+      "airlineIcao": "fdx",
+      "flightNumber": "4660"
+    },
+    {
+      "id": "t100-mx-departure-kbdl-f-001",
+      "scheduledTime": "19:15",
+      "category": "departure",
+      "originIcao": "KGSO",
+      "destinationIcao": "KBDL",
+      "airlineIcao": "mxy",
+      "flightNumber": "8103"
+    },
+    {
+      "id": "departure-aa1894-gso-dfw",
+      "category": "departure",
+      "scheduledTime": "19:19",
+      "airlineIcao": "aal",
+      "flightNumber": "1894",
+      "originIcao": "KGSO",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-aa2126-gso-clt",
+      "category": "departure",
+      "scheduledTime": "19:50",
+      "airlineIcao": "aal",
+      "flightNumber": "2126",
+      "originIcao": "KGSO",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "t100-oo-departure-kord-f-001",
+      "scheduledTime": "19:51",
+      "category": "departure",
+      "originIcao": "KGSO",
+      "destinationIcao": "KORD",
+      "airlineIcao": "skw",
+      "flightNumber": "9147"
+    },
+    {
+      "id": "t100-9e-arrival-kdtw-f-003",
+      "scheduledTime": "21:46",
+      "category": "arrival",
+      "originIcao": "KDTW",
+      "destinationIcao": "KGSO",
+      "airlineIcao": "edv",
+      "flightNumber": "1581"
+    },
+    {
+      "id": "arrival-mq3648-ord-gso",
+      "category": "arrival",
+      "scheduledTime": "21:47",
+      "airlineIcao": "eny",
+      "flightNumber": "3648",
+      "originIcao": "KORD",
+      "destinationIcao": "KGSO"
+    },
+    {
+      "id": "arrival-mq4054-clt-gso",
+      "category": "arrival",
+      "scheduledTime": "22:24",
+      "airlineIcao": "eny",
+      "flightNumber": "4054",
+      "originIcao": "KCLT",
+      "destinationIcao": "KGSO"
+    },
+    {
+      "id": "t100-9e-arrival-kdtw-f-001",
+      "scheduledTime": "22:27",
+      "category": "arrival",
+      "originIcao": "KDTW",
+      "destinationIcao": "KGSO",
+      "airlineIcao": "edv",
+      "flightNumber": "4179"
+    },
+    {
+      "id": "t100-pt-arrival-kphl-f-002",
+      "scheduledTime": "22:41",
+      "category": "arrival",
+      "originIcao": "KPHL",
+      "destinationIcao": "KGSO",
+      "airlineIcao": "pdt",
+      "flightNumber": "4015"
+    },
+    {
+      "id": "arrival-dl1617-atl-gso",
+      "category": "arrival",
+      "scheduledTime": "22:43",
+      "airlineIcao": "dal",
+      "flightNumber": "1617",
+      "originIcao": "KATL",
+      "destinationIcao": "KGSO"
+    },
+    {
+      "id": "arrival-yx4577-lga-gso",
+      "category": "arrival",
+      "scheduledTime": "22:53",
+      "airlineIcao": "rpa",
+      "flightNumber": "4577",
+      "originIcao": "KLGA",
+      "destinationIcao": "KGSO"
+    },
+    {
+      "id": "arrival-aa1316-dfw-gso",
+      "category": "arrival",
+      "scheduledTime": "22:56",
+      "airlineIcao": "aal",
+      "flightNumber": "1316",
+      "originIcao": "KDFW",
+      "destinationIcao": "KGSO"
+    },
+    {
+      "id": "arrival-mq3754-mia-gso",
+      "category": "arrival",
+      "scheduledTime": "22:57",
+      "airlineIcao": "eny",
+      "flightNumber": "3754",
+      "originIcao": "KMIA",
+      "destinationIcao": "KGSO"
+    },
+    {
+      "id": "t100-5x-arrival-kgsp-g-001",
+      "scheduledTime": "22:57",
+      "category": "arrival",
+      "originIcao": "KGSP",
+      "destinationIcao": "KGSO",
+      "airlineIcao": "ups",
+      "flightNumber": "6322"
+    },
+    {
+      "id": "t100-pt-arrival-kclt-f-002",
+      "scheduledTime": "22:57",
+      "category": "arrival",
+      "originIcao": "KCLT",
+      "destinationIcao": "KGSO",
+      "airlineIcao": "pdt",
+      "flightNumber": "2818"
+    },
+    {
+      "id": "t100-pt-arrival-kclt-f-003",
+      "scheduledTime": "23:00",
+      "category": "arrival",
+      "originIcao": "KCLT",
+      "destinationIcao": "KGSO",
+      "airlineIcao": "pdt",
+      "flightNumber": "8611"
+    },
+    {
+      "id": "arrival-oh5233-clt-gso",
+      "category": "arrival",
+      "scheduledTime": "23:46",
+      "airlineIcao": "jia",
+      "flightNumber": "5233",
+      "originIcao": "KCLT",
+      "destinationIcao": "KGSO"
+    },
+    {
+      "id": "t100-9e-arrival-klga-f-001",
+      "scheduledTime": "23:50",
+      "category": "arrival",
+      "originIcao": "KLGA",
+      "destinationIcao": "KGSO",
+      "airlineIcao": "edv",
+      "flightNumber": "2831"
+    },
+    {
+      "id": "arrival-dl3005-atl-gso",
+      "category": "arrival",
+      "scheduledTime": "23:59",
+      "airlineIcao": "dal",
+      "flightNumber": "3005",
+      "originIcao": "KATL",
+      "destinationIcao": "KGSO"
+    }
+  ]
+}

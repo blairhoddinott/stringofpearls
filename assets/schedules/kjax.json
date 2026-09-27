@@ -1,0 +1,1815 @@
+{
+  "schemaVersion": 1,
+  "airportIcao": "KJAX",
+  "timezone": "America/New_York",
+  "sampleDate": "2026-07-15",
+  "source": {
+    "name": "US DOT BTS On-Time Performance + T-100 Segment (All Carriers)",
+    "url": "https://transtats.bts.gov/DL_SelectFields.aspx?QO_fu146_anzr=Nv4+Pn44vr45&gnoyr_VQ=FMG",
+    "retrievedAt": "2026-09-27",
+    "license": "U.S. Government work in the public domain (17 U.S.C. §105); OurAirports code data is public domain.",
+    "coverage": "Exact On-Time movements are retained; 35 representative movements were deterministically synthesized from 2026-05 T-100 performed-departure aggregates. General aviation is excluded."
+  },
+  "flights": [
+    {
+      "id": "arrival-dl2276-atl-jax",
+      "category": "arrival",
+      "scheduledTime": "00:09",
+      "airlineIcao": "dal",
+      "flightNumber": "2276",
+      "originIcao": "KATL",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-aa416-mia-jax",
+      "category": "arrival",
+      "scheduledTime": "00:15",
+      "airlineIcao": "aal",
+      "flightNumber": "416",
+      "originIcao": "KMIA",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-b61677-jfk-jax",
+      "category": "arrival",
+      "scheduledTime": "00:31",
+      "airlineIcao": "jbu",
+      "flightNumber": "1677",
+      "originIcao": "KJFK",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "t100-g4-arrival-kcak-f-001",
+      "scheduledTime": "00:35",
+      "category": "arrival",
+      "originIcao": "KCAK",
+      "destinationIcao": "KJAX",
+      "airlineIcao": "aay",
+      "flightNumber": "682"
+    },
+    {
+      "id": "departure-dl2722-jax-atl",
+      "category": "departure",
+      "scheduledTime": "05:30",
+      "airlineIcao": "dal",
+      "flightNumber": "2722",
+      "originIcao": "KJAX",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-aa2789-jax-dfw",
+      "category": "departure",
+      "scheduledTime": "05:52",
+      "airlineIcao": "aal",
+      "flightNumber": "2789",
+      "originIcao": "KJAX",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "t100-9e-departure-kjfk-f-002",
+      "scheduledTime": "05:58",
+      "category": "departure",
+      "originIcao": "KJAX",
+      "destinationIcao": "KJFK",
+      "airlineIcao": "edv",
+      "flightNumber": "7254"
+    },
+    {
+      "id": "departure-aa2711-jax-mia",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "aal",
+      "flightNumber": "2711",
+      "originIcao": "KJAX",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-oh5552-jax-dca",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "jia",
+      "flightNumber": "5552",
+      "originIcao": "KJAX",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-b61678-jax-jfk",
+      "category": "departure",
+      "scheduledTime": "06:05",
+      "airlineIcao": "jbu",
+      "flightNumber": "1678",
+      "originIcao": "KJAX",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "departure-yx5797-jax-lga",
+      "category": "departure",
+      "scheduledTime": "06:15",
+      "airlineIcao": "rpa",
+      "flightNumber": "5797",
+      "originIcao": "KJAX",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-aa1834-jax-clt",
+      "category": "departure",
+      "scheduledTime": "06:18",
+      "airlineIcao": "aal",
+      "flightNumber": "1834",
+      "originIcao": "KJAX",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "t100-g4-departure-kcak-f-001",
+      "scheduledTime": "06:22",
+      "category": "departure",
+      "originIcao": "KJAX",
+      "destinationIcao": "KCAK",
+      "airlineIcao": "aay",
+      "flightNumber": "6355"
+    },
+    {
+      "id": "departure-ua2673-jax-ewr",
+      "category": "departure",
+      "scheduledTime": "06:24",
+      "airlineIcao": "ual",
+      "flightNumber": "2673",
+      "originIcao": "KJAX",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "departure-wn2155-jax-bna",
+      "category": "departure",
+      "scheduledTime": "06:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2155",
+      "originIcao": "KJAX",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-yx5632-jax-bos",
+      "category": "departure",
+      "scheduledTime": "06:45",
+      "airlineIcao": "rpa",
+      "flightNumber": "5632",
+      "originIcao": "KJAX",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-aa709-jax-phl",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "aal",
+      "flightNumber": "709",
+      "originIcao": "KJAX",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "departure-dl2450-jax-atl",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "dal",
+      "flightNumber": "2450",
+      "originIcao": "KJAX",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-5x-departure-tjsj-g-001",
+      "scheduledTime": "07:04",
+      "category": "departure",
+      "originIcao": "KJAX",
+      "destinationIcao": "TJSJ",
+      "airlineIcao": "ups",
+      "flightNumber": "6583"
+    },
+    {
+      "id": "departure-ua2453-jax-iah",
+      "category": "departure",
+      "scheduledTime": "07:05",
+      "airlineIcao": "ual",
+      "flightNumber": "2453",
+      "originIcao": "KJAX",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-aa2102-jax-ord",
+      "category": "departure",
+      "scheduledTime": "07:10",
+      "airlineIcao": "aal",
+      "flightNumber": "2102",
+      "originIcao": "KJAX",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-b62117-jax-fll",
+      "category": "departure",
+      "scheduledTime": "07:10",
+      "airlineIcao": "jbu",
+      "flightNumber": "2117",
+      "originIcao": "KJAX",
+      "destinationIcao": "KFLL"
+    },
+    {
+      "id": "departure-ua1733-jax-ord",
+      "category": "departure",
+      "scheduledTime": "07:20",
+      "airlineIcao": "ual",
+      "flightNumber": "1733",
+      "originIcao": "KJAX",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-mx-departure-krdu-f-001",
+      "scheduledTime": "07:22",
+      "category": "departure",
+      "originIcao": "KJAX",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "mxy",
+      "flightNumber": "7741"
+    },
+    {
+      "id": "departure-aa1171-jax-dfw",
+      "category": "departure",
+      "scheduledTime": "07:24",
+      "airlineIcao": "aal",
+      "flightNumber": "1171",
+      "originIcao": "KJAX",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-wn1384-jax-mdw",
+      "category": "departure",
+      "scheduledTime": "07:25",
+      "airlineIcao": "swa",
+      "flightNumber": "1384",
+      "originIcao": "KJAX",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "departure-wn1475-jax-bwi",
+      "category": "departure",
+      "scheduledTime": "07:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1475",
+      "originIcao": "KJAX",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "departure-mq3492-jax-mia",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "eny",
+      "flightNumber": "3492",
+      "originIcao": "KJAX",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-mx-departure-korf-f-001",
+      "scheduledTime": "08:05",
+      "category": "departure",
+      "originIcao": "KJAX",
+      "destinationIcao": "KORF",
+      "airlineIcao": "mxy",
+      "flightNumber": "2542"
+    },
+    {
+      "id": "departure-ua671-jax-den",
+      "category": "departure",
+      "scheduledTime": "08:09",
+      "airlineIcao": "ual",
+      "flightNumber": "671",
+      "originIcao": "KJAX",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-dl2569-jax-atl",
+      "category": "departure",
+      "scheduledTime": "08:17",
+      "airlineIcao": "dal",
+      "flightNumber": "2569",
+      "originIcao": "KJAX",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-wn2087-jax-stl",
+      "category": "departure",
+      "scheduledTime": "08:25",
+      "airlineIcao": "swa",
+      "flightNumber": "2087",
+      "originIcao": "KJAX",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-aa1989-clt-jax",
+      "category": "arrival",
+      "scheduledTime": "08:29",
+      "airlineIcao": "aal",
+      "flightNumber": "1989",
+      "originIcao": "KCLT",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-ua1207-ewr-jax",
+      "category": "arrival",
+      "scheduledTime": "08:31",
+      "airlineIcao": "ual",
+      "flightNumber": "1207",
+      "originIcao": "KEWR",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-dl2328-atl-jax",
+      "category": "arrival",
+      "scheduledTime": "08:36",
+      "airlineIcao": "dal",
+      "flightNumber": "2328",
+      "originIcao": "KATL",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-aa1992-dca-jax",
+      "category": "arrival",
+      "scheduledTime": "09:04",
+      "airlineIcao": "aal",
+      "flightNumber": "1992",
+      "originIcao": "KDCA",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-aa1537-jax-dfw",
+      "category": "departure",
+      "scheduledTime": "09:11",
+      "airlineIcao": "aal",
+      "flightNumber": "1537",
+      "originIcao": "KJAX",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-ua1434-jax-iad",
+      "category": "departure",
+      "scheduledTime": "09:20",
+      "airlineIcao": "ual",
+      "flightNumber": "1434",
+      "originIcao": "KJAX",
+      "destinationIcao": "KIAD"
+    },
+    {
+      "id": "arrival-mq3609-mia-jax",
+      "category": "arrival",
+      "scheduledTime": "09:27",
+      "airlineIcao": "eny",
+      "flightNumber": "3609",
+      "originIcao": "KMIA",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "t100-9e-arrival-kjfk-f-001",
+      "scheduledTime": "09:28",
+      "category": "arrival",
+      "originIcao": "KJFK",
+      "destinationIcao": "KJAX",
+      "airlineIcao": "edv",
+      "flightNumber": "9812"
+    },
+    {
+      "id": "departure-ua1144-jax-ewr",
+      "category": "departure",
+      "scheduledTime": "09:35",
+      "airlineIcao": "ual",
+      "flightNumber": "1144",
+      "originIcao": "KJAX",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "arrival-dl2326-atl-jax",
+      "category": "arrival",
+      "scheduledTime": "09:36",
+      "airlineIcao": "dal",
+      "flightNumber": "2326",
+      "originIcao": "KATL",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "t100-mx-departure-kcak-f-001",
+      "scheduledTime": "09:36",
+      "category": "departure",
+      "originIcao": "KJAX",
+      "destinationIcao": "KCAK",
+      "airlineIcao": "mxy",
+      "flightNumber": "6530"
+    },
+    {
+      "id": "departure-dl2328-jax-atl",
+      "category": "departure",
+      "scheduledTime": "09:41",
+      "airlineIcao": "dal",
+      "flightNumber": "2328",
+      "originIcao": "KJAX",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-aa2865-jax-phl",
+      "category": "departure",
+      "scheduledTime": "09:47",
+      "airlineIcao": "aal",
+      "flightNumber": "2865",
+      "originIcao": "KJAX",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "departure-aa1989-jax-clt",
+      "category": "departure",
+      "scheduledTime": "09:48",
+      "airlineIcao": "aal",
+      "flightNumber": "1989",
+      "originIcao": "KJAX",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "arrival-f93305-sju-jax",
+      "category": "arrival",
+      "scheduledTime": "09:49",
+      "airlineIcao": "fft",
+      "flightNumber": "3305",
+      "originIcao": "TJSJ",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-b6109-bos-jax",
+      "category": "arrival",
+      "scheduledTime": "09:56",
+      "airlineIcao": "jbu",
+      "flightNumber": "109",
+      "originIcao": "KBOS",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "t100-g4-departure-kind-f-001",
+      "scheduledTime": "09:57",
+      "category": "departure",
+      "originIcao": "KJAX",
+      "destinationIcao": "KIND",
+      "airlineIcao": "aay",
+      "flightNumber": "5310"
+    },
+    {
+      "id": "departure-mq3609-jax-mia",
+      "category": "departure",
+      "scheduledTime": "09:59",
+      "airlineIcao": "eny",
+      "flightNumber": "3609",
+      "originIcao": "KJAX",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-wn969-bwi-jax",
+      "category": "arrival",
+      "scheduledTime": "10:25",
+      "airlineIcao": "swa",
+      "flightNumber": "969",
+      "originIcao": "KBWI",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-aa1975-dfw-jax",
+      "category": "arrival",
+      "scheduledTime": "10:37",
+      "airlineIcao": "aal",
+      "flightNumber": "1975",
+      "originIcao": "KDFW",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-dl2326-jax-atl",
+      "category": "departure",
+      "scheduledTime": "10:41",
+      "airlineIcao": "dal",
+      "flightNumber": "2326",
+      "originIcao": "KJAX",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-fx-arrival-kmem-g-001",
+      "scheduledTime": "10:41",
+      "category": "arrival",
+      "originIcao": "KMEM",
+      "destinationIcao": "KJAX",
+      "airlineIcao": "fdx",
+      "flightNumber": "4022"
+    },
+    {
+      "id": "arrival-dl2356-atl-jax",
+      "category": "arrival",
+      "scheduledTime": "10:43",
+      "airlineIcao": "dal",
+      "flightNumber": "2356",
+      "originIcao": "KATL",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-yx5848-lga-jax",
+      "category": "arrival",
+      "scheduledTime": "10:43",
+      "airlineIcao": "rpa",
+      "flightNumber": "5848",
+      "originIcao": "KLGA",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-f93306-jax-sju",
+      "category": "departure",
+      "scheduledTime": "10:44",
+      "airlineIcao": "fft",
+      "flightNumber": "3306",
+      "originIcao": "KJAX",
+      "destinationIcao": "TJSJ"
+    },
+    {
+      "id": "departure-b61310-jax-bos",
+      "category": "departure",
+      "scheduledTime": "10:46",
+      "airlineIcao": "jbu",
+      "flightNumber": "1310",
+      "originIcao": "KJAX",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "arrival-dl2333-dtw-jax",
+      "category": "arrival",
+      "scheduledTime": "10:49",
+      "airlineIcao": "dal",
+      "flightNumber": "2333",
+      "originIcao": "KDTW",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-ua2084-iad-jax",
+      "category": "arrival",
+      "scheduledTime": "10:50",
+      "airlineIcao": "ual",
+      "flightNumber": "2084",
+      "originIcao": "KIAD",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-oo4672-ord-jax",
+      "category": "arrival",
+      "scheduledTime": "10:51",
+      "airlineIcao": "skw",
+      "flightNumber": "4672",
+      "originIcao": "KORD",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-aa2916-phl-jax",
+      "category": "arrival",
+      "scheduledTime": "10:52",
+      "airlineIcao": "aal",
+      "flightNumber": "2916",
+      "originIcao": "KPHL",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "t100-5x-arrival-ksdf-g-001",
+      "scheduledTime": "10:55",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KJAX",
+      "airlineIcao": "ups",
+      "flightNumber": "7745"
+    },
+    {
+      "id": "departure-wn979-jax-bwi",
+      "category": "departure",
+      "scheduledTime": "11:05",
+      "airlineIcao": "swa",
+      "flightNumber": "979",
+      "originIcao": "KJAX",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "departure-yx5848-jax-lga",
+      "category": "departure",
+      "scheduledTime": "11:23",
+      "airlineIcao": "rpa",
+      "flightNumber": "5848",
+      "originIcao": "KJAX",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "t100-9e-departure-klga-f-002",
+      "scheduledTime": "11:24",
+      "category": "departure",
+      "originIcao": "KJAX",
+      "destinationIcao": "KLGA",
+      "airlineIcao": "edv",
+      "flightNumber": "6004"
+    },
+    {
+      "id": "departure-aa1975-jax-dfw",
+      "category": "departure",
+      "scheduledTime": "11:31",
+      "airlineIcao": "aal",
+      "flightNumber": "1975",
+      "originIcao": "KJAX",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-oo5434-jax-ord",
+      "category": "departure",
+      "scheduledTime": "11:33",
+      "airlineIcao": "skw",
+      "flightNumber": "5434",
+      "originIcao": "KJAX",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-yx5597-bos-jax",
+      "category": "arrival",
+      "scheduledTime": "11:44",
+      "airlineIcao": "rpa",
+      "flightNumber": "5597",
+      "originIcao": "KBOS",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-dl2333-jax-dtw",
+      "category": "departure",
+      "scheduledTime": "11:47",
+      "airlineIcao": "dal",
+      "flightNumber": "2333",
+      "originIcao": "KJAX",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "departure-dl2356-jax-atl",
+      "category": "departure",
+      "scheduledTime": "11:48",
+      "airlineIcao": "dal",
+      "flightNumber": "2356",
+      "originIcao": "KJAX",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-aa949-jax-dca",
+      "category": "departure",
+      "scheduledTime": "11:49",
+      "airlineIcao": "aal",
+      "flightNumber": "949",
+      "originIcao": "KJAX",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "t100-yv-departure-kiah-f-001",
+      "scheduledTime": "11:49",
+      "category": "departure",
+      "originIcao": "KJAX",
+      "destinationIcao": "KIAH",
+      "airlineIcao": "ash",
+      "flightNumber": "7928"
+    },
+    {
+      "id": "departure-ua2826-jax-iad",
+      "category": "departure",
+      "scheduledTime": "11:56",
+      "airlineIcao": "ual",
+      "flightNumber": "2826",
+      "originIcao": "KJAX",
+      "destinationIcao": "KIAD"
+    },
+    {
+      "id": "arrival-dl2923-atl-jax",
+      "category": "arrival",
+      "scheduledTime": "12:00",
+      "airlineIcao": "dal",
+      "flightNumber": "2923",
+      "originIcao": "KATL",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-yx5597-jax-bos",
+      "category": "departure",
+      "scheduledTime": "12:24",
+      "airlineIcao": "rpa",
+      "flightNumber": "5597",
+      "originIcao": "KJAX",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "t100-9e-arrival-klga-f-002",
+      "scheduledTime": "12:33",
+      "category": "arrival",
+      "originIcao": "KLGA",
+      "destinationIcao": "KJAX",
+      "airlineIcao": "edv",
+      "flightNumber": "6289"
+    },
+    {
+      "id": "arrival-wn541-bna-jax",
+      "category": "arrival",
+      "scheduledTime": "12:35",
+      "airlineIcao": "swa",
+      "flightNumber": "541",
+      "originIcao": "KBNA",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-aa2001-clt-jax",
+      "category": "arrival",
+      "scheduledTime": "12:51",
+      "airlineIcao": "aal",
+      "flightNumber": "2001",
+      "originIcao": "KCLT",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-yx4740-ord-jax",
+      "category": "arrival",
+      "scheduledTime": "12:51",
+      "airlineIcao": "rpa",
+      "flightNumber": "4740",
+      "originIcao": "KORD",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-dl2923-jax-atl",
+      "category": "departure",
+      "scheduledTime": "13:05",
+      "airlineIcao": "dal",
+      "flightNumber": "2923",
+      "originIcao": "KJAX",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-wn3771-stl-jax",
+      "category": "arrival",
+      "scheduledTime": "13:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3771",
+      "originIcao": "KSTL",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-wn2083-jax-den",
+      "category": "departure",
+      "scheduledTime": "13:15",
+      "airlineIcao": "swa",
+      "flightNumber": "2083",
+      "originIcao": "KJAX",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-g4-departure-kblv-f-001",
+      "scheduledTime": "13:16",
+      "category": "departure",
+      "originIcao": "KJAX",
+      "destinationIcao": "KBLV",
+      "airlineIcao": "aay",
+      "flightNumber": "2924"
+    },
+    {
+      "id": "departure-yx4740-jax-ord",
+      "category": "departure",
+      "scheduledTime": "13:21",
+      "airlineIcao": "rpa",
+      "flightNumber": "4740",
+      "originIcao": "KJAX",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-aa1998-dfw-jax",
+      "category": "arrival",
+      "scheduledTime": "13:28",
+      "airlineIcao": "aal",
+      "flightNumber": "1998",
+      "originIcao": "KDFW",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-wn3436-dal-jax",
+      "category": "arrival",
+      "scheduledTime": "13:40",
+      "airlineIcao": "swa",
+      "flightNumber": "3436",
+      "originIcao": "KDAL",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "t100-5x-arrival-ksdf-g-002",
+      "scheduledTime": "13:43",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KJAX",
+      "airlineIcao": "ups",
+      "flightNumber": "1562"
+    },
+    {
+      "id": "departure-aa2001-jax-clt",
+      "category": "departure",
+      "scheduledTime": "13:44",
+      "airlineIcao": "aal",
+      "flightNumber": "2001",
+      "originIcao": "KJAX",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "arrival-dl3024-atl-jax",
+      "category": "arrival",
+      "scheduledTime": "13:45",
+      "airlineIcao": "dal",
+      "flightNumber": "3024",
+      "originIcao": "KATL",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-oo3772-aus-jax",
+      "category": "arrival",
+      "scheduledTime": "13:51",
+      "airlineIcao": "skw",
+      "flightNumber": "3772",
+      "originIcao": "KAUS",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-wn2156-jax-bna",
+      "category": "departure",
+      "scheduledTime": "13:55",
+      "airlineIcao": "swa",
+      "flightNumber": "2156",
+      "originIcao": "KJAX",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-yx4340-dca-jax",
+      "category": "arrival",
+      "scheduledTime": "14:09",
+      "airlineIcao": "rpa",
+      "flightNumber": "4340",
+      "originIcao": "KDCA",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-wn970-bwi-jax",
+      "category": "arrival",
+      "scheduledTime": "14:15",
+      "airlineIcao": "swa",
+      "flightNumber": "970",
+      "originIcao": "KBWI",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "t100-5x-departure-ksdf-g-001",
+      "scheduledTime": "14:16",
+      "category": "departure",
+      "originIcao": "KJAX",
+      "destinationIcao": "KSDF",
+      "airlineIcao": "ups",
+      "flightNumber": "7831"
+    },
+    {
+      "id": "departure-wn4860-jax-aus",
+      "category": "departure",
+      "scheduledTime": "14:20",
+      "airlineIcao": "swa",
+      "flightNumber": "4860",
+      "originIcao": "KJAX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-aa1998-jax-dfw",
+      "category": "departure",
+      "scheduledTime": "14:25",
+      "airlineIcao": "aal",
+      "flightNumber": "1998",
+      "originIcao": "KJAX",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "t100-mx-arrival-kcak-f-001",
+      "scheduledTime": "14:25",
+      "category": "arrival",
+      "originIcao": "KCAK",
+      "destinationIcao": "KJAX",
+      "airlineIcao": "mxy",
+      "flightNumber": "5484"
+    },
+    {
+      "id": "arrival-ua2427-ord-jax",
+      "category": "arrival",
+      "scheduledTime": "14:27",
+      "airlineIcao": "ual",
+      "flightNumber": "2427",
+      "originIcao": "KORD",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-oo3772-jax-aus",
+      "category": "departure",
+      "scheduledTime": "14:31",
+      "airlineIcao": "skw",
+      "flightNumber": "3772",
+      "originIcao": "KJAX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-yx4340-jax-dca",
+      "category": "departure",
+      "scheduledTime": "14:39",
+      "airlineIcao": "rpa",
+      "flightNumber": "4340",
+      "originIcao": "KJAX",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "arrival-b62118-fll-jax",
+      "category": "arrival",
+      "scheduledTime": "14:40",
+      "airlineIcao": "jbu",
+      "flightNumber": "2118",
+      "originIcao": "KFLL",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-dl3024-jax-atl",
+      "category": "departure",
+      "scheduledTime": "14:50",
+      "airlineIcao": "dal",
+      "flightNumber": "3024",
+      "originIcao": "KJAX",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-wn2084-jax-hou",
+      "category": "departure",
+      "scheduledTime": "14:55",
+      "airlineIcao": "swa",
+      "flightNumber": "2084",
+      "originIcao": "KJAX",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "t100-9e-departure-kjfk-f-001",
+      "scheduledTime": "14:56",
+      "category": "departure",
+      "originIcao": "KJAX",
+      "destinationIcao": "KJFK",
+      "airlineIcao": "edv",
+      "flightNumber": "938"
+    },
+    {
+      "id": "arrival-f92815-phl-jax",
+      "category": "arrival",
+      "scheduledTime": "14:57",
+      "airlineIcao": "fft",
+      "flightNumber": "2815",
+      "originIcao": "KPHL",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-dl2990-atl-jax",
+      "category": "arrival",
+      "scheduledTime": "15:09",
+      "airlineIcao": "dal",
+      "flightNumber": "2990",
+      "originIcao": "KATL",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-b61417-jax-fll",
+      "category": "departure",
+      "scheduledTime": "15:35",
+      "airlineIcao": "jbu",
+      "flightNumber": "1417",
+      "originIcao": "KJAX",
+      "destinationIcao": "KFLL"
+    },
+    {
+      "id": "arrival-ua2678-ewr-jax",
+      "category": "arrival",
+      "scheduledTime": "15:42",
+      "airlineIcao": "ual",
+      "flightNumber": "2678",
+      "originIcao": "KEWR",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "t100-g4-arrival-kind-f-001",
+      "scheduledTime": "15:46",
+      "category": "arrival",
+      "originIcao": "KIND",
+      "destinationIcao": "KJAX",
+      "airlineIcao": "aay",
+      "flightNumber": "9856"
+    },
+    {
+      "id": "arrival-b61742-sju-jax",
+      "category": "arrival",
+      "scheduledTime": "15:47",
+      "airlineIcao": "jbu",
+      "flightNumber": "1742",
+      "originIcao": "TJSJ",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-f93480-jax-phl",
+      "category": "departure",
+      "scheduledTime": "15:52",
+      "airlineIcao": "fft",
+      "flightNumber": "3480",
+      "originIcao": "KJAX",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "arrival-aa1176-phl-jax",
+      "category": "arrival",
+      "scheduledTime": "15:54",
+      "airlineIcao": "aal",
+      "flightNumber": "1176",
+      "originIcao": "KPHL",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-wn1780-mdw-jax",
+      "category": "arrival",
+      "scheduledTime": "16:10",
+      "airlineIcao": "swa",
+      "flightNumber": "1780",
+      "originIcao": "KMDW",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-dl2990-jax-atl",
+      "category": "departure",
+      "scheduledTime": "16:14",
+      "airlineIcao": "dal",
+      "flightNumber": "2990",
+      "originIcao": "KJAX",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-b6677-jfk-jax",
+      "category": "arrival",
+      "scheduledTime": "16:34",
+      "airlineIcao": "jbu",
+      "flightNumber": "677",
+      "originIcao": "KJFK",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-aa1176-jax-phl",
+      "category": "departure",
+      "scheduledTime": "16:34",
+      "airlineIcao": "aal",
+      "flightNumber": "1176",
+      "originIcao": "KJAX",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "arrival-dl2720-atl-jax",
+      "category": "arrival",
+      "scheduledTime": "16:35",
+      "airlineIcao": "dal",
+      "flightNumber": "2720",
+      "originIcao": "KATL",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "t100-5x-departure-ksdf-g-002",
+      "scheduledTime": "16:35",
+      "category": "departure",
+      "originIcao": "KJAX",
+      "destinationIcao": "KSDF",
+      "airlineIcao": "ups",
+      "flightNumber": "7801"
+    },
+    {
+      "id": "t100-mx-arrival-krdu-f-001",
+      "scheduledTime": "16:41",
+      "category": "arrival",
+      "originIcao": "KRDU",
+      "destinationIcao": "KJAX",
+      "airlineIcao": "mxy",
+      "flightNumber": "4795"
+    },
+    {
+      "id": "departure-b61743-jax-sju",
+      "category": "departure",
+      "scheduledTime": "16:43",
+      "airlineIcao": "jbu",
+      "flightNumber": "1743",
+      "originIcao": "KJAX",
+      "destinationIcao": "TJSJ"
+    },
+    {
+      "id": "arrival-dl1035-jfk-jax",
+      "category": "arrival",
+      "scheduledTime": "16:44",
+      "airlineIcao": "dal",
+      "flightNumber": "1035",
+      "originIcao": "KJFK",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-wn2158-jax-bwi",
+      "category": "departure",
+      "scheduledTime": "16:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2158",
+      "originIcao": "KJAX",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "departure-ua2796-jax-ewr",
+      "category": "departure",
+      "scheduledTime": "16:48",
+      "airlineIcao": "ual",
+      "flightNumber": "2796",
+      "originIcao": "KJAX",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "arrival-dl2392-msp-jax",
+      "category": "arrival",
+      "scheduledTime": "16:54",
+      "airlineIcao": "dal",
+      "flightNumber": "2392",
+      "originIcao": "KMSP",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-wn971-bwi-jax",
+      "category": "arrival",
+      "scheduledTime": "16:55",
+      "airlineIcao": "swa",
+      "flightNumber": "971",
+      "originIcao": "KBWI",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-ua2211-jax-ord",
+      "category": "departure",
+      "scheduledTime": "16:55",
+      "airlineIcao": "ual",
+      "flightNumber": "2211",
+      "originIcao": "KJAX",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-aa2816-dca-jax",
+      "category": "arrival",
+      "scheduledTime": "17:05",
+      "airlineIcao": "aal",
+      "flightNumber": "2816",
+      "originIcao": "KDCA",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-aa1999-clt-jax",
+      "category": "arrival",
+      "scheduledTime": "17:14",
+      "airlineIcao": "aal",
+      "flightNumber": "1999",
+      "originIcao": "KCLT",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-aa3317-ord-jax",
+      "category": "arrival",
+      "scheduledTime": "17:18",
+      "airlineIcao": "aal",
+      "flightNumber": "3317",
+      "originIcao": "KORD",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "t100-5x-arrival-kphl-g-001",
+      "scheduledTime": "17:22",
+      "category": "arrival",
+      "originIcao": "KPHL",
+      "destinationIcao": "KJAX",
+      "airlineIcao": "ups",
+      "flightNumber": "7186"
+    },
+    {
+      "id": "arrival-dl2994-dtw-jax",
+      "category": "arrival",
+      "scheduledTime": "17:27",
+      "airlineIcao": "dal",
+      "flightNumber": "2994",
+      "originIcao": "KDTW",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-f91550-atl-jax",
+      "category": "arrival",
+      "scheduledTime": "17:34",
+      "airlineIcao": "fft",
+      "flightNumber": "1550",
+      "originIcao": "KATL",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-wn971-jax-dal",
+      "category": "departure",
+      "scheduledTime": "17:35",
+      "airlineIcao": "swa",
+      "flightNumber": "971",
+      "originIcao": "KJAX",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "t100-fx-departure-kmem-g-001",
+      "scheduledTime": "17:35",
+      "category": "departure",
+      "originIcao": "KJAX",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3492"
+    },
+    {
+      "id": "departure-b6678-jax-jfk",
+      "category": "departure",
+      "scheduledTime": "17:36",
+      "airlineIcao": "jbu",
+      "flightNumber": "678",
+      "originIcao": "KJAX",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "departure-dl2720-jax-atl",
+      "category": "departure",
+      "scheduledTime": "17:40",
+      "airlineIcao": "dal",
+      "flightNumber": "2720",
+      "originIcao": "KJAX",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-oo5807-ord-jax",
+      "category": "arrival",
+      "scheduledTime": "17:49",
+      "airlineIcao": "skw",
+      "flightNumber": "5807",
+      "originIcao": "KORD",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-dl2392-jax-msp",
+      "category": "departure",
+      "scheduledTime": "17:49",
+      "airlineIcao": "dal",
+      "flightNumber": "2392",
+      "originIcao": "KJAX",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "departure-aa1990-jax-phl",
+      "category": "departure",
+      "scheduledTime": "17:50",
+      "airlineIcao": "aal",
+      "flightNumber": "1990",
+      "originIcao": "KJAX",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "departure-dl1035-jax-jfk",
+      "category": "departure",
+      "scheduledTime": "17:50",
+      "airlineIcao": "dal",
+      "flightNumber": "1035",
+      "originIcao": "KJAX",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "t100-mx-departure-klax-f-001",
+      "scheduledTime": "17:51",
+      "category": "departure",
+      "originIcao": "KJAX",
+      "destinationIcao": "KLAX",
+      "airlineIcao": "mxy",
+      "flightNumber": "2132"
+    },
+    {
+      "id": "arrival-dl2627-atl-jax",
+      "category": "arrival",
+      "scheduledTime": "17:57",
+      "airlineIcao": "dal",
+      "flightNumber": "2627",
+      "originIcao": "KATL",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-aa3317-jax-ord",
+      "category": "departure",
+      "scheduledTime": "17:58",
+      "airlineIcao": "aal",
+      "flightNumber": "3317",
+      "originIcao": "KJAX",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-9e-arrival-kjfk-f-002",
+      "scheduledTime": "17:59",
+      "category": "arrival",
+      "originIcao": "KJFK",
+      "destinationIcao": "KJAX",
+      "airlineIcao": "edv",
+      "flightNumber": "9277"
+    },
+    {
+      "id": "arrival-ua1391-ewr-jax",
+      "category": "arrival",
+      "scheduledTime": "18:03",
+      "airlineIcao": "ual",
+      "flightNumber": "1391",
+      "originIcao": "KEWR",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-wn4384-den-jax",
+      "category": "arrival",
+      "scheduledTime": "18:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4384",
+      "originIcao": "KDEN",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-aa1999-jax-clt",
+      "category": "departure",
+      "scheduledTime": "18:11",
+      "airlineIcao": "aal",
+      "flightNumber": "1999",
+      "originIcao": "KJAX",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-dl2994-jax-dtw",
+      "category": "departure",
+      "scheduledTime": "18:22",
+      "airlineIcao": "dal",
+      "flightNumber": "2994",
+      "originIcao": "KJAX",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "arrival-aa3135-phl-jax",
+      "category": "arrival",
+      "scheduledTime": "18:29",
+      "airlineIcao": "aal",
+      "flightNumber": "3135",
+      "originIcao": "KPHL",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-f93083-jax-atl",
+      "category": "departure",
+      "scheduledTime": "18:29",
+      "airlineIcao": "fft",
+      "flightNumber": "3083",
+      "originIcao": "KJAX",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-g4-departure-kpit-f-001",
+      "scheduledTime": "18:31",
+      "category": "departure",
+      "originIcao": "KJAX",
+      "destinationIcao": "KPIT",
+      "airlineIcao": "aay",
+      "flightNumber": "7948"
+    },
+    {
+      "id": "departure-oo6012-jax-ord",
+      "category": "departure",
+      "scheduledTime": "18:35",
+      "airlineIcao": "skw",
+      "flightNumber": "6012",
+      "originIcao": "KJAX",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-yx5657-bos-jax",
+      "category": "arrival",
+      "scheduledTime": "18:41",
+      "airlineIcao": "rpa",
+      "flightNumber": "5657",
+      "originIcao": "KBOS",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-aa1980-dfw-jax",
+      "category": "arrival",
+      "scheduledTime": "18:49",
+      "airlineIcao": "aal",
+      "flightNumber": "1980",
+      "originIcao": "KDFW",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-wn2164-jax-mdw",
+      "category": "departure",
+      "scheduledTime": "18:50",
+      "airlineIcao": "swa",
+      "flightNumber": "2164",
+      "originIcao": "KJAX",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "departure-dl2627-jax-atl",
+      "category": "departure",
+      "scheduledTime": "19:02",
+      "airlineIcao": "dal",
+      "flightNumber": "2627",
+      "originIcao": "KJAX",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-yv-arrival-kiah-f-001",
+      "scheduledTime": "19:03",
+      "category": "arrival",
+      "originIcao": "KIAH",
+      "destinationIcao": "KJAX",
+      "airlineIcao": "ash",
+      "flightNumber": "3042"
+    },
+    {
+      "id": "arrival-mq3605-mia-jax",
+      "category": "arrival",
+      "scheduledTime": "19:07",
+      "airlineIcao": "eny",
+      "flightNumber": "3605",
+      "originIcao": "KMIA",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "t100-9e-departure-klga-f-001",
+      "scheduledTime": "19:08",
+      "category": "departure",
+      "originIcao": "KJAX",
+      "destinationIcao": "KLGA",
+      "airlineIcao": "edv",
+      "flightNumber": "7477"
+    },
+    {
+      "id": "departure-aa1982-jax-dca",
+      "category": "departure",
+      "scheduledTime": "19:09",
+      "airlineIcao": "aal",
+      "flightNumber": "1982",
+      "originIcao": "KJAX",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-ua758-jax-ewr",
+      "category": "departure",
+      "scheduledTime": "19:10",
+      "airlineIcao": "ual",
+      "flightNumber": "758",
+      "originIcao": "KJAX",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "departure-yx5657-jax-bos",
+      "category": "departure",
+      "scheduledTime": "19:25",
+      "airlineIcao": "rpa",
+      "flightNumber": "5657",
+      "originIcao": "KJAX",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "arrival-dl2189-atl-jax",
+      "category": "arrival",
+      "scheduledTime": "19:31",
+      "airlineIcao": "dal",
+      "flightNumber": "2189",
+      "originIcao": "KATL",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-aa1991-clt-jax",
+      "category": "arrival",
+      "scheduledTime": "19:32",
+      "airlineIcao": "aal",
+      "flightNumber": "1991",
+      "originIcao": "KCLT",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-wn2502-aus-jax",
+      "category": "arrival",
+      "scheduledTime": "19:35",
+      "airlineIcao": "swa",
+      "flightNumber": "2502",
+      "originIcao": "KAUS",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-mq3605-jax-mia",
+      "category": "departure",
+      "scheduledTime": "19:37",
+      "airlineIcao": "eny",
+      "flightNumber": "3605",
+      "originIcao": "KJAX",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa1980-jax-dfw",
+      "category": "departure",
+      "scheduledTime": "19:41",
+      "airlineIcao": "aal",
+      "flightNumber": "1980",
+      "originIcao": "KJAX",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-b6509-bos-jax",
+      "category": "arrival",
+      "scheduledTime": "19:45",
+      "airlineIcao": "jbu",
+      "flightNumber": "509",
+      "originIcao": "KBOS",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "t100-yv-arrival-kiah-f-002",
+      "scheduledTime": "19:58",
+      "category": "arrival",
+      "originIcao": "KIAH",
+      "destinationIcao": "KJAX",
+      "airlineIcao": "ash",
+      "flightNumber": "9348"
+    },
+    {
+      "id": "arrival-b6978-fll-jax",
+      "category": "arrival",
+      "scheduledTime": "20:01",
+      "airlineIcao": "jbu",
+      "flightNumber": "978",
+      "originIcao": "KFLL",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-ua293-iad-jax",
+      "category": "arrival",
+      "scheduledTime": "20:08",
+      "airlineIcao": "ual",
+      "flightNumber": "293",
+      "originIcao": "KIAD",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "t100-mx-departure-kbdl-f-001",
+      "scheduledTime": "20:11",
+      "category": "departure",
+      "originIcao": "KJAX",
+      "destinationIcao": "KBDL",
+      "airlineIcao": "mxy",
+      "flightNumber": "8103"
+    },
+    {
+      "id": "departure-wn2157-jax-bna",
+      "category": "departure",
+      "scheduledTime": "20:15",
+      "airlineIcao": "swa",
+      "flightNumber": "2157",
+      "originIcao": "KJAX",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-aa1991-jax-clt",
+      "category": "departure",
+      "scheduledTime": "20:17",
+      "airlineIcao": "aal",
+      "flightNumber": "1991",
+      "originIcao": "KJAX",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-b6810-jax-bos",
+      "category": "departure",
+      "scheduledTime": "20:40",
+      "airlineIcao": "jbu",
+      "flightNumber": "810",
+      "originIcao": "KJAX",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "arrival-aa2940-phl-jax",
+      "category": "arrival",
+      "scheduledTime": "20:43",
+      "airlineIcao": "aal",
+      "flightNumber": "2940",
+      "originIcao": "KPHL",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-wn4438-bwi-jax",
+      "category": "arrival",
+      "scheduledTime": "20:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4438",
+      "originIcao": "KBWI",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-wn4624-bna-jax",
+      "category": "arrival",
+      "scheduledTime": "21:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4624",
+      "originIcao": "KBNA",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-dl2315-atl-jax",
+      "category": "arrival",
+      "scheduledTime": "21:11",
+      "airlineIcao": "dal",
+      "flightNumber": "2315",
+      "originIcao": "KATL",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "t100-mx-arrival-korf-f-001",
+      "scheduledTime": "21:12",
+      "category": "arrival",
+      "originIcao": "KORF",
+      "destinationIcao": "KJAX",
+      "airlineIcao": "mxy",
+      "flightNumber": "5605"
+    },
+    {
+      "id": "arrival-aa2449-dfw-jax",
+      "category": "arrival",
+      "scheduledTime": "21:16",
+      "airlineIcao": "aal",
+      "flightNumber": "2449",
+      "originIcao": "KDFW",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-mq3893-mia-jax",
+      "category": "arrival",
+      "scheduledTime": "21:33",
+      "airlineIcao": "eny",
+      "flightNumber": "3893",
+      "originIcao": "KMIA",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-ua1485-den-jax",
+      "category": "arrival",
+      "scheduledTime": "21:40",
+      "airlineIcao": "ual",
+      "flightNumber": "1485",
+      "originIcao": "KDEN",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-wn2792-mdw-jax",
+      "category": "arrival",
+      "scheduledTime": "21:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2792",
+      "originIcao": "KMDW",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "t100-9e-arrival-klga-f-001",
+      "scheduledTime": "21:49",
+      "category": "arrival",
+      "originIcao": "KLGA",
+      "destinationIcao": "KJAX",
+      "airlineIcao": "edv",
+      "flightNumber": "2831"
+    },
+    {
+      "id": "arrival-ua2443-ord-jax",
+      "category": "arrival",
+      "scheduledTime": "21:59",
+      "airlineIcao": "ual",
+      "flightNumber": "2443",
+      "originIcao": "KORD",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-oh5547-dca-jax",
+      "category": "arrival",
+      "scheduledTime": "22:11",
+      "airlineIcao": "jia",
+      "flightNumber": "5547",
+      "originIcao": "KDCA",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-aa2263-dfw-jax",
+      "category": "arrival",
+      "scheduledTime": "22:24",
+      "airlineIcao": "aal",
+      "flightNumber": "2263",
+      "originIcao": "KDFW",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-aa2096-ord-jax",
+      "category": "arrival",
+      "scheduledTime": "23:07",
+      "airlineIcao": "aal",
+      "flightNumber": "2096",
+      "originIcao": "KORD",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "t100-mx-arrival-kbdl-f-001",
+      "scheduledTime": "23:07",
+      "category": "arrival",
+      "originIcao": "KBDL",
+      "destinationIcao": "KJAX",
+      "airlineIcao": "mxy",
+      "flightNumber": "431"
+    },
+    {
+      "id": "arrival-wn244-hou-jax",
+      "category": "arrival",
+      "scheduledTime": "23:10",
+      "airlineIcao": "swa",
+      "flightNumber": "244",
+      "originIcao": "KHOU",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-yx5791-lga-jax",
+      "category": "arrival",
+      "scheduledTime": "23:11",
+      "airlineIcao": "rpa",
+      "flightNumber": "5791",
+      "originIcao": "KLGA",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-aa2844-phx-jax",
+      "category": "arrival",
+      "scheduledTime": "23:15",
+      "airlineIcao": "aal",
+      "flightNumber": "2844",
+      "originIcao": "KPHX",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-ua2293-iah-jax",
+      "category": "arrival",
+      "scheduledTime": "23:20",
+      "airlineIcao": "ual",
+      "flightNumber": "2293",
+      "originIcao": "KIAH",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-yx5593-bos-jax",
+      "category": "arrival",
+      "scheduledTime": "23:39",
+      "airlineIcao": "rpa",
+      "flightNumber": "5593",
+      "originIcao": "KBOS",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-aa2506-dfw-jax",
+      "category": "arrival",
+      "scheduledTime": "23:41",
+      "airlineIcao": "aal",
+      "flightNumber": "2506",
+      "originIcao": "KDFW",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "t100-g4-arrival-kpit-f-001",
+      "scheduledTime": "23:41",
+      "category": "arrival",
+      "originIcao": "KPIT",
+      "destinationIcao": "KJAX",
+      "airlineIcao": "aay",
+      "flightNumber": "1663"
+    },
+    {
+      "id": "arrival-aa2713-clt-jax",
+      "category": "arrival",
+      "scheduledTime": "23:59",
+      "airlineIcao": "aal",
+      "flightNumber": "2713",
+      "originIcao": "KCLT",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-ua2335-ewr-jax",
+      "category": "arrival",
+      "scheduledTime": "23:59",
+      "airlineIcao": "ual",
+      "flightNumber": "2335",
+      "originIcao": "KEWR",
+      "destinationIcao": "KJAX"
+    }
+  ]
+}

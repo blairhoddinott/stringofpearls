@@ -1,0 +1,6 @@
+{
+    "icao": "ity",
+    "name": "ITA Airways",
+    "callsign": { "name": "Itarrow", "callsignFormats": ["###"] },
+    "fleets": { "default": [["A320", 3], ["BCS3", 1]] }
+}

@@ -65,5 +65,8 @@ jobs:
       - name: Check strict contracts
         run: npm run typecheck:contracts
 
+      - name: Test schedule data contracts
+        run: npm run schedule:test
+
       - name: Verify deterministic build
         run: npm run build:test

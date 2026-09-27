@@ -1,0 +1,4902 @@
+{
+  "schemaVersion": 1,
+  "airportIcao": "KAUS",
+  "timezone": "America/Chicago",
+  "sampleDate": "2026-07-15",
+  "source": {
+    "name": "US DOT BTS On-Time Performance + T-100 Segment (All Carriers)",
+    "url": "https://transtats.bts.gov/DL_SelectFields.aspx?QO_fu146_anzr=Nv4+Pn44vr45&gnoyr_VQ=FMG",
+    "retrievedAt": "2026-09-27",
+    "license": "U.S. Government work in the public domain (17 U.S.C. §105); OurAirports code data is public domain.",
+    "coverage": "Exact On-Time movements are retained; 12 representative movements were deterministically synthesized from 2026-05 T-100 performed-departure aggregates. General aviation is excluded."
+  },
+  "flights": [
+    {
+      "id": "arrival-f92890-den-aus",
+      "category": "arrival",
+      "scheduledTime": "00:07",
+      "airlineIcao": "fft",
+      "flightNumber": "2890",
+      "originIcao": "KDEN",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn1481-den-aus",
+      "category": "arrival",
+      "scheduledTime": "00:10",
+      "airlineIcao": "swa",
+      "flightNumber": "1481",
+      "originIcao": "KDEN",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-ua2126-sfo-aus",
+      "category": "arrival",
+      "scheduledTime": "00:13",
+      "airlineIcao": "ual",
+      "flightNumber": "2126",
+      "originIcao": "KSFO",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn3477-san-aus",
+      "category": "arrival",
+      "scheduledTime": "00:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3477",
+      "originIcao": "KSAN",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-dl1335-atl-aus",
+      "category": "arrival",
+      "scheduledTime": "00:18",
+      "airlineIcao": "dal",
+      "flightNumber": "1335",
+      "originIcao": "KATL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-as372-sea-aus",
+      "category": "arrival",
+      "scheduledTime": "00:31",
+      "airlineIcao": "asa",
+      "flightNumber": "372",
+      "originIcao": "KSEA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn2380-lax-aus",
+      "category": "arrival",
+      "scheduledTime": "00:50",
+      "airlineIcao": "swa",
+      "flightNumber": "2380",
+      "originIcao": "KLAX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-aa2563-aus-dfw",
+      "category": "departure",
+      "scheduledTime": "05:01",
+      "airlineIcao": "aal",
+      "flightNumber": "2563",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-aa406-aus-mia",
+      "category": "departure",
+      "scheduledTime": "05:02",
+      "airlineIcao": "aal",
+      "flightNumber": "406",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-dl1040-aus-dtw",
+      "category": "departure",
+      "scheduledTime": "05:20",
+      "airlineIcao": "dal",
+      "flightNumber": "1040",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "departure-dl1344-aus-atl",
+      "category": "departure",
+      "scheduledTime": "05:25",
+      "airlineIcao": "dal",
+      "flightNumber": "1344",
+      "originIcao": "KAUS",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-ua1966-aus-iah",
+      "category": "departure",
+      "scheduledTime": "05:30",
+      "airlineIcao": "ual",
+      "flightNumber": "1966",
+      "originIcao": "KAUS",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-wn3694-aus-mco",
+      "category": "departure",
+      "scheduledTime": "05:30",
+      "airlineIcao": "swa",
+      "flightNumber": "3694",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-wn356-aus-mdw",
+      "category": "departure",
+      "scheduledTime": "05:35",
+      "airlineIcao": "swa",
+      "flightNumber": "356",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "departure-ua361-aus-den",
+      "category": "departure",
+      "scheduledTime": "05:39",
+      "airlineIcao": "ual",
+      "flightNumber": "361",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-wn967-aus-bwi",
+      "category": "departure",
+      "scheduledTime": "05:40",
+      "airlineIcao": "swa",
+      "flightNumber": "967",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "departure-wn246-aus-dal",
+      "category": "departure",
+      "scheduledTime": "05:45",
+      "airlineIcao": "swa",
+      "flightNumber": "246",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "arrival-ua1807-sfo-aus",
+      "category": "arrival",
+      "scheduledTime": "05:46",
+      "airlineIcao": "ual",
+      "flightNumber": "1807",
+      "originIcao": "KSFO",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-aa579-aus-dfw",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "aal",
+      "flightNumber": "579",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-dl780-aus-sea",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "dal",
+      "flightNumber": "780",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-oo3293-aus-san",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "skw",
+      "flightNumber": "3293",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "departure-wn282-aus-den",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "swa",
+      "flightNumber": "282",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-wn411-aus-tpa",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "swa",
+      "flightNumber": "411",
+      "originIcao": "KAUS",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "departure-aa1064-aus-ord",
+      "category": "departure",
+      "scheduledTime": "06:01",
+      "airlineIcao": "aal",
+      "flightNumber": "1064",
+      "originIcao": "KAUS",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-wn321-aus-las",
+      "category": "departure",
+      "scheduledTime": "06:05",
+      "airlineIcao": "swa",
+      "flightNumber": "321",
+      "originIcao": "KAUS",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-aa2292-aus-jfk",
+      "category": "departure",
+      "scheduledTime": "06:06",
+      "airlineIcao": "aal",
+      "flightNumber": "2292",
+      "originIcao": "KAUS",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "t100-cm-departure-mpto-f-001",
+      "scheduledTime": "06:06",
+      "category": "departure",
+      "originIcao": "KAUS",
+      "destinationIcao": "MPTO",
+      "airlineIcao": "cmp",
+      "flightNumber": "2028"
+    },
+    {
+      "id": "departure-ua1760-aus-ewr",
+      "category": "departure",
+      "scheduledTime": "06:09",
+      "airlineIcao": "ual",
+      "flightNumber": "1760",
+      "originIcao": "KAUS",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "departure-dl1242-aus-msp",
+      "category": "departure",
+      "scheduledTime": "06:10",
+      "airlineIcao": "dal",
+      "flightNumber": "1242",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "departure-wn332-aus-lax",
+      "category": "departure",
+      "scheduledTime": "06:10",
+      "airlineIcao": "swa",
+      "flightNumber": "332",
+      "originIcao": "KAUS",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-wn301-aus-hou",
+      "category": "departure",
+      "scheduledTime": "06:15",
+      "airlineIcao": "swa",
+      "flightNumber": "301",
+      "originIcao": "KAUS",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "departure-aa1482-aus-clt",
+      "category": "departure",
+      "scheduledTime": "06:16",
+      "airlineIcao": "aal",
+      "flightNumber": "1482",
+      "originIcao": "KAUS",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-aa455-aus-phx",
+      "category": "departure",
+      "scheduledTime": "06:16",
+      "airlineIcao": "aal",
+      "flightNumber": "455",
+      "originIcao": "KAUS",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-dl1258-aus-atl",
+      "category": "departure",
+      "scheduledTime": "06:25",
+      "airlineIcao": "dal",
+      "flightNumber": "1258",
+      "originIcao": "KAUS",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-wn385-aus-atl",
+      "category": "departure",
+      "scheduledTime": "06:25",
+      "airlineIcao": "swa",
+      "flightNumber": "385",
+      "originIcao": "KAUS",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-f91815-aus-den",
+      "category": "departure",
+      "scheduledTime": "06:30",
+      "airlineIcao": "fft",
+      "flightNumber": "1815",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-ua1878-aus-ord",
+      "category": "departure",
+      "scheduledTime": "06:40",
+      "airlineIcao": "ual",
+      "flightNumber": "1878",
+      "originIcao": "KAUS",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-oo4175-mfe-aus",
+      "category": "arrival",
+      "scheduledTime": "06:44",
+      "airlineIcao": "skw",
+      "flightNumber": "4175",
+      "originIcao": "KMFE",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn374-aus-phx",
+      "category": "departure",
+      "scheduledTime": "06:50",
+      "airlineIcao": "swa",
+      "flightNumber": "374",
+      "originIcao": "KAUS",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-wn4469-aus-san",
+      "category": "departure",
+      "scheduledTime": "06:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4469",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "departure-aa2294-aus-mia",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "aal",
+      "flightNumber": "2294",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2928-aus-dfw",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "aal",
+      "flightNumber": "2928",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-b62272-aus-fll",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "jbu",
+      "flightNumber": "2272",
+      "originIcao": "KAUS",
+      "destinationIcao": "KFLL"
+    },
+    {
+      "id": "departure-ua694-aus-sfo",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "ual",
+      "flightNumber": "694",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-wn4941-aus-mci",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "swa",
+      "flightNumber": "4941",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMCI"
+    },
+    {
+      "id": "arrival-wn1265-dal-aus",
+      "category": "arrival",
+      "scheduledTime": "07:05",
+      "airlineIcao": "swa",
+      "flightNumber": "1265",
+      "originIcao": "KDAL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-ua1449-aus-ewr",
+      "category": "departure",
+      "scheduledTime": "07:05",
+      "airlineIcao": "ual",
+      "flightNumber": "1449",
+      "originIcao": "KAUS",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "departure-oo6185-aus-lax",
+      "category": "departure",
+      "scheduledTime": "07:06",
+      "airlineIcao": "skw",
+      "flightNumber": "6185",
+      "originIcao": "KAUS",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-dl381-aus-sfo",
+      "category": "departure",
+      "scheduledTime": "07:10",
+      "airlineIcao": "dal",
+      "flightNumber": "381",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-oo3650-aus-mci",
+      "category": "departure",
+      "scheduledTime": "07:10",
+      "airlineIcao": "skw",
+      "flightNumber": "3650",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMCI"
+    },
+    {
+      "id": "departure-oo4101-aus-ind",
+      "category": "departure",
+      "scheduledTime": "07:10",
+      "airlineIcao": "skw",
+      "flightNumber": "4101",
+      "originIcao": "KAUS",
+      "destinationIcao": "KIND"
+    },
+    {
+      "id": "departure-ua2393-aus-iah",
+      "category": "departure",
+      "scheduledTime": "07:10",
+      "airlineIcao": "ual",
+      "flightNumber": "2393",
+      "originIcao": "KAUS",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-wn3686-aus-bna",
+      "category": "departure",
+      "scheduledTime": "07:10",
+      "airlineIcao": "swa",
+      "flightNumber": "3686",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-as541-aus-pdx",
+      "category": "departure",
+      "scheduledTime": "07:15",
+      "airlineIcao": "asa",
+      "flightNumber": "541",
+      "originIcao": "KAUS",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-wn4363-atl-aus",
+      "category": "arrival",
+      "scheduledTime": "07:20",
+      "airlineIcao": "swa",
+      "flightNumber": "4363",
+      "originIcao": "KATL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-dl2098-aus-bos",
+      "category": "departure",
+      "scheduledTime": "07:20",
+      "airlineIcao": "dal",
+      "flightNumber": "2098",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-wn398-aus-sjc",
+      "category": "departure",
+      "scheduledTime": "07:20",
+      "airlineIcao": "swa",
+      "flightNumber": "398",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSJC"
+    },
+    {
+      "id": "departure-oo3876-aus-den",
+      "category": "departure",
+      "scheduledTime": "07:25",
+      "airlineIcao": "skw",
+      "flightNumber": "3876",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-wn408-aus-stl",
+      "category": "departure",
+      "scheduledTime": "07:25",
+      "airlineIcao": "swa",
+      "flightNumber": "408",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-aa2774-aus-phl",
+      "category": "departure",
+      "scheduledTime": "07:30",
+      "airlineIcao": "aal",
+      "flightNumber": "2774",
+      "originIcao": "KAUS",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "departure-dl306-aus-lax",
+      "category": "departure",
+      "scheduledTime": "07:30",
+      "airlineIcao": "dal",
+      "flightNumber": "306",
+      "originIcao": "KAUS",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-ua525-aus-iad",
+      "category": "departure",
+      "scheduledTime": "07:30",
+      "airlineIcao": "ual",
+      "flightNumber": "525",
+      "originIcao": "KAUS",
+      "destinationIcao": "KIAD"
+    },
+    {
+      "id": "departure-dl1411-aus-jfk",
+      "category": "departure",
+      "scheduledTime": "07:35",
+      "airlineIcao": "dal",
+      "flightNumber": "1411",
+      "originIcao": "KAUS",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "departure-wn364-aus-mco",
+      "category": "departure",
+      "scheduledTime": "07:40",
+      "airlineIcao": "swa",
+      "flightNumber": "364",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "arrival-wn2976-msy-aus",
+      "category": "arrival",
+      "scheduledTime": "07:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2976",
+      "originIcao": "KMSY",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn3916-aus-dal",
+      "category": "departure",
+      "scheduledTime": "07:50",
+      "airlineIcao": "swa",
+      "flightNumber": "3916",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "arrival-wn2108-ind-aus",
+      "category": "arrival",
+      "scheduledTime": "07:55",
+      "airlineIcao": "swa",
+      "flightNumber": "2108",
+      "originIcao": "KIND",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn4856-elp-aus",
+      "category": "arrival",
+      "scheduledTime": "08:00",
+      "airlineIcao": "swa",
+      "flightNumber": "4856",
+      "originIcao": "KELP",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-dl2259-aus-mco",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "dal",
+      "flightNumber": "2259",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-dl559-aus-dtw",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "dal",
+      "flightNumber": "559",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "departure-wn322-aus-las",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "swa",
+      "flightNumber": "322",
+      "originIcao": "KAUS",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "t100-ac-departure-cyyz-f-001",
+      "scheduledTime": "08:02",
+      "category": "departure",
+      "originIcao": "KAUS",
+      "destinationIcao": "CYYZ",
+      "airlineIcao": "aca",
+      "flightNumber": "1309"
+    },
+    {
+      "id": "arrival-mq3401-dfw-aus",
+      "category": "arrival",
+      "scheduledTime": "08:04",
+      "airlineIcao": "eny",
+      "flightNumber": "3401",
+      "originIcao": "KDFW",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn2726-mdw-aus",
+      "category": "arrival",
+      "scheduledTime": "08:05",
+      "airlineIcao": "swa",
+      "flightNumber": "2726",
+      "originIcao": "KMDW",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-aa1726-aus-ord",
+      "category": "departure",
+      "scheduledTime": "08:05",
+      "airlineIcao": "aal",
+      "flightNumber": "1726",
+      "originIcao": "KAUS",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-wn433-bna-aus",
+      "category": "arrival",
+      "scheduledTime": "08:10",
+      "airlineIcao": "swa",
+      "flightNumber": "433",
+      "originIcao": "KBNA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-aa1886-aus-clt",
+      "category": "departure",
+      "scheduledTime": "08:12",
+      "airlineIcao": "aal",
+      "flightNumber": "1886",
+      "originIcao": "KAUS",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "arrival-wn2093-hrl-aus",
+      "category": "arrival",
+      "scheduledTime": "08:15",
+      "airlineIcao": "swa",
+      "flightNumber": "2093",
+      "originIcao": "KHRL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn2444-lbb-aus",
+      "category": "arrival",
+      "scheduledTime": "08:15",
+      "airlineIcao": "swa",
+      "flightNumber": "2444",
+      "originIcao": "KLBB",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn2594-mco-aus",
+      "category": "arrival",
+      "scheduledTime": "08:15",
+      "airlineIcao": "swa",
+      "flightNumber": "2594",
+      "originIcao": "KMCO",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-dl2618-aus-slc",
+      "category": "departure",
+      "scheduledTime": "08:15",
+      "airlineIcao": "dal",
+      "flightNumber": "2618",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-dl2899-aus-atl",
+      "category": "departure",
+      "scheduledTime": "08:15",
+      "airlineIcao": "dal",
+      "flightNumber": "2899",
+      "originIcao": "KAUS",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-dl487-aus-tpa",
+      "category": "departure",
+      "scheduledTime": "08:15",
+      "airlineIcao": "dal",
+      "flightNumber": "487",
+      "originIcao": "KAUS",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "departure-ua202-aus-ord",
+      "category": "departure",
+      "scheduledTime": "08:20",
+      "airlineIcao": "ual",
+      "flightNumber": "202",
+      "originIcao": "KAUS",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-oo3960-aus-bna",
+      "category": "departure",
+      "scheduledTime": "08:25",
+      "airlineIcao": "skw",
+      "flightNumber": "3960",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn2574-aus-den",
+      "category": "departure",
+      "scheduledTime": "08:25",
+      "airlineIcao": "swa",
+      "flightNumber": "2574",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-wn3998-tpa-aus",
+      "category": "arrival",
+      "scheduledTime": "08:30",
+      "airlineIcao": "swa",
+      "flightNumber": "3998",
+      "originIcao": "KTPA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-as215-aus-sea",
+      "category": "departure",
+      "scheduledTime": "08:30",
+      "airlineIcao": "asa",
+      "flightNumber": "215",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-oo3747-aus-phx",
+      "category": "departure",
+      "scheduledTime": "08:30",
+      "airlineIcao": "skw",
+      "flightNumber": "3747",
+      "originIcao": "KAUS",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-ua595-aus-den",
+      "category": "departure",
+      "scheduledTime": "08:30",
+      "airlineIcao": "ual",
+      "flightNumber": "595",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-wn2108-aus-abq",
+      "category": "departure",
+      "scheduledTime": "08:30",
+      "airlineIcao": "swa",
+      "flightNumber": "2108",
+      "originIcao": "KAUS",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-wn4230-mci-aus",
+      "category": "arrival",
+      "scheduledTime": "08:35",
+      "airlineIcao": "swa",
+      "flightNumber": "4230",
+      "originIcao": "KMCI",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-dl2507-aus-mia",
+      "category": "departure",
+      "scheduledTime": "08:35",
+      "airlineIcao": "dal",
+      "flightNumber": "2507",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-oo4088-mem-aus",
+      "category": "arrival",
+      "scheduledTime": "08:37",
+      "airlineIcao": "skw",
+      "flightNumber": "4088",
+      "originIcao": "KMEM",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-ua2016-iah-aus",
+      "category": "arrival",
+      "scheduledTime": "08:39",
+      "airlineIcao": "ual",
+      "flightNumber": "2016",
+      "originIcao": "KIAH",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-mq3401-aus-dfw",
+      "category": "departure",
+      "scheduledTime": "08:40",
+      "airlineIcao": "eny",
+      "flightNumber": "3401",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-ua1668-aus-sfo",
+      "category": "departure",
+      "scheduledTime": "08:40",
+      "airlineIcao": "ual",
+      "flightNumber": "1668",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-wn418-aus-msy",
+      "category": "departure",
+      "scheduledTime": "08:40",
+      "airlineIcao": "swa",
+      "flightNumber": "418",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMSY"
+    },
+    {
+      "id": "departure-wn2414-aus-slc",
+      "category": "departure",
+      "scheduledTime": "08:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2414",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-wn1760-den-aus",
+      "category": "arrival",
+      "scheduledTime": "08:50",
+      "airlineIcao": "swa",
+      "flightNumber": "1760",
+      "originIcao": "KDEN",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn4172-dal-aus",
+      "category": "arrival",
+      "scheduledTime": "08:50",
+      "airlineIcao": "swa",
+      "flightNumber": "4172",
+      "originIcao": "KDAL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-oo4992-dfw-aus",
+      "category": "arrival",
+      "scheduledTime": "08:52",
+      "airlineIcao": "skw",
+      "flightNumber": "4992",
+      "originIcao": "KDFW",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn2576-rdu-aus",
+      "category": "arrival",
+      "scheduledTime": "08:55",
+      "airlineIcao": "swa",
+      "flightNumber": "2576",
+      "originIcao": "KRDU",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn4683-abq-aus",
+      "category": "arrival",
+      "scheduledTime": "08:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4683",
+      "originIcao": "KABQ",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn2006-aus-elp",
+      "category": "departure",
+      "scheduledTime": "08:55",
+      "airlineIcao": "swa",
+      "flightNumber": "2006",
+      "originIcao": "KAUS",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "departure-wn4252-aus-bwi",
+      "category": "departure",
+      "scheduledTime": "08:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4252",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "departure-wn4366-aus-mco",
+      "category": "departure",
+      "scheduledTime": "08:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4366",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "t100-5x-arrival-ksdf-g-001",
+      "scheduledTime": "08:56",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KAUS",
+      "airlineIcao": "ups",
+      "flightNumber": "7745"
+    },
+    {
+      "id": "departure-wn473-aus-hrl",
+      "category": "departure",
+      "scheduledTime": "09:00",
+      "airlineIcao": "swa",
+      "flightNumber": "473",
+      "originIcao": "KAUS",
+      "destinationIcao": "KHRL"
+    },
+    {
+      "id": "arrival-ua2035-ewr-aus",
+      "category": "arrival",
+      "scheduledTime": "09:01",
+      "airlineIcao": "ual",
+      "flightNumber": "2035",
+      "originIcao": "KEWR",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-oo4015-ind-aus",
+      "category": "arrival",
+      "scheduledTime": "09:03",
+      "airlineIcao": "skw",
+      "flightNumber": "4015",
+      "originIcao": "KIND",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn4319-aus-bna",
+      "category": "departure",
+      "scheduledTime": "09:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4319",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn555-fll-aus",
+      "category": "arrival",
+      "scheduledTime": "09:20",
+      "airlineIcao": "swa",
+      "flightNumber": "555",
+      "originIcao": "KFLL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-b61439-bos-aus",
+      "category": "arrival",
+      "scheduledTime": "09:22",
+      "airlineIcao": "jbu",
+      "flightNumber": "1439",
+      "originIcao": "KBOS",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-oo4929-aus-ase",
+      "category": "departure",
+      "scheduledTime": "09:22",
+      "airlineIcao": "skw",
+      "flightNumber": "4929",
+      "originIcao": "KAUS",
+      "destinationIcao": "KASE"
+    },
+    {
+      "id": "departure-oo4028-aus-cmh",
+      "category": "departure",
+      "scheduledTime": "09:23",
+      "airlineIcao": "skw",
+      "flightNumber": "4028",
+      "originIcao": "KAUS",
+      "destinationIcao": "KCMH"
+    },
+    {
+      "id": "arrival-dl2976-atl-aus",
+      "category": "arrival",
+      "scheduledTime": "09:27",
+      "airlineIcao": "dal",
+      "flightNumber": "2976",
+      "originIcao": "KATL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn362-aus-ind",
+      "category": "departure",
+      "scheduledTime": "09:30",
+      "airlineIcao": "swa",
+      "flightNumber": "362",
+      "originIcao": "KAUS",
+      "destinationIcao": "KIND"
+    },
+    {
+      "id": "departure-wn3917-aus-phx",
+      "category": "departure",
+      "scheduledTime": "09:30",
+      "airlineIcao": "swa",
+      "flightNumber": "3917",
+      "originIcao": "KAUS",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-wn4077-aus-mdw",
+      "category": "departure",
+      "scheduledTime": "09:30",
+      "airlineIcao": "swa",
+      "flightNumber": "4077",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "arrival-oo4146-bna-aus",
+      "category": "arrival",
+      "scheduledTime": "09:31",
+      "airlineIcao": "skw",
+      "flightNumber": "4146",
+      "originIcao": "KBNA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-f94523-mco-aus",
+      "category": "arrival",
+      "scheduledTime": "09:32",
+      "airlineIcao": "fft",
+      "flightNumber": "4523",
+      "originIcao": "KMCO",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-ua2196-aus-iah",
+      "category": "departure",
+      "scheduledTime": "09:35",
+      "airlineIcao": "ual",
+      "flightNumber": "2196",
+      "originIcao": "KAUS",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-wn3282-aus-den",
+      "category": "departure",
+      "scheduledTime": "09:35",
+      "airlineIcao": "swa",
+      "flightNumber": "3282",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-oo3813-aus-msp",
+      "category": "departure",
+      "scheduledTime": "09:43",
+      "airlineIcao": "skw",
+      "flightNumber": "3813",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "arrival-dl1410-bos-aus",
+      "category": "arrival",
+      "scheduledTime": "09:44",
+      "airlineIcao": "dal",
+      "flightNumber": "1410",
+      "originIcao": "KBOS",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn2674-aus-sfo",
+      "category": "departure",
+      "scheduledTime": "09:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2674",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "arrival-aa1396-dfw-aus",
+      "category": "arrival",
+      "scheduledTime": "09:48",
+      "airlineIcao": "aal",
+      "flightNumber": "1396",
+      "originIcao": "KDFW",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn268-mco-aus",
+      "category": "arrival",
+      "scheduledTime": "09:50",
+      "airlineIcao": "swa",
+      "flightNumber": "268",
+      "originIcao": "KMCO",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-oo3950-msp-aus",
+      "category": "arrival",
+      "scheduledTime": "09:55",
+      "airlineIcao": "skw",
+      "flightNumber": "3950",
+      "originIcao": "KMSP",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-ua1336-ord-aus",
+      "category": "arrival",
+      "scheduledTime": "09:57",
+      "airlineIcao": "ual",
+      "flightNumber": "1336",
+      "originIcao": "KORD",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn2379-lax-aus",
+      "category": "arrival",
+      "scheduledTime": "10:00",
+      "airlineIcao": "swa",
+      "flightNumber": "2379",
+      "originIcao": "KLAX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-dl1406-jfk-aus",
+      "category": "arrival",
+      "scheduledTime": "10:04",
+      "airlineIcao": "dal",
+      "flightNumber": "1406",
+      "originIcao": "KJFK",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-aa1417-mia-aus",
+      "category": "arrival",
+      "scheduledTime": "10:05",
+      "airlineIcao": "aal",
+      "flightNumber": "1417",
+      "originIcao": "KMIA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-oo4642-aus-lax",
+      "category": "departure",
+      "scheduledTime": "10:05",
+      "airlineIcao": "skw",
+      "flightNumber": "4642",
+      "originIcao": "KAUS",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-wn2704-aus-bos",
+      "category": "departure",
+      "scheduledTime": "10:05",
+      "airlineIcao": "swa",
+      "flightNumber": "2704",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "arrival-aa763-jfk-aus",
+      "category": "arrival",
+      "scheduledTime": "10:08",
+      "airlineIcao": "aal",
+      "flightNumber": "763",
+      "originIcao": "KJFK",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn1474-den-aus",
+      "category": "arrival",
+      "scheduledTime": "10:10",
+      "airlineIcao": "swa",
+      "flightNumber": "1474",
+      "originIcao": "KDEN",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-ua1435-aus-ewr",
+      "category": "departure",
+      "scheduledTime": "10:10",
+      "airlineIcao": "ual",
+      "flightNumber": "1435",
+      "originIcao": "KAUS",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "departure-oo3772-aus-jax",
+      "category": "departure",
+      "scheduledTime": "10:11",
+      "airlineIcao": "skw",
+      "flightNumber": "3772",
+      "originIcao": "KAUS",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-b61238-aus-bos",
+      "category": "departure",
+      "scheduledTime": "10:12",
+      "airlineIcao": "jbu",
+      "flightNumber": "1238",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "arrival-wn4149-bna-aus",
+      "category": "arrival",
+      "scheduledTime": "10:20",
+      "airlineIcao": "swa",
+      "flightNumber": "4149",
+      "originIcao": "KBNA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn4932-slc-aus",
+      "category": "arrival",
+      "scheduledTime": "10:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4932",
+      "originIcao": "KSLC",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn3884-stl-aus",
+      "category": "arrival",
+      "scheduledTime": "10:30",
+      "airlineIcao": "swa",
+      "flightNumber": "3884",
+      "originIcao": "KSTL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn865-bwi-aus",
+      "category": "arrival",
+      "scheduledTime": "10:35",
+      "airlineIcao": "swa",
+      "flightNumber": "865",
+      "originIcao": "KBWI",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-dl2976-aus-atl",
+      "category": "departure",
+      "scheduledTime": "10:35",
+      "airlineIcao": "dal",
+      "flightNumber": "2976",
+      "originIcao": "KAUS",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-oo4177-aus-mfe",
+      "category": "departure",
+      "scheduledTime": "10:35",
+      "airlineIcao": "skw",
+      "flightNumber": "4177",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMFE"
+    },
+    {
+      "id": "departure-wn4349-aus-chs",
+      "category": "departure",
+      "scheduledTime": "10:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4349",
+      "originIcao": "KAUS",
+      "destinationIcao": "KCHS"
+    },
+    {
+      "id": "t100-fx-departure-ksjt-g-001",
+      "scheduledTime": "10:41",
+      "category": "departure",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSJT",
+      "airlineIcao": "fdx",
+      "flightNumber": "7372"
+    },
+    {
+      "id": "arrival-aa1413-dfw-aus",
+      "category": "arrival",
+      "scheduledTime": "10:42",
+      "airlineIcao": "aal",
+      "flightNumber": "1413",
+      "originIcao": "KDFW",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-aa1396-aus-dfw",
+      "category": "departure",
+      "scheduledTime": "10:42",
+      "airlineIcao": "aal",
+      "flightNumber": "1396",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-f94524-aus-mco",
+      "category": "departure",
+      "scheduledTime": "10:43",
+      "airlineIcao": "fft",
+      "flightNumber": "4524",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-aa1417-aus-mia",
+      "category": "departure",
+      "scheduledTime": "10:45",
+      "airlineIcao": "aal",
+      "flightNumber": "1417",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-wn265-aus-dal",
+      "category": "departure",
+      "scheduledTime": "10:50",
+      "airlineIcao": "swa",
+      "flightNumber": "265",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "arrival-ua637-iad-aus",
+      "category": "arrival",
+      "scheduledTime": "10:56",
+      "airlineIcao": "ual",
+      "flightNumber": "637",
+      "originIcao": "KIAD",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-dl1218-dtw-aus",
+      "category": "arrival",
+      "scheduledTime": "10:59",
+      "airlineIcao": "dal",
+      "flightNumber": "1218",
+      "originIcao": "KDTW",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn442-aus-stl",
+      "category": "departure",
+      "scheduledTime": "11:00",
+      "airlineIcao": "swa",
+      "flightNumber": "442",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-aa763-aus-jfk",
+      "category": "departure",
+      "scheduledTime": "11:02",
+      "airlineIcao": "aal",
+      "flightNumber": "763",
+      "originIcao": "KAUS",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "arrival-dl2886-atl-aus",
+      "category": "arrival",
+      "scheduledTime": "11:03",
+      "airlineIcao": "dal",
+      "flightNumber": "2886",
+      "originIcao": "KATL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn2743-aus-cmh",
+      "category": "departure",
+      "scheduledTime": "11:05",
+      "airlineIcao": "swa",
+      "flightNumber": "2743",
+      "originIcao": "KAUS",
+      "destinationIcao": "KCMH"
+    },
+    {
+      "id": "departure-wn392-aus-san",
+      "category": "departure",
+      "scheduledTime": "11:10",
+      "airlineIcao": "swa",
+      "flightNumber": "392",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "arrival-aa2218-ord-aus",
+      "category": "arrival",
+      "scheduledTime": "11:13",
+      "airlineIcao": "aal",
+      "flightNumber": "2218",
+      "originIcao": "KORD",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-dl1684-aus-sea",
+      "category": "departure",
+      "scheduledTime": "11:14",
+      "airlineIcao": "dal",
+      "flightNumber": "1684",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "arrival-ua456-den-aus",
+      "category": "arrival",
+      "scheduledTime": "11:15",
+      "airlineIcao": "ual",
+      "flightNumber": "456",
+      "originIcao": "KDEN",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn1554-dal-aus",
+      "category": "arrival",
+      "scheduledTime": "11:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1554",
+      "originIcao": "KDAL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-dl1406-aus-jfk",
+      "category": "departure",
+      "scheduledTime": "11:15",
+      "airlineIcao": "dal",
+      "flightNumber": "1406",
+      "originIcao": "KAUS",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "arrival-ua1823-iah-aus",
+      "category": "arrival",
+      "scheduledTime": "11:19",
+      "airlineIcao": "ual",
+      "flightNumber": "1823",
+      "originIcao": "KIAH",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn1695-hou-aus",
+      "category": "arrival",
+      "scheduledTime": "11:20",
+      "airlineIcao": "swa",
+      "flightNumber": "1695",
+      "originIcao": "KHOU",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn498-aus-mia",
+      "category": "departure",
+      "scheduledTime": "11:20",
+      "airlineIcao": "swa",
+      "flightNumber": "498",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa1407-phl-aus",
+      "category": "arrival",
+      "scheduledTime": "11:23",
+      "airlineIcao": "aal",
+      "flightNumber": "1407",
+      "originIcao": "KPHL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-aa620-mia-aus",
+      "category": "arrival",
+      "scheduledTime": "11:25",
+      "airlineIcao": "aal",
+      "flightNumber": "620",
+      "originIcao": "KMIA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-dl2671-slc-aus",
+      "category": "arrival",
+      "scheduledTime": "11:25",
+      "airlineIcao": "dal",
+      "flightNumber": "2671",
+      "originIcao": "KSLC",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-ua779-aus-den",
+      "category": "departure",
+      "scheduledTime": "11:26",
+      "airlineIcao": "ual",
+      "flightNumber": "779",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-wn2363-sjc-aus",
+      "category": "arrival",
+      "scheduledTime": "11:30",
+      "airlineIcao": "swa",
+      "flightNumber": "2363",
+      "originIcao": "KSJC",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-aa1413-aus-dfw",
+      "category": "departure",
+      "scheduledTime": "11:37",
+      "airlineIcao": "aal",
+      "flightNumber": "1413",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-wn1864-las-aus",
+      "category": "arrival",
+      "scheduledTime": "11:40",
+      "airlineIcao": "swa",
+      "flightNumber": "1864",
+      "originIcao": "KLAS",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn281-san-aus",
+      "category": "arrival",
+      "scheduledTime": "11:40",
+      "airlineIcao": "swa",
+      "flightNumber": "281",
+      "originIcao": "KSAN",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-b62371-fll-aus",
+      "category": "arrival",
+      "scheduledTime": "11:48",
+      "airlineIcao": "jbu",
+      "flightNumber": "2371",
+      "originIcao": "KFLL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn2459-mco-aus",
+      "category": "arrival",
+      "scheduledTime": "11:50",
+      "airlineIcao": "swa",
+      "flightNumber": "2459",
+      "originIcao": "KMCO",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-aa1402-dfw-aus",
+      "category": "arrival",
+      "scheduledTime": "11:55",
+      "airlineIcao": "aal",
+      "flightNumber": "1402",
+      "originIcao": "KDFW",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn615-aus-msp",
+      "category": "departure",
+      "scheduledTime": "11:55",
+      "airlineIcao": "swa",
+      "flightNumber": "615",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "arrival-ua1688-ord-aus",
+      "category": "arrival",
+      "scheduledTime": "11:59",
+      "airlineIcao": "ual",
+      "flightNumber": "1688",
+      "originIcao": "KORD",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn2977-msy-aus",
+      "category": "arrival",
+      "scheduledTime": "12:00",
+      "airlineIcao": "swa",
+      "flightNumber": "2977",
+      "originIcao": "KMSY",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-dl1218-aus-dtw",
+      "category": "departure",
+      "scheduledTime": "12:00",
+      "airlineIcao": "dal",
+      "flightNumber": "1218",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "departure-ua2344-aus-iad",
+      "category": "departure",
+      "scheduledTime": "12:00",
+      "airlineIcao": "ual",
+      "flightNumber": "2344",
+      "originIcao": "KAUS",
+      "destinationIcao": "KIAD"
+    },
+    {
+      "id": "departure-wn1063-aus-rdu",
+      "category": "departure",
+      "scheduledTime": "12:00",
+      "airlineIcao": "swa",
+      "flightNumber": "1063",
+      "originIcao": "KAUS",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-oo3650-mci-aus",
+      "category": "arrival",
+      "scheduledTime": "12:02",
+      "airlineIcao": "skw",
+      "flightNumber": "3650",
+      "originIcao": "KMCI",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-aa2042-aus-phx",
+      "category": "departure",
+      "scheduledTime": "12:04",
+      "airlineIcao": "aal",
+      "flightNumber": "2042",
+      "originIcao": "KAUS",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-aa620-aus-mia",
+      "category": "departure",
+      "scheduledTime": "12:05",
+      "airlineIcao": "aal",
+      "flightNumber": "620",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa1407-aus-phl",
+      "category": "departure",
+      "scheduledTime": "12:08",
+      "airlineIcao": "aal",
+      "flightNumber": "1407",
+      "originIcao": "KAUS",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "departure-dl2886-aus-atl",
+      "category": "departure",
+      "scheduledTime": "12:09",
+      "airlineIcao": "dal",
+      "flightNumber": "2886",
+      "originIcao": "KAUS",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-wn335-tpa-aus",
+      "category": "arrival",
+      "scheduledTime": "12:10",
+      "airlineIcao": "swa",
+      "flightNumber": "335",
+      "originIcao": "KTPA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn910-aus-dal",
+      "category": "departure",
+      "scheduledTime": "12:10",
+      "airlineIcao": "swa",
+      "flightNumber": "910",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "arrival-aa1419-clt-aus",
+      "category": "arrival",
+      "scheduledTime": "12:15",
+      "airlineIcao": "aal",
+      "flightNumber": "1419",
+      "originIcao": "KCLT",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn4555-bur-aus",
+      "category": "arrival",
+      "scheduledTime": "12:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4555",
+      "originIcao": "KBUR",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-ua1747-aus-iah",
+      "category": "departure",
+      "scheduledTime": "12:15",
+      "airlineIcao": "ual",
+      "flightNumber": "1747",
+      "originIcao": "KAUS",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-dl2671-aus-slc",
+      "category": "departure",
+      "scheduledTime": "12:20",
+      "airlineIcao": "dal",
+      "flightNumber": "2671",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-wn2671-aus-hrl",
+      "category": "departure",
+      "scheduledTime": "12:20",
+      "airlineIcao": "swa",
+      "flightNumber": "2671",
+      "originIcao": "KAUS",
+      "destinationIcao": "KHRL"
+    },
+    {
+      "id": "arrival-dl2011-atl-aus",
+      "category": "arrival",
+      "scheduledTime": "12:25",
+      "airlineIcao": "dal",
+      "flightNumber": "2011",
+      "originIcao": "KATL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn4744-phx-aus",
+      "category": "arrival",
+      "scheduledTime": "12:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4744",
+      "originIcao": "KPHX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn898-chs-aus",
+      "category": "arrival",
+      "scheduledTime": "12:25",
+      "airlineIcao": "swa",
+      "flightNumber": "898",
+      "originIcao": "KCHS",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn281-aus-dca",
+      "category": "departure",
+      "scheduledTime": "12:30",
+      "airlineIcao": "swa",
+      "flightNumber": "281",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-wn323-aus-las",
+      "category": "departure",
+      "scheduledTime": "12:30",
+      "airlineIcao": "swa",
+      "flightNumber": "323",
+      "originIcao": "KAUS",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "arrival-wn2727-mdw-aus",
+      "category": "arrival",
+      "scheduledTime": "12:35",
+      "airlineIcao": "swa",
+      "flightNumber": "2727",
+      "originIcao": "KMDW",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn3010-okc-aus",
+      "category": "arrival",
+      "scheduledTime": "12:35",
+      "airlineIcao": "swa",
+      "flightNumber": "3010",
+      "originIcao": "KOKC",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn3611-aus-mco",
+      "category": "departure",
+      "scheduledTime": "12:35",
+      "airlineIcao": "swa",
+      "flightNumber": "3611",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "arrival-dl946-lax-aus",
+      "category": "arrival",
+      "scheduledTime": "12:38",
+      "airlineIcao": "dal",
+      "flightNumber": "946",
+      "originIcao": "KLAX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-f94211-atl-aus",
+      "category": "arrival",
+      "scheduledTime": "12:38",
+      "airlineIcao": "fft",
+      "flightNumber": "4211",
+      "originIcao": "KATL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "t100-rv-arrival-cyvr-f-001",
+      "scheduledTime": "12:38",
+      "category": "arrival",
+      "originIcao": "CYVR",
+      "destinationIcao": "KAUS",
+      "airlineIcao": "rou",
+      "flightNumber": "7218"
+    },
+    {
+      "id": "arrival-wn1576-bwi-aus",
+      "category": "arrival",
+      "scheduledTime": "12:40",
+      "airlineIcao": "swa",
+      "flightNumber": "1576",
+      "originIcao": "KBWI",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-aa1402-aus-dfw",
+      "category": "departure",
+      "scheduledTime": "12:40",
+      "airlineIcao": "aal",
+      "flightNumber": "1402",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-oo3767-aus-ecp",
+      "category": "departure",
+      "scheduledTime": "12:43",
+      "airlineIcao": "skw",
+      "flightNumber": "3767",
+      "originIcao": "KAUS",
+      "destinationIcao": "KECP"
+    },
+    {
+      "id": "arrival-oo3876-den-aus",
+      "category": "arrival",
+      "scheduledTime": "12:45",
+      "airlineIcao": "skw",
+      "flightNumber": "3876",
+      "originIcao": "KDEN",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn335-aus-den",
+      "category": "departure",
+      "scheduledTime": "12:45",
+      "airlineIcao": "swa",
+      "flightNumber": "335",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-dl2062-msp-aus",
+      "category": "arrival",
+      "scheduledTime": "12:50",
+      "airlineIcao": "dal",
+      "flightNumber": "2062",
+      "originIcao": "KMSP",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn66-abq-aus",
+      "category": "arrival",
+      "scheduledTime": "12:50",
+      "airlineIcao": "swa",
+      "flightNumber": "66",
+      "originIcao": "KABQ",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn1313-las-aus",
+      "category": "arrival",
+      "scheduledTime": "12:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1313",
+      "originIcao": "KLAS",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn269-cmh-aus",
+      "category": "arrival",
+      "scheduledTime": "12:55",
+      "airlineIcao": "swa",
+      "flightNumber": "269",
+      "originIcao": "KCMH",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-ua1541-aus-den",
+      "category": "departure",
+      "scheduledTime": "12:55",
+      "airlineIcao": "ual",
+      "flightNumber": "1541",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-b62372-aus-fll",
+      "category": "departure",
+      "scheduledTime": "13:00",
+      "airlineIcao": "jbu",
+      "flightNumber": "2372",
+      "originIcao": "KAUS",
+      "destinationIcao": "KFLL"
+    },
+    {
+      "id": "departure-wn5064-aus-elp",
+      "category": "departure",
+      "scheduledTime": "13:00",
+      "airlineIcao": "swa",
+      "flightNumber": "5064",
+      "originIcao": "KAUS",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "departure-wn898-aus-mci",
+      "category": "departure",
+      "scheduledTime": "13:00",
+      "airlineIcao": "swa",
+      "flightNumber": "898",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMCI"
+    },
+    {
+      "id": "departure-ua456-aus-ord",
+      "category": "departure",
+      "scheduledTime": "13:01",
+      "airlineIcao": "ual",
+      "flightNumber": "456",
+      "originIcao": "KAUS",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-aa1419-aus-clt",
+      "category": "departure",
+      "scheduledTime": "13:02",
+      "airlineIcao": "aal",
+      "flightNumber": "1419",
+      "originIcao": "KAUS",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "arrival-wn3255-pit-aus",
+      "category": "arrival",
+      "scheduledTime": "13:05",
+      "airlineIcao": "swa",
+      "flightNumber": "3255",
+      "originIcao": "KPIT",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn346-aus-mke",
+      "category": "departure",
+      "scheduledTime": "13:05",
+      "airlineIcao": "swa",
+      "flightNumber": "346",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMKE"
+    },
+    {
+      "id": "arrival-aa1394-phx-aus",
+      "category": "arrival",
+      "scheduledTime": "13:09",
+      "airlineIcao": "aal",
+      "flightNumber": "1394",
+      "originIcao": "KPHX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "t100-9e-departure-krdu-f-001",
+      "scheduledTime": "13:09",
+      "category": "departure",
+      "originIcao": "KAUS",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "edv",
+      "flightNumber": "6200"
+    },
+    {
+      "id": "arrival-wn4777-atl-aus",
+      "category": "arrival",
+      "scheduledTime": "13:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4777",
+      "originIcao": "KATL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn2717-aus-tul",
+      "category": "departure",
+      "scheduledTime": "13:10",
+      "airlineIcao": "swa",
+      "flightNumber": "2717",
+      "originIcao": "KAUS",
+      "destinationIcao": "KTUL"
+    },
+    {
+      "id": "arrival-ua1859-iah-aus",
+      "category": "arrival",
+      "scheduledTime": "13:12",
+      "airlineIcao": "ual",
+      "flightNumber": "1859",
+      "originIcao": "KIAH",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-oo4101-ind-aus",
+      "category": "arrival",
+      "scheduledTime": "13:13",
+      "airlineIcao": "skw",
+      "flightNumber": "4101",
+      "originIcao": "KIND",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn901-aus-sna",
+      "category": "departure",
+      "scheduledTime": "13:15",
+      "airlineIcao": "swa",
+      "flightNumber": "901",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSNA"
+    },
+    {
+      "id": "arrival-ua1026-den-aus",
+      "category": "arrival",
+      "scheduledTime": "13:20",
+      "airlineIcao": "ual",
+      "flightNumber": "1026",
+      "originIcao": "KDEN",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn4915-aus-lgb",
+      "category": "departure",
+      "scheduledTime": "13:20",
+      "airlineIcao": "swa",
+      "flightNumber": "4915",
+      "originIcao": "KAUS",
+      "destinationIcao": "KLGB"
+    },
+    {
+      "id": "arrival-mq4095-dfw-aus",
+      "category": "arrival",
+      "scheduledTime": "13:25",
+      "airlineIcao": "eny",
+      "flightNumber": "4095",
+      "originIcao": "KDFW",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn66-aus-pns",
+      "category": "departure",
+      "scheduledTime": "13:25",
+      "airlineIcao": "swa",
+      "flightNumber": "66",
+      "originIcao": "KAUS",
+      "destinationIcao": "KPNS"
+    },
+    {
+      "id": "arrival-dl739-sea-aus",
+      "category": "arrival",
+      "scheduledTime": "13:26",
+      "airlineIcao": "dal",
+      "flightNumber": "739",
+      "originIcao": "KSEA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-oo4016-aus-msy",
+      "category": "departure",
+      "scheduledTime": "13:26",
+      "airlineIcao": "skw",
+      "flightNumber": "4016",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMSY"
+    },
+    {
+      "id": "arrival-oo5445-lax-aus",
+      "category": "arrival",
+      "scheduledTime": "13:29",
+      "airlineIcao": "skw",
+      "flightNumber": "5445",
+      "originIcao": "KLAX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-f91816-den-aus",
+      "category": "arrival",
+      "scheduledTime": "13:30",
+      "airlineIcao": "fft",
+      "flightNumber": "1816",
+      "originIcao": "KDEN",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn389-aus-sea",
+      "category": "departure",
+      "scheduledTime": "13:30",
+      "airlineIcao": "swa",
+      "flightNumber": "389",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-dl2011-aus-atl",
+      "category": "departure",
+      "scheduledTime": "13:31",
+      "airlineIcao": "dal",
+      "flightNumber": "2011",
+      "originIcao": "KAUS",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-f94702-aus-atl",
+      "category": "departure",
+      "scheduledTime": "13:33",
+      "airlineIcao": "fft",
+      "flightNumber": "4702",
+      "originIcao": "KAUS",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-wn2263-den-aus",
+      "category": "arrival",
+      "scheduledTime": "13:35",
+      "airlineIcao": "swa",
+      "flightNumber": "2263",
+      "originIcao": "KDEN",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn258-aus-bna",
+      "category": "departure",
+      "scheduledTime": "13:35",
+      "airlineIcao": "swa",
+      "flightNumber": "258",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn121-elp-aus",
+      "category": "arrival",
+      "scheduledTime": "13:40",
+      "airlineIcao": "swa",
+      "flightNumber": "121",
+      "originIcao": "KELP",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn3240-mco-aus",
+      "category": "arrival",
+      "scheduledTime": "13:40",
+      "airlineIcao": "swa",
+      "flightNumber": "3240",
+      "originIcao": "KMCO",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn576-mci-aus",
+      "category": "arrival",
+      "scheduledTime": "13:40",
+      "airlineIcao": "swa",
+      "flightNumber": "576",
+      "originIcao": "KMCI",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-dl946-aus-lax",
+      "category": "departure",
+      "scheduledTime": "13:40",
+      "airlineIcao": "dal",
+      "flightNumber": "946",
+      "originIcao": "KAUS",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-wn4207-aus-msy",
+      "category": "departure",
+      "scheduledTime": "13:45",
+      "airlineIcao": "swa",
+      "flightNumber": "4207",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMSY"
+    },
+    {
+      "id": "departure-dl2062-aus-msp",
+      "category": "departure",
+      "scheduledTime": "13:48",
+      "airlineIcao": "dal",
+      "flightNumber": "2062",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "arrival-oo3960-bna-aus",
+      "category": "arrival",
+      "scheduledTime": "13:50",
+      "airlineIcao": "skw",
+      "flightNumber": "3960",
+      "originIcao": "KBNA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn2109-ind-aus",
+      "category": "arrival",
+      "scheduledTime": "13:50",
+      "airlineIcao": "swa",
+      "flightNumber": "2109",
+      "originIcao": "KIND",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn4890-aus-pit",
+      "category": "departure",
+      "scheduledTime": "13:50",
+      "airlineIcao": "swa",
+      "flightNumber": "4890",
+      "originIcao": "KAUS",
+      "destinationIcao": "KPIT"
+    },
+    {
+      "id": "arrival-aa1401-phl-aus",
+      "category": "arrival",
+      "scheduledTime": "13:52",
+      "airlineIcao": "aal",
+      "flightNumber": "1401",
+      "originIcao": "KPHL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-aa1423-aus-phl",
+      "category": "departure",
+      "scheduledTime": "13:52",
+      "airlineIcao": "aal",
+      "flightNumber": "1423",
+      "originIcao": "KAUS",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "arrival-dl2104-atl-aus",
+      "category": "arrival",
+      "scheduledTime": "13:54",
+      "airlineIcao": "dal",
+      "flightNumber": "2104",
+      "originIcao": "KATL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn3475-san-aus",
+      "category": "arrival",
+      "scheduledTime": "13:55",
+      "airlineIcao": "swa",
+      "flightNumber": "3475",
+      "originIcao": "KSAN",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn3624-dal-aus",
+      "category": "arrival",
+      "scheduledTime": "13:55",
+      "airlineIcao": "swa",
+      "flightNumber": "3624",
+      "originIcao": "KDAL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-mq4095-aus-dfw",
+      "category": "departure",
+      "scheduledTime": "13:56",
+      "airlineIcao": "eny",
+      "flightNumber": "4095",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-wn4227-sfo-aus",
+      "category": "arrival",
+      "scheduledTime": "14:00",
+      "airlineIcao": "swa",
+      "flightNumber": "4227",
+      "originIcao": "KSFO",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-oo4027-aus-ind",
+      "category": "departure",
+      "scheduledTime": "14:03",
+      "airlineIcao": "skw",
+      "flightNumber": "4027",
+      "originIcao": "KAUS",
+      "destinationIcao": "KIND"
+    },
+    {
+      "id": "arrival-oo4121-mfe-aus",
+      "category": "arrival",
+      "scheduledTime": "14:05",
+      "airlineIcao": "skw",
+      "flightNumber": "4121",
+      "originIcao": "KMFE",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-b61971-fll-aus",
+      "category": "arrival",
+      "scheduledTime": "14:06",
+      "airlineIcao": "jbu",
+      "flightNumber": "1971",
+      "originIcao": "KFLL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-dl2323-jfk-aus",
+      "category": "arrival",
+      "scheduledTime": "14:06",
+      "airlineIcao": "dal",
+      "flightNumber": "2323",
+      "originIcao": "KJFK",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn3281-pns-aus",
+      "category": "arrival",
+      "scheduledTime": "14:10",
+      "airlineIcao": "swa",
+      "flightNumber": "3281",
+      "originIcao": "KPNS",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-oo5841-aus-lax",
+      "category": "departure",
+      "scheduledTime": "14:10",
+      "airlineIcao": "skw",
+      "flightNumber": "5841",
+      "originIcao": "KAUS",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "arrival-oo3747-phx-aus",
+      "category": "arrival",
+      "scheduledTime": "14:15",
+      "airlineIcao": "skw",
+      "flightNumber": "3747",
+      "originIcao": "KPHX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn185-phx-aus",
+      "category": "arrival",
+      "scheduledTime": "14:15",
+      "airlineIcao": "swa",
+      "flightNumber": "185",
+      "originIcao": "KPHX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn121-aus-ind",
+      "category": "departure",
+      "scheduledTime": "14:15",
+      "airlineIcao": "swa",
+      "flightNumber": "121",
+      "originIcao": "KAUS",
+      "destinationIcao": "KIND"
+    },
+    {
+      "id": "departure-wn3332-aus-bwi",
+      "category": "departure",
+      "scheduledTime": "14:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3332",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "departure-ua334-aus-iah",
+      "category": "departure",
+      "scheduledTime": "14:18",
+      "airlineIcao": "ual",
+      "flightNumber": "334",
+      "originIcao": "KAUS",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "arrival-oo3085-san-aus",
+      "category": "arrival",
+      "scheduledTime": "14:19",
+      "airlineIcao": "skw",
+      "flightNumber": "3085",
+      "originIcao": "KSAN",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn2529-aus-mco",
+      "category": "departure",
+      "scheduledTime": "14:20",
+      "airlineIcao": "swa",
+      "flightNumber": "2529",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-wn373-aus-atl",
+      "category": "departure",
+      "scheduledTime": "14:20",
+      "airlineIcao": "swa",
+      "flightNumber": "373",
+      "originIcao": "KAUS",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-f92047-aus-den",
+      "category": "departure",
+      "scheduledTime": "14:25",
+      "airlineIcao": "fft",
+      "flightNumber": "2047",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-dl487-tpa-aus",
+      "category": "arrival",
+      "scheduledTime": "14:26",
+      "airlineIcao": "dal",
+      "flightNumber": "487",
+      "originIcao": "KTPA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-dl2259-mco-aus",
+      "category": "arrival",
+      "scheduledTime": "14:30",
+      "airlineIcao": "dal",
+      "flightNumber": "2259",
+      "originIcao": "KMCO",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-oo6409-lax-aus",
+      "category": "arrival",
+      "scheduledTime": "14:30",
+      "airlineIcao": "skw",
+      "flightNumber": "6409",
+      "originIcao": "KLAX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-dl1156-aus-bos",
+      "category": "departure",
+      "scheduledTime": "14:30",
+      "airlineIcao": "dal",
+      "flightNumber": "1156",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-oo3908-aus-slc",
+      "category": "departure",
+      "scheduledTime": "14:30",
+      "airlineIcao": "skw",
+      "flightNumber": "3908",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-wn2375-aus-ont",
+      "category": "departure",
+      "scheduledTime": "14:30",
+      "airlineIcao": "swa",
+      "flightNumber": "2375",
+      "originIcao": "KAUS",
+      "destinationIcao": "KONT"
+    },
+    {
+      "id": "departure-wn3624-aus-cvg",
+      "category": "departure",
+      "scheduledTime": "14:30",
+      "airlineIcao": "swa",
+      "flightNumber": "3624",
+      "originIcao": "KAUS",
+      "destinationIcao": "KCVG"
+    },
+    {
+      "id": "departure-aa3181-aus-phx",
+      "category": "departure",
+      "scheduledTime": "14:35",
+      "airlineIcao": "aal",
+      "flightNumber": "3181",
+      "originIcao": "KAUS",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-wn360-aus-mdw",
+      "category": "departure",
+      "scheduledTime": "14:35",
+      "airlineIcao": "swa",
+      "flightNumber": "360",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "arrival-ua1326-sfo-aus",
+      "category": "arrival",
+      "scheduledTime": "14:39",
+      "airlineIcao": "ual",
+      "flightNumber": "1326",
+      "originIcao": "KSFO",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn2512-msp-aus",
+      "category": "arrival",
+      "scheduledTime": "14:40",
+      "airlineIcao": "swa",
+      "flightNumber": "2512",
+      "originIcao": "KMSP",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn868-las-aus",
+      "category": "arrival",
+      "scheduledTime": "14:40",
+      "airlineIcao": "swa",
+      "flightNumber": "868",
+      "originIcao": "KLAS",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn277-aus-dal",
+      "category": "departure",
+      "scheduledTime": "14:40",
+      "airlineIcao": "swa",
+      "flightNumber": "277",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "arrival-ua1061-ord-aus",
+      "category": "arrival",
+      "scheduledTime": "14:41",
+      "airlineIcao": "ual",
+      "flightNumber": "1061",
+      "originIcao": "KORD",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-aa1397-aus-dfw",
+      "category": "departure",
+      "scheduledTime": "14:44",
+      "airlineIcao": "aal",
+      "flightNumber": "1397",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-wn2525-ont-aus",
+      "category": "arrival",
+      "scheduledTime": "14:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2525",
+      "originIcao": "KONT",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-ua2447-aus-den",
+      "category": "departure",
+      "scheduledTime": "14:45",
+      "airlineIcao": "ual",
+      "flightNumber": "2447",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-wn3341-aus-ecp",
+      "category": "departure",
+      "scheduledTime": "14:45",
+      "airlineIcao": "swa",
+      "flightNumber": "3341",
+      "originIcao": "KAUS",
+      "destinationIcao": "KECP"
+    },
+    {
+      "id": "arrival-oo3955-slc-aus",
+      "category": "arrival",
+      "scheduledTime": "14:50",
+      "airlineIcao": "skw",
+      "flightNumber": "3955",
+      "originIcao": "KSLC",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-dl1012-dtw-aus",
+      "category": "arrival",
+      "scheduledTime": "14:55",
+      "airlineIcao": "dal",
+      "flightNumber": "1012",
+      "originIcao": "KDTW",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn1784-ecp-aus",
+      "category": "arrival",
+      "scheduledTime": "14:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1784",
+      "originIcao": "KECP",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-oo3734-aus-tpa",
+      "category": "departure",
+      "scheduledTime": "14:55",
+      "airlineIcao": "skw",
+      "flightNumber": "3734",
+      "originIcao": "KAUS",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "departure-oo4053-aus-mfe",
+      "category": "departure",
+      "scheduledTime": "14:55",
+      "airlineIcao": "skw",
+      "flightNumber": "4053",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMFE"
+    },
+    {
+      "id": "t100-lh-departure-eddf-f-001",
+      "scheduledTime": "14:58",
+      "category": "departure",
+      "originIcao": "KAUS",
+      "destinationIcao": "EDDF",
+      "airlineIcao": "dlh",
+      "flightNumber": "3411"
+    },
+    {
+      "id": "departure-oo3084-aus-san",
+      "category": "departure",
+      "scheduledTime": "14:59",
+      "airlineIcao": "skw",
+      "flightNumber": "3084",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "arrival-mq3726-dfw-aus",
+      "category": "arrival",
+      "scheduledTime": "15:00",
+      "airlineIcao": "eny",
+      "flightNumber": "3726",
+      "originIcao": "KDFW",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn2834-mke-aus",
+      "category": "arrival",
+      "scheduledTime": "15:00",
+      "airlineIcao": "swa",
+      "flightNumber": "2834",
+      "originIcao": "KMKE",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn932-tul-aus",
+      "category": "arrival",
+      "scheduledTime": "15:00",
+      "airlineIcao": "swa",
+      "flightNumber": "932",
+      "originIcao": "KTUL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-dl2104-aus-atl",
+      "category": "departure",
+      "scheduledTime": "15:00",
+      "airlineIcao": "dal",
+      "flightNumber": "2104",
+      "originIcao": "KAUS",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-wn185-aus-fll",
+      "category": "departure",
+      "scheduledTime": "15:00",
+      "airlineIcao": "swa",
+      "flightNumber": "185",
+      "originIcao": "KAUS",
+      "destinationIcao": "KFLL"
+    },
+    {
+      "id": "departure-b61972-aus-fll",
+      "category": "departure",
+      "scheduledTime": "15:04",
+      "airlineIcao": "jbu",
+      "flightNumber": "1972",
+      "originIcao": "KAUS",
+      "destinationIcao": "KFLL"
+    },
+    {
+      "id": "departure-wn4618-aus-tpa",
+      "category": "departure",
+      "scheduledTime": "15:05",
+      "airlineIcao": "swa",
+      "flightNumber": "4618",
+      "originIcao": "KAUS",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "arrival-wn2729-den-aus",
+      "category": "arrival",
+      "scheduledTime": "15:10",
+      "airlineIcao": "swa",
+      "flightNumber": "2729",
+      "originIcao": "KDEN",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn4719-mco-aus",
+      "category": "arrival",
+      "scheduledTime": "15:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4719",
+      "originIcao": "KMCO",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-oo6409-aus-lax",
+      "category": "departure",
+      "scheduledTime": "15:11",
+      "airlineIcao": "skw",
+      "flightNumber": "6409",
+      "originIcao": "KAUS",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "arrival-as422-sea-aus",
+      "category": "arrival",
+      "scheduledTime": "15:14",
+      "airlineIcao": "asa",
+      "flightNumber": "422",
+      "originIcao": "KSEA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-ua1155-ewr-aus",
+      "category": "arrival",
+      "scheduledTime": "15:16",
+      "airlineIcao": "ual",
+      "flightNumber": "1155",
+      "originIcao": "KEWR",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "t100-kl-arrival-eham-f-001",
+      "scheduledTime": "15:16",
+      "category": "arrival",
+      "originIcao": "EHAM",
+      "destinationIcao": "KAUS",
+      "airlineIcao": "klm",
+      "flightNumber": "384"
+    },
+    {
+      "id": "arrival-dl986-lax-aus",
+      "category": "arrival",
+      "scheduledTime": "15:20",
+      "airlineIcao": "dal",
+      "flightNumber": "986",
+      "originIcao": "KLAX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn376-aus-phx",
+      "category": "departure",
+      "scheduledTime": "15:20",
+      "airlineIcao": "swa",
+      "flightNumber": "376",
+      "originIcao": "KAUS",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-dl1077-aus-sfo",
+      "category": "departure",
+      "scheduledTime": "15:21",
+      "airlineIcao": "dal",
+      "flightNumber": "1077",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "arrival-wn526-hrl-aus",
+      "category": "arrival",
+      "scheduledTime": "15:25",
+      "airlineIcao": "swa",
+      "flightNumber": "526",
+      "originIcao": "KHRL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn2335-aus-oak",
+      "category": "departure",
+      "scheduledTime": "15:25",
+      "airlineIcao": "swa",
+      "flightNumber": "2335",
+      "originIcao": "KAUS",
+      "destinationIcao": "KOAK"
+    },
+    {
+      "id": "departure-wn363-aus-lax",
+      "category": "departure",
+      "scheduledTime": "15:25",
+      "airlineIcao": "swa",
+      "flightNumber": "363",
+      "originIcao": "KAUS",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-aa1574-aus-ord",
+      "category": "departure",
+      "scheduledTime": "15:27",
+      "airlineIcao": "aal",
+      "flightNumber": "1574",
+      "originIcao": "KAUS",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-dl2260-aus-las",
+      "category": "departure",
+      "scheduledTime": "15:29",
+      "airlineIcao": "dal",
+      "flightNumber": "2260",
+      "originIcao": "KAUS",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-oo3945-aus-bna",
+      "category": "departure",
+      "scheduledTime": "15:34",
+      "airlineIcao": "skw",
+      "flightNumber": "3945",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-ua442-aus-sfo",
+      "category": "departure",
+      "scheduledTime": "15:35",
+      "airlineIcao": "ual",
+      "flightNumber": "442",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-wn482-aus-stl",
+      "category": "departure",
+      "scheduledTime": "15:35",
+      "airlineIcao": "swa",
+      "flightNumber": "482",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn946-aus-elp",
+      "category": "departure",
+      "scheduledTime": "15:35",
+      "airlineIcao": "swa",
+      "flightNumber": "946",
+      "originIcao": "KAUS",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "arrival-dl381-sfo-aus",
+      "category": "arrival",
+      "scheduledTime": "15:36",
+      "airlineIcao": "dal",
+      "flightNumber": "381",
+      "originIcao": "KSFO",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-aa1409-jfk-aus",
+      "category": "arrival",
+      "scheduledTime": "15:37",
+      "airlineIcao": "aal",
+      "flightNumber": "1409",
+      "originIcao": "KJFK",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-ua2746-iad-aus",
+      "category": "arrival",
+      "scheduledTime": "15:37",
+      "airlineIcao": "ual",
+      "flightNumber": "2746",
+      "originIcao": "KIAD",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-ua1625-aus-ord",
+      "category": "departure",
+      "scheduledTime": "15:37",
+      "airlineIcao": "ual",
+      "flightNumber": "1625",
+      "originIcao": "KAUS",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-wn352-hou-aus",
+      "category": "arrival",
+      "scheduledTime": "15:40",
+      "airlineIcao": "swa",
+      "flightNumber": "352",
+      "originIcao": "KHOU",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-mq3726-aus-dfw",
+      "category": "departure",
+      "scheduledTime": "15:44",
+      "airlineIcao": "eny",
+      "flightNumber": "3726",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-dl2323-aus-jfk",
+      "category": "departure",
+      "scheduledTime": "15:45",
+      "airlineIcao": "dal",
+      "flightNumber": "2323",
+      "originIcao": "KAUS",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "departure-wn399-aus-sjc",
+      "category": "departure",
+      "scheduledTime": "15:45",
+      "airlineIcao": "swa",
+      "flightNumber": "399",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSJC"
+    },
+    {
+      "id": "arrival-dl1397-atl-aus",
+      "category": "arrival",
+      "scheduledTime": "15:50",
+      "airlineIcao": "dal",
+      "flightNumber": "1397",
+      "originIcao": "KATL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn644-stl-aus",
+      "category": "arrival",
+      "scheduledTime": "15:50",
+      "airlineIcao": "swa",
+      "flightNumber": "644",
+      "originIcao": "KSTL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-dl2529-aus-mco",
+      "category": "departure",
+      "scheduledTime": "15:50",
+      "airlineIcao": "dal",
+      "flightNumber": "2529",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-wn2627-aus-mco",
+      "category": "departure",
+      "scheduledTime": "15:50",
+      "airlineIcao": "swa",
+      "flightNumber": "2627",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "arrival-wn2922-oak-aus",
+      "category": "arrival",
+      "scheduledTime": "15:55",
+      "airlineIcao": "swa",
+      "flightNumber": "2922",
+      "originIcao": "KOAK",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn4860-jax-aus",
+      "category": "arrival",
+      "scheduledTime": "15:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4860",
+      "originIcao": "KJAX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn2502-aus-jax",
+      "category": "departure",
+      "scheduledTime": "15:55",
+      "airlineIcao": "swa",
+      "flightNumber": "2502",
+      "originIcao": "KAUS",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "arrival-wn259-sjc-aus",
+      "category": "arrival",
+      "scheduledTime": "16:05",
+      "airlineIcao": "swa",
+      "flightNumber": "259",
+      "originIcao": "KSJC",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-oo4028-cmh-aus",
+      "category": "arrival",
+      "scheduledTime": "16:09",
+      "airlineIcao": "skw",
+      "flightNumber": "4028",
+      "originIcao": "KCMH",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn3385-aus-bwi",
+      "category": "departure",
+      "scheduledTime": "16:10",
+      "airlineIcao": "swa",
+      "flightNumber": "3385",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "arrival-wn371-lax-aus",
+      "category": "arrival",
+      "scheduledTime": "16:15",
+      "airlineIcao": "swa",
+      "flightNumber": "371",
+      "originIcao": "KLAX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-dl986-aus-lax",
+      "category": "departure",
+      "scheduledTime": "16:15",
+      "airlineIcao": "dal",
+      "flightNumber": "986",
+      "originIcao": "KAUS",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-wn352-aus-abq",
+      "category": "departure",
+      "scheduledTime": "16:15",
+      "airlineIcao": "swa",
+      "flightNumber": "352",
+      "originIcao": "KAUS",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-as503-aus-sea",
+      "category": "departure",
+      "scheduledTime": "16:17",
+      "airlineIcao": "asa",
+      "flightNumber": "503",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "arrival-wn2496-msy-aus",
+      "category": "arrival",
+      "scheduledTime": "16:20",
+      "airlineIcao": "swa",
+      "flightNumber": "2496",
+      "originIcao": "KMSY",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-mq3400-dfw-aus",
+      "category": "arrival",
+      "scheduledTime": "16:21",
+      "airlineIcao": "eny",
+      "flightNumber": "3400",
+      "originIcao": "KDFW",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-ua622-ord-aus",
+      "category": "arrival",
+      "scheduledTime": "16:22",
+      "airlineIcao": "ual",
+      "flightNumber": "622",
+      "originIcao": "KORD",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-ua286-aus-ewr",
+      "category": "departure",
+      "scheduledTime": "16:22",
+      "airlineIcao": "ual",
+      "flightNumber": "286",
+      "originIcao": "KAUS",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "arrival-oo3772-jax-aus",
+      "category": "arrival",
+      "scheduledTime": "16:25",
+      "airlineIcao": "skw",
+      "flightNumber": "3772",
+      "originIcao": "KJAX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn3625-dal-aus",
+      "category": "arrival",
+      "scheduledTime": "16:25",
+      "airlineIcao": "swa",
+      "flightNumber": "3625",
+      "originIcao": "KDAL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn644-aus-maf",
+      "category": "departure",
+      "scheduledTime": "16:25",
+      "airlineIcao": "swa",
+      "flightNumber": "644",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMAF"
+    },
+    {
+      "id": "arrival-wn4236-mco-aus",
+      "category": "arrival",
+      "scheduledTime": "16:30",
+      "airlineIcao": "swa",
+      "flightNumber": "4236",
+      "originIcao": "KMCO",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-aa1409-aus-jfk",
+      "category": "departure",
+      "scheduledTime": "16:30",
+      "airlineIcao": "aal",
+      "flightNumber": "1409",
+      "originIcao": "KAUS",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "departure-dl2736-aus-dtw",
+      "category": "departure",
+      "scheduledTime": "16:31",
+      "airlineIcao": "dal",
+      "flightNumber": "2736",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "arrival-aa1408-clt-aus",
+      "category": "arrival",
+      "scheduledTime": "16:34",
+      "airlineIcao": "aal",
+      "flightNumber": "1408",
+      "originIcao": "KCLT",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn2547-maf-aus",
+      "category": "arrival",
+      "scheduledTime": "16:35",
+      "airlineIcao": "swa",
+      "flightNumber": "2547",
+      "originIcao": "KMAF",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn4143-aus-las",
+      "category": "departure",
+      "scheduledTime": "16:35",
+      "airlineIcao": "swa",
+      "flightNumber": "4143",
+      "originIcao": "KAUS",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-wn4424-aus-msy",
+      "category": "departure",
+      "scheduledTime": "16:35",
+      "airlineIcao": "swa",
+      "flightNumber": "4424",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMSY"
+    },
+    {
+      "id": "arrival-as540-pdx-aus",
+      "category": "arrival",
+      "scheduledTime": "16:38",
+      "airlineIcao": "asa",
+      "flightNumber": "540",
+      "originIcao": "KPDX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-aa1411-mia-aus",
+      "category": "arrival",
+      "scheduledTime": "16:40",
+      "airlineIcao": "aal",
+      "flightNumber": "1411",
+      "originIcao": "KMIA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn259-aus-bna",
+      "category": "departure",
+      "scheduledTime": "16:40",
+      "airlineIcao": "swa",
+      "flightNumber": "259",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3689-sna-aus",
+      "category": "arrival",
+      "scheduledTime": "16:45",
+      "airlineIcao": "swa",
+      "flightNumber": "3689",
+      "originIcao": "KSNA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn451-bna-aus",
+      "category": "arrival",
+      "scheduledTime": "16:45",
+      "airlineIcao": "swa",
+      "flightNumber": "451",
+      "originIcao": "KBNA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-dl1297-bos-aus",
+      "category": "arrival",
+      "scheduledTime": "16:46",
+      "airlineIcao": "dal",
+      "flightNumber": "1297",
+      "originIcao": "KBOS",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-dl1643-jfk-aus",
+      "category": "arrival",
+      "scheduledTime": "16:47",
+      "airlineIcao": "dal",
+      "flightNumber": "1643",
+      "originIcao": "KJFK",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-oo3669-aus-den",
+      "category": "departure",
+      "scheduledTime": "16:49",
+      "airlineIcao": "skw",
+      "flightNumber": "3669",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-wn5065-elp-aus",
+      "category": "arrival",
+      "scheduledTime": "16:50",
+      "airlineIcao": "swa",
+      "flightNumber": "5065",
+      "originIcao": "KELP",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn371-aus-okc",
+      "category": "departure",
+      "scheduledTime": "16:50",
+      "airlineIcao": "swa",
+      "flightNumber": "371",
+      "originIcao": "KAUS",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-dl1397-aus-atl",
+      "category": "departure",
+      "scheduledTime": "16:55",
+      "airlineIcao": "dal",
+      "flightNumber": "1397",
+      "originIcao": "KAUS",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-ua2270-den-aus",
+      "category": "arrival",
+      "scheduledTime": "16:58",
+      "airlineIcao": "ual",
+      "flightNumber": "2270",
+      "originIcao": "KDEN",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-ua376-aus-iad",
+      "category": "departure",
+      "scheduledTime": "17:00",
+      "airlineIcao": "ual",
+      "flightNumber": "376",
+      "originIcao": "KAUS",
+      "destinationIcao": "KIAD"
+    },
+    {
+      "id": "departure-wn1340-aus-mco",
+      "category": "departure",
+      "scheduledTime": "17:00",
+      "airlineIcao": "swa",
+      "flightNumber": "1340",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "arrival-dl1042-msp-aus",
+      "category": "arrival",
+      "scheduledTime": "17:01",
+      "airlineIcao": "dal",
+      "flightNumber": "1042",
+      "originIcao": "KMSP",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn483-cvg-aus",
+      "category": "arrival",
+      "scheduledTime": "17:05",
+      "airlineIcao": "swa",
+      "flightNumber": "483",
+      "originIcao": "KCVG",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn769-lgb-aus",
+      "category": "arrival",
+      "scheduledTime": "17:05",
+      "airlineIcao": "swa",
+      "flightNumber": "769",
+      "originIcao": "KLGB",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-oo3577-aus-mci",
+      "category": "departure",
+      "scheduledTime": "17:05",
+      "airlineIcao": "skw",
+      "flightNumber": "3577",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMCI"
+    },
+    {
+      "id": "departure-wn4779-aus-sfo",
+      "category": "departure",
+      "scheduledTime": "17:05",
+      "airlineIcao": "swa",
+      "flightNumber": "4779",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "t100-am-departure-mmmx-f-001",
+      "scheduledTime": "17:07",
+      "category": "departure",
+      "originIcao": "KAUS",
+      "destinationIcao": "MMMX",
+      "airlineIcao": "amx",
+      "flightNumber": "4956"
+    },
+    {
+      "id": "arrival-oo6205-ase-aus",
+      "category": "arrival",
+      "scheduledTime": "17:09",
+      "airlineIcao": "skw",
+      "flightNumber": "6205",
+      "originIcao": "KASE",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn4956-sea-aus",
+      "category": "arrival",
+      "scheduledTime": "17:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4956",
+      "originIcao": "KSEA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-mq3400-aus-dfw",
+      "category": "departure",
+      "scheduledTime": "17:15",
+      "airlineIcao": "eny",
+      "flightNumber": "3400",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-wn290-aus-den",
+      "category": "departure",
+      "scheduledTime": "17:15",
+      "airlineIcao": "swa",
+      "flightNumber": "290",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-dl831-sea-aus",
+      "category": "arrival",
+      "scheduledTime": "17:16",
+      "airlineIcao": "dal",
+      "flightNumber": "831",
+      "originIcao": "KSEA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-aa972-dfw-aus",
+      "category": "arrival",
+      "scheduledTime": "17:17",
+      "airlineIcao": "aal",
+      "flightNumber": "972",
+      "originIcao": "KDFW",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-dl1491-atl-aus",
+      "category": "arrival",
+      "scheduledTime": "17:19",
+      "airlineIcao": "dal",
+      "flightNumber": "1491",
+      "originIcao": "KATL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-ua1990-aus-ord",
+      "category": "departure",
+      "scheduledTime": "17:20",
+      "airlineIcao": "ual",
+      "flightNumber": "1990",
+      "originIcao": "KAUS",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-wn3793-aus-smf",
+      "category": "departure",
+      "scheduledTime": "17:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3793",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSMF"
+    },
+    {
+      "id": "departure-wn2539-aus-mci",
+      "category": "departure",
+      "scheduledTime": "17:25",
+      "airlineIcao": "swa",
+      "flightNumber": "2539",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMCI"
+    },
+    {
+      "id": "departure-wn4255-aus-hou",
+      "category": "departure",
+      "scheduledTime": "17:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4255",
+      "originIcao": "KAUS",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "departure-aa1408-aus-clt",
+      "category": "departure",
+      "scheduledTime": "17:26",
+      "airlineIcao": "aal",
+      "flightNumber": "1408",
+      "originIcao": "KAUS",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "arrival-ua1711-iah-aus",
+      "category": "arrival",
+      "scheduledTime": "17:27",
+      "airlineIcao": "ual",
+      "flightNumber": "1711",
+      "originIcao": "KIAH",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-aa1568-ord-aus",
+      "category": "arrival",
+      "scheduledTime": "17:30",
+      "airlineIcao": "aal",
+      "flightNumber": "1568",
+      "originIcao": "KORD",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-aa1411-aus-mia",
+      "category": "departure",
+      "scheduledTime": "17:30",
+      "airlineIcao": "aal",
+      "flightNumber": "1411",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-oo4016-msy-aus",
+      "category": "arrival",
+      "scheduledTime": "17:38",
+      "airlineIcao": "skw",
+      "flightNumber": "4016",
+      "originIcao": "KMSY",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-as1396-aus-pdx",
+      "category": "departure",
+      "scheduledTime": "17:41",
+      "airlineIcao": "asa",
+      "flightNumber": "1396",
+      "originIcao": "KAUS",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-b6639-bos-aus",
+      "category": "arrival",
+      "scheduledTime": "17:45",
+      "airlineIcao": "jbu",
+      "flightNumber": "639",
+      "originIcao": "KBOS",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-dl1297-aus-bos",
+      "category": "departure",
+      "scheduledTime": "17:45",
+      "airlineIcao": "dal",
+      "flightNumber": "1297",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-wn4426-aus-phx",
+      "category": "departure",
+      "scheduledTime": "17:45",
+      "airlineIcao": "swa",
+      "flightNumber": "4426",
+      "originIcao": "KAUS",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-wn391-aus-san",
+      "category": "departure",
+      "scheduledTime": "17:50",
+      "airlineIcao": "swa",
+      "flightNumber": "391",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "arrival-wn3609-smf-aus",
+      "category": "arrival",
+      "scheduledTime": "17:55",
+      "airlineIcao": "swa",
+      "flightNumber": "3609",
+      "originIcao": "KSMF",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn3633-sfo-aus",
+      "category": "arrival",
+      "scheduledTime": "17:55",
+      "airlineIcao": "swa",
+      "flightNumber": "3633",
+      "originIcao": "KSFO",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn329-aus-las",
+      "category": "departure",
+      "scheduledTime": "17:55",
+      "airlineIcao": "swa",
+      "flightNumber": "329",
+      "originIcao": "KAUS",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "arrival-dl2581-slc-aus",
+      "category": "arrival",
+      "scheduledTime": "17:57",
+      "airlineIcao": "dal",
+      "flightNumber": "2581",
+      "originIcao": "KSLC",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-dl1643-aus-jfk",
+      "category": "departure",
+      "scheduledTime": "18:00",
+      "airlineIcao": "dal",
+      "flightNumber": "1643",
+      "originIcao": "KAUS",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "arrival-as604-sea-aus",
+      "category": "arrival",
+      "scheduledTime": "18:04",
+      "airlineIcao": "asa",
+      "flightNumber": "604",
+      "originIcao": "KSEA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-ua1326-aus-iah",
+      "category": "departure",
+      "scheduledTime": "18:04",
+      "airlineIcao": "ual",
+      "flightNumber": "1326",
+      "originIcao": "KAUS",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-dl1042-aus-msp",
+      "category": "departure",
+      "scheduledTime": "18:06",
+      "airlineIcao": "dal",
+      "flightNumber": "1042",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "arrival-ua2289-ewr-aus",
+      "category": "arrival",
+      "scheduledTime": "18:11",
+      "airlineIcao": "ual",
+      "flightNumber": "2289",
+      "originIcao": "KEWR",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-oo3767-ecp-aus",
+      "category": "arrival",
+      "scheduledTime": "18:13",
+      "airlineIcao": "skw",
+      "flightNumber": "3767",
+      "originIcao": "KECP",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-dl831-aus-sea",
+      "category": "departure",
+      "scheduledTime": "18:14",
+      "airlineIcao": "dal",
+      "flightNumber": "831",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-oo6410-aus-dfw",
+      "category": "departure",
+      "scheduledTime": "18:20",
+      "airlineIcao": "skw",
+      "flightNumber": "6410",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-wn65-aus-lax",
+      "category": "departure",
+      "scheduledTime": "18:20",
+      "airlineIcao": "swa",
+      "flightNumber": "65",
+      "originIcao": "KAUS",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "arrival-mq3402-dfw-aus",
+      "category": "arrival",
+      "scheduledTime": "18:22",
+      "airlineIcao": "eny",
+      "flightNumber": "3402",
+      "originIcao": "KDFW",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-dl1491-aus-atl",
+      "category": "departure",
+      "scheduledTime": "18:24",
+      "airlineIcao": "dal",
+      "flightNumber": "1491",
+      "originIcao": "KAUS",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-aa1398-aus-ord",
+      "category": "departure",
+      "scheduledTime": "18:26",
+      "airlineIcao": "aal",
+      "flightNumber": "1398",
+      "originIcao": "KAUS",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-ua439-aus-den",
+      "category": "departure",
+      "scheduledTime": "18:29",
+      "airlineIcao": "ual",
+      "flightNumber": "439",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-oo4053-mfe-aus",
+      "category": "arrival",
+      "scheduledTime": "18:32",
+      "airlineIcao": "skw",
+      "flightNumber": "4053",
+      "originIcao": "KMFE",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn867-bwi-aus",
+      "category": "arrival",
+      "scheduledTime": "18:35",
+      "airlineIcao": "swa",
+      "flightNumber": "867",
+      "originIcao": "KBWI",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn1316-aus-dal",
+      "category": "departure",
+      "scheduledTime": "18:35",
+      "airlineIcao": "swa",
+      "flightNumber": "1316",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "departure-wn2759-aus-den",
+      "category": "departure",
+      "scheduledTime": "18:40",
+      "airlineIcao": "swa",
+      "flightNumber": "2759",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-dl1612-dtw-aus",
+      "category": "arrival",
+      "scheduledTime": "18:41",
+      "airlineIcao": "dal",
+      "flightNumber": "1612",
+      "originIcao": "KDTW",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-b6638-aus-bos",
+      "category": "departure",
+      "scheduledTime": "18:42",
+      "airlineIcao": "jbu",
+      "flightNumber": "638",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "arrival-ua1899-den-aus",
+      "category": "arrival",
+      "scheduledTime": "18:48",
+      "airlineIcao": "ual",
+      "flightNumber": "1899",
+      "originIcao": "KDEN",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn1689-dal-aus",
+      "category": "arrival",
+      "scheduledTime": "18:50",
+      "airlineIcao": "swa",
+      "flightNumber": "1689",
+      "originIcao": "KDAL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn435-atl-aus",
+      "category": "arrival",
+      "scheduledTime": "18:55",
+      "airlineIcao": "swa",
+      "flightNumber": "435",
+      "originIcao": "KATL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-oo4163-aus-bna",
+      "category": "departure",
+      "scheduledTime": "18:57",
+      "airlineIcao": "skw",
+      "flightNumber": "4163",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-vb-arrival-mmmy-f-001",
+      "scheduledTime": "18:57",
+      "category": "arrival",
+      "originIcao": "MMMY",
+      "destinationIcao": "KAUS",
+      "airlineIcao": "viv",
+      "flightNumber": "9528"
+    },
+    {
+      "id": "arrival-wn696-bos-aus",
+      "category": "arrival",
+      "scheduledTime": "19:00",
+      "airlineIcao": "swa",
+      "flightNumber": "696",
+      "originIcao": "KBOS",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-ua1116-sfo-aus",
+      "category": "arrival",
+      "scheduledTime": "19:05",
+      "airlineIcao": "ual",
+      "flightNumber": "1116",
+      "originIcao": "KSFO",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn417-las-aus",
+      "category": "arrival",
+      "scheduledTime": "19:05",
+      "airlineIcao": "swa",
+      "flightNumber": "417",
+      "originIcao": "KLAS",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-as339-aus-sea",
+      "category": "departure",
+      "scheduledTime": "19:07",
+      "airlineIcao": "asa",
+      "flightNumber": "339",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-ua1711-aus-ewr",
+      "category": "departure",
+      "scheduledTime": "19:07",
+      "airlineIcao": "ual",
+      "flightNumber": "1711",
+      "originIcao": "KAUS",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "arrival-wn2561-mia-aus",
+      "category": "arrival",
+      "scheduledTime": "19:10",
+      "airlineIcao": "swa",
+      "flightNumber": "2561",
+      "originIcao": "KMIA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn422-ind-aus",
+      "category": "arrival",
+      "scheduledTime": "19:10",
+      "airlineIcao": "swa",
+      "flightNumber": "422",
+      "originIcao": "KIND",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn950-mdw-aus",
+      "category": "arrival",
+      "scheduledTime": "19:10",
+      "airlineIcao": "swa",
+      "flightNumber": "950",
+      "originIcao": "KMDW",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-oo3731-aus-ind",
+      "category": "departure",
+      "scheduledTime": "19:15",
+      "airlineIcao": "skw",
+      "flightNumber": "3731",
+      "originIcao": "KAUS",
+      "destinationIcao": "KIND"
+    },
+    {
+      "id": "departure-wn479-aus-ind",
+      "category": "departure",
+      "scheduledTime": "19:15",
+      "airlineIcao": "swa",
+      "flightNumber": "479",
+      "originIcao": "KAUS",
+      "destinationIcao": "KIND"
+    },
+    {
+      "id": "arrival-oo3250-san-aus",
+      "category": "arrival",
+      "scheduledTime": "19:19",
+      "airlineIcao": "skw",
+      "flightNumber": "3250",
+      "originIcao": "KSAN",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn4818-rdu-aus",
+      "category": "arrival",
+      "scheduledTime": "19:20",
+      "airlineIcao": "swa",
+      "flightNumber": "4818",
+      "originIcao": "KRDU",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-dl2581-aus-slc",
+      "category": "departure",
+      "scheduledTime": "19:25",
+      "airlineIcao": "dal",
+      "flightNumber": "2581",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-wn294-bna-aus",
+      "category": "arrival",
+      "scheduledTime": "19:30",
+      "airlineIcao": "swa",
+      "flightNumber": "294",
+      "originIcao": "KBNA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn1056-aus-rdu",
+      "category": "departure",
+      "scheduledTime": "19:30",
+      "airlineIcao": "swa",
+      "flightNumber": "1056",
+      "originIcao": "KAUS",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-wn354-aus-mco",
+      "category": "departure",
+      "scheduledTime": "19:35",
+      "airlineIcao": "swa",
+      "flightNumber": "354",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "arrival-wn2011-hrl-aus",
+      "category": "arrival",
+      "scheduledTime": "19:40",
+      "airlineIcao": "swa",
+      "flightNumber": "2011",
+      "originIcao": "KHRL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn417-aus-tpa",
+      "category": "departure",
+      "scheduledTime": "19:40",
+      "airlineIcao": "swa",
+      "flightNumber": "417",
+      "originIcao": "KAUS",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "arrival-aa2892-phx-aus",
+      "category": "arrival",
+      "scheduledTime": "19:43",
+      "airlineIcao": "aal",
+      "flightNumber": "2892",
+      "originIcao": "KPHX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-ua1871-aus-iah",
+      "category": "departure",
+      "scheduledTime": "19:44",
+      "airlineIcao": "ual",
+      "flightNumber": "1871",
+      "originIcao": "KAUS",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-wn330-aus-las",
+      "category": "departure",
+      "scheduledTime": "19:45",
+      "airlineIcao": "swa",
+      "flightNumber": "330",
+      "originIcao": "KAUS",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-wn950-aus-hrl",
+      "category": "departure",
+      "scheduledTime": "19:45",
+      "airlineIcao": "swa",
+      "flightNumber": "950",
+      "originIcao": "KAUS",
+      "destinationIcao": "KHRL"
+    },
+    {
+      "id": "departure-wn438-aus-atl",
+      "category": "departure",
+      "scheduledTime": "19:50",
+      "airlineIcao": "swa",
+      "flightNumber": "438",
+      "originIcao": "KAUS",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-ba-departure-egll-f-001",
+      "scheduledTime": "19:53",
+      "category": "departure",
+      "originIcao": "KAUS",
+      "destinationIcao": "EGLL",
+      "airlineIcao": "baw",
+      "flightNumber": "1094"
+    },
+    {
+      "id": "departure-mq3402-aus-dfw",
+      "category": "departure",
+      "scheduledTime": "19:54",
+      "airlineIcao": "eny",
+      "flightNumber": "3402",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-oo3952-aus-mem",
+      "category": "departure",
+      "scheduledTime": "19:55",
+      "airlineIcao": "skw",
+      "flightNumber": "3952",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "departure-wn4818-aus-lbb",
+      "category": "departure",
+      "scheduledTime": "19:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4818",
+      "originIcao": "KAUS",
+      "destinationIcao": "KLBB"
+    },
+    {
+      "id": "arrival-dl2524-mco-aus",
+      "category": "arrival",
+      "scheduledTime": "19:57",
+      "airlineIcao": "dal",
+      "flightNumber": "2524",
+      "originIcao": "KMCO",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-ua2674-iah-aus",
+      "category": "arrival",
+      "scheduledTime": "19:57",
+      "airlineIcao": "ual",
+      "flightNumber": "2674",
+      "originIcao": "KIAH",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-oo3249-aus-san",
+      "category": "departure",
+      "scheduledTime": "19:59",
+      "airlineIcao": "skw",
+      "flightNumber": "3249",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "arrival-wn882-abq-aus",
+      "category": "arrival",
+      "scheduledTime": "20:00",
+      "airlineIcao": "swa",
+      "flightNumber": "882",
+      "originIcao": "KABQ",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-ua292-aus-sfo",
+      "category": "departure",
+      "scheduledTime": "20:01",
+      "airlineIcao": "ual",
+      "flightNumber": "292",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "arrival-aa789-dfw-aus",
+      "category": "arrival",
+      "scheduledTime": "20:03",
+      "airlineIcao": "aal",
+      "flightNumber": "789",
+      "originIcao": "KDFW",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn2593-dca-aus",
+      "category": "arrival",
+      "scheduledTime": "20:05",
+      "airlineIcao": "swa",
+      "flightNumber": "2593",
+      "originIcao": "KDCA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn3125-phx-aus",
+      "category": "arrival",
+      "scheduledTime": "20:05",
+      "airlineIcao": "swa",
+      "flightNumber": "3125",
+      "originIcao": "KPHX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn294-aus-den",
+      "category": "departure",
+      "scheduledTime": "20:05",
+      "airlineIcao": "swa",
+      "flightNumber": "294",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-wn3733-slc-aus",
+      "category": "arrival",
+      "scheduledTime": "20:10",
+      "airlineIcao": "swa",
+      "flightNumber": "3733",
+      "originIcao": "KSLC",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn766-mci-aus",
+      "category": "arrival",
+      "scheduledTime": "20:10",
+      "airlineIcao": "swa",
+      "flightNumber": "766",
+      "originIcao": "KMCI",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn378-aus-phx",
+      "category": "departure",
+      "scheduledTime": "20:10",
+      "airlineIcao": "swa",
+      "flightNumber": "378",
+      "originIcao": "KAUS",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "arrival-oo4027-ind-aus",
+      "category": "arrival",
+      "scheduledTime": "20:14",
+      "airlineIcao": "skw",
+      "flightNumber": "4027",
+      "originIcao": "KIND",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn2184-las-aus",
+      "category": "arrival",
+      "scheduledTime": "20:15",
+      "airlineIcao": "swa",
+      "flightNumber": "2184",
+      "originIcao": "KLAS",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn4402-mco-aus",
+      "category": "arrival",
+      "scheduledTime": "20:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4402",
+      "originIcao": "KMCO",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-dl1170-atl-aus",
+      "category": "arrival",
+      "scheduledTime": "20:22",
+      "airlineIcao": "dal",
+      "flightNumber": "1170",
+      "originIcao": "KATL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn324-aus-abq",
+      "category": "departure",
+      "scheduledTime": "20:25",
+      "airlineIcao": "swa",
+      "flightNumber": "324",
+      "originIcao": "KAUS",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-aa1314-phl-aus",
+      "category": "arrival",
+      "scheduledTime": "20:30",
+      "airlineIcao": "aal",
+      "flightNumber": "1314",
+      "originIcao": "KPHL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-ua2337-iad-aus",
+      "category": "arrival",
+      "scheduledTime": "20:35",
+      "airlineIcao": "ual",
+      "flightNumber": "2337",
+      "originIcao": "KIAD",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-dl1584-aus-lax",
+      "category": "departure",
+      "scheduledTime": "20:37",
+      "airlineIcao": "dal",
+      "flightNumber": "1584",
+      "originIcao": "KAUS",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-aa1291-aus-lax",
+      "category": "departure",
+      "scheduledTime": "20:43",
+      "airlineIcao": "aal",
+      "flightNumber": "1291",
+      "originIcao": "KAUS",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-wn2651-aus-bna",
+      "category": "departure",
+      "scheduledTime": "20:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2651",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn1255-aus-dal",
+      "category": "departure",
+      "scheduledTime": "20:50",
+      "airlineIcao": "swa",
+      "flightNumber": "1255",
+      "originIcao": "KAUS",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "departure-wn361-aus-mdw",
+      "category": "departure",
+      "scheduledTime": "20:50",
+      "airlineIcao": "swa",
+      "flightNumber": "361",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "departure-wn441-aus-elp",
+      "category": "departure",
+      "scheduledTime": "20:50",
+      "airlineIcao": "swa",
+      "flightNumber": "441",
+      "originIcao": "KAUS",
+      "destinationIcao": "KELP"
+    },
+    {
+      "id": "departure-wn557-aus-bur",
+      "category": "departure",
+      "scheduledTime": "20:50",
+      "airlineIcao": "swa",
+      "flightNumber": "557",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBUR"
+    },
+    {
+      "id": "arrival-dl1233-jfk-aus",
+      "category": "arrival",
+      "scheduledTime": "20:53",
+      "airlineIcao": "dal",
+      "flightNumber": "1233",
+      "originIcao": "KJFK",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn1232-aus-sjc",
+      "category": "departure",
+      "scheduledTime": "20:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1232",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSJC"
+    },
+    {
+      "id": "departure-wn952-aus-slc",
+      "category": "departure",
+      "scheduledTime": "20:55",
+      "airlineIcao": "swa",
+      "flightNumber": "952",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-aa1905-clt-aus",
+      "category": "arrival",
+      "scheduledTime": "20:57",
+      "airlineIcao": "aal",
+      "flightNumber": "1905",
+      "originIcao": "KCLT",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-dl622-lax-aus",
+      "category": "arrival",
+      "scheduledTime": "20:58",
+      "airlineIcao": "dal",
+      "flightNumber": "622",
+      "originIcao": "KLAX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-dl2344-mia-aus",
+      "category": "arrival",
+      "scheduledTime": "21:13",
+      "airlineIcao": "dal",
+      "flightNumber": "2344",
+      "originIcao": "KMIA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-oo3945-bna-aus",
+      "category": "arrival",
+      "scheduledTime": "21:19",
+      "airlineIcao": "skw",
+      "flightNumber": "3945",
+      "originIcao": "KBNA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-ua2621-iah-aus",
+      "category": "arrival",
+      "scheduledTime": "21:25",
+      "airlineIcao": "ual",
+      "flightNumber": "2621",
+      "originIcao": "KIAH",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-dl2728-slc-aus",
+      "category": "arrival",
+      "scheduledTime": "21:30",
+      "airlineIcao": "dal",
+      "flightNumber": "2728",
+      "originIcao": "KSLC",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn245-mco-aus",
+      "category": "arrival",
+      "scheduledTime": "21:35",
+      "airlineIcao": "swa",
+      "flightNumber": "245",
+      "originIcao": "KMCO",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-aa2707-dfw-aus",
+      "category": "arrival",
+      "scheduledTime": "21:37",
+      "airlineIcao": "aal",
+      "flightNumber": "2707",
+      "originIcao": "KDFW",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-aa2629-mia-aus",
+      "category": "arrival",
+      "scheduledTime": "21:40",
+      "airlineIcao": "aal",
+      "flightNumber": "2629",
+      "originIcao": "KMIA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-oo4979-lax-aus",
+      "category": "arrival",
+      "scheduledTime": "21:44",
+      "airlineIcao": "skw",
+      "flightNumber": "4979",
+      "originIcao": "KLAX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-ua2332-sfo-aus",
+      "category": "arrival",
+      "scheduledTime": "21:53",
+      "airlineIcao": "ual",
+      "flightNumber": "2332",
+      "originIcao": "KSFO",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-ua1942-den-aus",
+      "category": "arrival",
+      "scheduledTime": "21:57",
+      "airlineIcao": "ual",
+      "flightNumber": "1942",
+      "originIcao": "KDEN",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-oo3734-tpa-aus",
+      "category": "arrival",
+      "scheduledTime": "21:58",
+      "airlineIcao": "skw",
+      "flightNumber": "3734",
+      "originIcao": "KTPA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-aa1715-ord-aus",
+      "category": "arrival",
+      "scheduledTime": "22:00",
+      "airlineIcao": "aal",
+      "flightNumber": "1715",
+      "originIcao": "KORD",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-oo3577-mci-aus",
+      "category": "arrival",
+      "scheduledTime": "22:00",
+      "airlineIcao": "skw",
+      "flightNumber": "3577",
+      "originIcao": "KMCI",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn1793-elp-aus",
+      "category": "arrival",
+      "scheduledTime": "22:05",
+      "airlineIcao": "swa",
+      "flightNumber": "1793",
+      "originIcao": "KELP",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn690-san-aus",
+      "category": "arrival",
+      "scheduledTime": "22:05",
+      "airlineIcao": "swa",
+      "flightNumber": "690",
+      "originIcao": "KSAN",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-dl2260-las-aus",
+      "category": "arrival",
+      "scheduledTime": "22:06",
+      "airlineIcao": "dal",
+      "flightNumber": "2260",
+      "originIcao": "KLAS",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-dl2578-dtw-aus",
+      "category": "arrival",
+      "scheduledTime": "22:06",
+      "airlineIcao": "dal",
+      "flightNumber": "2578",
+      "originIcao": "KDTW",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-dl1081-atl-aus",
+      "category": "arrival",
+      "scheduledTime": "22:07",
+      "airlineIcao": "dal",
+      "flightNumber": "1081",
+      "originIcao": "KATL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn4463-den-aus",
+      "category": "arrival",
+      "scheduledTime": "22:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4463",
+      "originIcao": "KDEN",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-aa434-clt-aus",
+      "category": "arrival",
+      "scheduledTime": "22:17",
+      "airlineIcao": "aal",
+      "flightNumber": "434",
+      "originIcao": "KCLT",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-aa3026-jfk-aus",
+      "category": "arrival",
+      "scheduledTime": "22:18",
+      "airlineIcao": "aal",
+      "flightNumber": "3026",
+      "originIcao": "KJFK",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn4001-tpa-aus",
+      "category": "arrival",
+      "scheduledTime": "22:20",
+      "airlineIcao": "swa",
+      "flightNumber": "4001",
+      "originIcao": "KTPA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-dl2749-msp-aus",
+      "category": "arrival",
+      "scheduledTime": "22:25",
+      "airlineIcao": "dal",
+      "flightNumber": "2749",
+      "originIcao": "KMSP",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn4169-hou-aus",
+      "category": "arrival",
+      "scheduledTime": "22:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4169",
+      "originIcao": "KHOU",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "t100-g4-arrival-kcvg-f-001",
+      "scheduledTime": "22:31",
+      "category": "arrival",
+      "originIcao": "KCVG",
+      "destinationIcao": "KAUS",
+      "airlineIcao": "aay",
+      "flightNumber": "2279"
+    },
+    {
+      "id": "arrival-ua676-ewr-aus",
+      "category": "arrival",
+      "scheduledTime": "22:33",
+      "airlineIcao": "ual",
+      "flightNumber": "676",
+      "originIcao": "KEWR",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-oo4067-aus-mfe",
+      "category": "departure",
+      "scheduledTime": "22:39",
+      "airlineIcao": "skw",
+      "flightNumber": "4067",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMFE"
+    },
+    {
+      "id": "arrival-wn3425-bwi-aus",
+      "category": "arrival",
+      "scheduledTime": "22:50",
+      "airlineIcao": "swa",
+      "flightNumber": "3425",
+      "originIcao": "KBWI",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-oo3669-den-aus",
+      "category": "arrival",
+      "scheduledTime": "22:51",
+      "airlineIcao": "skw",
+      "flightNumber": "3669",
+      "originIcao": "KDEN",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-ua312-ord-aus",
+      "category": "arrival",
+      "scheduledTime": "22:54",
+      "airlineIcao": "ual",
+      "flightNumber": "312",
+      "originIcao": "KORD",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn1515-dal-aus",
+      "category": "arrival",
+      "scheduledTime": "22:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1515",
+      "originIcao": "KDAL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn1558-phx-aus",
+      "category": "arrival",
+      "scheduledTime": "22:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1558",
+      "originIcao": "KPHX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-oo3292-san-aus",
+      "category": "arrival",
+      "scheduledTime": "23:00",
+      "airlineIcao": "skw",
+      "flightNumber": "3292",
+      "originIcao": "KSAN",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-b62271-fll-aus",
+      "category": "arrival",
+      "scheduledTime": "23:08",
+      "airlineIcao": "jbu",
+      "flightNumber": "2271",
+      "originIcao": "KFLL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-dl1677-bos-aus",
+      "category": "arrival",
+      "scheduledTime": "23:09",
+      "airlineIcao": "dal",
+      "flightNumber": "1677",
+      "originIcao": "KBOS",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-ua1179-iah-aus",
+      "category": "arrival",
+      "scheduledTime": "23:12",
+      "airlineIcao": "ual",
+      "flightNumber": "1179",
+      "originIcao": "KIAH",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-ua2645-ewr-aus",
+      "category": "arrival",
+      "scheduledTime": "23:20",
+      "airlineIcao": "ual",
+      "flightNumber": "2645",
+      "originIcao": "KEWR",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-dl692-lax-aus",
+      "category": "arrival",
+      "scheduledTime": "23:29",
+      "airlineIcao": "dal",
+      "flightNumber": "692",
+      "originIcao": "KLAX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn4011-sjc-aus",
+      "category": "arrival",
+      "scheduledTime": "23:30",
+      "airlineIcao": "swa",
+      "flightNumber": "4011",
+      "originIcao": "KSJC",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-dl1077-sfo-aus",
+      "category": "arrival",
+      "scheduledTime": "23:32",
+      "airlineIcao": "dal",
+      "flightNumber": "1077",
+      "originIcao": "KSFO",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn4710-las-aus",
+      "category": "arrival",
+      "scheduledTime": "23:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4710",
+      "originIcao": "KLAS",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-ua1943-den-aus",
+      "category": "arrival",
+      "scheduledTime": "23:44",
+      "airlineIcao": "ual",
+      "flightNumber": "1943",
+      "originIcao": "KDEN",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-as1370-pdx-aus",
+      "category": "arrival",
+      "scheduledTime": "23:49",
+      "airlineIcao": "asa",
+      "flightNumber": "1370",
+      "originIcao": "KPDX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-aa1588-dfw-aus",
+      "category": "arrival",
+      "scheduledTime": "23:51",
+      "airlineIcao": "aal",
+      "flightNumber": "1588",
+      "originIcao": "KDFW",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-dl848-sea-aus",
+      "category": "arrival",
+      "scheduledTime": "23:53",
+      "airlineIcao": "dal",
+      "flightNumber": "848",
+      "originIcao": "KSEA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-aa2118-lax-aus",
+      "category": "arrival",
+      "scheduledTime": "23:55",
+      "airlineIcao": "aal",
+      "flightNumber": "2118",
+      "originIcao": "KLAX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn4515-stl-aus",
+      "category": "arrival",
+      "scheduledTime": "23:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4515",
+      "originIcao": "KSTL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn454-bna-aus",
+      "category": "arrival",
+      "scheduledTime": "23:55",
+      "airlineIcao": "swa",
+      "flightNumber": "454",
+      "originIcao": "KBNA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn775-mdw-aus",
+      "category": "arrival",
+      "scheduledTime": "23:55",
+      "airlineIcao": "swa",
+      "flightNumber": "775",
+      "originIcao": "KMDW",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-aa691-phx-aus",
+      "category": "arrival",
+      "scheduledTime": "23:57",
+      "airlineIcao": "aal",
+      "flightNumber": "691",
+      "originIcao": "KPHX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-aa1427-mia-aus",
+      "category": "arrival",
+      "scheduledTime": "23:59",
+      "airlineIcao": "aal",
+      "flightNumber": "1427",
+      "originIcao": "KMIA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-aa935-ord-aus",
+      "category": "arrival",
+      "scheduledTime": "23:59",
+      "airlineIcao": "aal",
+      "flightNumber": "935",
+      "originIcao": "KORD",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-oo5456-lax-aus",
+      "category": "arrival",
+      "scheduledTime": "23:59",
+      "airlineIcao": "skw",
+      "flightNumber": "5456",
+      "originIcao": "KLAX",
+      "destinationIcao": "KAUS"
+    }
+  ]
+}

@@ -1,0 +1,3777 @@
+{
+  "schemaVersion": 1,
+  "airportIcao": "KMEM",
+  "timezone": "America/Chicago",
+  "sampleDate": "2026-07-15",
+  "source": {
+    "name": "US DOT BTS On-Time Performance + T-100 Segment (All Carriers)",
+    "url": "https://transtats.bts.gov/DL_SelectFields.aspx?QO_fu146_anzr=Nv4+Pn44vr45&gnoyr_VQ=FMG",
+    "retrievedAt": "2026-09-27",
+    "license": "U.S. Government work in the public domain (17 U.S.C. §105); OurAirports code data is public domain.",
+    "coverage": "Exact On-Time movements are retained; 274 representative movements were deterministically synthesized from 2026-05 T-100 performed-departure aggregates. General aviation is excluded."
+  },
+  "flights": [
+    {
+      "id": "t100-fx-arrival-kcpr-g-001",
+      "scheduledTime": "00:01",
+      "category": "arrival",
+      "originIcao": "KCPR",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3950"
+    },
+    {
+      "id": "t100-fx-arrival-ktpa-g-001",
+      "scheduledTime": "00:01",
+      "category": "arrival",
+      "originIcao": "KTPA",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "5410"
+    },
+    {
+      "id": "arrival-aa1646-dfw-mem",
+      "category": "arrival",
+      "scheduledTime": "00:04",
+      "airlineIcao": "aal",
+      "flightNumber": "1646",
+      "originIcao": "KDFW",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kmci-g-001",
+      "scheduledTime": "00:06",
+      "category": "arrival",
+      "originIcao": "KMCI",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "2850"
+    },
+    {
+      "id": "t100-fx-arrival-kmke-g-001",
+      "scheduledTime": "00:08",
+      "category": "arrival",
+      "originIcao": "KMKE",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "654"
+    },
+    {
+      "id": "t100-fx-arrival-ksgf-g-001",
+      "scheduledTime": "00:16",
+      "category": "arrival",
+      "originIcao": "KSGF",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "8591"
+    },
+    {
+      "id": "t100-fx-arrival-kmia-g-003",
+      "scheduledTime": "00:17",
+      "category": "arrival",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "7387"
+    },
+    {
+      "id": "arrival-mq3945-ord-mem",
+      "category": "arrival",
+      "scheduledTime": "00:18",
+      "airlineIcao": "eny",
+      "flightNumber": "3945",
+      "originIcao": "KORD",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-departure-kelp-g-001",
+      "scheduledTime": "04:56",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KELP",
+      "airlineIcao": "fdx",
+      "flightNumber": "3157"
+    },
+    {
+      "id": "t100-fx-departure-ksat-g-001",
+      "scheduledTime": "04:59",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KSAT",
+      "airlineIcao": "fdx",
+      "flightNumber": "1034"
+    },
+    {
+      "id": "departure-aa978-mem-clt",
+      "category": "departure",
+      "scheduledTime": "05:00",
+      "airlineIcao": "aal",
+      "flightNumber": "978",
+      "originIcao": "KMEM",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "t100-fx-departure-mmto-g-001",
+      "scheduledTime": "05:14",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "MMTO",
+      "airlineIcao": "fdx",
+      "flightNumber": "6377"
+    },
+    {
+      "id": "departure-dl1666-mem-atl",
+      "category": "departure",
+      "scheduledTime": "05:15",
+      "airlineIcao": "dal",
+      "flightNumber": "1666",
+      "originIcao": "KMEM",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-fx-departure-cyow-g-001",
+      "scheduledTime": "05:18",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "CYOW",
+      "airlineIcao": "fdx",
+      "flightNumber": "6102"
+    },
+    {
+      "id": "t100-fx-departure-klck-g-001",
+      "scheduledTime": "05:19",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KLCK",
+      "airlineIcao": "fdx",
+      "flightNumber": "929"
+    },
+    {
+      "id": "departure-wn297-mem-mdw",
+      "category": "departure",
+      "scheduledTime": "05:20",
+      "airlineIcao": "swa",
+      "flightNumber": "297",
+      "originIcao": "KMEM",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "t100-fx-departure-kswf-g-001",
+      "scheduledTime": "05:22",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KSWF",
+      "airlineIcao": "fdx",
+      "flightNumber": "4247"
+    },
+    {
+      "id": "t100-fx-departure-kgso-g-001",
+      "scheduledTime": "05:31",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KGSO",
+      "airlineIcao": "fdx",
+      "flightNumber": "847"
+    },
+    {
+      "id": "departure-aa1340-mem-mia",
+      "category": "departure",
+      "scheduledTime": "05:34",
+      "airlineIcao": "aal",
+      "flightNumber": "1340",
+      "originIcao": "KMEM",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-fx-departure-kbos-g-001",
+      "scheduledTime": "05:34",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KBOS",
+      "airlineIcao": "fdx",
+      "flightNumber": "5101"
+    },
+    {
+      "id": "t100-fx-departure-klbb-g-001",
+      "scheduledTime": "05:47",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KLBB",
+      "airlineIcao": "fdx",
+      "flightNumber": "7362"
+    },
+    {
+      "id": "departure-wn2914-mem-hou",
+      "category": "departure",
+      "scheduledTime": "05:50",
+      "airlineIcao": "swa",
+      "flightNumber": "2914",
+      "originIcao": "KMEM",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "departure-aa1884-mem-dfw",
+      "category": "departure",
+      "scheduledTime": "05:51",
+      "airlineIcao": "aal",
+      "flightNumber": "1884",
+      "originIcao": "KMEM",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "t100-9x-departure-khro-f-001",
+      "scheduledTime": "05:51",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KHRO",
+      "airlineIcao": "fdy",
+      "flightNumber": "4120"
+    },
+    {
+      "id": "t100-fx-departure-kshv-g-001",
+      "scheduledTime": "05:52",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KSHV",
+      "airlineIcao": "fdx",
+      "flightNumber": "6060"
+    },
+    {
+      "id": "t100-fx-departure-katl-g-002",
+      "scheduledTime": "05:56",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KATL",
+      "airlineIcao": "fdx",
+      "flightNumber": "4418"
+    },
+    {
+      "id": "t100-fx-departure-kcle-g-001",
+      "scheduledTime": "05:57",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KCLE",
+      "airlineIcao": "fdx",
+      "flightNumber": "5527"
+    },
+    {
+      "id": "t100-fx-departure-klas-g-001",
+      "scheduledTime": "05:59",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KLAS",
+      "airlineIcao": "fdx",
+      "flightNumber": "2771"
+    },
+    {
+      "id": "t100-fx-departure-kmsy-g-001",
+      "scheduledTime": "05:59",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KMSY",
+      "airlineIcao": "fdx",
+      "flightNumber": "3362"
+    },
+    {
+      "id": "t100-fx-departure-kstl-g-001",
+      "scheduledTime": "05:59",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KSTL",
+      "airlineIcao": "fdx",
+      "flightNumber": "1721"
+    },
+    {
+      "id": "departure-oo3899-mem-msp",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "skw",
+      "flightNumber": "3899",
+      "originIcao": "KMEM",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "departure-yx3642-mem-ewr",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "rpa",
+      "flightNumber": "3642",
+      "originIcao": "KMEM",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "departure-yx4564-mem-lga",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "rpa",
+      "flightNumber": "4564",
+      "originIcao": "KMEM",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-yx5604-mem-bos",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "rpa",
+      "flightNumber": "5604",
+      "originIcao": "KMEM",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "t100-fx-departure-rjaa-g-001",
+      "scheduledTime": "06:00",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "RJAA",
+      "airlineIcao": "fdx",
+      "flightNumber": "2418"
+    },
+    {
+      "id": "t100-fx-departure-kjax-g-001",
+      "scheduledTime": "06:04",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KJAX",
+      "airlineIcao": "fdx",
+      "flightNumber": "4903"
+    },
+    {
+      "id": "t100-fx-departure-kmke-g-001",
+      "scheduledTime": "06:04",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KMKE",
+      "airlineIcao": "fdx",
+      "flightNumber": "4570"
+    },
+    {
+      "id": "t100-fx-departure-panc-g-002",
+      "scheduledTime": "06:07",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "PANC",
+      "airlineIcao": "fdx",
+      "flightNumber": "5568"
+    },
+    {
+      "id": "departure-oh5468-mem-phl",
+      "category": "departure",
+      "scheduledTime": "06:11",
+      "airlineIcao": "jia",
+      "flightNumber": "5468",
+      "originIcao": "KMEM",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "t100-fx-departure-koak-g-003",
+      "scheduledTime": "06:12",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KOAK",
+      "airlineIcao": "fdx",
+      "flightNumber": "7202"
+    },
+    {
+      "id": "t100-fx-departure-kmia-g-002",
+      "scheduledTime": "06:16",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "fdx",
+      "flightNumber": "969"
+    },
+    {
+      "id": "departure-dl1624-mem-atl",
+      "category": "departure",
+      "scheduledTime": "06:20",
+      "airlineIcao": "dal",
+      "flightNumber": "1624",
+      "originIcao": "KMEM",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-mq3758-mem-ord",
+      "category": "departure",
+      "scheduledTime": "06:20",
+      "airlineIcao": "eny",
+      "flightNumber": "3758",
+      "originIcao": "KMEM",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-fx-departure-kdfw-g-001",
+      "scheduledTime": "06:22",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KDFW",
+      "airlineIcao": "fdx",
+      "flightNumber": "8948"
+    },
+    {
+      "id": "t100-fx-departure-tjbq-g-001",
+      "scheduledTime": "06:23",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "TJBQ",
+      "airlineIcao": "fdx",
+      "flightNumber": "6430"
+    },
+    {
+      "id": "t100-fx-departure-ksfo-g-001",
+      "scheduledTime": "06:24",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KSFO",
+      "airlineIcao": "fdx",
+      "flightNumber": "3034"
+    },
+    {
+      "id": "t100-fx-departure-khsv-g-001",
+      "scheduledTime": "06:28",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KHSV",
+      "airlineIcao": "fdx",
+      "flightNumber": "4940"
+    },
+    {
+      "id": "departure-dl2370-mem-dtw",
+      "category": "departure",
+      "scheduledTime": "06:32",
+      "airlineIcao": "dal",
+      "flightNumber": "2370",
+      "originIcao": "KMEM",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "t100-fx-departure-katl-g-001",
+      "scheduledTime": "06:32",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KATL",
+      "airlineIcao": "fdx",
+      "flightNumber": "7171"
+    },
+    {
+      "id": "t100-fx-departure-kfwa-g-001",
+      "scheduledTime": "06:35",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KFWA",
+      "airlineIcao": "fdx",
+      "flightNumber": "3520"
+    },
+    {
+      "id": "departure-oh5441-mem-dca",
+      "category": "departure",
+      "scheduledTime": "06:36",
+      "airlineIcao": "jia",
+      "flightNumber": "5441",
+      "originIcao": "KMEM",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-wn2814-mem-las",
+      "category": "departure",
+      "scheduledTime": "06:40",
+      "airlineIcao": "swa",
+      "flightNumber": "2814",
+      "originIcao": "KMEM",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "t100-fx-departure-kgtf-g-001",
+      "scheduledTime": "06:40",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KGTF",
+      "airlineIcao": "fdx",
+      "flightNumber": "3981"
+    },
+    {
+      "id": "t100-5x-departure-krfd-g-001",
+      "scheduledTime": "06:41",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KRFD",
+      "airlineIcao": "ups",
+      "flightNumber": "997"
+    },
+    {
+      "id": "t100-fx-departure-krst-g-001",
+      "scheduledTime": "06:41",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KRST",
+      "airlineIcao": "fdx",
+      "flightNumber": "2244"
+    },
+    {
+      "id": "t100-fx-departure-koak-g-002",
+      "scheduledTime": "06:43",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KOAK",
+      "airlineIcao": "fdx",
+      "flightNumber": "2882"
+    },
+    {
+      "id": "departure-oo4088-mem-aus",
+      "category": "departure",
+      "scheduledTime": "06:45",
+      "airlineIcao": "skw",
+      "flightNumber": "4088",
+      "originIcao": "KMEM",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "t100-fx-departure-kalb-g-001",
+      "scheduledTime": "06:58",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KALB",
+      "airlineIcao": "fdx",
+      "flightNumber": "4059"
+    },
+    {
+      "id": "t100-fx-departure-kcvg-g-001",
+      "scheduledTime": "06:58",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KCVG",
+      "airlineIcao": "fdx",
+      "flightNumber": "7174"
+    },
+    {
+      "id": "departure-ua537-mem-iah",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "ual",
+      "flightNumber": "537",
+      "originIcao": "KMEM",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-yx5711-mem-lga",
+      "category": "departure",
+      "scheduledTime": "07:05",
+      "airlineIcao": "rpa",
+      "flightNumber": "5711",
+      "originIcao": "KMEM",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "t100-fx-departure-ktpa-g-001",
+      "scheduledTime": "07:05",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KTPA",
+      "airlineIcao": "fdx",
+      "flightNumber": "5060"
+    },
+    {
+      "id": "t100-fx-departure-kbmi-g-001",
+      "scheduledTime": "07:08",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KBMI",
+      "airlineIcao": "fdx",
+      "flightNumber": "7141"
+    },
+    {
+      "id": "t100-fx-departure-kslc-g-001",
+      "scheduledTime": "07:12",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KSLC",
+      "airlineIcao": "fdx",
+      "flightNumber": "3824"
+    },
+    {
+      "id": "departure-aa1825-mem-dfw",
+      "category": "departure",
+      "scheduledTime": "07:13",
+      "airlineIcao": "aal",
+      "flightNumber": "1825",
+      "originIcao": "KMEM",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "t100-fx-departure-kewr-g-002",
+      "scheduledTime": "07:14",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KEWR",
+      "airlineIcao": "fdx",
+      "flightNumber": "1729"
+    },
+    {
+      "id": "departure-dl2290-mem-slc",
+      "category": "departure",
+      "scheduledTime": "07:15",
+      "airlineIcao": "dal",
+      "flightNumber": "2290",
+      "originIcao": "KMEM",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "t100-fx-departure-kiad-g-001",
+      "scheduledTime": "07:15",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KIAD",
+      "airlineIcao": "fdx",
+      "flightNumber": "9144"
+    },
+    {
+      "id": "t100-fx-departure-ksan-g-001",
+      "scheduledTime": "07:15",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KSAN",
+      "airlineIcao": "fdx",
+      "flightNumber": "2854"
+    },
+    {
+      "id": "t100-fx-departure-kmia-g-003",
+      "scheduledTime": "07:21",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "fdx",
+      "flightNumber": "213"
+    },
+    {
+      "id": "departure-dl1625-mem-atl",
+      "category": "departure",
+      "scheduledTime": "07:25",
+      "airlineIcao": "dal",
+      "flightNumber": "1625",
+      "originIcao": "KMEM",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-ua247-mem-ord",
+      "category": "departure",
+      "scheduledTime": "07:25",
+      "airlineIcao": "ual",
+      "flightNumber": "247",
+      "originIcao": "KMEM",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-fx-departure-ktus-g-001",
+      "scheduledTime": "07:25",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KTUS",
+      "airlineIcao": "fdx",
+      "flightNumber": "4120"
+    },
+    {
+      "id": "t100-fx-departure-cyvr-g-001",
+      "scheduledTime": "07:28",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "CYVR",
+      "airlineIcao": "fdx",
+      "flightNumber": "3699"
+    },
+    {
+      "id": "t100-fx-departure-kbna-g-001",
+      "scheduledTime": "07:29",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KBNA",
+      "airlineIcao": "fdx",
+      "flightNumber": "1098"
+    },
+    {
+      "id": "t100-fx-departure-kmsp-g-002",
+      "scheduledTime": "07:57",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KMSP",
+      "airlineIcao": "fdx",
+      "flightNumber": "2573"
+    },
+    {
+      "id": "departure-mq3879-mem-phx",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "eny",
+      "flightNumber": "3879",
+      "originIcao": "KMEM",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "t100-fx-departure-kmco-g-001",
+      "scheduledTime": "08:00",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KMCO",
+      "airlineIcao": "fdx",
+      "flightNumber": "7731"
+    },
+    {
+      "id": "t100-fx-departure-klax-g-002",
+      "scheduledTime": "08:22",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KLAX",
+      "airlineIcao": "fdx",
+      "flightNumber": "3833"
+    },
+    {
+      "id": "t100-fx-departure-panc-g-001",
+      "scheduledTime": "08:22",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "PANC",
+      "airlineIcao": "fdx",
+      "flightNumber": "1868"
+    },
+    {
+      "id": "departure-wn2913-mem-bna",
+      "category": "departure",
+      "scheduledTime": "08:25",
+      "airlineIcao": "swa",
+      "flightNumber": "2913",
+      "originIcao": "KMEM",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-fx-arrival-katl-g-002",
+      "scheduledTime": "08:44",
+      "category": "arrival",
+      "originIcao": "KATL",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "6779"
+    },
+    {
+      "id": "arrival-aa2114-dfw-mem",
+      "category": "arrival",
+      "scheduledTime": "08:47",
+      "airlineIcao": "aal",
+      "flightNumber": "2114",
+      "originIcao": "KDFW",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kpwm-g-001",
+      "scheduledTime": "08:47",
+      "category": "arrival",
+      "originIcao": "KPWM",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3583"
+    },
+    {
+      "id": "t100-fx-departure-kbhm-g-001",
+      "scheduledTime": "08:47",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KBHM",
+      "airlineIcao": "fdx",
+      "flightNumber": "6064"
+    },
+    {
+      "id": "departure-ua472-mem-den",
+      "category": "departure",
+      "scheduledTime": "08:51",
+      "airlineIcao": "ual",
+      "flightNumber": "472",
+      "originIcao": "KMEM",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-fx-arrival-kphl-g-001",
+      "scheduledTime": "09:03",
+      "category": "arrival",
+      "originIcao": "KPHL",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "8776"
+    },
+    {
+      "id": "arrival-oo5360-iah-mem",
+      "category": "arrival",
+      "scheduledTime": "09:05",
+      "airlineIcao": "skw",
+      "flightNumber": "5360",
+      "originIcao": "KIAH",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-klas-g-001",
+      "scheduledTime": "09:06",
+      "category": "arrival",
+      "originIcao": "KLAS",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "6975"
+    },
+    {
+      "id": "t100-fx-arrival-ksmf-g-001",
+      "scheduledTime": "09:09",
+      "category": "arrival",
+      "originIcao": "KSMF",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "9444"
+    },
+    {
+      "id": "arrival-wn579-bna-mem",
+      "category": "arrival",
+      "scheduledTime": "09:10",
+      "airlineIcao": "swa",
+      "flightNumber": "579",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kphl-g-002",
+      "scheduledTime": "09:12",
+      "category": "arrival",
+      "originIcao": "KPHL",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "517"
+    },
+    {
+      "id": "t100-fx-departure-krsw-g-001",
+      "scheduledTime": "09:26",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KRSW",
+      "airlineIcao": "fdx",
+      "flightNumber": "5757"
+    },
+    {
+      "id": "arrival-dl2071-atl-mem",
+      "category": "arrival",
+      "scheduledTime": "09:27",
+      "airlineIcao": "dal",
+      "flightNumber": "2071",
+      "originIcao": "KATL",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "departure-dl1149-mem-atl",
+      "category": "departure",
+      "scheduledTime": "09:27",
+      "airlineIcao": "dal",
+      "flightNumber": "1149",
+      "originIcao": "KMEM",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-fx-departure-cyeg-g-001",
+      "scheduledTime": "09:27",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "CYEG",
+      "airlineIcao": "fdx",
+      "flightNumber": "6099"
+    },
+    {
+      "id": "t100-fx-arrival-kiad-g-001",
+      "scheduledTime": "09:28",
+      "category": "arrival",
+      "originIcao": "KIAD",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3746"
+    },
+    {
+      "id": "departure-aa2114-mem-dfw",
+      "category": "departure",
+      "scheduledTime": "09:29",
+      "airlineIcao": "aal",
+      "flightNumber": "2114",
+      "originIcao": "KMEM",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "t100-fx-departure-kabe-g-001",
+      "scheduledTime": "09:30",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KABE",
+      "airlineIcao": "fdx",
+      "flightNumber": "132"
+    },
+    {
+      "id": "t100-fx-departure-kfll-g-001",
+      "scheduledTime": "09:32",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KFLL",
+      "airlineIcao": "fdx",
+      "flightNumber": "7097"
+    },
+    {
+      "id": "arrival-dl3137-dtw-mem",
+      "category": "arrival",
+      "scheduledTime": "09:40",
+      "airlineIcao": "dal",
+      "flightNumber": "3137",
+      "originIcao": "KDTW",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kfll-g-001",
+      "scheduledTime": "09:41",
+      "category": "arrival",
+      "originIcao": "KFLL",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "1179"
+    },
+    {
+      "id": "t100-fx-arrival-kstl-g-001",
+      "scheduledTime": "09:44",
+      "category": "arrival",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "6880"
+    },
+    {
+      "id": "t100-fx-departure-ktlh-g-001",
+      "scheduledTime": "09:45",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KTLH",
+      "airlineIcao": "fdx",
+      "flightNumber": "8922"
+    },
+    {
+      "id": "departure-oo5672-mem-ord",
+      "category": "departure",
+      "scheduledTime": "09:46",
+      "airlineIcao": "skw",
+      "flightNumber": "5672",
+      "originIcao": "KMEM",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-fx-departure-mmqt-g-001",
+      "scheduledTime": "09:50",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "MMQT",
+      "airlineIcao": "fdx",
+      "flightNumber": "4629"
+    },
+    {
+      "id": "t100-fx-departure-kbdl-g-001",
+      "scheduledTime": "09:51",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KBDL",
+      "airlineIcao": "fdx",
+      "flightNumber": "9416"
+    },
+    {
+      "id": "t100-fx-departure-kjfk-g-001",
+      "scheduledTime": "09:53",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KJFK",
+      "airlineIcao": "fdx",
+      "flightNumber": "4692"
+    },
+    {
+      "id": "t100-fx-arrival-cyow-g-001",
+      "scheduledTime": "09:54",
+      "category": "arrival",
+      "originIcao": "CYOW",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "2976"
+    },
+    {
+      "id": "departure-wn579-mem-den",
+      "category": "departure",
+      "scheduledTime": "09:55",
+      "airlineIcao": "swa",
+      "flightNumber": "579",
+      "originIcao": "KMEM",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-fx-arrival-kpbi-g-001",
+      "scheduledTime": "09:56",
+      "category": "arrival",
+      "originIcao": "KPBI",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "6630"
+    },
+    {
+      "id": "t100-fx-arrival-ktul-g-001",
+      "scheduledTime": "09:56",
+      "category": "arrival",
+      "originIcao": "KTUL",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "6092"
+    },
+    {
+      "id": "arrival-aa2110-clt-mem",
+      "category": "arrival",
+      "scheduledTime": "09:58",
+      "airlineIcao": "aal",
+      "flightNumber": "2110",
+      "originIcao": "KCLT",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "arrival-mq3683-ord-mem",
+      "category": "arrival",
+      "scheduledTime": "09:58",
+      "airlineIcao": "eny",
+      "flightNumber": "3683",
+      "originIcao": "KORD",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-klft-g-001",
+      "scheduledTime": "10:01",
+      "category": "arrival",
+      "originIcao": "KLFT",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "6984"
+    },
+    {
+      "id": "t100-fx-arrival-kmia-g-002",
+      "scheduledTime": "10:01",
+      "category": "arrival",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "431"
+    },
+    {
+      "id": "t100-fx-arrival-kswf-g-001",
+      "scheduledTime": "10:02",
+      "category": "arrival",
+      "originIcao": "KSWF",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "4786"
+    },
+    {
+      "id": "arrival-oh5091-dca-mem",
+      "category": "arrival",
+      "scheduledTime": "10:05",
+      "airlineIcao": "jia",
+      "flightNumber": "5091",
+      "originIcao": "KDCA",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-departure-koak-g-001",
+      "scheduledTime": "10:28",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KOAK",
+      "airlineIcao": "fdx",
+      "flightNumber": "6385"
+    },
+    {
+      "id": "departure-dl3137-mem-dtw",
+      "category": "departure",
+      "scheduledTime": "10:29",
+      "airlineIcao": "dal",
+      "flightNumber": "3137",
+      "originIcao": "KMEM",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "t100-fx-departure-kfnt-g-001",
+      "scheduledTime": "10:29",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KFNT",
+      "airlineIcao": "fdx",
+      "flightNumber": "7424"
+    },
+    {
+      "id": "t100-fx-departure-lfpg-g-002",
+      "scheduledTime": "10:31",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "LFPG",
+      "airlineIcao": "fdx",
+      "flightNumber": "6731"
+    },
+    {
+      "id": "arrival-dl2937-atl-mem",
+      "category": "arrival",
+      "scheduledTime": "10:32",
+      "airlineIcao": "dal",
+      "flightNumber": "2937",
+      "originIcao": "KATL",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "departure-mq3683-mem-ord",
+      "category": "departure",
+      "scheduledTime": "10:32",
+      "airlineIcao": "eny",
+      "flightNumber": "3683",
+      "originIcao": "KMEM",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-fx-arrival-kewr-g-004",
+      "scheduledTime": "10:33",
+      "category": "arrival",
+      "originIcao": "KEWR",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "1993"
+    },
+    {
+      "id": "t100-fx-departure-kewr-g-003",
+      "scheduledTime": "10:34",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KEWR",
+      "airlineIcao": "fdx",
+      "flightNumber": "7723"
+    },
+    {
+      "id": "departure-oh5091-mem-dca",
+      "category": "departure",
+      "scheduledTime": "10:35",
+      "airlineIcao": "jia",
+      "flightNumber": "5091",
+      "originIcao": "KMEM",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-dl2071-mem-atl",
+      "category": "departure",
+      "scheduledTime": "10:36",
+      "airlineIcao": "dal",
+      "flightNumber": "2071",
+      "originIcao": "KMEM",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-fx-arrival-kdtw-g-001",
+      "scheduledTime": "10:36",
+      "category": "arrival",
+      "originIcao": "KDTW",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "673"
+    },
+    {
+      "id": "t100-fx-departure-kont-g-001",
+      "scheduledTime": "10:36",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KONT",
+      "airlineIcao": "fdx",
+      "flightNumber": "4188"
+    },
+    {
+      "id": "t100-fx-departure-koma-g-001",
+      "scheduledTime": "10:37",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KOMA",
+      "airlineIcao": "fdx",
+      "flightNumber": "5948"
+    },
+    {
+      "id": "departure-aa2110-mem-clt",
+      "category": "departure",
+      "scheduledTime": "10:38",
+      "airlineIcao": "aal",
+      "flightNumber": "2110",
+      "originIcao": "KMEM",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "t100-fx-departure-kfll-g-002",
+      "scheduledTime": "10:39",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KFLL",
+      "airlineIcao": "fdx",
+      "flightNumber": "5462"
+    },
+    {
+      "id": "t100-fx-departure-kmia-g-001",
+      "scheduledTime": "10:39",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "fdx",
+      "flightNumber": "3066"
+    },
+    {
+      "id": "t100-fx-departure-lfpg-g-001",
+      "scheduledTime": "10:39",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "LFPG",
+      "airlineIcao": "fdx",
+      "flightNumber": "4011"
+    },
+    {
+      "id": "t100-fx-departure-kaus-g-001",
+      "scheduledTime": "10:40",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KAUS",
+      "airlineIcao": "fdx",
+      "flightNumber": "9219"
+    },
+    {
+      "id": "t100-fx-arrival-mmgl-g-001",
+      "scheduledTime": "10:42",
+      "category": "arrival",
+      "originIcao": "MMGL",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "8059"
+    },
+    {
+      "id": "t100-fx-arrival-kcos-g-001",
+      "scheduledTime": "10:44",
+      "category": "arrival",
+      "originIcao": "KCOS",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "1007"
+    },
+    {
+      "id": "arrival-oh5277-phl-mem",
+      "category": "arrival",
+      "scheduledTime": "10:45",
+      "airlineIcao": "jia",
+      "flightNumber": "5277",
+      "originIcao": "KPHL",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "arrival-wn4189-mco-mem",
+      "category": "arrival",
+      "scheduledTime": "10:45",
+      "airlineIcao": "swa",
+      "flightNumber": "4189",
+      "originIcao": "KMCO",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kday-g-001",
+      "scheduledTime": "10:45",
+      "category": "arrival",
+      "originIcao": "KDAY",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "1778"
+    },
+    {
+      "id": "t100-fx-arrival-kiah-g-001",
+      "scheduledTime": "10:45",
+      "category": "arrival",
+      "originIcao": "KIAH",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "4399"
+    },
+    {
+      "id": "t100-fx-arrival-cywg-g-001",
+      "scheduledTime": "11:04",
+      "category": "arrival",
+      "originIcao": "CYWG",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "5079"
+    },
+    {
+      "id": "arrival-oo5593-ord-mem",
+      "category": "arrival",
+      "scheduledTime": "11:05",
+      "airlineIcao": "skw",
+      "flightNumber": "5593",
+      "originIcao": "KORD",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-9e-arrival-katl-f-001",
+      "scheduledTime": "11:07",
+      "category": "arrival",
+      "originIcao": "KATL",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "edv",
+      "flightNumber": "6420"
+    },
+    {
+      "id": "t100-5x-arrival-ksdf-g-001",
+      "scheduledTime": "11:09",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "ups",
+      "flightNumber": "7745"
+    },
+    {
+      "id": "t100-fx-arrival-kbwi-g-001",
+      "scheduledTime": "11:10",
+      "category": "arrival",
+      "originIcao": "KBWI",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "5951"
+    },
+    {
+      "id": "arrival-aa1935-dfw-mem",
+      "category": "arrival",
+      "scheduledTime": "11:11",
+      "airlineIcao": "aal",
+      "flightNumber": "1935",
+      "originIcao": "KDFW",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "departure-oh5277-mem-phl",
+      "category": "departure",
+      "scheduledTime": "11:15",
+      "airlineIcao": "jia",
+      "flightNumber": "5277",
+      "originIcao": "KMEM",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "t100-fx-departure-kdtw-g-002",
+      "scheduledTime": "11:16",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KDTW",
+      "airlineIcao": "fdx",
+      "flightNumber": "1231"
+    },
+    {
+      "id": "t100-fx-departure-ksmf-g-001",
+      "scheduledTime": "11:19",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KSMF",
+      "airlineIcao": "fdx",
+      "flightNumber": "3921"
+    },
+    {
+      "id": "departure-wn4189-mem-bwi",
+      "category": "departure",
+      "scheduledTime": "11:20",
+      "airlineIcao": "swa",
+      "flightNumber": "4189",
+      "originIcao": "KMEM",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "t100-fx-departure-kord-g-001",
+      "scheduledTime": "11:20",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KORD",
+      "airlineIcao": "fdx",
+      "flightNumber": "2703"
+    },
+    {
+      "id": "t100-fx-arrival-klax-g-002",
+      "scheduledTime": "11:25",
+      "category": "arrival",
+      "originIcao": "KLAX",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "421"
+    },
+    {
+      "id": "arrival-oo3989-msp-mem",
+      "category": "arrival",
+      "scheduledTime": "11:28",
+      "airlineIcao": "skw",
+      "flightNumber": "3989",
+      "originIcao": "KMSP",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-departure-kcid-g-001",
+      "scheduledTime": "11:37",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KCID",
+      "airlineIcao": "fdx",
+      "flightNumber": "9903"
+    },
+    {
+      "id": "departure-dl851-mem-atl",
+      "category": "departure",
+      "scheduledTime": "11:38",
+      "airlineIcao": "dal",
+      "flightNumber": "851",
+      "originIcao": "KMEM",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-fx-departure-ktul-g-001",
+      "scheduledTime": "11:38",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KTUL",
+      "airlineIcao": "fdx",
+      "flightNumber": "6070"
+    },
+    {
+      "id": "departure-oo5525-mem-iah",
+      "category": "departure",
+      "scheduledTime": "11:46",
+      "airlineIcao": "skw",
+      "flightNumber": "5525",
+      "originIcao": "KMEM",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "t100-fx-arrival-kfnt-g-001",
+      "scheduledTime": "11:46",
+      "category": "arrival",
+      "originIcao": "KFNT",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "975"
+    },
+    {
+      "id": "t100-fx-departure-kiah-g-001",
+      "scheduledTime": "11:46",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KIAH",
+      "airlineIcao": "fdx",
+      "flightNumber": "4436"
+    },
+    {
+      "id": "t100-yv-departure-kiah-f-001",
+      "scheduledTime": "11:47",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KIAH",
+      "airlineIcao": "ash",
+      "flightNumber": "7928"
+    },
+    {
+      "id": "arrival-wn2824-mdw-mem",
+      "category": "arrival",
+      "scheduledTime": "11:50",
+      "airlineIcao": "swa",
+      "flightNumber": "2824",
+      "originIcao": "KMDW",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-mroc-g-001",
+      "scheduledTime": "11:54",
+      "category": "arrival",
+      "originIcao": "MROC",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3257"
+    },
+    {
+      "id": "t100-fx-departure-kcpr-g-001",
+      "scheduledTime": "12:02",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KCPR",
+      "airlineIcao": "fdx",
+      "flightNumber": "5559"
+    },
+    {
+      "id": "departure-aa1935-mem-dfw",
+      "category": "departure",
+      "scheduledTime": "12:03",
+      "airlineIcao": "aal",
+      "flightNumber": "1935",
+      "originIcao": "KMEM",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "t100-fx-departure-phnl-g-001",
+      "scheduledTime": "12:07",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdx",
+      "flightNumber": "3331"
+    },
+    {
+      "id": "t100-fx-departure-kewr-g-001",
+      "scheduledTime": "12:08",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KEWR",
+      "airlineIcao": "fdx",
+      "flightNumber": "1859"
+    },
+    {
+      "id": "departure-oo3989-mem-msp",
+      "category": "departure",
+      "scheduledTime": "12:09",
+      "airlineIcao": "skw",
+      "flightNumber": "3989",
+      "originIcao": "KMEM",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "t100-fx-arrival-kmsp-g-001",
+      "scheduledTime": "12:11",
+      "category": "arrival",
+      "originIcao": "KMSP",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3014"
+    },
+    {
+      "id": "t100-fx-arrival-kbos-g-001",
+      "scheduledTime": "12:12",
+      "category": "arrival",
+      "originIcao": "KBOS",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "7983"
+    },
+    {
+      "id": "t100-fx-departure-kgeg-g-001",
+      "scheduledTime": "12:13",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KGEG",
+      "airlineIcao": "fdx",
+      "flightNumber": "2641"
+    },
+    {
+      "id": "arrival-wn4013-hou-mem",
+      "category": "arrival",
+      "scheduledTime": "12:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4013",
+      "originIcao": "KHOU",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-5x-departure-ksdf-g-001",
+      "scheduledTime": "12:21",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KSDF",
+      "airlineIcao": "ups",
+      "flightNumber": "7831"
+    },
+    {
+      "id": "departure-wn2824-mem-hou",
+      "category": "departure",
+      "scheduledTime": "12:25",
+      "airlineIcao": "swa",
+      "flightNumber": "2824",
+      "originIcao": "KMEM",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "t100-fx-departure-kgrr-g-001",
+      "scheduledTime": "12:28",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KGRR",
+      "airlineIcao": "fdx",
+      "flightNumber": "7384"
+    },
+    {
+      "id": "arrival-dl2778-atl-mem",
+      "category": "arrival",
+      "scheduledTime": "12:32",
+      "airlineIcao": "dal",
+      "flightNumber": "2778",
+      "originIcao": "KATL",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-eblg-g-001",
+      "scheduledTime": "12:34",
+      "category": "arrival",
+      "originIcao": "EBLG",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "6634"
+    },
+    {
+      "id": "t100-fx-arrival-kgsp-g-001",
+      "scheduledTime": "12:34",
+      "category": "arrival",
+      "originIcao": "KGSP",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "4938"
+    },
+    {
+      "id": "t100-fx-departure-kbfm-g-001",
+      "scheduledTime": "12:51",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KBFM",
+      "airlineIcao": "fdx",
+      "flightNumber": "7914"
+    },
+    {
+      "id": "departure-wn4127-mem-dal",
+      "category": "departure",
+      "scheduledTime": "12:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4127",
+      "originIcao": "KMEM",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "t100-fx-departure-kmht-g-001",
+      "scheduledTime": "12:57",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KMHT",
+      "airlineIcao": "fdx",
+      "flightNumber": "6112"
+    },
+    {
+      "id": "t100-mx-departure-kpns-f-001",
+      "scheduledTime": "13:33",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KPNS",
+      "airlineIcao": "mxy",
+      "flightNumber": "5515"
+    },
+    {
+      "id": "departure-dl2778-mem-atl",
+      "category": "departure",
+      "scheduledTime": "13:37",
+      "airlineIcao": "dal",
+      "flightNumber": "2778",
+      "originIcao": "KMEM",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-fx-arrival-phnl-g-001",
+      "scheduledTime": "13:37",
+      "category": "arrival",
+      "originIcao": "PHNL",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "5977"
+    },
+    {
+      "id": "t100-fx-arrival-ktys-g-001",
+      "scheduledTime": "13:40",
+      "category": "arrival",
+      "originIcao": "KTYS",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "2913"
+    },
+    {
+      "id": "t100-fx-departure-kphl-g-001",
+      "scheduledTime": "13:40",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KPHL",
+      "airlineIcao": "fdx",
+      "flightNumber": "8313"
+    },
+    {
+      "id": "arrival-oo5758-iah-mem",
+      "category": "arrival",
+      "scheduledTime": "13:41",
+      "airlineIcao": "skw",
+      "flightNumber": "5758",
+      "originIcao": "KIAH",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "arrival-dl1681-atl-mem",
+      "category": "arrival",
+      "scheduledTime": "13:57",
+      "airlineIcao": "dal",
+      "flightNumber": "1681",
+      "originIcao": "KATL",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-egss-g-001",
+      "scheduledTime": "13:59",
+      "category": "arrival",
+      "originIcao": "EGSS",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "5082"
+    },
+    {
+      "id": "t100-fx-arrival-cymx-g-001",
+      "scheduledTime": "14:01",
+      "category": "arrival",
+      "originIcao": "CYMX",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "4600"
+    },
+    {
+      "id": "arrival-mq3675-ord-mem",
+      "category": "arrival",
+      "scheduledTime": "14:04",
+      "airlineIcao": "eny",
+      "flightNumber": "3675",
+      "originIcao": "KORD",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kbhm-g-001",
+      "scheduledTime": "14:05",
+      "category": "arrival",
+      "originIcao": "KBHM",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "1316"
+    },
+    {
+      "id": "t100-fx-arrival-kmia-g-001",
+      "scheduledTime": "14:06",
+      "category": "arrival",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "1209"
+    },
+    {
+      "id": "arrival-aa2116-clt-mem",
+      "category": "arrival",
+      "scheduledTime": "14:09",
+      "airlineIcao": "aal",
+      "flightNumber": "2116",
+      "originIcao": "KCLT",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kmco-g-002",
+      "scheduledTime": "14:11",
+      "category": "arrival",
+      "originIcao": "KMCO",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3940"
+    },
+    {
+      "id": "t100-fx-arrival-korf-g-001",
+      "scheduledTime": "14:12",
+      "category": "arrival",
+      "originIcao": "KORF",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "9106"
+    },
+    {
+      "id": "t100-fx-arrival-kgso-g-001",
+      "scheduledTime": "14:13",
+      "category": "arrival",
+      "originIcao": "KGSO",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "7716"
+    },
+    {
+      "id": "arrival-mq3676-dfw-mem",
+      "category": "arrival",
+      "scheduledTime": "14:16",
+      "airlineIcao": "eny",
+      "flightNumber": "3676",
+      "originIcao": "KDFW",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-klck-g-001",
+      "scheduledTime": "14:16",
+      "category": "arrival",
+      "originIcao": "KLCK",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "6678"
+    },
+    {
+      "id": "departure-oo5780-mem-ord",
+      "category": "departure",
+      "scheduledTime": "14:22",
+      "airlineIcao": "skw",
+      "flightNumber": "5780",
+      "originIcao": "KMEM",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-g7-arrival-kord-f-001",
+      "scheduledTime": "14:22",
+      "category": "arrival",
+      "originIcao": "KORD",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "gjs",
+      "flightNumber": "1772"
+    },
+    {
+      "id": "t100-5x-departure-ksdf-g-002",
+      "scheduledTime": "14:23",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KSDF",
+      "airlineIcao": "ups",
+      "flightNumber": "7801"
+    },
+    {
+      "id": "t100-mx-arrival-kpns-f-001",
+      "scheduledTime": "14:24",
+      "category": "arrival",
+      "originIcao": "KPNS",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "mxy",
+      "flightNumber": "134"
+    },
+    {
+      "id": "t100-fx-departure-kcha-g-001",
+      "scheduledTime": "14:25",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KCHA",
+      "airlineIcao": "fdx",
+      "flightNumber": "5983"
+    },
+    {
+      "id": "arrival-ua1112-den-mem",
+      "category": "arrival",
+      "scheduledTime": "14:26",
+      "airlineIcao": "ual",
+      "flightNumber": "1112",
+      "originIcao": "KDEN",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-departure-kchs-g-001",
+      "scheduledTime": "14:35",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KCHS",
+      "airlineIcao": "fdx",
+      "flightNumber": "5483"
+    },
+    {
+      "id": "t100-fx-departure-kphx-g-001",
+      "scheduledTime": "14:37",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KPHX",
+      "airlineIcao": "fdx",
+      "flightNumber": "3696"
+    },
+    {
+      "id": "departure-mq3675-mem-ord",
+      "category": "departure",
+      "scheduledTime": "14:39",
+      "airlineIcao": "eny",
+      "flightNumber": "3675",
+      "originIcao": "KMEM",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-oo5414-ord-mem",
+      "category": "arrival",
+      "scheduledTime": "14:42",
+      "airlineIcao": "skw",
+      "flightNumber": "5414",
+      "originIcao": "KORD",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "departure-dl1681-mem-atl",
+      "category": "departure",
+      "scheduledTime": "14:42",
+      "airlineIcao": "dal",
+      "flightNumber": "1681",
+      "originIcao": "KMEM",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-fx-departure-ksea-g-002",
+      "scheduledTime": "14:43",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "fdx",
+      "flightNumber": "3529"
+    },
+    {
+      "id": "t100-fx-departure-kont-g-002",
+      "scheduledTime": "14:45",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KONT",
+      "airlineIcao": "fdx",
+      "flightNumber": "2505"
+    },
+    {
+      "id": "departure-mq3676-mem-dfw",
+      "category": "departure",
+      "scheduledTime": "14:46",
+      "airlineIcao": "eny",
+      "flightNumber": "3676",
+      "originIcao": "KMEM",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "t100-fx-arrival-kord-g-002",
+      "scheduledTime": "14:46",
+      "category": "arrival",
+      "originIcao": "KORD",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "8728"
+    },
+    {
+      "id": "t100-fx-departure-krno-g-001",
+      "scheduledTime": "14:50",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KRNO",
+      "airlineIcao": "fdx",
+      "flightNumber": "9696"
+    },
+    {
+      "id": "t100-fx-departure-kmsp-g-001",
+      "scheduledTime": "14:53",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KMSP",
+      "airlineIcao": "fdx",
+      "flightNumber": "1060"
+    },
+    {
+      "id": "departure-aa2116-mem-clt",
+      "category": "departure",
+      "scheduledTime": "14:56",
+      "airlineIcao": "aal",
+      "flightNumber": "2116",
+      "originIcao": "KMEM",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "t100-fx-departure-kpdx-g-001",
+      "scheduledTime": "14:59",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "fdx",
+      "flightNumber": "6605"
+    },
+    {
+      "id": "arrival-wn1121-bwi-mem",
+      "category": "arrival",
+      "scheduledTime": "15:00",
+      "airlineIcao": "swa",
+      "flightNumber": "1121",
+      "originIcao": "KBWI",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kord-g-001",
+      "scheduledTime": "15:00",
+      "category": "arrival",
+      "originIcao": "KORD",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "9865"
+    },
+    {
+      "id": "t100-fx-arrival-kind-g-001",
+      "scheduledTime": "15:04",
+      "category": "arrival",
+      "originIcao": "KIND",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "7137"
+    },
+    {
+      "id": "departure-oo5798-mem-iah",
+      "category": "departure",
+      "scheduledTime": "15:23",
+      "airlineIcao": "skw",
+      "flightNumber": "5798",
+      "originIcao": "KMEM",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "arrival-yx3650-ewr-mem",
+      "category": "arrival",
+      "scheduledTime": "15:25",
+      "airlineIcao": "rpa",
+      "flightNumber": "3650",
+      "originIcao": "KEWR",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "departure-ua498-mem-den",
+      "category": "departure",
+      "scheduledTime": "15:25",
+      "airlineIcao": "ual",
+      "flightNumber": "498",
+      "originIcao": "KMEM",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-fx-departure-kclt-g-001",
+      "scheduledTime": "15:25",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KCLT",
+      "airlineIcao": "fdx",
+      "flightNumber": "1197"
+    },
+    {
+      "id": "t100-g4-departure-kfll-f-001",
+      "scheduledTime": "15:25",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KFLL",
+      "airlineIcao": "aay",
+      "flightNumber": "6401"
+    },
+    {
+      "id": "t100-fx-arrival-zspd-g-001",
+      "scheduledTime": "15:26",
+      "category": "arrival",
+      "originIcao": "ZSPD",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "6126"
+    },
+    {
+      "id": "t100-fx-arrival-kphx-g-001",
+      "scheduledTime": "15:27",
+      "category": "arrival",
+      "originIcao": "KPHX",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "8731"
+    },
+    {
+      "id": "t100-fx-arrival-ksdf-g-001",
+      "scheduledTime": "15:27",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "9866"
+    },
+    {
+      "id": "t100-fx-departure-ksgf-g-001",
+      "scheduledTime": "15:27",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KSGF",
+      "airlineIcao": "fdx",
+      "flightNumber": "7823"
+    },
+    {
+      "id": "t100-fx-arrival-koak-g-002",
+      "scheduledTime": "15:28",
+      "category": "arrival",
+      "originIcao": "KOAK",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "9420"
+    },
+    {
+      "id": "t100-fx-departure-kphl-g-002",
+      "scheduledTime": "15:29",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KPHL",
+      "airlineIcao": "fdx",
+      "flightNumber": "8663"
+    },
+    {
+      "id": "arrival-dl1700-atl-mem",
+      "category": "arrival",
+      "scheduledTime": "15:30",
+      "airlineIcao": "dal",
+      "flightNumber": "1700",
+      "originIcao": "KATL",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kgtf-g-001",
+      "scheduledTime": "15:30",
+      "category": "arrival",
+      "originIcao": "KGTF",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "9849"
+    },
+    {
+      "id": "arrival-yx5773-lga-mem",
+      "category": "arrival",
+      "scheduledTime": "15:31",
+      "airlineIcao": "rpa",
+      "flightNumber": "5773",
+      "originIcao": "KLGA",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kcae-g-001",
+      "scheduledTime": "15:32",
+      "category": "arrival",
+      "originIcao": "KCAE",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "2694"
+    },
+    {
+      "id": "t100-fx-arrival-kict-g-001",
+      "scheduledTime": "15:34",
+      "category": "arrival",
+      "originIcao": "KICT",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "94"
+    },
+    {
+      "id": "arrival-wn1496-dal-mem",
+      "category": "arrival",
+      "scheduledTime": "15:35",
+      "airlineIcao": "swa",
+      "flightNumber": "1496",
+      "originIcao": "KDAL",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "departure-wn3345-mem-mdw",
+      "category": "departure",
+      "scheduledTime": "15:35",
+      "airlineIcao": "swa",
+      "flightNumber": "3345",
+      "originIcao": "KMEM",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "t100-fx-departure-kiad-g-002",
+      "scheduledTime": "15:35",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KIAD",
+      "airlineIcao": "fdx",
+      "flightNumber": "5165"
+    },
+    {
+      "id": "t100-fx-departure-kcae-g-001",
+      "scheduledTime": "15:38",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KCAE",
+      "airlineIcao": "fdx",
+      "flightNumber": "8991"
+    },
+    {
+      "id": "t100-fx-arrival-kshv-g-001",
+      "scheduledTime": "15:39",
+      "category": "arrival",
+      "originIcao": "KSHV",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "4745"
+    },
+    {
+      "id": "arrival-yx4461-lga-mem",
+      "category": "arrival",
+      "scheduledTime": "15:47",
+      "airlineIcao": "rpa",
+      "flightNumber": "4461",
+      "originIcao": "KLGA",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-ksan-g-001",
+      "scheduledTime": "15:49",
+      "category": "arrival",
+      "originIcao": "KSAN",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3404"
+    },
+    {
+      "id": "t100-fx-arrival-lfpg-g-001",
+      "scheduledTime": "15:51",
+      "category": "arrival",
+      "originIcao": "LFPG",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "5979"
+    },
+    {
+      "id": "t100-fx-arrival-panc-g-003",
+      "scheduledTime": "15:51",
+      "category": "arrival",
+      "originIcao": "PANC",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "353"
+    },
+    {
+      "id": "t100-g4-arrival-ksfb-f-001",
+      "scheduledTime": "15:52",
+      "category": "arrival",
+      "originIcao": "KSFB",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "aay",
+      "flightNumber": "8034"
+    },
+    {
+      "id": "arrival-oh5287-clt-mem",
+      "category": "arrival",
+      "scheduledTime": "15:53",
+      "airlineIcao": "jia",
+      "flightNumber": "5287",
+      "originIcao": "KCLT",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "arrival-wn1555-den-mem",
+      "category": "arrival",
+      "scheduledTime": "15:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1555",
+      "originIcao": "KDEN",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-klax-g-003",
+      "scheduledTime": "15:55",
+      "category": "arrival",
+      "originIcao": "KLAX",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "5194"
+    },
+    {
+      "id": "t100-g4-arrival-kfll-f-001",
+      "scheduledTime": "15:58",
+      "category": "arrival",
+      "originIcao": "KFLL",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "aay",
+      "flightNumber": "5135"
+    },
+    {
+      "id": "departure-yx3699-mem-ewr",
+      "category": "departure",
+      "scheduledTime": "16:08",
+      "airlineIcao": "rpa",
+      "flightNumber": "3699",
+      "originIcao": "KMEM",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "t100-fx-departure-krdu-g-001",
+      "scheduledTime": "16:10",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "fdx",
+      "flightNumber": "6312"
+    },
+    {
+      "id": "t100-fx-departure-mmgl-g-001",
+      "scheduledTime": "16:10",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "MMGL",
+      "airlineIcao": "fdx",
+      "flightNumber": "9608"
+    },
+    {
+      "id": "t100-fx-departure-ksea-g-001",
+      "scheduledTime": "16:11",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "fdx",
+      "flightNumber": "3171"
+    },
+    {
+      "id": "t100-fx-departure-ktys-g-001",
+      "scheduledTime": "16:14",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KTYS",
+      "airlineIcao": "fdx",
+      "flightNumber": "3936"
+    },
+    {
+      "id": "departure-wn1496-mem-bna",
+      "category": "departure",
+      "scheduledTime": "16:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1496",
+      "originIcao": "KMEM",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-fx-departure-eblg-g-001",
+      "scheduledTime": "16:19",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "EBLG",
+      "airlineIcao": "fdx",
+      "flightNumber": "5200"
+    },
+    {
+      "id": "t100-fx-departure-mmmy-g-001",
+      "scheduledTime": "16:20",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "MMMY",
+      "airlineIcao": "fdx",
+      "flightNumber": "9511"
+    },
+    {
+      "id": "departure-dl1700-mem-atl",
+      "category": "departure",
+      "scheduledTime": "16:21",
+      "airlineIcao": "dal",
+      "flightNumber": "1700",
+      "originIcao": "KMEM",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-oh5357-mem-clt",
+      "category": "departure",
+      "scheduledTime": "16:23",
+      "airlineIcao": "jia",
+      "flightNumber": "5357",
+      "originIcao": "KMEM",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "t100-fx-departure-cywg-g-001",
+      "scheduledTime": "16:23",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "CYWG",
+      "airlineIcao": "fdx",
+      "flightNumber": "9958"
+    },
+    {
+      "id": "t100-fx-departure-kday-g-001",
+      "scheduledTime": "16:24",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KDAY",
+      "airlineIcao": "fdx",
+      "flightNumber": "7469"
+    },
+    {
+      "id": "t100-fx-departure-kind-g-001",
+      "scheduledTime": "16:25",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KIND",
+      "airlineIcao": "fdx",
+      "flightNumber": "3041"
+    },
+    {
+      "id": "departure-yx4461-mem-lga",
+      "category": "departure",
+      "scheduledTime": "16:26",
+      "airlineIcao": "rpa",
+      "flightNumber": "4461",
+      "originIcao": "KMEM",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-wn1555-mem-mco",
+      "category": "departure",
+      "scheduledTime": "16:35",
+      "airlineIcao": "swa",
+      "flightNumber": "1555",
+      "originIcao": "KMEM",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "t100-fx-departure-kdtw-g-001",
+      "scheduledTime": "16:35",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KDTW",
+      "airlineIcao": "fdx",
+      "flightNumber": "938"
+    },
+    {
+      "id": "t100-fx-departure-kpit-g-001",
+      "scheduledTime": "16:35",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KPIT",
+      "airlineIcao": "fdx",
+      "flightNumber": "8833"
+    },
+    {
+      "id": "t100-fx-arrival-kcsg-g-001",
+      "scheduledTime": "16:46",
+      "category": "arrival",
+      "originIcao": "KCSG",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "105"
+    },
+    {
+      "id": "arrival-dl552-atl-mem",
+      "category": "arrival",
+      "scheduledTime": "16:47",
+      "airlineIcao": "dal",
+      "flightNumber": "552",
+      "originIcao": "KATL",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-eddk-g-001",
+      "scheduledTime": "16:48",
+      "category": "arrival",
+      "originIcao": "EDDK",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "5348"
+    },
+    {
+      "id": "t100-fx-arrival-kslc-g-001",
+      "scheduledTime": "16:48",
+      "category": "arrival",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "8428"
+    },
+    {
+      "id": "arrival-mq3678-dfw-mem",
+      "category": "arrival",
+      "scheduledTime": "16:49",
+      "airlineIcao": "eny",
+      "flightNumber": "3678",
+      "originIcao": "KDFW",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kjfk-g-001",
+      "scheduledTime": "16:58",
+      "category": "arrival",
+      "originIcao": "KJFK",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "5945"
+    },
+    {
+      "id": "t100-fx-arrival-mmto-g-001",
+      "scheduledTime": "16:58",
+      "category": "arrival",
+      "originIcao": "MMTO",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "1230"
+    },
+    {
+      "id": "arrival-oo4007-dtw-mem",
+      "category": "arrival",
+      "scheduledTime": "17:02",
+      "airlineIcao": "skw",
+      "flightNumber": "4007",
+      "originIcao": "KDTW",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-krst-g-001",
+      "scheduledTime": "17:07",
+      "category": "arrival",
+      "originIcao": "KRST",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "418"
+    },
+    {
+      "id": "arrival-oh5266-phl-mem",
+      "category": "arrival",
+      "scheduledTime": "17:08",
+      "airlineIcao": "jia",
+      "flightNumber": "5266",
+      "originIcao": "KPHL",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kjfk-g-002",
+      "scheduledTime": "17:09",
+      "category": "arrival",
+      "originIcao": "KJFK",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "7810"
+    },
+    {
+      "id": "t100-fx-departure-kden-g-001",
+      "scheduledTime": "17:18",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KDEN",
+      "airlineIcao": "fdx",
+      "flightNumber": "2544"
+    },
+    {
+      "id": "departure-mq3678-mem-dfw",
+      "category": "departure",
+      "scheduledTime": "17:19",
+      "airlineIcao": "eny",
+      "flightNumber": "3678",
+      "originIcao": "KMEM",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "t100-fx-departure-klax-g-001",
+      "scheduledTime": "17:20",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KLAX",
+      "airlineIcao": "fdx",
+      "flightNumber": "2458"
+    },
+    {
+      "id": "t100-fx-departure-kbos-g-002",
+      "scheduledTime": "17:28",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KBOS",
+      "airlineIcao": "fdx",
+      "flightNumber": "6247"
+    },
+    {
+      "id": "arrival-wn4024-hou-mem",
+      "category": "arrival",
+      "scheduledTime": "17:30",
+      "airlineIcao": "swa",
+      "flightNumber": "4024",
+      "originIcao": "KHOU",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "departure-yx5779-mem-lga",
+      "category": "departure",
+      "scheduledTime": "17:30",
+      "airlineIcao": "rpa",
+      "flightNumber": "5779",
+      "originIcao": "KMEM",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "t100-fx-arrival-kewr-g-002",
+      "scheduledTime": "17:30",
+      "category": "arrival",
+      "originIcao": "KEWR",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "8959"
+    },
+    {
+      "id": "t100-fx-arrival-ksyr-g-001",
+      "scheduledTime": "17:30",
+      "category": "arrival",
+      "originIcao": "KSYR",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "1028"
+    },
+    {
+      "id": "arrival-yx4460-dca-mem",
+      "category": "arrival",
+      "scheduledTime": "17:31",
+      "airlineIcao": "rpa",
+      "flightNumber": "4460",
+      "originIcao": "KDCA",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kdtw-g-002",
+      "scheduledTime": "17:32",
+      "category": "arrival",
+      "originIcao": "KDTW",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "2518"
+    },
+    {
+      "id": "t100-fx-arrival-ksbn-g-001",
+      "scheduledTime": "17:32",
+      "category": "arrival",
+      "originIcao": "KSBN",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "9095"
+    },
+    {
+      "id": "t100-fx-departure-cyyz-g-001",
+      "scheduledTime": "17:32",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "CYYZ",
+      "airlineIcao": "fdx",
+      "flightNumber": "7213"
+    },
+    {
+      "id": "t100-fx-arrival-ktus-g-001",
+      "scheduledTime": "17:34",
+      "category": "arrival",
+      "originIcao": "KTUS",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "8446"
+    },
+    {
+      "id": "arrival-yx4647-ord-mem",
+      "category": "arrival",
+      "scheduledTime": "17:36",
+      "airlineIcao": "rpa",
+      "flightNumber": "4647",
+      "originIcao": "KORD",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kfar-g-001",
+      "scheduledTime": "17:36",
+      "category": "arrival",
+      "originIcao": "KFAR",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3839"
+    },
+    {
+      "id": "t100-fx-departure-kbuf-g-001",
+      "scheduledTime": "17:36",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KBUF",
+      "airlineIcao": "fdx",
+      "flightNumber": "3895"
+    },
+    {
+      "id": "t100-fx-arrival-koak-g-003",
+      "scheduledTime": "17:37",
+      "category": "arrival",
+      "originIcao": "KOAK",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "9388"
+    },
+    {
+      "id": "departure-oh5266-mem-phl",
+      "category": "departure",
+      "scheduledTime": "17:38",
+      "airlineIcao": "jia",
+      "flightNumber": "5266",
+      "originIcao": "KMEM",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "t100-fx-arrival-kbdl-g-001",
+      "scheduledTime": "17:38",
+      "category": "arrival",
+      "originIcao": "KBDL",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "5022"
+    },
+    {
+      "id": "t100-fx-departure-kgsp-g-001",
+      "scheduledTime": "17:38",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KGSP",
+      "airlineIcao": "fdx",
+      "flightNumber": "2320"
+    },
+    {
+      "id": "arrival-dl2515-slc-mem",
+      "category": "arrival",
+      "scheduledTime": "17:40",
+      "airlineIcao": "dal",
+      "flightNumber": "2515",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "departure-oo4007-mem-dtw",
+      "category": "departure",
+      "scheduledTime": "17:42",
+      "airlineIcao": "skw",
+      "flightNumber": "4007",
+      "originIcao": "KMEM",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "t100-fx-departure-kroc-g-001",
+      "scheduledTime": "17:42",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KROC",
+      "airlineIcao": "fdx",
+      "flightNumber": "9841"
+    },
+    {
+      "id": "t100-fx-departure-kpwm-g-001",
+      "scheduledTime": "17:46",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KPWM",
+      "airlineIcao": "fdx",
+      "flightNumber": "2275"
+    },
+    {
+      "id": "t100-fx-arrival-ksjc-g-001",
+      "scheduledTime": "17:48",
+      "category": "arrival",
+      "originIcao": "KSJC",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "7192"
+    },
+    {
+      "id": "t100-fx-departure-cymx-g-001",
+      "scheduledTime": "17:48",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "CYMX",
+      "airlineIcao": "fdx",
+      "flightNumber": "605"
+    },
+    {
+      "id": "t100-fx-departure-egss-g-001",
+      "scheduledTime": "17:50",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "EGSS",
+      "airlineIcao": "fdx",
+      "flightNumber": "2328"
+    },
+    {
+      "id": "arrival-oo4063-msp-mem",
+      "category": "arrival",
+      "scheduledTime": "17:52",
+      "airlineIcao": "skw",
+      "flightNumber": "4063",
+      "originIcao": "KMSP",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "departure-dl552-mem-atl",
+      "category": "departure",
+      "scheduledTime": "17:52",
+      "airlineIcao": "dal",
+      "flightNumber": "552",
+      "originIcao": "KMEM",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-fx-arrival-kewr-g-001",
+      "scheduledTime": "17:56",
+      "category": "arrival",
+      "originIcao": "KEWR",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "4660"
+    },
+    {
+      "id": "arrival-oo4742-ord-mem",
+      "category": "arrival",
+      "scheduledTime": "17:58",
+      "airlineIcao": "skw",
+      "flightNumber": "4742",
+      "originIcao": "KORD",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kabe-g-001",
+      "scheduledTime": "17:58",
+      "category": "arrival",
+      "originIcao": "KABE",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "6559"
+    },
+    {
+      "id": "t100-fx-arrival-ksea-g-001",
+      "scheduledTime": "17:58",
+      "category": "arrival",
+      "originIcao": "KSEA",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "612"
+    },
+    {
+      "id": "t100-fx-arrival-krsw-g-001",
+      "scheduledTime": "17:59",
+      "category": "arrival",
+      "originIcao": "KRSW",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "1950"
+    },
+    {
+      "id": "arrival-wn656-las-mem",
+      "category": "arrival",
+      "scheduledTime": "18:00",
+      "airlineIcao": "swa",
+      "flightNumber": "656",
+      "originIcao": "KLAS",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-mmqt-g-001",
+      "scheduledTime": "18:00",
+      "category": "arrival",
+      "originIcao": "MMQT",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3535"
+    },
+    {
+      "id": "departure-yx4457-mem-ord",
+      "category": "departure",
+      "scheduledTime": "18:06",
+      "airlineIcao": "rpa",
+      "flightNumber": "4457",
+      "originIcao": "KMEM",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-fx-departure-tjsj-g-002",
+      "scheduledTime": "18:08",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "TJSJ",
+      "airlineIcao": "fdx",
+      "flightNumber": "5298"
+    },
+    {
+      "id": "t100-fx-departure-cyyc-g-001",
+      "scheduledTime": "18:10",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "CYYC",
+      "airlineIcao": "fdx",
+      "flightNumber": "634"
+    },
+    {
+      "id": "t100-fx-departure-kfsd-g-001",
+      "scheduledTime": "18:12",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KFSD",
+      "airlineIcao": "fdx",
+      "flightNumber": "4444"
+    },
+    {
+      "id": "departure-wn4024-mem-den",
+      "category": "departure",
+      "scheduledTime": "18:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4024",
+      "originIcao": "KMEM",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-dl2939-atl-mem",
+      "category": "arrival",
+      "scheduledTime": "18:16",
+      "airlineIcao": "dal",
+      "flightNumber": "2939",
+      "originIcao": "KATL",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-cyyz-g-001",
+      "scheduledTime": "18:16",
+      "category": "arrival",
+      "originIcao": "CYYZ",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3156"
+    },
+    {
+      "id": "arrival-oh5269-clt-mem",
+      "category": "arrival",
+      "scheduledTime": "18:18",
+      "airlineIcao": "jia",
+      "flightNumber": "5269",
+      "originIcao": "KCLT",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-departure-kmco-g-002",
+      "scheduledTime": "18:18",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KMCO",
+      "airlineIcao": "fdx",
+      "flightNumber": "5081"
+    },
+    {
+      "id": "t100-fx-arrival-lfpg-g-002",
+      "scheduledTime": "18:19",
+      "category": "arrival",
+      "originIcao": "LFPG",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "9102"
+    },
+    {
+      "id": "t100-fx-arrival-kric-g-001",
+      "scheduledTime": "18:20",
+      "category": "arrival",
+      "originIcao": "KRIC",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "2422"
+    },
+    {
+      "id": "t100-fx-departure-kjfk-g-002",
+      "scheduledTime": "18:34",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KJFK",
+      "airlineIcao": "fdx",
+      "flightNumber": "6179"
+    },
+    {
+      "id": "departure-oo5336-mem-ord",
+      "category": "departure",
+      "scheduledTime": "18:35",
+      "airlineIcao": "skw",
+      "flightNumber": "5336",
+      "originIcao": "KMEM",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-yx4459-mem-dca",
+      "category": "departure",
+      "scheduledTime": "18:35",
+      "airlineIcao": "rpa",
+      "flightNumber": "4459",
+      "originIcao": "KMEM",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "t100-fx-departure-kbwi-g-001",
+      "scheduledTime": "18:35",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KBWI",
+      "airlineIcao": "fdx",
+      "flightNumber": "6494"
+    },
+    {
+      "id": "t100-fx-departure-panc-g-003",
+      "scheduledTime": "18:35",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "PANC",
+      "airlineIcao": "fdx",
+      "flightNumber": "9049"
+    },
+    {
+      "id": "departure-oo4063-mem-msp",
+      "category": "departure",
+      "scheduledTime": "18:39",
+      "airlineIcao": "skw",
+      "flightNumber": "4063",
+      "originIcao": "KMEM",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "t100-fx-departure-ksdf-g-001",
+      "scheduledTime": "18:39",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KSDF",
+      "airlineIcao": "fdx",
+      "flightNumber": "5946"
+    },
+    {
+      "id": "t100-9e-departure-katl-f-001",
+      "scheduledTime": "18:41",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KATL",
+      "airlineIcao": "edv",
+      "flightNumber": "8947"
+    },
+    {
+      "id": "t100-fx-departure-tjsj-g-001",
+      "scheduledTime": "18:41",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "TJSJ",
+      "airlineIcao": "fdx",
+      "flightNumber": "2106"
+    },
+    {
+      "id": "t100-fx-departure-kric-g-001",
+      "scheduledTime": "18:42",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KRIC",
+      "airlineIcao": "fdx",
+      "flightNumber": "5337"
+    },
+    {
+      "id": "departure-wn656-mem-hou",
+      "category": "departure",
+      "scheduledTime": "18:45",
+      "airlineIcao": "swa",
+      "flightNumber": "656",
+      "originIcao": "KMEM",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "t100-fx-departure-kcos-g-001",
+      "scheduledTime": "18:48",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KCOS",
+      "airlineIcao": "fdx",
+      "flightNumber": "3045"
+    },
+    {
+      "id": "departure-oh5269-mem-clt",
+      "category": "departure",
+      "scheduledTime": "18:49",
+      "airlineIcao": "jia",
+      "flightNumber": "5269",
+      "originIcao": "KMEM",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "t100-fx-departure-ksyr-g-001",
+      "scheduledTime": "18:51",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KSYR",
+      "airlineIcao": "fdx",
+      "flightNumber": "5043"
+    },
+    {
+      "id": "t100-fx-arrival-krdu-g-001",
+      "scheduledTime": "19:01",
+      "category": "arrival",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "9096"
+    },
+    {
+      "id": "arrival-f94626-den-mem",
+      "category": "arrival",
+      "scheduledTime": "19:03",
+      "airlineIcao": "fft",
+      "flightNumber": "4626",
+      "originIcao": "KDEN",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-9x-arrival-khro-f-001",
+      "scheduledTime": "19:07",
+      "category": "arrival",
+      "originIcao": "KHRO",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdy",
+      "flightNumber": "1740"
+    },
+    {
+      "id": "t100-fx-arrival-ktlh-g-001",
+      "scheduledTime": "19:27",
+      "category": "arrival",
+      "originIcao": "KTLH",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "5687"
+    },
+    {
+      "id": "arrival-dl2384-atl-mem",
+      "category": "arrival",
+      "scheduledTime": "19:28",
+      "airlineIcao": "dal",
+      "flightNumber": "2384",
+      "originIcao": "KATL",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kcha-g-001",
+      "scheduledTime": "19:28",
+      "category": "arrival",
+      "originIcao": "KCHA",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "9185"
+    },
+    {
+      "id": "t100-fx-departure-kmci-g-001",
+      "scheduledTime": "19:42",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KMCI",
+      "airlineIcao": "fdx",
+      "flightNumber": "9533"
+    },
+    {
+      "id": "departure-dl2082-mem-lax",
+      "category": "departure",
+      "scheduledTime": "19:43",
+      "airlineIcao": "dal",
+      "flightNumber": "2082",
+      "originIcao": "KMEM",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "t100-fx-departure-kict-g-001",
+      "scheduledTime": "19:45",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "KICT",
+      "airlineIcao": "fdx",
+      "flightNumber": "1551"
+    },
+    {
+      "id": "t100-fx-departure-panc-g-004",
+      "scheduledTime": "19:47",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "PANC",
+      "airlineIcao": "fdx",
+      "flightNumber": "6744"
+    },
+    {
+      "id": "departure-f94625-mem-den",
+      "category": "departure",
+      "scheduledTime": "19:48",
+      "airlineIcao": "fft",
+      "flightNumber": "4625",
+      "originIcao": "KMEM",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-fx-departure-eddk-g-001",
+      "scheduledTime": "19:51",
+      "category": "departure",
+      "originIcao": "KMEM",
+      "destinationIcao": "EDDK",
+      "airlineIcao": "fdx",
+      "flightNumber": "327"
+    },
+    {
+      "id": "arrival-dl2001-atl-mem",
+      "category": "arrival",
+      "scheduledTime": "20:35",
+      "airlineIcao": "dal",
+      "flightNumber": "2001",
+      "originIcao": "KATL",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kbos-g-002",
+      "scheduledTime": "20:37",
+      "category": "arrival",
+      "originIcao": "KBOS",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "4207"
+    },
+    {
+      "id": "t100-fx-arrival-kmco-g-001",
+      "scheduledTime": "20:37",
+      "category": "arrival",
+      "originIcao": "KMCO",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "1691"
+    },
+    {
+      "id": "t100-fx-arrival-kgeg-g-001",
+      "scheduledTime": "20:53",
+      "category": "arrival",
+      "originIcao": "KGEG",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "6637"
+    },
+    {
+      "id": "arrival-ua2130-den-mem",
+      "category": "arrival",
+      "scheduledTime": "20:56",
+      "airlineIcao": "ual",
+      "flightNumber": "2130",
+      "originIcao": "KDEN",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-ksat-g-001",
+      "scheduledTime": "20:56",
+      "category": "arrival",
+      "originIcao": "KSAT",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "8490"
+    },
+    {
+      "id": "t100-fx-arrival-kcvg-g-001",
+      "scheduledTime": "20:57",
+      "category": "arrival",
+      "originIcao": "KCVG",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "4561"
+    },
+    {
+      "id": "arrival-oh5415-phl-mem",
+      "category": "arrival",
+      "scheduledTime": "21:00",
+      "airlineIcao": "jia",
+      "flightNumber": "5415",
+      "originIcao": "KPHL",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-tjsj-g-001",
+      "scheduledTime": "21:00",
+      "category": "arrival",
+      "originIcao": "TJSJ",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "4287"
+    },
+    {
+      "id": "arrival-dl1230-dtw-mem",
+      "category": "arrival",
+      "scheduledTime": "21:01",
+      "airlineIcao": "dal",
+      "flightNumber": "1230",
+      "originIcao": "KDTW",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kfwa-g-001",
+      "scheduledTime": "21:01",
+      "category": "arrival",
+      "originIcao": "KFWA",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "2329"
+    },
+    {
+      "id": "t100-fx-arrival-kewr-g-003",
+      "scheduledTime": "21:03",
+      "category": "arrival",
+      "originIcao": "KEWR",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "7481"
+    },
+    {
+      "id": "arrival-wn4745-hou-mem",
+      "category": "arrival",
+      "scheduledTime": "21:05",
+      "airlineIcao": "swa",
+      "flightNumber": "4745",
+      "originIcao": "KHOU",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kgrr-g-001",
+      "scheduledTime": "21:05",
+      "category": "arrival",
+      "originIcao": "KGRR",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3498"
+    },
+    {
+      "id": "t100-fx-arrival-kpdx-g-001",
+      "scheduledTime": "21:06",
+      "category": "arrival",
+      "originIcao": "KPDX",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "5761"
+    },
+    {
+      "id": "t100-fx-arrival-kfsd-g-001",
+      "scheduledTime": "21:22",
+      "category": "arrival",
+      "originIcao": "KFSD",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "6720"
+    },
+    {
+      "id": "t100-fx-arrival-rjbb-g-001",
+      "scheduledTime": "21:24",
+      "category": "arrival",
+      "originIcao": "RJBB",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "8373"
+    },
+    {
+      "id": "arrival-oh5491-dca-mem",
+      "category": "arrival",
+      "scheduledTime": "21:25",
+      "airlineIcao": "jia",
+      "flightNumber": "5491",
+      "originIcao": "KDCA",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kcid-g-001",
+      "scheduledTime": "21:47",
+      "category": "arrival",
+      "originIcao": "KCID",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "4008"
+    },
+    {
+      "id": "arrival-oo3952-aus-mem",
+      "category": "arrival",
+      "scheduledTime": "21:48",
+      "airlineIcao": "skw",
+      "flightNumber": "3952",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kbur-g-001",
+      "scheduledTime": "21:49",
+      "category": "arrival",
+      "originIcao": "KBUR",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3966"
+    },
+    {
+      "id": "arrival-ua1794-iah-mem",
+      "category": "arrival",
+      "scheduledTime": "22:06",
+      "airlineIcao": "ual",
+      "flightNumber": "1794",
+      "originIcao": "KIAH",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kmdt-g-001",
+      "scheduledTime": "22:07",
+      "category": "arrival",
+      "originIcao": "KMDT",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "6066"
+    },
+    {
+      "id": "t100-fx-arrival-kden-g-001",
+      "scheduledTime": "22:08",
+      "category": "arrival",
+      "originIcao": "KDEN",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "4569"
+    },
+    {
+      "id": "t100-fx-arrival-koak-g-001",
+      "scheduledTime": "22:10",
+      "category": "arrival",
+      "originIcao": "KOAK",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "6998"
+    },
+    {
+      "id": "arrival-yx4696-lga-mem",
+      "category": "arrival",
+      "scheduledTime": "22:11",
+      "airlineIcao": "rpa",
+      "flightNumber": "4696",
+      "originIcao": "KLGA",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-tjbq-g-001",
+      "scheduledTime": "22:11",
+      "category": "arrival",
+      "originIcao": "TJBQ",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "6997"
+    },
+    {
+      "id": "t100-yv-arrival-kiah-f-001",
+      "scheduledTime": "22:11",
+      "category": "arrival",
+      "originIcao": "KIAH",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "ash",
+      "flightNumber": "3042"
+    },
+    {
+      "id": "arrival-oo4035-msp-mem",
+      "category": "arrival",
+      "scheduledTime": "22:15",
+      "airlineIcao": "skw",
+      "flightNumber": "4035",
+      "originIcao": "KMSP",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-koma-g-001",
+      "scheduledTime": "22:17",
+      "category": "arrival",
+      "originIcao": "KOMA",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "498"
+    },
+    {
+      "id": "t100-fx-arrival-kelp-g-001",
+      "scheduledTime": "22:18",
+      "category": "arrival",
+      "originIcao": "KELP",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "9502"
+    },
+    {
+      "id": "arrival-aa3262-dfw-mem",
+      "category": "arrival",
+      "scheduledTime": "22:21",
+      "airlineIcao": "aal",
+      "flightNumber": "3262",
+      "originIcao": "KDFW",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-yv-arrival-kiah-f-002",
+      "scheduledTime": "22:26",
+      "category": "arrival",
+      "originIcao": "KIAH",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "ash",
+      "flightNumber": "9348"
+    },
+    {
+      "id": "arrival-yx5775-lga-mem",
+      "category": "arrival",
+      "scheduledTime": "22:29",
+      "airlineIcao": "rpa",
+      "flightNumber": "5775",
+      "originIcao": "KLGA",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-panc-g-002",
+      "scheduledTime": "22:31",
+      "category": "arrival",
+      "originIcao": "PANC",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "1521"
+    },
+    {
+      "id": "t100-fx-arrival-kaus-g-001",
+      "scheduledTime": "22:38",
+      "category": "arrival",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "5247"
+    },
+    {
+      "id": "t100-5x-arrival-krfd-g-001",
+      "scheduledTime": "22:39",
+      "category": "arrival",
+      "originIcao": "KRFD",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "ups",
+      "flightNumber": "5767"
+    },
+    {
+      "id": "arrival-wn2225-den-mem",
+      "category": "arrival",
+      "scheduledTime": "22:40",
+      "airlineIcao": "swa",
+      "flightNumber": "2225",
+      "originIcao": "KDEN",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-cyyc-g-001",
+      "scheduledTime": "22:46",
+      "category": "arrival",
+      "originIcao": "CYYC",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "4831"
+    },
+    {
+      "id": "t100-fx-arrival-kclt-g-001",
+      "scheduledTime": "22:46",
+      "category": "arrival",
+      "originIcao": "KCLT",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "9932"
+    },
+    {
+      "id": "arrival-wn580-bna-mem",
+      "category": "arrival",
+      "scheduledTime": "22:50",
+      "airlineIcao": "swa",
+      "flightNumber": "580",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-klax-g-001",
+      "scheduledTime": "23:18",
+      "category": "arrival",
+      "originIcao": "KLAX",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3269"
+    },
+    {
+      "id": "arrival-ua2317-ord-mem",
+      "category": "arrival",
+      "scheduledTime": "23:21",
+      "airlineIcao": "ual",
+      "flightNumber": "2317",
+      "originIcao": "KORD",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kont-g-001",
+      "scheduledTime": "23:23",
+      "category": "arrival",
+      "originIcao": "KONT",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "6171"
+    },
+    {
+      "id": "arrival-dl2501-atl-mem",
+      "category": "arrival",
+      "scheduledTime": "23:24",
+      "airlineIcao": "dal",
+      "flightNumber": "2501",
+      "originIcao": "KATL",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "arrival-wn4100-mdw-mem",
+      "category": "arrival",
+      "scheduledTime": "23:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4100",
+      "originIcao": "KMDW",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kbfm-g-001",
+      "scheduledTime": "23:26",
+      "category": "arrival",
+      "originIcao": "KBFM",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "6403"
+    },
+    {
+      "id": "t100-fx-arrival-kont-g-002",
+      "scheduledTime": "23:27",
+      "category": "arrival",
+      "originIcao": "KONT",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "5124"
+    },
+    {
+      "id": "t100-fx-arrival-mmmy-g-001",
+      "scheduledTime": "23:27",
+      "category": "arrival",
+      "originIcao": "MMMY",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "728"
+    },
+    {
+      "id": "t100-fx-arrival-panc-g-004",
+      "scheduledTime": "23:27",
+      "category": "arrival",
+      "originIcao": "PANC",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "8545"
+    },
+    {
+      "id": "t100-fx-arrival-panc-g-001",
+      "scheduledTime": "23:29",
+      "category": "arrival",
+      "originIcao": "PANC",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "8983"
+    },
+    {
+      "id": "arrival-yx3563-ewr-mem",
+      "category": "arrival",
+      "scheduledTime": "23:30",
+      "airlineIcao": "rpa",
+      "flightNumber": "3563",
+      "originIcao": "KEWR",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kbna-g-001",
+      "scheduledTime": "23:31",
+      "category": "arrival",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "1511"
+    },
+    {
+      "id": "t100-fx-arrival-cyvr-g-001",
+      "scheduledTime": "23:34",
+      "category": "arrival",
+      "originIcao": "CYVR",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "918"
+    },
+    {
+      "id": "arrival-yx5594-bos-mem",
+      "category": "arrival",
+      "scheduledTime": "23:35",
+      "airlineIcao": "rpa",
+      "flightNumber": "5594",
+      "originIcao": "KBOS",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-krno-g-001",
+      "scheduledTime": "23:44",
+      "category": "arrival",
+      "originIcao": "KRNO",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "1263"
+    },
+    {
+      "id": "arrival-aa2392-clt-mem",
+      "category": "arrival",
+      "scheduledTime": "23:45",
+      "airlineIcao": "aal",
+      "flightNumber": "2392",
+      "originIcao": "KCLT",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kalb-g-001",
+      "scheduledTime": "23:46",
+      "category": "arrival",
+      "originIcao": "KALB",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "2099"
+    },
+    {
+      "id": "arrival-aa1551-mia-mem",
+      "category": "arrival",
+      "scheduledTime": "23:55",
+      "airlineIcao": "aal",
+      "flightNumber": "1551",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kdfw-g-001",
+      "scheduledTime": "23:55",
+      "category": "arrival",
+      "originIcao": "KDFW",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "9869"
+    },
+    {
+      "id": "t100-fx-arrival-katl-g-001",
+      "scheduledTime": "23:56",
+      "category": "arrival",
+      "originIcao": "KATL",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "7349"
+    },
+    {
+      "id": "arrival-dl1080-lax-mem",
+      "category": "arrival",
+      "scheduledTime": "23:59",
+      "airlineIcao": "dal",
+      "flightNumber": "1080",
+      "originIcao": "KLAX",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "arrival-mq3923-phx-mem",
+      "category": "arrival",
+      "scheduledTime": "23:59",
+      "airlineIcao": "eny",
+      "flightNumber": "3923",
+      "originIcao": "KPHX",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "t100-fx-arrival-kbmi-g-001",
+      "scheduledTime": "23:59",
+      "category": "arrival",
+      "originIcao": "KBMI",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "2334"
+    },
+    {
+      "id": "t100-fx-arrival-kcle-g-001",
+      "scheduledTime": "23:59",
+      "category": "arrival",
+      "originIcao": "KCLE",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3612"
+    }
+  ]
+}

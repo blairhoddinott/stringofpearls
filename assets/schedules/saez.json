@@ -1,0 +1,5056 @@
+{
+    "schemaVersion": 2,
+    "profileType": "authored",
+    "airportIcao": "SAEZ",
+    "timezone": "America/Argentina/Buenos_Aires",
+    "sampleDate": "2026-07-15",
+    "source": {
+        "name": "stringofpearls airport-authored spawn patterns",
+        "url": "https://github.com/blairhoddinott/stringofpearls/tree/master/assets/airports",
+        "retrievedAt": "2026-09-27",
+        "license": "MIT",
+        "coverage": "Deterministic representative profile compiled from reviewed airport-authored rates, routes, geometry, and airline rules; movements are generated and are not observed historical flights."
+    },
+    "flights": [
+        {
+            "id": "auth-saez-8127eb93-0077",
+            "category": "departure",
+            "scheduledTime": "00:01",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0027",
+            "category": "arrival",
+            "scheduledTime": "00:06",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-c72d4210-0011",
+            "category": "departure",
+            "scheduledTime": "00:06",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-0315368b-0044",
+            "category": "arrival",
+            "scheduledTime": "00:07",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-7986feca-0027",
+            "category": "arrival",
+            "scheduledTime": "00:10",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0078",
+            "category": "departure",
+            "scheduledTime": "00:10",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-cdc0f80d-0022",
+            "category": "arrival",
+            "scheduledTime": "00:10",
+            "spawnPatternKey": "cdc0f80d"
+        },
+        {
+            "id": "auth-saez-b139c601-0071",
+            "category": "departure",
+            "scheduledTime": "00:12",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-172446ba-0032",
+            "category": "departure",
+            "scheduledTime": "00:15",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0028",
+            "category": "arrival",
+            "scheduledTime": "00:15",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8127eb93-0079",
+            "category": "departure",
+            "scheduledTime": "00:19",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0028",
+            "category": "arrival",
+            "scheduledTime": "00:22",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0029",
+            "category": "arrival",
+            "scheduledTime": "00:24",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0026",
+            "category": "departure",
+            "scheduledTime": "00:25",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0009",
+            "category": "departure",
+            "scheduledTime": "00:27",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-8127eb93-0080",
+            "category": "departure",
+            "scheduledTime": "00:28",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-8aebbe22-0013",
+            "category": "arrival",
+            "scheduledTime": "00:30",
+            "spawnPatternKey": "8aebbe22"
+        },
+        {
+            "id": "auth-saez-0315368b-0045",
+            "category": "arrival",
+            "scheduledTime": "00:31",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-b139c601-0072",
+            "category": "departure",
+            "scheduledTime": "00:31",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0030",
+            "category": "arrival",
+            "scheduledTime": "00:33",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0029",
+            "category": "arrival",
+            "scheduledTime": "00:34",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0081",
+            "category": "departure",
+            "scheduledTime": "00:37",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-172446ba-0033",
+            "category": "departure",
+            "scheduledTime": "00:38",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0031",
+            "category": "arrival",
+            "scheduledTime": "00:42",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-c72d4210-0012",
+            "category": "departure",
+            "scheduledTime": "00:43",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-7986feca-0030",
+            "category": "arrival",
+            "scheduledTime": "00:46",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0082",
+            "category": "departure",
+            "scheduledTime": "00:46",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b139c601-0073",
+            "category": "departure",
+            "scheduledTime": "00:49",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0032",
+            "category": "arrival",
+            "scheduledTime": "00:51",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-48094752-0014",
+            "category": "departure",
+            "scheduledTime": "00:53",
+            "spawnPatternKey": "48094752"
+        },
+        {
+            "id": "auth-saez-8127eb93-0083",
+            "category": "departure",
+            "scheduledTime": "00:55",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-0315368b-0046",
+            "category": "arrival",
+            "scheduledTime": "00:56",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-7986feca-0031",
+            "category": "arrival",
+            "scheduledTime": "00:59",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0033",
+            "category": "arrival",
+            "scheduledTime": "01:00",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-172446ba-0034",
+            "category": "departure",
+            "scheduledTime": "01:01",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-8127eb93-0084",
+            "category": "departure",
+            "scheduledTime": "01:04",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b139c601-0074",
+            "category": "departure",
+            "scheduledTime": "01:07",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0010",
+            "category": "departure",
+            "scheduledTime": "01:07",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0034",
+            "category": "arrival",
+            "scheduledTime": "01:09",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0027",
+            "category": "departure",
+            "scheduledTime": "01:09",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-7986feca-0032",
+            "category": "arrival",
+            "scheduledTime": "01:11",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0085",
+            "category": "departure",
+            "scheduledTime": "01:13",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-cdc0f80d-0023",
+            "category": "arrival",
+            "scheduledTime": "01:13",
+            "spawnPatternKey": "cdc0f80d"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0035",
+            "category": "arrival",
+            "scheduledTime": "01:18",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-0315368b-0047",
+            "category": "arrival",
+            "scheduledTime": "01:20",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-c72d4210-0013",
+            "category": "departure",
+            "scheduledTime": "01:20",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-82790adb-0010",
+            "category": "departure",
+            "scheduledTime": "01:21",
+            "spawnPatternKey": "82790adb"
+        },
+        {
+            "id": "auth-saez-8127eb93-0086",
+            "category": "departure",
+            "scheduledTime": "01:22",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0033",
+            "category": "arrival",
+            "scheduledTime": "01:23",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-172446ba-0035",
+            "category": "departure",
+            "scheduledTime": "01:24",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-b139c601-0075",
+            "category": "departure",
+            "scheduledTime": "01:25",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0036",
+            "category": "arrival",
+            "scheduledTime": "01:27",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8127eb93-0087",
+            "category": "departure",
+            "scheduledTime": "01:31",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-8aebbe22-0014",
+            "category": "arrival",
+            "scheduledTime": "01:32",
+            "spawnPatternKey": "8aebbe22"
+        },
+        {
+            "id": "auth-saez-7986feca-0034",
+            "category": "arrival",
+            "scheduledTime": "01:35",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0037",
+            "category": "arrival",
+            "scheduledTime": "01:36",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8127eb93-0088",
+            "category": "departure",
+            "scheduledTime": "01:40",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b139c601-0076",
+            "category": "departure",
+            "scheduledTime": "01:44",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-0315368b-0048",
+            "category": "arrival",
+            "scheduledTime": "01:45",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0038",
+            "category": "arrival",
+            "scheduledTime": "01:45",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-172446ba-0036",
+            "category": "departure",
+            "scheduledTime": "01:47",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-7986feca-0035",
+            "category": "arrival",
+            "scheduledTime": "01:47",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0011",
+            "category": "departure",
+            "scheduledTime": "01:47",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-8127eb93-0089",
+            "category": "departure",
+            "scheduledTime": "01:49",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0028",
+            "category": "departure",
+            "scheduledTime": "01:53",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0039",
+            "category": "arrival",
+            "scheduledTime": "01:54",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-c72d4210-0014",
+            "category": "departure",
+            "scheduledTime": "01:57",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-8127eb93-0090",
+            "category": "departure",
+            "scheduledTime": "01:58",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0036",
+            "category": "arrival",
+            "scheduledTime": "02:00",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-b139c601-0077",
+            "category": "departure",
+            "scheduledTime": "02:02",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0040",
+            "category": "arrival",
+            "scheduledTime": "02:03",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8127eb93-0091",
+            "category": "departure",
+            "scheduledTime": "02:07",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-bf9932a4-0002",
+            "category": "arrival",
+            "scheduledTime": "02:08",
+            "spawnPatternKey": "bf9932a4"
+        },
+        {
+            "id": "auth-saez-0315368b-0049",
+            "category": "arrival",
+            "scheduledTime": "02:09",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-172446ba-0037",
+            "category": "departure",
+            "scheduledTime": "02:11",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0041",
+            "category": "arrival",
+            "scheduledTime": "02:12",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0037",
+            "category": "arrival",
+            "scheduledTime": "02:12",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0092",
+            "category": "departure",
+            "scheduledTime": "02:16",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-cdc0f80d-0001",
+            "category": "arrival",
+            "scheduledTime": "02:16",
+            "spawnPatternKey": "cdc0f80d"
+        },
+        {
+            "id": "auth-saez-b139c601-0078",
+            "category": "departure",
+            "scheduledTime": "02:20",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0042",
+            "category": "arrival",
+            "scheduledTime": "02:21",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-48094752-0015",
+            "category": "departure",
+            "scheduledTime": "02:23",
+            "spawnPatternKey": "48094752"
+        },
+        {
+            "id": "auth-saez-7986feca-0038",
+            "category": "arrival",
+            "scheduledTime": "02:24",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0093",
+            "category": "departure",
+            "scheduledTime": "02:25",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0012",
+            "category": "departure",
+            "scheduledTime": "02:27",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0043",
+            "category": "arrival",
+            "scheduledTime": "02:30",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-0315368b-0050",
+            "category": "arrival",
+            "scheduledTime": "02:33",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-c72d4210-0015",
+            "category": "departure",
+            "scheduledTime": "02:33",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-172446ba-0038",
+            "category": "departure",
+            "scheduledTime": "02:34",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-8127eb93-0094",
+            "category": "departure",
+            "scheduledTime": "02:34",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-8aebbe22-0015",
+            "category": "arrival",
+            "scheduledTime": "02:35",
+            "spawnPatternKey": "8aebbe22"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0029",
+            "category": "departure",
+            "scheduledTime": "02:36",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-7986feca-0039",
+            "category": "arrival",
+            "scheduledTime": "02:36",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-b139c601-0079",
+            "category": "departure",
+            "scheduledTime": "02:38",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0044",
+            "category": "arrival",
+            "scheduledTime": "02:39",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8127eb93-0095",
+            "category": "departure",
+            "scheduledTime": "02:43",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-2996d4ef-0005",
+            "category": "arrival",
+            "scheduledTime": "02:47",
+            "spawnPatternKey": "2996d4ef"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0045",
+            "category": "arrival",
+            "scheduledTime": "02:48",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0040",
+            "category": "arrival",
+            "scheduledTime": "02:48",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0096",
+            "category": "departure",
+            "scheduledTime": "02:52",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-172446ba-0039",
+            "category": "departure",
+            "scheduledTime": "02:57",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0046",
+            "category": "arrival",
+            "scheduledTime": "02:57",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-b139c601-0001",
+            "category": "departure",
+            "scheduledTime": "02:57",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-0315368b-0051",
+            "category": "arrival",
+            "scheduledTime": "02:58",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-7986feca-0041",
+            "category": "arrival",
+            "scheduledTime": "03:01",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0097",
+            "category": "departure",
+            "scheduledTime": "03:01",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0047",
+            "category": "arrival",
+            "scheduledTime": "03:06",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0013",
+            "category": "departure",
+            "scheduledTime": "03:07",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-8127eb93-0098",
+            "category": "departure",
+            "scheduledTime": "03:10",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-c72d4210-0016",
+            "category": "departure",
+            "scheduledTime": "03:10",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-7986feca-0042",
+            "category": "arrival",
+            "scheduledTime": "03:13",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0048",
+            "category": "arrival",
+            "scheduledTime": "03:15",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-b139c601-0002",
+            "category": "departure",
+            "scheduledTime": "03:15",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-cdc0f80d-0002",
+            "category": "arrival",
+            "scheduledTime": "03:18",
+            "spawnPatternKey": "cdc0f80d"
+        },
+        {
+            "id": "auth-saez-8127eb93-0099",
+            "category": "departure",
+            "scheduledTime": "03:19",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-172446ba-0040",
+            "category": "departure",
+            "scheduledTime": "03:20",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0030",
+            "category": "departure",
+            "scheduledTime": "03:20",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-0315368b-0052",
+            "category": "arrival",
+            "scheduledTime": "03:22",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0049",
+            "category": "arrival",
+            "scheduledTime": "03:24",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0043",
+            "category": "arrival",
+            "scheduledTime": "03:25",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0100",
+            "category": "departure",
+            "scheduledTime": "03:28",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0050",
+            "category": "arrival",
+            "scheduledTime": "03:33",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-b139c601-0003",
+            "category": "departure",
+            "scheduledTime": "03:33",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-7986feca-0044",
+            "category": "arrival",
+            "scheduledTime": "03:37",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0101",
+            "category": "departure",
+            "scheduledTime": "03:37",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-8aebbe22-0016",
+            "category": "arrival",
+            "scheduledTime": "03:38",
+            "spawnPatternKey": "8aebbe22"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0051",
+            "category": "arrival",
+            "scheduledTime": "03:42",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-172446ba-0041",
+            "category": "departure",
+            "scheduledTime": "03:44",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-82790adb-0001",
+            "category": "departure",
+            "scheduledTime": "03:45",
+            "spawnPatternKey": "82790adb"
+        },
+        {
+            "id": "auth-saez-8127eb93-0102",
+            "category": "departure",
+            "scheduledTime": "03:46",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-0315368b-0053",
+            "category": "arrival",
+            "scheduledTime": "03:47",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-c72d4210-0017",
+            "category": "departure",
+            "scheduledTime": "03:47",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0014",
+            "category": "departure",
+            "scheduledTime": "03:47",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-7986feca-0045",
+            "category": "arrival",
+            "scheduledTime": "03:49",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-b8eefd3c-0004",
+            "category": "arrival",
+            "scheduledTime": "03:50",
+            "spawnPatternKey": "b8eefd3c"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0052",
+            "category": "arrival",
+            "scheduledTime": "03:51",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-b139c601-0004",
+            "category": "departure",
+            "scheduledTime": "03:51",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-48094752-0016",
+            "category": "departure",
+            "scheduledTime": "03:53",
+            "spawnPatternKey": "48094752"
+        },
+        {
+            "id": "auth-saez-8127eb93-0103",
+            "category": "departure",
+            "scheduledTime": "03:55",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0053",
+            "category": "arrival",
+            "scheduledTime": "04:00",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0046",
+            "category": "arrival",
+            "scheduledTime": "04:02",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0031",
+            "category": "departure",
+            "scheduledTime": "04:04",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-8127eb93-0104",
+            "category": "departure",
+            "scheduledTime": "04:04",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-172446ba-0042",
+            "category": "departure",
+            "scheduledTime": "04:07",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0054",
+            "category": "arrival",
+            "scheduledTime": "04:09",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-b139c601-0005",
+            "category": "departure",
+            "scheduledTime": "04:09",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-0315368b-0054",
+            "category": "arrival",
+            "scheduledTime": "04:11",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-8127eb93-0105",
+            "category": "departure",
+            "scheduledTime": "04:13",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0047",
+            "category": "arrival",
+            "scheduledTime": "04:14",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0055",
+            "category": "arrival",
+            "scheduledTime": "04:18",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-cdc0f80d-0003",
+            "category": "arrival",
+            "scheduledTime": "04:21",
+            "spawnPatternKey": "cdc0f80d"
+        },
+        {
+            "id": "auth-saez-8127eb93-0106",
+            "category": "departure",
+            "scheduledTime": "04:22",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-c72d4210-0018",
+            "category": "departure",
+            "scheduledTime": "04:24",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-7986feca-0048",
+            "category": "arrival",
+            "scheduledTime": "04:26",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0056",
+            "category": "arrival",
+            "scheduledTime": "04:27",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0015",
+            "category": "departure",
+            "scheduledTime": "04:27",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-b139c601-0006",
+            "category": "departure",
+            "scheduledTime": "04:28",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-172446ba-0043",
+            "category": "departure",
+            "scheduledTime": "04:30",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-8127eb93-0107",
+            "category": "departure",
+            "scheduledTime": "04:31",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-bf9932a4-0003",
+            "category": "arrival",
+            "scheduledTime": "04:32",
+            "spawnPatternKey": "bf9932a4"
+        },
+        {
+            "id": "auth-saez-0315368b-0055",
+            "category": "arrival",
+            "scheduledTime": "04:35",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0057",
+            "category": "arrival",
+            "scheduledTime": "04:36",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0049",
+            "category": "arrival",
+            "scheduledTime": "04:38",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0108",
+            "category": "departure",
+            "scheduledTime": "04:40",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-8aebbe22-0017",
+            "category": "arrival",
+            "scheduledTime": "04:40",
+            "spawnPatternKey": "8aebbe22"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0058",
+            "category": "arrival",
+            "scheduledTime": "04:45",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-b139c601-0007",
+            "category": "departure",
+            "scheduledTime": "04:46",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0032",
+            "category": "departure",
+            "scheduledTime": "04:47",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-8127eb93-0109",
+            "category": "departure",
+            "scheduledTime": "04:49",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0050",
+            "category": "arrival",
+            "scheduledTime": "04:50",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-172446ba-0044",
+            "category": "departure",
+            "scheduledTime": "04:53",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0059",
+            "category": "arrival",
+            "scheduledTime": "04:54",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8127eb93-0110",
+            "category": "departure",
+            "scheduledTime": "04:58",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-0315368b-0056",
+            "category": "arrival",
+            "scheduledTime": "05:00",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-c72d4210-0019",
+            "category": "departure",
+            "scheduledTime": "05:01",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0060",
+            "category": "arrival",
+            "scheduledTime": "05:03",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0051",
+            "category": "arrival",
+            "scheduledTime": "05:03",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-b139c601-0008",
+            "category": "departure",
+            "scheduledTime": "05:04",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-8127eb93-0111",
+            "category": "departure",
+            "scheduledTime": "05:07",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0016",
+            "category": "departure",
+            "scheduledTime": "05:07",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0061",
+            "category": "arrival",
+            "scheduledTime": "05:12",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0052",
+            "category": "arrival",
+            "scheduledTime": "05:15",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-172446ba-0045",
+            "category": "departure",
+            "scheduledTime": "05:16",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-8127eb93-0112",
+            "category": "departure",
+            "scheduledTime": "05:16",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0062",
+            "category": "arrival",
+            "scheduledTime": "05:21",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-b139c601-0009",
+            "category": "departure",
+            "scheduledTime": "05:22",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-48094752-0001",
+            "category": "departure",
+            "scheduledTime": "05:23",
+            "spawnPatternKey": "48094752"
+        },
+        {
+            "id": "auth-saez-cdc0f80d-0004",
+            "category": "arrival",
+            "scheduledTime": "05:23",
+            "spawnPatternKey": "cdc0f80d"
+        },
+        {
+            "id": "auth-saez-0315368b-0057",
+            "category": "arrival",
+            "scheduledTime": "05:24",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-8127eb93-0113",
+            "category": "departure",
+            "scheduledTime": "05:25",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0053",
+            "category": "arrival",
+            "scheduledTime": "05:27",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0063",
+            "category": "arrival",
+            "scheduledTime": "05:30",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0033",
+            "category": "departure",
+            "scheduledTime": "05:31",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-8127eb93-0114",
+            "category": "departure",
+            "scheduledTime": "05:34",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-c72d4210-0020",
+            "category": "departure",
+            "scheduledTime": "05:38",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0064",
+            "category": "arrival",
+            "scheduledTime": "05:39",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0054",
+            "category": "arrival",
+            "scheduledTime": "05:39",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-172446ba-0046",
+            "category": "departure",
+            "scheduledTime": "05:40",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-b139c601-0010",
+            "category": "departure",
+            "scheduledTime": "05:41",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-8127eb93-0115",
+            "category": "departure",
+            "scheduledTime": "05:43",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-8aebbe22-0018",
+            "category": "arrival",
+            "scheduledTime": "05:43",
+            "spawnPatternKey": "8aebbe22"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0017",
+            "category": "departure",
+            "scheduledTime": "05:47",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0065",
+            "category": "arrival",
+            "scheduledTime": "05:48",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-0315368b-0058",
+            "category": "arrival",
+            "scheduledTime": "05:49",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-7986feca-0055",
+            "category": "arrival",
+            "scheduledTime": "05:51",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0116",
+            "category": "departure",
+            "scheduledTime": "05:52",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0066",
+            "category": "arrival",
+            "scheduledTime": "05:57",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-b139c601-0011",
+            "category": "departure",
+            "scheduledTime": "05:59",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-8127eb93-0117",
+            "category": "departure",
+            "scheduledTime": "06:01",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-172446ba-0047",
+            "category": "departure",
+            "scheduledTime": "06:03",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-7986feca-0056",
+            "category": "arrival",
+            "scheduledTime": "06:04",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0067",
+            "category": "arrival",
+            "scheduledTime": "06:06",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-82790adb-0002",
+            "category": "departure",
+            "scheduledTime": "06:09",
+            "spawnPatternKey": "82790adb"
+        },
+        {
+            "id": "auth-saez-8127eb93-0118",
+            "category": "departure",
+            "scheduledTime": "06:10",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-0315368b-0059",
+            "category": "arrival",
+            "scheduledTime": "06:13",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0068",
+            "category": "arrival",
+            "scheduledTime": "06:15",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0001",
+            "category": "departure",
+            "scheduledTime": "06:15",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-c72d4210-0021",
+            "category": "departure",
+            "scheduledTime": "06:15",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-7986feca-0057",
+            "category": "arrival",
+            "scheduledTime": "06:16",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-b139c601-0012",
+            "category": "departure",
+            "scheduledTime": "06:17",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-8127eb93-0119",
+            "category": "departure",
+            "scheduledTime": "06:19",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0069",
+            "category": "arrival",
+            "scheduledTime": "06:24",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-172446ba-0048",
+            "category": "departure",
+            "scheduledTime": "06:26",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-cdc0f80d-0005",
+            "category": "arrival",
+            "scheduledTime": "06:26",
+            "spawnPatternKey": "cdc0f80d"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0018",
+            "category": "departure",
+            "scheduledTime": "06:27",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-7986feca-0058",
+            "category": "arrival",
+            "scheduledTime": "06:28",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0120",
+            "category": "departure",
+            "scheduledTime": "06:28",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0070",
+            "category": "arrival",
+            "scheduledTime": "06:33",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-b139c601-0013",
+            "category": "departure",
+            "scheduledTime": "06:35",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-8127eb93-0121",
+            "category": "departure",
+            "scheduledTime": "06:37",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-0315368b-0001",
+            "category": "arrival",
+            "scheduledTime": "06:38",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-7986feca-0059",
+            "category": "arrival",
+            "scheduledTime": "06:40",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0071",
+            "category": "arrival",
+            "scheduledTime": "06:42",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8aebbe22-0019",
+            "category": "arrival",
+            "scheduledTime": "06:45",
+            "spawnPatternKey": "8aebbe22"
+        },
+        {
+            "id": "auth-saez-8127eb93-0122",
+            "category": "departure",
+            "scheduledTime": "06:46",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-2996d4ef-0006",
+            "category": "arrival",
+            "scheduledTime": "06:47",
+            "spawnPatternKey": "2996d4ef"
+        },
+        {
+            "id": "auth-saez-172446ba-0049",
+            "category": "departure",
+            "scheduledTime": "06:49",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0072",
+            "category": "arrival",
+            "scheduledTime": "06:51",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-c72d4210-0022",
+            "category": "departure",
+            "scheduledTime": "06:52",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-48094752-0002",
+            "category": "departure",
+            "scheduledTime": "06:53",
+            "spawnPatternKey": "48094752"
+        },
+        {
+            "id": "auth-saez-7986feca-0060",
+            "category": "arrival",
+            "scheduledTime": "06:53",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-b139c601-0014",
+            "category": "departure",
+            "scheduledTime": "06:53",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-8127eb93-0123",
+            "category": "departure",
+            "scheduledTime": "06:55",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-bf9932a4-0004",
+            "category": "arrival",
+            "scheduledTime": "06:56",
+            "spawnPatternKey": "bf9932a4"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0002",
+            "category": "departure",
+            "scheduledTime": "06:58",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0073",
+            "category": "arrival",
+            "scheduledTime": "07:00",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-0315368b-0002",
+            "category": "arrival",
+            "scheduledTime": "07:02",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-8127eb93-0124",
+            "category": "departure",
+            "scheduledTime": "07:04",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0061",
+            "category": "arrival",
+            "scheduledTime": "07:05",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0019",
+            "category": "departure",
+            "scheduledTime": "07:07",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0074",
+            "category": "arrival",
+            "scheduledTime": "07:09",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-b139c601-0015",
+            "category": "departure",
+            "scheduledTime": "07:12",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-172446ba-0050",
+            "category": "departure",
+            "scheduledTime": "07:13",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-8127eb93-0125",
+            "category": "departure",
+            "scheduledTime": "07:13",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0062",
+            "category": "arrival",
+            "scheduledTime": "07:17",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0075",
+            "category": "arrival",
+            "scheduledTime": "07:18",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8127eb93-0126",
+            "category": "departure",
+            "scheduledTime": "07:22",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-0315368b-0003",
+            "category": "arrival",
+            "scheduledTime": "07:26",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0076",
+            "category": "arrival",
+            "scheduledTime": "07:27",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0063",
+            "category": "arrival",
+            "scheduledTime": "07:29",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-c72d4210-0023",
+            "category": "departure",
+            "scheduledTime": "07:29",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-cdc0f80d-0006",
+            "category": "arrival",
+            "scheduledTime": "07:29",
+            "spawnPatternKey": "cdc0f80d"
+        },
+        {
+            "id": "auth-saez-b139c601-0016",
+            "category": "departure",
+            "scheduledTime": "07:30",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-8127eb93-0127",
+            "category": "departure",
+            "scheduledTime": "07:31",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-172446ba-0051",
+            "category": "departure",
+            "scheduledTime": "07:36",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0077",
+            "category": "arrival",
+            "scheduledTime": "07:36",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8127eb93-0128",
+            "category": "departure",
+            "scheduledTime": "07:40",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0064",
+            "category": "arrival",
+            "scheduledTime": "07:41",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0003",
+            "category": "departure",
+            "scheduledTime": "07:42",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0078",
+            "category": "arrival",
+            "scheduledTime": "07:45",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0020",
+            "category": "departure",
+            "scheduledTime": "07:47",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-8aebbe22-0020",
+            "category": "arrival",
+            "scheduledTime": "07:48",
+            "spawnPatternKey": "8aebbe22"
+        },
+        {
+            "id": "auth-saez-b139c601-0017",
+            "category": "departure",
+            "scheduledTime": "07:48",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-8127eb93-0129",
+            "category": "departure",
+            "scheduledTime": "07:49",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b8eefd3c-0005",
+            "category": "arrival",
+            "scheduledTime": "07:50",
+            "spawnPatternKey": "b8eefd3c"
+        },
+        {
+            "id": "auth-saez-0315368b-0004",
+            "category": "arrival",
+            "scheduledTime": "07:51",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0079",
+            "category": "arrival",
+            "scheduledTime": "07:54",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0065",
+            "category": "arrival",
+            "scheduledTime": "07:54",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0130",
+            "category": "departure",
+            "scheduledTime": "07:58",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-172446ba-0052",
+            "category": "departure",
+            "scheduledTime": "07:59",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0080",
+            "category": "arrival",
+            "scheduledTime": "08:03",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0066",
+            "category": "arrival",
+            "scheduledTime": "08:06",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-b139c601-0018",
+            "category": "departure",
+            "scheduledTime": "08:06",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-c72d4210-0024",
+            "category": "departure",
+            "scheduledTime": "08:06",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-8127eb93-0131",
+            "category": "departure",
+            "scheduledTime": "08:07",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0081",
+            "category": "arrival",
+            "scheduledTime": "08:12",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-0315368b-0005",
+            "category": "arrival",
+            "scheduledTime": "08:15",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-8127eb93-0132",
+            "category": "departure",
+            "scheduledTime": "08:16",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0067",
+            "category": "arrival",
+            "scheduledTime": "08:18",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0082",
+            "category": "arrival",
+            "scheduledTime": "08:21",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-172446ba-0053",
+            "category": "departure",
+            "scheduledTime": "08:22",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-48094752-0003",
+            "category": "departure",
+            "scheduledTime": "08:23",
+            "spawnPatternKey": "48094752"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0004",
+            "category": "departure",
+            "scheduledTime": "08:25",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-8127eb93-0133",
+            "category": "departure",
+            "scheduledTime": "08:25",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b139c601-0019",
+            "category": "departure",
+            "scheduledTime": "08:25",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0021",
+            "category": "departure",
+            "scheduledTime": "08:27",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0083",
+            "category": "arrival",
+            "scheduledTime": "08:30",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0068",
+            "category": "arrival",
+            "scheduledTime": "08:30",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-cdc0f80d-0007",
+            "category": "arrival",
+            "scheduledTime": "08:31",
+            "spawnPatternKey": "cdc0f80d"
+        },
+        {
+            "id": "auth-saez-82790adb-0003",
+            "category": "departure",
+            "scheduledTime": "08:33",
+            "spawnPatternKey": "82790adb"
+        },
+        {
+            "id": "auth-saez-8127eb93-0134",
+            "category": "departure",
+            "scheduledTime": "08:34",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0084",
+            "category": "arrival",
+            "scheduledTime": "08:39",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-0315368b-0006",
+            "category": "arrival",
+            "scheduledTime": "08:40",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-7986feca-0069",
+            "category": "arrival",
+            "scheduledTime": "08:42",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0135",
+            "category": "departure",
+            "scheduledTime": "08:43",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b139c601-0020",
+            "category": "departure",
+            "scheduledTime": "08:43",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-c72d4210-0025",
+            "category": "departure",
+            "scheduledTime": "08:43",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-172446ba-0054",
+            "category": "departure",
+            "scheduledTime": "08:45",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0085",
+            "category": "arrival",
+            "scheduledTime": "08:48",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8aebbe22-0021",
+            "category": "arrival",
+            "scheduledTime": "08:51",
+            "spawnPatternKey": "8aebbe22"
+        },
+        {
+            "id": "auth-saez-8127eb93-0136",
+            "category": "departure",
+            "scheduledTime": "08:52",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0070",
+            "category": "arrival",
+            "scheduledTime": "08:55",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0086",
+            "category": "arrival",
+            "scheduledTime": "08:57",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8127eb93-0137",
+            "category": "departure",
+            "scheduledTime": "09:01",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b139c601-0021",
+            "category": "departure",
+            "scheduledTime": "09:01",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-0315368b-0007",
+            "category": "arrival",
+            "scheduledTime": "09:04",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0087",
+            "category": "arrival",
+            "scheduledTime": "09:06",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0071",
+            "category": "arrival",
+            "scheduledTime": "09:07",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0022",
+            "category": "departure",
+            "scheduledTime": "09:07",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-172446ba-0055",
+            "category": "departure",
+            "scheduledTime": "09:09",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0005",
+            "category": "departure",
+            "scheduledTime": "09:09",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-8127eb93-0138",
+            "category": "departure",
+            "scheduledTime": "09:10",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0088",
+            "category": "arrival",
+            "scheduledTime": "09:15",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0072",
+            "category": "arrival",
+            "scheduledTime": "09:19",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0139",
+            "category": "departure",
+            "scheduledTime": "09:19",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b139c601-0022",
+            "category": "departure",
+            "scheduledTime": "09:19",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-bf9932a4-0005",
+            "category": "arrival",
+            "scheduledTime": "09:20",
+            "spawnPatternKey": "bf9932a4"
+        },
+        {
+            "id": "auth-saez-c72d4210-0026",
+            "category": "departure",
+            "scheduledTime": "09:20",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0089",
+            "category": "arrival",
+            "scheduledTime": "09:24",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-0315368b-0008",
+            "category": "arrival",
+            "scheduledTime": "09:28",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-8127eb93-0140",
+            "category": "departure",
+            "scheduledTime": "09:28",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0073",
+            "category": "arrival",
+            "scheduledTime": "09:31",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-172446ba-0056",
+            "category": "departure",
+            "scheduledTime": "09:32",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0090",
+            "category": "arrival",
+            "scheduledTime": "09:33",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-cdc0f80d-0008",
+            "category": "arrival",
+            "scheduledTime": "09:34",
+            "spawnPatternKey": "cdc0f80d"
+        },
+        {
+            "id": "auth-saez-8127eb93-0141",
+            "category": "departure",
+            "scheduledTime": "09:37",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b139c601-0023",
+            "category": "departure",
+            "scheduledTime": "09:38",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0091",
+            "category": "arrival",
+            "scheduledTime": "09:42",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0074",
+            "category": "arrival",
+            "scheduledTime": "09:43",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0142",
+            "category": "departure",
+            "scheduledTime": "09:46",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0023",
+            "category": "departure",
+            "scheduledTime": "09:47",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0092",
+            "category": "arrival",
+            "scheduledTime": "09:51",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-0315368b-0009",
+            "category": "arrival",
+            "scheduledTime": "09:53",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0006",
+            "category": "departure",
+            "scheduledTime": "09:53",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-48094752-0004",
+            "category": "departure",
+            "scheduledTime": "09:53",
+            "spawnPatternKey": "48094752"
+        },
+        {
+            "id": "auth-saez-8aebbe22-0022",
+            "category": "arrival",
+            "scheduledTime": "09:53",
+            "spawnPatternKey": "8aebbe22"
+        },
+        {
+            "id": "auth-saez-172446ba-0057",
+            "category": "departure",
+            "scheduledTime": "09:55",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-8127eb93-0143",
+            "category": "departure",
+            "scheduledTime": "09:55",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0075",
+            "category": "arrival",
+            "scheduledTime": "09:56",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-b139c601-0024",
+            "category": "departure",
+            "scheduledTime": "09:56",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-c72d4210-0027",
+            "category": "departure",
+            "scheduledTime": "09:57",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0093",
+            "category": "arrival",
+            "scheduledTime": "10:00",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8127eb93-0144",
+            "category": "departure",
+            "scheduledTime": "10:04",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0076",
+            "category": "arrival",
+            "scheduledTime": "10:08",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0094",
+            "category": "arrival",
+            "scheduledTime": "10:09",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8127eb93-0145",
+            "category": "departure",
+            "scheduledTime": "10:13",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b139c601-0025",
+            "category": "departure",
+            "scheduledTime": "10:14",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-0315368b-0010",
+            "category": "arrival",
+            "scheduledTime": "10:17",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-172446ba-0058",
+            "category": "departure",
+            "scheduledTime": "10:18",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0095",
+            "category": "arrival",
+            "scheduledTime": "10:18",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0077",
+            "category": "arrival",
+            "scheduledTime": "10:20",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0146",
+            "category": "departure",
+            "scheduledTime": "10:22",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0096",
+            "category": "arrival",
+            "scheduledTime": "10:27",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0024",
+            "category": "departure",
+            "scheduledTime": "10:27",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-8127eb93-0147",
+            "category": "departure",
+            "scheduledTime": "10:31",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0078",
+            "category": "arrival",
+            "scheduledTime": "10:32",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-b139c601-0026",
+            "category": "departure",
+            "scheduledTime": "10:32",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-c72d4210-0028",
+            "category": "departure",
+            "scheduledTime": "10:33",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0097",
+            "category": "arrival",
+            "scheduledTime": "10:36",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0007",
+            "category": "departure",
+            "scheduledTime": "10:36",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-cdc0f80d-0009",
+            "category": "arrival",
+            "scheduledTime": "10:36",
+            "spawnPatternKey": "cdc0f80d"
+        },
+        {
+            "id": "auth-saez-8127eb93-0148",
+            "category": "departure",
+            "scheduledTime": "10:40",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-0315368b-0011",
+            "category": "arrival",
+            "scheduledTime": "10:42",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-172446ba-0059",
+            "category": "departure",
+            "scheduledTime": "10:42",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-7986feca-0079",
+            "category": "arrival",
+            "scheduledTime": "10:44",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0098",
+            "category": "arrival",
+            "scheduledTime": "10:45",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-2996d4ef-0001",
+            "category": "arrival",
+            "scheduledTime": "10:47",
+            "spawnPatternKey": "2996d4ef"
+        },
+        {
+            "id": "auth-saez-8127eb93-0149",
+            "category": "departure",
+            "scheduledTime": "10:49",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b139c601-0027",
+            "category": "departure",
+            "scheduledTime": "10:50",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0099",
+            "category": "arrival",
+            "scheduledTime": "10:54",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8aebbe22-0023",
+            "category": "arrival",
+            "scheduledTime": "10:56",
+            "spawnPatternKey": "8aebbe22"
+        },
+        {
+            "id": "auth-saez-7986feca-0080",
+            "category": "arrival",
+            "scheduledTime": "10:57",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-82790adb-0004",
+            "category": "departure",
+            "scheduledTime": "10:57",
+            "spawnPatternKey": "82790adb"
+        },
+        {
+            "id": "auth-saez-8127eb93-0150",
+            "category": "departure",
+            "scheduledTime": "10:58",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0100",
+            "category": "arrival",
+            "scheduledTime": "11:03",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-172446ba-0060",
+            "category": "departure",
+            "scheduledTime": "11:05",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-0315368b-0012",
+            "category": "arrival",
+            "scheduledTime": "11:06",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-8127eb93-0151",
+            "category": "departure",
+            "scheduledTime": "11:07",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0025",
+            "category": "departure",
+            "scheduledTime": "11:07",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-7986feca-0081",
+            "category": "arrival",
+            "scheduledTime": "11:09",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-b139c601-0028",
+            "category": "departure",
+            "scheduledTime": "11:09",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-c72d4210-0029",
+            "category": "departure",
+            "scheduledTime": "11:10",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0101",
+            "category": "arrival",
+            "scheduledTime": "11:12",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8127eb93-0152",
+            "category": "departure",
+            "scheduledTime": "11:16",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0008",
+            "category": "departure",
+            "scheduledTime": "11:20",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0102",
+            "category": "arrival",
+            "scheduledTime": "11:21",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0082",
+            "category": "arrival",
+            "scheduledTime": "11:21",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-48094752-0005",
+            "category": "departure",
+            "scheduledTime": "11:23",
+            "spawnPatternKey": "48094752"
+        },
+        {
+            "id": "auth-saez-8127eb93-0153",
+            "category": "departure",
+            "scheduledTime": "11:25",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b139c601-0029",
+            "category": "departure",
+            "scheduledTime": "11:27",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-172446ba-0061",
+            "category": "departure",
+            "scheduledTime": "11:28",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-0315368b-0013",
+            "category": "arrival",
+            "scheduledTime": "11:30",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0103",
+            "category": "arrival",
+            "scheduledTime": "11:30",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0083",
+            "category": "arrival",
+            "scheduledTime": "11:33",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0154",
+            "category": "departure",
+            "scheduledTime": "11:34",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0104",
+            "category": "arrival",
+            "scheduledTime": "11:39",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-cdc0f80d-0010",
+            "category": "arrival",
+            "scheduledTime": "11:39",
+            "spawnPatternKey": "cdc0f80d"
+        },
+        {
+            "id": "auth-saez-8127eb93-0155",
+            "category": "departure",
+            "scheduledTime": "11:43",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-bf9932a4-0006",
+            "category": "arrival",
+            "scheduledTime": "11:44",
+            "spawnPatternKey": "bf9932a4"
+        },
+        {
+            "id": "auth-saez-7986feca-0084",
+            "category": "arrival",
+            "scheduledTime": "11:45",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-b139c601-0030",
+            "category": "departure",
+            "scheduledTime": "11:45",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-c72d4210-0030",
+            "category": "departure",
+            "scheduledTime": "11:47",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0026",
+            "category": "departure",
+            "scheduledTime": "11:47",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0105",
+            "category": "arrival",
+            "scheduledTime": "11:48",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-b8eefd3c-0006",
+            "category": "arrival",
+            "scheduledTime": "11:50",
+            "spawnPatternKey": "b8eefd3c"
+        },
+        {
+            "id": "auth-saez-172446ba-0062",
+            "category": "departure",
+            "scheduledTime": "11:51",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-8127eb93-0156",
+            "category": "departure",
+            "scheduledTime": "11:52",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-0315368b-0014",
+            "category": "arrival",
+            "scheduledTime": "11:55",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0106",
+            "category": "arrival",
+            "scheduledTime": "11:57",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0085",
+            "category": "arrival",
+            "scheduledTime": "11:58",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8aebbe22-0001",
+            "category": "arrival",
+            "scheduledTime": "11:59",
+            "spawnPatternKey": "8aebbe22"
+        },
+        {
+            "id": "auth-saez-8127eb93-0157",
+            "category": "departure",
+            "scheduledTime": "12:01",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b139c601-0031",
+            "category": "departure",
+            "scheduledTime": "12:03",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0009",
+            "category": "departure",
+            "scheduledTime": "12:04",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0107",
+            "category": "arrival",
+            "scheduledTime": "12:06",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0086",
+            "category": "arrival",
+            "scheduledTime": "12:10",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0158",
+            "category": "departure",
+            "scheduledTime": "12:10",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-172446ba-0001",
+            "category": "departure",
+            "scheduledTime": "12:15",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0108",
+            "category": "arrival",
+            "scheduledTime": "12:15",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-0315368b-0015",
+            "category": "arrival",
+            "scheduledTime": "12:19",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-8127eb93-0159",
+            "category": "departure",
+            "scheduledTime": "12:19",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0087",
+            "category": "arrival",
+            "scheduledTime": "12:22",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-b139c601-0032",
+            "category": "departure",
+            "scheduledTime": "12:22",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0109",
+            "category": "arrival",
+            "scheduledTime": "12:24",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-c72d4210-0031",
+            "category": "departure",
+            "scheduledTime": "12:24",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0027",
+            "category": "departure",
+            "scheduledTime": "12:27",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-8127eb93-0160",
+            "category": "departure",
+            "scheduledTime": "12:28",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0110",
+            "category": "arrival",
+            "scheduledTime": "12:33",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0088",
+            "category": "arrival",
+            "scheduledTime": "12:34",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0001",
+            "category": "departure",
+            "scheduledTime": "12:37",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-172446ba-0002",
+            "category": "departure",
+            "scheduledTime": "12:38",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-b139c601-0033",
+            "category": "departure",
+            "scheduledTime": "12:40",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0111",
+            "category": "arrival",
+            "scheduledTime": "12:42",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-cdc0f80d-0011",
+            "category": "arrival",
+            "scheduledTime": "12:42",
+            "spawnPatternKey": "cdc0f80d"
+        },
+        {
+            "id": "auth-saez-0315368b-0016",
+            "category": "arrival",
+            "scheduledTime": "12:44",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-7986feca-0089",
+            "category": "arrival",
+            "scheduledTime": "12:46",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0002",
+            "category": "departure",
+            "scheduledTime": "12:46",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0010",
+            "category": "departure",
+            "scheduledTime": "12:47",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0112",
+            "category": "arrival",
+            "scheduledTime": "12:51",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-48094752-0006",
+            "category": "departure",
+            "scheduledTime": "12:53",
+            "spawnPatternKey": "48094752"
+        },
+        {
+            "id": "auth-saez-8127eb93-0003",
+            "category": "departure",
+            "scheduledTime": "12:55",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b139c601-0034",
+            "category": "departure",
+            "scheduledTime": "12:58",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-7986feca-0090",
+            "category": "arrival",
+            "scheduledTime": "12:59",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0113",
+            "category": "arrival",
+            "scheduledTime": "13:00",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-172446ba-0003",
+            "category": "departure",
+            "scheduledTime": "13:01",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-8aebbe22-0002",
+            "category": "arrival",
+            "scheduledTime": "13:01",
+            "spawnPatternKey": "8aebbe22"
+        },
+        {
+            "id": "auth-saez-c72d4210-0032",
+            "category": "departure",
+            "scheduledTime": "13:01",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-8127eb93-0004",
+            "category": "departure",
+            "scheduledTime": "13:04",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0028",
+            "category": "departure",
+            "scheduledTime": "13:07",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-0315368b-0017",
+            "category": "arrival",
+            "scheduledTime": "13:08",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0114",
+            "category": "arrival",
+            "scheduledTime": "13:09",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0091",
+            "category": "arrival",
+            "scheduledTime": "13:11",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0005",
+            "category": "departure",
+            "scheduledTime": "13:13",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b139c601-0035",
+            "category": "departure",
+            "scheduledTime": "13:16",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0115",
+            "category": "arrival",
+            "scheduledTime": "13:18",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-82790adb-0005",
+            "category": "departure",
+            "scheduledTime": "13:21",
+            "spawnPatternKey": "82790adb"
+        },
+        {
+            "id": "auth-saez-8127eb93-0006",
+            "category": "departure",
+            "scheduledTime": "13:22",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0092",
+            "category": "arrival",
+            "scheduledTime": "13:23",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-172446ba-0004",
+            "category": "departure",
+            "scheduledTime": "13:24",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0116",
+            "category": "arrival",
+            "scheduledTime": "13:27",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0011",
+            "category": "departure",
+            "scheduledTime": "13:31",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-8127eb93-0007",
+            "category": "departure",
+            "scheduledTime": "13:31",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-0315368b-0018",
+            "category": "arrival",
+            "scheduledTime": "13:32",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-b139c601-0036",
+            "category": "departure",
+            "scheduledTime": "13:34",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-7986feca-0093",
+            "category": "arrival",
+            "scheduledTime": "13:35",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0117",
+            "category": "arrival",
+            "scheduledTime": "13:36",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-c72d4210-0033",
+            "category": "departure",
+            "scheduledTime": "13:38",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-8127eb93-0008",
+            "category": "departure",
+            "scheduledTime": "13:40",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-cdc0f80d-0012",
+            "category": "arrival",
+            "scheduledTime": "13:44",
+            "spawnPatternKey": "cdc0f80d"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0118",
+            "category": "arrival",
+            "scheduledTime": "13:45",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-172446ba-0005",
+            "category": "departure",
+            "scheduledTime": "13:47",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-7986feca-0094",
+            "category": "arrival",
+            "scheduledTime": "13:47",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0029",
+            "category": "departure",
+            "scheduledTime": "13:47",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-8127eb93-0009",
+            "category": "departure",
+            "scheduledTime": "13:49",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b139c601-0037",
+            "category": "departure",
+            "scheduledTime": "13:53",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0119",
+            "category": "arrival",
+            "scheduledTime": "13:54",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-0315368b-0019",
+            "category": "arrival",
+            "scheduledTime": "13:57",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-8127eb93-0010",
+            "category": "departure",
+            "scheduledTime": "13:58",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0095",
+            "category": "arrival",
+            "scheduledTime": "14:00",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0120",
+            "category": "arrival",
+            "scheduledTime": "14:03",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8aebbe22-0003",
+            "category": "arrival",
+            "scheduledTime": "14:04",
+            "spawnPatternKey": "8aebbe22"
+        },
+        {
+            "id": "auth-saez-8127eb93-0011",
+            "category": "departure",
+            "scheduledTime": "14:07",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-bf9932a4-0007",
+            "category": "arrival",
+            "scheduledTime": "14:08",
+            "spawnPatternKey": "bf9932a4"
+        },
+        {
+            "id": "auth-saez-172446ba-0006",
+            "category": "departure",
+            "scheduledTime": "14:11",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-b139c601-0038",
+            "category": "departure",
+            "scheduledTime": "14:11",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0121",
+            "category": "arrival",
+            "scheduledTime": "14:12",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0096",
+            "category": "arrival",
+            "scheduledTime": "14:12",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0012",
+            "category": "departure",
+            "scheduledTime": "14:15",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-c72d4210-0034",
+            "category": "departure",
+            "scheduledTime": "14:15",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-8127eb93-0012",
+            "category": "departure",
+            "scheduledTime": "14:16",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-0315368b-0020",
+            "category": "arrival",
+            "scheduledTime": "14:21",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0122",
+            "category": "arrival",
+            "scheduledTime": "14:21",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-48094752-0007",
+            "category": "departure",
+            "scheduledTime": "14:23",
+            "spawnPatternKey": "48094752"
+        },
+        {
+            "id": "auth-saez-7986feca-0097",
+            "category": "arrival",
+            "scheduledTime": "14:24",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0013",
+            "category": "departure",
+            "scheduledTime": "14:25",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0030",
+            "category": "departure",
+            "scheduledTime": "14:27",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-b139c601-0039",
+            "category": "departure",
+            "scheduledTime": "14:29",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0123",
+            "category": "arrival",
+            "scheduledTime": "14:30",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-172446ba-0007",
+            "category": "departure",
+            "scheduledTime": "14:34",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-8127eb93-0014",
+            "category": "departure",
+            "scheduledTime": "14:34",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0098",
+            "category": "arrival",
+            "scheduledTime": "14:36",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0124",
+            "category": "arrival",
+            "scheduledTime": "14:39",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8127eb93-0015",
+            "category": "departure",
+            "scheduledTime": "14:43",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-0315368b-0021",
+            "category": "arrival",
+            "scheduledTime": "14:46",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-2996d4ef-0002",
+            "category": "arrival",
+            "scheduledTime": "14:47",
+            "spawnPatternKey": "2996d4ef"
+        },
+        {
+            "id": "auth-saez-b139c601-0040",
+            "category": "departure",
+            "scheduledTime": "14:47",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-cdc0f80d-0013",
+            "category": "arrival",
+            "scheduledTime": "14:47",
+            "spawnPatternKey": "cdc0f80d"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0125",
+            "category": "arrival",
+            "scheduledTime": "14:48",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0099",
+            "category": "arrival",
+            "scheduledTime": "14:48",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0016",
+            "category": "departure",
+            "scheduledTime": "14:52",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-c72d4210-0035",
+            "category": "departure",
+            "scheduledTime": "14:52",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-172446ba-0008",
+            "category": "departure",
+            "scheduledTime": "14:57",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0126",
+            "category": "arrival",
+            "scheduledTime": "14:57",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0013",
+            "category": "departure",
+            "scheduledTime": "14:58",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-7986feca-0100",
+            "category": "arrival",
+            "scheduledTime": "15:01",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0017",
+            "category": "departure",
+            "scheduledTime": "15:01",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0127",
+            "category": "arrival",
+            "scheduledTime": "15:06",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8aebbe22-0004",
+            "category": "arrival",
+            "scheduledTime": "15:06",
+            "spawnPatternKey": "8aebbe22"
+        },
+        {
+            "id": "auth-saez-b139c601-0041",
+            "category": "departure",
+            "scheduledTime": "15:06",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0031",
+            "category": "departure",
+            "scheduledTime": "15:07",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-0315368b-0022",
+            "category": "arrival",
+            "scheduledTime": "15:10",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-8127eb93-0018",
+            "category": "departure",
+            "scheduledTime": "15:10",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0101",
+            "category": "arrival",
+            "scheduledTime": "15:13",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0128",
+            "category": "arrival",
+            "scheduledTime": "15:15",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8127eb93-0019",
+            "category": "departure",
+            "scheduledTime": "15:19",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-172446ba-0009",
+            "category": "departure",
+            "scheduledTime": "15:20",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0129",
+            "category": "arrival",
+            "scheduledTime": "15:24",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-b139c601-0042",
+            "category": "departure",
+            "scheduledTime": "15:24",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-7986feca-0102",
+            "category": "arrival",
+            "scheduledTime": "15:25",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0020",
+            "category": "departure",
+            "scheduledTime": "15:28",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-c72d4210-0036",
+            "category": "departure",
+            "scheduledTime": "15:29",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0130",
+            "category": "arrival",
+            "scheduledTime": "15:33",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-0315368b-0023",
+            "category": "arrival",
+            "scheduledTime": "15:34",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-7986feca-0103",
+            "category": "arrival",
+            "scheduledTime": "15:37",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0021",
+            "category": "departure",
+            "scheduledTime": "15:37",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0131",
+            "category": "arrival",
+            "scheduledTime": "15:42",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0014",
+            "category": "departure",
+            "scheduledTime": "15:42",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-b139c601-0043",
+            "category": "departure",
+            "scheduledTime": "15:42",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-172446ba-0010",
+            "category": "departure",
+            "scheduledTime": "15:44",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-82790adb-0006",
+            "category": "departure",
+            "scheduledTime": "15:45",
+            "spawnPatternKey": "82790adb"
+        },
+        {
+            "id": "auth-saez-8127eb93-0022",
+            "category": "departure",
+            "scheduledTime": "15:46",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0032",
+            "category": "departure",
+            "scheduledTime": "15:47",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-7986feca-0104",
+            "category": "arrival",
+            "scheduledTime": "15:49",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-cdc0f80d-0014",
+            "category": "arrival",
+            "scheduledTime": "15:49",
+            "spawnPatternKey": "cdc0f80d"
+        },
+        {
+            "id": "auth-saez-b8eefd3c-0001",
+            "category": "arrival",
+            "scheduledTime": "15:50",
+            "spawnPatternKey": "b8eefd3c"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0132",
+            "category": "arrival",
+            "scheduledTime": "15:51",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-48094752-0008",
+            "category": "departure",
+            "scheduledTime": "15:53",
+            "spawnPatternKey": "48094752"
+        },
+        {
+            "id": "auth-saez-8127eb93-0023",
+            "category": "departure",
+            "scheduledTime": "15:55",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-0315368b-0024",
+            "category": "arrival",
+            "scheduledTime": "15:59",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0133",
+            "category": "arrival",
+            "scheduledTime": "16:00",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-b139c601-0044",
+            "category": "departure",
+            "scheduledTime": "16:00",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-7986feca-0105",
+            "category": "arrival",
+            "scheduledTime": "16:02",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0024",
+            "category": "departure",
+            "scheduledTime": "16:04",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-c72d4210-0037",
+            "category": "departure",
+            "scheduledTime": "16:06",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-172446ba-0011",
+            "category": "departure",
+            "scheduledTime": "16:07",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0134",
+            "category": "arrival",
+            "scheduledTime": "16:09",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8aebbe22-0005",
+            "category": "arrival",
+            "scheduledTime": "16:09",
+            "spawnPatternKey": "8aebbe22"
+        },
+        {
+            "id": "auth-saez-8127eb93-0025",
+            "category": "departure",
+            "scheduledTime": "16:13",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0106",
+            "category": "arrival",
+            "scheduledTime": "16:14",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0135",
+            "category": "arrival",
+            "scheduledTime": "16:18",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-b139c601-0045",
+            "category": "departure",
+            "scheduledTime": "16:19",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-8127eb93-0026",
+            "category": "departure",
+            "scheduledTime": "16:22",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-0315368b-0025",
+            "category": "arrival",
+            "scheduledTime": "16:23",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0015",
+            "category": "departure",
+            "scheduledTime": "16:25",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-7986feca-0107",
+            "category": "arrival",
+            "scheduledTime": "16:26",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0136",
+            "category": "arrival",
+            "scheduledTime": "16:27",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0033",
+            "category": "departure",
+            "scheduledTime": "16:27",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-172446ba-0012",
+            "category": "departure",
+            "scheduledTime": "16:30",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-8127eb93-0027",
+            "category": "departure",
+            "scheduledTime": "16:31",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-bf9932a4-0008",
+            "category": "arrival",
+            "scheduledTime": "16:32",
+            "spawnPatternKey": "bf9932a4"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0137",
+            "category": "arrival",
+            "scheduledTime": "16:36",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-b139c601-0046",
+            "category": "departure",
+            "scheduledTime": "16:37",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-7986feca-0108",
+            "category": "arrival",
+            "scheduledTime": "16:38",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0028",
+            "category": "departure",
+            "scheduledTime": "16:40",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-c72d4210-0038",
+            "category": "departure",
+            "scheduledTime": "16:43",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0138",
+            "category": "arrival",
+            "scheduledTime": "16:45",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-0315368b-0026",
+            "category": "arrival",
+            "scheduledTime": "16:48",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-8127eb93-0029",
+            "category": "departure",
+            "scheduledTime": "16:49",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0109",
+            "category": "arrival",
+            "scheduledTime": "16:50",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-cdc0f80d-0015",
+            "category": "arrival",
+            "scheduledTime": "16:52",
+            "spawnPatternKey": "cdc0f80d"
+        },
+        {
+            "id": "auth-saez-172446ba-0013",
+            "category": "departure",
+            "scheduledTime": "16:53",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0139",
+            "category": "arrival",
+            "scheduledTime": "16:54",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-b139c601-0047",
+            "category": "departure",
+            "scheduledTime": "16:55",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-8127eb93-0030",
+            "category": "departure",
+            "scheduledTime": "16:58",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0140",
+            "category": "arrival",
+            "scheduledTime": "17:03",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0110",
+            "category": "arrival",
+            "scheduledTime": "17:03",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0031",
+            "category": "departure",
+            "scheduledTime": "17:07",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0034",
+            "category": "departure",
+            "scheduledTime": "17:07",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0016",
+            "category": "departure",
+            "scheduledTime": "17:09",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-0315368b-0027",
+            "category": "arrival",
+            "scheduledTime": "17:12",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0141",
+            "category": "arrival",
+            "scheduledTime": "17:12",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8aebbe22-0006",
+            "category": "arrival",
+            "scheduledTime": "17:12",
+            "spawnPatternKey": "8aebbe22"
+        },
+        {
+            "id": "auth-saez-b139c601-0048",
+            "category": "departure",
+            "scheduledTime": "17:13",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-7986feca-0111",
+            "category": "arrival",
+            "scheduledTime": "17:15",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-172446ba-0014",
+            "category": "departure",
+            "scheduledTime": "17:16",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-8127eb93-0032",
+            "category": "departure",
+            "scheduledTime": "17:16",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-c72d4210-0039",
+            "category": "departure",
+            "scheduledTime": "17:20",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0142",
+            "category": "arrival",
+            "scheduledTime": "17:21",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-48094752-0009",
+            "category": "departure",
+            "scheduledTime": "17:23",
+            "spawnPatternKey": "48094752"
+        },
+        {
+            "id": "auth-saez-8127eb93-0033",
+            "category": "departure",
+            "scheduledTime": "17:25",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0112",
+            "category": "arrival",
+            "scheduledTime": "17:27",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0143",
+            "category": "arrival",
+            "scheduledTime": "17:30",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-b139c601-0049",
+            "category": "departure",
+            "scheduledTime": "17:31",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-8127eb93-0034",
+            "category": "departure",
+            "scheduledTime": "17:34",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-0315368b-0028",
+            "category": "arrival",
+            "scheduledTime": "17:36",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0144",
+            "category": "arrival",
+            "scheduledTime": "17:39",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0113",
+            "category": "arrival",
+            "scheduledTime": "17:39",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-172446ba-0015",
+            "category": "departure",
+            "scheduledTime": "17:40",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-8127eb93-0035",
+            "category": "departure",
+            "scheduledTime": "17:43",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0035",
+            "category": "departure",
+            "scheduledTime": "17:47",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0145",
+            "category": "arrival",
+            "scheduledTime": "17:48",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-b139c601-0050",
+            "category": "departure",
+            "scheduledTime": "17:50",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-7986feca-0114",
+            "category": "arrival",
+            "scheduledTime": "17:51",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0036",
+            "category": "departure",
+            "scheduledTime": "17:52",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0017",
+            "category": "departure",
+            "scheduledTime": "17:53",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-cdc0f80d-0016",
+            "category": "arrival",
+            "scheduledTime": "17:55",
+            "spawnPatternKey": "cdc0f80d"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0146",
+            "category": "arrival",
+            "scheduledTime": "17:57",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-c72d4210-0001",
+            "category": "departure",
+            "scheduledTime": "17:57",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-0315368b-0029",
+            "category": "arrival",
+            "scheduledTime": "18:01",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-8127eb93-0037",
+            "category": "departure",
+            "scheduledTime": "18:01",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-172446ba-0016",
+            "category": "departure",
+            "scheduledTime": "18:03",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-7986feca-0115",
+            "category": "arrival",
+            "scheduledTime": "18:04",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0147",
+            "category": "arrival",
+            "scheduledTime": "18:06",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-b139c601-0051",
+            "category": "departure",
+            "scheduledTime": "18:08",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-82790adb-0007",
+            "category": "departure",
+            "scheduledTime": "18:09",
+            "spawnPatternKey": "82790adb"
+        },
+        {
+            "id": "auth-saez-8127eb93-0038",
+            "category": "departure",
+            "scheduledTime": "18:10",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-8aebbe22-0007",
+            "category": "arrival",
+            "scheduledTime": "18:14",
+            "spawnPatternKey": "8aebbe22"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0148",
+            "category": "arrival",
+            "scheduledTime": "18:15",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0116",
+            "category": "arrival",
+            "scheduledTime": "18:16",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0039",
+            "category": "departure",
+            "scheduledTime": "18:19",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0149",
+            "category": "arrival",
+            "scheduledTime": "18:24",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-0315368b-0030",
+            "category": "arrival",
+            "scheduledTime": "18:25",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-172446ba-0017",
+            "category": "departure",
+            "scheduledTime": "18:26",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-b139c601-0052",
+            "category": "departure",
+            "scheduledTime": "18:26",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0036",
+            "category": "departure",
+            "scheduledTime": "18:27",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-7986feca-0117",
+            "category": "arrival",
+            "scheduledTime": "18:28",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0040",
+            "category": "departure",
+            "scheduledTime": "18:28",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0150",
+            "category": "arrival",
+            "scheduledTime": "18:33",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-c72d4210-0002",
+            "category": "departure",
+            "scheduledTime": "18:33",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0018",
+            "category": "departure",
+            "scheduledTime": "18:36",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-8127eb93-0041",
+            "category": "departure",
+            "scheduledTime": "18:37",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0118",
+            "category": "arrival",
+            "scheduledTime": "18:40",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0151",
+            "category": "arrival",
+            "scheduledTime": "18:42",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-b139c601-0053",
+            "category": "departure",
+            "scheduledTime": "18:44",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-8127eb93-0042",
+            "category": "departure",
+            "scheduledTime": "18:46",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-2996d4ef-0003",
+            "category": "arrival",
+            "scheduledTime": "18:47",
+            "spawnPatternKey": "2996d4ef"
+        },
+        {
+            "id": "auth-saez-172446ba-0018",
+            "category": "departure",
+            "scheduledTime": "18:49",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-0315368b-0031",
+            "category": "arrival",
+            "scheduledTime": "18:50",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0152",
+            "category": "arrival",
+            "scheduledTime": "18:51",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-48094752-0010",
+            "category": "departure",
+            "scheduledTime": "18:53",
+            "spawnPatternKey": "48094752"
+        },
+        {
+            "id": "auth-saez-7986feca-0001",
+            "category": "arrival",
+            "scheduledTime": "18:53",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0043",
+            "category": "departure",
+            "scheduledTime": "18:55",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-bf9932a4-0009",
+            "category": "arrival",
+            "scheduledTime": "18:56",
+            "spawnPatternKey": "bf9932a4"
+        },
+        {
+            "id": "auth-saez-cdc0f80d-0017",
+            "category": "arrival",
+            "scheduledTime": "18:57",
+            "spawnPatternKey": "cdc0f80d"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0153",
+            "category": "arrival",
+            "scheduledTime": "19:00",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-b139c601-0054",
+            "category": "departure",
+            "scheduledTime": "19:03",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-8127eb93-0044",
+            "category": "departure",
+            "scheduledTime": "19:04",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0002",
+            "category": "arrival",
+            "scheduledTime": "19:05",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0001",
+            "category": "departure",
+            "scheduledTime": "19:07",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0154",
+            "category": "arrival",
+            "scheduledTime": "19:09",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-c72d4210-0003",
+            "category": "departure",
+            "scheduledTime": "19:10",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-172446ba-0019",
+            "category": "departure",
+            "scheduledTime": "19:13",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-8127eb93-0045",
+            "category": "departure",
+            "scheduledTime": "19:13",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-0315368b-0032",
+            "category": "arrival",
+            "scheduledTime": "19:14",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-7986feca-0003",
+            "category": "arrival",
+            "scheduledTime": "19:17",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8aebbe22-0008",
+            "category": "arrival",
+            "scheduledTime": "19:17",
+            "spawnPatternKey": "8aebbe22"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0155",
+            "category": "arrival",
+            "scheduledTime": "19:18",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0019",
+            "category": "departure",
+            "scheduledTime": "19:20",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-b139c601-0055",
+            "category": "departure",
+            "scheduledTime": "19:21",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-8127eb93-0046",
+            "category": "departure",
+            "scheduledTime": "19:22",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0156",
+            "category": "arrival",
+            "scheduledTime": "19:27",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0004",
+            "category": "arrival",
+            "scheduledTime": "19:29",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0047",
+            "category": "departure",
+            "scheduledTime": "19:31",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-172446ba-0020",
+            "category": "departure",
+            "scheduledTime": "19:36",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0157",
+            "category": "arrival",
+            "scheduledTime": "19:36",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-0315368b-0033",
+            "category": "arrival",
+            "scheduledTime": "19:39",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-b139c601-0056",
+            "category": "departure",
+            "scheduledTime": "19:39",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-8127eb93-0048",
+            "category": "departure",
+            "scheduledTime": "19:40",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0005",
+            "category": "arrival",
+            "scheduledTime": "19:41",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0158",
+            "category": "arrival",
+            "scheduledTime": "19:45",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-c72d4210-0004",
+            "category": "departure",
+            "scheduledTime": "19:47",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0002",
+            "category": "departure",
+            "scheduledTime": "19:47",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-8127eb93-0049",
+            "category": "departure",
+            "scheduledTime": "19:49",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b8eefd3c-0002",
+            "category": "arrival",
+            "scheduledTime": "19:50",
+            "spawnPatternKey": "b8eefd3c"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0159",
+            "category": "arrival",
+            "scheduledTime": "19:54",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0006",
+            "category": "arrival",
+            "scheduledTime": "19:54",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-b139c601-0057",
+            "category": "departure",
+            "scheduledTime": "19:57",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-8127eb93-0050",
+            "category": "departure",
+            "scheduledTime": "19:58",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-172446ba-0021",
+            "category": "departure",
+            "scheduledTime": "19:59",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-cdc0f80d-0018",
+            "category": "arrival",
+            "scheduledTime": "20:00",
+            "spawnPatternKey": "cdc0f80d"
+        },
+        {
+            "id": "auth-saez-0315368b-0034",
+            "category": "arrival",
+            "scheduledTime": "20:03",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0160",
+            "category": "arrival",
+            "scheduledTime": "20:03",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0020",
+            "category": "departure",
+            "scheduledTime": "20:04",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-7986feca-0007",
+            "category": "arrival",
+            "scheduledTime": "20:06",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0051",
+            "category": "departure",
+            "scheduledTime": "20:07",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0001",
+            "category": "arrival",
+            "scheduledTime": "20:12",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-b139c601-0058",
+            "category": "departure",
+            "scheduledTime": "20:15",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-8127eb93-0052",
+            "category": "departure",
+            "scheduledTime": "20:16",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0008",
+            "category": "arrival",
+            "scheduledTime": "20:18",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8aebbe22-0009",
+            "category": "arrival",
+            "scheduledTime": "20:19",
+            "spawnPatternKey": "8aebbe22"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0002",
+            "category": "arrival",
+            "scheduledTime": "20:21",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-172446ba-0022",
+            "category": "departure",
+            "scheduledTime": "20:22",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-48094752-0011",
+            "category": "departure",
+            "scheduledTime": "20:23",
+            "spawnPatternKey": "48094752"
+        },
+        {
+            "id": "auth-saez-c72d4210-0005",
+            "category": "departure",
+            "scheduledTime": "20:24",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-8127eb93-0053",
+            "category": "departure",
+            "scheduledTime": "20:25",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-0315368b-0035",
+            "category": "arrival",
+            "scheduledTime": "20:27",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0003",
+            "category": "departure",
+            "scheduledTime": "20:27",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0003",
+            "category": "arrival",
+            "scheduledTime": "20:30",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0009",
+            "category": "arrival",
+            "scheduledTime": "20:30",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-82790adb-0008",
+            "category": "departure",
+            "scheduledTime": "20:33",
+            "spawnPatternKey": "82790adb"
+        },
+        {
+            "id": "auth-saez-8127eb93-0054",
+            "category": "departure",
+            "scheduledTime": "20:34",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b139c601-0059",
+            "category": "departure",
+            "scheduledTime": "20:34",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0004",
+            "category": "arrival",
+            "scheduledTime": "20:39",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0010",
+            "category": "arrival",
+            "scheduledTime": "20:42",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0055",
+            "category": "departure",
+            "scheduledTime": "20:43",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-172446ba-0023",
+            "category": "departure",
+            "scheduledTime": "20:45",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0021",
+            "category": "departure",
+            "scheduledTime": "20:47",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0005",
+            "category": "arrival",
+            "scheduledTime": "20:48",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-0315368b-0036",
+            "category": "arrival",
+            "scheduledTime": "20:52",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-8127eb93-0056",
+            "category": "departure",
+            "scheduledTime": "20:52",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b139c601-0060",
+            "category": "departure",
+            "scheduledTime": "20:52",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-7986feca-0011",
+            "category": "arrival",
+            "scheduledTime": "20:55",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0006",
+            "category": "arrival",
+            "scheduledTime": "20:57",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8127eb93-0057",
+            "category": "departure",
+            "scheduledTime": "21:01",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-c72d4210-0006",
+            "category": "departure",
+            "scheduledTime": "21:01",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-cdc0f80d-0019",
+            "category": "arrival",
+            "scheduledTime": "21:02",
+            "spawnPatternKey": "cdc0f80d"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0007",
+            "category": "arrival",
+            "scheduledTime": "21:06",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0012",
+            "category": "arrival",
+            "scheduledTime": "21:07",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0004",
+            "category": "departure",
+            "scheduledTime": "21:07",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-172446ba-0024",
+            "category": "departure",
+            "scheduledTime": "21:09",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-8127eb93-0058",
+            "category": "departure",
+            "scheduledTime": "21:10",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b139c601-0061",
+            "category": "departure",
+            "scheduledTime": "21:10",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0008",
+            "category": "arrival",
+            "scheduledTime": "21:15",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-0315368b-0037",
+            "category": "arrival",
+            "scheduledTime": "21:16",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-7986feca-0013",
+            "category": "arrival",
+            "scheduledTime": "21:19",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0059",
+            "category": "departure",
+            "scheduledTime": "21:19",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-bf9932a4-0010",
+            "category": "arrival",
+            "scheduledTime": "21:20",
+            "spawnPatternKey": "bf9932a4"
+        },
+        {
+            "id": "auth-saez-8aebbe22-0010",
+            "category": "arrival",
+            "scheduledTime": "21:22",
+            "spawnPatternKey": "8aebbe22"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0009",
+            "category": "arrival",
+            "scheduledTime": "21:24",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8127eb93-0060",
+            "category": "departure",
+            "scheduledTime": "21:28",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b139c601-0062",
+            "category": "departure",
+            "scheduledTime": "21:28",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0022",
+            "category": "departure",
+            "scheduledTime": "21:31",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-7986feca-0014",
+            "category": "arrival",
+            "scheduledTime": "21:31",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-172446ba-0025",
+            "category": "departure",
+            "scheduledTime": "21:32",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0010",
+            "category": "arrival",
+            "scheduledTime": "21:33",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8127eb93-0061",
+            "category": "departure",
+            "scheduledTime": "21:37",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-c72d4210-0007",
+            "category": "departure",
+            "scheduledTime": "21:38",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-0315368b-0038",
+            "category": "arrival",
+            "scheduledTime": "21:41",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0011",
+            "category": "arrival",
+            "scheduledTime": "21:42",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0015",
+            "category": "arrival",
+            "scheduledTime": "21:43",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0062",
+            "category": "departure",
+            "scheduledTime": "21:46",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b139c601-0063",
+            "category": "departure",
+            "scheduledTime": "21:47",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0005",
+            "category": "departure",
+            "scheduledTime": "21:47",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0012",
+            "category": "arrival",
+            "scheduledTime": "21:51",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-48094752-0012",
+            "category": "departure",
+            "scheduledTime": "21:53",
+            "spawnPatternKey": "48094752"
+        },
+        {
+            "id": "auth-saez-172446ba-0026",
+            "category": "departure",
+            "scheduledTime": "21:55",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-8127eb93-0063",
+            "category": "departure",
+            "scheduledTime": "21:55",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0016",
+            "category": "arrival",
+            "scheduledTime": "21:56",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0013",
+            "category": "arrival",
+            "scheduledTime": "22:00",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8127eb93-0064",
+            "category": "departure",
+            "scheduledTime": "22:04",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-0315368b-0039",
+            "category": "arrival",
+            "scheduledTime": "22:05",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-b139c601-0064",
+            "category": "departure",
+            "scheduledTime": "22:05",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-cdc0f80d-0020",
+            "category": "arrival",
+            "scheduledTime": "22:05",
+            "spawnPatternKey": "cdc0f80d"
+        },
+        {
+            "id": "auth-saez-7986feca-0017",
+            "category": "arrival",
+            "scheduledTime": "22:08",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0014",
+            "category": "arrival",
+            "scheduledTime": "22:09",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8127eb93-0065",
+            "category": "departure",
+            "scheduledTime": "22:13",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0023",
+            "category": "departure",
+            "scheduledTime": "22:15",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-c72d4210-0008",
+            "category": "departure",
+            "scheduledTime": "22:15",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-172446ba-0027",
+            "category": "departure",
+            "scheduledTime": "22:18",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0015",
+            "category": "arrival",
+            "scheduledTime": "22:18",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0018",
+            "category": "arrival",
+            "scheduledTime": "22:20",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0066",
+            "category": "departure",
+            "scheduledTime": "22:22",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b139c601-0065",
+            "category": "departure",
+            "scheduledTime": "22:23",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-8aebbe22-0011",
+            "category": "arrival",
+            "scheduledTime": "22:25",
+            "spawnPatternKey": "8aebbe22"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0016",
+            "category": "arrival",
+            "scheduledTime": "22:27",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0006",
+            "category": "departure",
+            "scheduledTime": "22:27",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-0315368b-0040",
+            "category": "arrival",
+            "scheduledTime": "22:29",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-8127eb93-0067",
+            "category": "departure",
+            "scheduledTime": "22:31",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-7986feca-0019",
+            "category": "arrival",
+            "scheduledTime": "22:32",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0017",
+            "category": "arrival",
+            "scheduledTime": "22:36",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8127eb93-0068",
+            "category": "departure",
+            "scheduledTime": "22:40",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b139c601-0066",
+            "category": "departure",
+            "scheduledTime": "22:41",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-172446ba-0028",
+            "category": "departure",
+            "scheduledTime": "22:42",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-7986feca-0020",
+            "category": "arrival",
+            "scheduledTime": "22:44",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0018",
+            "category": "arrival",
+            "scheduledTime": "22:45",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-2996d4ef-0004",
+            "category": "arrival",
+            "scheduledTime": "22:47",
+            "spawnPatternKey": "2996d4ef"
+        },
+        {
+            "id": "auth-saez-8127eb93-0069",
+            "category": "departure",
+            "scheduledTime": "22:49",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-c72d4210-0009",
+            "category": "departure",
+            "scheduledTime": "22:52",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-0315368b-0041",
+            "category": "arrival",
+            "scheduledTime": "22:54",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0019",
+            "category": "arrival",
+            "scheduledTime": "22:54",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0021",
+            "category": "arrival",
+            "scheduledTime": "22:57",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-82790adb-0009",
+            "category": "departure",
+            "scheduledTime": "22:57",
+            "spawnPatternKey": "82790adb"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0024",
+            "category": "departure",
+            "scheduledTime": "22:58",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-8127eb93-0070",
+            "category": "departure",
+            "scheduledTime": "22:58",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b139c601-0067",
+            "category": "departure",
+            "scheduledTime": "23:00",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0020",
+            "category": "arrival",
+            "scheduledTime": "23:03",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-172446ba-0029",
+            "category": "departure",
+            "scheduledTime": "23:05",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-8127eb93-0071",
+            "category": "departure",
+            "scheduledTime": "23:07",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0007",
+            "category": "departure",
+            "scheduledTime": "23:07",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-cdc0f80d-0021",
+            "category": "arrival",
+            "scheduledTime": "23:08",
+            "spawnPatternKey": "cdc0f80d"
+        },
+        {
+            "id": "auth-saez-7986feca-0022",
+            "category": "arrival",
+            "scheduledTime": "23:09",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0021",
+            "category": "arrival",
+            "scheduledTime": "23:12",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-8127eb93-0072",
+            "category": "departure",
+            "scheduledTime": "23:16",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-0315368b-0042",
+            "category": "arrival",
+            "scheduledTime": "23:18",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-b139c601-0068",
+            "category": "departure",
+            "scheduledTime": "23:18",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0022",
+            "category": "arrival",
+            "scheduledTime": "23:21",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0023",
+            "category": "arrival",
+            "scheduledTime": "23:21",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-48094752-0013",
+            "category": "departure",
+            "scheduledTime": "23:23",
+            "spawnPatternKey": "48094752"
+        },
+        {
+            "id": "auth-saez-8127eb93-0073",
+            "category": "departure",
+            "scheduledTime": "23:25",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-8aebbe22-0012",
+            "category": "arrival",
+            "scheduledTime": "23:27",
+            "spawnPatternKey": "8aebbe22"
+        },
+        {
+            "id": "auth-saez-172446ba-0030",
+            "category": "departure",
+            "scheduledTime": "23:28",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-c72d4210-0010",
+            "category": "departure",
+            "scheduledTime": "23:29",
+            "spawnPatternKey": "c72d4210"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0023",
+            "category": "arrival",
+            "scheduledTime": "23:30",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0024",
+            "category": "arrival",
+            "scheduledTime": "23:33",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-8127eb93-0074",
+            "category": "departure",
+            "scheduledTime": "23:34",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b139c601-0069",
+            "category": "departure",
+            "scheduledTime": "23:36",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0024",
+            "category": "arrival",
+            "scheduledTime": "23:39",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-3fba2e3e-0025",
+            "category": "departure",
+            "scheduledTime": "23:42",
+            "spawnPatternKey": "3fba2e3e"
+        },
+        {
+            "id": "auth-saez-0315368b-0043",
+            "category": "arrival",
+            "scheduledTime": "23:43",
+            "spawnPatternKey": "0315368b"
+        },
+        {
+            "id": "auth-saez-8127eb93-0075",
+            "category": "departure",
+            "scheduledTime": "23:43",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-bf9932a4-0001",
+            "category": "arrival",
+            "scheduledTime": "23:44",
+            "spawnPatternKey": "bf9932a4"
+        },
+        {
+            "id": "auth-saez-7986feca-0025",
+            "category": "arrival",
+            "scheduledTime": "23:45",
+            "spawnPatternKey": "7986feca"
+        },
+        {
+            "id": "auth-saez-f58dd5ab-0008",
+            "category": "departure",
+            "scheduledTime": "23:47",
+            "spawnPatternKey": "f58dd5ab"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0025",
+            "category": "arrival",
+            "scheduledTime": "23:48",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-b8eefd3c-0003",
+            "category": "arrival",
+            "scheduledTime": "23:50",
+            "spawnPatternKey": "b8eefd3c"
+        },
+        {
+            "id": "auth-saez-172446ba-0031",
+            "category": "departure",
+            "scheduledTime": "23:51",
+            "spawnPatternKey": "172446ba"
+        },
+        {
+            "id": "auth-saez-8127eb93-0076",
+            "category": "departure",
+            "scheduledTime": "23:52",
+            "spawnPatternKey": "8127eb93"
+        },
+        {
+            "id": "auth-saez-b139c601-0070",
+            "category": "departure",
+            "scheduledTime": "23:54",
+            "spawnPatternKey": "b139c601"
+        },
+        {
+            "id": "auth-saez-33cca9d0-0026",
+            "category": "arrival",
+            "scheduledTime": "23:57",
+            "spawnPatternKey": "33cca9d0"
+        },
+        {
+            "id": "auth-saez-7986feca-0026",
+            "category": "arrival",
+            "scheduledTime": "23:58",
+            "spawnPatternKey": "7986feca"
+        }
+    ]
+}

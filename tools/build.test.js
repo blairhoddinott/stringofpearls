@@ -70,6 +70,12 @@ async function expectedOutputPaths() {
         expected.add(`assets/airports/${relativeTo(airportDirectory, filename)}`);
     }
 
+    const scheduleDirectory = path.join(ROOT, 'assets', 'schedules');
+
+    for (const filename of await listFiles(scheduleDirectory)) {
+        expected.add(`assets/schedules/${relativeTo(scheduleDirectory, filename)}`);
+    }
+
     const serverDirectory = path.join(ROOT, 'src', 'assets', 'scripts', 'server');
 
     for (const filename of await listFiles(serverDirectory)) {
@@ -298,6 +304,123 @@ async function assertUppercaseAirportExtensionIsCopied() {
     }
 }
 
+function buildScheduleFixture(airportIcao) {
+    const remoteIcao = airportIcao === 'KPDX' ? 'KSEA' : 'KPDX';
+
+    return {
+        schemaVersion: 1,
+        airportIcao,
+        timezone: 'America/Los_Angeles',
+        sampleDate: '2026-07-15',
+        source: {
+            name: 'Build contract fixture',
+            url: 'https://example.test/schedule',
+            retrievedAt: '2026-09-26',
+            license: 'Public domain',
+            coverage: 'Fixture only'
+        },
+        flights: [
+            {
+                id: 'arr-1',
+                category: 'arrival',
+                scheduledTime: '08:15',
+                airlineIcao: 'asa',
+                flightNumber: '123',
+                originIcao: remoteIcao,
+                destinationIcao: airportIcao
+            }
+        ]
+    };
+}
+
+async function assertScheduleAssetsArePublished() {
+    const sourceDirectory = path.join(ROOT, 'assets/schedules');
+    const loadListFilename = path.join(sourceDirectory, 'scheduleLoadList.json');
+    const originalLoadList = await fsp.readFile(loadListFilename, 'utf8');
+    const scheduledIcaos = new Set(JSON.parse(originalLoadList).map((entry) => entry.icao));
+    const airportLoadList = JSON.parse(await fsp.readFile(path.join(ROOT, 'assets/airports/airportLoadList.json'), 'utf8'));
+    const airport = airportLoadList.find((entry) => !scheduledIcaos.has(entry.icao));
+    assert.ok(airport, 'build contract needs an airport without an existing schedule');
+
+    const fixtureName = `${airport.icao}-build-contract-${process.pid}.json`;
+    const fixtureFilename = path.join(sourceDirectory, fixtureName);
+    const fixtureSchedule = buildScheduleFixture(airport.icao.toUpperCase());
+    const augmentedLoadList = [
+        ...JSON.parse(originalLoadList),
+        { icao: airport.icao, file: fixtureName }
+    ].sort((left, right) => left.icao.localeCompare(right.icao));
+
+    await fsp.writeFile(fixtureFilename, `${JSON.stringify(fixtureSchedule, null, 2)}\n`);
+    await fsp.writeFile(loadListFilename, `${JSON.stringify(augmentedLoadList, null, 2)}\n`);
+
+    try {
+        runBuild();
+
+        const publishedNames = ['scheduleLoadList.json', 'schedule.schema.json', fixtureName];
+
+        for (const name of publishedNames) {
+            const [source, output] = await Promise.all([
+                fsp.readFile(path.join(sourceDirectory, name)),
+                fsp.readFile(path.join(PUBLIC_DIR, 'assets/schedules', name))
+            ]);
+
+            assert.deepStrictEqual(output, source, `assets/schedules/${name} was not published byte-for-byte`);
+        }
+    } finally {
+        await fsp.rm(fixtureFilename, { force: true });
+        await fsp.writeFile(loadListFilename, originalLoadList);
+        runBuild();
+    }
+}
+
+async function assertUnlistedScheduleIsRejected() {
+    const sourceDirectory = path.join(ROOT, 'assets/schedules');
+    const airportLoadList = JSON.parse(await fsp.readFile(path.join(ROOT, 'assets/airports/airportLoadList.json'), 'utf8'));
+    const airportIcao = airportLoadList[0].icao.toUpperCase();
+    const fixtureName = `${airportIcao.toLowerCase()}-unlisted-${process.pid}.json`;
+    const fixtureFilename = path.join(sourceDirectory, fixtureName);
+
+    try {
+        await fsp.writeFile(fixtureFilename, `${JSON.stringify(buildScheduleFixture(airportIcao), null, 2)}\n`);
+        assertBuildFailure(
+            ['--production'],
+            { SOURCE_DATE_EPOCH: FIXED_BUILD_EPOCH },
+            /schedule is not listed in scheduleLoadList\.json/
+        );
+    } finally {
+        await fsp.rm(fixtureFilename, { force: true });
+        runBuild();
+    }
+}
+
+async function assertUnexpectedScheduleAssetsAreRejected() {
+    const sourceDirectory = path.join(ROOT, 'assets/schedules');
+    const rawFilename = path.join(sourceDirectory, `__build-contract-raw-${process.pid}.csv`);
+    const nestedDirectory = path.join(sourceDirectory, `__build-contract-nested-${process.pid}`);
+
+    try {
+        await fsp.writeFile(rawFilename, 'raw source data must not ship\n');
+        assertBuildFailure(
+            ['--production'],
+            { SOURCE_DATE_EPOCH: FIXED_BUILD_EPOCH },
+            /only \.json files are allowed/
+        );
+        await fsp.rm(rawFilename, { force: true });
+
+        await fsp.mkdir(nestedDirectory);
+        await fsp.writeFile(path.join(nestedDirectory, 'hidden.json'), '{}\n');
+        assertBuildFailure(
+            ['--production'],
+            { SOURCE_DATE_EPOCH: FIXED_BUILD_EPOCH },
+            /nested directories are not allowed/
+        );
+    } finally {
+        await fsp.rm(rawFilename, { force: true });
+        await fsp.rm(nestedDirectory, { force: true, recursive: true });
+        runBuild();
+    }
+}
+
 function filesystemWithFailures({ removeBackup = false, renameCalls = [] }) {
     let renameCall = 0;
 
@@ -409,6 +532,44 @@ async function assertPublicationFailureSemantics() {
     }
 }
 
+async function assertPublishedScheduleSchemaIsValidated() {
+    const filename = path.join(ROOT, 'assets/schedules/schedule.schema.json');
+    const original = await fsp.readFile(filename, 'utf8');
+
+    await fsp.writeFile(filename, '{}\n');
+
+    try {
+        assertBuildFailure(
+            ['--production'],
+            { SOURCE_DATE_EPOCH: FIXED_BUILD_EPOCH },
+            /schedule\.schema\.json: contents do not match the reviewed schedule contract/
+        );
+    } finally {
+        await fsp.writeFile(filename, original);
+        runBuild();
+    }
+}
+
+async function assertInvalidScheduleDependencyIsRejected() {
+    const filename = path.join(ROOT, 'assets/airports/ksea.json');
+    const original = await fsp.readFile(filename, 'utf8');
+    const airport = JSON.parse(original);
+
+    airport.icao = 'KXXX';
+    await fsp.writeFile(filename, `${JSON.stringify(airport, null, 2)}\n`);
+
+    try {
+        assertBuildFailure(
+            ['--production'],
+            { SOURCE_DATE_EPOCH: FIXED_BUILD_EPOCH },
+            /airports\/ksea\.json: icao "KXXX" does not match filename KSEA/
+        );
+    } finally {
+        await fsp.writeFile(filename, original);
+        runBuild();
+    }
+}
+
 async function assertFailedBuildPreservesPreviousOutput() {
     const sourceFilename = path.join(ROOT, 'assets/airports/__build-contract-invalid.json');
     const previousOutput = await hashOutput();
@@ -423,7 +584,7 @@ async function assertFailedBuildPreservesPreviousOutput() {
         });
 
         assert.notStrictEqual(result.status, 0, 'build unexpectedly accepted malformed airport JSON');
-        assert.match(result.stderr, /SyntaxError/);
+        assert.match(result.stderr, /invalid JSON/);
         assert.deepStrictEqual(await hashOutput(), previousOutput, 'failed build replaced the previous public output');
 
         const leakedBuildDirectories = (await fsp.readdir(ROOT))
@@ -677,8 +838,13 @@ async function main() {
     JSON.parse(await fsp.readFile(path.join(PUBLIC_DIR, 'assets/scripts/client/bundle.min.js.map'), 'utf8'));
     await assertStylesheetSourceMap(stylesheet);
     await assertUppercaseAirportExtensionIsCopied();
+    await assertScheduleAssetsArePublished();
+    await assertUnlistedScheduleIsRejected();
+    await assertUnexpectedScheduleAssetsAreRejected();
     await assertPublicationFailureSemantics();
     await assertRecoveryChoosesNewestBackup();
+    await assertPublishedScheduleSchemaIsValidated();
+    await assertInvalidScheduleDependencyIsRejected();
     await assertFailedBuildPreservesPreviousOutput();
     await assertStagingCleanupFailureIsReported();
     await assertWatchQueuesInitialChanges();

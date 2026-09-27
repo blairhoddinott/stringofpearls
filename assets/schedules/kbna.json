@@ -1,0 +1,6171 @@
+{
+  "schemaVersion": 1,
+  "airportIcao": "KBNA",
+  "timezone": "America/Chicago",
+  "sampleDate": "2026-07-15",
+  "source": {
+    "name": "US DOT BTS On-Time Performance + T-100 Segment (All Carriers)",
+    "url": "https://transtats.bts.gov/DL_SelectFields.aspx?QO_fu146_anzr=Nv4+Pn44vr45&gnoyr_VQ=FMG",
+    "retrievedAt": "2026-09-27",
+    "license": "U.S. Government work in the public domain (17 U.S.C. §105); OurAirports code data is public domain.",
+    "coverage": "Exact On-Time movements are retained; 45 representative movements were deterministically synthesized from 2026-05 T-100 performed-departure aggregates. General aviation is excluded."
+  },
+  "flights": [
+    {
+      "id": "arrival-dl858-lax-bna",
+      "category": "arrival",
+      "scheduledTime": "00:33",
+      "airlineIcao": "dal",
+      "flightNumber": "858",
+      "originIcao": "KLAX",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4698-las-bna",
+      "category": "arrival",
+      "scheduledTime": "00:50",
+      "airlineIcao": "swa",
+      "flightNumber": "4698",
+      "originIcao": "KLAS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4429-den-bna",
+      "category": "arrival",
+      "scheduledTime": "01:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4429",
+      "originIcao": "KDEN",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3480-san-bna",
+      "category": "arrival",
+      "scheduledTime": "04:45",
+      "airlineIcao": "swa",
+      "flightNumber": "3480",
+      "originIcao": "KSAN",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn2191-las-bna",
+      "category": "arrival",
+      "scheduledTime": "05:00",
+      "airlineIcao": "swa",
+      "flightNumber": "2191",
+      "originIcao": "KLAS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn951-sea-bna",
+      "category": "arrival",
+      "scheduledTime": "05:00",
+      "airlineIcao": "swa",
+      "flightNumber": "951",
+      "originIcao": "KSEA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn485-bna-dal",
+      "category": "departure",
+      "scheduledTime": "05:00",
+      "airlineIcao": "swa",
+      "flightNumber": "485",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "departure-wn564-bna-mco",
+      "category": "departure",
+      "scheduledTime": "05:00",
+      "airlineIcao": "swa",
+      "flightNumber": "564",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-aa2821-bna-dfw",
+      "category": "departure",
+      "scheduledTime": "05:01",
+      "airlineIcao": "aal",
+      "flightNumber": "2821",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-wn2544-bna-tpa",
+      "category": "departure",
+      "scheduledTime": "05:05",
+      "airlineIcao": "swa",
+      "flightNumber": "2544",
+      "originIcao": "KBNA",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "arrival-wn3634-sfo-bna",
+      "category": "arrival",
+      "scheduledTime": "05:10",
+      "airlineIcao": "swa",
+      "flightNumber": "3634",
+      "originIcao": "KSFO",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3759-smf-bna",
+      "category": "arrival",
+      "scheduledTime": "05:10",
+      "airlineIcao": "swa",
+      "flightNumber": "3759",
+      "originIcao": "KSMF",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-dl2637-bna-atl",
+      "category": "departure",
+      "scheduledTime": "05:10",
+      "airlineIcao": "dal",
+      "flightNumber": "2637",
+      "originIcao": "KBNA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-9e-arrival-kjfk-f-001",
+      "scheduledTime": "05:11",
+      "category": "arrival",
+      "originIcao": "KJFK",
+      "destinationIcao": "KBNA",
+      "airlineIcao": "edv",
+      "flightNumber": "9812"
+    },
+    {
+      "id": "departure-wn573-bna-mdw",
+      "category": "departure",
+      "scheduledTime": "05:20",
+      "airlineIcao": "swa",
+      "flightNumber": "573",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "departure-wn4430-bna-hou",
+      "category": "departure",
+      "scheduledTime": "05:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4430",
+      "originIcao": "KBNA",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "t100-9e-departure-kjfk-f-002",
+      "scheduledTime": "05:28",
+      "category": "departure",
+      "originIcao": "KBNA",
+      "destinationIcao": "KJFK",
+      "airlineIcao": "edv",
+      "flightNumber": "7254"
+    },
+    {
+      "id": "departure-wn800-bna-den",
+      "category": "departure",
+      "scheduledTime": "05:30",
+      "airlineIcao": "swa",
+      "flightNumber": "800",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-aa1065-bna-clt",
+      "category": "departure",
+      "scheduledTime": "05:31",
+      "airlineIcao": "aal",
+      "flightNumber": "1065",
+      "originIcao": "KBNA",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-aa1342-bna-mia",
+      "category": "departure",
+      "scheduledTime": "05:39",
+      "airlineIcao": "aal",
+      "flightNumber": "1342",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-as382-sea-bna",
+      "category": "arrival",
+      "scheduledTime": "05:40",
+      "airlineIcao": "asa",
+      "flightNumber": "382",
+      "originIcao": "KSEA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn3529-bna-dca",
+      "category": "departure",
+      "scheduledTime": "05:40",
+      "airlineIcao": "swa",
+      "flightNumber": "3529",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-b6682-bna-fll",
+      "category": "departure",
+      "scheduledTime": "05:45",
+      "airlineIcao": "jbu",
+      "flightNumber": "682",
+      "originIcao": "KBNA",
+      "destinationIcao": "KFLL"
+    },
+    {
+      "id": "departure-wn761-bna-phx",
+      "category": "departure",
+      "scheduledTime": "05:45",
+      "airlineIcao": "swa",
+      "flightNumber": "761",
+      "originIcao": "KBNA",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-dl2221-bna-msp",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "dal",
+      "flightNumber": "2221",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "departure-oh5440-bna-dca",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "jia",
+      "flightNumber": "5440",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-ua451-bna-ord",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "ual",
+      "flightNumber": "451",
+      "originIcao": "KBNA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-wn433-bna-aus",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "swa",
+      "flightNumber": "433",
+      "originIcao": "KBNA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-yx4411-bna-lga",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "rpa",
+      "flightNumber": "4411",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-aa2787-bna-dfw",
+      "category": "departure",
+      "scheduledTime": "06:01",
+      "airlineIcao": "aal",
+      "flightNumber": "2787",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-dl2439-bna-dtw",
+      "category": "departure",
+      "scheduledTime": "06:05",
+      "airlineIcao": "dal",
+      "flightNumber": "2439",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "departure-yx5708-bna-dca",
+      "category": "departure",
+      "scheduledTime": "06:05",
+      "airlineIcao": "rpa",
+      "flightNumber": "5708",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "arrival-aa2149-lax-bna",
+      "category": "arrival",
+      "scheduledTime": "06:11",
+      "airlineIcao": "aal",
+      "flightNumber": "2149",
+      "originIcao": "KLAX",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-dl3001-bna-atl",
+      "category": "departure",
+      "scheduledTime": "06:18",
+      "airlineIcao": "dal",
+      "flightNumber": "3001",
+      "originIcao": "KBNA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-9e-departure-kjfk-f-003",
+      "scheduledTime": "06:21",
+      "category": "departure",
+      "originIcao": "KBNA",
+      "destinationIcao": "KJFK",
+      "airlineIcao": "edv",
+      "flightNumber": "6227"
+    },
+    {
+      "id": "departure-wn2735-bna-lga",
+      "category": "departure",
+      "scheduledTime": "06:25",
+      "airlineIcao": "swa",
+      "flightNumber": "2735",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-wn679-bna-stl",
+      "category": "departure",
+      "scheduledTime": "06:25",
+      "airlineIcao": "swa",
+      "flightNumber": "679",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-aa2809-bna-phl",
+      "category": "departure",
+      "scheduledTime": "06:28",
+      "airlineIcao": "aal",
+      "flightNumber": "2809",
+      "originIcao": "KBNA",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "departure-dl891-bna-lax",
+      "category": "departure",
+      "scheduledTime": "06:28",
+      "airlineIcao": "dal",
+      "flightNumber": "891",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-ua396-bna-iah",
+      "category": "departure",
+      "scheduledTime": "06:30",
+      "airlineIcao": "ual",
+      "flightNumber": "396",
+      "originIcao": "KBNA",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-ua1293-bna-sfo",
+      "category": "departure",
+      "scheduledTime": "06:31",
+      "airlineIcao": "ual",
+      "flightNumber": "1293",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "arrival-ua1815-sfo-bna",
+      "category": "arrival",
+      "scheduledTime": "06:37",
+      "airlineIcao": "ual",
+      "flightNumber": "1815",
+      "originIcao": "KSFO",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn1105-bna-fll",
+      "category": "departure",
+      "scheduledTime": "06:40",
+      "airlineIcao": "swa",
+      "flightNumber": "1105",
+      "originIcao": "KBNA",
+      "destinationIcao": "KFLL"
+    },
+    {
+      "id": "departure-wn565-bna-mco",
+      "category": "departure",
+      "scheduledTime": "06:40",
+      "airlineIcao": "swa",
+      "flightNumber": "565",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-wn544-bna-las",
+      "category": "departure",
+      "scheduledTime": "06:45",
+      "airlineIcao": "swa",
+      "flightNumber": "544",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-wn462-bna-bwi",
+      "category": "departure",
+      "scheduledTime": "06:50",
+      "airlineIcao": "swa",
+      "flightNumber": "462",
+      "originIcao": "KBNA",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "t100-qk-departure-cyul-f-001",
+      "scheduledTime": "06:57",
+      "category": "departure",
+      "originIcao": "KBNA",
+      "destinationIcao": "CYUL",
+      "airlineIcao": "jza",
+      "flightNumber": "2697"
+    },
+    {
+      "id": "arrival-wn1425-dca-bna",
+      "category": "arrival",
+      "scheduledTime": "07:00",
+      "airlineIcao": "swa",
+      "flightNumber": "1425",
+      "originIcao": "KDCA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-dl372-bna-sea",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "dal",
+      "flightNumber": "372",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-g4316-bna-bzn",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "aay",
+      "flightNumber": "316",
+      "originIcao": "KBNA",
+      "destinationIcao": "KBZN"
+    },
+    {
+      "id": "departure-ua1716-bna-den",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "ual",
+      "flightNumber": "1716",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-ua371-bna-ewr",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "ual",
+      "flightNumber": "371",
+      "originIcao": "KBNA",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "departure-oo4964-bna-ord",
+      "category": "departure",
+      "scheduledTime": "07:01",
+      "airlineIcao": "skw",
+      "flightNumber": "4964",
+      "originIcao": "KBNA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-as281-bna-sea",
+      "category": "departure",
+      "scheduledTime": "07:02",
+      "airlineIcao": "asa",
+      "flightNumber": "281",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-aa2583-bna-dfw",
+      "category": "departure",
+      "scheduledTime": "07:04",
+      "airlineIcao": "aal",
+      "flightNumber": "2583",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-wn1141-chs-bna",
+      "category": "arrival",
+      "scheduledTime": "07:05",
+      "airlineIcao": "swa",
+      "flightNumber": "1141",
+      "originIcao": "KCHS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn179-atl-bna",
+      "category": "arrival",
+      "scheduledTime": "07:05",
+      "airlineIcao": "swa",
+      "flightNumber": "179",
+      "originIcao": "KATL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1935-pit-bna",
+      "category": "arrival",
+      "scheduledTime": "07:05",
+      "airlineIcao": "swa",
+      "flightNumber": "1935",
+      "originIcao": "KPIT",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn223-bhm-bna",
+      "category": "arrival",
+      "scheduledTime": "07:05",
+      "airlineIcao": "swa",
+      "flightNumber": "223",
+      "originIcao": "KBHM",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3388-tys-bna",
+      "category": "arrival",
+      "scheduledTime": "07:05",
+      "airlineIcao": "swa",
+      "flightNumber": "3388",
+      "originIcao": "KTYS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4477-cmh-bna",
+      "category": "arrival",
+      "scheduledTime": "07:05",
+      "airlineIcao": "swa",
+      "flightNumber": "4477",
+      "originIcao": "KCMH",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-oo4146-bna-aus",
+      "category": "departure",
+      "scheduledTime": "07:05",
+      "airlineIcao": "skw",
+      "flightNumber": "4146",
+      "originIcao": "KBNA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn2111-ind-bna",
+      "category": "arrival",
+      "scheduledTime": "07:10",
+      "airlineIcao": "swa",
+      "flightNumber": "2111",
+      "originIcao": "KIND",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3349-cvg-bna",
+      "category": "arrival",
+      "scheduledTime": "07:10",
+      "airlineIcao": "swa",
+      "flightNumber": "3349",
+      "originIcao": "KCVG",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3592-sav-bna",
+      "category": "arrival",
+      "scheduledTime": "07:10",
+      "airlineIcao": "swa",
+      "flightNumber": "3592",
+      "originIcao": "KSAV",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4568-cle-bna",
+      "category": "arrival",
+      "scheduledTime": "07:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4568",
+      "originIcao": "KCLE",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4705-gsp-bna",
+      "category": "arrival",
+      "scheduledTime": "07:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4705",
+      "originIcao": "KGSP",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn1173-bna-dal",
+      "category": "departure",
+      "scheduledTime": "07:10",
+      "airlineIcao": "swa",
+      "flightNumber": "1173",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "departure-aa3237-bna-lax",
+      "category": "departure",
+      "scheduledTime": "07:12",
+      "airlineIcao": "aal",
+      "flightNumber": "3237",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-aa2692-bna-clt",
+      "category": "departure",
+      "scheduledTime": "07:13",
+      "airlineIcao": "aal",
+      "flightNumber": "2692",
+      "originIcao": "KBNA",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "t100-fx-arrival-kmem-g-001",
+      "scheduledTime": "07:14",
+      "category": "arrival",
+      "originIcao": "KMEM",
+      "destinationIcao": "KBNA",
+      "airlineIcao": "fdx",
+      "flightNumber": "4022"
+    },
+    {
+      "id": "arrival-wn1167-clt-bna",
+      "category": "arrival",
+      "scheduledTime": "07:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1167",
+      "originIcao": "KCLT",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn2155-jax-bna",
+      "category": "arrival",
+      "scheduledTime": "07:15",
+      "airlineIcao": "swa",
+      "flightNumber": "2155",
+      "originIcao": "KJAX",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn2510-mco-bna",
+      "category": "arrival",
+      "scheduledTime": "07:15",
+      "airlineIcao": "swa",
+      "flightNumber": "2510",
+      "originIcao": "KMCO",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3418-rdu-bna",
+      "category": "arrival",
+      "scheduledTime": "07:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3418",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3604-sdf-bna",
+      "category": "arrival",
+      "scheduledTime": "07:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3604",
+      "originIcao": "KSDF",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4581-dtw-bna",
+      "category": "arrival",
+      "scheduledTime": "07:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4581",
+      "originIcao": "KDTW",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-aa487-bna-mia",
+      "category": "departure",
+      "scheduledTime": "07:20",
+      "airlineIcao": "aal",
+      "flightNumber": "487",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa3086-bna-phx",
+      "category": "departure",
+      "scheduledTime": "07:28",
+      "airlineIcao": "aal",
+      "flightNumber": "3086",
+      "originIcao": "KBNA",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-dl2509-bna-bos",
+      "category": "departure",
+      "scheduledTime": "07:31",
+      "airlineIcao": "dal",
+      "flightNumber": "2509",
+      "originIcao": "KBNA",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-dl2802-bna-atl",
+      "category": "departure",
+      "scheduledTime": "07:32",
+      "airlineIcao": "dal",
+      "flightNumber": "2802",
+      "originIcao": "KBNA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-dl1068-bna-slc",
+      "category": "departure",
+      "scheduledTime": "07:35",
+      "airlineIcao": "dal",
+      "flightNumber": "1068",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-dl2250-atl-bna",
+      "category": "arrival",
+      "scheduledTime": "07:38",
+      "airlineIcao": "dal",
+      "flightNumber": "2250",
+      "originIcao": "KATL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-ua2465-bna-ord",
+      "category": "departure",
+      "scheduledTime": "07:40",
+      "airlineIcao": "ual",
+      "flightNumber": "2465",
+      "originIcao": "KBNA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-b62482-bna-fll",
+      "category": "departure",
+      "scheduledTime": "07:50",
+      "airlineIcao": "jbu",
+      "flightNumber": "2482",
+      "originIcao": "KBNA",
+      "destinationIcao": "KFLL"
+    },
+    {
+      "id": "t100-9e-departure-kjfk-f-004",
+      "scheduledTime": "07:58",
+      "category": "departure",
+      "originIcao": "KBNA",
+      "destinationIcao": "KJFK",
+      "airlineIcao": "edv",
+      "flightNumber": "5974"
+    },
+    {
+      "id": "departure-wn1821-bna-lax",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "swa",
+      "flightNumber": "1821",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-wn2160-bna-msp",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "swa",
+      "flightNumber": "2160",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "departure-wn3704-bna-tul",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "swa",
+      "flightNumber": "3704",
+      "originIcao": "KBNA",
+      "destinationIcao": "KTUL"
+    },
+    {
+      "id": "departure-wn3770-bna-phx",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "swa",
+      "flightNumber": "3770",
+      "originIcao": "KBNA",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-wn585-bna-mke",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "swa",
+      "flightNumber": "585",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMKE"
+    },
+    {
+      "id": "departure-wn663-bna-sat",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "swa",
+      "flightNumber": "663",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-mq3912-dfw-bna",
+      "category": "arrival",
+      "scheduledTime": "08:01",
+      "airlineIcao": "eny",
+      "flightNumber": "3912",
+      "originIcao": "KDFW",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-aa1515-bna-dfw",
+      "category": "departure",
+      "scheduledTime": "08:01",
+      "airlineIcao": "aal",
+      "flightNumber": "1515",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-yx4358-dca-bna",
+      "category": "arrival",
+      "scheduledTime": "08:05",
+      "airlineIcao": "rpa",
+      "flightNumber": "4358",
+      "originIcao": "KDCA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn2242-bna-okc",
+      "category": "departure",
+      "scheduledTime": "08:05",
+      "airlineIcao": "swa",
+      "flightNumber": "2242",
+      "originIcao": "KBNA",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-wn4289-bna-mci",
+      "category": "departure",
+      "scheduledTime": "08:05",
+      "airlineIcao": "swa",
+      "flightNumber": "4289",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMCI"
+    },
+    {
+      "id": "departure-wn4714-bna-mco",
+      "category": "departure",
+      "scheduledTime": "08:05",
+      "airlineIcao": "swa",
+      "flightNumber": "4714",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-wn579-bna-mem",
+      "category": "departure",
+      "scheduledTime": "08:05",
+      "airlineIcao": "swa",
+      "flightNumber": "579",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "departure-wn594-bna-msy",
+      "category": "departure",
+      "scheduledTime": "08:05",
+      "airlineIcao": "swa",
+      "flightNumber": "594",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMSY"
+    },
+    {
+      "id": "departure-wn659-bna-san",
+      "category": "departure",
+      "scheduledTime": "08:05",
+      "airlineIcao": "swa",
+      "flightNumber": "659",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "arrival-b61207-bos-bna",
+      "category": "arrival",
+      "scheduledTime": "08:10",
+      "airlineIcao": "jbu",
+      "flightNumber": "1207",
+      "originIcao": "KBOS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn1400-bna-lit",
+      "category": "departure",
+      "scheduledTime": "08:10",
+      "airlineIcao": "swa",
+      "flightNumber": "1400",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLIT"
+    },
+    {
+      "id": "departure-wn4149-bna-aus",
+      "category": "departure",
+      "scheduledTime": "08:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4149",
+      "originIcao": "KBNA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn499-bna-den",
+      "category": "departure",
+      "scheduledTime": "08:10",
+      "airlineIcao": "swa",
+      "flightNumber": "499",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-wn510-bna-ecp",
+      "category": "departure",
+      "scheduledTime": "08:10",
+      "airlineIcao": "swa",
+      "flightNumber": "510",
+      "originIcao": "KBNA",
+      "destinationIcao": "KECP"
+    },
+    {
+      "id": "departure-wn532-bna-hou",
+      "category": "departure",
+      "scheduledTime": "08:10",
+      "airlineIcao": "swa",
+      "flightNumber": "532",
+      "originIcao": "KBNA",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "departure-wn647-bna-pns",
+      "category": "departure",
+      "scheduledTime": "08:10",
+      "airlineIcao": "swa",
+      "flightNumber": "647",
+      "originIcao": "KBNA",
+      "destinationIcao": "KPNS"
+    },
+    {
+      "id": "departure-ua2690-bna-ewr",
+      "category": "departure",
+      "scheduledTime": "08:11",
+      "airlineIcao": "ual",
+      "flightNumber": "2690",
+      "originIcao": "KBNA",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "t100-9e-departure-klga-f-002",
+      "scheduledTime": "08:11",
+      "category": "departure",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLGA",
+      "airlineIcao": "edv",
+      "flightNumber": "6004"
+    },
+    {
+      "id": "departure-wn4353-bna-vps",
+      "category": "departure",
+      "scheduledTime": "08:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4353",
+      "originIcao": "KBNA",
+      "destinationIcao": "KVPS"
+    },
+    {
+      "id": "arrival-mq3973-ord-bna",
+      "category": "arrival",
+      "scheduledTime": "08:23",
+      "airlineIcao": "eny",
+      "flightNumber": "3973",
+      "originIcao": "KORD",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-ei-arrival-eidw-f-001",
+      "scheduledTime": "08:23",
+      "category": "arrival",
+      "originIcao": "EIDW",
+      "destinationIcao": "KBNA",
+      "airlineIcao": "ein",
+      "flightNumber": "5365"
+    },
+    {
+      "id": "arrival-ua1428-ewr-bna",
+      "category": "arrival",
+      "scheduledTime": "08:24",
+      "airlineIcao": "ual",
+      "flightNumber": "1428",
+      "originIcao": "KEWR",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-oh5576-phl-bna",
+      "category": "arrival",
+      "scheduledTime": "08:25",
+      "airlineIcao": "jia",
+      "flightNumber": "5576",
+      "originIcao": "KPHL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-ua1709-bna-iad",
+      "category": "departure",
+      "scheduledTime": "08:30",
+      "airlineIcao": "ual",
+      "flightNumber": "1709",
+      "originIcao": "KBNA",
+      "destinationIcao": "KIAD"
+    },
+    {
+      "id": "departure-mq3825-bna-tpa",
+      "category": "departure",
+      "scheduledTime": "08:31",
+      "airlineIcao": "eny",
+      "flightNumber": "3825",
+      "originIcao": "KBNA",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "departure-dl2250-bna-atl",
+      "category": "departure",
+      "scheduledTime": "08:33",
+      "airlineIcao": "dal",
+      "flightNumber": "2250",
+      "originIcao": "KBNA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-wn2447-lga-bna",
+      "category": "arrival",
+      "scheduledTime": "08:35",
+      "airlineIcao": "swa",
+      "flightNumber": "2447",
+      "originIcao": "KLGA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn874-bwi-bna",
+      "category": "arrival",
+      "scheduledTime": "08:40",
+      "airlineIcao": "swa",
+      "flightNumber": "874",
+      "originIcao": "KBWI",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-oo5332-bna-iah",
+      "category": "departure",
+      "scheduledTime": "08:40",
+      "airlineIcao": "skw",
+      "flightNumber": "5332",
+      "originIcao": "KBNA",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "arrival-dl3069-atl-bna",
+      "category": "arrival",
+      "scheduledTime": "08:41",
+      "airlineIcao": "dal",
+      "flightNumber": "3069",
+      "originIcao": "KATL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-yx4712-bna-jfk",
+      "category": "departure",
+      "scheduledTime": "08:43",
+      "airlineIcao": "rpa",
+      "flightNumber": "4712",
+      "originIcao": "KBNA",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "arrival-wn1473-vps-bna",
+      "category": "arrival",
+      "scheduledTime": "08:45",
+      "airlineIcao": "swa",
+      "flightNumber": "1473",
+      "originIcao": "KVPS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-yx5688-lga-bna",
+      "category": "arrival",
+      "scheduledTime": "08:45",
+      "airlineIcao": "rpa",
+      "flightNumber": "5688",
+      "originIcao": "KLGA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1519-dal-bna",
+      "category": "arrival",
+      "scheduledTime": "08:50",
+      "airlineIcao": "swa",
+      "flightNumber": "1519",
+      "originIcao": "KDAL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-ua2175-ord-bna",
+      "category": "arrival",
+      "scheduledTime": "08:51",
+      "airlineIcao": "ual",
+      "flightNumber": "2175",
+      "originIcao": "KORD",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-oh5576-bna-phl",
+      "category": "departure",
+      "scheduledTime": "08:57",
+      "airlineIcao": "jia",
+      "flightNumber": "5576",
+      "originIcao": "KBNA",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "arrival-dl2724-msp-bna",
+      "category": "arrival",
+      "scheduledTime": "08:58",
+      "airlineIcao": "dal",
+      "flightNumber": "2724",
+      "originIcao": "KMSP",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-b6806-bna-bos",
+      "category": "departure",
+      "scheduledTime": "09:00",
+      "airlineIcao": "jbu",
+      "flightNumber": "806",
+      "originIcao": "KBNA",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-mq3973-bna-ord",
+      "category": "departure",
+      "scheduledTime": "09:04",
+      "airlineIcao": "eny",
+      "flightNumber": "3973",
+      "originIcao": "KBNA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-aa1476-dfw-bna",
+      "category": "arrival",
+      "scheduledTime": "09:05",
+      "airlineIcao": "aal",
+      "flightNumber": "1476",
+      "originIcao": "KDFW",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1722-ecp-bna",
+      "category": "arrival",
+      "scheduledTime": "09:05",
+      "airlineIcao": "swa",
+      "flightNumber": "1722",
+      "originIcao": "KECP",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-lf-arrival-ktup-f-001",
+      "scheduledTime": "09:08",
+      "category": "arrival",
+      "originIcao": "KTUP",
+      "destinationIcao": "KBNA",
+      "airlineIcao": "vte",
+      "flightNumber": "2114"
+    },
+    {
+      "id": "arrival-wn1528-msp-bna",
+      "category": "arrival",
+      "scheduledTime": "09:10",
+      "airlineIcao": "swa",
+      "flightNumber": "1528",
+      "originIcao": "KMSP",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn2764-mco-bna",
+      "category": "arrival",
+      "scheduledTime": "09:10",
+      "airlineIcao": "swa",
+      "flightNumber": "2764",
+      "originIcao": "KMCO",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3456-den-bna",
+      "category": "arrival",
+      "scheduledTime": "09:10",
+      "airlineIcao": "swa",
+      "flightNumber": "3456",
+      "originIcao": "KDEN",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4051-tul-bna",
+      "category": "arrival",
+      "scheduledTime": "09:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4051",
+      "originIcao": "KTUL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-dl2682-dtw-bna",
+      "category": "arrival",
+      "scheduledTime": "09:11",
+      "airlineIcao": "dal",
+      "flightNumber": "2682",
+      "originIcao": "KDTW",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1954-hou-bna",
+      "category": "arrival",
+      "scheduledTime": "09:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1954",
+      "originIcao": "KHOU",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3107-okc-bna",
+      "category": "arrival",
+      "scheduledTime": "09:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3107",
+      "originIcao": "KOKC",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3557-sat-bna",
+      "category": "arrival",
+      "scheduledTime": "09:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3557",
+      "originIcao": "KSAT",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3686-aus-bna",
+      "category": "arrival",
+      "scheduledTime": "09:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3686",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4598-mke-bna",
+      "category": "arrival",
+      "scheduledTime": "09:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4598",
+      "originIcao": "KMKE",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn4833-bna-las",
+      "category": "departure",
+      "scheduledTime": "09:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4833",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "t100-9x-departure-kjbr-f-001",
+      "scheduledTime": "09:18",
+      "category": "departure",
+      "originIcao": "KBNA",
+      "destinationIcao": "KJBR",
+      "airlineIcao": "fdy",
+      "flightNumber": "5828"
+    },
+    {
+      "id": "arrival-wn2516-lit-bna",
+      "category": "arrival",
+      "scheduledTime": "09:20",
+      "airlineIcao": "swa",
+      "flightNumber": "2516",
+      "originIcao": "KLIT",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn2531-mci-bna",
+      "category": "arrival",
+      "scheduledTime": "09:20",
+      "airlineIcao": "swa",
+      "flightNumber": "2531",
+      "originIcao": "KMCI",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn2913-mem-bna",
+      "category": "arrival",
+      "scheduledTime": "09:20",
+      "airlineIcao": "swa",
+      "flightNumber": "2913",
+      "originIcao": "KMEM",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn2981-msy-bna",
+      "category": "arrival",
+      "scheduledTime": "09:20",
+      "airlineIcao": "swa",
+      "flightNumber": "2981",
+      "originIcao": "KMSY",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3391-pns-bna",
+      "category": "arrival",
+      "scheduledTime": "09:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3391",
+      "originIcao": "KPNS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn1473-bna-mdw",
+      "category": "departure",
+      "scheduledTime": "09:20",
+      "airlineIcao": "swa",
+      "flightNumber": "1473",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "departure-as623-bna-sea",
+      "category": "departure",
+      "scheduledTime": "09:25",
+      "airlineIcao": "asa",
+      "flightNumber": "623",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-ua2461-bna-ewr",
+      "category": "departure",
+      "scheduledTime": "09:25",
+      "airlineIcao": "ual",
+      "flightNumber": "2461",
+      "originIcao": "KBNA",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "departure-yx5688-bna-lga",
+      "category": "departure",
+      "scheduledTime": "09:25",
+      "airlineIcao": "rpa",
+      "flightNumber": "5688",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "arrival-ua1366-iad-bna",
+      "category": "arrival",
+      "scheduledTime": "09:29",
+      "airlineIcao": "ual",
+      "flightNumber": "1366",
+      "originIcao": "KIAD",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4638-fll-bna",
+      "category": "arrival",
+      "scheduledTime": "09:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4638",
+      "originIcao": "KFLL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-9e-arrival-krdu-f-002",
+      "scheduledTime": "09:40",
+      "category": "arrival",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBNA",
+      "airlineIcao": "edv",
+      "flightNumber": "4751"
+    },
+    {
+      "id": "arrival-aa1521-mia-bna",
+      "category": "arrival",
+      "scheduledTime": "09:45",
+      "airlineIcao": "aal",
+      "flightNumber": "1521",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-ua2174-iah-bna",
+      "category": "arrival",
+      "scheduledTime": "09:47",
+      "airlineIcao": "ual",
+      "flightNumber": "2174",
+      "originIcao": "KIAH",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-dl3069-bna-atl",
+      "category": "departure",
+      "scheduledTime": "09:48",
+      "airlineIcao": "dal",
+      "flightNumber": "3069",
+      "originIcao": "KBNA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-oh5083-clt-bna",
+      "category": "arrival",
+      "scheduledTime": "09:49",
+      "airlineIcao": "jia",
+      "flightNumber": "5083",
+      "originIcao": "KCLT",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-ua343-bna-ord",
+      "category": "departure",
+      "scheduledTime": "09:53",
+      "airlineIcao": "ual",
+      "flightNumber": "343",
+      "originIcao": "KBNA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-aa1476-bna-dfw",
+      "category": "departure",
+      "scheduledTime": "09:57",
+      "airlineIcao": "aal",
+      "flightNumber": "1476",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-wn1966-bna-lga",
+      "category": "departure",
+      "scheduledTime": "10:00",
+      "airlineIcao": "swa",
+      "flightNumber": "1966",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-dl2724-bna-msp",
+      "category": "departure",
+      "scheduledTime": "10:03",
+      "airlineIcao": "dal",
+      "flightNumber": "2724",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "arrival-yx4364-lga-bna",
+      "category": "arrival",
+      "scheduledTime": "10:05",
+      "airlineIcao": "rpa",
+      "flightNumber": "4364",
+      "originIcao": "KLGA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn1489-bna-pit",
+      "category": "departure",
+      "scheduledTime": "10:05",
+      "airlineIcao": "swa",
+      "flightNumber": "1489",
+      "originIcao": "KBNA",
+      "destinationIcao": "KPIT"
+    },
+    {
+      "id": "departure-wn4560-bna-bos",
+      "category": "departure",
+      "scheduledTime": "10:05",
+      "airlineIcao": "swa",
+      "flightNumber": "4560",
+      "originIcao": "KBNA",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-wn4622-bna-gsp",
+      "category": "departure",
+      "scheduledTime": "10:05",
+      "airlineIcao": "swa",
+      "flightNumber": "4622",
+      "originIcao": "KBNA",
+      "destinationIcao": "KGSP"
+    },
+    {
+      "id": "departure-wn463-bna-cvg",
+      "category": "departure",
+      "scheduledTime": "10:05",
+      "airlineIcao": "swa",
+      "flightNumber": "463",
+      "originIcao": "KBNA",
+      "destinationIcao": "KCVG"
+    },
+    {
+      "id": "departure-wn541-bna-jax",
+      "category": "departure",
+      "scheduledTime": "10:05",
+      "airlineIcao": "swa",
+      "flightNumber": "541",
+      "originIcao": "KBNA",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-wn623-bna-phl",
+      "category": "departure",
+      "scheduledTime": "10:05",
+      "airlineIcao": "swa",
+      "flightNumber": "623",
+      "originIcao": "KBNA",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "departure-dl2682-bna-dtw",
+      "category": "departure",
+      "scheduledTime": "10:06",
+      "airlineIcao": "dal",
+      "flightNumber": "2682",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "arrival-dl1155-atl-bna",
+      "category": "arrival",
+      "scheduledTime": "10:09",
+      "airlineIcao": "dal",
+      "flightNumber": "1155",
+      "originIcao": "KATL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-lf-departure-ktup-f-001",
+      "scheduledTime": "10:09",
+      "category": "departure",
+      "originIcao": "KBNA",
+      "destinationIcao": "KTUP",
+      "airlineIcao": "vte",
+      "flightNumber": "8293"
+    },
+    {
+      "id": "arrival-wn2959-mdw-bna",
+      "category": "arrival",
+      "scheduledTime": "10:10",
+      "airlineIcao": "swa",
+      "flightNumber": "2959",
+      "originIcao": "KMDW",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn162-bna-rdu",
+      "category": "departure",
+      "scheduledTime": "10:10",
+      "airlineIcao": "swa",
+      "flightNumber": "162",
+      "originIcao": "KBNA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-wn4571-bna-cle",
+      "category": "departure",
+      "scheduledTime": "10:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4571",
+      "originIcao": "KBNA",
+      "destinationIcao": "KCLE"
+    },
+    {
+      "id": "departure-wn4712-bna-mco",
+      "category": "departure",
+      "scheduledTime": "10:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4712",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-wn507-bna-dtw",
+      "category": "departure",
+      "scheduledTime": "10:10",
+      "airlineIcao": "swa",
+      "flightNumber": "507",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "departure-wn537-bna-ind",
+      "category": "departure",
+      "scheduledTime": "10:10",
+      "airlineIcao": "swa",
+      "flightNumber": "537",
+      "originIcao": "KBNA",
+      "destinationIcao": "KIND"
+    },
+    {
+      "id": "departure-wn650-bna-sdf",
+      "category": "departure",
+      "scheduledTime": "10:10",
+      "airlineIcao": "swa",
+      "flightNumber": "650",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSDF"
+    },
+    {
+      "id": "arrival-oh5085-dca-bna",
+      "category": "arrival",
+      "scheduledTime": "10:11",
+      "airlineIcao": "jia",
+      "flightNumber": "5085",
+      "originIcao": "KDCA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-b61373-jfk-bna",
+      "category": "arrival",
+      "scheduledTime": "10:12",
+      "airlineIcao": "jbu",
+      "flightNumber": "1373",
+      "originIcao": "KJFK",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-mq3439-ord-bna",
+      "category": "arrival",
+      "scheduledTime": "10:13",
+      "airlineIcao": "eny",
+      "flightNumber": "3439",
+      "originIcao": "KORD",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn2239-bna-clt",
+      "category": "departure",
+      "scheduledTime": "10:15",
+      "airlineIcao": "swa",
+      "flightNumber": "2239",
+      "originIcao": "KBNA",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-wn4206-bna-tys",
+      "category": "departure",
+      "scheduledTime": "10:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4206",
+      "originIcao": "KBNA",
+      "destinationIcao": "KTYS"
+    },
+    {
+      "id": "departure-wn434-bna-bhm",
+      "category": "departure",
+      "scheduledTime": "10:15",
+      "airlineIcao": "swa",
+      "flightNumber": "434",
+      "originIcao": "KBNA",
+      "destinationIcao": "KBHM"
+    },
+    {
+      "id": "departure-wn667-bna-sav",
+      "category": "departure",
+      "scheduledTime": "10:15",
+      "airlineIcao": "swa",
+      "flightNumber": "667",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSAV"
+    },
+    {
+      "id": "arrival-dl2141-bos-bna",
+      "category": "arrival",
+      "scheduledTime": "10:16",
+      "airlineIcao": "dal",
+      "flightNumber": "2141",
+      "originIcao": "KBOS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-oh5083-bna-clt",
+      "category": "departure",
+      "scheduledTime": "10:20",
+      "airlineIcao": "jia",
+      "flightNumber": "5083",
+      "originIcao": "KBNA",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "arrival-wn724-bos-bna",
+      "category": "arrival",
+      "scheduledTime": "10:25",
+      "airlineIcao": "swa",
+      "flightNumber": "724",
+      "originIcao": "KBOS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-ua502-bna-den",
+      "category": "departure",
+      "scheduledTime": "10:26",
+      "airlineIcao": "ual",
+      "flightNumber": "502",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-wn1279-dal-bna",
+      "category": "arrival",
+      "scheduledTime": "10:30",
+      "airlineIcao": "swa",
+      "flightNumber": "1279",
+      "originIcao": "KDAL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3235-phx-bna",
+      "category": "arrival",
+      "scheduledTime": "10:30",
+      "airlineIcao": "swa",
+      "flightNumber": "3235",
+      "originIcao": "KPHX",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-9e-arrival-klga-f-002",
+      "scheduledTime": "10:32",
+      "category": "arrival",
+      "originIcao": "KLGA",
+      "destinationIcao": "KBNA",
+      "airlineIcao": "edv",
+      "flightNumber": "6289"
+    },
+    {
+      "id": "arrival-oo5304-ord-bna",
+      "category": "arrival",
+      "scheduledTime": "10:34",
+      "airlineIcao": "skw",
+      "flightNumber": "5304",
+      "originIcao": "KORD",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn2604-mco-bna",
+      "category": "arrival",
+      "scheduledTime": "10:35",
+      "airlineIcao": "swa",
+      "flightNumber": "2604",
+      "originIcao": "KMCO",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3215-phl-bna",
+      "category": "arrival",
+      "scheduledTime": "10:35",
+      "airlineIcao": "swa",
+      "flightNumber": "3215",
+      "originIcao": "KPHL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4002-tpa-bna",
+      "category": "arrival",
+      "scheduledTime": "10:35",
+      "airlineIcao": "swa",
+      "flightNumber": "4002",
+      "originIcao": "KTPA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-yx4364-bna-lga",
+      "category": "departure",
+      "scheduledTime": "10:35",
+      "airlineIcao": "rpa",
+      "flightNumber": "4364",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-aa1521-bna-mia",
+      "category": "departure",
+      "scheduledTime": "10:39",
+      "airlineIcao": "aal",
+      "flightNumber": "1521",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-wn3932-bna-chs",
+      "category": "departure",
+      "scheduledTime": "10:40",
+      "airlineIcao": "swa",
+      "flightNumber": "3932",
+      "originIcao": "KBNA",
+      "destinationIcao": "KCHS"
+    },
+    {
+      "id": "departure-oh5085-bna-dca",
+      "category": "departure",
+      "scheduledTime": "10:41",
+      "airlineIcao": "jia",
+      "flightNumber": "5085",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "arrival-oo3960-aus-bna",
+      "category": "arrival",
+      "scheduledTime": "10:43",
+      "airlineIcao": "skw",
+      "flightNumber": "3960",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-mq3439-bna-ord",
+      "category": "departure",
+      "scheduledTime": "10:43",
+      "airlineIcao": "eny",
+      "flightNumber": "3439",
+      "originIcao": "KBNA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-9e-departure-krdu-f-001",
+      "scheduledTime": "10:43",
+      "category": "departure",
+      "originIcao": "KBNA",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "edv",
+      "flightNumber": "6200"
+    },
+    {
+      "id": "arrival-wn2565-bwi-bna",
+      "category": "arrival",
+      "scheduledTime": "10:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2565",
+      "originIcao": "KBWI",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-yx4344-rdu-bna",
+      "category": "arrival",
+      "scheduledTime": "10:47",
+      "airlineIcao": "rpa",
+      "flightNumber": "4344",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn1678-bna-pbi",
+      "category": "departure",
+      "scheduledTime": "10:50",
+      "airlineIcao": "swa",
+      "flightNumber": "1678",
+      "originIcao": "KBNA",
+      "destinationIcao": "KPBI"
+    },
+    {
+      "id": "arrival-aa3221-phl-bna",
+      "category": "arrival",
+      "scheduledTime": "10:51",
+      "airlineIcao": "aal",
+      "flightNumber": "3221",
+      "originIcao": "KPHL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-dl1155-bna-atl",
+      "category": "departure",
+      "scheduledTime": "10:54",
+      "airlineIcao": "dal",
+      "flightNumber": "1155",
+      "originIcao": "KBNA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-wn1372-mci-bna",
+      "category": "arrival",
+      "scheduledTime": "10:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1372",
+      "originIcao": "KMCI",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn684-rdu-bna",
+      "category": "arrival",
+      "scheduledTime": "10:55",
+      "airlineIcao": "swa",
+      "flightNumber": "684",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1648-den-bna",
+      "category": "arrival",
+      "scheduledTime": "11:00",
+      "airlineIcao": "swa",
+      "flightNumber": "1648",
+      "originIcao": "KDEN",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1761-myr-bna",
+      "category": "arrival",
+      "scheduledTime": "11:00",
+      "airlineIcao": "swa",
+      "flightNumber": "1761",
+      "originIcao": "KMYR",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-yx5783-dca-bna",
+      "category": "arrival",
+      "scheduledTime": "11:00",
+      "airlineIcao": "rpa",
+      "flightNumber": "5783",
+      "originIcao": "KDCA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn4427-bna-cmh",
+      "category": "departure",
+      "scheduledTime": "11:00",
+      "airlineIcao": "swa",
+      "flightNumber": "4427",
+      "originIcao": "KBNA",
+      "destinationIcao": "KCMH"
+    },
+    {
+      "id": "departure-b61374-bna-jfk",
+      "category": "departure",
+      "scheduledTime": "11:07",
+      "airlineIcao": "jbu",
+      "flightNumber": "1374",
+      "originIcao": "KBNA",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "arrival-wn1955-hou-bna",
+      "category": "arrival",
+      "scheduledTime": "11:10",
+      "airlineIcao": "swa",
+      "flightNumber": "1955",
+      "originIcao": "KHOU",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-ua1366-bna-iah",
+      "category": "departure",
+      "scheduledTime": "11:10",
+      "airlineIcao": "ual",
+      "flightNumber": "1366",
+      "originIcao": "KBNA",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-wn598-bna-myr",
+      "category": "departure",
+      "scheduledTime": "11:10",
+      "airlineIcao": "swa",
+      "flightNumber": "598",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMYR"
+    },
+    {
+      "id": "departure-wn893-bna-atl",
+      "category": "departure",
+      "scheduledTime": "11:10",
+      "airlineIcao": "swa",
+      "flightNumber": "893",
+      "originIcao": "KBNA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-ba-arrival-egll-f-001",
+      "scheduledTime": "11:14",
+      "category": "arrival",
+      "originIcao": "EGLL",
+      "destinationIcao": "KBNA",
+      "airlineIcao": "baw",
+      "flightNumber": "9323"
+    },
+    {
+      "id": "arrival-wn1708-dtw-bna",
+      "category": "arrival",
+      "scheduledTime": "11:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1708",
+      "originIcao": "KDTW",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4319-aus-bna",
+      "category": "arrival",
+      "scheduledTime": "11:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4319",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-dl2141-bna-bos",
+      "category": "departure",
+      "scheduledTime": "11:15",
+      "airlineIcao": "dal",
+      "flightNumber": "2141",
+      "originIcao": "KBNA",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-oo4653-bna-ord",
+      "category": "departure",
+      "scheduledTime": "11:15",
+      "airlineIcao": "skw",
+      "flightNumber": "4653",
+      "originIcao": "KBNA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-wn429-bna-alb",
+      "category": "departure",
+      "scheduledTime": "11:15",
+      "airlineIcao": "swa",
+      "flightNumber": "429",
+      "originIcao": "KBNA",
+      "destinationIcao": "KALB"
+    },
+    {
+      "id": "departure-wn4562-bna-dca",
+      "category": "departure",
+      "scheduledTime": "11:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4562",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "t100-rv-departure-cyyz-f-002",
+      "scheduledTime": "11:18",
+      "category": "departure",
+      "originIcao": "KBNA",
+      "destinationIcao": "CYYZ",
+      "airlineIcao": "rou",
+      "flightNumber": "9130"
+    },
+    {
+      "id": "arrival-wn1093-sav-bna",
+      "category": "arrival",
+      "scheduledTime": "11:20",
+      "airlineIcao": "swa",
+      "flightNumber": "1093",
+      "originIcao": "KSAV",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4492-lax-bna",
+      "category": "arrival",
+      "scheduledTime": "11:20",
+      "airlineIcao": "swa",
+      "flightNumber": "4492",
+      "originIcao": "KLAX",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn500-buf-bna",
+      "category": "arrival",
+      "scheduledTime": "11:20",
+      "airlineIcao": "swa",
+      "flightNumber": "500",
+      "originIcao": "KBUF",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-oo3960-bna-aus",
+      "category": "departure",
+      "scheduledTime": "11:24",
+      "airlineIcao": "skw",
+      "flightNumber": "3960",
+      "originIcao": "KBNA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn3734-stl-bna",
+      "category": "arrival",
+      "scheduledTime": "11:25",
+      "airlineIcao": "swa",
+      "flightNumber": "3734",
+      "originIcao": "KSTL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn668-bna-tpa",
+      "category": "departure",
+      "scheduledTime": "11:25",
+      "airlineIcao": "swa",
+      "flightNumber": "668",
+      "originIcao": "KBNA",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "arrival-dl2867-atl-bna",
+      "category": "arrival",
+      "scheduledTime": "11:30",
+      "airlineIcao": "dal",
+      "flightNumber": "2867",
+      "originIcao": "KATL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1426-dca-bna",
+      "category": "arrival",
+      "scheduledTime": "11:30",
+      "airlineIcao": "swa",
+      "flightNumber": "1426",
+      "originIcao": "KDCA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn684-bna-fll",
+      "category": "departure",
+      "scheduledTime": "11:30",
+      "airlineIcao": "swa",
+      "flightNumber": "684",
+      "originIcao": "KBNA",
+      "destinationIcao": "KFLL"
+    },
+    {
+      "id": "departure-aa3221-bna-phl",
+      "category": "departure",
+      "scheduledTime": "11:31",
+      "airlineIcao": "aal",
+      "flightNumber": "3221",
+      "originIcao": "KBNA",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "arrival-f91402-den-bna",
+      "category": "arrival",
+      "scheduledTime": "11:32",
+      "airlineIcao": "fft",
+      "flightNumber": "1402",
+      "originIcao": "KDEN",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn4728-bna-buf",
+      "category": "departure",
+      "scheduledTime": "11:35",
+      "airlineIcao": "swa",
+      "flightNumber": "4728",
+      "originIcao": "KBNA",
+      "destinationIcao": "KBUF"
+    },
+    {
+      "id": "arrival-aa1650-ord-bna",
+      "category": "arrival",
+      "scheduledTime": "11:36",
+      "airlineIcao": "aal",
+      "flightNumber": "1650",
+      "originIcao": "KORD",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn3338-bna-mco",
+      "category": "departure",
+      "scheduledTime": "11:40",
+      "airlineIcao": "swa",
+      "flightNumber": "3338",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-wn651-bna-pwm",
+      "category": "departure",
+      "scheduledTime": "11:40",
+      "airlineIcao": "swa",
+      "flightNumber": "651",
+      "originIcao": "KBNA",
+      "destinationIcao": "KPWM"
+    },
+    {
+      "id": "departure-yx5769-bna-dca",
+      "category": "departure",
+      "scheduledTime": "11:40",
+      "airlineIcao": "rpa",
+      "flightNumber": "5769",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "arrival-ua605-den-bna",
+      "category": "arrival",
+      "scheduledTime": "11:42",
+      "airlineIcao": "ual",
+      "flightNumber": "605",
+      "originIcao": "KDEN",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn445-mke-bna",
+      "category": "arrival",
+      "scheduledTime": "11:45",
+      "airlineIcao": "swa",
+      "flightNumber": "445",
+      "originIcao": "KMKE",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn546-bna-las",
+      "category": "departure",
+      "scheduledTime": "11:50",
+      "airlineIcao": "swa",
+      "flightNumber": "546",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "arrival-aa1520-dfw-bna",
+      "category": "arrival",
+      "scheduledTime": "11:53",
+      "airlineIcao": "aal",
+      "flightNumber": "1520",
+      "originIcao": "KDFW",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-qk-arrival-cyul-f-002",
+      "scheduledTime": "11:54",
+      "category": "arrival",
+      "originIcao": "CYUL",
+      "destinationIcao": "KBNA",
+      "airlineIcao": "jza",
+      "flightNumber": "3410"
+    },
+    {
+      "id": "arrival-wn1275-dal-bna",
+      "category": "arrival",
+      "scheduledTime": "11:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1275",
+      "originIcao": "KDAL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn2880-msy-bna",
+      "category": "arrival",
+      "scheduledTime": "11:55",
+      "airlineIcao": "swa",
+      "flightNumber": "2880",
+      "originIcao": "KMSY",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4713-mco-bna",
+      "category": "arrival",
+      "scheduledTime": "11:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4713",
+      "originIcao": "KMCO",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn4111-bna-san",
+      "category": "departure",
+      "scheduledTime": "11:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4111",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "departure-wn500-bna-den",
+      "category": "departure",
+      "scheduledTime": "11:55",
+      "airlineIcao": "swa",
+      "flightNumber": "500",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-yx4639-bna-rdu",
+      "category": "departure",
+      "scheduledTime": "11:59",
+      "airlineIcao": "rpa",
+      "flightNumber": "4639",
+      "originIcao": "KBNA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-wn4369-bna-bdl",
+      "category": "departure",
+      "scheduledTime": "12:00",
+      "airlineIcao": "swa",
+      "flightNumber": "4369",
+      "originIcao": "KBNA",
+      "destinationIcao": "KBDL"
+    },
+    {
+      "id": "departure-wn487-bna-dal",
+      "category": "departure",
+      "scheduledTime": "12:00",
+      "airlineIcao": "swa",
+      "flightNumber": "487",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "arrival-oh5082-clt-bna",
+      "category": "arrival",
+      "scheduledTime": "12:02",
+      "airlineIcao": "jia",
+      "flightNumber": "5082",
+      "originIcao": "KCLT",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn1345-bna-bwi",
+      "category": "departure",
+      "scheduledTime": "12:05",
+      "airlineIcao": "swa",
+      "flightNumber": "1345",
+      "originIcao": "KBNA",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "departure-wn1426-bna-pns",
+      "category": "departure",
+      "scheduledTime": "12:05",
+      "airlineIcao": "swa",
+      "flightNumber": "1426",
+      "originIcao": "KBNA",
+      "destinationIcao": "KPNS"
+    },
+    {
+      "id": "arrival-dl768-lax-bna",
+      "category": "arrival",
+      "scheduledTime": "12:06",
+      "airlineIcao": "dal",
+      "flightNumber": "768",
+      "originIcao": "KLAX",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-yv-departure-kiah-f-001",
+      "scheduledTime": "12:06",
+      "category": "departure",
+      "originIcao": "KBNA",
+      "destinationIcao": "KIAH",
+      "airlineIcao": "ash",
+      "flightNumber": "7928"
+    },
+    {
+      "id": "departure-wn677-bna-srq",
+      "category": "departure",
+      "scheduledTime": "12:15",
+      "airlineIcao": "swa",
+      "flightNumber": "677",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSRQ"
+    },
+    {
+      "id": "arrival-b61807-bos-bna",
+      "category": "arrival",
+      "scheduledTime": "12:17",
+      "airlineIcao": "jbu",
+      "flightNumber": "1807",
+      "originIcao": "KBOS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-f91401-bna-den",
+      "category": "departure",
+      "scheduledTime": "12:17",
+      "airlineIcao": "fft",
+      "flightNumber": "1401",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-ua1616-ewr-bna",
+      "category": "arrival",
+      "scheduledTime": "12:18",
+      "airlineIcao": "ual",
+      "flightNumber": "1616",
+      "originIcao": "KEWR",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1129-clt-bna",
+      "category": "arrival",
+      "scheduledTime": "12:20",
+      "airlineIcao": "swa",
+      "flightNumber": "1129",
+      "originIcao": "KCLT",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1430-srq-bna",
+      "category": "arrival",
+      "scheduledTime": "12:20",
+      "airlineIcao": "swa",
+      "flightNumber": "1430",
+      "originIcao": "KSRQ",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn5077-hou-bna",
+      "category": "arrival",
+      "scheduledTime": "12:20",
+      "airlineIcao": "swa",
+      "flightNumber": "5077",
+      "originIcao": "KHOU",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn2188-las-bna",
+      "category": "arrival",
+      "scheduledTime": "12:25",
+      "airlineIcao": "swa",
+      "flightNumber": "2188",
+      "originIcao": "KLAS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn267-bna-ric",
+      "category": "departure",
+      "scheduledTime": "12:25",
+      "airlineIcao": "swa",
+      "flightNumber": "267",
+      "originIcao": "KBNA",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "arrival-ua2414-ord-bna",
+      "category": "arrival",
+      "scheduledTime": "12:29",
+      "airlineIcao": "ual",
+      "flightNumber": "2414",
+      "originIcao": "KORD",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn2407-lga-bna",
+      "category": "arrival",
+      "scheduledTime": "12:30",
+      "airlineIcao": "swa",
+      "flightNumber": "2407",
+      "originIcao": "KLGA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn381-rsw-bna",
+      "category": "arrival",
+      "scheduledTime": "12:30",
+      "airlineIcao": "swa",
+      "flightNumber": "381",
+      "originIcao": "KRSW",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn2176-bna-ecp",
+      "category": "departure",
+      "scheduledTime": "12:30",
+      "airlineIcao": "swa",
+      "flightNumber": "2176",
+      "originIcao": "KBNA",
+      "destinationIcao": "KECP"
+    },
+    {
+      "id": "departure-oh5082-bna-clt",
+      "category": "departure",
+      "scheduledTime": "12:32",
+      "airlineIcao": "jia",
+      "flightNumber": "5082",
+      "originIcao": "KBNA",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-wn4731-bna-lga",
+      "category": "departure",
+      "scheduledTime": "12:35",
+      "airlineIcao": "swa",
+      "flightNumber": "4731",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-wn581-bna-mia",
+      "category": "departure",
+      "scheduledTime": "12:35",
+      "airlineIcao": "swa",
+      "flightNumber": "581",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-dl2867-bna-atl",
+      "category": "departure",
+      "scheduledTime": "12:38",
+      "airlineIcao": "dal",
+      "flightNumber": "2867",
+      "originIcao": "KBNA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-wn2825-mia-bna",
+      "category": "arrival",
+      "scheduledTime": "12:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2825",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3478-san-bna",
+      "category": "arrival",
+      "scheduledTime": "12:45",
+      "airlineIcao": "swa",
+      "flightNumber": "3478",
+      "originIcao": "KSAN",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-aa1520-bna-dfw",
+      "category": "departure",
+      "scheduledTime": "12:45",
+      "airlineIcao": "aal",
+      "flightNumber": "1520",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "t100-p3-arrival-cytz-f-001",
+      "scheduledTime": "12:46",
+      "category": "arrival",
+      "originIcao": "CYTZ",
+      "destinationIcao": "KBNA",
+      "airlineIcao": "poe",
+      "flightNumber": "1637"
+    },
+    {
+      "id": "departure-ua1616-bna-ord",
+      "category": "departure",
+      "scheduledTime": "12:49",
+      "airlineIcao": "ual",
+      "flightNumber": "1616",
+      "originIcao": "KBNA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-wn4003-tpa-bna",
+      "category": "arrival",
+      "scheduledTime": "12:50",
+      "airlineIcao": "swa",
+      "flightNumber": "4003",
+      "originIcao": "KTPA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn1430-bna-mdw",
+      "category": "departure",
+      "scheduledTime": "12:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1430",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "arrival-mq3825-tpa-bna",
+      "category": "arrival",
+      "scheduledTime": "12:56",
+      "airlineIcao": "eny",
+      "flightNumber": "3825",
+      "originIcao": "KTPA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn705-ric-bna",
+      "category": "arrival",
+      "scheduledTime": "13:00",
+      "airlineIcao": "swa",
+      "flightNumber": "705",
+      "originIcao": "KRIC",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn5078-bna-hou",
+      "category": "departure",
+      "scheduledTime": "13:00",
+      "airlineIcao": "swa",
+      "flightNumber": "5078",
+      "originIcao": "KBNA",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "arrival-dl1557-dtw-bna",
+      "category": "arrival",
+      "scheduledTime": "13:03",
+      "airlineIcao": "dal",
+      "flightNumber": "1557",
+      "originIcao": "KDTW",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-aa3130-bna-phl",
+      "category": "departure",
+      "scheduledTime": "13:03",
+      "airlineIcao": "aal",
+      "flightNumber": "3130",
+      "originIcao": "KBNA",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "t100-9e-departure-kjfk-f-001",
+      "scheduledTime": "13:04",
+      "category": "departure",
+      "originIcao": "KBNA",
+      "destinationIcao": "KJFK",
+      "airlineIcao": "edv",
+      "flightNumber": "938"
+    },
+    {
+      "id": "arrival-wn4535-gsp-bna",
+      "category": "arrival",
+      "scheduledTime": "13:05",
+      "airlineIcao": "swa",
+      "flightNumber": "4535",
+      "originIcao": "KGSP",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn5074-dal-bna",
+      "category": "arrival",
+      "scheduledTime": "13:05",
+      "airlineIcao": "swa",
+      "flightNumber": "5074",
+      "originIcao": "KDAL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn2541-bna-sfo",
+      "category": "departure",
+      "scheduledTime": "13:05",
+      "airlineIcao": "swa",
+      "flightNumber": "2541",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-wn2848-bna-orf",
+      "category": "departure",
+      "scheduledTime": "13:05",
+      "airlineIcao": "swa",
+      "flightNumber": "2848",
+      "originIcao": "KBNA",
+      "destinationIcao": "KORF"
+    },
+    {
+      "id": "departure-wn4380-bna-dca",
+      "category": "departure",
+      "scheduledTime": "13:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4380",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-b61806-bna-bos",
+      "category": "departure",
+      "scheduledTime": "13:12",
+      "airlineIcao": "jbu",
+      "flightNumber": "1806",
+      "originIcao": "KBNA",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "arrival-wn2733-mdw-bna",
+      "category": "arrival",
+      "scheduledTime": "13:15",
+      "airlineIcao": "swa",
+      "flightNumber": "2733",
+      "originIcao": "KMDW",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4297-cmh-bna",
+      "category": "arrival",
+      "scheduledTime": "13:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4297",
+      "originIcao": "KCMH",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-ua2174-bna-ewr",
+      "category": "departure",
+      "scheduledTime": "13:15",
+      "airlineIcao": "ual",
+      "flightNumber": "2174",
+      "originIcao": "KBNA",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "departure-wn609-bna-oma",
+      "category": "departure",
+      "scheduledTime": "13:20",
+      "airlineIcao": "swa",
+      "flightNumber": "609",
+      "originIcao": "KBNA",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-wn719-phx-bna",
+      "category": "arrival",
+      "scheduledTime": "13:25",
+      "airlineIcao": "swa",
+      "flightNumber": "719",
+      "originIcao": "KPHX",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-aa3047-clt-bna",
+      "category": "arrival",
+      "scheduledTime": "13:30",
+      "airlineIcao": "aal",
+      "flightNumber": "3047",
+      "originIcao": "KCLT",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4015-mco-bna",
+      "category": "arrival",
+      "scheduledTime": "13:30",
+      "airlineIcao": "swa",
+      "flightNumber": "4015",
+      "originIcao": "KMCO",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-mq3823-bna-tpa",
+      "category": "departure",
+      "scheduledTime": "13:30",
+      "airlineIcao": "eny",
+      "flightNumber": "3823",
+      "originIcao": "KBNA",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "departure-wn1371-bna-stl",
+      "category": "departure",
+      "scheduledTime": "13:30",
+      "airlineIcao": "swa",
+      "flightNumber": "1371",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn4372-bna-bos",
+      "category": "departure",
+      "scheduledTime": "13:30",
+      "airlineIcao": "swa",
+      "flightNumber": "4372",
+      "originIcao": "KBNA",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-wn657-bna-rsw",
+      "category": "departure",
+      "scheduledTime": "13:30",
+      "airlineIcao": "swa",
+      "flightNumber": "657",
+      "originIcao": "KBNA",
+      "destinationIcao": "KRSW"
+    },
+    {
+      "id": "arrival-b6681-fll-bna",
+      "category": "arrival",
+      "scheduledTime": "13:32",
+      "airlineIcao": "jbu",
+      "flightNumber": "681",
+      "originIcao": "KFLL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-aa2302-lga-bna",
+      "category": "arrival",
+      "scheduledTime": "13:33",
+      "airlineIcao": "aal",
+      "flightNumber": "2302",
+      "originIcao": "KLGA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-ua1048-den-bna",
+      "category": "arrival",
+      "scheduledTime": "13:33",
+      "airlineIcao": "ual",
+      "flightNumber": "1048",
+      "originIcao": "KDEN",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1370-vps-bna",
+      "category": "arrival",
+      "scheduledTime": "13:35",
+      "airlineIcao": "swa",
+      "flightNumber": "1370",
+      "originIcao": "KVPS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-ua2125-bna-iad",
+      "category": "departure",
+      "scheduledTime": "13:35",
+      "airlineIcao": "ual",
+      "flightNumber": "2125",
+      "originIcao": "KBNA",
+      "destinationIcao": "KIAD"
+    },
+    {
+      "id": "t100-ws-arrival-cyyc-f-001",
+      "scheduledTime": "13:35",
+      "category": "arrival",
+      "originIcao": "CYYC",
+      "destinationIcao": "KBNA",
+      "airlineIcao": "wja",
+      "flightNumber": "2037"
+    },
+    {
+      "id": "arrival-wn3045-jan-bna",
+      "category": "arrival",
+      "scheduledTime": "13:40",
+      "airlineIcao": "swa",
+      "flightNumber": "3045",
+      "originIcao": "KJAN",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn470-bna-chs",
+      "category": "departure",
+      "scheduledTime": "13:40",
+      "airlineIcao": "swa",
+      "flightNumber": "470",
+      "originIcao": "KBNA",
+      "destinationIcao": "KCHS"
+    },
+    {
+      "id": "arrival-dl2214-slc-bna",
+      "category": "arrival",
+      "scheduledTime": "13:46",
+      "airlineIcao": "dal",
+      "flightNumber": "2214",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-ua213-iad-bna",
+      "category": "arrival",
+      "scheduledTime": "13:49",
+      "airlineIcao": "ual",
+      "flightNumber": "213",
+      "originIcao": "KIAD",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1900-dca-bna",
+      "category": "arrival",
+      "scheduledTime": "13:50",
+      "airlineIcao": "swa",
+      "flightNumber": "1900",
+      "originIcao": "KDCA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn2321-cle-bna",
+      "category": "arrival",
+      "scheduledTime": "13:50",
+      "airlineIcao": "swa",
+      "flightNumber": "2321",
+      "originIcao": "KCLE",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1485-den-bna",
+      "category": "arrival",
+      "scheduledTime": "13:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1485",
+      "originIcao": "KDEN",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn2994-bna-bwi",
+      "category": "departure",
+      "scheduledTime": "13:55",
+      "airlineIcao": "swa",
+      "flightNumber": "2994",
+      "originIcao": "KBNA",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "departure-wn503-bna-den",
+      "category": "departure",
+      "scheduledTime": "13:55",
+      "airlineIcao": "swa",
+      "flightNumber": "503",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-wn626-bna-phl",
+      "category": "departure",
+      "scheduledTime": "13:55",
+      "airlineIcao": "swa",
+      "flightNumber": "626",
+      "originIcao": "KBNA",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "t100-ws-departure-cyyz-f-001",
+      "scheduledTime": "13:58",
+      "category": "departure",
+      "originIcao": "KBNA",
+      "destinationIcao": "CYYZ",
+      "airlineIcao": "wja",
+      "flightNumber": "7968"
+    },
+    {
+      "id": "arrival-wn1059-bwi-bna",
+      "category": "arrival",
+      "scheduledTime": "14:00",
+      "airlineIcao": "swa",
+      "flightNumber": "1059",
+      "originIcao": "KBWI",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-dl1593-bna-slc",
+      "category": "departure",
+      "scheduledTime": "14:01",
+      "airlineIcao": "dal",
+      "flightNumber": "1593",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-aa3073-phx-bna",
+      "category": "arrival",
+      "scheduledTime": "14:02",
+      "airlineIcao": "aal",
+      "flightNumber": "3073",
+      "originIcao": "KPHX",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-ua1318-iah-bna",
+      "category": "arrival",
+      "scheduledTime": "14:02",
+      "airlineIcao": "ual",
+      "flightNumber": "1318",
+      "originIcao": "KIAH",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-dl3159-atl-bna",
+      "category": "arrival",
+      "scheduledTime": "14:03",
+      "airlineIcao": "dal",
+      "flightNumber": "3159",
+      "originIcao": "KATL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-dl1557-bna-dtw",
+      "category": "departure",
+      "scheduledTime": "14:03",
+      "airlineIcao": "dal",
+      "flightNumber": "1557",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "arrival-wn4725-pit-bna",
+      "category": "arrival",
+      "scheduledTime": "14:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4725",
+      "originIcao": "KPIT",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-9e-arrival-krdu-f-001",
+      "scheduledTime": "14:13",
+      "category": "arrival",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBNA",
+      "airlineIcao": "edv",
+      "flightNumber": "7473"
+    },
+    {
+      "id": "arrival-yx3634-ord-bna",
+      "category": "arrival",
+      "scheduledTime": "14:14",
+      "airlineIcao": "rpa",
+      "flightNumber": "3634",
+      "originIcao": "KORD",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1250-dal-bna",
+      "category": "arrival",
+      "scheduledTime": "14:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1250",
+      "originIcao": "KDAL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn155-alb-bna",
+      "category": "arrival",
+      "scheduledTime": "14:15",
+      "airlineIcao": "swa",
+      "flightNumber": "155",
+      "originIcao": "KALB",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn23-bna-ecp",
+      "category": "departure",
+      "scheduledTime": "14:15",
+      "airlineIcao": "swa",
+      "flightNumber": "23",
+      "originIcao": "KBNA",
+      "destinationIcao": "KECP"
+    },
+    {
+      "id": "departure-wn5075-bna-mdw",
+      "category": "departure",
+      "scheduledTime": "14:15",
+      "airlineIcao": "swa",
+      "flightNumber": "5075",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "departure-aa2972-bna-phx",
+      "category": "departure",
+      "scheduledTime": "14:20",
+      "airlineIcao": "aal",
+      "flightNumber": "2972",
+      "originIcao": "KBNA",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-wn595-bna-msy",
+      "category": "departure",
+      "scheduledTime": "14:20",
+      "airlineIcao": "swa",
+      "flightNumber": "595",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMSY"
+    },
+    {
+      "id": "departure-wn639-bna-phx",
+      "category": "departure",
+      "scheduledTime": "14:20",
+      "airlineIcao": "swa",
+      "flightNumber": "639",
+      "originIcao": "KBNA",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-aa2302-bna-lga",
+      "category": "departure",
+      "scheduledTime": "14:23",
+      "airlineIcao": "aal",
+      "flightNumber": "2302",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "arrival-wn4472-bdl-bna",
+      "category": "arrival",
+      "scheduledTime": "14:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4472",
+      "originIcao": "KBDL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn4525-bna-pvd",
+      "category": "departure",
+      "scheduledTime": "14:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4525",
+      "originIcao": "KBNA",
+      "destinationIcao": "KPVD"
+    },
+    {
+      "id": "departure-b62582-bna-fll",
+      "category": "departure",
+      "scheduledTime": "14:27",
+      "airlineIcao": "jbu",
+      "flightNumber": "2582",
+      "originIcao": "KBNA",
+      "destinationIcao": "KFLL"
+    },
+    {
+      "id": "departure-ua1766-bna-den",
+      "category": "departure",
+      "scheduledTime": "14:29",
+      "airlineIcao": "ual",
+      "flightNumber": "1766",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-wn2156-jax-bna",
+      "category": "arrival",
+      "scheduledTime": "14:30",
+      "airlineIcao": "swa",
+      "flightNumber": "2156",
+      "originIcao": "KJAX",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3427-sat-bna",
+      "category": "arrival",
+      "scheduledTime": "14:35",
+      "airlineIcao": "swa",
+      "flightNumber": "3427",
+      "originIcao": "KSAT",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn451-bna-aus",
+      "category": "departure",
+      "scheduledTime": "14:35",
+      "airlineIcao": "swa",
+      "flightNumber": "451",
+      "originIcao": "KBNA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn533-bna-hou",
+      "category": "departure",
+      "scheduledTime": "14:35",
+      "airlineIcao": "swa",
+      "flightNumber": "533",
+      "originIcao": "KBNA",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "arrival-ua1884-ewr-bna",
+      "category": "arrival",
+      "scheduledTime": "14:39",
+      "airlineIcao": "ual",
+      "flightNumber": "1884",
+      "originIcao": "KEWR",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn2112-las-bna",
+      "category": "arrival",
+      "scheduledTime": "14:40",
+      "airlineIcao": "swa",
+      "flightNumber": "2112",
+      "originIcao": "KLAS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn2524-hou-bna",
+      "category": "arrival",
+      "scheduledTime": "14:40",
+      "airlineIcao": "swa",
+      "flightNumber": "2524",
+      "originIcao": "KHOU",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn1758-bna-dal",
+      "category": "departure",
+      "scheduledTime": "14:40",
+      "airlineIcao": "swa",
+      "flightNumber": "1758",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "t100-fx-departure-kmem-g-001",
+      "scheduledTime": "14:40",
+      "category": "departure",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3492"
+    },
+    {
+      "id": "arrival-aa1475-dfw-bna",
+      "category": "arrival",
+      "scheduledTime": "14:41",
+      "airlineIcao": "aal",
+      "flightNumber": "1475",
+      "originIcao": "KDFW",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn899-chs-bna",
+      "category": "arrival",
+      "scheduledTime": "14:45",
+      "airlineIcao": "swa",
+      "flightNumber": "899",
+      "originIcao": "KCHS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn685-bna-tpa",
+      "category": "departure",
+      "scheduledTime": "14:45",
+      "airlineIcao": "swa",
+      "flightNumber": "685",
+      "originIcao": "KBNA",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "t100-9e-arrival-klga-f-003",
+      "scheduledTime": "14:48",
+      "category": "arrival",
+      "originIcao": "KLGA",
+      "destinationIcao": "KBNA",
+      "airlineIcao": "edv",
+      "flightNumber": "8768"
+    },
+    {
+      "id": "arrival-g4331-bzn-bna",
+      "category": "arrival",
+      "scheduledTime": "14:49",
+      "airlineIcao": "aay",
+      "flightNumber": "331",
+      "originIcao": "KBZN",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4564-atl-bna",
+      "category": "arrival",
+      "scheduledTime": "14:50",
+      "airlineIcao": "swa",
+      "flightNumber": "4564",
+      "originIcao": "KATL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn4240-bna-mci",
+      "category": "departure",
+      "scheduledTime": "14:50",
+      "airlineIcao": "swa",
+      "flightNumber": "4240",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMCI"
+    },
+    {
+      "id": "arrival-aa1506-phl-bna",
+      "category": "arrival",
+      "scheduledTime": "14:51",
+      "airlineIcao": "aal",
+      "flightNumber": "1506",
+      "originIcao": "KPHL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-dl3159-bna-atl",
+      "category": "departure",
+      "scheduledTime": "14:51",
+      "airlineIcao": "dal",
+      "flightNumber": "3159",
+      "originIcao": "KBNA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-dl2843-msp-bna",
+      "category": "arrival",
+      "scheduledTime": "14:52",
+      "airlineIcao": "dal",
+      "flightNumber": "2843",
+      "originIcao": "KMSP",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-aa1486-bna-clt",
+      "category": "departure",
+      "scheduledTime": "14:52",
+      "airlineIcao": "aal",
+      "flightNumber": "1486",
+      "originIcao": "KBNA",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-ua298-bna-sfo",
+      "category": "departure",
+      "scheduledTime": "14:54",
+      "airlineIcao": "ual",
+      "flightNumber": "298",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "arrival-wn1860-stl-bna",
+      "category": "arrival",
+      "scheduledTime": "14:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1860",
+      "originIcao": "KSTL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3216-phl-bna",
+      "category": "arrival",
+      "scheduledTime": "14:55",
+      "airlineIcao": "swa",
+      "flightNumber": "3216",
+      "originIcao": "KPHL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-mq3991-dca-bna",
+      "category": "arrival",
+      "scheduledTime": "14:59",
+      "airlineIcao": "eny",
+      "flightNumber": "3991",
+      "originIcao": "KDCA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-dl355-bna-lax",
+      "category": "departure",
+      "scheduledTime": "14:59",
+      "airlineIcao": "dal",
+      "flightNumber": "355",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-wn569-bna-mco",
+      "category": "departure",
+      "scheduledTime": "15:00",
+      "airlineIcao": "swa",
+      "flightNumber": "569",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-yx3440-bna-ord",
+      "category": "departure",
+      "scheduledTime": "15:01",
+      "airlineIcao": "rpa",
+      "flightNumber": "3440",
+      "originIcao": "KBNA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-ua2339-bna-iah",
+      "category": "departure",
+      "scheduledTime": "15:08",
+      "airlineIcao": "ual",
+      "flightNumber": "2339",
+      "originIcao": "KBNA",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-wn653-bna-rdu",
+      "category": "departure",
+      "scheduledTime": "15:10",
+      "airlineIcao": "swa",
+      "flightNumber": "653",
+      "originIcao": "KBNA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-wn4004-tpa-bna",
+      "category": "arrival",
+      "scheduledTime": "15:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4004",
+      "originIcao": "KTPA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1183-lgb-bna",
+      "category": "arrival",
+      "scheduledTime": "15:20",
+      "airlineIcao": "swa",
+      "flightNumber": "1183",
+      "originIcao": "KLGB",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn1016-bna-sav",
+      "category": "departure",
+      "scheduledTime": "15:20",
+      "airlineIcao": "swa",
+      "flightNumber": "1016",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSAV"
+    },
+    {
+      "id": "departure-wn4847-bna-fll",
+      "category": "departure",
+      "scheduledTime": "15:20",
+      "airlineIcao": "swa",
+      "flightNumber": "4847",
+      "originIcao": "KBNA",
+      "destinationIcao": "KFLL"
+    },
+    {
+      "id": "arrival-wn749-bur-bna",
+      "category": "arrival",
+      "scheduledTime": "15:25",
+      "airlineIcao": "swa",
+      "flightNumber": "749",
+      "originIcao": "KBUR",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn478-bna-clt",
+      "category": "departure",
+      "scheduledTime": "15:25",
+      "airlineIcao": "swa",
+      "flightNumber": "478",
+      "originIcao": "KBNA",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "arrival-dl3142-atl-bna",
+      "category": "arrival",
+      "scheduledTime": "15:26",
+      "airlineIcao": "dal",
+      "flightNumber": "3142",
+      "originIcao": "KATL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-oo6200-ord-bna",
+      "category": "arrival",
+      "scheduledTime": "15:29",
+      "airlineIcao": "skw",
+      "flightNumber": "6200",
+      "originIcao": "KORD",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-9e-departure-krdu-f-002",
+      "scheduledTime": "15:29",
+      "category": "departure",
+      "originIcao": "KBNA",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "edv",
+      "flightNumber": "1179"
+    },
+    {
+      "id": "arrival-wn3392-pns-bna",
+      "category": "arrival",
+      "scheduledTime": "15:30",
+      "airlineIcao": "swa",
+      "flightNumber": "3392",
+      "originIcao": "KPNS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-mq3991-bna-dca",
+      "category": "departure",
+      "scheduledTime": "15:30",
+      "airlineIcao": "eny",
+      "flightNumber": "3991",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-wn2241-bna-mdw",
+      "category": "departure",
+      "scheduledTime": "15:30",
+      "airlineIcao": "swa",
+      "flightNumber": "2241",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "departure-wn855-bna-ont",
+      "category": "departure",
+      "scheduledTime": "15:30",
+      "airlineIcao": "swa",
+      "flightNumber": "855",
+      "originIcao": "KBNA",
+      "destinationIcao": "KONT"
+    },
+    {
+      "id": "arrival-dl2748-lga-bna",
+      "category": "arrival",
+      "scheduledTime": "15:31",
+      "airlineIcao": "dal",
+      "flightNumber": "2748",
+      "originIcao": "KLGA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-aa1475-bna-dfw",
+      "category": "departure",
+      "scheduledTime": "15:31",
+      "airlineIcao": "aal",
+      "flightNumber": "1475",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-wn965-msy-bna",
+      "category": "arrival",
+      "scheduledTime": "15:35",
+      "airlineIcao": "swa",
+      "flightNumber": "965",
+      "originIcao": "KMSY",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-ua2848-bna-ewr",
+      "category": "departure",
+      "scheduledTime": "15:35",
+      "airlineIcao": "ual",
+      "flightNumber": "2848",
+      "originIcao": "KBNA",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "departure-wn4621-bna-abq",
+      "category": "departure",
+      "scheduledTime": "15:35",
+      "airlineIcao": "swa",
+      "flightNumber": "4621",
+      "originIcao": "KBNA",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-aa1526-clt-bna",
+      "category": "arrival",
+      "scheduledTime": "15:36",
+      "airlineIcao": "aal",
+      "flightNumber": "1526",
+      "originIcao": "KCLT",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-aa1506-bna-phl",
+      "category": "departure",
+      "scheduledTime": "15:36",
+      "airlineIcao": "aal",
+      "flightNumber": "1506",
+      "originIcao": "KBNA",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "arrival-as1345-sea-bna",
+      "category": "arrival",
+      "scheduledTime": "15:40",
+      "airlineIcao": "asa",
+      "flightNumber": "1345",
+      "originIcao": "KSEA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1486-den-bna",
+      "category": "arrival",
+      "scheduledTime": "15:40",
+      "airlineIcao": "swa",
+      "flightNumber": "1486",
+      "originIcao": "KDEN",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn258-aus-bna",
+      "category": "arrival",
+      "scheduledTime": "15:40",
+      "airlineIcao": "swa",
+      "flightNumber": "258",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn4733-bna-mke",
+      "category": "departure",
+      "scheduledTime": "15:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4733",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMKE"
+    },
+    {
+      "id": "t100-xp-arrival-khvn-f-001",
+      "scheduledTime": "15:42",
+      "category": "arrival",
+      "originIcao": "KHVN",
+      "destinationIcao": "KBNA",
+      "airlineIcao": "vxp",
+      "flightNumber": "9071"
+    },
+    {
+      "id": "arrival-aa1522-dfw-bna",
+      "category": "arrival",
+      "scheduledTime": "15:44",
+      "airlineIcao": "aal",
+      "flightNumber": "1522",
+      "originIcao": "KDFW",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn2054-bna-atl",
+      "category": "departure",
+      "scheduledTime": "15:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2054",
+      "originIcao": "KBNA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-wn1723-ecp-bna",
+      "category": "arrival",
+      "scheduledTime": "15:50",
+      "airlineIcao": "swa",
+      "flightNumber": "1723",
+      "originIcao": "KECP",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-dl1710-sea-bna",
+      "category": "arrival",
+      "scheduledTime": "15:54",
+      "airlineIcao": "dal",
+      "flightNumber": "1710",
+      "originIcao": "KSEA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1850-fll-bna",
+      "category": "arrival",
+      "scheduledTime": "15:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1850",
+      "originIcao": "KFLL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-ua1928-ord-bna",
+      "category": "arrival",
+      "scheduledTime": "15:57",
+      "airlineIcao": "ual",
+      "flightNumber": "1928",
+      "originIcao": "KORD",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-dl2843-bna-msp",
+      "category": "departure",
+      "scheduledTime": "16:00",
+      "airlineIcao": "dal",
+      "flightNumber": "2843",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "departure-wn224-bna-cle",
+      "category": "departure",
+      "scheduledTime": "16:00",
+      "airlineIcao": "swa",
+      "flightNumber": "224",
+      "originIcao": "KBNA",
+      "destinationIcao": "KCLE"
+    },
+    {
+      "id": "departure-oo6200-bna-ord",
+      "category": "departure",
+      "scheduledTime": "16:01",
+      "airlineIcao": "skw",
+      "flightNumber": "6200",
+      "originIcao": "KBNA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-f93559-mco-bna",
+      "category": "arrival",
+      "scheduledTime": "16:05",
+      "airlineIcao": "fft",
+      "flightNumber": "3559",
+      "originIcao": "KMCO",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn674-mci-bna",
+      "category": "arrival",
+      "scheduledTime": "16:05",
+      "airlineIcao": "swa",
+      "flightNumber": "674",
+      "originIcao": "KMCI",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn725-bos-bna",
+      "category": "arrival",
+      "scheduledTime": "16:05",
+      "airlineIcao": "swa",
+      "flightNumber": "725",
+      "originIcao": "KBOS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn4253-bna-san",
+      "category": "departure",
+      "scheduledTime": "16:05",
+      "airlineIcao": "swa",
+      "flightNumber": "4253",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "departure-wn770-bna-stl",
+      "category": "departure",
+      "scheduledTime": "16:05",
+      "airlineIcao": "swa",
+      "flightNumber": "770",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn1017-san-bna",
+      "category": "arrival",
+      "scheduledTime": "16:10",
+      "airlineIcao": "swa",
+      "flightNumber": "1017",
+      "originIcao": "KSAN",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3384-slc-bna",
+      "category": "arrival",
+      "scheduledTime": "16:10",
+      "airlineIcao": "swa",
+      "flightNumber": "3384",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4599-pbi-bna",
+      "category": "arrival",
+      "scheduledTime": "16:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4599",
+      "originIcao": "KPBI",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn1183-bna-dca",
+      "category": "departure",
+      "scheduledTime": "16:10",
+      "airlineIcao": "swa",
+      "flightNumber": "1183",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "arrival-yx5777-dca-bna",
+      "category": "arrival",
+      "scheduledTime": "16:15",
+      "airlineIcao": "rpa",
+      "flightNumber": "5777",
+      "originIcao": "KDCA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-fx-departure-kind-g-001",
+      "scheduledTime": "16:19",
+      "category": "departure",
+      "originIcao": "KBNA",
+      "destinationIcao": "KIND",
+      "airlineIcao": "fdx",
+      "flightNumber": "3041"
+    },
+    {
+      "id": "arrival-wn1293-stl-bna",
+      "category": "arrival",
+      "scheduledTime": "16:20",
+      "airlineIcao": "swa",
+      "flightNumber": "1293",
+      "originIcao": "KSTL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn2830-bna-las",
+      "category": "departure",
+      "scheduledTime": "16:20",
+      "airlineIcao": "swa",
+      "flightNumber": "2830",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-wn4371-bna-sat",
+      "category": "departure",
+      "scheduledTime": "16:20",
+      "airlineIcao": "swa",
+      "flightNumber": "4371",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-wn481-bna-cmh",
+      "category": "departure",
+      "scheduledTime": "16:20",
+      "airlineIcao": "swa",
+      "flightNumber": "481",
+      "originIcao": "KBNA",
+      "destinationIcao": "KCMH"
+    },
+    {
+      "id": "arrival-yx4710-jfk-bna",
+      "category": "arrival",
+      "scheduledTime": "16:21",
+      "airlineIcao": "rpa",
+      "flightNumber": "4710",
+      "originIcao": "KJFK",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-yx4372-lga-bna",
+      "category": "arrival",
+      "scheduledTime": "16:24",
+      "airlineIcao": "rpa",
+      "flightNumber": "4372",
+      "originIcao": "KLGA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-rv-arrival-cyyz-f-001",
+      "scheduledTime": "16:24",
+      "category": "arrival",
+      "originIcao": "CYYZ",
+      "destinationIcao": "KBNA",
+      "airlineIcao": "rou",
+      "flightNumber": "4360"
+    },
+    {
+      "id": "departure-wn787-bna-mco",
+      "category": "departure",
+      "scheduledTime": "16:25",
+      "airlineIcao": "swa",
+      "flightNumber": "787",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "arrival-wn3073-orf-bna",
+      "category": "arrival",
+      "scheduledTime": "16:30",
+      "airlineIcao": "swa",
+      "flightNumber": "3073",
+      "originIcao": "KORF",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-aa1526-bna-clt",
+      "category": "departure",
+      "scheduledTime": "16:30",
+      "airlineIcao": "aal",
+      "flightNumber": "1526",
+      "originIcao": "KBNA",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-wn1850-bna-pit",
+      "category": "departure",
+      "scheduledTime": "16:30",
+      "airlineIcao": "swa",
+      "flightNumber": "1850",
+      "originIcao": "KBNA",
+      "destinationIcao": "KPIT"
+    },
+    {
+      "id": "departure-dl3142-bna-atl",
+      "category": "departure",
+      "scheduledTime": "16:31",
+      "airlineIcao": "dal",
+      "flightNumber": "3142",
+      "originIcao": "KBNA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-ua1608-ewr-bna",
+      "category": "arrival",
+      "scheduledTime": "16:32",
+      "airlineIcao": "ual",
+      "flightNumber": "1608",
+      "originIcao": "KEWR",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3657-sjc-bna",
+      "category": "arrival",
+      "scheduledTime": "16:35",
+      "airlineIcao": "swa",
+      "flightNumber": "3657",
+      "originIcao": "KSJC",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3895-pvd-bna",
+      "category": "arrival",
+      "scheduledTime": "16:35",
+      "airlineIcao": "swa",
+      "flightNumber": "3895",
+      "originIcao": "KPVD",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn879-bwi-bna",
+      "category": "arrival",
+      "scheduledTime": "16:35",
+      "airlineIcao": "swa",
+      "flightNumber": "879",
+      "originIcao": "KBWI",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-dl2677-bos-bna",
+      "category": "arrival",
+      "scheduledTime": "16:36",
+      "airlineIcao": "dal",
+      "flightNumber": "2677",
+      "originIcao": "KBOS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-aa1522-bna-dfw",
+      "category": "departure",
+      "scheduledTime": "16:36",
+      "airlineIcao": "aal",
+      "flightNumber": "1522",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-dl2316-dtw-bna",
+      "category": "arrival",
+      "scheduledTime": "16:40",
+      "airlineIcao": "dal",
+      "flightNumber": "2316",
+      "originIcao": "KDTW",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3869-mdw-bna",
+      "category": "arrival",
+      "scheduledTime": "16:40",
+      "airlineIcao": "swa",
+      "flightNumber": "3869",
+      "originIcao": "KMDW",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn4820-bna-rdu",
+      "category": "departure",
+      "scheduledTime": "16:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4820",
+      "originIcao": "KBNA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-wn674-bna-sjc",
+      "category": "departure",
+      "scheduledTime": "16:40",
+      "airlineIcao": "swa",
+      "flightNumber": "674",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSJC"
+    },
+    {
+      "id": "departure-as1350-bna-pdx",
+      "category": "departure",
+      "scheduledTime": "16:43",
+      "airlineIcao": "asa",
+      "flightNumber": "1350",
+      "originIcao": "KBNA",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-wn294-rdu-bna",
+      "category": "arrival",
+      "scheduledTime": "16:45",
+      "airlineIcao": "swa",
+      "flightNumber": "294",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-yx4489-rdu-bna",
+      "category": "arrival",
+      "scheduledTime": "16:47",
+      "airlineIcao": "rpa",
+      "flightNumber": "4489",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-9e-departure-klga-f-001",
+      "scheduledTime": "16:48",
+      "category": "departure",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLGA",
+      "airlineIcao": "edv",
+      "flightNumber": "7477"
+    },
+    {
+      "id": "arrival-ua499-sfo-bna",
+      "category": "arrival",
+      "scheduledTime": "16:50",
+      "airlineIcao": "ual",
+      "flightNumber": "499",
+      "originIcao": "KSFO",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4301-lit-bna",
+      "category": "arrival",
+      "scheduledTime": "16:50",
+      "airlineIcao": "swa",
+      "flightNumber": "4301",
+      "originIcao": "KLIT",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-dl822-bna-lga",
+      "category": "departure",
+      "scheduledTime": "16:50",
+      "airlineIcao": "dal",
+      "flightNumber": "822",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-wn2089-bna-gsp",
+      "category": "departure",
+      "scheduledTime": "16:50",
+      "airlineIcao": "swa",
+      "flightNumber": "2089",
+      "originIcao": "KBNA",
+      "destinationIcao": "KGSP"
+    },
+    {
+      "id": "departure-wn4791-bna-slc",
+      "category": "departure",
+      "scheduledTime": "16:50",
+      "airlineIcao": "swa",
+      "flightNumber": "4791",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-wn4815-bna-dtw",
+      "category": "departure",
+      "scheduledTime": "16:50",
+      "airlineIcao": "swa",
+      "flightNumber": "4815",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "departure-wn504-bna-den",
+      "category": "departure",
+      "scheduledTime": "16:50",
+      "airlineIcao": "swa",
+      "flightNumber": "504",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-rv-arrival-cyyz-f-002",
+      "scheduledTime": "16:50",
+      "category": "arrival",
+      "originIcao": "CYYZ",
+      "destinationIcao": "KBNA",
+      "airlineIcao": "rou",
+      "flightNumber": "2245"
+    },
+    {
+      "id": "departure-yx4495-bna-dca",
+      "category": "departure",
+      "scheduledTime": "16:51",
+      "airlineIcao": "rpa",
+      "flightNumber": "4495",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "arrival-aa1484-lax-bna",
+      "category": "arrival",
+      "scheduledTime": "16:54",
+      "airlineIcao": "aal",
+      "flightNumber": "1484",
+      "originIcao": "KLAX",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn1293-bna-bur",
+      "category": "departure",
+      "scheduledTime": "16:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1293",
+      "originIcao": "KBNA",
+      "destinationIcao": "KBUR"
+    },
+    {
+      "id": "departure-yx4596-bna-rdu",
+      "category": "departure",
+      "scheduledTime": "16:55",
+      "airlineIcao": "rpa",
+      "flightNumber": "4596",
+      "originIcao": "KBNA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-mq3595-mia-bna",
+      "category": "arrival",
+      "scheduledTime": "16:59",
+      "airlineIcao": "eny",
+      "flightNumber": "3595",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-ua1884-bna-ord",
+      "category": "departure",
+      "scheduledTime": "16:59",
+      "airlineIcao": "ual",
+      "flightNumber": "1884",
+      "originIcao": "KBNA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-as1376-pdx-bna",
+      "category": "arrival",
+      "scheduledTime": "17:00",
+      "airlineIcao": "asa",
+      "flightNumber": "1376",
+      "originIcao": "KPDX",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3126-oma-bna",
+      "category": "arrival",
+      "scheduledTime": "17:00",
+      "airlineIcao": "swa",
+      "flightNumber": "3126",
+      "originIcao": "KOMA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-dl373-bna-sea",
+      "category": "departure",
+      "scheduledTime": "17:00",
+      "airlineIcao": "dal",
+      "flightNumber": "373",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-yx5786-bna-dca",
+      "category": "departure",
+      "scheduledTime": "17:00",
+      "airlineIcao": "rpa",
+      "flightNumber": "5786",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "arrival-aa1505-phl-bna",
+      "category": "arrival",
+      "scheduledTime": "17:01",
+      "airlineIcao": "aal",
+      "flightNumber": "1505",
+      "originIcao": "KPHL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-b61173-jfk-bna",
+      "category": "arrival",
+      "scheduledTime": "17:03",
+      "airlineIcao": "jbu",
+      "flightNumber": "1173",
+      "originIcao": "KJFK",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-f93560-bna-mco",
+      "category": "departure",
+      "scheduledTime": "17:05",
+      "airlineIcao": "fft",
+      "flightNumber": "3560",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "arrival-wn1427-dca-bna",
+      "category": "arrival",
+      "scheduledTime": "17:10",
+      "airlineIcao": "swa",
+      "flightNumber": "1427",
+      "originIcao": "KDCA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn2010-las-bna",
+      "category": "arrival",
+      "scheduledTime": "17:10",
+      "airlineIcao": "swa",
+      "flightNumber": "2010",
+      "originIcao": "KLAS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn2448-lga-bna",
+      "category": "arrival",
+      "scheduledTime": "17:10",
+      "airlineIcao": "swa",
+      "flightNumber": "2448",
+      "originIcao": "KLGA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn2962-msp-bna",
+      "category": "arrival",
+      "scheduledTime": "17:10",
+      "airlineIcao": "swa",
+      "flightNumber": "2962",
+      "originIcao": "KMSP",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3108-okc-bna",
+      "category": "arrival",
+      "scheduledTime": "17:10",
+      "airlineIcao": "swa",
+      "flightNumber": "3108",
+      "originIcao": "KOKC",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-9x-arrival-kjbr-f-002",
+      "scheduledTime": "17:14",
+      "category": "arrival",
+      "originIcao": "KJBR",
+      "destinationIcao": "KBNA",
+      "airlineIcao": "fdy",
+      "flightNumber": "1382"
+    },
+    {
+      "id": "arrival-wn1496-mem-bna",
+      "category": "arrival",
+      "scheduledTime": "17:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1496",
+      "originIcao": "KMEM",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1712-sdf-bna",
+      "category": "arrival",
+      "scheduledTime": "17:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1712",
+      "originIcao": "KSDF",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1863-tul-bna",
+      "category": "arrival",
+      "scheduledTime": "17:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1863",
+      "originIcao": "KTUL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4658-mke-bna",
+      "category": "arrival",
+      "scheduledTime": "17:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4658",
+      "originIcao": "KMKE",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn3869-bna-msy",
+      "category": "departure",
+      "scheduledTime": "17:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3869",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMSY"
+    },
+    {
+      "id": "departure-wn467-bna-bwi",
+      "category": "departure",
+      "scheduledTime": "17:15",
+      "airlineIcao": "swa",
+      "flightNumber": "467",
+      "originIcao": "KBNA",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "departure-wn4784-bna-sea",
+      "category": "departure",
+      "scheduledTime": "17:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4784",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-wn686-bna-tpa",
+      "category": "departure",
+      "scheduledTime": "17:15",
+      "airlineIcao": "swa",
+      "flightNumber": "686",
+      "originIcao": "KBNA",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "departure-yx4481-bna-lga",
+      "category": "departure",
+      "scheduledTime": "17:17",
+      "airlineIcao": "rpa",
+      "flightNumber": "4481",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "arrival-wn3142-ont-bna",
+      "category": "arrival",
+      "scheduledTime": "17:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3142",
+      "originIcao": "KONT",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn294-bna-aus",
+      "category": "departure",
+      "scheduledTime": "17:20",
+      "airlineIcao": "swa",
+      "flightNumber": "294",
+      "originIcao": "KBNA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn2040-bna-jan",
+      "category": "departure",
+      "scheduledTime": "17:25",
+      "airlineIcao": "swa",
+      "flightNumber": "2040",
+      "originIcao": "KBNA",
+      "destinationIcao": "KJAN"
+    },
+    {
+      "id": "departure-wn3361-bna-smf",
+      "category": "departure",
+      "scheduledTime": "17:25",
+      "airlineIcao": "swa",
+      "flightNumber": "3361",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSMF"
+    },
+    {
+      "id": "t100-xp-departure-khvn-f-001",
+      "scheduledTime": "17:28",
+      "category": "departure",
+      "originIcao": "KBNA",
+      "destinationIcao": "KHVN",
+      "airlineIcao": "vxp",
+      "flightNumber": "1684"
+    },
+    {
+      "id": "departure-ua1268-bna-den",
+      "category": "departure",
+      "scheduledTime": "17:30",
+      "airlineIcao": "ual",
+      "flightNumber": "1268",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-ua1109-den-bna",
+      "category": "arrival",
+      "scheduledTime": "17:34",
+      "airlineIcao": "ual",
+      "flightNumber": "1109",
+      "originIcao": "KDEN",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-dl2612-msp-bna",
+      "category": "arrival",
+      "scheduledTime": "17:35",
+      "airlineIcao": "dal",
+      "flightNumber": "2612",
+      "originIcao": "KMSP",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn2373-den-bna",
+      "category": "arrival",
+      "scheduledTime": "17:35",
+      "airlineIcao": "swa",
+      "flightNumber": "2373",
+      "originIcao": "KDEN",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-dl2677-bna-bos",
+      "category": "departure",
+      "scheduledTime": "17:35",
+      "airlineIcao": "dal",
+      "flightNumber": "2677",
+      "originIcao": "KBNA",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-mq3595-bna-mia",
+      "category": "departure",
+      "scheduledTime": "17:35",
+      "airlineIcao": "eny",
+      "flightNumber": "3595",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-oo5665-ord-bna",
+      "category": "arrival",
+      "scheduledTime": "17:40",
+      "airlineIcao": "skw",
+      "flightNumber": "5665",
+      "originIcao": "KORD",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1145-dal-bna",
+      "category": "arrival",
+      "scheduledTime": "17:40",
+      "airlineIcao": "swa",
+      "flightNumber": "1145",
+      "originIcao": "KDAL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1266-abq-bna",
+      "category": "arrival",
+      "scheduledTime": "17:40",
+      "airlineIcao": "swa",
+      "flightNumber": "1266",
+      "originIcao": "KABQ",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4425-srq-bna",
+      "category": "arrival",
+      "scheduledTime": "17:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4425",
+      "originIcao": "KSRQ",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-dl2316-bna-dtw",
+      "category": "departure",
+      "scheduledTime": "17:40",
+      "airlineIcao": "dal",
+      "flightNumber": "2316",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "departure-wn562-bna-mci",
+      "category": "departure",
+      "scheduledTime": "17:40",
+      "airlineIcao": "swa",
+      "flightNumber": "562",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMCI"
+    },
+    {
+      "id": "departure-aa1570-bna-ord",
+      "category": "departure",
+      "scheduledTime": "17:41",
+      "airlineIcao": "aal",
+      "flightNumber": "1570",
+      "originIcao": "KBNA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-wn2216-rsw-bna",
+      "category": "arrival",
+      "scheduledTime": "17:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2216",
+      "originIcao": "KRSW",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn489-bna-dal",
+      "category": "departure",
+      "scheduledTime": "17:45",
+      "airlineIcao": "swa",
+      "flightNumber": "489",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "arrival-ua2454-ewr-bna",
+      "category": "arrival",
+      "scheduledTime": "17:46",
+      "airlineIcao": "ual",
+      "flightNumber": "2454",
+      "originIcao": "KEWR",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-9e-arrival-kjfk-f-002",
+      "scheduledTime": "17:46",
+      "category": "arrival",
+      "originIcao": "KJFK",
+      "destinationIcao": "KBNA",
+      "airlineIcao": "edv",
+      "flightNumber": "9277"
+    },
+    {
+      "id": "arrival-aa1490-dfw-bna",
+      "category": "arrival",
+      "scheduledTime": "17:48",
+      "airlineIcao": "aal",
+      "flightNumber": "1490",
+      "originIcao": "KDFW",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-dl719-atl-bna",
+      "category": "arrival",
+      "scheduledTime": "17:50",
+      "airlineIcao": "dal",
+      "flightNumber": "719",
+      "originIcao": "KATL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn2606-mco-bna",
+      "category": "arrival",
+      "scheduledTime": "17:50",
+      "airlineIcao": "swa",
+      "flightNumber": "2606",
+      "originIcao": "KMCO",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4005-tpa-bna",
+      "category": "arrival",
+      "scheduledTime": "17:50",
+      "airlineIcao": "swa",
+      "flightNumber": "4005",
+      "originIcao": "KTPA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4799-mia-bna",
+      "category": "arrival",
+      "scheduledTime": "17:50",
+      "airlineIcao": "swa",
+      "flightNumber": "4799",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn1427-bna-lgb",
+      "category": "departure",
+      "scheduledTime": "17:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1427",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLGB"
+    },
+    {
+      "id": "departure-wn2713-bna-lax",
+      "category": "departure",
+      "scheduledTime": "17:55",
+      "airlineIcao": "swa",
+      "flightNumber": "2713",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-wn505-bna-den",
+      "category": "departure",
+      "scheduledTime": "17:55",
+      "airlineIcao": "swa",
+      "flightNumber": "505",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-aa3208-mia-bna",
+      "category": "arrival",
+      "scheduledTime": "17:56",
+      "airlineIcao": "aal",
+      "flightNumber": "3208",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-b61174-bna-jfk",
+      "category": "departure",
+      "scheduledTime": "17:58",
+      "airlineIcao": "jbu",
+      "flightNumber": "1174",
+      "originIcao": "KBNA",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "arrival-mq3823-tpa-bna",
+      "category": "arrival",
+      "scheduledTime": "17:59",
+      "airlineIcao": "eny",
+      "flightNumber": "3823",
+      "originIcao": "KTPA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn3939-bna-chs",
+      "category": "departure",
+      "scheduledTime": "18:00",
+      "airlineIcao": "swa",
+      "flightNumber": "3939",
+      "originIcao": "KBNA",
+      "destinationIcao": "KCHS"
+    },
+    {
+      "id": "departure-wn571-bna-mco",
+      "category": "departure",
+      "scheduledTime": "18:00",
+      "airlineIcao": "swa",
+      "flightNumber": "571",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-wn603-bna-myr",
+      "category": "departure",
+      "scheduledTime": "18:00",
+      "airlineIcao": "swa",
+      "flightNumber": "603",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMYR"
+    },
+    {
+      "id": "departure-wn658-bna-rsw",
+      "category": "departure",
+      "scheduledTime": "18:00",
+      "airlineIcao": "swa",
+      "flightNumber": "658",
+      "originIcao": "KBNA",
+      "destinationIcao": "KRSW"
+    },
+    {
+      "id": "arrival-aa1497-clt-bna",
+      "category": "arrival",
+      "scheduledTime": "18:01",
+      "airlineIcao": "aal",
+      "flightNumber": "1497",
+      "originIcao": "KCLT",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-oo3945-aus-bna",
+      "category": "arrival",
+      "scheduledTime": "18:02",
+      "airlineIcao": "skw",
+      "flightNumber": "3945",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-9e-departure-klga-f-003",
+      "scheduledTime": "18:02",
+      "category": "departure",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLGA",
+      "airlineIcao": "edv",
+      "flightNumber": "855"
+    },
+    {
+      "id": "departure-as469-bna-sea",
+      "category": "departure",
+      "scheduledTime": "18:03",
+      "airlineIcao": "asa",
+      "flightNumber": "469",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "arrival-wn4344-msy-bna",
+      "category": "arrival",
+      "scheduledTime": "18:05",
+      "airlineIcao": "swa",
+      "flightNumber": "4344",
+      "originIcao": "KMSY",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-dl2205-slc-bna",
+      "category": "arrival",
+      "scheduledTime": "18:13",
+      "airlineIcao": "dal",
+      "flightNumber": "2205",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn168-bna-ecp",
+      "category": "departure",
+      "scheduledTime": "18:20",
+      "airlineIcao": "swa",
+      "flightNumber": "168",
+      "originIcao": "KBNA",
+      "destinationIcao": "KECP"
+    },
+    {
+      "id": "departure-wn4615-bna-srq",
+      "category": "departure",
+      "scheduledTime": "18:20",
+      "airlineIcao": "swa",
+      "flightNumber": "4615",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSRQ"
+    },
+    {
+      "id": "departure-wn4716-bna-sav",
+      "category": "departure",
+      "scheduledTime": "18:20",
+      "airlineIcao": "swa",
+      "flightNumber": "4716",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSAV"
+    },
+    {
+      "id": "arrival-dl449-lax-bna",
+      "category": "arrival",
+      "scheduledTime": "18:24",
+      "airlineIcao": "dal",
+      "flightNumber": "449",
+      "originIcao": "KLAX",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-oo4679-bna-ord",
+      "category": "departure",
+      "scheduledTime": "18:24",
+      "airlineIcao": "skw",
+      "flightNumber": "4679",
+      "originIcao": "KBNA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-wn642-fll-bna",
+      "category": "arrival",
+      "scheduledTime": "18:25",
+      "airlineIcao": "swa",
+      "flightNumber": "642",
+      "originIcao": "KFLL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn534-bna-hou",
+      "category": "departure",
+      "scheduledTime": "18:25",
+      "airlineIcao": "swa",
+      "flightNumber": "534",
+      "originIcao": "KBNA",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "arrival-ua2165-iah-bna",
+      "category": "arrival",
+      "scheduledTime": "18:27",
+      "airlineIcao": "ual",
+      "flightNumber": "2165",
+      "originIcao": "KIAH",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-ua1460-bna-iad",
+      "category": "departure",
+      "scheduledTime": "18:30",
+      "airlineIcao": "ual",
+      "flightNumber": "1460",
+      "originIcao": "KBNA",
+      "destinationIcao": "KIAD"
+    },
+    {
+      "id": "departure-wn4069-bna-fll",
+      "category": "departure",
+      "scheduledTime": "18:30",
+      "airlineIcao": "swa",
+      "flightNumber": "4069",
+      "originIcao": "KBNA",
+      "destinationIcao": "KFLL"
+    },
+    {
+      "id": "departure-wn4575-bna-mia",
+      "category": "departure",
+      "scheduledTime": "18:30",
+      "airlineIcao": "swa",
+      "flightNumber": "4575",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-wn4624-bna-jax",
+      "category": "departure",
+      "scheduledTime": "18:30",
+      "airlineIcao": "swa",
+      "flightNumber": "4624",
+      "originIcao": "KBNA",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-wn4630-bna-pns",
+      "category": "departure",
+      "scheduledTime": "18:30",
+      "airlineIcao": "swa",
+      "flightNumber": "4630",
+      "originIcao": "KBNA",
+      "destinationIcao": "KPNS"
+    },
+    {
+      "id": "departure-wn548-bna-las",
+      "category": "departure",
+      "scheduledTime": "18:30",
+      "airlineIcao": "swa",
+      "flightNumber": "548",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-wn694-bna-tys",
+      "category": "departure",
+      "scheduledTime": "18:30",
+      "airlineIcao": "swa",
+      "flightNumber": "694",
+      "originIcao": "KBNA",
+      "destinationIcao": "KTYS"
+    },
+    {
+      "id": "t100-yv-arrival-kiah-f-001",
+      "scheduledTime": "18:36",
+      "category": "arrival",
+      "originIcao": "KIAH",
+      "destinationIcao": "KBNA",
+      "airlineIcao": "ash",
+      "flightNumber": "3042"
+    },
+    {
+      "id": "t100-fi-departure-bikf-f-001",
+      "scheduledTime": "18:39",
+      "category": "departure",
+      "originIcao": "KBNA",
+      "destinationIcao": "BIKF",
+      "airlineIcao": "ice",
+      "flightNumber": "2690"
+    },
+    {
+      "id": "arrival-wn3965-hou-bna",
+      "category": "arrival",
+      "scheduledTime": "18:40",
+      "airlineIcao": "swa",
+      "flightNumber": "3965",
+      "originIcao": "KHOU",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4147-san-bna",
+      "category": "arrival",
+      "scheduledTime": "18:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4147",
+      "originIcao": "KSAN",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4193-sat-bna",
+      "category": "arrival",
+      "scheduledTime": "18:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4193",
+      "originIcao": "KSAT",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-mq3925-bna-dfw",
+      "category": "departure",
+      "scheduledTime": "18:43",
+      "airlineIcao": "eny",
+      "flightNumber": "3925",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-wn3237-phx-bna",
+      "category": "arrival",
+      "scheduledTime": "18:45",
+      "airlineIcao": "swa",
+      "flightNumber": "3237",
+      "originIcao": "KPHX",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3624-cvg-bna",
+      "category": "arrival",
+      "scheduledTime": "18:45",
+      "airlineIcao": "swa",
+      "flightNumber": "3624",
+      "originIcao": "KCVG",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-dl2612-bna-msp",
+      "category": "departure",
+      "scheduledTime": "18:45",
+      "airlineIcao": "dal",
+      "flightNumber": "2612",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "arrival-ua2264-iad-bna",
+      "category": "arrival",
+      "scheduledTime": "18:47",
+      "airlineIcao": "ual",
+      "flightNumber": "2264",
+      "originIcao": "KIAD",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-oo3945-bna-aus",
+      "category": "departure",
+      "scheduledTime": "18:48",
+      "airlineIcao": "skw",
+      "flightNumber": "3945",
+      "originIcao": "KBNA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-b6507-bos-bna",
+      "category": "arrival",
+      "scheduledTime": "18:49",
+      "airlineIcao": "jbu",
+      "flightNumber": "507",
+      "originIcao": "KBOS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-mq3397-dfw-bna",
+      "category": "arrival",
+      "scheduledTime": "18:50",
+      "airlineIcao": "eny",
+      "flightNumber": "3397",
+      "originIcao": "KDFW",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1073-mdw-bna",
+      "category": "arrival",
+      "scheduledTime": "18:50",
+      "airlineIcao": "swa",
+      "flightNumber": "1073",
+      "originIcao": "KMDW",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1698-lax-bna",
+      "category": "arrival",
+      "scheduledTime": "18:50",
+      "airlineIcao": "swa",
+      "flightNumber": "1698",
+      "originIcao": "KLAX",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn259-aus-bna",
+      "category": "arrival",
+      "scheduledTime": "18:50",
+      "airlineIcao": "swa",
+      "flightNumber": "259",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3341-ecp-bna",
+      "category": "arrival",
+      "scheduledTime": "18:50",
+      "airlineIcao": "swa",
+      "flightNumber": "3341",
+      "originIcao": "KECP",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4269-mci-bna",
+      "category": "arrival",
+      "scheduledTime": "18:50",
+      "airlineIcao": "swa",
+      "flightNumber": "4269",
+      "originIcao": "KMCI",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-aa2123-bna-lax",
+      "category": "departure",
+      "scheduledTime": "18:50",
+      "airlineIcao": "aal",
+      "flightNumber": "2123",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-wn447-bna-atl",
+      "category": "departure",
+      "scheduledTime": "18:50",
+      "airlineIcao": "swa",
+      "flightNumber": "447",
+      "originIcao": "KBNA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-sy-arrival-kmsp-f-001",
+      "scheduledTime": "18:53",
+      "category": "arrival",
+      "originIcao": "KMSP",
+      "destinationIcao": "KBNA",
+      "airlineIcao": "scx",
+      "flightNumber": "6512"
+    },
+    {
+      "id": "arrival-mq3383-ord-bna",
+      "category": "arrival",
+      "scheduledTime": "18:54",
+      "airlineIcao": "eny",
+      "flightNumber": "3383",
+      "originIcao": "KORD",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1488-den-bna",
+      "category": "arrival",
+      "scheduledTime": "18:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1488",
+      "originIcao": "KDEN",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1657-pns-bna",
+      "category": "arrival",
+      "scheduledTime": "18:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1657",
+      "originIcao": "KPNS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1768-tys-bna",
+      "category": "arrival",
+      "scheduledTime": "18:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1768",
+      "originIcao": "KTYS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1775-ind-bna",
+      "category": "arrival",
+      "scheduledTime": "18:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1775",
+      "originIcao": "KIND",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn2285-bhm-bna",
+      "category": "arrival",
+      "scheduledTime": "18:55",
+      "airlineIcao": "swa",
+      "flightNumber": "2285",
+      "originIcao": "KBHM",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4395-las-bna",
+      "category": "arrival",
+      "scheduledTime": "18:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4395",
+      "originIcao": "KLAS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-dl719-bna-atl",
+      "category": "departure",
+      "scheduledTime": "18:55",
+      "airlineIcao": "dal",
+      "flightNumber": "719",
+      "originIcao": "KBNA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-aa1163-dca-bna",
+      "category": "arrival",
+      "scheduledTime": "18:58",
+      "airlineIcao": "aal",
+      "flightNumber": "1163",
+      "originIcao": "KDCA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-aa1497-bna-clt",
+      "category": "departure",
+      "scheduledTime": "19:01",
+      "airlineIcao": "aal",
+      "flightNumber": "1497",
+      "originIcao": "KBNA",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-wn642-bna-phx",
+      "category": "departure",
+      "scheduledTime": "19:05",
+      "airlineIcao": "swa",
+      "flightNumber": "642",
+      "originIcao": "KBNA",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-wn490-bna-dal",
+      "category": "departure",
+      "scheduledTime": "19:15",
+      "airlineIcao": "swa",
+      "flightNumber": "490",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "arrival-wn482-stl-bna",
+      "category": "arrival",
+      "scheduledTime": "19:20",
+      "airlineIcao": "swa",
+      "flightNumber": "482",
+      "originIcao": "KSTL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-mq3383-bna-ord",
+      "category": "departure",
+      "scheduledTime": "19:24",
+      "airlineIcao": "eny",
+      "flightNumber": "3383",
+      "originIcao": "KBNA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-ua499-bna-ewr",
+      "category": "departure",
+      "scheduledTime": "19:25",
+      "airlineIcao": "ual",
+      "flightNumber": "499",
+      "originIcao": "KBNA",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "arrival-wn2607-mco-bna",
+      "category": "arrival",
+      "scheduledTime": "19:30",
+      "airlineIcao": "swa",
+      "flightNumber": "2607",
+      "originIcao": "KMCO",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn1978-bna-san",
+      "category": "departure",
+      "scheduledTime": "19:30",
+      "airlineIcao": "swa",
+      "flightNumber": "1978",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "departure-mq3397-bna-dfw",
+      "category": "departure",
+      "scheduledTime": "19:33",
+      "airlineIcao": "eny",
+      "flightNumber": "3397",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-dl2209-bna-slc",
+      "category": "departure",
+      "scheduledTime": "19:34",
+      "airlineIcao": "dal",
+      "flightNumber": "2209",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "t100-ws-departure-cyyc-f-001",
+      "scheduledTime": "19:34",
+      "category": "departure",
+      "originIcao": "KBNA",
+      "destinationIcao": "CYYC",
+      "airlineIcao": "wja",
+      "flightNumber": "9923"
+    },
+    {
+      "id": "departure-dl769-bna-lax",
+      "category": "departure",
+      "scheduledTime": "19:35",
+      "airlineIcao": "dal",
+      "flightNumber": "769",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "arrival-dl1490-atl-bna",
+      "category": "arrival",
+      "scheduledTime": "19:38",
+      "airlineIcao": "dal",
+      "flightNumber": "1490",
+      "originIcao": "KATL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-aa1163-bna-dca",
+      "category": "departure",
+      "scheduledTime": "19:38",
+      "airlineIcao": "aal",
+      "flightNumber": "1163",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-wn4286-bna-mdw",
+      "category": "departure",
+      "scheduledTime": "19:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4286",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "departure-wn4431-bna-rdu",
+      "category": "departure",
+      "scheduledTime": "19:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4431",
+      "originIcao": "KBNA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-wn4518-bna-clt",
+      "category": "departure",
+      "scheduledTime": "19:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4518",
+      "originIcao": "KBNA",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-wn4522-bna-cvg",
+      "category": "departure",
+      "scheduledTime": "19:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4522",
+      "originIcao": "KBNA",
+      "destinationIcao": "KCVG"
+    },
+    {
+      "id": "departure-wn539-bna-ind",
+      "category": "departure",
+      "scheduledTime": "19:40",
+      "airlineIcao": "swa",
+      "flightNumber": "539",
+      "originIcao": "KBNA",
+      "destinationIcao": "KIND"
+    },
+    {
+      "id": "departure-wn850-bna-cmh",
+      "category": "departure",
+      "scheduledTime": "19:40",
+      "airlineIcao": "swa",
+      "flightNumber": "850",
+      "originIcao": "KBNA",
+      "destinationIcao": "KCMH"
+    },
+    {
+      "id": "arrival-ua2784-ord-bna",
+      "category": "arrival",
+      "scheduledTime": "19:44",
+      "airlineIcao": "ual",
+      "flightNumber": "2784",
+      "originIcao": "KORD",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-b6506-bna-bos",
+      "category": "departure",
+      "scheduledTime": "19:45",
+      "airlineIcao": "jbu",
+      "flightNumber": "506",
+      "originIcao": "KBNA",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-wn4135-bna-pit",
+      "category": "departure",
+      "scheduledTime": "19:45",
+      "airlineIcao": "swa",
+      "flightNumber": "4135",
+      "originIcao": "KBNA",
+      "destinationIcao": "KPIT"
+    },
+    {
+      "id": "departure-wn474-bna-cle",
+      "category": "departure",
+      "scheduledTime": "19:45",
+      "airlineIcao": "swa",
+      "flightNumber": "474",
+      "originIcao": "KBNA",
+      "destinationIcao": "KCLE"
+    },
+    {
+      "id": "departure-wn509-bna-dtw",
+      "category": "departure",
+      "scheduledTime": "19:45",
+      "airlineIcao": "swa",
+      "flightNumber": "509",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "departure-wn671-bna-sdf",
+      "category": "departure",
+      "scheduledTime": "19:45",
+      "airlineIcao": "swa",
+      "flightNumber": "671",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSDF"
+    },
+    {
+      "id": "departure-wn687-bna-tpa",
+      "category": "departure",
+      "scheduledTime": "19:45",
+      "airlineIcao": "swa",
+      "flightNumber": "687",
+      "originIcao": "KBNA",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "arrival-wn3025-myr-bna",
+      "category": "arrival",
+      "scheduledTime": "19:50",
+      "airlineIcao": "swa",
+      "flightNumber": "3025",
+      "originIcao": "KMYR",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn2144-bna-lga",
+      "category": "departure",
+      "scheduledTime": "19:50",
+      "airlineIcao": "swa",
+      "flightNumber": "2144",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-wn4563-bna-gsp",
+      "category": "departure",
+      "scheduledTime": "19:50",
+      "airlineIcao": "swa",
+      "flightNumber": "4563",
+      "originIcao": "KBNA",
+      "destinationIcao": "KGSP"
+    },
+    {
+      "id": "departure-wn634-bna-phl",
+      "category": "departure",
+      "scheduledTime": "19:50",
+      "airlineIcao": "swa",
+      "flightNumber": "634",
+      "originIcao": "KBNA",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "t100-ba-departure-egll-f-001",
+      "scheduledTime": "19:53",
+      "category": "departure",
+      "originIcao": "KBNA",
+      "destinationIcao": "EGLL",
+      "airlineIcao": "baw",
+      "flightNumber": "1094"
+    },
+    {
+      "id": "arrival-wn193-gsp-bna",
+      "category": "arrival",
+      "scheduledTime": "19:55",
+      "airlineIcao": "swa",
+      "flightNumber": "193",
+      "originIcao": "KGSP",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn459-bna-bos",
+      "category": "departure",
+      "scheduledTime": "19:55",
+      "airlineIcao": "swa",
+      "flightNumber": "459",
+      "originIcao": "KBNA",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-wn482-bna-vps",
+      "category": "departure",
+      "scheduledTime": "19:55",
+      "airlineIcao": "swa",
+      "flightNumber": "482",
+      "originIcao": "KBNA",
+      "destinationIcao": "KVPS"
+    },
+    {
+      "id": "arrival-b62481-fll-bna",
+      "category": "arrival",
+      "scheduledTime": "20:07",
+      "airlineIcao": "jbu",
+      "flightNumber": "2481",
+      "originIcao": "KFLL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn468-bna-bwi",
+      "category": "departure",
+      "scheduledTime": "20:10",
+      "airlineIcao": "swa",
+      "flightNumber": "468",
+      "originIcao": "KBNA",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "arrival-aa1076-dfw-bna",
+      "category": "arrival",
+      "scheduledTime": "20:17",
+      "airlineIcao": "aal",
+      "flightNumber": "1076",
+      "originIcao": "KDFW",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn497-bna-dca",
+      "category": "departure",
+      "scheduledTime": "20:25",
+      "airlineIcao": "swa",
+      "flightNumber": "497",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-wn572-bna-mco",
+      "category": "departure",
+      "scheduledTime": "20:30",
+      "airlineIcao": "swa",
+      "flightNumber": "572",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "t100-9e-arrival-kjfk-f-003",
+      "scheduledTime": "20:39",
+      "category": "arrival",
+      "originIcao": "KJFK",
+      "destinationIcao": "KBNA",
+      "airlineIcao": "edv",
+      "flightNumber": "6253"
+    },
+    {
+      "id": "arrival-wn1168-clt-bna",
+      "category": "arrival",
+      "scheduledTime": "20:40",
+      "airlineIcao": "swa",
+      "flightNumber": "1168",
+      "originIcao": "KCLT",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn2338-bos-bna",
+      "category": "arrival",
+      "scheduledTime": "20:40",
+      "airlineIcao": "swa",
+      "flightNumber": "2338",
+      "originIcao": "KBOS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn2839-cmh-bna",
+      "category": "arrival",
+      "scheduledTime": "20:40",
+      "airlineIcao": "swa",
+      "flightNumber": "2839",
+      "originIcao": "KCMH",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3548-bwi-bna",
+      "category": "arrival",
+      "scheduledTime": "20:40",
+      "airlineIcao": "swa",
+      "flightNumber": "3548",
+      "originIcao": "KBWI",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4314-tpa-bna",
+      "category": "arrival",
+      "scheduledTime": "20:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4314",
+      "originIcao": "KTPA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-dl790-atl-bna",
+      "category": "arrival",
+      "scheduledTime": "20:43",
+      "airlineIcao": "dal",
+      "flightNumber": "790",
+      "originIcao": "KATL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1067-fll-bna",
+      "category": "arrival",
+      "scheduledTime": "20:45",
+      "airlineIcao": "swa",
+      "flightNumber": "1067",
+      "originIcao": "KFLL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1142-chs-bna",
+      "category": "arrival",
+      "scheduledTime": "20:45",
+      "airlineIcao": "swa",
+      "flightNumber": "1142",
+      "originIcao": "KCHS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn2078-atl-bna",
+      "category": "arrival",
+      "scheduledTime": "20:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2078",
+      "originIcao": "KATL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn2608-mco-bna",
+      "category": "arrival",
+      "scheduledTime": "20:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2608",
+      "originIcao": "KMCO",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-qk-arrival-cyul-f-001",
+      "scheduledTime": "20:49",
+      "category": "arrival",
+      "originIcao": "CYUL",
+      "destinationIcao": "KBNA",
+      "airlineIcao": "jza",
+      "flightNumber": "9533"
+    },
+    {
+      "id": "arrival-wn2157-jax-bna",
+      "category": "arrival",
+      "scheduledTime": "20:50",
+      "airlineIcao": "swa",
+      "flightNumber": "2157",
+      "originIcao": "KJAX",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3217-phl-bna",
+      "category": "arrival",
+      "scheduledTime": "20:50",
+      "airlineIcao": "swa",
+      "flightNumber": "3217",
+      "originIcao": "KPHL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3302-pwm-bna",
+      "category": "arrival",
+      "scheduledTime": "20:50",
+      "airlineIcao": "swa",
+      "flightNumber": "3302",
+      "originIcao": "KPWM",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3421-rdu-bna",
+      "category": "arrival",
+      "scheduledTime": "20:50",
+      "airlineIcao": "swa",
+      "flightNumber": "3421",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn643-dtw-bna",
+      "category": "arrival",
+      "scheduledTime": "20:50",
+      "airlineIcao": "swa",
+      "flightNumber": "643",
+      "originIcao": "KDTW",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1337-pit-bna",
+      "category": "arrival",
+      "scheduledTime": "20:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1337",
+      "originIcao": "KPIT",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1428-dca-bna",
+      "category": "arrival",
+      "scheduledTime": "20:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1428",
+      "originIcao": "KDCA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn255-sav-bna",
+      "category": "arrival",
+      "scheduledTime": "20:55",
+      "airlineIcao": "swa",
+      "flightNumber": "255",
+      "originIcao": "KSAV",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4694-cle-bna",
+      "category": "arrival",
+      "scheduledTime": "20:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4694",
+      "originIcao": "KCLE",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4600-phx-bna",
+      "category": "arrival",
+      "scheduledTime": "21:05",
+      "airlineIcao": "swa",
+      "flightNumber": "4600",
+      "originIcao": "KPHX",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-aa3169-dfw-bna",
+      "category": "arrival",
+      "scheduledTime": "21:11",
+      "airlineIcao": "aal",
+      "flightNumber": "3169",
+      "originIcao": "KDFW",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-ua1300-den-bna",
+      "category": "arrival",
+      "scheduledTime": "21:13",
+      "airlineIcao": "ual",
+      "flightNumber": "1300",
+      "originIcao": "KDEN",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-oo6326-ord-bna",
+      "category": "arrival",
+      "scheduledTime": "21:14",
+      "airlineIcao": "skw",
+      "flightNumber": "6326",
+      "originIcao": "KORD",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-oo4163-aus-bna",
+      "category": "arrival",
+      "scheduledTime": "21:18",
+      "airlineIcao": "skw",
+      "flightNumber": "4163",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-aa2833-mia-bna",
+      "category": "arrival",
+      "scheduledTime": "21:26",
+      "airlineIcao": "aal",
+      "flightNumber": "2833",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn3230-bna-dal",
+      "category": "departure",
+      "scheduledTime": "21:35",
+      "airlineIcao": "swa",
+      "flightNumber": "3230",
+      "originIcao": "KBNA",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "departure-wn4519-bna-mke",
+      "category": "departure",
+      "scheduledTime": "21:35",
+      "airlineIcao": "swa",
+      "flightNumber": "4519",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMKE"
+    },
+    {
+      "id": "departure-wn4559-bna-bhm",
+      "category": "departure",
+      "scheduledTime": "21:35",
+      "airlineIcao": "swa",
+      "flightNumber": "4559",
+      "originIcao": "KBNA",
+      "destinationIcao": "KBHM"
+    },
+    {
+      "id": "departure-wn4474-bna-hou",
+      "category": "departure",
+      "scheduledTime": "21:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4474",
+      "originIcao": "KBNA",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "departure-wn454-bna-aus",
+      "category": "departure",
+      "scheduledTime": "21:40",
+      "airlineIcao": "swa",
+      "flightNumber": "454",
+      "originIcao": "KBNA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn4687-bna-lit",
+      "category": "departure",
+      "scheduledTime": "21:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4687",
+      "originIcao": "KBNA",
+      "destinationIcao": "KLIT"
+    },
+    {
+      "id": "departure-wn578-bna-mdw",
+      "category": "departure",
+      "scheduledTime": "21:40",
+      "airlineIcao": "swa",
+      "flightNumber": "578",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "departure-wn580-bna-mem",
+      "category": "departure",
+      "scheduledTime": "21:40",
+      "airlineIcao": "swa",
+      "flightNumber": "580",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "departure-wn665-bna-sat",
+      "category": "departure",
+      "scheduledTime": "21:40",
+      "airlineIcao": "swa",
+      "flightNumber": "665",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "arrival-yx4392-lga-bna",
+      "category": "arrival",
+      "scheduledTime": "21:43",
+      "airlineIcao": "rpa",
+      "flightNumber": "4392",
+      "originIcao": "KLGA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-rv-departure-cyyz-f-001",
+      "scheduledTime": "21:43",
+      "category": "departure",
+      "originIcao": "KBNA",
+      "destinationIcao": "CYYZ",
+      "airlineIcao": "rou",
+      "flightNumber": "8700"
+    },
+    {
+      "id": "arrival-ua2063-ord-bna",
+      "category": "arrival",
+      "scheduledTime": "21:45",
+      "airlineIcao": "ual",
+      "flightNumber": "2063",
+      "originIcao": "KORD",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn2055-bna-tul",
+      "category": "departure",
+      "scheduledTime": "21:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2055",
+      "originIcao": "KBNA",
+      "destinationIcao": "KTUL"
+    },
+    {
+      "id": "departure-wn563-bna-mci",
+      "category": "departure",
+      "scheduledTime": "21:45",
+      "airlineIcao": "swa",
+      "flightNumber": "563",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMCI"
+    },
+    {
+      "id": "departure-wn597-bna-msy",
+      "category": "departure",
+      "scheduledTime": "21:45",
+      "airlineIcao": "swa",
+      "flightNumber": "597",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMSY"
+    },
+    {
+      "id": "departure-wn682-bna-stl",
+      "category": "departure",
+      "scheduledTime": "21:45",
+      "airlineIcao": "swa",
+      "flightNumber": "682",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn4690-bna-msp",
+      "category": "departure",
+      "scheduledTime": "21:50",
+      "airlineIcao": "swa",
+      "flightNumber": "4690",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "departure-wn608-bna-okc",
+      "category": "departure",
+      "scheduledTime": "21:50",
+      "airlineIcao": "swa",
+      "flightNumber": "608",
+      "originIcao": "KBNA",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-aa1370-phx-bna",
+      "category": "arrival",
+      "scheduledTime": "21:59",
+      "airlineIcao": "aal",
+      "flightNumber": "1370",
+      "originIcao": "KPHX",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-dl2586-bos-bna",
+      "category": "arrival",
+      "scheduledTime": "22:01",
+      "airlineIcao": "dal",
+      "flightNumber": "2586",
+      "originIcao": "KBOS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-yx5707-dca-bna",
+      "category": "arrival",
+      "scheduledTime": "22:02",
+      "airlineIcao": "rpa",
+      "flightNumber": "5707",
+      "originIcao": "KDCA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn2605-mco-bna",
+      "category": "arrival",
+      "scheduledTime": "22:05",
+      "airlineIcao": "swa",
+      "flightNumber": "2605",
+      "originIcao": "KMCO",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-9e-arrival-klga-f-001",
+      "scheduledTime": "22:05",
+      "category": "arrival",
+      "originIcao": "KLGA",
+      "destinationIcao": "KBNA",
+      "airlineIcao": "edv",
+      "flightNumber": "2831"
+    },
+    {
+      "id": "arrival-aa1500-dfw-bna",
+      "category": "arrival",
+      "scheduledTime": "22:09",
+      "airlineIcao": "aal",
+      "flightNumber": "1500",
+      "originIcao": "KDFW",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-dl2126-dtw-bna",
+      "category": "arrival",
+      "scheduledTime": "22:15",
+      "airlineIcao": "dal",
+      "flightNumber": "2126",
+      "originIcao": "KDTW",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-b62581-fll-bna",
+      "category": "arrival",
+      "scheduledTime": "22:22",
+      "airlineIcao": "jbu",
+      "flightNumber": "2581",
+      "originIcao": "KFLL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-aa1644-clt-bna",
+      "category": "arrival",
+      "scheduledTime": "22:25",
+      "airlineIcao": "aal",
+      "flightNumber": "1644",
+      "originIcao": "KCLT",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-dl1144-msp-bna",
+      "category": "arrival",
+      "scheduledTime": "22:26",
+      "airlineIcao": "dal",
+      "flightNumber": "1144",
+      "originIcao": "KMSP",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1278-dal-bna",
+      "category": "arrival",
+      "scheduledTime": "22:30",
+      "airlineIcao": "swa",
+      "flightNumber": "1278",
+      "originIcao": "KDAL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4091-mdw-bna",
+      "category": "arrival",
+      "scheduledTime": "22:45",
+      "airlineIcao": "swa",
+      "flightNumber": "4091",
+      "originIcao": "KMDW",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-aa2277-phl-bna",
+      "category": "arrival",
+      "scheduledTime": "22:46",
+      "airlineIcao": "aal",
+      "flightNumber": "2277",
+      "originIcao": "KPHL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn2651-aus-bna",
+      "category": "arrival",
+      "scheduledTime": "22:55",
+      "airlineIcao": "swa",
+      "flightNumber": "2651",
+      "originIcao": "KAUS",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-9x-arrival-kjbr-f-001",
+      "scheduledTime": "23:01",
+      "category": "arrival",
+      "originIcao": "KJBR",
+      "destinationIcao": "KBNA",
+      "airlineIcao": "fdy",
+      "flightNumber": "181"
+    },
+    {
+      "id": "arrival-ua1261-ewr-bna",
+      "category": "arrival",
+      "scheduledTime": "23:02",
+      "airlineIcao": "ual",
+      "flightNumber": "1261",
+      "originIcao": "KEWR",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-dl2317-slc-bna",
+      "category": "arrival",
+      "scheduledTime": "23:05",
+      "airlineIcao": "dal",
+      "flightNumber": "2317",
+      "originIcao": "KSLC",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-oh5513-dca-bna",
+      "category": "arrival",
+      "scheduledTime": "23:05",
+      "airlineIcao": "jia",
+      "flightNumber": "5513",
+      "originIcao": "KDCA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn1083-lga-bna",
+      "category": "arrival",
+      "scheduledTime": "23:05",
+      "airlineIcao": "swa",
+      "flightNumber": "1083",
+      "originIcao": "KLGA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-dl3121-atl-bna",
+      "category": "arrival",
+      "scheduledTime": "23:15",
+      "airlineIcao": "dal",
+      "flightNumber": "3121",
+      "originIcao": "KATL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-aa526-clt-bna",
+      "category": "arrival",
+      "scheduledTime": "23:48",
+      "airlineIcao": "aal",
+      "flightNumber": "526",
+      "originIcao": "KCLT",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-dl815-sea-bna",
+      "category": "arrival",
+      "scheduledTime": "23:54",
+      "airlineIcao": "dal",
+      "flightNumber": "815",
+      "originIcao": "KSEA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn4507-phx-bna",
+      "category": "arrival",
+      "scheduledTime": "23:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4507",
+      "originIcao": "KPHX",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-as416-sea-bna",
+      "category": "arrival",
+      "scheduledTime": "23:59",
+      "airlineIcao": "asa",
+      "flightNumber": "416",
+      "originIcao": "KSEA",
+      "destinationIcao": "KBNA"
+    }
+  ]
+}

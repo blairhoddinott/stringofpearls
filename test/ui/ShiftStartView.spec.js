@@ -21,6 +21,8 @@ const buildViewElement = () => $(
                 '<option value="30" selected>30</option>' +
                 '<option value="60">60</option>' +
             '</select>' +
+            '<input type="range" min="25" max="100" step="25" value="100" data-shift-traffic-volume>' +
+            '<output data-shift-traffic-volume-output>100%</output>' +
             '<button type="submit" data-shift-start-button>Start shift</button>' +
         '</form>' +
     '</section>'
@@ -99,15 +101,43 @@ ava('submitting the form reports the chosen config once and closes the modal', (
     $element.find('[data-shift-sector]').val('approach');
     $element.find('[data-shift-airport]').val('klas');
     $element.find('[data-shift-length]').val('60');
+    $element.find('[data-shift-traffic-volume]').val('50');
     $element.find('[data-shift-start-form]').trigger('submit');
 
     t.true(onStart.calledOnceWithExactly({
         sector: 'approach',
         airportIcao: 'klas',
-        shiftLengthMinutes: 60
+        shiftLengthMinutes: 60,
+        trafficVolumePercent: 50
     }));
     t.false($element.hasClass('open'));
     t.is($element.attr('aria-hidden'), 'true');
+});
+
+ava('traffic volume defaults to 100% and updates its visible value', (t) => {
+    const $element = buildViewElement().attr('data-test-shift-start', '').appendTo('body');
+    const view = new ShiftStartView($element);
+    view.show(AIRPORT_OPTIONS, 'ksea', () => {});
+
+    t.is($element.find('[data-shift-traffic-volume]').val(), '100');
+    t.is($element.find('[data-shift-traffic-volume-output]').text(), '100%');
+
+    $element.find('[data-shift-traffic-volume]').val('25').trigger('input');
+
+    t.is($element.find('[data-shift-traffic-volume-output]').text(), '25%');
+});
+
+ava('show restores the required 100% default after a prior shift changed the volume', (t) => {
+    const $element = buildViewElement().attr('data-test-shift-start', '').appendTo('body');
+    const view = new ShiftStartView($element);
+    view.show(AIRPORT_OPTIONS, 'ksea', () => {});
+    $element.find('[data-shift-traffic-volume]').val('25').trigger('input');
+    view.hide();
+
+    view.show(AIRPORT_OPTIONS, 'ksea', () => {});
+
+    t.is($element.find('[data-shift-traffic-volume]').val(), '100');
+    t.is($element.find('[data-shift-traffic-volume-output]').text(), '100%');
 });
 
 ava('Tab and Shift+Tab keep keyboard focus within the form controls', (t) => {

@@ -1,0 +1,6 @@
+{
+    "icao": "djt",
+    "name": "La Compagnie",
+    "callsign": { "name": "Dreamjet", "callsignFormats": ["###"] },
+    "fleets": { "default": [["A321", 1]] }
+}

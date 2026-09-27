@@ -27,7 +27,8 @@ export const TRAFFIC_PLAN_MODE = Object.freeze({
  * @param params.scheduleDocument {object|null} normalized schedule for the airport, or null
  * @param params.legacyCollection {SpawnPatternCollection} legacy generator used as fallback
  * @param params.subsetPercent {number} [optional] deterministic subset density
- * @param params.sessionStartDate {Date} [optional] wall-clock instant mapped to sim time zero
+ * @param params.sessionStartDate {Date} [optional] wall-clock instant at plan creation
+ * @param params.simulationStartSeconds {number} [optional] simulation time at plan creation
  * @return {{ mode: string, collection: object }} the selected plan
  */
 export function resolveTrafficPlan({
@@ -36,7 +37,8 @@ export function resolveTrafficPlan({
     legacyCollection,
     mappingContext,
     subsetPercent,
-    sessionStartDate
+    sessionStartDate,
+    simulationStartSeconds
 }) {
     if (scheduleDocument == null) {
         if (legacyCollection == null || !Array.isArray(legacyCollection.spawnPatternModels) ||
@@ -74,7 +76,8 @@ export function resolveTrafficPlan({
     const collection = ScheduledSpawnPatternCollection.fromScheduleDocument(scheduleDocument, {
         mappingContext: scheduledMappingContext,
         subsetPercent,
-        sessionStartDate
+        sessionStartDate,
+        simulationStartSeconds
     });
 
     return {

@@ -13,6 +13,7 @@ import {
     SHIFT_LENGTH_MINUTES
 } from './shiftConstants';
 import { GAME_EVENTS_DESCRIPTION, GAME_EVENTS_POINT_VALUES } from '../game/gameEventConstants';
+import { SCHEDULE_SUBSET_PERCENTS } from '../trafficGenerator/schedule/scheduleTrafficPlanUtils';
 
 /**
  * Orchestrates the lifecycle of a controller shift.
@@ -46,7 +47,8 @@ export default class ShiftController {
         leaderboardAdapter = LeaderboardAdapter,
         startView,
         resultsView,
-        statusView
+        statusView,
+        trafficPlanResolver = null
     } = {}) {
         this._shiftModel = shiftModel;
         this._timeKeeper = timeKeeper;
@@ -61,6 +63,7 @@ export default class ShiftController {
         this._startView = startView;
         this._resultsView = resultsView;
         this._statusView = statusView;
+        this._trafficPlanResolver = trafficPlanResolver;
 
         /**
          * Config captured at `.beginShift()`, applied when the airport is ready.
@@ -149,6 +152,7 @@ export default class ShiftController {
         this._startView = null;
         this._resultsView = null;
         this._statusView = null;
+        this._trafficPlanResolver = null;
         this._pendingConfig = null;
 
         return this;
@@ -177,12 +181,17 @@ export default class ShiftController {
      * @param config {object} `{ sector, airportIcao, shiftLengthMinutes }`
      */
     beginShift(config) {
+        if (this._pendingConfig !== null || this._isShiftActive()) {
+            throw new RangeError('A shift is already pending or active.');
+        }
+
         const trafficMode = SHIFT_SECTOR_TRAFFIC_MODE[config?.sector];
         const hasValidLength = SHIFT_LENGTH_MINUTES.includes(config?.shiftLengthMinutes);
+        const hasValidTrafficVolume = SCHEDULE_SUBSET_PERCENTS.includes(config?.trafficVolumePercent);
         const hasEnabledAirport = Boolean(this._airportController.airports[config?.airportIcao]);
 
-        if (!trafficMode || !hasValidLength || !hasEnabledAirport) {
-            throw new RangeError('Expected a valid sector, shift length, and enabled airport');
+        if (!trafficMode || !hasValidLength || !hasValidTrafficVolume || !hasEnabledAirport) {
+            throw new RangeError('Expected a valid sector, shift length, traffic volume, and enabled airport');
         }
 
         this._pendingConfig = config;
@@ -336,11 +345,29 @@ export default class ShiftController {
      * @method _onAirportReady
      * @private
      */
-    _onAirportReady() {
-        this._eventBus.off(EVENT.AIRPORT_CHANGE, this._onAirportReadyHandler);
-
+    _onAirportReady(airportData) {
         if (this._pendingConfig === null) {
             return;
+        }
+
+        const readyAirportIcao = typeof airportData?.icao === 'string'
+            ? airportData.icao.toLowerCase()
+            : null;
+
+        if (readyAirportIcao !== this._pendingConfig.airportIcao.toLowerCase()) {
+            return;
+        }
+
+        this._eventBus.off(EVENT.AIRPORT_CHANGE, this._onAirportReadyHandler);
+
+        if (this._trafficPlanResolver !== null) {
+            const trafficPlan = this._trafficPlanResolver(
+                this._pendingConfig,
+                this._timeKeeper.accumulatedDeltaTime
+            );
+
+            this._scheduler.setSpawnPatternCollection(trafficPlan.collection);
+            this._scheduler.startScheduler();
         }
 
         this._gameController.game_reset_score_and_events();

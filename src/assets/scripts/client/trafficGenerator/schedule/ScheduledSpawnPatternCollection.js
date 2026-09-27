@@ -4,7 +4,8 @@ import MappedScheduledSpawnPatternModel from './MappedScheduledSpawnPatternModel
 import {
     secondsOfDayInZone,
     selectScheduleSubset,
-    DEFAULT_SCHEDULE_SUBSET_PERCENT
+    DEFAULT_SCHEDULE_SUBSET_PERCENT,
+    ONE_DAY_IN_SECONDS
 } from './scheduleTrafficPlanUtils';
 import { FLIGHT_CATEGORY } from '../../constants/aircraftConstants';
 import { isEmptyOrNotObject } from '../../utilities/validatorUtilities';
@@ -143,27 +144,36 @@ export default class ScheduledSpawnPatternCollection {
      * Build a schedule-backed collection from a normalized schedule document.
      *
      * The subset is selected deterministically, and every slot is anchored to the
-     * airport's local time-of-day at simulation time zero so the representative day
-     * repeats aligned to the airport's IANA zone rather than the host zone.
+     * airport's local time-of-day at plan creation. The corresponding simulation-zero
+     * anchor keeps repeated shifts aligned when the process-wide simulation clock is nonzero.
      *
      * @for ScheduledSpawnPatternCollection
      * @method fromScheduleDocument
      * @param scheduleDocument {object} normalized schedule (see schedule.schema.json)
      * @param options {object} [optional]
      * @param options.subsetPercent {number} one of `SCHEDULE_SUBSET_PERCENTS`; defaults to 100
-     * @param options.sessionStartDate {Date} wall-clock instant mapped to sim time zero
+     * @param options.sessionStartDate {Date} wall-clock instant at plan creation
+     * @param options.simulationStartSeconds {number} simulation time at plan creation
      * @param options.mappingContext {object|null} local pattern and identity resolvers
      * @return {ScheduledSpawnPatternCollection}
      */
     static fromScheduleDocument(scheduleDocument, {
         mappingContext = null,
         subsetPercent = DEFAULT_SCHEDULE_SUBSET_PERCENT,
-        sessionStartDate = new Date()
+        sessionStartDate = new Date(),
+        simulationStartSeconds = 0
     } = {}) {
         validateScheduleDocument(scheduleDocument);
 
+        if (!Number.isFinite(simulationStartSeconds) || simulationStartSeconds < 0) {
+            throw new TypeError('simulationStartSeconds must be a non-negative finite number.');
+        }
+
         const { airportIcao, timezone } = scheduleDocument;
-        const zoneSecondsOfDayAtSimZero = secondsOfDayInZone(sessionStartDate, timezone);
+        const localSecondsAtPlanStart = secondsOfDayInZone(sessionStartDate, timezone);
+        const zoneSecondsOfDayAtSimZero = (
+            (localSecondsAtPlanStart - simulationStartSeconds) % ONE_DAY_IN_SECONDS + ONE_DAY_IN_SECONDS
+        ) % ONE_DAY_IN_SECONDS;
         const selectedFlights = selectScheduleSubset(scheduleDocument.flights, subsetPercent);
         const ScheduledModel = mappingContext === null
             ? ScheduledSpawnPatternModel

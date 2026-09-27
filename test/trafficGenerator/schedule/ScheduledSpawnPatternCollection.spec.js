@@ -80,6 +80,18 @@ ava('fromScheduleDocument() anchors every slot to the airport zone at sim time z
     t.is(firstModel._zoneSecondsOfDayAtSimZero, expectedZoneSeconds);
 });
 
+ava('fromScheduleDocument() anchors repeated shifts to current local wall time at nonzero simulation time', (t) => {
+    const collection = ScheduledSpawnPatternCollection.fromScheduleDocument({
+        ...SCHEDULE_DOCUMENT_MOCK,
+        flights: [SCHEDULE_DOCUMENT_MOCK.flights[0]]
+    }, {
+        sessionStartDate: SESSION_START,
+        simulationStartSeconds: 3600
+    });
+
+    t.is(collection.spawnPatternModels[0].getNextDelayValue(3600), 30 * 60);
+});
+
 ava('fromScheduleDocument() honours a nested subset selection', (t) => {
     const collection = ScheduledSpawnPatternCollection.fromScheduleDocument(SCHEDULE_DOCUMENT_MOCK, {
         subsetPercent: 50,

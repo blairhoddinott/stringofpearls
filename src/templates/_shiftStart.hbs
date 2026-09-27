@@ -30,6 +30,21 @@
                     <option value="60">60 minutes</option>
                 </select>
             </div>
+            <div class="shift-start-field">
+                <label class="shift-start-label" for="shift-start-traffic-volume">
+                    Traffic volume: <output for="shift-start-traffic-volume" data-shift-traffic-volume-output>100%</output>
+                </label>
+                <input
+                    id="shift-start-traffic-volume"
+                    class="shift-start-range"
+                    type="range"
+                    min="25"
+                    max="100"
+                    step="25"
+                    value="100"
+                    data-shift-traffic-volume
+                >
+            </div>
             <button type="submit" class="shift-start-button" data-shift-start-button>Start shift</button>
         </form>
     </div>

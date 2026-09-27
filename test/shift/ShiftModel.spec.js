@@ -11,7 +11,8 @@ import { TRAFFIC_MODE } from '../../src/assets/scripts/client/trafficGenerator/T
 const APPROACH_CONFIG = {
     sector: SHIFT_SECTOR.APPROACH,
     airportIcao: 'ksea',
-    shiftLengthMinutes: 30
+    shiftLengthMinutes: 30,
+    trafficVolumePercent: 75
 };
 
 ava('a new ShiftModel starts in the PENDING state with no configuration', (t) => {
@@ -31,6 +32,7 @@ ava('.start() maps the sector to a traffic mode, records timing, and enters RUNN
     t.is(model.config.trafficMode, TRAFFIC_MODE.ARRIVALS);
     t.is(model.config.airportIcao, 'ksea');
     t.is(model.config.shiftLengthMinutes, 30);
+    t.is(model.config.trafficVolumePercent, 75);
     t.is(model.scheduledEndTime, 100 + (30 * 60));
     t.is(model.cutoffTime, 100 + (30 * 60) - SPAWN_CUTOFF_SECONDS);
 });
@@ -222,6 +224,7 @@ ava('.buildSummaryDTO() produces an immutable summary with derived stats', (t) =
     t.is(dto.config.trafficMode, TRAFFIC_MODE.ARRIVALS);
     t.is(dto.config.airportIcao, 'ksea');
     t.is(dto.config.shiftLengthMinutes, 30);
+    t.is(dto.config.trafficVolumePercent, 75);
     t.is(dto.stats.uniqueAircraftHandled, 2);
     t.is(dto.stats.arrivalsCompleted, 2);
     t.is(dto.stats.departuresHandedOff, 1);

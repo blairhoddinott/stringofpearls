@@ -16,6 +16,7 @@ import NavigationLibrary from './navigationLibrary/NavigationLibrary';
 import ScopeModel from './scope/ScopeModel';
 import SpawnPatternCollection from './trafficGenerator/SpawnPatternCollection';
 import SpawnScheduler from './trafficGenerator/SpawnScheduler';
+import { resolveTrafficPlan } from './trafficGenerator/schedule/resolveTrafficPlan';
 import TrafficModeStripView from './ui/TrafficModeStripView';
 import ShiftController from './shift/ShiftController';
 import ShiftStartView from './ui/ShiftStartView';
@@ -258,7 +259,8 @@ export default class AppController {
         initialAirportData,
         airlineList,
         aircraftTypeDefinitionList,
-        airportGuideData
+        airportGuideData,
+        schedulesByAirport = {}
     ) {
         EventTracker.recordEvent(TRACKABLE_EVENT.AIRPORTS, 'initial-load', initialAirportIcao);
 
@@ -301,6 +303,7 @@ export default class AppController {
         SpawnPatternCollection.init(initialAirportData);
 
         this.airlineController = new AirlineController(airlineList, this._randomSource);
+        this._schedulesByAirport = schedulesByAirport;
         this.scopeModel = new ScopeModel();
         this.aircraftController = new AircraftController(
             aircraftTypeDefinitionList,
@@ -370,7 +373,20 @@ export default class AppController {
             airportController: AirportController,
             startView: new ShiftStartView(this.$element.find(SELECTORS.DOM_SELECTORS.SHIFT_START)),
             resultsView: new ShiftResultsView(this.$element.find(SELECTORS.DOM_SELECTORS.SHIFT_RESULTS)),
-            statusView: new ShiftStatusView(this.$element.find(SELECTORS.DOM_SELECTORS.SHIFT_STATUS))
+            statusView: new ShiftStatusView(this.$element.find(SELECTORS.DOM_SELECTORS.SHIFT_STATUS)),
+            trafficPlanResolver: (config, simulationStartSeconds) => resolveTrafficPlan({
+                airportIcao: config.airportIcao,
+                scheduleDocument: this._schedulesByAirport[config.airportIcao.toLowerCase()] ?? null,
+                legacyCollection: SpawnPatternCollection,
+                mappingContext: {
+                    isAirlineKnown: (icao) => this.airlineController.findAirlineById(icao) != null,
+                    isAircraftTypeKnown: (icao) => this.aircraftController.aircraftTypeDefinitionCollection
+                        .findAircraftTypeDefinitionModelByIcao(icao) != null
+                },
+                subsetPercent: config.trafficVolumePercent,
+                sessionStartDate: this._clockAdapter.now(),
+                simulationStartSeconds
+            })
         });
     }
 
@@ -475,7 +491,6 @@ export default class AppController {
 
         NavigationLibrary.init(nextAirportJson);
         SpawnPatternCollection.init(nextAirportJson);
-        SpawnScheduler.startScheduler();
 
         this.updateViewControls();
     }

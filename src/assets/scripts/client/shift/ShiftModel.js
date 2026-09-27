@@ -189,7 +189,8 @@ export default class ShiftModel {
             sector: config.sector,
             trafficMode,
             airportIcao: config.airportIcao,
-            shiftLengthMinutes: config.shiftLengthMinutes
+            shiftLengthMinutes: config.shiftLengthMinutes,
+            trafficVolumePercent: config.trafficVolumePercent
         };
         this._startTime = startTime;
         this._scheduledEndTime = startTime + (config.shiftLengthMinutes * SECONDS_PER_MINUTE);

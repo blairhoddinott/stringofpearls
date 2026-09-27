@@ -167,6 +167,25 @@ export class SpawnSchedulerClass {
     }
 
     /**
+     * Replace the single traffic-plan collection consumed by this scheduler.
+     * Selection is side-effect free; the caller starts scheduling only after the
+     * airport lifecycle and shift configuration are both ready.
+     *
+     * @param spawnPatternCollection {object}
+     * @chainable
+     */
+    setSpawnPatternCollection(spawnPatternCollection) {
+        if (spawnPatternCollection == null || !Array.isArray(spawnPatternCollection.spawnPatternModels) ||
+            typeof spawnPatternCollection.getDepartureModelsForPreSpawn !== 'function') {
+            throw new TypeError('Expected a usable spawn pattern collection.');
+        }
+
+        this._spawnPatternCollection = spawnPatternCollection;
+
+        return this;
+    }
+
+    /**
      * Starts the scheduler and prespawns departures
      *
      * @for SpawnScheduler

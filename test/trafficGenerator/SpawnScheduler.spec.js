@@ -512,6 +512,23 @@ ava('.resumeSpawning() clears the halted flag so spawning can begin again', (t) 
     t.false(scheduler.isSpawningHalted);
 });
 
+ava('.setSpawnPatternCollection() changes the sole collection without starting it', (t) => {
+    const scheduleTimeout = sinon.stub();
+    const originalCollection = { spawnPatternModels: [] };
+    const nextCollection = { spawnPatternModels: [], getDepartureModelsForPreSpawn: () => [] };
+    const scheduler = new SpawnSchedulerClass(
+        originalCollection,
+        { accumulatedDeltaTime: 0 },
+        { scheduleTimeout, destroyTimer: sinon.stub() }
+    );
+
+    const result = scheduler.setSpawnPatternCollection(nextCollection);
+
+    t.is(result, scheduler);
+    t.is(scheduler._spawnPatternCollection, nextCollection);
+    t.true(scheduleTimeout.notCalled);
+});
+
 ava('.setAircraftController() stores the controller without starting the scheduler', (t) => {
     const scheduleTimeout = sinon.stub();
     const scheduler = new SpawnSchedulerClass(

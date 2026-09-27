@@ -28,7 +28,8 @@ export default class ShiftStartView {
             const config = {
                 sector: this.$element.find('[data-shift-sector]').val(),
                 airportIcao: this.$element.find('[data-shift-airport]').val(),
-                shiftLengthMinutes: parseInt(this.$element.find('[data-shift-length]').val(), 10)
+                shiftLengthMinutes: parseInt(this.$element.find('[data-shift-length]').val(), 10),
+                trafficVolumePercent: parseInt(this.$element.find('[data-shift-traffic-volume]').val(), 10)
             };
             const onStart = this._onStart;
             const result = onStart(config);
@@ -59,6 +60,10 @@ export default class ShiftStartView {
                 firstElement.focus();
             }
         };
+
+        this._onTrafficVolumeInput = (event) => {
+            this.$element.find('[data-shift-traffic-volume-output]').text(`${event.target.value}%`);
+        };
     }
 
     /**
@@ -76,10 +81,13 @@ export default class ShiftStartView {
         this._previouslyFocusedElement = this.$element[0].ownerDocument.activeElement;
         this._isolateBackground();
         this._renderAirportOptions(airportOptions, defaultIcao);
+        this.$element.find('[data-shift-traffic-volume]').val('100');
+        this.$element.find('[data-shift-traffic-volume-output]').text('100%');
 
         this.$element
             .off('.shiftStart')
             .on('submit.shiftStart', '[data-shift-start-form]', this._onSubmit)
+            .on('input.shiftStart', '[data-shift-traffic-volume]', this._onTrafficVolumeInput)
             .on('keydown.shiftStart', this._onKeydown)
             .addClass('open')
             .attr('aria-hidden', 'false')
@@ -143,7 +151,7 @@ export default class ShiftStartView {
      * @private
      */
     _getFocusableElements() {
-        return this.$element.find('select, button').toArray();
+        return this.$element.find('select, input, button').toArray();
     }
 
     _isolateBackground() {

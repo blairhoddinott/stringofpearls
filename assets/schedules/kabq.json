@@ -1,0 +1,1482 @@
+{
+  "schemaVersion": 1,
+  "airportIcao": "KABQ",
+  "timezone": "America/Denver",
+  "sampleDate": "2026-07-15",
+  "source": {
+    "name": "US DOT BTS On-Time Performance + T-100 Segment (All Carriers)",
+    "url": "https://transtats.bts.gov/DL_SelectFields.aspx?QO_fu146_anzr=Nv4+Pn44vr45&gnoyr_VQ=FMG",
+    "retrievedAt": "2026-09-27",
+    "license": "U.S. Government work in the public domain (17 U.S.C. §105); OurAirports code data is public domain.",
+    "coverage": "Exact On-Time movements are retained; 20 representative movements were deterministically synthesized from 2026-05 T-100 performed-departure aggregates. General aviation is excluded."
+  },
+  "flights": [
+    {
+      "id": "arrival-wn2177-las-abq",
+      "category": "arrival",
+      "scheduledTime": "00:10",
+      "airlineIcao": "swa",
+      "flightNumber": "2177",
+      "originIcao": "KLAS",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-wn262-abq-dal",
+      "category": "departure",
+      "scheduledTime": "05:00",
+      "airlineIcao": "swa",
+      "flightNumber": "262",
+      "originIcao": "KABQ",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "departure-wn3287-abq-den",
+      "category": "departure",
+      "scheduledTime": "05:10",
+      "airlineIcao": "swa",
+      "flightNumber": "3287",
+      "originIcao": "KABQ",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-mq3448-abq-dfw",
+      "category": "departure",
+      "scheduledTime": "05:23",
+      "airlineIcao": "eny",
+      "flightNumber": "3448",
+      "originIcao": "KABQ",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "t100-an-departure-ksvc-f-001",
+      "scheduledTime": "05:59",
+      "category": "departure",
+      "originIcao": "KABQ",
+      "destinationIcao": "KSVC",
+      "airlineIcao": "wsn",
+      "flightNumber": "238"
+    },
+    {
+      "id": "departure-aa987-abq-phx",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "aal",
+      "flightNumber": "987",
+      "originIcao": "KABQ",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-as1529-abq-sea",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "asa",
+      "flightNumber": "1529",
+      "originIcao": "KABQ",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-oo4115-abq-lax",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "skw",
+      "flightNumber": "4115",
+      "originIcao": "KABQ",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-ua204-abq-iad",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "ual",
+      "flightNumber": "204",
+      "originIcao": "KABQ",
+      "destinationIcao": "KIAD"
+    },
+    {
+      "id": "departure-ua538-abq-sfo",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "ual",
+      "flightNumber": "538",
+      "originIcao": "KABQ",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-wn130-abq-las",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "swa",
+      "flightNumber": "130",
+      "originIcao": "KABQ",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-wn4683-abq-aus",
+      "category": "departure",
+      "scheduledTime": "06:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4683",
+      "originIcao": "KABQ",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "t100-qx-departure-kpdx-f-001",
+      "scheduledTime": "06:28",
+      "category": "departure",
+      "originIcao": "KABQ",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "qxe",
+      "flightNumber": "4164"
+    },
+    {
+      "id": "departure-wn204-abq-hou",
+      "category": "departure",
+      "scheduledTime": "06:30",
+      "airlineIcao": "swa",
+      "flightNumber": "204",
+      "originIcao": "KABQ",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "departure-wn153-abq-san",
+      "category": "departure",
+      "scheduledTime": "06:40",
+      "airlineIcao": "swa",
+      "flightNumber": "153",
+      "originIcao": "KABQ",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "departure-wn4557-abq-phx",
+      "category": "departure",
+      "scheduledTime": "06:50",
+      "airlineIcao": "swa",
+      "flightNumber": "4557",
+      "originIcao": "KABQ",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-dl1688-abq-atl",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "dal",
+      "flightNumber": "1688",
+      "originIcao": "KABQ",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-oo4919-abq-lax",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "skw",
+      "flightNumber": "4919",
+      "originIcao": "KABQ",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-ua621-abq-den",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "ual",
+      "flightNumber": "621",
+      "originIcao": "KABQ",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-wn105-abq-dal",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "swa",
+      "flightNumber": "105",
+      "originIcao": "KABQ",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "departure-aa99-abq-dfw",
+      "category": "departure",
+      "scheduledTime": "07:04",
+      "airlineIcao": "aal",
+      "flightNumber": "99",
+      "originIcao": "KABQ",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-wn4776-abq-mdw",
+      "category": "departure",
+      "scheduledTime": "07:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4776",
+      "originIcao": "KABQ",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "t100-yv-departure-kiah-f-002",
+      "scheduledTime": "07:14",
+      "category": "departure",
+      "originIcao": "KABQ",
+      "destinationIcao": "KIAH",
+      "airlineIcao": "ash",
+      "flightNumber": "4948"
+    },
+    {
+      "id": "departure-yx3406-abq-ord",
+      "category": "departure",
+      "scheduledTime": "07:40",
+      "airlineIcao": "rpa",
+      "flightNumber": "3406",
+      "originIcao": "KABQ",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-oo4152-abq-slc",
+      "category": "departure",
+      "scheduledTime": "07:55",
+      "airlineIcao": "skw",
+      "flightNumber": "4152",
+      "originIcao": "KABQ",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-ua251-abq-iah",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "ual",
+      "flightNumber": "251",
+      "originIcao": "KABQ",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-aa999-abq-dfw",
+      "category": "departure",
+      "scheduledTime": "08:21",
+      "airlineIcao": "aal",
+      "flightNumber": "999",
+      "originIcao": "KABQ",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-dl535-abq-msp",
+      "category": "departure",
+      "scheduledTime": "08:30",
+      "airlineIcao": "dal",
+      "flightNumber": "535",
+      "originIcao": "KABQ",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "departure-oo4659-abq-den",
+      "category": "departure",
+      "scheduledTime": "09:00",
+      "airlineIcao": "skw",
+      "flightNumber": "4659",
+      "originIcao": "KABQ",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-wn2108-aus-abq",
+      "category": "arrival",
+      "scheduledTime": "09:20",
+      "airlineIcao": "swa",
+      "flightNumber": "2108",
+      "originIcao": "KAUS",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-wn284-hou-abq",
+      "category": "arrival",
+      "scheduledTime": "09:20",
+      "airlineIcao": "swa",
+      "flightNumber": "284",
+      "originIcao": "KHOU",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-wn66-den-abq",
+      "category": "arrival",
+      "scheduledTime": "09:30",
+      "airlineIcao": "swa",
+      "flightNumber": "66",
+      "originIcao": "KDEN",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-oo5487-den-abq",
+      "category": "arrival",
+      "scheduledTime": "09:33",
+      "airlineIcao": "skw",
+      "flightNumber": "5487",
+      "originIcao": "KDEN",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "t100-an-arrival-ksvc-f-001",
+      "scheduledTime": "09:34",
+      "category": "arrival",
+      "originIcao": "KSVC",
+      "destinationIcao": "KABQ",
+      "airlineIcao": "wsn",
+      "flightNumber": "7019"
+    },
+    {
+      "id": "t100-fx-departure-kdro-g-001",
+      "scheduledTime": "09:52",
+      "category": "departure",
+      "originIcao": "KABQ",
+      "destinationIcao": "KDRO",
+      "airlineIcao": "fdx",
+      "flightNumber": "8076"
+    },
+    {
+      "id": "arrival-wn1423-dal-abq",
+      "category": "arrival",
+      "scheduledTime": "09:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1423",
+      "originIcao": "KDAL",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-wn284-abq-den",
+      "category": "departure",
+      "scheduledTime": "09:55",
+      "airlineIcao": "swa",
+      "flightNumber": "284",
+      "originIcao": "KABQ",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-aa928-dfw-abq",
+      "category": "arrival",
+      "scheduledTime": "09:56",
+      "airlineIcao": "aal",
+      "flightNumber": "928",
+      "originIcao": "KDFW",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-wn158-abq-bwi",
+      "category": "departure",
+      "scheduledTime": "10:00",
+      "airlineIcao": "swa",
+      "flightNumber": "158",
+      "originIcao": "KABQ",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "departure-wn66-abq-aus",
+      "category": "departure",
+      "scheduledTime": "10:05",
+      "airlineIcao": "swa",
+      "flightNumber": "66",
+      "originIcao": "KABQ",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-dl1004-atl-abq",
+      "category": "arrival",
+      "scheduledTime": "10:12",
+      "airlineIcao": "dal",
+      "flightNumber": "1004",
+      "originIcao": "KATL",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-wn3228-phx-abq",
+      "category": "arrival",
+      "scheduledTime": "10:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3228",
+      "originIcao": "KPHX",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-wn3318-las-abq",
+      "category": "arrival",
+      "scheduledTime": "10:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3318",
+      "originIcao": "KLAS",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-wn1423-abq-las",
+      "category": "departure",
+      "scheduledTime": "10:30",
+      "airlineIcao": "swa",
+      "flightNumber": "1423",
+      "originIcao": "KABQ",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-oo5834-abq-den",
+      "category": "departure",
+      "scheduledTime": "10:45",
+      "airlineIcao": "skw",
+      "flightNumber": "5834",
+      "originIcao": "KABQ",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-aa928-abq-dfw",
+      "category": "departure",
+      "scheduledTime": "10:46",
+      "airlineIcao": "aal",
+      "flightNumber": "928",
+      "originIcao": "KABQ",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-aa1348-phx-abq",
+      "category": "arrival",
+      "scheduledTime": "10:56",
+      "airlineIcao": "aal",
+      "flightNumber": "1348",
+      "originIcao": "KPHX",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-wn126-abq-hou",
+      "category": "departure",
+      "scheduledTime": "11:00",
+      "airlineIcao": "swa",
+      "flightNumber": "126",
+      "originIcao": "KABQ",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "departure-wn160-abq-dal",
+      "category": "departure",
+      "scheduledTime": "11:00",
+      "airlineIcao": "swa",
+      "flightNumber": "160",
+      "originIcao": "KABQ",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "t100-5x-arrival-ksdf-g-001",
+      "scheduledTime": "11:00",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KABQ",
+      "airlineIcao": "ups",
+      "flightNumber": "7745"
+    },
+    {
+      "id": "t100-yv-departure-kiah-f-001",
+      "scheduledTime": "11:01",
+      "category": "departure",
+      "originIcao": "KABQ",
+      "destinationIcao": "KIAH",
+      "airlineIcao": "ash",
+      "flightNumber": "7928"
+    },
+    {
+      "id": "departure-dl1004-abq-atl",
+      "category": "departure",
+      "scheduledTime": "11:20",
+      "airlineIcao": "dal",
+      "flightNumber": "1004",
+      "originIcao": "KABQ",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-oo4887-lax-abq",
+      "category": "arrival",
+      "scheduledTime": "11:30",
+      "airlineIcao": "skw",
+      "flightNumber": "4887",
+      "originIcao": "KLAX",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-oo4108-lax-abq",
+      "category": "arrival",
+      "scheduledTime": "11:32",
+      "airlineIcao": "skw",
+      "flightNumber": "4108",
+      "originIcao": "KLAX",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-oo4746-ord-abq",
+      "category": "arrival",
+      "scheduledTime": "11:32",
+      "airlineIcao": "skw",
+      "flightNumber": "4746",
+      "originIcao": "KORD",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-wn120-san-abq",
+      "category": "arrival",
+      "scheduledTime": "11:40",
+      "airlineIcao": "swa",
+      "flightNumber": "120",
+      "originIcao": "KSAN",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-aa1348-abq-phx",
+      "category": "departure",
+      "scheduledTime": "11:43",
+      "airlineIcao": "aal",
+      "flightNumber": "1348",
+      "originIcao": "KABQ",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "arrival-oo4084-slc-abq",
+      "category": "arrival",
+      "scheduledTime": "11:45",
+      "airlineIcao": "skw",
+      "flightNumber": "4084",
+      "originIcao": "KSLC",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "t100-qx-arrival-kpdx-f-001",
+      "scheduledTime": "11:51",
+      "category": "arrival",
+      "originIcao": "KPDX",
+      "destinationIcao": "KABQ",
+      "airlineIcao": "qxe",
+      "flightNumber": "2781"
+    },
+    {
+      "id": "arrival-wn2175-las-abq",
+      "category": "arrival",
+      "scheduledTime": "11:55",
+      "airlineIcao": "swa",
+      "flightNumber": "2175",
+      "originIcao": "KLAS",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-wn2719-mdw-abq",
+      "category": "arrival",
+      "scheduledTime": "11:55",
+      "airlineIcao": "swa",
+      "flightNumber": "2719",
+      "originIcao": "KMDW",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-oo4887-abq-lax",
+      "category": "departure",
+      "scheduledTime": "12:05",
+      "airlineIcao": "skw",
+      "flightNumber": "4887",
+      "originIcao": "KABQ",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-oo4648-abq-ord",
+      "category": "departure",
+      "scheduledTime": "12:14",
+      "airlineIcao": "skw",
+      "flightNumber": "4648",
+      "originIcao": "KABQ",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-oo4108-abq-lax",
+      "category": "departure",
+      "scheduledTime": "12:15",
+      "airlineIcao": "skw",
+      "flightNumber": "4108",
+      "originIcao": "KABQ",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-wn120-abq-den",
+      "category": "departure",
+      "scheduledTime": "12:15",
+      "airlineIcao": "swa",
+      "flightNumber": "120",
+      "originIcao": "KABQ",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-5x-departure-ksdf-g-001",
+      "scheduledTime": "12:21",
+      "category": "departure",
+      "originIcao": "KABQ",
+      "destinationIcao": "KSDF",
+      "airlineIcao": "ups",
+      "flightNumber": "7831"
+    },
+    {
+      "id": "departure-oo4084-abq-slc",
+      "category": "departure",
+      "scheduledTime": "12:25",
+      "airlineIcao": "skw",
+      "flightNumber": "4084",
+      "originIcao": "KABQ",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-wn359-abq-phx",
+      "category": "departure",
+      "scheduledTime": "12:35",
+      "airlineIcao": "swa",
+      "flightNumber": "359",
+      "originIcao": "KABQ",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-wn4685-abq-las",
+      "category": "departure",
+      "scheduledTime": "12:35",
+      "airlineIcao": "swa",
+      "flightNumber": "4685",
+      "originIcao": "KABQ",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "arrival-ua1402-den-abq",
+      "category": "arrival",
+      "scheduledTime": "12:37",
+      "airlineIcao": "ual",
+      "flightNumber": "1402",
+      "originIcao": "KDEN",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-oo5401-sfo-abq",
+      "category": "arrival",
+      "scheduledTime": "12:44",
+      "airlineIcao": "skw",
+      "flightNumber": "5401",
+      "originIcao": "KSFO",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-mq3374-dfw-abq",
+      "category": "arrival",
+      "scheduledTime": "12:52",
+      "airlineIcao": "eny",
+      "flightNumber": "3374",
+      "originIcao": "KDFW",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-wn1266-den-abq",
+      "category": "arrival",
+      "scheduledTime": "13:20",
+      "airlineIcao": "swa",
+      "flightNumber": "1266",
+      "originIcao": "KDEN",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-mq3374-abq-dfw",
+      "category": "departure",
+      "scheduledTime": "13:24",
+      "airlineIcao": "eny",
+      "flightNumber": "3374",
+      "originIcao": "KABQ",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-wn4040-phx-abq",
+      "category": "arrival",
+      "scheduledTime": "13:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4040",
+      "originIcao": "KPHX",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-oo4628-abq-sfo",
+      "category": "departure",
+      "scheduledTime": "13:25",
+      "airlineIcao": "skw",
+      "flightNumber": "4628",
+      "originIcao": "KABQ",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "arrival-aa1341-ord-abq",
+      "category": "arrival",
+      "scheduledTime": "13:33",
+      "airlineIcao": "aal",
+      "flightNumber": "1341",
+      "originIcao": "KORD",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-ua1741-abq-den",
+      "category": "departure",
+      "scheduledTime": "13:33",
+      "airlineIcao": "ual",
+      "flightNumber": "1741",
+      "originIcao": "KABQ",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-as327-sea-abq",
+      "category": "arrival",
+      "scheduledTime": "13:53",
+      "airlineIcao": "asa",
+      "flightNumber": "327",
+      "originIcao": "KSEA",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-wn4943-lax-abq",
+      "category": "arrival",
+      "scheduledTime": "13:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4943",
+      "originIcao": "KLAX",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-wn1266-abq-bna",
+      "category": "departure",
+      "scheduledTime": "13:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1266",
+      "originIcao": "KABQ",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-fx-arrival-kgup-g-001",
+      "scheduledTime": "13:55",
+      "category": "arrival",
+      "originIcao": "KGUP",
+      "destinationIcao": "KABQ",
+      "airlineIcao": "fdx",
+      "flightNumber": "9417"
+    },
+    {
+      "id": "t100-an-departure-ksvc-f-002",
+      "scheduledTime": "13:57",
+      "category": "departure",
+      "originIcao": "KABQ",
+      "destinationIcao": "KSVC",
+      "airlineIcao": "wsn",
+      "flightNumber": "7726"
+    },
+    {
+      "id": "arrival-wn17-hou-abq",
+      "category": "arrival",
+      "scheduledTime": "14:00",
+      "airlineIcao": "swa",
+      "flightNumber": "17",
+      "originIcao": "KHOU",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-wn779-abq-lax",
+      "category": "departure",
+      "scheduledTime": "14:00",
+      "airlineIcao": "swa",
+      "flightNumber": "779",
+      "originIcao": "KABQ",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-aa1341-abq-ord",
+      "category": "departure",
+      "scheduledTime": "14:13",
+      "airlineIcao": "aal",
+      "flightNumber": "1341",
+      "originIcao": "KABQ",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-wn149-dal-abq",
+      "category": "arrival",
+      "scheduledTime": "14:20",
+      "airlineIcao": "swa",
+      "flightNumber": "149",
+      "originIcao": "KDAL",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-wn107-abq-dal",
+      "category": "departure",
+      "scheduledTime": "14:35",
+      "airlineIcao": "swa",
+      "flightNumber": "107",
+      "originIcao": "KABQ",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "departure-wn17-abq-oak",
+      "category": "departure",
+      "scheduledTime": "14:35",
+      "airlineIcao": "swa",
+      "flightNumber": "17",
+      "originIcao": "KABQ",
+      "destinationIcao": "KOAK"
+    },
+    {
+      "id": "arrival-wn4528-bwi-abq",
+      "category": "arrival",
+      "scheduledTime": "14:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4528",
+      "originIcao": "KBWI",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-as330-abq-sea",
+      "category": "departure",
+      "scheduledTime": "14:43",
+      "airlineIcao": "asa",
+      "flightNumber": "330",
+      "originIcao": "KABQ",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-wn149-abq-phx",
+      "category": "departure",
+      "scheduledTime": "14:55",
+      "airlineIcao": "swa",
+      "flightNumber": "149",
+      "originIcao": "KABQ",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "arrival-ua691-den-abq",
+      "category": "arrival",
+      "scheduledTime": "15:12",
+      "airlineIcao": "ual",
+      "flightNumber": "691",
+      "originIcao": "KDEN",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-aa9-dfw-abq",
+      "category": "arrival",
+      "scheduledTime": "15:15",
+      "airlineIcao": "aal",
+      "flightNumber": "9",
+      "originIcao": "KDFW",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-wn127-abq-hou",
+      "category": "departure",
+      "scheduledTime": "15:15",
+      "airlineIcao": "swa",
+      "flightNumber": "127",
+      "originIcao": "KABQ",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "arrival-dl1109-atl-abq",
+      "category": "arrival",
+      "scheduledTime": "15:31",
+      "airlineIcao": "dal",
+      "flightNumber": "1109",
+      "originIcao": "KATL",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "t100-5x-arrival-kont-g-001",
+      "scheduledTime": "15:31",
+      "category": "arrival",
+      "originIcao": "KONT",
+      "destinationIcao": "KABQ",
+      "airlineIcao": "ups",
+      "flightNumber": "251"
+    },
+    {
+      "id": "arrival-oo3820-slc-abq",
+      "category": "arrival",
+      "scheduledTime": "15:54",
+      "airlineIcao": "skw",
+      "flightNumber": "3820",
+      "originIcao": "KSLC",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-wn2092-dal-abq",
+      "category": "arrival",
+      "scheduledTime": "16:05",
+      "airlineIcao": "swa",
+      "flightNumber": "2092",
+      "originIcao": "KDAL",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-aa9-abq-dfw",
+      "category": "departure",
+      "scheduledTime": "16:08",
+      "airlineIcao": "aal",
+      "flightNumber": "9",
+      "originIcao": "KABQ",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-wn662-bur-abq",
+      "category": "arrival",
+      "scheduledTime": "16:20",
+      "airlineIcao": "swa",
+      "flightNumber": "662",
+      "originIcao": "KBUR",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-ua725-abq-den",
+      "category": "departure",
+      "scheduledTime": "16:20",
+      "airlineIcao": "ual",
+      "flightNumber": "725",
+      "originIcao": "KABQ",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-lf-departure-kcnm-f-001",
+      "scheduledTime": "16:21",
+      "category": "departure",
+      "originIcao": "KABQ",
+      "destinationIcao": "KCNM",
+      "airlineIcao": "vte",
+      "flightNumber": "7899"
+    },
+    {
+      "id": "arrival-wn570-oak-abq",
+      "category": "arrival",
+      "scheduledTime": "16:30",
+      "airlineIcao": "swa",
+      "flightNumber": "570",
+      "originIcao": "KOAK",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-dl1109-abq-atl",
+      "category": "departure",
+      "scheduledTime": "16:36",
+      "airlineIcao": "dal",
+      "flightNumber": "1109",
+      "originIcao": "KABQ",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-wn882-phx-abq",
+      "category": "arrival",
+      "scheduledTime": "16:40",
+      "airlineIcao": "swa",
+      "flightNumber": "882",
+      "originIcao": "KPHX",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-oo3820-abq-slc",
+      "category": "departure",
+      "scheduledTime": "16:40",
+      "airlineIcao": "skw",
+      "flightNumber": "3820",
+      "originIcao": "KABQ",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-wn2142-abq-den",
+      "category": "departure",
+      "scheduledTime": "16:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2142",
+      "originIcao": "KABQ",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-wn4965-abq-bur",
+      "category": "departure",
+      "scheduledTime": "16:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4965",
+      "originIcao": "KABQ",
+      "destinationIcao": "KBUR"
+    },
+    {
+      "id": "arrival-mq3381-dfw-abq",
+      "category": "arrival",
+      "scheduledTime": "16:56",
+      "airlineIcao": "eny",
+      "flightNumber": "3381",
+      "originIcao": "KDFW",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-wn352-aus-abq",
+      "category": "arrival",
+      "scheduledTime": "17:10",
+      "airlineIcao": "swa",
+      "flightNumber": "352",
+      "originIcao": "KAUS",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-wn137-abq-las",
+      "category": "departure",
+      "scheduledTime": "17:10",
+      "airlineIcao": "swa",
+      "flightNumber": "137",
+      "originIcao": "KABQ",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-wn882-abq-aus",
+      "category": "departure",
+      "scheduledTime": "17:15",
+      "airlineIcao": "swa",
+      "flightNumber": "882",
+      "originIcao": "KABQ",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "t100-lf-arrival-kcnm-f-001",
+      "scheduledTime": "17:19",
+      "category": "arrival",
+      "originIcao": "KCNM",
+      "destinationIcao": "KABQ",
+      "airlineIcao": "vte",
+      "flightNumber": "4198"
+    },
+    {
+      "id": "arrival-oo4760-den-abq",
+      "category": "arrival",
+      "scheduledTime": "17:23",
+      "airlineIcao": "skw",
+      "flightNumber": "4760",
+      "originIcao": "KDEN",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "t100-5x-departure-kphx-g-001",
+      "scheduledTime": "17:25",
+      "category": "departure",
+      "originIcao": "KABQ",
+      "destinationIcao": "KPHX",
+      "airlineIcao": "ups",
+      "flightNumber": "3855"
+    },
+    {
+      "id": "departure-mq3381-abq-dfw",
+      "category": "departure",
+      "scheduledTime": "17:28",
+      "airlineIcao": "eny",
+      "flightNumber": "3381",
+      "originIcao": "KABQ",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-wn4621-bna-abq",
+      "category": "arrival",
+      "scheduledTime": "17:30",
+      "airlineIcao": "swa",
+      "flightNumber": "4621",
+      "originIcao": "KBNA",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-wn352-abq-phx",
+      "category": "departure",
+      "scheduledTime": "17:45",
+      "airlineIcao": "swa",
+      "flightNumber": "352",
+      "originIcao": "KABQ",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-oo4652-abq-den",
+      "category": "departure",
+      "scheduledTime": "18:04",
+      "airlineIcao": "skw",
+      "flightNumber": "4652",
+      "originIcao": "KABQ",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-oo4091-lax-abq",
+      "category": "arrival",
+      "scheduledTime": "18:07",
+      "airlineIcao": "skw",
+      "flightNumber": "4091",
+      "originIcao": "KLAX",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-wn165-abq-dal",
+      "category": "departure",
+      "scheduledTime": "18:10",
+      "airlineIcao": "swa",
+      "flightNumber": "165",
+      "originIcao": "KABQ",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "arrival-wn4634-den-abq",
+      "category": "arrival",
+      "scheduledTime": "18:35",
+      "airlineIcao": "swa",
+      "flightNumber": "4634",
+      "originIcao": "KDEN",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-wn2755-las-abq",
+      "category": "arrival",
+      "scheduledTime": "18:40",
+      "airlineIcao": "swa",
+      "flightNumber": "2755",
+      "originIcao": "KLAS",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-mq3634-phx-abq",
+      "category": "arrival",
+      "scheduledTime": "18:47",
+      "airlineIcao": "eny",
+      "flightNumber": "3634",
+      "originIcao": "KPHX",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-oo4091-abq-lax",
+      "category": "departure",
+      "scheduledTime": "18:48",
+      "airlineIcao": "skw",
+      "flightNumber": "4091",
+      "originIcao": "KABQ",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "arrival-oo3726-slc-abq",
+      "category": "arrival",
+      "scheduledTime": "19:12",
+      "airlineIcao": "skw",
+      "flightNumber": "3726",
+      "originIcao": "KSLC",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-wn1862-abq-las",
+      "category": "departure",
+      "scheduledTime": "19:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1862",
+      "originIcao": "KABQ",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-wn4521-abq-san",
+      "category": "departure",
+      "scheduledTime": "19:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4521",
+      "originIcao": "KABQ",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "departure-mq3634-abq-phx",
+      "category": "departure",
+      "scheduledTime": "19:18",
+      "airlineIcao": "eny",
+      "flightNumber": "3634",
+      "originIcao": "KABQ",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "t100-fx-departure-kfmn-g-001",
+      "scheduledTime": "19:19",
+      "category": "departure",
+      "originIcao": "KABQ",
+      "destinationIcao": "KFMN",
+      "airlineIcao": "fdx",
+      "flightNumber": "4834"
+    },
+    {
+      "id": "arrival-wn4514-phx-abq",
+      "category": "arrival",
+      "scheduledTime": "19:45",
+      "airlineIcao": "swa",
+      "flightNumber": "4514",
+      "originIcao": "KPHX",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "t100-an-arrival-ksvc-f-002",
+      "scheduledTime": "19:46",
+      "category": "arrival",
+      "originIcao": "KSVC",
+      "destinationIcao": "KABQ",
+      "airlineIcao": "wsn",
+      "flightNumber": "1571"
+    },
+    {
+      "id": "arrival-dl730-msp-abq",
+      "category": "arrival",
+      "scheduledTime": "19:55",
+      "airlineIcao": "dal",
+      "flightNumber": "730",
+      "originIcao": "KMSP",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-ua1822-iad-abq",
+      "category": "arrival",
+      "scheduledTime": "19:59",
+      "airlineIcao": "ual",
+      "flightNumber": "1822",
+      "originIcao": "KIAD",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-oo3726-abq-slc",
+      "category": "departure",
+      "scheduledTime": "19:59",
+      "airlineIcao": "skw",
+      "flightNumber": "3726",
+      "originIcao": "KABQ",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-wn4317-abq-phx",
+      "category": "departure",
+      "scheduledTime": "20:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4317",
+      "originIcao": "KABQ",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "arrival-ua484-den-abq",
+      "category": "arrival",
+      "scheduledTime": "20:44",
+      "airlineIcao": "ual",
+      "flightNumber": "484",
+      "originIcao": "KDEN",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-wn1172-dal-abq",
+      "category": "arrival",
+      "scheduledTime": "21:10",
+      "airlineIcao": "swa",
+      "flightNumber": "1172",
+      "originIcao": "KDAL",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-wn324-aus-abq",
+      "category": "arrival",
+      "scheduledTime": "21:20",
+      "airlineIcao": "swa",
+      "flightNumber": "324",
+      "originIcao": "KAUS",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-ua1381-iah-abq",
+      "category": "arrival",
+      "scheduledTime": "21:44",
+      "airlineIcao": "ual",
+      "flightNumber": "1381",
+      "originIcao": "KIAH",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "t100-yv-arrival-kiah-f-001",
+      "scheduledTime": "21:58",
+      "category": "arrival",
+      "originIcao": "KIAH",
+      "destinationIcao": "KABQ",
+      "airlineIcao": "ash",
+      "flightNumber": "3042"
+    },
+    {
+      "id": "arrival-dl1531-atl-abq",
+      "category": "arrival",
+      "scheduledTime": "22:02",
+      "airlineIcao": "dal",
+      "flightNumber": "1531",
+      "originIcao": "KATL",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-wn2862-phx-abq",
+      "category": "arrival",
+      "scheduledTime": "22:10",
+      "airlineIcao": "swa",
+      "flightNumber": "2862",
+      "originIcao": "KPHX",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-b665-jfk-abq",
+      "category": "arrival",
+      "scheduledTime": "22:13",
+      "airlineIcao": "jbu",
+      "flightNumber": "65",
+      "originIcao": "KJFK",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-wn4074-las-abq",
+      "category": "arrival",
+      "scheduledTime": "22:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4074",
+      "originIcao": "KLAS",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-ua737-sfo-abq",
+      "category": "arrival",
+      "scheduledTime": "22:25",
+      "airlineIcao": "ual",
+      "flightNumber": "737",
+      "originIcao": "KSFO",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-wn1468-den-abq",
+      "category": "arrival",
+      "scheduledTime": "22:25",
+      "airlineIcao": "swa",
+      "flightNumber": "1468",
+      "originIcao": "KDEN",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-oo3729-slc-abq",
+      "category": "arrival",
+      "scheduledTime": "22:30",
+      "airlineIcao": "skw",
+      "flightNumber": "3729",
+      "originIcao": "KSLC",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "t100-yv-arrival-kiah-f-002",
+      "scheduledTime": "22:31",
+      "category": "arrival",
+      "originIcao": "KIAH",
+      "destinationIcao": "KABQ",
+      "airlineIcao": "ash",
+      "flightNumber": "9348"
+    },
+    {
+      "id": "arrival-yx3640-ord-abq",
+      "category": "arrival",
+      "scheduledTime": "22:34",
+      "airlineIcao": "rpa",
+      "flightNumber": "3640",
+      "originIcao": "KORD",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-wn3509-san-abq",
+      "category": "arrival",
+      "scheduledTime": "22:40",
+      "airlineIcao": "swa",
+      "flightNumber": "3509",
+      "originIcao": "KSAN",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-oo4761-den-abq",
+      "category": "arrival",
+      "scheduledTime": "22:43",
+      "airlineIcao": "skw",
+      "flightNumber": "4761",
+      "originIcao": "KDEN",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-aa1062-dfw-abq",
+      "category": "arrival",
+      "scheduledTime": "22:44",
+      "airlineIcao": "aal",
+      "flightNumber": "1062",
+      "originIcao": "KDFW",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-wn271-dal-abq",
+      "category": "arrival",
+      "scheduledTime": "22:45",
+      "airlineIcao": "swa",
+      "flightNumber": "271",
+      "originIcao": "KDAL",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-wn4703-hou-abq",
+      "category": "arrival",
+      "scheduledTime": "22:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4703",
+      "originIcao": "KHOU",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-oo6515-lax-abq",
+      "category": "arrival",
+      "scheduledTime": "23:09",
+      "airlineIcao": "skw",
+      "flightNumber": "6515",
+      "originIcao": "KLAX",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "departure-b666-abq-jfk",
+      "category": "departure",
+      "scheduledTime": "23:12",
+      "airlineIcao": "jbu",
+      "flightNumber": "66",
+      "originIcao": "KABQ",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "t100-fx-arrival-kdro-g-001",
+      "scheduledTime": "23:46",
+      "category": "arrival",
+      "originIcao": "KDRO",
+      "destinationIcao": "KABQ",
+      "airlineIcao": "fdx",
+      "flightNumber": "5419"
+    },
+    {
+      "id": "arrival-oo4098-lax-abq",
+      "category": "arrival",
+      "scheduledTime": "23:48",
+      "airlineIcao": "skw",
+      "flightNumber": "4098",
+      "originIcao": "KLAX",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-aa2564-dfw-abq",
+      "category": "arrival",
+      "scheduledTime": "23:49",
+      "airlineIcao": "aal",
+      "flightNumber": "2564",
+      "originIcao": "KDFW",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-aa3159-phx-abq",
+      "category": "arrival",
+      "scheduledTime": "23:59",
+      "airlineIcao": "aal",
+      "flightNumber": "3159",
+      "originIcao": "KPHX",
+      "destinationIcao": "KABQ"
+    },
+    {
+      "id": "arrival-as1526-sea-abq",
+      "category": "arrival",
+      "scheduledTime": "23:59",
+      "airlineIcao": "asa",
+      "flightNumber": "1526",
+      "originIcao": "KSEA",
+      "destinationIcao": "KABQ"
+    }
+  ]
+}

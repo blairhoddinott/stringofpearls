@@ -1,0 +1,400 @@
+{
+    "schemaVersion": 2,
+    "profileType": "authored",
+    "airportIcao": "RJOA",
+    "timezone": "Asia/Tokyo",
+    "sampleDate": "2026-07-15",
+    "source": {
+        "name": "stringofpearls airport-authored spawn patterns",
+        "url": "https://github.com/blairhoddinott/stringofpearls/tree/master/assets/airports",
+        "retrievedAt": "2026-09-27",
+        "license": "MIT",
+        "coverage": "Deterministic representative profile compiled from reviewed airport-authored rates, routes, geometry, and airline rules; movements are generated and are not observed historical flights."
+    },
+    "flights": [
+        {
+            "id": "auth-rjoa-6b495d0c-0005",
+            "category": "departure",
+            "scheduledTime": "00:07",
+            "spawnPatternKey": "6b495d0c"
+        },
+        {
+            "id": "auth-rjoa-a65841da-0002",
+            "category": "arrival",
+            "scheduledTime": "00:33",
+            "spawnPatternKey": "a65841da"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0023",
+            "category": "arrival",
+            "scheduledTime": "00:40",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-511bb78a-0012",
+            "category": "departure",
+            "scheduledTime": "01:20",
+            "spawnPatternKey": "511bb78a"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0024",
+            "category": "arrival",
+            "scheduledTime": "01:33",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-6b495d0c-0006",
+            "category": "departure",
+            "scheduledTime": "02:18",
+            "spawnPatternKey": "6b495d0c"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0025",
+            "category": "arrival",
+            "scheduledTime": "02:27",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-511bb78a-0013",
+            "category": "departure",
+            "scheduledTime": "02:50",
+            "spawnPatternKey": "511bb78a"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0026",
+            "category": "arrival",
+            "scheduledTime": "03:20",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-29e61e7c-0002",
+            "category": "departure",
+            "scheduledTime": "03:45",
+            "spawnPatternKey": "29e61e7c"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0027",
+            "category": "arrival",
+            "scheduledTime": "04:13",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-511bb78a-0014",
+            "category": "departure",
+            "scheduledTime": "04:20",
+            "spawnPatternKey": "511bb78a"
+        },
+        {
+            "id": "auth-rjoa-6b495d0c-0007",
+            "category": "departure",
+            "scheduledTime": "04:29",
+            "spawnPatternKey": "6b495d0c"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0001",
+            "category": "arrival",
+            "scheduledTime": "05:07",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-a65841da-0003",
+            "category": "arrival",
+            "scheduledTime": "05:21",
+            "spawnPatternKey": "a65841da"
+        },
+        {
+            "id": "auth-rjoa-511bb78a-0015",
+            "category": "departure",
+            "scheduledTime": "05:50",
+            "spawnPatternKey": "511bb78a"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0002",
+            "category": "arrival",
+            "scheduledTime": "06:00",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-6b495d0c-0008",
+            "category": "departure",
+            "scheduledTime": "06:40",
+            "spawnPatternKey": "6b495d0c"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0003",
+            "category": "arrival",
+            "scheduledTime": "06:53",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-511bb78a-0016",
+            "category": "departure",
+            "scheduledTime": "07:20",
+            "spawnPatternKey": "511bb78a"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0004",
+            "category": "arrival",
+            "scheduledTime": "07:47",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-29e61e7c-0003",
+            "category": "departure",
+            "scheduledTime": "08:33",
+            "spawnPatternKey": "29e61e7c"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0005",
+            "category": "arrival",
+            "scheduledTime": "08:40",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-511bb78a-0001",
+            "category": "departure",
+            "scheduledTime": "08:50",
+            "spawnPatternKey": "511bb78a"
+        },
+        {
+            "id": "auth-rjoa-6b495d0c-0009",
+            "category": "departure",
+            "scheduledTime": "08:51",
+            "spawnPatternKey": "6b495d0c"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0006",
+            "category": "arrival",
+            "scheduledTime": "09:33",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-a65841da-0004",
+            "category": "arrival",
+            "scheduledTime": "10:09",
+            "spawnPatternKey": "a65841da"
+        },
+        {
+            "id": "auth-rjoa-511bb78a-0002",
+            "category": "departure",
+            "scheduledTime": "10:20",
+            "spawnPatternKey": "511bb78a"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0007",
+            "category": "arrival",
+            "scheduledTime": "10:27",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-6b495d0c-0010",
+            "category": "departure",
+            "scheduledTime": "11:02",
+            "spawnPatternKey": "6b495d0c"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0008",
+            "category": "arrival",
+            "scheduledTime": "11:20",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-511bb78a-0003",
+            "category": "departure",
+            "scheduledTime": "11:50",
+            "spawnPatternKey": "511bb78a"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0009",
+            "category": "arrival",
+            "scheduledTime": "12:13",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0010",
+            "category": "arrival",
+            "scheduledTime": "13:07",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-6b495d0c-0011",
+            "category": "departure",
+            "scheduledTime": "13:13",
+            "spawnPatternKey": "6b495d0c"
+        },
+        {
+            "id": "auth-rjoa-511bb78a-0004",
+            "category": "departure",
+            "scheduledTime": "13:20",
+            "spawnPatternKey": "511bb78a"
+        },
+        {
+            "id": "auth-rjoa-29e61e7c-0004",
+            "category": "departure",
+            "scheduledTime": "13:21",
+            "spawnPatternKey": "29e61e7c"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0011",
+            "category": "arrival",
+            "scheduledTime": "14:00",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-511bb78a-0005",
+            "category": "departure",
+            "scheduledTime": "14:50",
+            "spawnPatternKey": "511bb78a"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0012",
+            "category": "arrival",
+            "scheduledTime": "14:53",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-a65841da-0005",
+            "category": "arrival",
+            "scheduledTime": "14:57",
+            "spawnPatternKey": "a65841da"
+        },
+        {
+            "id": "auth-rjoa-6b495d0c-0001",
+            "category": "departure",
+            "scheduledTime": "15:24",
+            "spawnPatternKey": "6b495d0c"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0013",
+            "category": "arrival",
+            "scheduledTime": "15:47",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-511bb78a-0006",
+            "category": "departure",
+            "scheduledTime": "16:20",
+            "spawnPatternKey": "511bb78a"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0014",
+            "category": "arrival",
+            "scheduledTime": "16:40",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0015",
+            "category": "arrival",
+            "scheduledTime": "17:33",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-6b495d0c-0002",
+            "category": "departure",
+            "scheduledTime": "17:34",
+            "spawnPatternKey": "6b495d0c"
+        },
+        {
+            "id": "auth-rjoa-511bb78a-0007",
+            "category": "departure",
+            "scheduledTime": "17:50",
+            "spawnPatternKey": "511bb78a"
+        },
+        {
+            "id": "auth-rjoa-29e61e7c-0005",
+            "category": "departure",
+            "scheduledTime": "18:09",
+            "spawnPatternKey": "29e61e7c"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0016",
+            "category": "arrival",
+            "scheduledTime": "18:27",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0017",
+            "category": "arrival",
+            "scheduledTime": "19:20",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-511bb78a-0008",
+            "category": "departure",
+            "scheduledTime": "19:20",
+            "spawnPatternKey": "511bb78a"
+        },
+        {
+            "id": "auth-rjoa-6b495d0c-0003",
+            "category": "departure",
+            "scheduledTime": "19:45",
+            "spawnPatternKey": "6b495d0c"
+        },
+        {
+            "id": "auth-rjoa-a65841da-0001",
+            "category": "arrival",
+            "scheduledTime": "19:45",
+            "spawnPatternKey": "a65841da"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0018",
+            "category": "arrival",
+            "scheduledTime": "20:13",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-511bb78a-0009",
+            "category": "departure",
+            "scheduledTime": "20:50",
+            "spawnPatternKey": "511bb78a"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0019",
+            "category": "arrival",
+            "scheduledTime": "21:07",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-6b495d0c-0004",
+            "category": "departure",
+            "scheduledTime": "21:56",
+            "spawnPatternKey": "6b495d0c"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0020",
+            "category": "arrival",
+            "scheduledTime": "22:00",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-511bb78a-0010",
+            "category": "departure",
+            "scheduledTime": "22:20",
+            "spawnPatternKey": "511bb78a"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0021",
+            "category": "arrival",
+            "scheduledTime": "22:53",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-29e61e7c-0001",
+            "category": "departure",
+            "scheduledTime": "22:57",
+            "spawnPatternKey": "29e61e7c"
+        },
+        {
+            "id": "auth-rjoa-0b3965d5-0022",
+            "category": "arrival",
+            "scheduledTime": "23:47",
+            "spawnPatternKey": "0b3965d5"
+        },
+        {
+            "id": "auth-rjoa-511bb78a-0011",
+            "category": "departure",
+            "scheduledTime": "23:50",
+            "spawnPatternKey": "511bb78a"
+        }
+    ]
+}

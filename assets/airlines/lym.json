@@ -1,0 +1,6 @@
+{
+    "icao": "lym",
+    "name": "Denver Air Connection",
+    "callsign": { "name": "Key Lime", "callsignFormats": ["###"] },
+    "fleets": { "default": [["E145", 1]] }
+}

@@ -343,7 +343,7 @@ withScheduleFixture((root) => {
     assert(errors.includes('schedules/raw.csv: only .json files are allowed'));
 });
 
-// Schedules: the published schema is mandatory and pinned to the reviewed v1 contract.
+// Schedules: the published schema is mandatory and pinned to the reviewed versioned contract.
 expectScheduleError(
     (root) => fs.rmSync(path.join(root, 'schedules', 'schedule.schema.json')),
     'schedules/schedule.schema.json: required schedule contract is missing'
@@ -351,7 +351,7 @@ expectScheduleError(
 
 expectScheduleError(
     (root) => writeJson(path.join(root, 'schedules', 'schedule.schema.json'), {}),
-    'schedules/schedule.schema.json: contents do not match the reviewed schemaVersion 1 contract'
+    'schedules/schedule.schema.json: contents do not match the reviewed schedule contract'
 );
 
 // Schedules: a well-formed schedule fixture validates and is counted.
@@ -363,8 +363,8 @@ withScheduleFixture((root) => {
 
 // Schedules: top-level document field rules.
 expectScheduleError(
-    (root) => writeSchedule(root, { ...readSchedule(root), schemaVersion: 2 }),
-    'schedules/ktst.json: schemaVersion must equal 1'
+    (root) => writeSchedule(root, { ...readSchedule(root), schemaVersion: 3 }),
+    'schedules/ktst.json: schemaVersion must equal 1 or 2'
 );
 
 expectScheduleError(

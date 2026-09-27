@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "airportIcao": "KDAB",
+  "timezone": "America/New_York",
+  "sampleDate": "2026-07-15",
+  "source": {
+    "name": "US DOT BTS On-Time Performance + T-100 Segment (All Carriers)",
+    "url": "https://transtats.bts.gov/DL_SelectFields.aspx?QO_fu146_anzr=Nv4+Pn44vr45&gnoyr_VQ=FMG",
+    "retrievedAt": "2026-09-27",
+    "license": "U.S. Government work in the public domain (17 U.S.C. §105); OurAirports code data is public domain.",
+    "coverage": "Exact On-Time movements are retained; 2 representative movements were deterministically synthesized from 2026-05 T-100 performed-departure aggregates. General aviation is excluded."
+  },
+  "flights": [
+    {
+      "id": "arrival-oh5613-clt-dab",
+      "category": "arrival",
+      "scheduledTime": "00:05",
+      "airlineIcao": "jia",
+      "flightNumber": "5613",
+      "originIcao": "KCLT",
+      "destinationIcao": "KDAB"
+    },
+    {
+      "id": "arrival-dl2810-atl-dab",
+      "category": "arrival",
+      "scheduledTime": "00:12",
+      "airlineIcao": "dal",
+      "flightNumber": "2810",
+      "originIcao": "KATL",
+      "destinationIcao": "KDAB"
+    },
+    {
+      "id": "departure-dl3154-dab-atl",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "dal",
+      "flightNumber": "3154",
+      "originIcao": "KDAB",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-oh5214-dab-clt",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "jia",
+      "flightNumber": "5214",
+      "originIcao": "KDAB",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "arrival-b61867-jfk-dab",
+      "category": "arrival",
+      "scheduledTime": "09:31",
+      "airlineIcao": "jbu",
+      "flightNumber": "1867",
+      "originIcao": "KJFK",
+      "destinationIcao": "KDAB"
+    },
+    {
+      "id": "arrival-dl3035-atl-dab",
+      "category": "arrival",
+      "scheduledTime": "10:19",
+      "airlineIcao": "dal",
+      "flightNumber": "3035",
+      "originIcao": "KATL",
+      "destinationIcao": "KDAB"
+    },
+    {
+      "id": "departure-b61868-dab-jfk",
+      "category": "departure",
+      "scheduledTime": "10:23",
+      "airlineIcao": "jbu",
+      "flightNumber": "1868",
+      "originIcao": "KDAB",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "arrival-oh5462-clt-dab",
+      "category": "arrival",
+      "scheduledTime": "10:49",
+      "airlineIcao": "jia",
+      "flightNumber": "5462",
+      "originIcao": "KCLT",
+      "destinationIcao": "KDAB"
+    },
+    {
+      "id": "departure-oh5462-dab-clt",
+      "category": "departure",
+      "scheduledTime": "11:20",
+      "airlineIcao": "jia",
+      "flightNumber": "5462",
+      "originIcao": "KDAB",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-dl3035-dab-atl",
+      "category": "departure",
+      "scheduledTime": "11:34",
+      "airlineIcao": "dal",
+      "flightNumber": "3035",
+      "originIcao": "KDAB",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-oh5148-clt-dab",
+      "category": "arrival",
+      "scheduledTime": "13:27",
+      "airlineIcao": "jia",
+      "flightNumber": "5148",
+      "originIcao": "KCLT",
+      "destinationIcao": "KDAB"
+    },
+    {
+      "id": "t100-mx-arrival-kpvd-f-001",
+      "scheduledTime": "13:31",
+      "category": "arrival",
+      "originIcao": "KPVD",
+      "destinationIcao": "KDAB",
+      "airlineIcao": "mxy",
+      "flightNumber": "2718"
+    },
+    {
+      "id": "t100-aa-departure-kclt-f-001",
+      "scheduledTime": "13:55",
+      "category": "departure",
+      "originIcao": "KDAB",
+      "destinationIcao": "KCLT",
+      "airlineIcao": "aal",
+      "flightNumber": "3367"
+    },
+    {
+      "id": "departure-oh5148-dab-clt",
+      "category": "departure",
+      "scheduledTime": "13:57",
+      "airlineIcao": "jia",
+      "flightNumber": "5148",
+      "originIcao": "KDAB",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "arrival-dl2827-atl-dab",
+      "category": "arrival",
+      "scheduledTime": "13:59",
+      "airlineIcao": "dal",
+      "flightNumber": "2827",
+      "originIcao": "KATL",
+      "destinationIcao": "KDAB"
+    },
+    {
+      "id": "departure-dl2827-dab-atl",
+      "category": "departure",
+      "scheduledTime": "15:04",
+      "airlineIcao": "dal",
+      "flightNumber": "2827",
+      "originIcao": "KDAB",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-b61499-bos-dab",
+      "category": "arrival",
+      "scheduledTime": "15:05",
+      "airlineIcao": "jbu",
+      "flightNumber": "1499",
+      "originIcao": "KBOS",
+      "destinationIcao": "KDAB"
+    },
+    {
+      "id": "departure-b61500-dab-bos",
+      "category": "departure",
+      "scheduledTime": "15:59",
+      "airlineIcao": "jbu",
+      "flightNumber": "1500",
+      "originIcao": "KDAB",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "arrival-dl3056-atl-dab",
+      "category": "arrival",
+      "scheduledTime": "18:16",
+      "airlineIcao": "dal",
+      "flightNumber": "3056",
+      "originIcao": "KATL",
+      "destinationIcao": "KDAB"
+    },
+    {
+      "id": "departure-dl3056-dab-atl",
+      "category": "departure",
+      "scheduledTime": "19:22",
+      "airlineIcao": "dal",
+      "flightNumber": "3056",
+      "originIcao": "KDAB",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-oh5150-clt-dab",
+      "category": "arrival",
+      "scheduledTime": "19:33",
+      "airlineIcao": "jia",
+      "flightNumber": "5150",
+      "originIcao": "KCLT",
+      "destinationIcao": "KDAB"
+    },
+    {
+      "id": "departure-oh5150-dab-clt",
+      "category": "departure",
+      "scheduledTime": "20:03",
+      "airlineIcao": "jia",
+      "flightNumber": "5150",
+      "originIcao": "KDAB",
+      "destinationIcao": "KCLT"
+    }
+  ]
+}

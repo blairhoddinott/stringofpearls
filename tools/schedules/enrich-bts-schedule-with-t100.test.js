@@ -423,6 +423,58 @@ assert.throws(
     /unresolved T-100 airport code: ZZZ/,
     'positive source routes must resolve even when their daily quota rounds to zero'
 );
+
+const withReviewedEndpointExclusion = enrichScheduleWithT100({
+    baseSchedule,
+    t100Csv: `${input.trimEnd()}\n0,1,SK,99998,Scandinavian Airlines Sys.,SK,Scandinavian Airlines Sys.,SEA,T82,819,1,2026,4,F,DU\n`,
+    airportMap: buildAirportIcaoMap(airportsCsv),
+    ...options,
+    excludedAirportCodes: {
+        T82: 'FAA-only location identifier has no four-letter ICAO endpoint representable by the schedule contract.'
+    }
+});
+assert.deepStrictEqual(
+    withReviewedEndpointExclusion,
+    enriched,
+    'explicit reviewed non-representable endpoints are excluded before quota allocation'
+);
+assert.throws(
+    () => enrichScheduleWithT100({
+        baseSchedule,
+        t100Csv: input,
+        airportMap: buildAirportIcaoMap(airportsCsv),
+        ...options,
+        excludedAirportCodes: { t82: '' }
+    }),
+    /excluded airport code/,
+    'endpoint exclusions require valid source codes and non-empty reasons'
+);
+
+const withReviewedCarrierExclusion = enrichScheduleWithT100({
+    baseSchedule,
+    t100Csv: `${input.trimEnd()}\n0,1,X4,99997,Air Excursions LLC,X4,Air Excursions LLC,SEA,PDX,819,7,2026,4,F,DU\n`,
+    airportMap: buildAirportIcaoMap(airportsCsv),
+    ...options,
+    excludedCarrierCodes: {
+        X4: 'Air Excursions has no current three-letter ICAO designator representable by the airline asset contract.'
+    }
+});
+assert.deepStrictEqual(
+    withReviewedCarrierExclusion,
+    enriched,
+    'explicit reviewed non-representable carriers are excluded before quota allocation'
+);
+assert.throws(
+    () => enrichScheduleWithT100({
+        baseSchedule,
+        t100Csv: input,
+        airportMap: buildAirportIcaoMap(airportsCsv),
+        ...options,
+        excludedCarrierCodes: { 'x-4': '' }
+    }),
+    /excluded carrier code/,
+    'carrier exclusions require valid source codes and non-empty reasons'
+);
 assert.throws(
     () => enrichScheduleWithT100({
         baseSchedule,

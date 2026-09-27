@@ -19,6 +19,9 @@ const REQUIRED_COLUMNS = [
     'DATA_SOURCE'
 ];
 const INCLUDED_SERVICE_CLASSES = new Set(['F', 'G']);
+const AIRPORT_ALIAS_MAP_PATH = path.join(__dirname, 'airport-code-aliases.json');
+const EXCLUDED_AIRPORT_CODES_PATH = path.join(__dirname, 't100-excluded-airport-codes.json');
+const EXCLUDED_CARRIER_CODES_PATH = path.join(__dirname, 't100-excluded-carrier-codes.json');
 
 function isRealDate(value) {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) {
@@ -151,7 +154,31 @@ function allocateByWeight(items, quota, weightOf, keyOf) {
     return allocations;
 }
 
-function aggregateT100({ t100Csv, airportIata, year, month }) {
+function aggregateT100({
+    t100Csv,
+    airportIata,
+    year,
+    month,
+    excludedAirportCodes = {},
+    excludedCarrierCodes = {}
+}) {
+    if (excludedAirportCodes === null || typeof excludedAirportCodes !== 'object' || Array.isArray(excludedAirportCodes)) {
+        throw new TypeError('excluded airport codes must be an object');
+    }
+    Object.entries(excludedAirportCodes).forEach(([code, reason]) => {
+        if (!/^[A-Z0-9]{3}$/.test(code) || typeof reason !== 'string' || reason.trim() === '') {
+            throw new TypeError(`excluded airport code ${JSON.stringify(code)} must have a non-empty reason`);
+        }
+    });
+    if (excludedCarrierCodes === null || typeof excludedCarrierCodes !== 'object' || Array.isArray(excludedCarrierCodes)) {
+        throw new TypeError('excluded carrier codes must be an object');
+    }
+    Object.entries(excludedCarrierCodes).forEach(([code, reason]) => {
+        if (!/^[A-Z0-9]{2,3}$/.test(code) || typeof reason !== 'string' || reason.trim() === '') {
+            throw new TypeError(`excluded carrier code ${JSON.stringify(code)} must have a non-empty reason`);
+        }
+    });
+
     const table = parseCsv(t100Csv);
     if (table.length < 2) {
         throw new Error('T-100 CSV contains no data rows');
@@ -210,6 +237,12 @@ function aggregateT100({ t100Csv, airportIata, year, month }) {
 
         const category = destination === airportIata ? 'arrival' : 'departure';
         const remoteIata = category === 'arrival' ? origin : destination;
+        if (Object.prototype.hasOwnProperty.call(excludedCarrierCodes, carrier)) {
+            return;
+        }
+        if (Object.prototype.hasOwnProperty.call(excludedAirportCodes, remoteIata)) {
+            return;
+        }
         const key = [carrier, serviceClass, category, remoteIata].join('|');
         const current = aggregates.get(key) || {
             carrier,
@@ -382,7 +415,9 @@ function enrichScheduleWithT100({
     retrievedAt,
     sourceUrl,
     airlineMap,
-    airlineIcaoExists
+    airlineIcaoExists,
+    excludedAirportCodes = {},
+    excludedCarrierCodes = {}
 }) {
     validateOptions({
         baseSchedule,
@@ -396,7 +431,14 @@ function enrichScheduleWithT100({
         airlineIcaoExists
     });
     assertScheduleContract('base schedule', baseSchedule, airlineIcaoExists);
-    const aggregates = aggregateT100({ t100Csv, airportIata, year, month });
+    const aggregates = aggregateT100({
+        t100Csv,
+        airportIata,
+        year,
+        month,
+        excludedAirportCodes,
+        excludedCarrierCodes
+    });
     const unresolvedAirports = new Set();
     const unresolvedCarriers = new Set();
     aggregates.forEach((aggregate) => {
@@ -623,11 +665,17 @@ function importEnrichedSchedule({
     year,
     month,
     retrievedAt,
-    sourceUrl
+    sourceUrl,
+    airportAliasMapPath = AIRPORT_ALIAS_MAP_PATH,
+    excludedAirportCodesPath = EXCLUDED_AIRPORT_CODES_PATH,
+    excludedCarrierCodesPath = EXCLUDED_CARRIER_CODES_PATH
 }) {
     const baseSchedule = JSON.parse(fs.readFileSync(basePath, 'utf8'));
     const t100Csv = fs.readFileSync(t100Path, 'utf8');
-    const airportMap = buildAirportIcaoMap(fs.readFileSync(airportsPath, 'utf8'));
+    const airportAliases = JSON.parse(fs.readFileSync(airportAliasMapPath, 'utf8'));
+    const airportMap = buildAirportIcaoMap(fs.readFileSync(airportsPath, 'utf8'), airportAliases);
+    const excludedAirportCodes = JSON.parse(fs.readFileSync(excludedAirportCodesPath, 'utf8'));
+    const excludedCarrierCodes = JSON.parse(fs.readFileSync(excludedCarrierCodesPath, 'utf8'));
     const airlineMap = loadAirlineMap(airlineMapPath, airlinesDirectory);
     const schedule = enrichScheduleWithT100({
         baseSchedule,
@@ -640,7 +688,9 @@ function importEnrichedSchedule({
         retrievedAt,
         sourceUrl,
         airlineMap,
-        airlineIcaoExists: (icao) => Object.values(airlineMap).includes(icao)
+        airlineIcaoExists: (icao) => Object.values(airlineMap).includes(icao),
+        excludedAirportCodes,
+        excludedCarrierCodes
     });
     const contents = `${JSON.stringify(schedule, null, 2)}\n`;
     const temporaryPath = `${outputPath}.tmp-${process.pid}`;

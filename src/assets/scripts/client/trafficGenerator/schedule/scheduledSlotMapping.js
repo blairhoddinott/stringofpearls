@@ -138,6 +138,29 @@ export function selectCandidateSpawnPattern(scheduledModel, candidatePatterns) {
  * @return {{ candidate: SpawnPatternModel, identity: object|null }}
  */
 export function resolveScheduledSpawnPlan(scheduledModel, { candidatePatterns, isAirlineKnown, isAircraftTypeKnown }) {
+    if (scheduledModel.spawnPatternKey != null) {
+        const keyedCandidates = candidatePatterns.filter(
+            (candidate) => candidate.authoredScheduleKey === scheduledModel.spawnPatternKey
+        );
+
+        if (keyedCandidates.length === 0) {
+            throw new RangeError(`No spawn pattern matches authored key ${scheduledModel.spawnPatternKey}.`);
+        }
+        if (keyedCandidates.length > 1) {
+            throw new RangeError(`Multiple spawn patterns match authored key ${scheduledModel.spawnPatternKey}.`);
+        }
+
+        const candidate = keyedCandidates[0];
+        if (candidate.category !== scheduledModel.category) {
+            throw new RangeError(
+                `Spawn pattern ${scheduledModel.spawnPatternKey} category ${candidate.category} does not match ` +
+                `authored slot category ${scheduledModel.category}.`
+            );
+        }
+
+        return { candidate, identity: null };
+    }
+
     const candidate = selectCandidateSpawnPattern(scheduledModel, candidatePatterns);
 
     if (!isAirlineKnown(scheduledModel.airlineIcao)) {

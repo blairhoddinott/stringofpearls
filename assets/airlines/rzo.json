@@ -1,0 +1,6 @@
+{
+    "icao": "rzo",
+    "name": "Azores Airlines",
+    "callsign": { "name": "Air Azores", "callsignFormats": ["###"] },
+    "fleets": { "default": [["A321", 1]] }
+}

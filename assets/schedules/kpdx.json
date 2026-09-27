@@ -1,0 +1,4299 @@
+{
+  "schemaVersion": 1,
+  "airportIcao": "KPDX",
+  "timezone": "America/Los_Angeles",
+  "sampleDate": "2026-07-15",
+  "source": {
+    "name": "US DOT BTS On-Time Performance + T-100 Segment (All Carriers)",
+    "url": "https://transtats.bts.gov/DL_SelectFields.aspx?QO_fu146_anzr=Nv4+Pn44vr45&gnoyr_VQ=FMG",
+    "retrievedAt": "2026-09-27",
+    "license": "U.S. Government work in the public domain (17 U.S.C. §105); OurAirports code data is public domain.",
+    "coverage": "Exact On-Time movements are retained; 81 representative movements were deterministically synthesized from 2026-05 T-100 performed-departure aggregates. General aviation is excluded."
+  },
+  "flights": [
+    {
+      "id": "arrival-wn4770-phx-pdx",
+      "category": "arrival",
+      "scheduledTime": "00:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4770",
+      "originIcao": "KPHX",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-dl2359-pdx-msp",
+      "category": "departure",
+      "scheduledTime": "00:33",
+      "airlineIcao": "dal",
+      "flightNumber": "2359",
+      "originIcao": "KPDX",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "t100-qk-arrival-cyvr-f-001",
+      "scheduledTime": "00:48",
+      "category": "arrival",
+      "originIcao": "CYVR",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "jza",
+      "flightNumber": "6212"
+    },
+    {
+      "id": "arrival-aa1317-ord-pdx",
+      "category": "arrival",
+      "scheduledTime": "00:50",
+      "airlineIcao": "aal",
+      "flightNumber": "1317",
+      "originIcao": "KORD",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-ua2384-sfo-pdx",
+      "category": "arrival",
+      "scheduledTime": "00:50",
+      "airlineIcao": "ual",
+      "flightNumber": "2384",
+      "originIcao": "KSFO",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-aa2620-dfw-pdx",
+      "category": "arrival",
+      "scheduledTime": "00:55",
+      "airlineIcao": "aal",
+      "flightNumber": "2620",
+      "originIcao": "KDFW",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-ua459-pdx-den",
+      "category": "departure",
+      "scheduledTime": "05:00",
+      "airlineIcao": "ual",
+      "flightNumber": "459",
+      "originIcao": "KPDX",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-wn4928-pdx-oak",
+      "category": "departure",
+      "scheduledTime": "05:00",
+      "airlineIcao": "swa",
+      "flightNumber": "4928",
+      "originIcao": "KPDX",
+      "destinationIcao": "KOAK"
+    },
+    {
+      "id": "t100-qx-departure-ksjc-f-001",
+      "scheduledTime": "05:00",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSJC",
+      "airlineIcao": "qxe",
+      "flightNumber": "2221"
+    },
+    {
+      "id": "departure-aa982-pdx-dfw",
+      "category": "departure",
+      "scheduledTime": "05:07",
+      "airlineIcao": "aal",
+      "flightNumber": "982",
+      "originIcao": "KPDX",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-ua1896-pdx-sfo",
+      "category": "departure",
+      "scheduledTime": "05:15",
+      "airlineIcao": "ual",
+      "flightNumber": "1896",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-wn4179-pdx-las",
+      "category": "departure",
+      "scheduledTime": "05:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4179",
+      "originIcao": "KPDX",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-aa2658-pdx-phx",
+      "category": "departure",
+      "scheduledTime": "05:20",
+      "airlineIcao": "aal",
+      "flightNumber": "2658",
+      "originIcao": "KPDX",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-wn3211-pdx-smf",
+      "category": "departure",
+      "scheduledTime": "05:25",
+      "airlineIcao": "swa",
+      "flightNumber": "3211",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSMF"
+    },
+    {
+      "id": "t100-abx-departure-ksea-g-001",
+      "scheduledTime": "05:26",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "abx",
+      "flightNumber": "5355"
+    },
+    {
+      "id": "arrival-as1520-fai-pdx",
+      "category": "arrival",
+      "scheduledTime": "05:30",
+      "airlineIcao": "asa",
+      "flightNumber": "1520",
+      "originIcao": "PAFA",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-oo4008-pdx-sea",
+      "category": "departure",
+      "scheduledTime": "05:30",
+      "airlineIcao": "skw",
+      "flightNumber": "4008",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "arrival-as558-ogg-pdx",
+      "category": "arrival",
+      "scheduledTime": "05:32",
+      "airlineIcao": "asa",
+      "flightNumber": "558",
+      "originIcao": "PHOG",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-wn3195-pdx-den",
+      "category": "departure",
+      "scheduledTime": "05:35",
+      "airlineIcao": "swa",
+      "flightNumber": "3195",
+      "originIcao": "KPDX",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-dl1270-pdx-slc",
+      "category": "departure",
+      "scheduledTime": "05:45",
+      "airlineIcao": "dal",
+      "flightNumber": "1270",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-aa1310-pdx-clt",
+      "category": "departure",
+      "scheduledTime": "05:49",
+      "airlineIcao": "aal",
+      "flightNumber": "1310",
+      "originIcao": "KPDX",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-wn4666-pdx-phx",
+      "category": "departure",
+      "scheduledTime": "05:50",
+      "airlineIcao": "swa",
+      "flightNumber": "4666",
+      "originIcao": "KPDX",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "t100-qx-departure-kabq-f-001",
+      "scheduledTime": "05:53",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KABQ",
+      "airlineIcao": "qxe",
+      "flightNumber": "3290"
+    },
+    {
+      "id": "arrival-as609-anc-pdx",
+      "category": "arrival",
+      "scheduledTime": "06:00",
+      "airlineIcao": "asa",
+      "flightNumber": "609",
+      "originIcao": "PANC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-dl2369-pdx-msp",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "dal",
+      "flightNumber": "2369",
+      "originIcao": "KPDX",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "departure-wn3669-pdx-mdw",
+      "category": "departure",
+      "scheduledTime": "06:05",
+      "airlineIcao": "swa",
+      "flightNumber": "3669",
+      "originIcao": "KPDX",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "departure-aa2933-pdx-ord",
+      "category": "departure",
+      "scheduledTime": "06:07",
+      "airlineIcao": "aal",
+      "flightNumber": "2933",
+      "originIcao": "KPDX",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-qx-arrival-ksjc-f-001",
+      "scheduledTime": "06:08",
+      "category": "arrival",
+      "originIcao": "KSJC",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "qxe",
+      "flightNumber": "925"
+    },
+    {
+      "id": "arrival-as710-geg-pdx",
+      "category": "arrival",
+      "scheduledTime": "06:10",
+      "airlineIcao": "asa",
+      "flightNumber": "710",
+      "originIcao": "KGEG",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as880-hnl-pdx",
+      "category": "arrival",
+      "scheduledTime": "06:11",
+      "airlineIcao": "asa",
+      "flightNumber": "880",
+      "originIcao": "PHNL",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as1566-boi-pdx",
+      "category": "arrival",
+      "scheduledTime": "06:17",
+      "airlineIcao": "asa",
+      "flightNumber": "1566",
+      "originIcao": "KBOI",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-oo3109-psc-pdx",
+      "category": "arrival",
+      "scheduledTime": "06:18",
+      "airlineIcao": "skw",
+      "flightNumber": "3109",
+      "originIcao": "KPSC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-as499-pdx-sea",
+      "category": "departure",
+      "scheduledTime": "06:19",
+      "airlineIcao": "asa",
+      "flightNumber": "499",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-5x-departure-kont-g-001",
+      "scheduledTime": "06:20",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KONT",
+      "airlineIcao": "ups",
+      "flightNumber": "8263"
+    },
+    {
+      "id": "departure-dl2947-pdx-lax",
+      "category": "departure",
+      "scheduledTime": "06:30",
+      "airlineIcao": "dal",
+      "flightNumber": "2947",
+      "originIcao": "KPDX",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-dl662-pdx-atl",
+      "category": "departure",
+      "scheduledTime": "06:35",
+      "airlineIcao": "dal",
+      "flightNumber": "662",
+      "originIcao": "KPDX",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-aa2216-pdx-dfw",
+      "category": "departure",
+      "scheduledTime": "06:39",
+      "airlineIcao": "aal",
+      "flightNumber": "2216",
+      "originIcao": "KPDX",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "t100-qx-departure-ksmf-f-001",
+      "scheduledTime": "06:59",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSMF",
+      "airlineIcao": "qxe",
+      "flightNumber": "1611"
+    },
+    {
+      "id": "departure-as1349-pdx-phx",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "asa",
+      "flightNumber": "1349",
+      "originIcao": "KPDX",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-as1404-pdx-sna",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "asa",
+      "flightNumber": "1404",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSNA"
+    },
+    {
+      "id": "departure-as300-pdx-mco",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "asa",
+      "flightNumber": "300",
+      "originIcao": "KPDX",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-as324-pdx-ord",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "asa",
+      "flightNumber": "324",
+      "originIcao": "KPDX",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-as358-pdx-bos",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "asa",
+      "flightNumber": "358",
+      "originIcao": "KPDX",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-as581-pdx-lax",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "asa",
+      "flightNumber": "581",
+      "originIcao": "KPDX",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-as739-pdx-ogg",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "asa",
+      "flightNumber": "739",
+      "originIcao": "KPDX",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "departure-oo3353-pdx-rno",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "skw",
+      "flightNumber": "3353",
+      "originIcao": "KPDX",
+      "destinationIcao": "KRNO"
+    },
+    {
+      "id": "departure-ua2306-pdx-ord",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "ual",
+      "flightNumber": "2306",
+      "originIcao": "KPDX",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-ua2818-pdx-sfo",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "ual",
+      "flightNumber": "2818",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "t100-4b-departure-kpdt-f-001",
+      "scheduledTime": "07:02",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KPDT",
+      "airlineIcao": "btq",
+      "flightNumber": "1622"
+    },
+    {
+      "id": "departure-as1420-pdx-iah",
+      "category": "departure",
+      "scheduledTime": "07:05",
+      "airlineIcao": "asa",
+      "flightNumber": "1420",
+      "originIcao": "KPDX",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-dl451-pdx-jfk",
+      "category": "departure",
+      "scheduledTime": "07:05",
+      "airlineIcao": "dal",
+      "flightNumber": "451",
+      "originIcao": "KPDX",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "departure-oo4471-pdx-sea",
+      "category": "departure",
+      "scheduledTime": "07:05",
+      "airlineIcao": "skw",
+      "flightNumber": "4471",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-g4-departure-kiwa-f-001",
+      "scheduledTime": "07:06",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KIWA",
+      "airlineIcao": "aay",
+      "flightNumber": "7400"
+    },
+    {
+      "id": "arrival-wn4099-smf-pdx",
+      "category": "arrival",
+      "scheduledTime": "07:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4099",
+      "originIcao": "KSMF",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-as1615-pdx-anc",
+      "category": "departure",
+      "scheduledTime": "07:11",
+      "airlineIcao": "asa",
+      "flightNumber": "1615",
+      "originIcao": "KPDX",
+      "destinationIcao": "PANC"
+    },
+    {
+      "id": "departure-as374-pdx-bwi",
+      "category": "departure",
+      "scheduledTime": "07:12",
+      "airlineIcao": "asa",
+      "flightNumber": "374",
+      "originIcao": "KPDX",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "departure-ua462-pdx-iah",
+      "category": "departure",
+      "scheduledTime": "07:13",
+      "airlineIcao": "ual",
+      "flightNumber": "462",
+      "originIcao": "KPDX",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-as1776-pdx-phl",
+      "category": "departure",
+      "scheduledTime": "07:17",
+      "airlineIcao": "asa",
+      "flightNumber": "1776",
+      "originIcao": "KPDX",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "t100-kl-departure-eham-f-001",
+      "scheduledTime": "07:18",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "EHAM",
+      "airlineIcao": "klm",
+      "flightNumber": "1560"
+    },
+    {
+      "id": "departure-as526-pdx-sfo",
+      "category": "departure",
+      "scheduledTime": "07:19",
+      "airlineIcao": "asa",
+      "flightNumber": "526",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-as401-pdx-den",
+      "category": "departure",
+      "scheduledTime": "07:20",
+      "airlineIcao": "asa",
+      "flightNumber": "401",
+      "originIcao": "KPDX",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-y4-departure-mmgl-f-001",
+      "scheduledTime": "07:28",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "MMGL",
+      "airlineIcao": "voi",
+      "flightNumber": "7517"
+    },
+    {
+      "id": "departure-as784-pdx-atl",
+      "category": "departure",
+      "scheduledTime": "07:30",
+      "airlineIcao": "asa",
+      "flightNumber": "784",
+      "originIcao": "KPDX",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-as577-pdx-san",
+      "category": "departure",
+      "scheduledTime": "07:32",
+      "airlineIcao": "asa",
+      "flightNumber": "577",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "departure-as1449-pdx-ont",
+      "category": "departure",
+      "scheduledTime": "07:36",
+      "airlineIcao": "asa",
+      "flightNumber": "1449",
+      "originIcao": "KPDX",
+      "destinationIcao": "KONT"
+    },
+    {
+      "id": "departure-as294-pdx-ewr",
+      "category": "departure",
+      "scheduledTime": "07:40",
+      "airlineIcao": "asa",
+      "flightNumber": "294",
+      "originIcao": "KPDX",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "departure-as879-pdx-hnl",
+      "category": "departure",
+      "scheduledTime": "07:46",
+      "airlineIcao": "asa",
+      "flightNumber": "879",
+      "originIcao": "KPDX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-wn4672-pdx-las",
+      "category": "departure",
+      "scheduledTime": "07:50",
+      "airlineIcao": "swa",
+      "flightNumber": "4672",
+      "originIcao": "KPDX",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-as10-pdx-dca",
+      "category": "departure",
+      "scheduledTime": "07:54",
+      "airlineIcao": "asa",
+      "flightNumber": "10",
+      "originIcao": "KPDX",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "arrival-wn3693-sjc-pdx",
+      "category": "arrival",
+      "scheduledTime": "07:55",
+      "airlineIcao": "swa",
+      "flightNumber": "3693",
+      "originIcao": "KSJC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-qk-departure-cyvr-f-003",
+      "scheduledTime": "07:55",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "CYVR",
+      "airlineIcao": "jza",
+      "flightNumber": "6801"
+    },
+    {
+      "id": "t100-qx-arrival-ksea-f-002",
+      "scheduledTime": "07:59",
+      "category": "arrival",
+      "originIcao": "KSEA",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "qxe",
+      "flightNumber": "9429"
+    },
+    {
+      "id": "departure-as252-pdx-koa",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "asa",
+      "flightNumber": "252",
+      "originIcao": "KPDX",
+      "destinationIcao": "PHKO"
+    },
+    {
+      "id": "arrival-wn1036-oak-pdx",
+      "category": "arrival",
+      "scheduledTime": "08:05",
+      "airlineIcao": "swa",
+      "flightNumber": "1036",
+      "originIcao": "KOAK",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-as883-pdx-lih",
+      "category": "departure",
+      "scheduledTime": "08:14",
+      "airlineIcao": "asa",
+      "flightNumber": "883",
+      "originIcao": "KPDX",
+      "destinationIcao": "PHLI"
+    },
+    {
+      "id": "departure-as485-pdx-smf",
+      "category": "departure",
+      "scheduledTime": "08:15",
+      "airlineIcao": "asa",
+      "flightNumber": "485",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSMF"
+    },
+    {
+      "id": "departure-ua1596-pdx-sfo",
+      "category": "departure",
+      "scheduledTime": "08:35",
+      "airlineIcao": "ual",
+      "flightNumber": "1596",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-wn3693-pdx-den",
+      "category": "departure",
+      "scheduledTime": "08:35",
+      "airlineIcao": "swa",
+      "flightNumber": "3693",
+      "originIcao": "KPDX",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-dl1203-slc-pdx",
+      "category": "arrival",
+      "scheduledTime": "08:37",
+      "airlineIcao": "dal",
+      "flightNumber": "1203",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-4b-departure-kpdt-f-002",
+      "scheduledTime": "08:38",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KPDT",
+      "airlineIcao": "btq",
+      "flightNumber": "8908"
+    },
+    {
+      "id": "arrival-oo3953-sea-pdx",
+      "category": "arrival",
+      "scheduledTime": "08:40",
+      "airlineIcao": "skw",
+      "flightNumber": "3953",
+      "originIcao": "KSEA",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-wn943-pdx-sjc",
+      "category": "departure",
+      "scheduledTime": "08:45",
+      "airlineIcao": "swa",
+      "flightNumber": "943",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSJC"
+    },
+    {
+      "id": "arrival-oo3417-sts-pdx",
+      "category": "arrival",
+      "scheduledTime": "08:47",
+      "airlineIcao": "skw",
+      "flightNumber": "3417",
+      "originIcao": "KSTS",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-ua2375-pdx-den",
+      "category": "departure",
+      "scheduledTime": "08:50",
+      "airlineIcao": "ual",
+      "flightNumber": "2375",
+      "originIcao": "KPDX",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-5x-arrival-kdfw-g-001",
+      "scheduledTime": "08:59",
+      "category": "arrival",
+      "originIcao": "KDFW",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "ups",
+      "flightNumber": "6871"
+    },
+    {
+      "id": "departure-as1628-pdx-las",
+      "category": "departure",
+      "scheduledTime": "09:00",
+      "airlineIcao": "asa",
+      "flightNumber": "1628",
+      "originIcao": "KPDX",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "arrival-as1410-sfo-pdx",
+      "category": "arrival",
+      "scheduledTime": "09:02",
+      "airlineIcao": "asa",
+      "flightNumber": "1410",
+      "originIcao": "KSFO",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as1629-las-pdx",
+      "category": "arrival",
+      "scheduledTime": "09:17",
+      "airlineIcao": "asa",
+      "flightNumber": "1629",
+      "originIcao": "KLAS",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as311-bos-pdx",
+      "category": "arrival",
+      "scheduledTime": "09:19",
+      "airlineIcao": "asa",
+      "flightNumber": "311",
+      "originIcao": "KBOS",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-as427-pdx-sea",
+      "category": "departure",
+      "scheduledTime": "09:19",
+      "airlineIcao": "asa",
+      "flightNumber": "427",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "arrival-as668-lax-pdx",
+      "category": "arrival",
+      "scheduledTime": "09:21",
+      "airlineIcao": "asa",
+      "flightNumber": "668",
+      "originIcao": "KLAX",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-dl2975-lax-pdx",
+      "category": "arrival",
+      "scheduledTime": "09:23",
+      "airlineIcao": "dal",
+      "flightNumber": "2975",
+      "originIcao": "KLAX",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as750-sna-pdx",
+      "category": "arrival",
+      "scheduledTime": "09:24",
+      "airlineIcao": "asa",
+      "flightNumber": "750",
+      "originIcao": "KSNA",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as541-aus-pdx",
+      "category": "arrival",
+      "scheduledTime": "09:25",
+      "airlineIcao": "asa",
+      "flightNumber": "541",
+      "originIcao": "KAUS",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-ua1613-ewr-pdx",
+      "category": "arrival",
+      "scheduledTime": "09:25",
+      "airlineIcao": "ual",
+      "flightNumber": "1613",
+      "originIcao": "KEWR",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-oo3004-slc-pdx",
+      "category": "arrival",
+      "scheduledTime": "09:26",
+      "airlineIcao": "skw",
+      "flightNumber": "3004",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-5x-departure-kgeg-g-001",
+      "scheduledTime": "09:26",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KGEG",
+      "airlineIcao": "ups",
+      "flightNumber": "1394"
+    },
+    {
+      "id": "t100-qx-arrival-ksmf-f-001",
+      "scheduledTime": "09:26",
+      "category": "arrival",
+      "originIcao": "KSMF",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "qxe",
+      "flightNumber": "9318"
+    },
+    {
+      "id": "arrival-as562-bur-pdx",
+      "category": "arrival",
+      "scheduledTime": "09:27",
+      "airlineIcao": "asa",
+      "flightNumber": "562",
+      "originIcao": "KBUR",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-oo3487-fat-pdx",
+      "category": "arrival",
+      "scheduledTime": "09:27",
+      "airlineIcao": "skw",
+      "flightNumber": "3487",
+      "originIcao": "KFAT",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-fx-arrival-kmem-g-001",
+      "scheduledTime": "09:28",
+      "category": "arrival",
+      "originIcao": "KMEM",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "fdx",
+      "flightNumber": "4022"
+    },
+    {
+      "id": "arrival-as399-san-pdx",
+      "category": "arrival",
+      "scheduledTime": "09:29",
+      "airlineIcao": "asa",
+      "flightNumber": "399",
+      "originIcao": "KSAN",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-oo3105-bli-pdx",
+      "category": "arrival",
+      "scheduledTime": "09:29",
+      "airlineIcao": "skw",
+      "flightNumber": "3105",
+      "originIcao": "KBLI",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-oo3055-pdx-oak",
+      "category": "departure",
+      "scheduledTime": "09:29",
+      "airlineIcao": "skw",
+      "flightNumber": "3055",
+      "originIcao": "KPDX",
+      "destinationIcao": "KOAK"
+    },
+    {
+      "id": "departure-oo3953-pdx-sea",
+      "category": "departure",
+      "scheduledTime": "09:32",
+      "airlineIcao": "skw",
+      "flightNumber": "3953",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "arrival-as1630-ewr-pdx",
+      "category": "arrival",
+      "scheduledTime": "09:33",
+      "airlineIcao": "asa",
+      "flightNumber": "1630",
+      "originIcao": "KEWR",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as1643-rno-pdx",
+      "category": "arrival",
+      "scheduledTime": "09:33",
+      "airlineIcao": "asa",
+      "flightNumber": "1643",
+      "originIcao": "KRNO",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-g4-arrival-kiwa-f-001",
+      "scheduledTime": "09:33",
+      "category": "arrival",
+      "originIcao": "KIWA",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "aay",
+      "flightNumber": "9442"
+    },
+    {
+      "id": "arrival-ua2300-ord-pdx",
+      "category": "arrival",
+      "scheduledTime": "09:34",
+      "airlineIcao": "ual",
+      "flightNumber": "2300",
+      "originIcao": "KORD",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as511-phx-pdx",
+      "category": "arrival",
+      "scheduledTime": "09:43",
+      "airlineIcao": "asa",
+      "flightNumber": "511",
+      "originIcao": "KPHX",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as679-sjc-pdx",
+      "category": "arrival",
+      "scheduledTime": "09:44",
+      "airlineIcao": "asa",
+      "flightNumber": "679",
+      "originIcao": "KSJC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as413-ord-pdx",
+      "category": "arrival",
+      "scheduledTime": "09:45",
+      "airlineIcao": "asa",
+      "flightNumber": "413",
+      "originIcao": "KORD",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-wn300-den-pdx",
+      "category": "arrival",
+      "scheduledTime": "09:45",
+      "airlineIcao": "swa",
+      "flightNumber": "300",
+      "originIcao": "KDEN",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-dl1203-pdx-slc",
+      "category": "departure",
+      "scheduledTime": "09:45",
+      "airlineIcao": "dal",
+      "flightNumber": "1203",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-as1626-den-pdx",
+      "category": "arrival",
+      "scheduledTime": "09:46",
+      "airlineIcao": "asa",
+      "flightNumber": "1626",
+      "originIcao": "KDEN",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-oo3201-geg-pdx",
+      "category": "arrival",
+      "scheduledTime": "09:46",
+      "airlineIcao": "skw",
+      "flightNumber": "3201",
+      "originIcao": "KGEG",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-ua1247-den-pdx",
+      "category": "arrival",
+      "scheduledTime": "09:47",
+      "airlineIcao": "ual",
+      "flightNumber": "1247",
+      "originIcao": "KDEN",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-oo3370-psp-pdx",
+      "category": "arrival",
+      "scheduledTime": "09:48",
+      "airlineIcao": "skw",
+      "flightNumber": "3370",
+      "originIcao": "KPSP",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-oo3132-sea-pdx",
+      "category": "arrival",
+      "scheduledTime": "09:49",
+      "airlineIcao": "skw",
+      "flightNumber": "3132",
+      "originIcao": "KSEA",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-5x-arrival-ksdf-g-001",
+      "scheduledTime": "09:50",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "ups",
+      "flightNumber": "7745"
+    },
+    {
+      "id": "arrival-wn1377-dal-pdx",
+      "category": "arrival",
+      "scheduledTime": "10:00",
+      "airlineIcao": "swa",
+      "flightNumber": "1377",
+      "originIcao": "KDAL",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-qx-arrival-kbil-f-001",
+      "scheduledTime": "10:01",
+      "category": "arrival",
+      "originIcao": "KBIL",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "qxe",
+      "flightNumber": "125"
+    },
+    {
+      "id": "arrival-wn4132-las-pdx",
+      "category": "arrival",
+      "scheduledTime": "10:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4132",
+      "originIcao": "KLAS",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-ua2265-sfo-pdx",
+      "category": "arrival",
+      "scheduledTime": "10:20",
+      "airlineIcao": "ual",
+      "flightNumber": "2265",
+      "originIcao": "KSFO",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-wn300-pdx-smf",
+      "category": "departure",
+      "scheduledTime": "10:25",
+      "airlineIcao": "swa",
+      "flightNumber": "300",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSMF"
+    },
+    {
+      "id": "arrival-dl539-atl-pdx",
+      "category": "arrival",
+      "scheduledTime": "10:27",
+      "airlineIcao": "dal",
+      "flightNumber": "539",
+      "originIcao": "KATL",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-wn4092-phx-pdx",
+      "category": "arrival",
+      "scheduledTime": "10:30",
+      "airlineIcao": "swa",
+      "flightNumber": "4092",
+      "originIcao": "KPHX",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-as1376-pdx-bna",
+      "category": "departure",
+      "scheduledTime": "10:30",
+      "airlineIcao": "asa",
+      "flightNumber": "1376",
+      "originIcao": "KPDX",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-as1429-pdx-msp",
+      "category": "departure",
+      "scheduledTime": "10:30",
+      "airlineIcao": "asa",
+      "flightNumber": "1429",
+      "originIcao": "KPDX",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "departure-as250-pdx-geg",
+      "category": "departure",
+      "scheduledTime": "10:30",
+      "airlineIcao": "asa",
+      "flightNumber": "250",
+      "originIcao": "KPDX",
+      "destinationIcao": "KGEG"
+    },
+    {
+      "id": "departure-as540-pdx-aus",
+      "category": "departure",
+      "scheduledTime": "10:30",
+      "airlineIcao": "asa",
+      "flightNumber": "540",
+      "originIcao": "KPDX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-as716-pdx-phx",
+      "category": "departure",
+      "scheduledTime": "10:30",
+      "airlineIcao": "asa",
+      "flightNumber": "716",
+      "originIcao": "KPDX",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-as775-pdx-anc",
+      "category": "departure",
+      "scheduledTime": "10:30",
+      "airlineIcao": "asa",
+      "flightNumber": "775",
+      "originIcao": "KPDX",
+      "destinationIcao": "PANC"
+    },
+    {
+      "id": "departure-as813-pdx-hnl",
+      "category": "departure",
+      "scheduledTime": "10:30",
+      "airlineIcao": "asa",
+      "flightNumber": "813",
+      "originIcao": "KPDX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-oo3013-pdx-ida",
+      "category": "departure",
+      "scheduledTime": "10:30",
+      "airlineIcao": "skw",
+      "flightNumber": "3013",
+      "originIcao": "KPDX",
+      "destinationIcao": "KIDA"
+    },
+    {
+      "id": "t100-qx-departure-koak-f-001",
+      "scheduledTime": "10:30",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KOAK",
+      "airlineIcao": "qxe",
+      "flightNumber": "2037"
+    },
+    {
+      "id": "t100-qx-departure-kboi-f-001",
+      "scheduledTime": "10:31",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KBOI",
+      "airlineIcao": "qxe",
+      "flightNumber": "313"
+    },
+    {
+      "id": "arrival-oo3818-sea-pdx",
+      "category": "arrival",
+      "scheduledTime": "10:35",
+      "airlineIcao": "skw",
+      "flightNumber": "3818",
+      "originIcao": "KSEA",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-oo3431-pdx-sea",
+      "category": "departure",
+      "scheduledTime": "10:35",
+      "airlineIcao": "skw",
+      "flightNumber": "3431",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "arrival-aa2284-ord-pdx",
+      "category": "arrival",
+      "scheduledTime": "10:36",
+      "airlineIcao": "aal",
+      "flightNumber": "2284",
+      "originIcao": "KORD",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-dl2171-dtw-pdx",
+      "category": "arrival",
+      "scheduledTime": "10:36",
+      "airlineIcao": "dal",
+      "flightNumber": "2171",
+      "originIcao": "KDTW",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-qx-arrival-kboi-f-001",
+      "scheduledTime": "10:36",
+      "category": "arrival",
+      "originIcao": "KBOI",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "qxe",
+      "flightNumber": "961"
+    },
+    {
+      "id": "departure-as588-pdx-sna",
+      "category": "departure",
+      "scheduledTime": "10:38",
+      "airlineIcao": "asa",
+      "flightNumber": "588",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSNA"
+    },
+    {
+      "id": "departure-oo3300-pdx-mfr",
+      "category": "departure",
+      "scheduledTime": "10:40",
+      "airlineIcao": "skw",
+      "flightNumber": "3300",
+      "originIcao": "KPDX",
+      "destinationIcao": "KMFR"
+    },
+    {
+      "id": "departure-wn426-pdx-phx",
+      "category": "departure",
+      "scheduledTime": "10:40",
+      "airlineIcao": "swa",
+      "flightNumber": "426",
+      "originIcao": "KPDX",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "arrival-dl2415-msp-pdx",
+      "category": "arrival",
+      "scheduledTime": "10:41",
+      "airlineIcao": "dal",
+      "flightNumber": "2415",
+      "originIcao": "KMSP",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-5x-departure-kbfi-g-001",
+      "scheduledTime": "10:41",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KBFI",
+      "airlineIcao": "ups",
+      "flightNumber": "8440"
+    },
+    {
+      "id": "departure-as1445-pdx-sfo",
+      "category": "departure",
+      "scheduledTime": "10:42",
+      "airlineIcao": "asa",
+      "flightNumber": "1445",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-ua2359-pdx-ewr",
+      "category": "departure",
+      "scheduledTime": "10:42",
+      "airlineIcao": "ual",
+      "flightNumber": "2359",
+      "originIcao": "KPDX",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "t100-qk-departure-cyvr-f-001",
+      "scheduledTime": "10:43",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "CYVR",
+      "airlineIcao": "jza",
+      "flightNumber": "9778"
+    },
+    {
+      "id": "departure-as392-pdx-dfw",
+      "category": "departure",
+      "scheduledTime": "10:45",
+      "airlineIcao": "asa",
+      "flightNumber": "392",
+      "originIcao": "KPDX",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-as695-pdx-lax",
+      "category": "departure",
+      "scheduledTime": "10:45",
+      "airlineIcao": "asa",
+      "flightNumber": "695",
+      "originIcao": "KPDX",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-as757-pdx-las",
+      "category": "departure",
+      "scheduledTime": "10:45",
+      "airlineIcao": "asa",
+      "flightNumber": "757",
+      "originIcao": "KPDX",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-oo3350-pdx-jac",
+      "category": "departure",
+      "scheduledTime": "10:45",
+      "airlineIcao": "skw",
+      "flightNumber": "3350",
+      "originIcao": "KPDX",
+      "destinationIcao": "KJAC"
+    },
+    {
+      "id": "departure-wn1658-pdx-den",
+      "category": "departure",
+      "scheduledTime": "10:45",
+      "airlineIcao": "swa",
+      "flightNumber": "1658",
+      "originIcao": "KPDX",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-as1394-pdx-san",
+      "category": "departure",
+      "scheduledTime": "10:46",
+      "airlineIcao": "asa",
+      "flightNumber": "1394",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "departure-ua1641-pdx-ord",
+      "category": "departure",
+      "scheduledTime": "10:46",
+      "airlineIcao": "ual",
+      "flightNumber": "1641",
+      "originIcao": "KPDX",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-as18-pdx-jfk",
+      "category": "departure",
+      "scheduledTime": "10:47",
+      "airlineIcao": "asa",
+      "flightNumber": "18",
+      "originIcao": "KPDX",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "t100-qx-departure-kmfr-f-001",
+      "scheduledTime": "10:47",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KMFR",
+      "airlineIcao": "qxe",
+      "flightNumber": "2306"
+    },
+    {
+      "id": "departure-as1384-pdx-bur",
+      "category": "departure",
+      "scheduledTime": "10:49",
+      "airlineIcao": "asa",
+      "flightNumber": "1384",
+      "originIcao": "KPDX",
+      "destinationIcao": "KBUR"
+    },
+    {
+      "id": "departure-as1635-pdx-stl",
+      "category": "departure",
+      "scheduledTime": "10:49",
+      "airlineIcao": "asa",
+      "flightNumber": "1635",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-dl2975-pdx-lax",
+      "category": "departure",
+      "scheduledTime": "10:53",
+      "airlineIcao": "dal",
+      "flightNumber": "2975",
+      "originIcao": "KPDX",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-oo3112-pdx-slc",
+      "category": "departure",
+      "scheduledTime": "10:55",
+      "airlineIcao": "skw",
+      "flightNumber": "3112",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "t100-sy-departure-kmsp-f-001",
+      "scheduledTime": "10:55",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KMSP",
+      "airlineIcao": "scx",
+      "flightNumber": "3749"
+    },
+    {
+      "id": "departure-oo3063-pdx-eug",
+      "category": "departure",
+      "scheduledTime": "10:59",
+      "airlineIcao": "skw",
+      "flightNumber": "3063",
+      "originIcao": "KPDX",
+      "destinationIcao": "KEUG"
+    },
+    {
+      "id": "t100-ba-arrival-egll-f-001",
+      "scheduledTime": "11:00",
+      "category": "arrival",
+      "originIcao": "EGLL",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "baw",
+      "flightNumber": "9323"
+    },
+    {
+      "id": "arrival-aa2287-dfw-pdx",
+      "category": "arrival",
+      "scheduledTime": "11:01",
+      "airlineIcao": "aal",
+      "flightNumber": "2287",
+      "originIcao": "KDFW",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-ua2793-pdx-den",
+      "category": "departure",
+      "scheduledTime": "11:05",
+      "airlineIcao": "ual",
+      "flightNumber": "2793",
+      "originIcao": "KPDX",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-fx-departure-koth-g-001",
+      "scheduledTime": "11:11",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KOTH",
+      "airlineIcao": "fdx",
+      "flightNumber": "6053"
+    },
+    {
+      "id": "departure-oo3818-pdx-sea",
+      "category": "departure",
+      "scheduledTime": "11:15",
+      "airlineIcao": "skw",
+      "flightNumber": "3818",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-wn3202-pdx-mdw",
+      "category": "departure",
+      "scheduledTime": "11:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3202",
+      "originIcao": "KPDX",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "departure-ua1613-pdx-sfo",
+      "category": "departure",
+      "scheduledTime": "11:16",
+      "airlineIcao": "ual",
+      "flightNumber": "1613",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "arrival-oo3090-sea-pdx",
+      "category": "arrival",
+      "scheduledTime": "11:21",
+      "airlineIcao": "skw",
+      "flightNumber": "3090",
+      "originIcao": "KSEA",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-aa2284-pdx-ord",
+      "category": "departure",
+      "scheduledTime": "11:26",
+      "airlineIcao": "aal",
+      "flightNumber": "2284",
+      "originIcao": "KPDX",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-as1525-pdx-mci",
+      "category": "departure",
+      "scheduledTime": "11:30",
+      "airlineIcao": "asa",
+      "flightNumber": "1525",
+      "originIcao": "KPDX",
+      "destinationIcao": "KMCI"
+    },
+    {
+      "id": "arrival-aa3090-phl-pdx",
+      "category": "arrival",
+      "scheduledTime": "11:33",
+      "airlineIcao": "aal",
+      "flightNumber": "3090",
+      "originIcao": "KPHL",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-dl1574-jfk-pdx",
+      "category": "arrival",
+      "scheduledTime": "11:36",
+      "airlineIcao": "dal",
+      "flightNumber": "1574",
+      "originIcao": "KJFK",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-dl539-pdx-atl",
+      "category": "departure",
+      "scheduledTime": "11:37",
+      "airlineIcao": "dal",
+      "flightNumber": "539",
+      "originIcao": "KPDX",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-qx-arrival-kabq-f-001",
+      "scheduledTime": "11:37",
+      "category": "arrival",
+      "originIcao": "KABQ",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "qxe",
+      "flightNumber": "7968"
+    },
+    {
+      "id": "arrival-ua1994-ord-pdx",
+      "category": "arrival",
+      "scheduledTime": "11:38",
+      "airlineIcao": "ual",
+      "flightNumber": "1994",
+      "originIcao": "KORD",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-oo3802-sea-pdx",
+      "category": "arrival",
+      "scheduledTime": "11:41",
+      "airlineIcao": "skw",
+      "flightNumber": "3802",
+      "originIcao": "KSEA",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-5x-departure-ksdf-g-001",
+      "scheduledTime": "11:41",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSDF",
+      "airlineIcao": "ups",
+      "flightNumber": "7831"
+    },
+    {
+      "id": "departure-as1632-pdx-sjc",
+      "category": "departure",
+      "scheduledTime": "11:45",
+      "airlineIcao": "asa",
+      "flightNumber": "1632",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSJC"
+    },
+    {
+      "id": "departure-dl2415-pdx-msp",
+      "category": "departure",
+      "scheduledTime": "11:46",
+      "airlineIcao": "dal",
+      "flightNumber": "2415",
+      "originIcao": "KPDX",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "departure-aa2287-pdx-dfw",
+      "category": "departure",
+      "scheduledTime": "11:54",
+      "airlineIcao": "aal",
+      "flightNumber": "2287",
+      "originIcao": "KPDX",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-dl2171-pdx-dtw",
+      "category": "departure",
+      "scheduledTime": "11:55",
+      "airlineIcao": "dal",
+      "flightNumber": "2171",
+      "originIcao": "KPDX",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "arrival-ua740-iah-pdx",
+      "category": "arrival",
+      "scheduledTime": "11:56",
+      "airlineIcao": "ual",
+      "flightNumber": "740",
+      "originIcao": "KIAH",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-wn949-smf-pdx",
+      "category": "arrival",
+      "scheduledTime": "12:00",
+      "airlineIcao": "swa",
+      "flightNumber": "949",
+      "originIcao": "KSMF",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-oo3078-pdx-sea",
+      "category": "departure",
+      "scheduledTime": "12:03",
+      "airlineIcao": "skw",
+      "flightNumber": "3078",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "arrival-ua1301-sfo-pdx",
+      "category": "arrival",
+      "scheduledTime": "12:07",
+      "airlineIcao": "ual",
+      "flightNumber": "1301",
+      "originIcao": "KSFO",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-dl1209-slc-pdx",
+      "category": "arrival",
+      "scheduledTime": "12:10",
+      "airlineIcao": "dal",
+      "flightNumber": "1209",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-y4-arrival-mmgl-f-001",
+      "scheduledTime": "12:17",
+      "category": "arrival",
+      "originIcao": "MMGL",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "voi",
+      "flightNumber": "9593"
+    },
+    {
+      "id": "arrival-dl2766-lax-pdx",
+      "category": "arrival",
+      "scheduledTime": "12:20",
+      "airlineIcao": "dal",
+      "flightNumber": "2766",
+      "originIcao": "KLAX",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-qk-departure-cyvr-f-002",
+      "scheduledTime": "12:22",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "CYVR",
+      "airlineIcao": "jza",
+      "flightNumber": "8053"
+    },
+    {
+      "id": "departure-oo3802-pdx-sea",
+      "category": "departure",
+      "scheduledTime": "12:23",
+      "airlineIcao": "skw",
+      "flightNumber": "3802",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "arrival-wn2809-mdw-pdx",
+      "category": "arrival",
+      "scheduledTime": "12:30",
+      "airlineIcao": "swa",
+      "flightNumber": "2809",
+      "originIcao": "KMDW",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-aa3090-pdx-phl",
+      "category": "departure",
+      "scheduledTime": "12:35",
+      "airlineIcao": "aal",
+      "flightNumber": "3090",
+      "originIcao": "KPDX",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "departure-wn3563-pdx-oak",
+      "category": "departure",
+      "scheduledTime": "12:35",
+      "airlineIcao": "swa",
+      "flightNumber": "3563",
+      "originIcao": "KPDX",
+      "destinationIcao": "KOAK"
+    },
+    {
+      "id": "arrival-dl2167-msp-pdx",
+      "category": "arrival",
+      "scheduledTime": "12:38",
+      "airlineIcao": "dal",
+      "flightNumber": "2167",
+      "originIcao": "KMSP",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-aa2286-dfw-pdx",
+      "category": "arrival",
+      "scheduledTime": "12:40",
+      "airlineIcao": "aal",
+      "flightNumber": "2286",
+      "originIcao": "KDFW",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-aa1625-phx-pdx",
+      "category": "arrival",
+      "scheduledTime": "12:49",
+      "airlineIcao": "aal",
+      "flightNumber": "1625",
+      "originIcao": "KPHX",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-ua1411-pdx-den",
+      "category": "departure",
+      "scheduledTime": "12:50",
+      "airlineIcao": "ual",
+      "flightNumber": "1411",
+      "originIcao": "KPDX",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-dl2206-atl-pdx",
+      "category": "arrival",
+      "scheduledTime": "12:58",
+      "airlineIcao": "dal",
+      "flightNumber": "2206",
+      "originIcao": "KATL",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-ua1927-pdx-iah",
+      "category": "departure",
+      "scheduledTime": "13:02",
+      "airlineIcao": "ual",
+      "flightNumber": "1927",
+      "originIcao": "KPDX",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "t100-fx-arrival-kind-g-001",
+      "scheduledTime": "13:02",
+      "category": "arrival",
+      "originIcao": "KIND",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "fdx",
+      "flightNumber": "7137"
+    },
+    {
+      "id": "arrival-b6395-bos-pdx",
+      "category": "arrival",
+      "scheduledTime": "13:03",
+      "airlineIcao": "jbu",
+      "flightNumber": "395",
+      "originIcao": "KBOS",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as1699-ont-pdx",
+      "category": "arrival",
+      "scheduledTime": "13:09",
+      "airlineIcao": "asa",
+      "flightNumber": "1699",
+      "originIcao": "KONT",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-ua644-den-pdx",
+      "category": "arrival",
+      "scheduledTime": "13:09",
+      "airlineIcao": "ual",
+      "flightNumber": "644",
+      "originIcao": "KDEN",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-ua2279-pdx-sfo",
+      "category": "departure",
+      "scheduledTime": "13:14",
+      "airlineIcao": "ual",
+      "flightNumber": "2279",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-dl1209-pdx-slc",
+      "category": "departure",
+      "scheduledTime": "13:15",
+      "airlineIcao": "dal",
+      "flightNumber": "1209",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-wn2809-pdx-san",
+      "category": "departure",
+      "scheduledTime": "13:15",
+      "airlineIcao": "swa",
+      "flightNumber": "2809",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "arrival-as621-smf-pdx",
+      "category": "arrival",
+      "scheduledTime": "13:18",
+      "airlineIcao": "asa",
+      "flightNumber": "621",
+      "originIcao": "KSMF",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-4b-arrival-kpdt-f-003",
+      "scheduledTime": "13:18",
+      "category": "arrival",
+      "originIcao": "KPDT",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "btq",
+      "flightNumber": "1207"
+    },
+    {
+      "id": "t100-qx-departure-ksea-f-003",
+      "scheduledTime": "13:18",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "1919"
+    },
+    {
+      "id": "arrival-as1405-sna-pdx",
+      "category": "arrival",
+      "scheduledTime": "13:19",
+      "airlineIcao": "asa",
+      "flightNumber": "1405",
+      "originIcao": "KSNA",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as1467-las-pdx",
+      "category": "arrival",
+      "scheduledTime": "13:20",
+      "airlineIcao": "asa",
+      "flightNumber": "1467",
+      "originIcao": "KLAS",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-dl2766-pdx-lax",
+      "category": "departure",
+      "scheduledTime": "13:25",
+      "airlineIcao": "dal",
+      "flightNumber": "2766",
+      "originIcao": "KPDX",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "arrival-oo3062-eug-pdx",
+      "category": "arrival",
+      "scheduledTime": "13:26",
+      "airlineIcao": "skw",
+      "flightNumber": "3062",
+      "originIcao": "KEUG",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-oo3300-mfr-pdx",
+      "category": "arrival",
+      "scheduledTime": "13:34",
+      "airlineIcao": "skw",
+      "flightNumber": "3300",
+      "originIcao": "KMFR",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-aa2286-pdx-dfw",
+      "category": "departure",
+      "scheduledTime": "13:34",
+      "airlineIcao": "aal",
+      "flightNumber": "2286",
+      "originIcao": "KPDX",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-as576-san-pdx",
+      "category": "arrival",
+      "scheduledTime": "13:43",
+      "airlineIcao": "asa",
+      "flightNumber": "576",
+      "originIcao": "KSAN",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as1355-lax-pdx",
+      "category": "arrival",
+      "scheduledTime": "13:44",
+      "airlineIcao": "asa",
+      "flightNumber": "1355",
+      "originIcao": "KLAX",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-oo3045-oak-pdx",
+      "category": "arrival",
+      "scheduledTime": "13:44",
+      "airlineIcao": "skw",
+      "flightNumber": "3045",
+      "originIcao": "KOAK",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-aa3303-pdx-ord",
+      "category": "departure",
+      "scheduledTime": "13:45",
+      "airlineIcao": "aal",
+      "flightNumber": "3303",
+      "originIcao": "KPDX",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-dl2167-pdx-msp",
+      "category": "departure",
+      "scheduledTime": "13:45",
+      "airlineIcao": "dal",
+      "flightNumber": "2167",
+      "originIcao": "KPDX",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "arrival-as684-den-pdx",
+      "category": "arrival",
+      "scheduledTime": "13:46",
+      "airlineIcao": "asa",
+      "flightNumber": "684",
+      "originIcao": "KDEN",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-oo3009-sts-pdx",
+      "category": "arrival",
+      "scheduledTime": "13:46",
+      "airlineIcao": "skw",
+      "flightNumber": "3009",
+      "originIcao": "KSTS",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-oo3121-rno-pdx",
+      "category": "arrival",
+      "scheduledTime": "13:46",
+      "airlineIcao": "skw",
+      "flightNumber": "3121",
+      "originIcao": "KRNO",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-qx-arrival-panc-f-001",
+      "scheduledTime": "13:46",
+      "category": "arrival",
+      "originIcao": "PANC",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "qxe",
+      "flightNumber": "8560"
+    },
+    {
+      "id": "t100-qx-departure-kbil-f-001",
+      "scheduledTime": "13:47",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KBIL",
+      "airlineIcao": "qxe",
+      "flightNumber": "1373"
+    },
+    {
+      "id": "arrival-as1567-anc-pdx",
+      "category": "arrival",
+      "scheduledTime": "13:48",
+      "airlineIcao": "asa",
+      "flightNumber": "1567",
+      "originIcao": "PANC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-oo3117-slc-pdx",
+      "category": "arrival",
+      "scheduledTime": "13:49",
+      "airlineIcao": "skw",
+      "flightNumber": "3117",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as235-sfo-pdx",
+      "category": "arrival",
+      "scheduledTime": "13:50",
+      "airlineIcao": "asa",
+      "flightNumber": "235",
+      "originIcao": "KSFO",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-ws-arrival-cyyc-f-001",
+      "scheduledTime": "13:50",
+      "category": "arrival",
+      "originIcao": "CYYC",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "wja",
+      "flightNumber": "2037"
+    },
+    {
+      "id": "arrival-as251-geg-pdx",
+      "category": "arrival",
+      "scheduledTime": "13:52",
+      "airlineIcao": "asa",
+      "flightNumber": "251",
+      "originIcao": "KGEG",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-wn4271-den-pdx",
+      "category": "arrival",
+      "scheduledTime": "13:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4271",
+      "originIcao": "KDEN",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-dl2206-pdx-atl",
+      "category": "departure",
+      "scheduledTime": "14:08",
+      "airlineIcao": "dal",
+      "flightNumber": "2206",
+      "originIcao": "KPDX",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-b6396-pdx-bos",
+      "category": "departure",
+      "scheduledTime": "14:16",
+      "airlineIcao": "jbu",
+      "flightNumber": "396",
+      "originIcao": "KPDX",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "t100-qx-departure-ksea-f-001",
+      "scheduledTime": "14:22",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "8886"
+    },
+    {
+      "id": "departure-ua2336-pdx-ord",
+      "category": "departure",
+      "scheduledTime": "14:25",
+      "airlineIcao": "ual",
+      "flightNumber": "2336",
+      "originIcao": "KPDX",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-as1565-pdx-anc",
+      "category": "departure",
+      "scheduledTime": "14:30",
+      "airlineIcao": "asa",
+      "flightNumber": "1565",
+      "originIcao": "KPDX",
+      "destinationIcao": "PANC"
+    },
+    {
+      "id": "departure-as1809-pdx-den",
+      "category": "departure",
+      "scheduledTime": "14:30",
+      "airlineIcao": "asa",
+      "flightNumber": "1809",
+      "originIcao": "KPDX",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-oo3097-pdx-mso",
+      "category": "departure",
+      "scheduledTime": "14:30",
+      "airlineIcao": "skw",
+      "flightNumber": "3097",
+      "originIcao": "KPDX",
+      "destinationIcao": "KMSO"
+    },
+    {
+      "id": "departure-oo3120-pdx-slc",
+      "category": "departure",
+      "scheduledTime": "14:30",
+      "airlineIcao": "skw",
+      "flightNumber": "3120",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-oo3210-pdx-sjc",
+      "category": "departure",
+      "scheduledTime": "14:30",
+      "airlineIcao": "skw",
+      "flightNumber": "3210",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSJC"
+    },
+    {
+      "id": "departure-oo3262-pdx-geg",
+      "category": "departure",
+      "scheduledTime": "14:30",
+      "airlineIcao": "skw",
+      "flightNumber": "3262",
+      "originIcao": "KPDX",
+      "destinationIcao": "KGEG"
+    },
+    {
+      "id": "departure-oo3483-pdx-sts",
+      "category": "departure",
+      "scheduledTime": "14:30",
+      "airlineIcao": "skw",
+      "flightNumber": "3483",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSTS"
+    },
+    {
+      "id": "t100-5x-departure-ksdf-g-002",
+      "scheduledTime": "14:31",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSDF",
+      "airlineIcao": "ups",
+      "flightNumber": "7801"
+    },
+    {
+      "id": "departure-wn2519-pdx-den",
+      "category": "departure",
+      "scheduledTime": "14:35",
+      "airlineIcao": "swa",
+      "flightNumber": "2519",
+      "originIcao": "KPDX",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-4b-arrival-kpdt-f-001",
+      "scheduledTime": "14:37",
+      "category": "arrival",
+      "originIcao": "KPDT",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "btq",
+      "flightNumber": "1467"
+    },
+    {
+      "id": "arrival-aa2545-ord-pdx",
+      "category": "arrival",
+      "scheduledTime": "14:40",
+      "airlineIcao": "aal",
+      "flightNumber": "2545",
+      "originIcao": "KORD",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-wn2532-phx-pdx",
+      "category": "arrival",
+      "scheduledTime": "14:40",
+      "airlineIcao": "swa",
+      "flightNumber": "2532",
+      "originIcao": "KPHX",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-as713-pdx-lax",
+      "category": "departure",
+      "scheduledTime": "14:45",
+      "airlineIcao": "asa",
+      "flightNumber": "713",
+      "originIcao": "KPDX",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-as731-pdx-phx",
+      "category": "departure",
+      "scheduledTime": "14:45",
+      "airlineIcao": "asa",
+      "flightNumber": "731",
+      "originIcao": "KPDX",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-as778-pdx-las",
+      "category": "departure",
+      "scheduledTime": "14:46",
+      "airlineIcao": "asa",
+      "flightNumber": "778",
+      "originIcao": "KPDX",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "t100-qx-departure-krdm-f-001",
+      "scheduledTime": "14:47",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KRDM",
+      "airlineIcao": "qxe",
+      "flightNumber": "695"
+    },
+    {
+      "id": "arrival-oo3204-sea-pdx",
+      "category": "arrival",
+      "scheduledTime": "14:48",
+      "airlineIcao": "skw",
+      "flightNumber": "3204",
+      "originIcao": "KSEA",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-oo4062-sea-pdx",
+      "category": "arrival",
+      "scheduledTime": "14:48",
+      "airlineIcao": "skw",
+      "flightNumber": "4062",
+      "originIcao": "KSEA",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-as264-pdx-sna",
+      "category": "departure",
+      "scheduledTime": "14:48",
+      "airlineIcao": "asa",
+      "flightNumber": "264",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSNA"
+    },
+    {
+      "id": "departure-as236-pdx-sfo",
+      "category": "departure",
+      "scheduledTime": "14:49",
+      "airlineIcao": "asa",
+      "flightNumber": "236",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "t100-fx-departure-krdm-g-001",
+      "scheduledTime": "14:51",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KRDM",
+      "airlineIcao": "fdx",
+      "flightNumber": "7232"
+    },
+    {
+      "id": "departure-as1312-pdx-san",
+      "category": "departure",
+      "scheduledTime": "14:55",
+      "airlineIcao": "asa",
+      "flightNumber": "1312",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "departure-as1386-pdx-bur",
+      "category": "departure",
+      "scheduledTime": "14:55",
+      "airlineIcao": "asa",
+      "flightNumber": "1386",
+      "originIcao": "KPDX",
+      "destinationIcao": "KBUR"
+    },
+    {
+      "id": "departure-as342-pdx-boi",
+      "category": "departure",
+      "scheduledTime": "14:58",
+      "airlineIcao": "asa",
+      "flightNumber": "342",
+      "originIcao": "KPDX",
+      "destinationIcao": "KBOI"
+    },
+    {
+      "id": "departure-dl1661-pdx-msp",
+      "category": "departure",
+      "scheduledTime": "15:00",
+      "airlineIcao": "dal",
+      "flightNumber": "1661",
+      "originIcao": "KPDX",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "arrival-wn2126-las-pdx",
+      "category": "arrival",
+      "scheduledTime": "15:05",
+      "airlineIcao": "swa",
+      "flightNumber": "2126",
+      "originIcao": "KLAS",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-oo3285-pdx-fat",
+      "category": "departure",
+      "scheduledTime": "15:08",
+      "airlineIcao": "skw",
+      "flightNumber": "3285",
+      "originIcao": "KPDX",
+      "destinationIcao": "KFAT"
+    },
+    {
+      "id": "arrival-ua2455-den-pdx",
+      "category": "arrival",
+      "scheduledTime": "15:13",
+      "airlineIcao": "ual",
+      "flightNumber": "2455",
+      "originIcao": "KDEN",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-5x-arrival-ksdf-g-002",
+      "scheduledTime": "15:16",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "ups",
+      "flightNumber": "1562"
+    },
+    {
+      "id": "departure-wn3085-pdx-dal",
+      "category": "departure",
+      "scheduledTime": "15:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3085",
+      "originIcao": "KPDX",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "arrival-wn1010-bwi-pdx",
+      "category": "arrival",
+      "scheduledTime": "15:25",
+      "airlineIcao": "swa",
+      "flightNumber": "1010",
+      "originIcao": "KBWI",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-oo3408-pdx-sea",
+      "category": "departure",
+      "scheduledTime": "15:30",
+      "airlineIcao": "skw",
+      "flightNumber": "3408",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-oo4062-pdx-sea",
+      "category": "departure",
+      "scheduledTime": "15:30",
+      "airlineIcao": "skw",
+      "flightNumber": "4062",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-fx-departure-kmem-g-001",
+      "scheduledTime": "15:30",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3492"
+    },
+    {
+      "id": "departure-aa2986-pdx-phx",
+      "category": "departure",
+      "scheduledTime": "15:31",
+      "airlineIcao": "aal",
+      "flightNumber": "2986",
+      "originIcao": "KPDX",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-wn4732-pdx-las",
+      "category": "departure",
+      "scheduledTime": "15:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4732",
+      "originIcao": "KPDX",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "arrival-ua2817-ord-pdx",
+      "category": "arrival",
+      "scheduledTime": "15:57",
+      "airlineIcao": "ual",
+      "flightNumber": "2817",
+      "originIcao": "KORD",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-wn1010-pdx-smf",
+      "category": "departure",
+      "scheduledTime": "16:05",
+      "airlineIcao": "swa",
+      "flightNumber": "1010",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSMF"
+    },
+    {
+      "id": "t100-qx-departure-kont-f-001",
+      "scheduledTime": "16:05",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KONT",
+      "airlineIcao": "qxe",
+      "flightNumber": "1809"
+    },
+    {
+      "id": "arrival-dl1244-slc-pdx",
+      "category": "arrival",
+      "scheduledTime": "16:09",
+      "airlineIcao": "dal",
+      "flightNumber": "1244",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-qx-arrival-kgeg-f-001",
+      "scheduledTime": "16:12",
+      "category": "arrival",
+      "originIcao": "KGEG",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "qxe",
+      "flightNumber": "6694"
+    },
+    {
+      "id": "arrival-as1633-sjc-pdx",
+      "category": "arrival",
+      "scheduledTime": "16:15",
+      "airlineIcao": "asa",
+      "flightNumber": "1633",
+      "originIcao": "KSJC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-ua1787-pdx-den",
+      "category": "departure",
+      "scheduledTime": "16:15",
+      "airlineIcao": "ual",
+      "flightNumber": "1787",
+      "originIcao": "KPDX",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-aa2288-phx-pdx",
+      "category": "arrival",
+      "scheduledTime": "16:16",
+      "airlineIcao": "aal",
+      "flightNumber": "2288",
+      "originIcao": "KPHX",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as1383-bur-pdx",
+      "category": "arrival",
+      "scheduledTime": "16:26",
+      "airlineIcao": "asa",
+      "flightNumber": "1383",
+      "originIcao": "KBUR",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as1600-smf-pdx",
+      "category": "arrival",
+      "scheduledTime": "16:27",
+      "airlineIcao": "asa",
+      "flightNumber": "1600",
+      "originIcao": "KSMF",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as712-sna-pdx",
+      "category": "arrival",
+      "scheduledTime": "16:29",
+      "airlineIcao": "asa",
+      "flightNumber": "712",
+      "originIcao": "KSNA",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as756-las-pdx",
+      "category": "arrival",
+      "scheduledTime": "16:29",
+      "airlineIcao": "asa",
+      "flightNumber": "756",
+      "originIcao": "KLAS",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-oo3202-geg-pdx",
+      "category": "arrival",
+      "scheduledTime": "16:32",
+      "airlineIcao": "skw",
+      "flightNumber": "3202",
+      "originIcao": "KGEG",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as267-anc-pdx",
+      "category": "arrival",
+      "scheduledTime": "16:33",
+      "airlineIcao": "asa",
+      "flightNumber": "267",
+      "originIcao": "PANC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-dl2551-lax-pdx",
+      "category": "arrival",
+      "scheduledTime": "16:34",
+      "airlineIcao": "dal",
+      "flightNumber": "2551",
+      "originIcao": "KLAX",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-qx-arrival-ksea-f-001",
+      "scheduledTime": "16:34",
+      "category": "arrival",
+      "originIcao": "KSEA",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "qxe",
+      "flightNumber": "1978"
+    },
+    {
+      "id": "arrival-as1402-san-pdx",
+      "category": "arrival",
+      "scheduledTime": "16:36",
+      "airlineIcao": "asa",
+      "flightNumber": "1402",
+      "originIcao": "KSAN",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-f92553-den-pdx",
+      "category": "arrival",
+      "scheduledTime": "16:36",
+      "airlineIcao": "fft",
+      "flightNumber": "2553",
+      "originIcao": "KDEN",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-qx-arrival-koak-f-001",
+      "scheduledTime": "16:36",
+      "category": "arrival",
+      "originIcao": "KOAK",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "qxe",
+      "flightNumber": "8430"
+    },
+    {
+      "id": "arrival-oo6189-lax-pdx",
+      "category": "arrival",
+      "scheduledTime": "16:38",
+      "airlineIcao": "skw",
+      "flightNumber": "6189",
+      "originIcao": "KLAX",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-wn4368-oak-pdx",
+      "category": "arrival",
+      "scheduledTime": "16:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4368",
+      "originIcao": "KOAK",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as229-boi-pdx",
+      "category": "arrival",
+      "scheduledTime": "16:45",
+      "airlineIcao": "asa",
+      "flightNumber": "229",
+      "originIcao": "KBOI",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as742-phx-pdx",
+      "category": "arrival",
+      "scheduledTime": "16:46",
+      "airlineIcao": "asa",
+      "flightNumber": "742",
+      "originIcao": "KPHX",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as1302-sfo-pdx",
+      "category": "arrival",
+      "scheduledTime": "16:47",
+      "airlineIcao": "asa",
+      "flightNumber": "1302",
+      "originIcao": "KSFO",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as1315-lax-pdx",
+      "category": "arrival",
+      "scheduledTime": "16:47",
+      "airlineIcao": "asa",
+      "flightNumber": "1315",
+      "originIcao": "KLAX",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as325-ord-pdx",
+      "category": "arrival",
+      "scheduledTime": "16:47",
+      "airlineIcao": "asa",
+      "flightNumber": "325",
+      "originIcao": "KORD",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-oo3374-jac-pdx",
+      "category": "arrival",
+      "scheduledTime": "16:47",
+      "airlineIcao": "skw",
+      "flightNumber": "3374",
+      "originIcao": "KJAC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-ua2851-sfo-pdx",
+      "category": "arrival",
+      "scheduledTime": "16:47",
+      "airlineIcao": "ual",
+      "flightNumber": "2851",
+      "originIcao": "KSFO",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-qx-arrival-cyvr-f-001",
+      "scheduledTime": "16:47",
+      "category": "arrival",
+      "originIcao": "CYVR",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "qxe",
+      "flightNumber": "5607"
+    },
+    {
+      "id": "arrival-oo3421-ida-pdx",
+      "category": "arrival",
+      "scheduledTime": "16:50",
+      "airlineIcao": "skw",
+      "flightNumber": "3421",
+      "originIcao": "KIDA",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as686-sea-pdx",
+      "category": "arrival",
+      "scheduledTime": "16:55",
+      "airlineIcao": "asa",
+      "flightNumber": "686",
+      "originIcao": "KSEA",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-qx-arrival-ksba-f-001",
+      "scheduledTime": "16:59",
+      "category": "arrival",
+      "originIcao": "KSBA",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "qxe",
+      "flightNumber": "777"
+    },
+    {
+      "id": "arrival-oo3918-sea-pdx",
+      "category": "arrival",
+      "scheduledTime": "17:06",
+      "airlineIcao": "skw",
+      "flightNumber": "3918",
+      "originIcao": "KSEA",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-oo6189-pdx-lax",
+      "category": "departure",
+      "scheduledTime": "17:08",
+      "airlineIcao": "skw",
+      "flightNumber": "6189",
+      "originIcao": "KPDX",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "arrival-wn4026-den-pdx",
+      "category": "arrival",
+      "scheduledTime": "17:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4026",
+      "originIcao": "KDEN",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-dl1244-pdx-slc",
+      "category": "departure",
+      "scheduledTime": "17:14",
+      "airlineIcao": "dal",
+      "flightNumber": "1244",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-wn4908-san-pdx",
+      "category": "arrival",
+      "scheduledTime": "17:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4908",
+      "originIcao": "KSAN",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-aa2288-pdx-phx",
+      "category": "departure",
+      "scheduledTime": "17:17",
+      "airlineIcao": "aal",
+      "flightNumber": "2288",
+      "originIcao": "KPDX",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-wn2935-pdx-oak",
+      "category": "departure",
+      "scheduledTime": "17:20",
+      "airlineIcao": "swa",
+      "flightNumber": "2935",
+      "originIcao": "KPDX",
+      "destinationIcao": "KOAK"
+    },
+    {
+      "id": "departure-f92554-pdx-den",
+      "category": "departure",
+      "scheduledTime": "17:21",
+      "airlineIcao": "fft",
+      "flightNumber": "2554",
+      "originIcao": "KPDX",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-fx-departure-kmfr-g-001",
+      "scheduledTime": "17:21",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KMFR",
+      "airlineIcao": "fdx",
+      "flightNumber": "1226"
+    },
+    {
+      "id": "departure-as430-pdx-sea",
+      "category": "departure",
+      "scheduledTime": "17:30",
+      "airlineIcao": "asa",
+      "flightNumber": "430",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-oo3052-pdx-geg",
+      "category": "departure",
+      "scheduledTime": "17:32",
+      "airlineIcao": "skw",
+      "flightNumber": "3052",
+      "originIcao": "KPDX",
+      "destinationIcao": "KGEG"
+    },
+    {
+      "id": "arrival-dl2008-msp-pdx",
+      "category": "arrival",
+      "scheduledTime": "17:35",
+      "airlineIcao": "dal",
+      "flightNumber": "2008",
+      "originIcao": "KMSP",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-as504-pdx-sfo",
+      "category": "departure",
+      "scheduledTime": "17:36",
+      "airlineIcao": "asa",
+      "flightNumber": "504",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-oo3022-pdx-psp",
+      "category": "departure",
+      "scheduledTime": "17:36",
+      "airlineIcao": "skw",
+      "flightNumber": "3022",
+      "originIcao": "KPDX",
+      "destinationIcao": "KPSP"
+    },
+    {
+      "id": "departure-as278-pdx-lax",
+      "category": "departure",
+      "scheduledTime": "17:37",
+      "airlineIcao": "asa",
+      "flightNumber": "278",
+      "originIcao": "KPDX",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-dl2551-pdx-lax",
+      "category": "departure",
+      "scheduledTime": "17:37",
+      "airlineIcao": "dal",
+      "flightNumber": "2551",
+      "originIcao": "KPDX",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "t100-qx-departure-krno-f-001",
+      "scheduledTime": "17:37",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KRNO",
+      "airlineIcao": "qxe",
+      "flightNumber": "6818"
+    },
+    {
+      "id": "t100-qx-departure-kgeg-f-001",
+      "scheduledTime": "17:38",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KGEG",
+      "airlineIcao": "qxe",
+      "flightNumber": "3746"
+    },
+    {
+      "id": "departure-as1370-pdx-aus",
+      "category": "departure",
+      "scheduledTime": "17:39",
+      "airlineIcao": "asa",
+      "flightNumber": "1370",
+      "originIcao": "KPDX",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-as369-pdx-san",
+      "category": "departure",
+      "scheduledTime": "17:40",
+      "airlineIcao": "asa",
+      "flightNumber": "369",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "departure-oo3291-pdx-slc",
+      "category": "departure",
+      "scheduledTime": "17:40",
+      "airlineIcao": "skw",
+      "flightNumber": "3291",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-ua1337-den-pdx",
+      "category": "arrival",
+      "scheduledTime": "17:44",
+      "airlineIcao": "ual",
+      "flightNumber": "1337",
+      "originIcao": "KDEN",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-as353-pdx-ogg",
+      "category": "departure",
+      "scheduledTime": "17:45",
+      "airlineIcao": "asa",
+      "flightNumber": "353",
+      "originIcao": "KPDX",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "t100-cx-departure-panc-g-001",
+      "scheduledTime": "17:46",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "PANC",
+      "airlineIcao": "cpa",
+      "flightNumber": "255"
+    },
+    {
+      "id": "t100-fx-arrival-keug-g-001",
+      "scheduledTime": "17:46",
+      "category": "arrival",
+      "originIcao": "KEUG",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "fdx",
+      "flightNumber": "5006"
+    },
+    {
+      "id": "departure-as271-pdx-anc",
+      "category": "departure",
+      "scheduledTime": "17:50",
+      "airlineIcao": "asa",
+      "flightNumber": "271",
+      "originIcao": "KPDX",
+      "destinationIcao": "PANC"
+    },
+    {
+      "id": "departure-as531-pdx-las",
+      "category": "departure",
+      "scheduledTime": "17:50",
+      "airlineIcao": "asa",
+      "flightNumber": "531",
+      "originIcao": "KPDX",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-oo3918-pdx-sea",
+      "category": "departure",
+      "scheduledTime": "17:50",
+      "airlineIcao": "skw",
+      "flightNumber": "3918",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-wn3208-pdx-phx",
+      "category": "departure",
+      "scheduledTime": "17:50",
+      "airlineIcao": "swa",
+      "flightNumber": "3208",
+      "originIcao": "KPDX",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-as746-pdx-phx",
+      "category": "departure",
+      "scheduledTime": "17:51",
+      "airlineIcao": "asa",
+      "flightNumber": "746",
+      "originIcao": "KPDX",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-as1616-pdx-rno",
+      "category": "departure",
+      "scheduledTime": "17:55",
+      "airlineIcao": "asa",
+      "flightNumber": "1616",
+      "originIcao": "KPDX",
+      "destinationIcao": "KRNO"
+    },
+    {
+      "id": "departure-wn3325-pdx-las",
+      "category": "departure",
+      "scheduledTime": "17:55",
+      "airlineIcao": "swa",
+      "flightNumber": "3325",
+      "originIcao": "KPDX",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-as559-pdx-bur",
+      "category": "departure",
+      "scheduledTime": "17:57",
+      "airlineIcao": "asa",
+      "flightNumber": "559",
+      "originIcao": "KPDX",
+      "destinationIcao": "KBUR"
+    },
+    {
+      "id": "departure-as1622-pdx-smf",
+      "category": "departure",
+      "scheduledTime": "17:59",
+      "airlineIcao": "asa",
+      "flightNumber": "1622",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSMF"
+    },
+    {
+      "id": "t100-fx-departure-krbg-g-001",
+      "scheduledTime": "18:01",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KRBG",
+      "airlineIcao": "fdx",
+      "flightNumber": "2446"
+    },
+    {
+      "id": "departure-ua1656-pdx-sfo",
+      "category": "departure",
+      "scheduledTime": "18:03",
+      "airlineIcao": "ual",
+      "flightNumber": "1656",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-as1627-pdx-den",
+      "category": "departure",
+      "scheduledTime": "18:04",
+      "airlineIcao": "asa",
+      "flightNumber": "1627",
+      "originIcao": "KPDX",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-oo3098-mso-pdx",
+      "category": "arrival",
+      "scheduledTime": "18:16",
+      "airlineIcao": "skw",
+      "flightNumber": "3098",
+      "originIcao": "KMSO",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-dl1238-slc-pdx",
+      "category": "arrival",
+      "scheduledTime": "18:18",
+      "airlineIcao": "dal",
+      "flightNumber": "1238",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-ua1677-ord-pdx",
+      "category": "arrival",
+      "scheduledTime": "18:47",
+      "airlineIcao": "ual",
+      "flightNumber": "1677",
+      "originIcao": "KORD",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-ua2334-pdx-den",
+      "category": "departure",
+      "scheduledTime": "18:50",
+      "airlineIcao": "ual",
+      "flightNumber": "2334",
+      "originIcao": "KPDX",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-qx-arrival-krno-f-001",
+      "scheduledTime": "18:54",
+      "category": "arrival",
+      "originIcao": "KRNO",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "qxe",
+      "flightNumber": "145"
+    },
+    {
+      "id": "arrival-as1369-bwi-pdx",
+      "category": "arrival",
+      "scheduledTime": "18:56",
+      "airlineIcao": "asa",
+      "flightNumber": "1369",
+      "originIcao": "KBWI",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-dl503-atl-pdx",
+      "category": "arrival",
+      "scheduledTime": "18:56",
+      "airlineIcao": "dal",
+      "flightNumber": "503",
+      "originIcao": "KATL",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-qx-departure-cyvr-f-001",
+      "scheduledTime": "18:57",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "CYVR",
+      "airlineIcao": "qxe",
+      "flightNumber": "5403"
+    },
+    {
+      "id": "departure-oo3024-pdx-fat",
+      "category": "departure",
+      "scheduledTime": "18:58",
+      "airlineIcao": "skw",
+      "flightNumber": "3024",
+      "originIcao": "KPDX",
+      "destinationIcao": "KFAT"
+    },
+    {
+      "id": "arrival-wn4708-den-pdx",
+      "category": "arrival",
+      "scheduledTime": "19:00",
+      "airlineIcao": "swa",
+      "flightNumber": "4708",
+      "originIcao": "KDEN",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-wn2307-las-pdx",
+      "category": "arrival",
+      "scheduledTime": "19:10",
+      "airlineIcao": "swa",
+      "flightNumber": "2307",
+      "originIcao": "KLAS",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-wn3813-smf-pdx",
+      "category": "arrival",
+      "scheduledTime": "19:10",
+      "airlineIcao": "swa",
+      "flightNumber": "3813",
+      "originIcao": "KSMF",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-dl2459-lax-pdx",
+      "category": "arrival",
+      "scheduledTime": "19:17",
+      "airlineIcao": "dal",
+      "flightNumber": "2459",
+      "originIcao": "KLAX",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-ua1964-iah-pdx",
+      "category": "arrival",
+      "scheduledTime": "19:18",
+      "airlineIcao": "ual",
+      "flightNumber": "1964",
+      "originIcao": "KIAH",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-dl1238-pdx-slc",
+      "category": "departure",
+      "scheduledTime": "19:20",
+      "airlineIcao": "dal",
+      "flightNumber": "1238",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "t100-fx-arrival-kcvo-g-001",
+      "scheduledTime": "19:20",
+      "category": "arrival",
+      "originIcao": "KCVO",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "fdx",
+      "flightNumber": "6035"
+    },
+    {
+      "id": "arrival-as1490-ogg-pdx",
+      "category": "arrival",
+      "scheduledTime": "19:27",
+      "airlineIcao": "asa",
+      "flightNumber": "1490",
+      "originIcao": "PHOG",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as1350-bna-pdx",
+      "category": "arrival",
+      "scheduledTime": "19:33",
+      "airlineIcao": "asa",
+      "flightNumber": "1350",
+      "originIcao": "KBNA",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-wn3199-pdx-den",
+      "category": "departure",
+      "scheduledTime": "19:40",
+      "airlineIcao": "swa",
+      "flightNumber": "3199",
+      "originIcao": "KPDX",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-as1519-mci-pdx",
+      "category": "arrival",
+      "scheduledTime": "19:46",
+      "airlineIcao": "asa",
+      "flightNumber": "1519",
+      "originIcao": "KMCI",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as1538-stl-pdx",
+      "category": "arrival",
+      "scheduledTime": "19:47",
+      "airlineIcao": "asa",
+      "flightNumber": "1538",
+      "originIcao": "KSTL",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as646-dfw-pdx",
+      "category": "arrival",
+      "scheduledTime": "19:49",
+      "airlineIcao": "asa",
+      "flightNumber": "646",
+      "originIcao": "KDFW",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as1396-aus-pdx",
+      "category": "arrival",
+      "scheduledTime": "19:50",
+      "airlineIcao": "asa",
+      "flightNumber": "1396",
+      "originIcao": "KAUS",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-oo3285-fat-pdx",
+      "category": "arrival",
+      "scheduledTime": "19:50",
+      "airlineIcao": "skw",
+      "flightNumber": "3285",
+      "originIcao": "KFAT",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-wn1152-pdx-smf",
+      "category": "departure",
+      "scheduledTime": "19:50",
+      "airlineIcao": "swa",
+      "flightNumber": "1152",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSMF"
+    },
+    {
+      "id": "t100-qx-arrival-krdm-f-001",
+      "scheduledTime": "19:51",
+      "category": "arrival",
+      "originIcao": "KRDM",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "qxe",
+      "flightNumber": "6392"
+    },
+    {
+      "id": "arrival-wn4765-mdw-pdx",
+      "category": "arrival",
+      "scheduledTime": "19:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4765",
+      "originIcao": "KMDW",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-wn3102-pdx-sjc",
+      "category": "departure",
+      "scheduledTime": "19:55",
+      "airlineIcao": "swa",
+      "flightNumber": "3102",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSJC"
+    },
+    {
+      "id": "departure-as518-pdx-sna",
+      "category": "departure",
+      "scheduledTime": "19:59",
+      "airlineIcao": "asa",
+      "flightNumber": "518",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSNA"
+    },
+    {
+      "id": "t100-kl-arrival-eham-f-001",
+      "scheduledTime": "20:00",
+      "category": "arrival",
+      "originIcao": "EHAM",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "klm",
+      "flightNumber": "384"
+    },
+    {
+      "id": "t100-fx-departure-klmt-g-001",
+      "scheduledTime": "20:01",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KLMT",
+      "airlineIcao": "fdx",
+      "flightNumber": "9575"
+    },
+    {
+      "id": "arrival-oo3923-sea-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:02",
+      "airlineIcao": "skw",
+      "flightNumber": "3923",
+      "originIcao": "KSEA",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as9-dca-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:04",
+      "airlineIcao": "asa",
+      "flightNumber": "9",
+      "originIcao": "KDCA",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-wn536-phx-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:05",
+      "airlineIcao": "swa",
+      "flightNumber": "536",
+      "originIcao": "KPHX",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as1434-msp-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:07",
+      "airlineIcao": "asa",
+      "flightNumber": "1434",
+      "originIcao": "KMSP",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as1319-bos-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:15",
+      "airlineIcao": "asa",
+      "flightNumber": "1319",
+      "originIcao": "KBOS",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-dl2151-msp-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:15",
+      "airlineIcao": "dal",
+      "flightNumber": "2151",
+      "originIcao": "KMSP",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as290-ewr-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:17",
+      "airlineIcao": "asa",
+      "flightNumber": "290",
+      "originIcao": "KEWR",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-fx-arrival-klmt-g-001",
+      "scheduledTime": "20:18",
+      "category": "arrival",
+      "originIcao": "KLMT",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "fdx",
+      "flightNumber": "6152"
+    },
+    {
+      "id": "arrival-ua780-iad-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:19",
+      "airlineIcao": "ual",
+      "flightNumber": "780",
+      "originIcao": "KIAD",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as783-atl-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:24",
+      "airlineIcao": "asa",
+      "flightNumber": "783",
+      "originIcao": "KATL",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as649-bur-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:25",
+      "airlineIcao": "asa",
+      "flightNumber": "649",
+      "originIcao": "KBUR",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-oo3030-sjc-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:29",
+      "airlineIcao": "skw",
+      "flightNumber": "3030",
+      "originIcao": "KSJC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-5x-arrival-kont-g-001",
+      "scheduledTime": "20:29",
+      "category": "arrival",
+      "originIcao": "KONT",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "ups",
+      "flightNumber": "251"
+    },
+    {
+      "id": "arrival-as662-phx-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:30",
+      "airlineIcao": "asa",
+      "flightNumber": "662",
+      "originIcao": "KPHX",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-dl2459-pdx-lax",
+      "category": "departure",
+      "scheduledTime": "20:30",
+      "airlineIcao": "dal",
+      "flightNumber": "2459",
+      "originIcao": "KPDX",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "arrival-as1392-san-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:31",
+      "airlineIcao": "asa",
+      "flightNumber": "1392",
+      "originIcao": "KSAN",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as589-sna-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:31",
+      "airlineIcao": "asa",
+      "flightNumber": "589",
+      "originIcao": "KSNA",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as19-jfk-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:33",
+      "airlineIcao": "asa",
+      "flightNumber": "19",
+      "originIcao": "KJFK",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as301-mco-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:34",
+      "airlineIcao": "asa",
+      "flightNumber": "301",
+      "originIcao": "KMCO",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-fx-arrival-krdm-g-001",
+      "scheduledTime": "20:34",
+      "category": "arrival",
+      "originIcao": "KRDM",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "fdx",
+      "flightNumber": "2568"
+    },
+    {
+      "id": "arrival-as253-koa-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:35",
+      "airlineIcao": "asa",
+      "flightNumber": "253",
+      "originIcao": "PHKO",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-wn1048-pdx-phx",
+      "category": "departure",
+      "scheduledTime": "20:35",
+      "airlineIcao": "swa",
+      "flightNumber": "1048",
+      "originIcao": "KPDX",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "arrival-as1787-phl-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:37",
+      "airlineIcao": "asa",
+      "flightNumber": "1787",
+      "originIcao": "KPHL",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-oo3280-slc-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:43",
+      "airlineIcao": "skw",
+      "flightNumber": "3280",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-oo3923-pdx-sea",
+      "category": "departure",
+      "scheduledTime": "20:44",
+      "airlineIcao": "skw",
+      "flightNumber": "3923",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "arrival-aa3064-clt-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:45",
+      "airlineIcao": "aal",
+      "flightNumber": "3064",
+      "originIcao": "KCLT",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as779-las-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:46",
+      "airlineIcao": "asa",
+      "flightNumber": "779",
+      "originIcao": "KLAS",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as1609-anc-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:48",
+      "airlineIcao": "asa",
+      "flightNumber": "1609",
+      "originIcao": "PANC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as884-lih-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:48",
+      "airlineIcao": "asa",
+      "flightNumber": "884",
+      "originIcao": "PHLI",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-fi-arrival-bikf-f-001",
+      "scheduledTime": "20:48",
+      "category": "arrival",
+      "originIcao": "BIKF",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "ice",
+      "flightNumber": "3584"
+    },
+    {
+      "id": "arrival-as525-sfo-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:49",
+      "airlineIcao": "asa",
+      "flightNumber": "525",
+      "originIcao": "KSFO",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as1421-iah-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:50",
+      "airlineIcao": "asa",
+      "flightNumber": "1421",
+      "originIcao": "KIAH",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as1807-den-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:50",
+      "airlineIcao": "asa",
+      "flightNumber": "1807",
+      "originIcao": "KDEN",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as814-hnl-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:50",
+      "airlineIcao": "asa",
+      "flightNumber": "814",
+      "originIcao": "PHNL",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-4b-arrival-kpdt-f-002",
+      "scheduledTime": "20:52",
+      "category": "arrival",
+      "originIcao": "KPDT",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "btq",
+      "flightNumber": "6427"
+    },
+    {
+      "id": "arrival-ua2262-sfo-pdx",
+      "category": "arrival",
+      "scheduledTime": "20:54",
+      "airlineIcao": "ual",
+      "flightNumber": "2262",
+      "originIcao": "KSFO",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-dl684-jfk-pdx",
+      "category": "arrival",
+      "scheduledTime": "21:13",
+      "airlineIcao": "dal",
+      "flightNumber": "684",
+      "originIcao": "KJFK",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-ua498-den-pdx",
+      "category": "arrival",
+      "scheduledTime": "21:15",
+      "airlineIcao": "ual",
+      "flightNumber": "498",
+      "originIcao": "KDEN",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-wn3194-pdx-bwi",
+      "category": "departure",
+      "scheduledTime": "21:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3194",
+      "originIcao": "KPDX",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "t100-qx-arrival-kont-f-001",
+      "scheduledTime": "21:25",
+      "category": "arrival",
+      "originIcao": "KONT",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "qxe",
+      "flightNumber": "3514"
+    },
+    {
+      "id": "arrival-aa2298-dfw-pdx",
+      "category": "arrival",
+      "scheduledTime": "21:29",
+      "airlineIcao": "aal",
+      "flightNumber": "2298",
+      "originIcao": "KDFW",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-ws-departure-cyyc-f-001",
+      "scheduledTime": "21:29",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "CYYC",
+      "airlineIcao": "wja",
+      "flightNumber": "9923"
+    },
+    {
+      "id": "departure-as1524-pdx-boi",
+      "category": "departure",
+      "scheduledTime": "21:30",
+      "airlineIcao": "asa",
+      "flightNumber": "1524",
+      "originIcao": "KPDX",
+      "destinationIcao": "KBOI"
+    },
+    {
+      "id": "departure-as678-pdx-sjc",
+      "category": "departure",
+      "scheduledTime": "21:30",
+      "airlineIcao": "asa",
+      "flightNumber": "678",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSJC"
+    },
+    {
+      "id": "departure-as1631-pdx-ewr",
+      "category": "departure",
+      "scheduledTime": "21:31",
+      "airlineIcao": "asa",
+      "flightNumber": "1631",
+      "originIcao": "KPDX",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "departure-oo3106-pdx-bli",
+      "category": "departure",
+      "scheduledTime": "21:31",
+      "airlineIcao": "skw",
+      "flightNumber": "3106",
+      "originIcao": "KPDX",
+      "destinationIcao": "KBLI"
+    },
+    {
+      "id": "arrival-dl357-atl-pdx",
+      "category": "arrival",
+      "scheduledTime": "21:44",
+      "airlineIcao": "dal",
+      "flightNumber": "357",
+      "originIcao": "KATL",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-oo3115-pdx-sts",
+      "category": "departure",
+      "scheduledTime": "21:45",
+      "airlineIcao": "skw",
+      "flightNumber": "3115",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSTS"
+    },
+    {
+      "id": "arrival-ua560-ewr-pdx",
+      "category": "arrival",
+      "scheduledTime": "21:46",
+      "airlineIcao": "ual",
+      "flightNumber": "560",
+      "originIcao": "KEWR",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-aa1170-pdx-clt",
+      "category": "departure",
+      "scheduledTime": "21:47",
+      "airlineIcao": "aal",
+      "flightNumber": "1170",
+      "originIcao": "KPDX",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "arrival-aa2977-ord-pdx",
+      "category": "arrival",
+      "scheduledTime": "21:50",
+      "airlineIcao": "aal",
+      "flightNumber": "2977",
+      "originIcao": "KORD",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-as1356-pdx-geg",
+      "category": "departure",
+      "scheduledTime": "21:50",
+      "airlineIcao": "asa",
+      "flightNumber": "1356",
+      "originIcao": "KPDX",
+      "destinationIcao": "KGEG"
+    },
+    {
+      "id": "departure-oo3066-pdx-psc",
+      "category": "departure",
+      "scheduledTime": "21:50",
+      "airlineIcao": "skw",
+      "flightNumber": "3066",
+      "originIcao": "KPDX",
+      "destinationIcao": "KPSC"
+    },
+    {
+      "id": "t100-ba-departure-egll-f-001",
+      "scheduledTime": "21:50",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "EGLL",
+      "airlineIcao": "baw",
+      "flightNumber": "1094"
+    },
+    {
+      "id": "arrival-wn384-sjc-pdx",
+      "category": "arrival",
+      "scheduledTime": "21:55",
+      "airlineIcao": "swa",
+      "flightNumber": "384",
+      "originIcao": "KSJC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-as436-pdx-bos",
+      "category": "departure",
+      "scheduledTime": "21:56",
+      "airlineIcao": "asa",
+      "flightNumber": "436",
+      "originIcao": "KPDX",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "t100-qx-departure-panc-f-001",
+      "scheduledTime": "21:58",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "PANC",
+      "airlineIcao": "qxe",
+      "flightNumber": "5352"
+    },
+    {
+      "id": "departure-as1521-pdx-fai",
+      "category": "departure",
+      "scheduledTime": "21:59",
+      "airlineIcao": "asa",
+      "flightNumber": "1521",
+      "originIcao": "KPDX",
+      "destinationIcao": "PAFA"
+    },
+    {
+      "id": "t100-5x-arrival-krfd-g-001",
+      "scheduledTime": "21:59",
+      "category": "arrival",
+      "originIcao": "KRFD",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "ups",
+      "flightNumber": "5767"
+    },
+    {
+      "id": "arrival-as1397-lax-pdx",
+      "category": "arrival",
+      "scheduledTime": "22:00",
+      "airlineIcao": "asa",
+      "flightNumber": "1397",
+      "originIcao": "KLAX",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-oo3913-sea-pdx",
+      "category": "arrival",
+      "scheduledTime": "22:00",
+      "airlineIcao": "skw",
+      "flightNumber": "3913",
+      "originIcao": "KSEA",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-wn2418-oak-pdx",
+      "category": "arrival",
+      "scheduledTime": "22:10",
+      "airlineIcao": "swa",
+      "flightNumber": "2418",
+      "originIcao": "KOAK",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-dl2457-lax-pdx",
+      "category": "arrival",
+      "scheduledTime": "22:13",
+      "airlineIcao": "dal",
+      "flightNumber": "2457",
+      "originIcao": "KLAX",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as498-sea-pdx",
+      "category": "arrival",
+      "scheduledTime": "22:25",
+      "airlineIcao": "asa",
+      "flightNumber": "498",
+      "originIcao": "KSEA",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-fx-arrival-kmfr-g-001",
+      "scheduledTime": "22:28",
+      "category": "arrival",
+      "originIcao": "KMFR",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "fdx",
+      "flightNumber": "3135"
+    },
+    {
+      "id": "arrival-ua2738-ord-pdx",
+      "category": "arrival",
+      "scheduledTime": "22:30",
+      "airlineIcao": "ual",
+      "flightNumber": "2738",
+      "originIcao": "KORD",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-wn432-smf-pdx",
+      "category": "arrival",
+      "scheduledTime": "22:30",
+      "airlineIcao": "swa",
+      "flightNumber": "432",
+      "originIcao": "KSMF",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-aa2285-pdx-phl",
+      "category": "departure",
+      "scheduledTime": "22:30",
+      "airlineIcao": "aal",
+      "flightNumber": "2285",
+      "originIcao": "KPDX",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "arrival-oo6424-lax-pdx",
+      "category": "arrival",
+      "scheduledTime": "22:36",
+      "airlineIcao": "skw",
+      "flightNumber": "6424",
+      "originIcao": "KLAX",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-wn1671-den-pdx",
+      "category": "arrival",
+      "scheduledTime": "22:40",
+      "airlineIcao": "swa",
+      "flightNumber": "1671",
+      "originIcao": "KDEN",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-dl2139-pdx-jfk",
+      "category": "departure",
+      "scheduledTime": "22:40",
+      "airlineIcao": "dal",
+      "flightNumber": "2139",
+      "originIcao": "KPDX",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "departure-ua2094-pdx-ord",
+      "category": "departure",
+      "scheduledTime": "22:40",
+      "airlineIcao": "ual",
+      "flightNumber": "2094",
+      "originIcao": "KPDX",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-ua1420-iah-pdx",
+      "category": "arrival",
+      "scheduledTime": "22:48",
+      "airlineIcao": "ual",
+      "flightNumber": "1420",
+      "originIcao": "KIAH",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-ua2413-sfo-pdx",
+      "category": "arrival",
+      "scheduledTime": "22:48",
+      "airlineIcao": "ual",
+      "flightNumber": "2413",
+      "originIcao": "KSFO",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-qx-arrival-kmfr-f-001",
+      "scheduledTime": "22:50",
+      "category": "arrival",
+      "originIcao": "KMFR",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "qxe",
+      "flightNumber": "9299"
+    },
+    {
+      "id": "arrival-aa2283-dfw-pdx",
+      "category": "arrival",
+      "scheduledTime": "22:51",
+      "airlineIcao": "aal",
+      "flightNumber": "2283",
+      "originIcao": "KDFW",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-4b-departure-kpdt-f-003",
+      "scheduledTime": "22:51",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KPDT",
+      "airlineIcao": "btq",
+      "flightNumber": "7822"
+    },
+    {
+      "id": "departure-ua1802-pdx-ewr",
+      "category": "departure",
+      "scheduledTime": "22:52",
+      "airlineIcao": "ual",
+      "flightNumber": "1802",
+      "originIcao": "KPDX",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "departure-dl564-pdx-atl",
+      "category": "departure",
+      "scheduledTime": "22:55",
+      "airlineIcao": "dal",
+      "flightNumber": "564",
+      "originIcao": "KPDX",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-as376-pdx-ord",
+      "category": "departure",
+      "scheduledTime": "22:59",
+      "airlineIcao": "asa",
+      "flightNumber": "376",
+      "originIcao": "KPDX",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-aa561-phx-pdx",
+      "category": "arrival",
+      "scheduledTime": "23:08",
+      "airlineIcao": "aal",
+      "flightNumber": "561",
+      "originIcao": "KPHX",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-ua1770-den-pdx",
+      "category": "arrival",
+      "scheduledTime": "23:13",
+      "airlineIcao": "ual",
+      "flightNumber": "1770",
+      "originIcao": "KDEN",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-aa2977-pdx-ord",
+      "category": "departure",
+      "scheduledTime": "23:15",
+      "airlineIcao": "aal",
+      "flightNumber": "2977",
+      "originIcao": "KPDX",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-dl2391-msp-pdx",
+      "category": "arrival",
+      "scheduledTime": "23:18",
+      "airlineIcao": "dal",
+      "flightNumber": "2391",
+      "originIcao": "KMSP",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-5x-arrival-ksdf-g-003",
+      "scheduledTime": "23:27",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "ups",
+      "flightNumber": "9999"
+    },
+    {
+      "id": "arrival-aa1483-phl-pdx",
+      "category": "arrival",
+      "scheduledTime": "23:30",
+      "airlineIcao": "aal",
+      "flightNumber": "1483",
+      "originIcao": "KPHL",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-as1457-sea-pdx",
+      "category": "arrival",
+      "scheduledTime": "23:30",
+      "airlineIcao": "asa",
+      "flightNumber": "1457",
+      "originIcao": "KSEA",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-ua498-pdx-iad",
+      "category": "departure",
+      "scheduledTime": "23:30",
+      "airlineIcao": "ual",
+      "flightNumber": "498",
+      "originIcao": "KPDX",
+      "destinationIcao": "KIAD"
+    },
+    {
+      "id": "departure-wn3203-pdx-mdw",
+      "category": "departure",
+      "scheduledTime": "23:30",
+      "airlineIcao": "swa",
+      "flightNumber": "3203",
+      "originIcao": "KPDX",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "arrival-wn2852-mdw-pdx",
+      "category": "arrival",
+      "scheduledTime": "23:35",
+      "airlineIcao": "swa",
+      "flightNumber": "2852",
+      "originIcao": "KMDW",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-qx-departure-ksea-f-002",
+      "scheduledTime": "23:37",
+      "category": "departure",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "qxe",
+      "flightNumber": "7228"
+    },
+    {
+      "id": "arrival-as650-phx-pdx",
+      "category": "arrival",
+      "scheduledTime": "23:38",
+      "airlineIcao": "asa",
+      "flightNumber": "650",
+      "originIcao": "KPHX",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-ua1490-pdx-ord",
+      "category": "departure",
+      "scheduledTime": "23:40",
+      "airlineIcao": "ual",
+      "flightNumber": "1490",
+      "originIcao": "KPDX",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-aa2283-pdx-dfw",
+      "category": "departure",
+      "scheduledTime": "23:41",
+      "airlineIcao": "aal",
+      "flightNumber": "2283",
+      "originIcao": "KPDX",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-dl1373-slc-pdx",
+      "category": "arrival",
+      "scheduledTime": "23:44",
+      "airlineIcao": "dal",
+      "flightNumber": "1373",
+      "originIcao": "KSLC",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-oo4472-sea-pdx",
+      "category": "arrival",
+      "scheduledTime": "23:54",
+      "airlineIcao": "skw",
+      "flightNumber": "4472",
+      "originIcao": "KSEA",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-aa3112-clt-pdx",
+      "category": "arrival",
+      "scheduledTime": "23:55",
+      "airlineIcao": "aal",
+      "flightNumber": "3112",
+      "originIcao": "KCLT",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-wn4273-las-pdx",
+      "category": "arrival",
+      "scheduledTime": "23:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4273",
+      "originIcao": "KLAS",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "t100-qk-arrival-cyvr-f-002",
+      "scheduledTime": "23:55",
+      "category": "arrival",
+      "originIcao": "CYVR",
+      "destinationIcao": "KPDX",
+      "airlineIcao": "jza",
+      "flightNumber": "8973"
+    },
+    {
+      "id": "departure-ua780-pdx-iah",
+      "category": "departure",
+      "scheduledTime": "23:59",
+      "airlineIcao": "ual",
+      "flightNumber": "780",
+      "originIcao": "KPDX",
+      "destinationIcao": "KIAH"
+    }
+  ]
+}

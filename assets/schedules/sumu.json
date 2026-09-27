@@ -1,0 +1,1966 @@
+{
+    "schemaVersion": 2,
+    "profileType": "authored",
+    "airportIcao": "SUMU",
+    "timezone": "America/Montevideo",
+    "sampleDate": "2026-07-15",
+    "source": {
+        "name": "stringofpearls airport-authored spawn patterns",
+        "url": "https://github.com/blairhoddinott/stringofpearls/tree/master/assets/airports",
+        "retrievedAt": "2026-09-27",
+        "license": "MIT",
+        "coverage": "Deterministic representative profile compiled from reviewed airport-authored rates, routes, geometry, and airline rules; movements are generated and are not observed historical flights."
+    },
+    "flights": [
+        {
+            "id": "auth-sumu-3f89c3a7-0015",
+            "category": "arrival",
+            "scheduledTime": "00:09",
+            "spawnPatternKey": "3f89c3a7"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0016",
+            "category": "departure",
+            "scheduledTime": "00:09",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0061",
+            "category": "arrival",
+            "scheduledTime": "00:10",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0002",
+            "category": "departure",
+            "scheduledTime": "00:19",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0038",
+            "category": "departure",
+            "scheduledTime": "00:26",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-8ff8c17a-0007",
+            "category": "arrival",
+            "scheduledTime": "00:29",
+            "spawnPatternKey": "8ff8c17a"
+        },
+        {
+            "id": "auth-sumu-b628f618-0004",
+            "category": "arrival",
+            "scheduledTime": "00:30",
+            "spawnPatternKey": "b628f618"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0062",
+            "category": "arrival",
+            "scheduledTime": "00:30",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0003",
+            "category": "departure",
+            "scheduledTime": "00:39",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0017",
+            "category": "departure",
+            "scheduledTime": "00:46",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0063",
+            "category": "arrival",
+            "scheduledTime": "00:50",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-66b9829a-0004",
+            "category": "departure",
+            "scheduledTime": "00:56",
+            "spawnPatternKey": "66b9829a"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0039",
+            "category": "departure",
+            "scheduledTime": "00:57",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0004",
+            "category": "departure",
+            "scheduledTime": "00:59",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-3f89c3a7-0016",
+            "category": "arrival",
+            "scheduledTime": "01:09",
+            "spawnPatternKey": "3f89c3a7"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0064",
+            "category": "arrival",
+            "scheduledTime": "01:10",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-a446399c-0004",
+            "category": "arrival",
+            "scheduledTime": "01:13",
+            "spawnPatternKey": "a446399c"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0005",
+            "category": "departure",
+            "scheduledTime": "01:20",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0018",
+            "category": "departure",
+            "scheduledTime": "01:23",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0040",
+            "category": "departure",
+            "scheduledTime": "01:27",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-b628f618-0005",
+            "category": "arrival",
+            "scheduledTime": "01:30",
+            "spawnPatternKey": "b628f618"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0065",
+            "category": "arrival",
+            "scheduledTime": "01:30",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0006",
+            "category": "departure",
+            "scheduledTime": "01:40",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0066",
+            "category": "arrival",
+            "scheduledTime": "01:50",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-8ff8c17a-0008",
+            "category": "arrival",
+            "scheduledTime": "01:53",
+            "spawnPatternKey": "8ff8c17a"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0041",
+            "category": "departure",
+            "scheduledTime": "01:58",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0019",
+            "category": "departure",
+            "scheduledTime": "02:00",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0007",
+            "category": "departure",
+            "scheduledTime": "02:00",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-3f89c3a7-0017",
+            "category": "arrival",
+            "scheduledTime": "02:09",
+            "spawnPatternKey": "3f89c3a7"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0067",
+            "category": "arrival",
+            "scheduledTime": "02:10",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0008",
+            "category": "departure",
+            "scheduledTime": "02:20",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0042",
+            "category": "departure",
+            "scheduledTime": "02:29",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-a446399c-0005",
+            "category": "arrival",
+            "scheduledTime": "02:29",
+            "spawnPatternKey": "a446399c"
+        },
+        {
+            "id": "auth-sumu-b628f618-0006",
+            "category": "arrival",
+            "scheduledTime": "02:30",
+            "spawnPatternKey": "b628f618"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0068",
+            "category": "arrival",
+            "scheduledTime": "02:30",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0020",
+            "category": "departure",
+            "scheduledTime": "02:37",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-f7fa44be-0003",
+            "category": "arrival",
+            "scheduledTime": "02:41",
+            "spawnPatternKey": "f7fa44be"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0009",
+            "category": "departure",
+            "scheduledTime": "02:41",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0069",
+            "category": "arrival",
+            "scheduledTime": "02:50",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0043",
+            "category": "departure",
+            "scheduledTime": "02:59",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0010",
+            "category": "departure",
+            "scheduledTime": "03:01",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-3f89c3a7-0018",
+            "category": "arrival",
+            "scheduledTime": "03:09",
+            "spawnPatternKey": "3f89c3a7"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0070",
+            "category": "arrival",
+            "scheduledTime": "03:10",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0021",
+            "category": "departure",
+            "scheduledTime": "03:14",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-8ff8c17a-0009",
+            "category": "arrival",
+            "scheduledTime": "03:18",
+            "spawnPatternKey": "8ff8c17a"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0011",
+            "category": "departure",
+            "scheduledTime": "03:21",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0044",
+            "category": "departure",
+            "scheduledTime": "03:30",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-b628f618-0007",
+            "category": "arrival",
+            "scheduledTime": "03:30",
+            "spawnPatternKey": "b628f618"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0071",
+            "category": "arrival",
+            "scheduledTime": "03:30",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0012",
+            "category": "departure",
+            "scheduledTime": "03:42",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-a446399c-0006",
+            "category": "arrival",
+            "scheduledTime": "03:44",
+            "spawnPatternKey": "a446399c"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0072",
+            "category": "arrival",
+            "scheduledTime": "03:50",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0022",
+            "category": "departure",
+            "scheduledTime": "03:51",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0045",
+            "category": "departure",
+            "scheduledTime": "04:01",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0013",
+            "category": "departure",
+            "scheduledTime": "04:02",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-3f89c3a7-0019",
+            "category": "arrival",
+            "scheduledTime": "04:09",
+            "spawnPatternKey": "3f89c3a7"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0001",
+            "category": "arrival",
+            "scheduledTime": "04:10",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0014",
+            "category": "departure",
+            "scheduledTime": "04:22",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0023",
+            "category": "departure",
+            "scheduledTime": "04:28",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-b628f618-0008",
+            "category": "arrival",
+            "scheduledTime": "04:30",
+            "spawnPatternKey": "b628f618"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0002",
+            "category": "arrival",
+            "scheduledTime": "04:30",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0046",
+            "category": "departure",
+            "scheduledTime": "04:31",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0015",
+            "category": "departure",
+            "scheduledTime": "04:42",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-8ff8c17a-0010",
+            "category": "arrival",
+            "scheduledTime": "04:43",
+            "spawnPatternKey": "8ff8c17a"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0003",
+            "category": "arrival",
+            "scheduledTime": "04:50",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-a446399c-0007",
+            "category": "arrival",
+            "scheduledTime": "05:00",
+            "spawnPatternKey": "a446399c"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0047",
+            "category": "departure",
+            "scheduledTime": "05:02",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0016",
+            "category": "departure",
+            "scheduledTime": "05:03",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0024",
+            "category": "departure",
+            "scheduledTime": "05:05",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-3f89c3a7-0020",
+            "category": "arrival",
+            "scheduledTime": "05:09",
+            "spawnPatternKey": "3f89c3a7"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0004",
+            "category": "arrival",
+            "scheduledTime": "05:10",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0017",
+            "category": "departure",
+            "scheduledTime": "05:23",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-b628f618-0009",
+            "category": "arrival",
+            "scheduledTime": "05:30",
+            "spawnPatternKey": "b628f618"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0005",
+            "category": "arrival",
+            "scheduledTime": "05:30",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0001",
+            "category": "departure",
+            "scheduledTime": "05:33",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0025",
+            "category": "departure",
+            "scheduledTime": "05:42",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0018",
+            "category": "departure",
+            "scheduledTime": "05:43",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-66b9829a-0005",
+            "category": "departure",
+            "scheduledTime": "05:44",
+            "spawnPatternKey": "66b9829a"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0006",
+            "category": "arrival",
+            "scheduledTime": "05:50",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0002",
+            "category": "departure",
+            "scheduledTime": "06:03",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0019",
+            "category": "departure",
+            "scheduledTime": "06:04",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-f7fa44be-0004",
+            "category": "arrival",
+            "scheduledTime": "06:07",
+            "spawnPatternKey": "f7fa44be"
+        },
+        {
+            "id": "auth-sumu-8ff8c17a-0011",
+            "category": "arrival",
+            "scheduledTime": "06:08",
+            "spawnPatternKey": "8ff8c17a"
+        },
+        {
+            "id": "auth-sumu-3f89c3a7-0021",
+            "category": "arrival",
+            "scheduledTime": "06:09",
+            "spawnPatternKey": "3f89c3a7"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0007",
+            "category": "arrival",
+            "scheduledTime": "06:10",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-a446399c-0008",
+            "category": "arrival",
+            "scheduledTime": "06:16",
+            "spawnPatternKey": "a446399c"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0026",
+            "category": "departure",
+            "scheduledTime": "06:19",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0020",
+            "category": "departure",
+            "scheduledTime": "06:24",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-b628f618-0010",
+            "category": "arrival",
+            "scheduledTime": "06:30",
+            "spawnPatternKey": "b628f618"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0008",
+            "category": "arrival",
+            "scheduledTime": "06:30",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0003",
+            "category": "departure",
+            "scheduledTime": "06:34",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0021",
+            "category": "departure",
+            "scheduledTime": "06:44",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0009",
+            "category": "arrival",
+            "scheduledTime": "06:50",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0027",
+            "category": "departure",
+            "scheduledTime": "06:56",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0004",
+            "category": "departure",
+            "scheduledTime": "07:04",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0022",
+            "category": "departure",
+            "scheduledTime": "07:04",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-3f89c3a7-0022",
+            "category": "arrival",
+            "scheduledTime": "07:09",
+            "spawnPatternKey": "3f89c3a7"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0010",
+            "category": "arrival",
+            "scheduledTime": "07:10",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0023",
+            "category": "departure",
+            "scheduledTime": "07:25",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-b628f618-0011",
+            "category": "arrival",
+            "scheduledTime": "07:30",
+            "spawnPatternKey": "b628f618"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0011",
+            "category": "arrival",
+            "scheduledTime": "07:30",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-8ff8c17a-0012",
+            "category": "arrival",
+            "scheduledTime": "07:32",
+            "spawnPatternKey": "8ff8c17a"
+        },
+        {
+            "id": "auth-sumu-a446399c-0009",
+            "category": "arrival",
+            "scheduledTime": "07:32",
+            "spawnPatternKey": "a446399c"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0028",
+            "category": "departure",
+            "scheduledTime": "07:32",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0005",
+            "category": "departure",
+            "scheduledTime": "07:35",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0024",
+            "category": "departure",
+            "scheduledTime": "07:45",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0012",
+            "category": "arrival",
+            "scheduledTime": "07:50",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0025",
+            "category": "departure",
+            "scheduledTime": "08:05",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0006",
+            "category": "departure",
+            "scheduledTime": "08:06",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-3f89c3a7-0023",
+            "category": "arrival",
+            "scheduledTime": "08:09",
+            "spawnPatternKey": "3f89c3a7"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0029",
+            "category": "departure",
+            "scheduledTime": "08:09",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0013",
+            "category": "arrival",
+            "scheduledTime": "08:10",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0026",
+            "category": "departure",
+            "scheduledTime": "08:26",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-b628f618-0012",
+            "category": "arrival",
+            "scheduledTime": "08:30",
+            "spawnPatternKey": "b628f618"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0014",
+            "category": "arrival",
+            "scheduledTime": "08:30",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0007",
+            "category": "departure",
+            "scheduledTime": "08:36",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0030",
+            "category": "departure",
+            "scheduledTime": "08:46",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0027",
+            "category": "departure",
+            "scheduledTime": "08:46",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-a446399c-0010",
+            "category": "arrival",
+            "scheduledTime": "08:48",
+            "spawnPatternKey": "a446399c"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0015",
+            "category": "arrival",
+            "scheduledTime": "08:50",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-8ff8c17a-0013",
+            "category": "arrival",
+            "scheduledTime": "08:57",
+            "spawnPatternKey": "8ff8c17a"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0028",
+            "category": "departure",
+            "scheduledTime": "09:06",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0008",
+            "category": "departure",
+            "scheduledTime": "09:07",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-3f89c3a7-0024",
+            "category": "arrival",
+            "scheduledTime": "09:09",
+            "spawnPatternKey": "3f89c3a7"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0016",
+            "category": "arrival",
+            "scheduledTime": "09:10",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0031",
+            "category": "departure",
+            "scheduledTime": "09:23",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0029",
+            "category": "departure",
+            "scheduledTime": "09:26",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-b628f618-0013",
+            "category": "arrival",
+            "scheduledTime": "09:30",
+            "spawnPatternKey": "b628f618"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0017",
+            "category": "arrival",
+            "scheduledTime": "09:30",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-f7fa44be-0005",
+            "category": "arrival",
+            "scheduledTime": "09:32",
+            "spawnPatternKey": "f7fa44be"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0009",
+            "category": "departure",
+            "scheduledTime": "09:38",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0030",
+            "category": "departure",
+            "scheduledTime": "09:47",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0018",
+            "category": "arrival",
+            "scheduledTime": "09:50",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0032",
+            "category": "departure",
+            "scheduledTime": "10:00",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-a446399c-0011",
+            "category": "arrival",
+            "scheduledTime": "10:03",
+            "spawnPatternKey": "a446399c"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0031",
+            "category": "departure",
+            "scheduledTime": "10:07",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0010",
+            "category": "departure",
+            "scheduledTime": "10:08",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-3f89c3a7-0001",
+            "category": "arrival",
+            "scheduledTime": "10:09",
+            "spawnPatternKey": "3f89c3a7"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0019",
+            "category": "arrival",
+            "scheduledTime": "10:10",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-8ff8c17a-0014",
+            "category": "arrival",
+            "scheduledTime": "10:22",
+            "spawnPatternKey": "8ff8c17a"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0032",
+            "category": "departure",
+            "scheduledTime": "10:27",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-b628f618-0014",
+            "category": "arrival",
+            "scheduledTime": "10:30",
+            "spawnPatternKey": "b628f618"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0020",
+            "category": "arrival",
+            "scheduledTime": "10:30",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-66b9829a-0001",
+            "category": "departure",
+            "scheduledTime": "10:32",
+            "spawnPatternKey": "66b9829a"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0033",
+            "category": "departure",
+            "scheduledTime": "10:37",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0011",
+            "category": "departure",
+            "scheduledTime": "10:39",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0033",
+            "category": "departure",
+            "scheduledTime": "10:48",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0021",
+            "category": "arrival",
+            "scheduledTime": "10:50",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0034",
+            "category": "departure",
+            "scheduledTime": "11:08",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-3f89c3a7-0002",
+            "category": "arrival",
+            "scheduledTime": "11:09",
+            "spawnPatternKey": "3f89c3a7"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0012",
+            "category": "departure",
+            "scheduledTime": "11:10",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0022",
+            "category": "arrival",
+            "scheduledTime": "11:10",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0034",
+            "category": "departure",
+            "scheduledTime": "11:14",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-a446399c-0012",
+            "category": "arrival",
+            "scheduledTime": "11:19",
+            "spawnPatternKey": "a446399c"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0035",
+            "category": "departure",
+            "scheduledTime": "11:28",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-b628f618-0015",
+            "category": "arrival",
+            "scheduledTime": "11:30",
+            "spawnPatternKey": "b628f618"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0023",
+            "category": "arrival",
+            "scheduledTime": "11:30",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0013",
+            "category": "departure",
+            "scheduledTime": "11:40",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-8ff8c17a-0015",
+            "category": "arrival",
+            "scheduledTime": "11:46",
+            "spawnPatternKey": "8ff8c17a"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0036",
+            "category": "departure",
+            "scheduledTime": "11:48",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0024",
+            "category": "arrival",
+            "scheduledTime": "11:50",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0035",
+            "category": "departure",
+            "scheduledTime": "11:51",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-3f89c3a7-0003",
+            "category": "arrival",
+            "scheduledTime": "12:09",
+            "spawnPatternKey": "3f89c3a7"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0037",
+            "category": "departure",
+            "scheduledTime": "12:09",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0025",
+            "category": "arrival",
+            "scheduledTime": "12:10",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0014",
+            "category": "departure",
+            "scheduledTime": "12:11",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0036",
+            "category": "departure",
+            "scheduledTime": "12:28",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0038",
+            "category": "departure",
+            "scheduledTime": "12:29",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-b628f618-0016",
+            "category": "arrival",
+            "scheduledTime": "12:30",
+            "spawnPatternKey": "b628f618"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0026",
+            "category": "arrival",
+            "scheduledTime": "12:30",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-a446399c-0013",
+            "category": "arrival",
+            "scheduledTime": "12:35",
+            "spawnPatternKey": "a446399c"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0015",
+            "category": "departure",
+            "scheduledTime": "12:41",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0039",
+            "category": "departure",
+            "scheduledTime": "12:49",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0027",
+            "category": "arrival",
+            "scheduledTime": "12:50",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-f7fa44be-0006",
+            "category": "arrival",
+            "scheduledTime": "12:58",
+            "spawnPatternKey": "f7fa44be"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0037",
+            "category": "departure",
+            "scheduledTime": "13:05",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-3f89c3a7-0004",
+            "category": "arrival",
+            "scheduledTime": "13:09",
+            "spawnPatternKey": "3f89c3a7"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0040",
+            "category": "departure",
+            "scheduledTime": "13:09",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0028",
+            "category": "arrival",
+            "scheduledTime": "13:10",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-8ff8c17a-0016",
+            "category": "arrival",
+            "scheduledTime": "13:11",
+            "spawnPatternKey": "8ff8c17a"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0016",
+            "category": "departure",
+            "scheduledTime": "13:12",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-b628f618-0017",
+            "category": "arrival",
+            "scheduledTime": "13:30",
+            "spawnPatternKey": "b628f618"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0029",
+            "category": "arrival",
+            "scheduledTime": "13:30",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0041",
+            "category": "departure",
+            "scheduledTime": "13:30",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0038",
+            "category": "departure",
+            "scheduledTime": "13:42",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0017",
+            "category": "departure",
+            "scheduledTime": "13:43",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0030",
+            "category": "arrival",
+            "scheduledTime": "13:50",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0042",
+            "category": "departure",
+            "scheduledTime": "13:50",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-a446399c-0014",
+            "category": "arrival",
+            "scheduledTime": "13:51",
+            "spawnPatternKey": "a446399c"
+        },
+        {
+            "id": "auth-sumu-3f89c3a7-0005",
+            "category": "arrival",
+            "scheduledTime": "14:09",
+            "spawnPatternKey": "3f89c3a7"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0031",
+            "category": "arrival",
+            "scheduledTime": "14:10",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0043",
+            "category": "departure",
+            "scheduledTime": "14:10",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0018",
+            "category": "departure",
+            "scheduledTime": "14:13",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0039",
+            "category": "departure",
+            "scheduledTime": "14:19",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-b628f618-0018",
+            "category": "arrival",
+            "scheduledTime": "14:30",
+            "spawnPatternKey": "b628f618"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0032",
+            "category": "arrival",
+            "scheduledTime": "14:30",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0044",
+            "category": "departure",
+            "scheduledTime": "14:31",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-8ff8c17a-0017",
+            "category": "arrival",
+            "scheduledTime": "14:36",
+            "spawnPatternKey": "8ff8c17a"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0019",
+            "category": "departure",
+            "scheduledTime": "14:44",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0033",
+            "category": "arrival",
+            "scheduledTime": "14:50",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0045",
+            "category": "departure",
+            "scheduledTime": "14:51",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0001",
+            "category": "departure",
+            "scheduledTime": "14:56",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-a446399c-0015",
+            "category": "arrival",
+            "scheduledTime": "15:07",
+            "spawnPatternKey": "a446399c"
+        },
+        {
+            "id": "auth-sumu-3f89c3a7-0006",
+            "category": "arrival",
+            "scheduledTime": "15:09",
+            "spawnPatternKey": "3f89c3a7"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0034",
+            "category": "arrival",
+            "scheduledTime": "15:10",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0046",
+            "category": "departure",
+            "scheduledTime": "15:11",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0020",
+            "category": "departure",
+            "scheduledTime": "15:15",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-66b9829a-0002",
+            "category": "departure",
+            "scheduledTime": "15:20",
+            "spawnPatternKey": "66b9829a"
+        },
+        {
+            "id": "auth-sumu-b628f618-0019",
+            "category": "arrival",
+            "scheduledTime": "15:30",
+            "spawnPatternKey": "b628f618"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0035",
+            "category": "arrival",
+            "scheduledTime": "15:30",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0047",
+            "category": "departure",
+            "scheduledTime": "15:31",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0002",
+            "category": "departure",
+            "scheduledTime": "15:32",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0021",
+            "category": "departure",
+            "scheduledTime": "15:45",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0036",
+            "category": "arrival",
+            "scheduledTime": "15:50",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0048",
+            "category": "departure",
+            "scheduledTime": "15:52",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-8ff8c17a-0001",
+            "category": "arrival",
+            "scheduledTime": "16:01",
+            "spawnPatternKey": "8ff8c17a"
+        },
+        {
+            "id": "auth-sumu-3f89c3a7-0007",
+            "category": "arrival",
+            "scheduledTime": "16:09",
+            "spawnPatternKey": "3f89c3a7"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0003",
+            "category": "departure",
+            "scheduledTime": "16:09",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0037",
+            "category": "arrival",
+            "scheduledTime": "16:10",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0049",
+            "category": "departure",
+            "scheduledTime": "16:12",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0022",
+            "category": "departure",
+            "scheduledTime": "16:16",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-a446399c-0016",
+            "category": "arrival",
+            "scheduledTime": "16:22",
+            "spawnPatternKey": "a446399c"
+        },
+        {
+            "id": "auth-sumu-f7fa44be-0007",
+            "category": "arrival",
+            "scheduledTime": "16:24",
+            "spawnPatternKey": "f7fa44be"
+        },
+        {
+            "id": "auth-sumu-b628f618-0020",
+            "category": "arrival",
+            "scheduledTime": "16:30",
+            "spawnPatternKey": "b628f618"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0038",
+            "category": "arrival",
+            "scheduledTime": "16:30",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0050",
+            "category": "departure",
+            "scheduledTime": "16:32",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0004",
+            "category": "departure",
+            "scheduledTime": "16:46",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0023",
+            "category": "departure",
+            "scheduledTime": "16:47",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0039",
+            "category": "arrival",
+            "scheduledTime": "16:50",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0051",
+            "category": "departure",
+            "scheduledTime": "16:53",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-3f89c3a7-0008",
+            "category": "arrival",
+            "scheduledTime": "17:09",
+            "spawnPatternKey": "3f89c3a7"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0040",
+            "category": "arrival",
+            "scheduledTime": "17:10",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0052",
+            "category": "departure",
+            "scheduledTime": "17:13",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0024",
+            "category": "departure",
+            "scheduledTime": "17:17",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0005",
+            "category": "departure",
+            "scheduledTime": "17:23",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-8ff8c17a-0002",
+            "category": "arrival",
+            "scheduledTime": "17:25",
+            "spawnPatternKey": "8ff8c17a"
+        },
+        {
+            "id": "auth-sumu-b628f618-0021",
+            "category": "arrival",
+            "scheduledTime": "17:30",
+            "spawnPatternKey": "b628f618"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0041",
+            "category": "arrival",
+            "scheduledTime": "17:30",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0053",
+            "category": "departure",
+            "scheduledTime": "17:33",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-a446399c-0017",
+            "category": "arrival",
+            "scheduledTime": "17:38",
+            "spawnPatternKey": "a446399c"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0025",
+            "category": "departure",
+            "scheduledTime": "17:48",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0042",
+            "category": "arrival",
+            "scheduledTime": "17:50",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0054",
+            "category": "departure",
+            "scheduledTime": "17:53",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0006",
+            "category": "departure",
+            "scheduledTime": "18:00",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-3f89c3a7-0009",
+            "category": "arrival",
+            "scheduledTime": "18:09",
+            "spawnPatternKey": "3f89c3a7"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0043",
+            "category": "arrival",
+            "scheduledTime": "18:10",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0055",
+            "category": "departure",
+            "scheduledTime": "18:14",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0026",
+            "category": "departure",
+            "scheduledTime": "18:18",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-b628f618-0022",
+            "category": "arrival",
+            "scheduledTime": "18:30",
+            "spawnPatternKey": "b628f618"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0044",
+            "category": "arrival",
+            "scheduledTime": "18:30",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0056",
+            "category": "departure",
+            "scheduledTime": "18:34",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0007",
+            "category": "departure",
+            "scheduledTime": "18:37",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0027",
+            "category": "departure",
+            "scheduledTime": "18:49",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-8ff8c17a-0003",
+            "category": "arrival",
+            "scheduledTime": "18:50",
+            "spawnPatternKey": "8ff8c17a"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0045",
+            "category": "arrival",
+            "scheduledTime": "18:50",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-a446399c-0018",
+            "category": "arrival",
+            "scheduledTime": "18:54",
+            "spawnPatternKey": "a446399c"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0057",
+            "category": "departure",
+            "scheduledTime": "18:54",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-3f89c3a7-0010",
+            "category": "arrival",
+            "scheduledTime": "19:09",
+            "spawnPatternKey": "3f89c3a7"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0046",
+            "category": "arrival",
+            "scheduledTime": "19:10",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0008",
+            "category": "departure",
+            "scheduledTime": "19:14",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0058",
+            "category": "departure",
+            "scheduledTime": "19:15",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0028",
+            "category": "departure",
+            "scheduledTime": "19:20",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-b628f618-0023",
+            "category": "arrival",
+            "scheduledTime": "19:30",
+            "spawnPatternKey": "b628f618"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0047",
+            "category": "arrival",
+            "scheduledTime": "19:30",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0059",
+            "category": "departure",
+            "scheduledTime": "19:35",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0029",
+            "category": "departure",
+            "scheduledTime": "19:50",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0048",
+            "category": "arrival",
+            "scheduledTime": "19:50",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-f7fa44be-0001",
+            "category": "arrival",
+            "scheduledTime": "19:50",
+            "spawnPatternKey": "f7fa44be"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0009",
+            "category": "departure",
+            "scheduledTime": "19:51",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0060",
+            "category": "departure",
+            "scheduledTime": "19:55",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-66b9829a-0003",
+            "category": "departure",
+            "scheduledTime": "20:08",
+            "spawnPatternKey": "66b9829a"
+        },
+        {
+            "id": "auth-sumu-3f89c3a7-0011",
+            "category": "arrival",
+            "scheduledTime": "20:09",
+            "spawnPatternKey": "3f89c3a7"
+        },
+        {
+            "id": "auth-sumu-a446399c-0019",
+            "category": "arrival",
+            "scheduledTime": "20:10",
+            "spawnPatternKey": "a446399c"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0049",
+            "category": "arrival",
+            "scheduledTime": "20:10",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-8ff8c17a-0004",
+            "category": "arrival",
+            "scheduledTime": "20:15",
+            "spawnPatternKey": "8ff8c17a"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0061",
+            "category": "departure",
+            "scheduledTime": "20:15",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0030",
+            "category": "departure",
+            "scheduledTime": "20:21",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0010",
+            "category": "departure",
+            "scheduledTime": "20:28",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-b628f618-0024",
+            "category": "arrival",
+            "scheduledTime": "20:30",
+            "spawnPatternKey": "b628f618"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0050",
+            "category": "arrival",
+            "scheduledTime": "20:30",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0062",
+            "category": "departure",
+            "scheduledTime": "20:36",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0051",
+            "category": "arrival",
+            "scheduledTime": "20:50",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0031",
+            "category": "departure",
+            "scheduledTime": "20:52",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0063",
+            "category": "departure",
+            "scheduledTime": "20:56",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0011",
+            "category": "departure",
+            "scheduledTime": "21:05",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-3f89c3a7-0012",
+            "category": "arrival",
+            "scheduledTime": "21:09",
+            "spawnPatternKey": "3f89c3a7"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0052",
+            "category": "arrival",
+            "scheduledTime": "21:10",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0064",
+            "category": "departure",
+            "scheduledTime": "21:16",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0032",
+            "category": "departure",
+            "scheduledTime": "21:22",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-a446399c-0001",
+            "category": "arrival",
+            "scheduledTime": "21:26",
+            "spawnPatternKey": "a446399c"
+        },
+        {
+            "id": "auth-sumu-b628f618-0001",
+            "category": "arrival",
+            "scheduledTime": "21:30",
+            "spawnPatternKey": "b628f618"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0053",
+            "category": "arrival",
+            "scheduledTime": "21:30",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0065",
+            "category": "departure",
+            "scheduledTime": "21:37",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-8ff8c17a-0005",
+            "category": "arrival",
+            "scheduledTime": "21:39",
+            "spawnPatternKey": "8ff8c17a"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0012",
+            "category": "departure",
+            "scheduledTime": "21:42",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0054",
+            "category": "arrival",
+            "scheduledTime": "21:50",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0033",
+            "category": "departure",
+            "scheduledTime": "21:53",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0066",
+            "category": "departure",
+            "scheduledTime": "21:57",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-3f89c3a7-0013",
+            "category": "arrival",
+            "scheduledTime": "22:09",
+            "spawnPatternKey": "3f89c3a7"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0055",
+            "category": "arrival",
+            "scheduledTime": "22:10",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0067",
+            "category": "departure",
+            "scheduledTime": "22:17",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0013",
+            "category": "departure",
+            "scheduledTime": "22:19",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0034",
+            "category": "departure",
+            "scheduledTime": "22:24",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-b628f618-0002",
+            "category": "arrival",
+            "scheduledTime": "22:30",
+            "spawnPatternKey": "b628f618"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0056",
+            "category": "arrival",
+            "scheduledTime": "22:30",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0068",
+            "category": "departure",
+            "scheduledTime": "22:37",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-a446399c-0002",
+            "category": "arrival",
+            "scheduledTime": "22:41",
+            "spawnPatternKey": "a446399c"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0057",
+            "category": "arrival",
+            "scheduledTime": "22:50",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0035",
+            "category": "departure",
+            "scheduledTime": "22:54",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0014",
+            "category": "departure",
+            "scheduledTime": "22:56",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0069",
+            "category": "departure",
+            "scheduledTime": "22:58",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-8ff8c17a-0006",
+            "category": "arrival",
+            "scheduledTime": "23:04",
+            "spawnPatternKey": "8ff8c17a"
+        },
+        {
+            "id": "auth-sumu-3f89c3a7-0014",
+            "category": "arrival",
+            "scheduledTime": "23:09",
+            "spawnPatternKey": "3f89c3a7"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0058",
+            "category": "arrival",
+            "scheduledTime": "23:10",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-f7fa44be-0002",
+            "category": "arrival",
+            "scheduledTime": "23:15",
+            "spawnPatternKey": "f7fa44be"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0070",
+            "category": "departure",
+            "scheduledTime": "23:18",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0036",
+            "category": "departure",
+            "scheduledTime": "23:25",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-b628f618-0003",
+            "category": "arrival",
+            "scheduledTime": "23:30",
+            "spawnPatternKey": "b628f618"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0059",
+            "category": "arrival",
+            "scheduledTime": "23:30",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-dc6a0e28-0015",
+            "category": "departure",
+            "scheduledTime": "23:32",
+            "spawnPatternKey": "dc6a0e28"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0071",
+            "category": "departure",
+            "scheduledTime": "23:38",
+            "spawnPatternKey": "ffaa4329"
+        },
+        {
+            "id": "auth-sumu-e76738c0-0060",
+            "category": "arrival",
+            "scheduledTime": "23:50",
+            "spawnPatternKey": "e76738c0"
+        },
+        {
+            "id": "auth-sumu-523c9c47-0037",
+            "category": "departure",
+            "scheduledTime": "23:55",
+            "spawnPatternKey": "523c9c47"
+        },
+        {
+            "id": "auth-sumu-a446399c-0003",
+            "category": "arrival",
+            "scheduledTime": "23:57",
+            "spawnPatternKey": "a446399c"
+        },
+        {
+            "id": "auth-sumu-ffaa4329-0001",
+            "category": "departure",
+            "scheduledTime": "23:59",
+            "spawnPatternKey": "ffaa4329"
+        }
+    ]
+}

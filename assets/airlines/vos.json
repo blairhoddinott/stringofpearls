@@ -1,0 +1,6 @@
+{
+    "icao": "vos",
+    "name": "Volaris El Salvador",
+    "callsign": { "name": "Jetsal", "callsignFormats": ["###"] },
+    "fleets": { "default": [["A20N", 1]] }
+}

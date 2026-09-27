@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const AIRLINE_MAP_PATH = path.join(__dirname, 'reporting-airline-icao.json');
+const AIRPORT_ALIAS_MAP_PATH = path.join(__dirname, 'airport-code-aliases.json');
 const DEFAULT_AIRLINES_DIR = path.join(__dirname, '..', '..', 'assets', 'airlines');
 
 /**
@@ -186,7 +187,7 @@ const SOURCE_COVERAGE =
  * @param {string} text raw OurAirports airports.csv contents
  * @returns {Map<string, Set<string>>} IATA code -> candidate ICAO idents
  */
-function buildAirportIcaoMap(text) {
+function buildAirportIcaoMap(text, aliases = {}) {
     const rows = parseCsv(text);
 
     if (rows.length === 0) {
@@ -200,25 +201,40 @@ function buildAirportIcaoMap(text) {
     const identIndex = header.indexOf('ident');
     const iataIndex = header.indexOf('iata_code');
 
+
     if (identIndex === -1 || iataIndex === -1) {
         throw new Error('OurAirports CSV is missing ident or iata_code columns');
     }
+    if (aliases === null || typeof aliases !== 'object' || Array.isArray(aliases)) {
+        throw new TypeError('airport aliases must be an object');
+    }
 
     const map = new Map();
+    const addCode = (code, ident) => {
+        if (code === '') {
+            return;
+        }
+        if (!map.has(code)) {
+            map.set(code, new Set());
+        }
+        map.get(code).add(ident);
+    };
 
     rows.slice(1).forEach((row) => {
         const iata = (row[iataIndex] || '').trim();
         const ident = (row[identIndex] || '').trim();
 
-        if (iata === '') {
-            return;
-        }
+        addCode(iata, ident);
+    });
 
-        if (!map.has(iata)) {
-            map.set(iata, new Set());
+    Object.entries(aliases).forEach(([sourceCode, ident]) => {
+        if (!/^[A-Z0-9]{3}$/.test(sourceCode)) {
+            throw new TypeError(`airport alias source code ${JSON.stringify(sourceCode)} must contain three uppercase alphanumeric characters`);
         }
-
-        map.get(iata).add(ident);
+        if (typeof ident !== 'string' || !ICAO_PATTERN.test(ident)) {
+            throw new TypeError(`airport alias target ${JSON.stringify(ident)} must contain four uppercase letters`);
+        }
+        addCode(sourceCode, ident);
     });
 
     return map;
@@ -567,11 +583,13 @@ function importSchedule(options) {
         sourceUrl,
         outPath,
         airlinesDir = DEFAULT_AIRLINES_DIR,
-        airlineMapPath = AIRLINE_MAP_PATH
+        airlineMapPath = AIRLINE_MAP_PATH,
+        airportAliasMapPath = AIRPORT_ALIAS_MAP_PATH
     } = options;
 
     const airlineMap = loadAirlineMap(airlineMapPath);
-    const airportMap = buildAirportIcaoMap(fs.readFileSync(airportsPath, 'utf8'));
+    const airportAliases = JSON.parse(fs.readFileSync(airportAliasMapPath, 'utf8'));
+    const airportMap = buildAirportIcaoMap(fs.readFileSync(airportsPath, 'utf8'), airportAliases);
     const bts = parseCsv(fs.readFileSync(btsPath, 'utf8'));
 
     const schedule = normalizeSchedule({

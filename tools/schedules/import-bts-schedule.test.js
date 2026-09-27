@@ -79,6 +79,7 @@ const airportsCsv = [
     '2,"KPDX","large_airport","Portland Intl","PDX","PDX"',
     '3,"KLAX","large_airport","Los Angeles Intl","LAX","LAX"',
     '7,"KDEN","large_airport","Denver Intl","DEN","DEN"',
+
     // Ambiguous: two idents claim the same IATA code.
     '4,"KXXX","large_airport","First Ambiguous","AMB","XXX"',
     '5,"KYYY","large_airport","Second Ambiguous","AMB","YYY"',
@@ -108,9 +109,25 @@ assert.throws(
 
 assert.strictEqual(resolveAirportIcao(airportMap, 'PDX'), 'KPDX', 'PDX resolves to its ICAO ident');
 assert.strictEqual(resolveAirportIcao(airportMap, 'LAX'), 'KLAX', 'LAX resolves to its ICAO ident');
+
 assert.strictEqual(resolveAirportIcao(airportMap, 'AMB'), null, 'ambiguous IATA must fail closed');
 assert.strictEqual(resolveAirportIcao(airportMap, 'SML'), null, 'non-ICAO ident must not resolve');
 assert.strictEqual(resolveAirportIcao(airportMap, 'ZZZ'), null, 'unknown IATA is unresolved');
+
+const renamedAirportMap = buildAirportIcaoMap([
+    'ident,iata_code,local_code,name',
+    'KPBI,DJT,DJT,President Donald J. Trump International Airport'
+].join('\n'), { PBI: 'KPBI' });
+assert.strictEqual(
+    resolveAirportIcao(renamedAirportMap, 'PBI'),
+    'KPBI',
+    'reviewed historical source-code aliases resolve without guessing'
+);
+assert.throws(
+    () => buildAirportIcaoMap('ident,iata_code\nKSEA,SEA', { pbi: 'KPBI' }),
+    /airport alias source code/,
+    'malformed explicit aliases must fail closed'
+);
 
 // normalizeSchedule: select the sample date + airport, choose arrival/departure
 // times, map every code, derive stable ids, and sort by scheduledTime then id.
@@ -317,11 +334,14 @@ assert.throws(
     'an unresolvable schedule airport IATA must fail'
 );
 
-// The shipped reporting-airline map exposes exactly the sample's IATA->ICAO pairs.
+// The shipped reporting-airline map exposes exactly the reviewed selectable-airport corpus.
 assert.deepStrictEqual(
     loadAirlineMap(),
-    { AS: 'asa', DL: 'dal', OO: 'skw', UA: 'ual', WN: 'swa', AA: 'aal', F9: 'fft', MQ: 'eny', B6: 'jbu' },
-    'the reviewable airline map must stay explicit and in sync with the sample'
+    {
+        AS: 'asa', DL: 'dal', OO: 'skw', UA: 'ual', WN: 'swa', AA: 'aal',
+        F9: 'fft', MQ: 'eny', B6: 'jbu', G4: 'aay', OH: 'jia', YX: 'rpa'
+    },
+    'the reviewable airline map must stay explicit and in sync with the corpus'
 );
 
 // importSchedule: end-to-end read -> normalize -> atomic write.

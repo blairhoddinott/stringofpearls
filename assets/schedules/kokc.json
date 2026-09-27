@@ -1,0 +1,1392 @@
+{
+  "schemaVersion": 1,
+  "airportIcao": "KOKC",
+  "timezone": "America/Chicago",
+  "sampleDate": "2026-07-15",
+  "source": {
+    "name": "US DOT BTS On-Time Performance + T-100 Segment (All Carriers)",
+    "url": "https://transtats.bts.gov/DL_SelectFields.aspx?QO_fu146_anzr=Nv4+Pn44vr45&gnoyr_VQ=FMG",
+    "retrievedAt": "2026-09-27",
+    "license": "U.S. Government work in the public domain (17 U.S.C. §105); OurAirports code data is public domain.",
+    "coverage": "Exact On-Time movements are retained; 15 representative movements were deterministically synthesized from 2026-05 T-100 performed-departure aggregates. General aviation is excluded."
+  },
+  "flights": [
+    {
+      "id": "arrival-wn2293-las-okc",
+      "category": "arrival",
+      "scheduledTime": "00:25",
+      "airlineIcao": "swa",
+      "flightNumber": "2293",
+      "originIcao": "KLAS",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-wn3121-okc-mdw",
+      "category": "departure",
+      "scheduledTime": "05:00",
+      "airlineIcao": "swa",
+      "flightNumber": "3121",
+      "originIcao": "KOKC",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "departure-aa656-okc-dfw",
+      "category": "departure",
+      "scheduledTime": "05:01",
+      "airlineIcao": "aal",
+      "flightNumber": "656",
+      "originIcao": "KOKC",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-oo5453-okc-iah",
+      "category": "departure",
+      "scheduledTime": "05:04",
+      "airlineIcao": "skw",
+      "flightNumber": "5453",
+      "originIcao": "KOKC",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-dl1184-okc-atl",
+      "category": "departure",
+      "scheduledTime": "05:49",
+      "airlineIcao": "dal",
+      "flightNumber": "1184",
+      "originIcao": "KOKC",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-wn3111-okc-den",
+      "category": "departure",
+      "scheduledTime": "05:55",
+      "airlineIcao": "swa",
+      "flightNumber": "3111",
+      "originIcao": "KOKC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-yv-departure-kiah-f-004",
+      "scheduledTime": "05:55",
+      "category": "departure",
+      "originIcao": "KOKC",
+      "destinationIcao": "KIAH",
+      "airlineIcao": "ash",
+      "flightNumber": "3087"
+    },
+    {
+      "id": "departure-aa2272-okc-dfw",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "aal",
+      "flightNumber": "2272",
+      "originIcao": "KOKC",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-yx4535-okc-lga",
+      "category": "departure",
+      "scheduledTime": "06:02",
+      "airlineIcao": "rpa",
+      "flightNumber": "4535",
+      "originIcao": "KOKC",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-oo4751-okc-den",
+      "category": "departure",
+      "scheduledTime": "06:05",
+      "airlineIcao": "skw",
+      "flightNumber": "4751",
+      "originIcao": "KOKC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-wn3109-okc-dal",
+      "category": "departure",
+      "scheduledTime": "06:10",
+      "airlineIcao": "swa",
+      "flightNumber": "3109",
+      "originIcao": "KOKC",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "departure-mq3679-okc-mia",
+      "category": "departure",
+      "scheduledTime": "06:15",
+      "airlineIcao": "eny",
+      "flightNumber": "3679",
+      "originIcao": "KOKC",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-wn4665-okc-las",
+      "category": "departure",
+      "scheduledTime": "06:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4665",
+      "originIcao": "KOKC",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-aa2273-okc-clt",
+      "category": "departure",
+      "scheduledTime": "06:40",
+      "airlineIcao": "aal",
+      "flightNumber": "2273",
+      "originIcao": "KOKC",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-dl1158-okc-atl",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "dal",
+      "flightNumber": "1158",
+      "originIcao": "KOKC",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-ua1127-okc-iah",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "ual",
+      "flightNumber": "1127",
+      "originIcao": "KOKC",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-as554-okc-sea",
+      "category": "departure",
+      "scheduledTime": "07:02",
+      "airlineIcao": "asa",
+      "flightNumber": "554",
+      "originIcao": "KOKC",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-yv-departure-kiah-f-002",
+      "scheduledTime": "07:04",
+      "category": "departure",
+      "originIcao": "KOKC",
+      "destinationIcao": "KIAH",
+      "airlineIcao": "ash",
+      "flightNumber": "4948"
+    },
+    {
+      "id": "departure-oo5364-okc-ord",
+      "category": "departure",
+      "scheduledTime": "07:10",
+      "airlineIcao": "skw",
+      "flightNumber": "5364",
+      "originIcao": "KOKC",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-wn2885-okc-phx",
+      "category": "departure",
+      "scheduledTime": "07:10",
+      "airlineIcao": "swa",
+      "flightNumber": "2885",
+      "originIcao": "KOKC",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-wn3107-okc-bna",
+      "category": "departure",
+      "scheduledTime": "07:30",
+      "airlineIcao": "swa",
+      "flightNumber": "3107",
+      "originIcao": "KOKC",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-oo4895-okc-lax",
+      "category": "departure",
+      "scheduledTime": "07:35",
+      "airlineIcao": "skw",
+      "flightNumber": "4895",
+      "originIcao": "KOKC",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-oo3844-okc-msp",
+      "category": "departure",
+      "scheduledTime": "07:45",
+      "airlineIcao": "skw",
+      "flightNumber": "3844",
+      "originIcao": "KOKC",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "departure-oo6493-okc-ord",
+      "category": "departure",
+      "scheduledTime": "08:10",
+      "airlineIcao": "skw",
+      "flightNumber": "6493",
+      "originIcao": "KOKC",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-wn4767-okc-hou",
+      "category": "departure",
+      "scheduledTime": "08:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4767",
+      "originIcao": "KOKC",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "t100-yv-departure-kiah-f-001",
+      "scheduledTime": "08:11",
+      "category": "departure",
+      "originIcao": "KOKC",
+      "destinationIcao": "KIAH",
+      "airlineIcao": "ash",
+      "flightNumber": "7928"
+    },
+    {
+      "id": "departure-oo6203-okc-dfw",
+      "category": "departure",
+      "scheduledTime": "08:25",
+      "airlineIcao": "skw",
+      "flightNumber": "6203",
+      "originIcao": "KOKC",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-oo4029-okc-slc",
+      "category": "departure",
+      "scheduledTime": "08:26",
+      "airlineIcao": "skw",
+      "flightNumber": "4029",
+      "originIcao": "KOKC",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-oo6206-dfw-okc",
+      "category": "arrival",
+      "scheduledTime": "08:29",
+      "airlineIcao": "skw",
+      "flightNumber": "6206",
+      "originIcao": "KDFW",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-oo5823-okc-ord",
+      "category": "departure",
+      "scheduledTime": "08:45",
+      "airlineIcao": "skw",
+      "flightNumber": "5823",
+      "originIcao": "KOKC",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-oo6392-okc-phx",
+      "category": "departure",
+      "scheduledTime": "08:59",
+      "airlineIcao": "skw",
+      "flightNumber": "6392",
+      "originIcao": "KOKC",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-ua1424-okc-den",
+      "category": "departure",
+      "scheduledTime": "09:15",
+      "airlineIcao": "ual",
+      "flightNumber": "1424",
+      "originIcao": "KOKC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-wn4490-hou-okc",
+      "category": "arrival",
+      "scheduledTime": "09:50",
+      "airlineIcao": "swa",
+      "flightNumber": "4490",
+      "originIcao": "KHOU",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-wn2242-bna-okc",
+      "category": "arrival",
+      "scheduledTime": "09:55",
+      "airlineIcao": "swa",
+      "flightNumber": "2242",
+      "originIcao": "KBNA",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-dl2490-atl-okc",
+      "category": "arrival",
+      "scheduledTime": "10:14",
+      "airlineIcao": "dal",
+      "flightNumber": "2490",
+      "originIcao": "KATL",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "t100-5x-arrival-ksdf-g-001",
+      "scheduledTime": "10:18",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KOKC",
+      "airlineIcao": "ups",
+      "flightNumber": "7745"
+    },
+    {
+      "id": "departure-wn2274-okc-den",
+      "category": "departure",
+      "scheduledTime": "10:30",
+      "airlineIcao": "swa",
+      "flightNumber": "2274",
+      "originIcao": "KOKC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-oo6204-ord-okc",
+      "category": "arrival",
+      "scheduledTime": "10:34",
+      "airlineIcao": "skw",
+      "flightNumber": "6204",
+      "originIcao": "KORD",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-wn2771-okc-dca",
+      "category": "departure",
+      "scheduledTime": "10:35",
+      "airlineIcao": "swa",
+      "flightNumber": "2771",
+      "originIcao": "KOKC",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "arrival-mq3805-dfw-okc",
+      "category": "arrival",
+      "scheduledTime": "10:37",
+      "airlineIcao": "eny",
+      "flightNumber": "3805",
+      "originIcao": "KDFW",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-wn3010-den-okc",
+      "category": "arrival",
+      "scheduledTime": "10:45",
+      "airlineIcao": "swa",
+      "flightNumber": "3010",
+      "originIcao": "KDEN",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-oo6029-den-okc",
+      "category": "arrival",
+      "scheduledTime": "10:49",
+      "airlineIcao": "skw",
+      "flightNumber": "6029",
+      "originIcao": "KDEN",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-oo6204-okc-ord",
+      "category": "departure",
+      "scheduledTime": "11:04",
+      "airlineIcao": "skw",
+      "flightNumber": "6204",
+      "originIcao": "KOKC",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-5x-departure-ksdf-g-001",
+      "scheduledTime": "11:05",
+      "category": "departure",
+      "originIcao": "KOKC",
+      "destinationIcao": "KSDF",
+      "airlineIcao": "ups",
+      "flightNumber": "7831"
+    },
+    {
+      "id": "departure-dl2490-okc-atl",
+      "category": "departure",
+      "scheduledTime": "11:09",
+      "airlineIcao": "dal",
+      "flightNumber": "2490",
+      "originIcao": "KOKC",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-mq3805-okc-dfw",
+      "category": "departure",
+      "scheduledTime": "11:10",
+      "airlineIcao": "eny",
+      "flightNumber": "3805",
+      "originIcao": "KOKC",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-wn3010-okc-aus",
+      "category": "departure",
+      "scheduledTime": "11:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3010",
+      "originIcao": "KOKC",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-oo5490-okc-den",
+      "category": "departure",
+      "scheduledTime": "11:30",
+      "airlineIcao": "skw",
+      "flightNumber": "5490",
+      "originIcao": "KOKC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-oo5614-ord-okc",
+      "category": "arrival",
+      "scheduledTime": "11:40",
+      "airlineIcao": "skw",
+      "flightNumber": "5614",
+      "originIcao": "KORD",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-wn1327-dal-okc",
+      "category": "arrival",
+      "scheduledTime": "11:40",
+      "airlineIcao": "swa",
+      "flightNumber": "1327",
+      "originIcao": "KDAL",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-mq3731-dfw-okc",
+      "category": "arrival",
+      "scheduledTime": "11:56",
+      "airlineIcao": "eny",
+      "flightNumber": "3731",
+      "originIcao": "KDFW",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-dl2020-atl-okc",
+      "category": "arrival",
+      "scheduledTime": "12:11",
+      "airlineIcao": "dal",
+      "flightNumber": "2020",
+      "originIcao": "KATL",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-wn4414-okc-hou",
+      "category": "departure",
+      "scheduledTime": "12:20",
+      "airlineIcao": "swa",
+      "flightNumber": "4414",
+      "originIcao": "KOKC",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "departure-mq3731-okc-dfw",
+      "category": "departure",
+      "scheduledTime": "12:26",
+      "airlineIcao": "eny",
+      "flightNumber": "3731",
+      "originIcao": "KOKC",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-wn1321-mdw-okc",
+      "category": "arrival",
+      "scheduledTime": "12:30",
+      "airlineIcao": "swa",
+      "flightNumber": "1321",
+      "originIcao": "KMDW",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-oo5621-okc-ord",
+      "category": "departure",
+      "scheduledTime": "12:40",
+      "airlineIcao": "skw",
+      "flightNumber": "5621",
+      "originIcao": "KOKC",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-yv-arrival-kiah-f-003",
+      "scheduledTime": "12:46",
+      "category": "arrival",
+      "originIcao": "KIAH",
+      "destinationIcao": "KOKC",
+      "airlineIcao": "ash",
+      "flightNumber": "7666"
+    },
+    {
+      "id": "arrival-aa2220-clt-okc",
+      "category": "arrival",
+      "scheduledTime": "12:48",
+      "airlineIcao": "aal",
+      "flightNumber": "2220",
+      "originIcao": "KCLT",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-wn2589-den-okc",
+      "category": "arrival",
+      "scheduledTime": "13:00",
+      "airlineIcao": "swa",
+      "flightNumber": "2589",
+      "originIcao": "KDEN",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-oo5324-den-okc",
+      "category": "arrival",
+      "scheduledTime": "13:01",
+      "airlineIcao": "skw",
+      "flightNumber": "5324",
+      "originIcao": "KDEN",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-wn1321-okc-las",
+      "category": "departure",
+      "scheduledTime": "13:05",
+      "airlineIcao": "swa",
+      "flightNumber": "1321",
+      "originIcao": "KOKC",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "arrival-oo6277-phx-okc",
+      "category": "arrival",
+      "scheduledTime": "13:12",
+      "airlineIcao": "skw",
+      "flightNumber": "6277",
+      "originIcao": "KPHX",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-dl2020-okc-atl",
+      "category": "departure",
+      "scheduledTime": "13:18",
+      "airlineIcao": "dal",
+      "flightNumber": "2020",
+      "originIcao": "KOKC",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-fx-departure-kmem-g-001",
+      "scheduledTime": "13:18",
+      "category": "departure",
+      "originIcao": "KOKC",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3492"
+    },
+    {
+      "id": "arrival-wn982-phx-okc",
+      "category": "arrival",
+      "scheduledTime": "13:25",
+      "airlineIcao": "swa",
+      "flightNumber": "982",
+      "originIcao": "KPHX",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-wn3120-okc-mco",
+      "category": "departure",
+      "scheduledTime": "13:40",
+      "airlineIcao": "swa",
+      "flightNumber": "3120",
+      "originIcao": "KOKC",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "arrival-oo6272-lax-okc",
+      "category": "arrival",
+      "scheduledTime": "13:42",
+      "airlineIcao": "skw",
+      "flightNumber": "6272",
+      "originIcao": "KLAX",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-oo6519-okc-ord",
+      "category": "departure",
+      "scheduledTime": "13:42",
+      "airlineIcao": "skw",
+      "flightNumber": "6519",
+      "originIcao": "KOKC",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-aa2220-okc-clt",
+      "category": "departure",
+      "scheduledTime": "13:43",
+      "airlineIcao": "aal",
+      "flightNumber": "2220",
+      "originIcao": "KOKC",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-oo5531-okc-iah",
+      "category": "departure",
+      "scheduledTime": "13:43",
+      "airlineIcao": "skw",
+      "flightNumber": "5531",
+      "originIcao": "KOKC",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "arrival-as405-sea-okc",
+      "category": "arrival",
+      "scheduledTime": "13:57",
+      "airlineIcao": "asa",
+      "flightNumber": "405",
+      "originIcao": "KSEA",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-wn2782-okc-den",
+      "category": "departure",
+      "scheduledTime": "14:00",
+      "airlineIcao": "swa",
+      "flightNumber": "2782",
+      "originIcao": "KOKC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-wn1071-mco-okc",
+      "category": "arrival",
+      "scheduledTime": "14:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1071",
+      "originIcao": "KMCO",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-oo6272-okc-lax",
+      "category": "departure",
+      "scheduledTime": "14:22",
+      "airlineIcao": "skw",
+      "flightNumber": "6272",
+      "originIcao": "KOKC",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "arrival-oh5362-dfw-okc",
+      "category": "arrival",
+      "scheduledTime": "14:34",
+      "airlineIcao": "jia",
+      "flightNumber": "5362",
+      "originIcao": "KDFW",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-oo6273-ord-okc",
+      "category": "arrival",
+      "scheduledTime": "14:35",
+      "airlineIcao": "skw",
+      "flightNumber": "6273",
+      "originIcao": "KORD",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-wn2016-las-okc",
+      "category": "arrival",
+      "scheduledTime": "14:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2016",
+      "originIcao": "KLAS",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "t100-5x-arrival-ksdf-g-002",
+      "scheduledTime": "14:48",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KOKC",
+      "airlineIcao": "ups",
+      "flightNumber": "1562"
+    },
+    {
+      "id": "departure-as405-okc-sea",
+      "category": "departure",
+      "scheduledTime": "14:55",
+      "airlineIcao": "asa",
+      "flightNumber": "405",
+      "originIcao": "KOKC",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-wn3123-okc-mdw",
+      "category": "departure",
+      "scheduledTime": "14:55",
+      "airlineIcao": "swa",
+      "flightNumber": "3123",
+      "originIcao": "KOKC",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "departure-oh5362-okc-dfw",
+      "category": "departure",
+      "scheduledTime": "15:04",
+      "airlineIcao": "jia",
+      "flightNumber": "5362",
+      "originIcao": "KOKC",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "t100-yv-departure-kiah-f-003",
+      "scheduledTime": "15:05",
+      "category": "departure",
+      "originIcao": "KOKC",
+      "destinationIcao": "KIAH",
+      "airlineIcao": "ash",
+      "flightNumber": "4426"
+    },
+    {
+      "id": "arrival-oo5999-ord-okc",
+      "category": "arrival",
+      "scheduledTime": "15:17",
+      "airlineIcao": "skw",
+      "flightNumber": "5999",
+      "originIcao": "KORD",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-oo6517-okc-phx",
+      "category": "departure",
+      "scheduledTime": "15:20",
+      "airlineIcao": "skw",
+      "flightNumber": "6517",
+      "originIcao": "KOKC",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-wn3108-okc-bna",
+      "category": "departure",
+      "scheduledTime": "15:25",
+      "airlineIcao": "swa",
+      "flightNumber": "3108",
+      "originIcao": "KOKC",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-ua2750-den-okc",
+      "category": "arrival",
+      "scheduledTime": "16:05",
+      "airlineIcao": "ual",
+      "flightNumber": "2750",
+      "originIcao": "KDEN",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-wn4400-hou-okc",
+      "category": "arrival",
+      "scheduledTime": "16:05",
+      "airlineIcao": "swa",
+      "flightNumber": "4400",
+      "originIcao": "KHOU",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-oh5138-dca-okc",
+      "category": "arrival",
+      "scheduledTime": "16:20",
+      "airlineIcao": "jia",
+      "flightNumber": "5138",
+      "originIcao": "KDCA",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-dl2862-atl-okc",
+      "category": "arrival",
+      "scheduledTime": "16:22",
+      "airlineIcao": "dal",
+      "flightNumber": "2862",
+      "originIcao": "KATL",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-yx4470-lga-okc",
+      "category": "arrival",
+      "scheduledTime": "16:23",
+      "airlineIcao": "rpa",
+      "flightNumber": "4470",
+      "originIcao": "KLGA",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-wn4760-okc-hou",
+      "category": "departure",
+      "scheduledTime": "16:45",
+      "airlineIcao": "swa",
+      "flightNumber": "4760",
+      "originIcao": "KOKC",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "departure-oh5138-okc-dca",
+      "category": "departure",
+      "scheduledTime": "16:51",
+      "airlineIcao": "jia",
+      "flightNumber": "5138",
+      "originIcao": "KOKC",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-yx4470-okc-lga",
+      "category": "departure",
+      "scheduledTime": "16:58",
+      "airlineIcao": "rpa",
+      "flightNumber": "4470",
+      "originIcao": "KOKC",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "arrival-oo3882-slc-okc",
+      "category": "arrival",
+      "scheduledTime": "17:03",
+      "airlineIcao": "skw",
+      "flightNumber": "3882",
+      "originIcao": "KSLC",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-dl2862-okc-atl",
+      "category": "departure",
+      "scheduledTime": "17:07",
+      "airlineIcao": "dal",
+      "flightNumber": "2862",
+      "originIcao": "KOKC",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-ua1262-okc-den",
+      "category": "departure",
+      "scheduledTime": "17:07",
+      "airlineIcao": "ual",
+      "flightNumber": "1262",
+      "originIcao": "KOKC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-g42823-sfb-okc",
+      "category": "arrival",
+      "scheduledTime": "17:14",
+      "airlineIcao": "aay",
+      "flightNumber": "2823",
+      "originIcao": "KSFB",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-mq3533-dfw-okc",
+      "category": "arrival",
+      "scheduledTime": "17:25",
+      "airlineIcao": "eny",
+      "flightNumber": "3533",
+      "originIcao": "KDFW",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "t100-yv-arrival-kiah-f-001",
+      "scheduledTime": "17:31",
+      "category": "arrival",
+      "originIcao": "KIAH",
+      "destinationIcao": "KOKC",
+      "airlineIcao": "ash",
+      "flightNumber": "3042"
+    },
+    {
+      "id": "arrival-oo6276-phx-okc",
+      "category": "arrival",
+      "scheduledTime": "17:35",
+      "airlineIcao": "skw",
+      "flightNumber": "6276",
+      "originIcao": "KPHX",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-oo5844-okc-ord",
+      "category": "departure",
+      "scheduledTime": "17:36",
+      "airlineIcao": "skw",
+      "flightNumber": "5844",
+      "originIcao": "KOKC",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-9e-departure-klga-f-001",
+      "scheduledTime": "17:58",
+      "category": "departure",
+      "originIcao": "KOKC",
+      "destinationIcao": "KLGA",
+      "airlineIcao": "edv",
+      "flightNumber": "7477"
+    },
+    {
+      "id": "departure-oo3882-okc-slc",
+      "category": "departure",
+      "scheduledTime": "18:00",
+      "airlineIcao": "skw",
+      "flightNumber": "3882",
+      "originIcao": "KOKC",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-mq3535-okc-dfw",
+      "category": "departure",
+      "scheduledTime": "18:02",
+      "airlineIcao": "eny",
+      "flightNumber": "3535",
+      "originIcao": "KOKC",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-g41311-okc-sfb",
+      "category": "departure",
+      "scheduledTime": "18:04",
+      "airlineIcao": "aay",
+      "flightNumber": "1311",
+      "originIcao": "KOKC",
+      "destinationIcao": "KSFB"
+    },
+    {
+      "id": "arrival-oo4766-ord-okc",
+      "category": "arrival",
+      "scheduledTime": "18:05",
+      "airlineIcao": "skw",
+      "flightNumber": "4766",
+      "originIcao": "KORD",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-wn371-aus-okc",
+      "category": "arrival",
+      "scheduledTime": "18:10",
+      "airlineIcao": "swa",
+      "flightNumber": "371",
+      "originIcao": "KAUS",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-oo6276-okc-phx",
+      "category": "departure",
+      "scheduledTime": "18:15",
+      "airlineIcao": "skw",
+      "flightNumber": "6276",
+      "originIcao": "KOKC",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "arrival-f91928-den-okc",
+      "category": "arrival",
+      "scheduledTime": "18:31",
+      "airlineIcao": "fft",
+      "flightNumber": "1928",
+      "originIcao": "KDEN",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-mq3729-dfw-okc",
+      "category": "arrival",
+      "scheduledTime": "18:45",
+      "airlineIcao": "eny",
+      "flightNumber": "3729",
+      "originIcao": "KDFW",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-wn371-okc-den",
+      "category": "departure",
+      "scheduledTime": "18:45",
+      "airlineIcao": "swa",
+      "flightNumber": "371",
+      "originIcao": "KOKC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-oo5582-okc-den",
+      "category": "departure",
+      "scheduledTime": "18:46",
+      "airlineIcao": "skw",
+      "flightNumber": "5582",
+      "originIcao": "KOKC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-oo6274-ord-okc",
+      "category": "arrival",
+      "scheduledTime": "19:00",
+      "airlineIcao": "skw",
+      "flightNumber": "6274",
+      "originIcao": "KORD",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-wn955-dca-okc",
+      "category": "arrival",
+      "scheduledTime": "19:00",
+      "airlineIcao": "swa",
+      "flightNumber": "955",
+      "originIcao": "KDCA",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-wn1653-den-okc",
+      "category": "arrival",
+      "scheduledTime": "19:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1653",
+      "originIcao": "KDEN",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-mq3729-okc-dfw",
+      "category": "departure",
+      "scheduledTime": "19:15",
+      "airlineIcao": "eny",
+      "flightNumber": "3729",
+      "originIcao": "KOKC",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-f91927-okc-den",
+      "category": "departure",
+      "scheduledTime": "19:16",
+      "airlineIcao": "fft",
+      "flightNumber": "1927",
+      "originIcao": "KOKC",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-wn314-las-okc",
+      "category": "arrival",
+      "scheduledTime": "19:20",
+      "airlineIcao": "swa",
+      "flightNumber": "314",
+      "originIcao": "KLAS",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-oo6274-okc-ord",
+      "category": "departure",
+      "scheduledTime": "19:30",
+      "airlineIcao": "skw",
+      "flightNumber": "6274",
+      "originIcao": "KOKC",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-9e-departure-kmsp-f-001",
+      "scheduledTime": "19:34",
+      "category": "departure",
+      "originIcao": "KOKC",
+      "destinationIcao": "KMSP",
+      "airlineIcao": "edv",
+      "flightNumber": "5874"
+    },
+    {
+      "id": "arrival-mq3727-dfw-okc",
+      "category": "arrival",
+      "scheduledTime": "19:39",
+      "airlineIcao": "eny",
+      "flightNumber": "3727",
+      "originIcao": "KDFW",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-wn955-okc-phx",
+      "category": "departure",
+      "scheduledTime": "19:40",
+      "airlineIcao": "swa",
+      "flightNumber": "955",
+      "originIcao": "KOKC",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "t100-yv-arrival-kiah-f-002",
+      "scheduledTime": "19:50",
+      "category": "arrival",
+      "originIcao": "KIAH",
+      "destinationIcao": "KOKC",
+      "airlineIcao": "ash",
+      "flightNumber": "9348"
+    },
+    {
+      "id": "arrival-oo5278-iah-okc",
+      "category": "arrival",
+      "scheduledTime": "19:53",
+      "airlineIcao": "skw",
+      "flightNumber": "5278",
+      "originIcao": "KIAH",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-wn3119-okc-las",
+      "category": "departure",
+      "scheduledTime": "19:55",
+      "airlineIcao": "swa",
+      "flightNumber": "3119",
+      "originIcao": "KOKC",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-wn3003-okc-dal",
+      "category": "departure",
+      "scheduledTime": "20:00",
+      "airlineIcao": "swa",
+      "flightNumber": "3003",
+      "originIcao": "KOKC",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "arrival-ua1184-den-okc",
+      "category": "arrival",
+      "scheduledTime": "20:11",
+      "airlineIcao": "ual",
+      "flightNumber": "1184",
+      "originIcao": "KDEN",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-dl2784-atl-okc",
+      "category": "arrival",
+      "scheduledTime": "20:15",
+      "airlineIcao": "dal",
+      "flightNumber": "2784",
+      "originIcao": "KATL",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-oo3791-msp-okc",
+      "category": "arrival",
+      "scheduledTime": "20:15",
+      "airlineIcao": "skw",
+      "flightNumber": "3791",
+      "originIcao": "KMSP",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "departure-mq3727-okc-dfw",
+      "category": "departure",
+      "scheduledTime": "20:20",
+      "airlineIcao": "eny",
+      "flightNumber": "3727",
+      "originIcao": "KOKC",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-oo6487-ord-okc",
+      "category": "arrival",
+      "scheduledTime": "21:00",
+      "airlineIcao": "skw",
+      "flightNumber": "6487",
+      "originIcao": "KORD",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-ua2304-iah-okc",
+      "category": "arrival",
+      "scheduledTime": "21:47",
+      "airlineIcao": "ual",
+      "flightNumber": "2304",
+      "originIcao": "KIAH",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-aa768-clt-okc",
+      "category": "arrival",
+      "scheduledTime": "21:56",
+      "airlineIcao": "aal",
+      "flightNumber": "768",
+      "originIcao": "KCLT",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-yx4526-lga-okc",
+      "category": "arrival",
+      "scheduledTime": "22:05",
+      "airlineIcao": "rpa",
+      "flightNumber": "4526",
+      "originIcao": "KLGA",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-oo5392-ord-okc",
+      "category": "arrival",
+      "scheduledTime": "22:17",
+      "airlineIcao": "skw",
+      "flightNumber": "5392",
+      "originIcao": "KORD",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-wn175-den-okc",
+      "category": "arrival",
+      "scheduledTime": "22:20",
+      "airlineIcao": "swa",
+      "flightNumber": "175",
+      "originIcao": "KDEN",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-oo4898-lax-okc",
+      "category": "arrival",
+      "scheduledTime": "22:26",
+      "airlineIcao": "skw",
+      "flightNumber": "4898",
+      "originIcao": "KLAX",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "t100-9e-arrival-klga-f-001",
+      "scheduledTime": "22:30",
+      "category": "arrival",
+      "originIcao": "KLGA",
+      "destinationIcao": "KOKC",
+      "airlineIcao": "edv",
+      "flightNumber": "2831"
+    },
+    {
+      "id": "arrival-aa1458-dfw-okc",
+      "category": "arrival",
+      "scheduledTime": "22:33",
+      "airlineIcao": "aal",
+      "flightNumber": "1458",
+      "originIcao": "KDFW",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-wn962-dal-okc",
+      "category": "arrival",
+      "scheduledTime": "22:50",
+      "airlineIcao": "swa",
+      "flightNumber": "962",
+      "originIcao": "KDAL",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-wn4641-hou-okc",
+      "category": "arrival",
+      "scheduledTime": "23:00",
+      "airlineIcao": "swa",
+      "flightNumber": "4641",
+      "originIcao": "KHOU",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-oo5281-iah-okc",
+      "category": "arrival",
+      "scheduledTime": "23:08",
+      "airlineIcao": "skw",
+      "flightNumber": "5281",
+      "originIcao": "KIAH",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-oo6320-phx-okc",
+      "category": "arrival",
+      "scheduledTime": "23:15",
+      "airlineIcao": "skw",
+      "flightNumber": "6320",
+      "originIcao": "KPHX",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-wn4087-phx-okc",
+      "category": "arrival",
+      "scheduledTime": "23:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4087",
+      "originIcao": "KPHX",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-oo4727-den-okc",
+      "category": "arrival",
+      "scheduledTime": "23:29",
+      "airlineIcao": "skw",
+      "flightNumber": "4727",
+      "originIcao": "KDEN",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-mq3680-mia-okc",
+      "category": "arrival",
+      "scheduledTime": "23:34",
+      "airlineIcao": "eny",
+      "flightNumber": "3680",
+      "originIcao": "KMIA",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-wn608-bna-okc",
+      "category": "arrival",
+      "scheduledTime": "23:45",
+      "airlineIcao": "swa",
+      "flightNumber": "608",
+      "originIcao": "KBNA",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "t100-9e-arrival-kmsp-f-001",
+      "scheduledTime": "23:51",
+      "category": "arrival",
+      "originIcao": "KMSP",
+      "destinationIcao": "KOKC",
+      "airlineIcao": "edv",
+      "flightNumber": "8858"
+    },
+    {
+      "id": "arrival-dl2423-atl-okc",
+      "category": "arrival",
+      "scheduledTime": "23:52",
+      "airlineIcao": "dal",
+      "flightNumber": "2423",
+      "originIcao": "KATL",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-oo3703-slc-okc",
+      "category": "arrival",
+      "scheduledTime": "23:52",
+      "airlineIcao": "skw",
+      "flightNumber": "3703",
+      "originIcao": "KSLC",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-wn3881-mdw-okc",
+      "category": "arrival",
+      "scheduledTime": "23:55",
+      "airlineIcao": "swa",
+      "flightNumber": "3881",
+      "originIcao": "KMDW",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-aa2734-dfw-okc",
+      "category": "arrival",
+      "scheduledTime": "23:59",
+      "airlineIcao": "aal",
+      "flightNumber": "2734",
+      "originIcao": "KDFW",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "arrival-as553-sea-okc",
+      "category": "arrival",
+      "scheduledTime": "23:59",
+      "airlineIcao": "asa",
+      "flightNumber": "553",
+      "originIcao": "KSEA",
+      "destinationIcao": "KOKC"
+    }
+  ]
+}

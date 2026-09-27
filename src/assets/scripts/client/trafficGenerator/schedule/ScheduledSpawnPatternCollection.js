@@ -10,7 +10,7 @@ import {
 import { FLIGHT_CATEGORY } from '../../constants/aircraftConstants';
 import { isEmptyOrNotObject } from '../../utilities/validatorUtilities';
 
-const SCHEDULE_KEYS = ['schemaVersion', 'airportIcao', 'timezone', 'sampleDate', 'source', 'flights'];
+const SCHEDULE_KEYS = ['schemaVersion', 'profileType', 'airportIcao', 'timezone', 'sampleDate', 'source', 'flights'];
 const SCHEDULE_SOURCE_KEYS = ['name', 'url', 'retrievedAt', 'license', 'coverage'];
 
 function isNonEmptyString(value) {
@@ -68,8 +68,14 @@ function validateScheduleDocument(scheduleDocument) {
     if (isEmptyOrNotObject(scheduleDocument) || !Array.isArray(scheduleDocument.flights)) {
         throw new TypeError('Invalid scheduleDocument passed to ScheduledSpawnPatternCollection.fromScheduleDocument.');
     }
-    if (scheduleDocument.schemaVersion !== 1) {
-        throw new TypeError('scheduleDocument schemaVersion must be 1.');
+    if (scheduleDocument.schemaVersion !== 1 && scheduleDocument.schemaVersion !== 2) {
+        throw new TypeError('scheduleDocument schemaVersion must be 1 or 2.');
+    }
+    if (scheduleDocument.schemaVersion === 1 && Object.prototype.hasOwnProperty.call(scheduleDocument, 'profileType')) {
+        throw new TypeError('schemaVersion 1 scheduleDocument must not define profileType.');
+    }
+    if (scheduleDocument.schemaVersion === 2 && scheduleDocument.profileType !== 'authored') {
+        throw new TypeError('schemaVersion 2 scheduleDocument profileType must be authored.');
     }
     Object.keys(scheduleDocument).filter((key) => !SCHEDULE_KEYS.includes(key)).forEach((key) => {
         throw new TypeError(`scheduleDocument has unsupported property ${key}.`);
@@ -94,10 +100,13 @@ function validateScheduleDocument(scheduleDocument) {
     }
 
     const seenIds = new Set();
-    const flightKeys = [
+    const isAuthored = scheduleDocument.schemaVersion === 2 && scheduleDocument.profileType === 'authored';
+    const observedFlightKeys = [
         'id', 'category', 'scheduledTime', 'airlineIcao', 'flightNumber',
         'originIcao', 'destinationIcao', 'aircraftTypeIcao'
     ];
+    const authoredFlightKeys = ['id', 'category', 'scheduledTime', 'spawnPatternKey'];
+    const flightKeys = isAuthored ? authoredFlightKeys : observedFlightKeys;
 
     let previousFlightKey = null;
 
@@ -109,7 +118,7 @@ function validateScheduleDocument(scheduleDocument) {
         if (flight.category !== FLIGHT_CATEGORY.ARRIVAL && flight.category !== FLIGHT_CATEGORY.DEPARTURE) {
             throw new TypeError(`${prefix} category must be arrival or departure.`);
         }
-        ['id', 'scheduledTime', 'airlineIcao', 'flightNumber', 'originIcao', 'destinationIcao'].forEach((key) => {
+        ['id', 'scheduledTime'].forEach((key) => {
             if (typeof flight[key] !== 'string' || flight[key].length === 0) {
                 throw new TypeError(`${prefix} ${key} must be a non-empty string.`);
             }
@@ -121,26 +130,37 @@ function validateScheduleDocument(scheduleDocument) {
         if (!/^([01][0-9]|2[0-3]):[0-5][0-9]$/.test(flight.scheduledTime)) {
             throw new TypeError(`${prefix} scheduledTime must be local HH:mm.`);
         }
-        if (!/^[a-z]{3}$/.test(flight.airlineIcao)) {
-            throw new TypeError(`${prefix} airlineIcao must contain three lowercase letters.`);
-        }
-        if (!/^[0-9A-Za-z]+$/.test(flight.flightNumber)) {
-            throw new TypeError(`${prefix} flightNumber must be alphanumeric.`);
-        }
-        if (!/^[A-Z]{4}$/.test(flight.originIcao) || !/^[A-Z]{4}$/.test(flight.destinationIcao)) {
-            throw new TypeError(`${prefix} route endpoints must be uppercase four-letter ICAO identifiers.`);
-        }
-        if (flight.aircraftTypeIcao !== undefined &&
-            (typeof flight.aircraftTypeIcao !== 'string' || !/^[0-9A-Z]+$/.test(flight.aircraftTypeIcao))) {
-            throw new TypeError(`${prefix} aircraftTypeIcao must be uppercase alphanumeric.`);
-        }
-        if (flight.category === FLIGHT_CATEGORY.ARRIVAL &&
-            (flight.destinationIcao !== scheduleDocument.airportIcao || flight.originIcao === scheduleDocument.airportIcao)) {
-            throw new TypeError(`${prefix} arrival endpoints do not match the schedule airport.`);
-        }
-        if (flight.category === FLIGHT_CATEGORY.DEPARTURE &&
-            (flight.originIcao !== scheduleDocument.airportIcao || flight.destinationIcao === scheduleDocument.airportIcao)) {
-            throw new TypeError(`${prefix} departure endpoints do not match the schedule airport.`);
+        if (isAuthored) {
+            if (typeof flight.spawnPatternKey !== 'string' || !/^[0-9a-f]{8}$/.test(flight.spawnPatternKey)) {
+                throw new TypeError(`${prefix} spawnPatternKey must contain eight lowercase hexadecimal characters.`);
+            }
+        } else {
+            ['airlineIcao', 'flightNumber', 'originIcao', 'destinationIcao'].forEach((key) => {
+                if (typeof flight[key] !== 'string' || flight[key].length === 0) {
+                    throw new TypeError(`${prefix} ${key} must be a non-empty string.`);
+                }
+            });
+            if (!/^[a-z]{3}$/.test(flight.airlineIcao)) {
+                throw new TypeError(`${prefix} airlineIcao must contain three lowercase letters.`);
+            }
+            if (!/^[0-9A-Za-z]+$/.test(flight.flightNumber)) {
+                throw new TypeError(`${prefix} flightNumber must be alphanumeric.`);
+            }
+            if (!/^[A-Z]{4}$/.test(flight.originIcao) || !/^[A-Z]{4}$/.test(flight.destinationIcao)) {
+                throw new TypeError(`${prefix} route endpoints must be uppercase four-letter ICAO identifiers.`);
+            }
+            if (flight.aircraftTypeIcao !== undefined &&
+                (typeof flight.aircraftTypeIcao !== 'string' || !/^[0-9A-Z]+$/.test(flight.aircraftTypeIcao))) {
+                throw new TypeError(`${prefix} aircraftTypeIcao must be uppercase alphanumeric.`);
+            }
+            if (flight.category === FLIGHT_CATEGORY.ARRIVAL &&
+                (flight.destinationIcao !== scheduleDocument.airportIcao || flight.originIcao === scheduleDocument.airportIcao)) {
+                throw new TypeError(`${prefix} arrival endpoints do not match the schedule airport.`);
+            }
+            if (flight.category === FLIGHT_CATEGORY.DEPARTURE &&
+                (flight.originIcao !== scheduleDocument.airportIcao || flight.destinationIcao === scheduleDocument.airportIcao)) {
+                throw new TypeError(`${prefix} departure endpoints do not match the schedule airport.`);
+            }
         }
         Object.keys(flight).filter((key) => !flightKeys.includes(key)).forEach((key) => {
             throw new TypeError(`${prefix} has unsupported property ${key}.`);

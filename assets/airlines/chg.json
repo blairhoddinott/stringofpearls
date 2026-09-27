@@ -1,0 +1,6 @@
+{
+    "icao": "chg",
+    "name": "Challenge Airlines BE",
+    "callsign": { "name": "Challenge", "callsignFormats": ["###"] },
+    "fleets": { "default": [["B744", 1]] }
+}

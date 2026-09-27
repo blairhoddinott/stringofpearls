@@ -1,0 +1,1473 @@
+{
+  "schemaVersion": 1,
+  "airportIcao": "KOMA",
+  "timezone": "America/Chicago",
+  "sampleDate": "2026-07-15",
+  "source": {
+    "name": "US DOT BTS On-Time Performance + T-100 Segment (All Carriers)",
+    "url": "https://transtats.bts.gov/DL_SelectFields.aspx?QO_fu146_anzr=Nv4+Pn44vr45&gnoyr_VQ=FMG",
+    "retrievedAt": "2026-09-27",
+    "license": "U.S. Government work in the public domain (17 U.S.C. §105); OurAirports code data is public domain.",
+    "coverage": "Exact On-Time movements are retained; 8 representative movements were deterministically synthesized from 2026-05 T-100 performed-departure aggregates. General aviation is excluded."
+  },
+  "flights": [
+    {
+      "id": "arrival-aa961-clt-oma",
+      "category": "arrival",
+      "scheduledTime": "00:19",
+      "airlineIcao": "aal",
+      "flightNumber": "961",
+      "originIcao": "KCLT",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-ua1763-sfo-oma",
+      "category": "arrival",
+      "scheduledTime": "00:19",
+      "airlineIcao": "ual",
+      "flightNumber": "1763",
+      "originIcao": "KSFO",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-aa3198-ord-oma",
+      "category": "arrival",
+      "scheduledTime": "00:37",
+      "airlineIcao": "aal",
+      "flightNumber": "3198",
+      "originIcao": "KORD",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-wn3022-oma-mco",
+      "category": "departure",
+      "scheduledTime": "05:00",
+      "airlineIcao": "swa",
+      "flightNumber": "3022",
+      "originIcao": "KOMA",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-aa2540-oma-dfw",
+      "category": "departure",
+      "scheduledTime": "05:20",
+      "airlineIcao": "aal",
+      "flightNumber": "2540",
+      "originIcao": "KOMA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-wn4504-oma-mdw",
+      "category": "departure",
+      "scheduledTime": "05:20",
+      "airlineIcao": "swa",
+      "flightNumber": "4504",
+      "originIcao": "KOMA",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "departure-dl1136-oma-atl",
+      "category": "departure",
+      "scheduledTime": "05:25",
+      "airlineIcao": "dal",
+      "flightNumber": "1136",
+      "originIcao": "KOMA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-oh5074-oma-phl",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "jia",
+      "flightNumber": "5074",
+      "originIcao": "KOMA",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "departure-oo3864-oma-msp",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "skw",
+      "flightNumber": "3864",
+      "originIcao": "KOMA",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "departure-oo5611-oma-ord",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "skw",
+      "flightNumber": "5611",
+      "originIcao": "KOMA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-oo6227-oma-lax",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "skw",
+      "flightNumber": "6227",
+      "originIcao": "KOMA",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-ua1442-oma-den",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "ual",
+      "flightNumber": "1442",
+      "originIcao": "KOMA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-wn2340-oma-las",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "swa",
+      "flightNumber": "2340",
+      "originIcao": "KOMA",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "t100-yv-departure-kiah-f-001",
+      "scheduledTime": "06:01",
+      "category": "departure",
+      "originIcao": "KOMA",
+      "destinationIcao": "KIAH",
+      "airlineIcao": "ash",
+      "flightNumber": "7928"
+    },
+    {
+      "id": "departure-as557-oma-sea",
+      "category": "departure",
+      "scheduledTime": "06:03",
+      "airlineIcao": "asa",
+      "flightNumber": "557",
+      "originIcao": "KOMA",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-ua2399-oma-iah",
+      "category": "departure",
+      "scheduledTime": "06:15",
+      "airlineIcao": "ual",
+      "flightNumber": "2399",
+      "originIcao": "KOMA",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-aa1042-oma-clt",
+      "category": "departure",
+      "scheduledTime": "06:20",
+      "airlineIcao": "aal",
+      "flightNumber": "1042",
+      "originIcao": "KOMA",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-wn3127-oma-den",
+      "category": "departure",
+      "scheduledTime": "06:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3127",
+      "originIcao": "KOMA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-oo4110-oma-dtw",
+      "category": "departure",
+      "scheduledTime": "06:25",
+      "airlineIcao": "skw",
+      "flightNumber": "4110",
+      "originIcao": "KOMA",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "departure-wn4835-oma-phx",
+      "category": "departure",
+      "scheduledTime": "06:35",
+      "airlineIcao": "swa",
+      "flightNumber": "4835",
+      "originIcao": "KOMA",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-aa3197-oma-ord",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "aal",
+      "flightNumber": "3197",
+      "originIcao": "KOMA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-dl1157-oma-atl",
+      "category": "departure",
+      "scheduledTime": "07:01",
+      "airlineIcao": "dal",
+      "flightNumber": "1157",
+      "originIcao": "KOMA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-ua2051-oma-sfo",
+      "category": "departure",
+      "scheduledTime": "07:38",
+      "airlineIcao": "ual",
+      "flightNumber": "2051",
+      "originIcao": "KOMA",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-ua1933-oma-ord",
+      "category": "departure",
+      "scheduledTime": "07:55",
+      "airlineIcao": "ual",
+      "flightNumber": "1933",
+      "originIcao": "KOMA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-ua2662-oma-iah",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "ual",
+      "flightNumber": "2662",
+      "originIcao": "KOMA",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-oo3512-oma-msp",
+      "category": "departure",
+      "scheduledTime": "08:05",
+      "airlineIcao": "skw",
+      "flightNumber": "3512",
+      "originIcao": "KOMA",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "departure-oo3874-oma-slc",
+      "category": "departure",
+      "scheduledTime": "08:10",
+      "airlineIcao": "skw",
+      "flightNumber": "3874",
+      "originIcao": "KOMA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-oo4893-oma-phx",
+      "category": "departure",
+      "scheduledTime": "08:15",
+      "airlineIcao": "skw",
+      "flightNumber": "4893",
+      "originIcao": "KOMA",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-wn2518-oma-stl",
+      "category": "departure",
+      "scheduledTime": "08:15",
+      "airlineIcao": "swa",
+      "flightNumber": "2518",
+      "originIcao": "KOMA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-ua2838-oma-den",
+      "category": "departure",
+      "scheduledTime": "09:06",
+      "airlineIcao": "ual",
+      "flightNumber": "2838",
+      "originIcao": "KOMA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-dl2632-atl-oma",
+      "category": "arrival",
+      "scheduledTime": "09:28",
+      "airlineIcao": "dal",
+      "flightNumber": "2632",
+      "originIcao": "KATL",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-oo4055-dtw-oma",
+      "category": "arrival",
+      "scheduledTime": "09:48",
+      "airlineIcao": "skw",
+      "flightNumber": "4055",
+      "originIcao": "KDTW",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-wn4318-stl-oma",
+      "category": "arrival",
+      "scheduledTime": "09:50",
+      "airlineIcao": "swa",
+      "flightNumber": "4318",
+      "originIcao": "KSTL",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-g4987-pie-oma",
+      "category": "arrival",
+      "scheduledTime": "09:55",
+      "airlineIcao": "aay",
+      "flightNumber": "987",
+      "originIcao": "KPIE",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-oo3831-msp-oma",
+      "category": "arrival",
+      "scheduledTime": "10:12",
+      "airlineIcao": "skw",
+      "flightNumber": "3831",
+      "originIcao": "KMSP",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-yx5608-dca-oma",
+      "category": "arrival",
+      "scheduledTime": "10:13",
+      "airlineIcao": "rpa",
+      "flightNumber": "5608",
+      "originIcao": "KDCA",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-wn2060-hou-oma",
+      "category": "arrival",
+      "scheduledTime": "10:20",
+      "airlineIcao": "swa",
+      "flightNumber": "2060",
+      "originIcao": "KHOU",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-dl2632-oma-atl",
+      "category": "departure",
+      "scheduledTime": "10:23",
+      "airlineIcao": "dal",
+      "flightNumber": "2632",
+      "originIcao": "KOMA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-fx-arrival-kmem-g-001",
+      "scheduledTime": "10:24",
+      "category": "arrival",
+      "originIcao": "KMEM",
+      "destinationIcao": "KOMA",
+      "airlineIcao": "fdx",
+      "flightNumber": "4022"
+    },
+    {
+      "id": "arrival-ua1778-ord-oma",
+      "category": "arrival",
+      "scheduledTime": "10:27",
+      "airlineIcao": "ual",
+      "flightNumber": "1778",
+      "originIcao": "KORD",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-oo4055-oma-dtw",
+      "category": "departure",
+      "scheduledTime": "10:28",
+      "airlineIcao": "skw",
+      "flightNumber": "4055",
+      "originIcao": "KOMA",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "t100-5x-departure-ksdf-g-001",
+      "scheduledTime": "10:31",
+      "category": "departure",
+      "originIcao": "KOMA",
+      "destinationIcao": "KSDF",
+      "airlineIcao": "ups",
+      "flightNumber": "7831"
+    },
+    {
+      "id": "departure-wn4316-oma-mdw",
+      "category": "departure",
+      "scheduledTime": "10:35",
+      "airlineIcao": "swa",
+      "flightNumber": "4316",
+      "originIcao": "KOMA",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "arrival-wn1655-den-oma",
+      "category": "arrival",
+      "scheduledTime": "10:45",
+      "airlineIcao": "swa",
+      "flightNumber": "1655",
+      "originIcao": "KDEN",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-g42710-oma-pie",
+      "category": "departure",
+      "scheduledTime": "10:45",
+      "airlineIcao": "aay",
+      "flightNumber": "2710",
+      "originIcao": "KOMA",
+      "destinationIcao": "KPIE"
+    },
+    {
+      "id": "arrival-oo5443-den-oma",
+      "category": "arrival",
+      "scheduledTime": "10:46",
+      "airlineIcao": "skw",
+      "flightNumber": "5443",
+      "originIcao": "KDEN",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-oo3831-oma-msp",
+      "category": "departure",
+      "scheduledTime": "10:52",
+      "airlineIcao": "skw",
+      "flightNumber": "3831",
+      "originIcao": "KOMA",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "departure-wn2060-oma-den",
+      "category": "departure",
+      "scheduledTime": "11:00",
+      "airlineIcao": "swa",
+      "flightNumber": "2060",
+      "originIcao": "KOMA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-yx5608-oma-dca",
+      "category": "departure",
+      "scheduledTime": "11:00",
+      "airlineIcao": "rpa",
+      "flightNumber": "5608",
+      "originIcao": "KOMA",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "arrival-mq3739-ord-oma",
+      "category": "arrival",
+      "scheduledTime": "11:18",
+      "airlineIcao": "eny",
+      "flightNumber": "3739",
+      "originIcao": "KORD",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-ua600-oma-ord",
+      "category": "departure",
+      "scheduledTime": "11:23",
+      "airlineIcao": "ual",
+      "flightNumber": "600",
+      "originIcao": "KOMA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-aa2226-dfw-oma",
+      "category": "arrival",
+      "scheduledTime": "11:25",
+      "airlineIcao": "aal",
+      "flightNumber": "2226",
+      "originIcao": "KDFW",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-oo5594-oma-den",
+      "category": "departure",
+      "scheduledTime": "11:30",
+      "airlineIcao": "skw",
+      "flightNumber": "5594",
+      "originIcao": "KOMA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-wn1655-oma-dca",
+      "category": "departure",
+      "scheduledTime": "11:35",
+      "airlineIcao": "swa",
+      "flightNumber": "1655",
+      "originIcao": "KOMA",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "arrival-wn736-mdw-oma",
+      "category": "arrival",
+      "scheduledTime": "11:40",
+      "airlineIcao": "swa",
+      "flightNumber": "736",
+      "originIcao": "KMDW",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-mq3739-oma-ord",
+      "category": "departure",
+      "scheduledTime": "11:48",
+      "airlineIcao": "eny",
+      "flightNumber": "3739",
+      "originIcao": "KOMA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-oo3838-msp-oma",
+      "category": "arrival",
+      "scheduledTime": "11:57",
+      "airlineIcao": "skw",
+      "flightNumber": "3838",
+      "originIcao": "KMSP",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-aa2226-oma-dfw",
+      "category": "departure",
+      "scheduledTime": "12:06",
+      "airlineIcao": "aal",
+      "flightNumber": "2226",
+      "originIcao": "KOMA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-oo5589-ord-oma",
+      "category": "arrival",
+      "scheduledTime": "12:16",
+      "airlineIcao": "skw",
+      "flightNumber": "5589",
+      "originIcao": "KORD",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-wn2294-las-oma",
+      "category": "arrival",
+      "scheduledTime": "12:20",
+      "airlineIcao": "swa",
+      "flightNumber": "2294",
+      "originIcao": "KLAS",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-wn736-oma-hou",
+      "category": "departure",
+      "scheduledTime": "12:25",
+      "airlineIcao": "swa",
+      "flightNumber": "736",
+      "originIcao": "KOMA",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "arrival-wn4470-phx-oma",
+      "category": "arrival",
+      "scheduledTime": "12:30",
+      "airlineIcao": "swa",
+      "flightNumber": "4470",
+      "originIcao": "KPHX",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-oo3815-oma-slc",
+      "category": "departure",
+      "scheduledTime": "12:39",
+      "airlineIcao": "skw",
+      "flightNumber": "3815",
+      "originIcao": "KOMA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "arrival-ua361-den-oma",
+      "category": "arrival",
+      "scheduledTime": "12:42",
+      "airlineIcao": "ual",
+      "flightNumber": "361",
+      "originIcao": "KDEN",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-dl1125-atl-oma",
+      "category": "arrival",
+      "scheduledTime": "12:46",
+      "airlineIcao": "dal",
+      "flightNumber": "1125",
+      "originIcao": "KATL",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-aa2225-clt-oma",
+      "category": "arrival",
+      "scheduledTime": "12:53",
+      "airlineIcao": "aal",
+      "flightNumber": "2225",
+      "originIcao": "KCLT",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-oh5559-phl-oma",
+      "category": "arrival",
+      "scheduledTime": "12:55",
+      "airlineIcao": "jia",
+      "flightNumber": "5559",
+      "originIcao": "KPHL",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-oo4114-slc-oma",
+      "category": "arrival",
+      "scheduledTime": "12:56",
+      "airlineIcao": "skw",
+      "flightNumber": "4114",
+      "originIcao": "KSLC",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-oo5587-oma-ord",
+      "category": "departure",
+      "scheduledTime": "12:57",
+      "airlineIcao": "skw",
+      "flightNumber": "5587",
+      "originIcao": "KOMA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-wn748-den-oma",
+      "category": "arrival",
+      "scheduledTime": "13:00",
+      "airlineIcao": "swa",
+      "flightNumber": "748",
+      "originIcao": "KDEN",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-wn2294-oma-lga",
+      "category": "departure",
+      "scheduledTime": "13:00",
+      "airlineIcao": "swa",
+      "flightNumber": "2294",
+      "originIcao": "KOMA",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-wn4470-oma-mdw",
+      "category": "departure",
+      "scheduledTime": "13:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4470",
+      "originIcao": "KOMA",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "arrival-oo3762-dtw-oma",
+      "category": "arrival",
+      "scheduledTime": "13:22",
+      "airlineIcao": "skw",
+      "flightNumber": "3762",
+      "originIcao": "KDTW",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-oh5559-oma-phl",
+      "category": "departure",
+      "scheduledTime": "13:25",
+      "airlineIcao": "jia",
+      "flightNumber": "5559",
+      "originIcao": "KOMA",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "departure-wn2235-oma-las",
+      "category": "departure",
+      "scheduledTime": "13:35",
+      "airlineIcao": "swa",
+      "flightNumber": "2235",
+      "originIcao": "KOMA",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-dl1125-oma-atl",
+      "category": "departure",
+      "scheduledTime": "13:36",
+      "airlineIcao": "dal",
+      "flightNumber": "1125",
+      "originIcao": "KOMA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-oo3848-oma-msp",
+      "category": "departure",
+      "scheduledTime": "13:40",
+      "airlineIcao": "skw",
+      "flightNumber": "3848",
+      "originIcao": "KOMA",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "arrival-wn2984-mdw-oma",
+      "category": "arrival",
+      "scheduledTime": "13:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2984",
+      "originIcao": "KMDW",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-aa2225-oma-clt",
+      "category": "departure",
+      "scheduledTime": "13:45",
+      "airlineIcao": "aal",
+      "flightNumber": "2225",
+      "originIcao": "KOMA",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-ua1195-oma-den",
+      "category": "departure",
+      "scheduledTime": "13:48",
+      "airlineIcao": "ual",
+      "flightNumber": "1195",
+      "originIcao": "KOMA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-fx-departure-kmem-g-001",
+      "scheduledTime": "13:48",
+      "category": "departure",
+      "originIcao": "KOMA",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3492"
+    },
+    {
+      "id": "departure-oo3762-oma-dtw",
+      "category": "departure",
+      "scheduledTime": "14:02",
+      "airlineIcao": "skw",
+      "flightNumber": "3762",
+      "originIcao": "KOMA",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "arrival-as312-sea-oma",
+      "category": "arrival",
+      "scheduledTime": "14:16",
+      "airlineIcao": "asa",
+      "flightNumber": "312",
+      "originIcao": "KSEA",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-ua247-ord-oma",
+      "category": "arrival",
+      "scheduledTime": "14:17",
+      "airlineIcao": "ual",
+      "flightNumber": "247",
+      "originIcao": "KORD",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "t100-5x-arrival-ksdf-g-001",
+      "scheduledTime": "14:20",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KOMA",
+      "airlineIcao": "ups",
+      "flightNumber": "7745"
+    },
+    {
+      "id": "departure-wn2984-oma-phx",
+      "category": "departure",
+      "scheduledTime": "14:25",
+      "airlineIcao": "swa",
+      "flightNumber": "2984",
+      "originIcao": "KOMA",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "arrival-wn20-dal-oma",
+      "category": "arrival",
+      "scheduledTime": "14:35",
+      "airlineIcao": "swa",
+      "flightNumber": "20",
+      "originIcao": "KDAL",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-wn609-bna-oma",
+      "category": "arrival",
+      "scheduledTime": "15:10",
+      "airlineIcao": "swa",
+      "flightNumber": "609",
+      "originIcao": "KBNA",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-oo6278-lax-oma",
+      "category": "arrival",
+      "scheduledTime": "15:13",
+      "airlineIcao": "skw",
+      "flightNumber": "6278",
+      "originIcao": "KLAX",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-ua739-oma-ord",
+      "category": "departure",
+      "scheduledTime": "15:13",
+      "airlineIcao": "ual",
+      "flightNumber": "739",
+      "originIcao": "KOMA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-as312-oma-sea",
+      "category": "departure",
+      "scheduledTime": "15:15",
+      "airlineIcao": "asa",
+      "flightNumber": "312",
+      "originIcao": "KOMA",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-wn3126-oma-bna",
+      "category": "departure",
+      "scheduledTime": "15:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3126",
+      "originIcao": "KOMA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-wn3129-phx-oma",
+      "category": "arrival",
+      "scheduledTime": "15:30",
+      "airlineIcao": "swa",
+      "flightNumber": "3129",
+      "originIcao": "KPHX",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-oo6278-oma-lax",
+      "category": "departure",
+      "scheduledTime": "15:46",
+      "airlineIcao": "skw",
+      "flightNumber": "6278",
+      "originIcao": "KOMA",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-wn4094-oma-mdw",
+      "category": "departure",
+      "scheduledTime": "15:50",
+      "airlineIcao": "swa",
+      "flightNumber": "4094",
+      "originIcao": "KOMA",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "departure-wn1709-oma-den",
+      "category": "departure",
+      "scheduledTime": "16:05",
+      "airlineIcao": "swa",
+      "flightNumber": "1709",
+      "originIcao": "KOMA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-aa3115-clt-oma",
+      "category": "arrival",
+      "scheduledTime": "16:17",
+      "airlineIcao": "aal",
+      "flightNumber": "3115",
+      "originIcao": "KCLT",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-aa2229-dfw-oma",
+      "category": "arrival",
+      "scheduledTime": "16:21",
+      "airlineIcao": "aal",
+      "flightNumber": "2229",
+      "originIcao": "KDFW",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-ua2327-den-oma",
+      "category": "arrival",
+      "scheduledTime": "16:24",
+      "airlineIcao": "ual",
+      "flightNumber": "2327",
+      "originIcao": "KDEN",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-wn2208-las-oma",
+      "category": "arrival",
+      "scheduledTime": "16:30",
+      "airlineIcao": "swa",
+      "flightNumber": "2208",
+      "originIcao": "KLAS",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-g4893-pgd-oma",
+      "category": "arrival",
+      "scheduledTime": "16:40",
+      "airlineIcao": "aay",
+      "flightNumber": "893",
+      "originIcao": "KPGD",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-oo3948-msp-oma",
+      "category": "arrival",
+      "scheduledTime": "16:49",
+      "airlineIcao": "skw",
+      "flightNumber": "3948",
+      "originIcao": "KMSP",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-oo3896-slc-oma",
+      "category": "arrival",
+      "scheduledTime": "16:51",
+      "airlineIcao": "skw",
+      "flightNumber": "3896",
+      "originIcao": "KSLC",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-aa3115-oma-clt",
+      "category": "departure",
+      "scheduledTime": "17:03",
+      "airlineIcao": "aal",
+      "flightNumber": "3115",
+      "originIcao": "KOMA",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "arrival-wn2085-den-oma",
+      "category": "arrival",
+      "scheduledTime": "17:05",
+      "airlineIcao": "swa",
+      "flightNumber": "2085",
+      "originIcao": "KDEN",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-oo3889-dtw-oma",
+      "category": "arrival",
+      "scheduledTime": "17:10",
+      "airlineIcao": "skw",
+      "flightNumber": "3889",
+      "originIcao": "KDTW",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-wn2208-oma-stl",
+      "category": "departure",
+      "scheduledTime": "17:10",
+      "airlineIcao": "swa",
+      "flightNumber": "2208",
+      "originIcao": "KOMA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-aa2229-oma-dfw",
+      "category": "departure",
+      "scheduledTime": "17:11",
+      "airlineIcao": "aal",
+      "flightNumber": "2229",
+      "originIcao": "KOMA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-ua1943-oma-den",
+      "category": "departure",
+      "scheduledTime": "17:27",
+      "airlineIcao": "ual",
+      "flightNumber": "1943",
+      "originIcao": "KOMA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-ua2207-ord-oma",
+      "category": "arrival",
+      "scheduledTime": "17:28",
+      "airlineIcao": "ual",
+      "flightNumber": "2207",
+      "originIcao": "KORD",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-g4878-oma-pgd",
+      "category": "departure",
+      "scheduledTime": "17:30",
+      "airlineIcao": "aay",
+      "flightNumber": "878",
+      "originIcao": "KOMA",
+      "destinationIcao": "KPGD"
+    },
+    {
+      "id": "departure-oo3948-oma-msp",
+      "category": "departure",
+      "scheduledTime": "17:40",
+      "airlineIcao": "skw",
+      "flightNumber": "3948",
+      "originIcao": "KOMA",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "arrival-aa2227-phx-oma",
+      "category": "arrival",
+      "scheduledTime": "17:42",
+      "airlineIcao": "aal",
+      "flightNumber": "2227",
+      "originIcao": "KPHX",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-wn2085-oma-dal",
+      "category": "departure",
+      "scheduledTime": "17:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2085",
+      "originIcao": "KOMA",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "arrival-dl2364-atl-oma",
+      "category": "arrival",
+      "scheduledTime": "17:48",
+      "airlineIcao": "dal",
+      "flightNumber": "2364",
+      "originIcao": "KATL",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-oo3896-oma-slc",
+      "category": "departure",
+      "scheduledTime": "17:50",
+      "airlineIcao": "skw",
+      "flightNumber": "3896",
+      "originIcao": "KOMA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-oo3889-oma-dtw",
+      "category": "departure",
+      "scheduledTime": "17:53",
+      "airlineIcao": "skw",
+      "flightNumber": "3889",
+      "originIcao": "KOMA",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "arrival-yx4724-ord-oma",
+      "category": "arrival",
+      "scheduledTime": "17:56",
+      "airlineIcao": "rpa",
+      "flightNumber": "4724",
+      "originIcao": "KORD",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-oo5251-den-oma",
+      "category": "arrival",
+      "scheduledTime": "18:19",
+      "airlineIcao": "skw",
+      "flightNumber": "5251",
+      "originIcao": "KDEN",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-wn2064-dca-oma",
+      "category": "arrival",
+      "scheduledTime": "18:20",
+      "airlineIcao": "swa",
+      "flightNumber": "2064",
+      "originIcao": "KDCA",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "t100-fx-arrival-kgri-g-001",
+      "scheduledTime": "18:24",
+      "category": "arrival",
+      "originIcao": "KGRI",
+      "destinationIcao": "KOMA",
+      "airlineIcao": "fdx",
+      "flightNumber": "4214"
+    },
+    {
+      "id": "departure-yx4724-oma-ord",
+      "category": "departure",
+      "scheduledTime": "18:26",
+      "airlineIcao": "rpa",
+      "flightNumber": "4724",
+      "originIcao": "KOMA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-9e-departure-klga-f-001",
+      "scheduledTime": "18:27",
+      "category": "departure",
+      "originIcao": "KOMA",
+      "destinationIcao": "KLGA",
+      "airlineIcao": "edv",
+      "flightNumber": "7477"
+    },
+    {
+      "id": "departure-aa2227-oma-phx",
+      "category": "departure",
+      "scheduledTime": "18:29",
+      "airlineIcao": "aal",
+      "flightNumber": "2227",
+      "originIcao": "KOMA",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-dl2364-oma-atl",
+      "category": "departure",
+      "scheduledTime": "18:33",
+      "airlineIcao": "dal",
+      "flightNumber": "2364",
+      "originIcao": "KOMA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-ua1476-oma-ord",
+      "category": "departure",
+      "scheduledTime": "18:40",
+      "airlineIcao": "ual",
+      "flightNumber": "1476",
+      "originIcao": "KOMA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-wn2064-oma-den",
+      "category": "departure",
+      "scheduledTime": "18:55",
+      "airlineIcao": "swa",
+      "flightNumber": "2064",
+      "originIcao": "KOMA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-aa2232-dfw-oma",
+      "category": "arrival",
+      "scheduledTime": "18:59",
+      "airlineIcao": "aal",
+      "flightNumber": "2232",
+      "originIcao": "KDFW",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-oo5316-oma-den",
+      "category": "departure",
+      "scheduledTime": "19:00",
+      "airlineIcao": "skw",
+      "flightNumber": "5316",
+      "originIcao": "KOMA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-wn2896-lga-oma",
+      "category": "arrival",
+      "scheduledTime": "19:05",
+      "airlineIcao": "swa",
+      "flightNumber": "2896",
+      "originIcao": "KLGA",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-f91874-den-oma",
+      "category": "arrival",
+      "scheduledTime": "19:15",
+      "airlineIcao": "fft",
+      "flightNumber": "1874",
+      "originIcao": "KDEN",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-wn2844-mdw-oma",
+      "category": "arrival",
+      "scheduledTime": "19:15",
+      "airlineIcao": "swa",
+      "flightNumber": "2844",
+      "originIcao": "KMDW",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-mq3738-ord-oma",
+      "category": "arrival",
+      "scheduledTime": "19:18",
+      "airlineIcao": "eny",
+      "flightNumber": "3738",
+      "originIcao": "KORD",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-ua2846-iah-oma",
+      "category": "arrival",
+      "scheduledTime": "19:21",
+      "airlineIcao": "ual",
+      "flightNumber": "2846",
+      "originIcao": "KIAH",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-aa2232-oma-dfw",
+      "category": "departure",
+      "scheduledTime": "19:46",
+      "airlineIcao": "aal",
+      "flightNumber": "2232",
+      "originIcao": "KOMA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-oo4024-msp-oma",
+      "category": "arrival",
+      "scheduledTime": "19:47",
+      "airlineIcao": "skw",
+      "flightNumber": "4024",
+      "originIcao": "KMSP",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-mq3738-oma-ord",
+      "category": "departure",
+      "scheduledTime": "19:48",
+      "airlineIcao": "eny",
+      "flightNumber": "3738",
+      "originIcao": "KOMA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-oo5777-ord-oma",
+      "category": "arrival",
+      "scheduledTime": "19:49",
+      "airlineIcao": "skw",
+      "flightNumber": "5777",
+      "originIcao": "KORD",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-wn2844-oma-las",
+      "category": "departure",
+      "scheduledTime": "19:55",
+      "airlineIcao": "swa",
+      "flightNumber": "2844",
+      "originIcao": "KOMA",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-f91127-oma-den",
+      "category": "departure",
+      "scheduledTime": "20:00",
+      "airlineIcao": "fft",
+      "flightNumber": "1127",
+      "originIcao": "KOMA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-oh5545-phl-oma",
+      "category": "arrival",
+      "scheduledTime": "20:23",
+      "airlineIcao": "jia",
+      "flightNumber": "5545",
+      "originIcao": "KPHL",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-wn3137-oma-phx",
+      "category": "departure",
+      "scheduledTime": "20:25",
+      "airlineIcao": "swa",
+      "flightNumber": "3137",
+      "originIcao": "KOMA",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "arrival-ua1436-den-oma",
+      "category": "arrival",
+      "scheduledTime": "20:42",
+      "airlineIcao": "ual",
+      "flightNumber": "1436",
+      "originIcao": "KDEN",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-dl2707-atl-oma",
+      "category": "arrival",
+      "scheduledTime": "20:53",
+      "airlineIcao": "dal",
+      "flightNumber": "2707",
+      "originIcao": "KATL",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-oo3715-dtw-oma",
+      "category": "arrival",
+      "scheduledTime": "20:53",
+      "airlineIcao": "skw",
+      "flightNumber": "3715",
+      "originIcao": "KDTW",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-wn2845-mdw-oma",
+      "category": "arrival",
+      "scheduledTime": "22:35",
+      "airlineIcao": "swa",
+      "flightNumber": "2845",
+      "originIcao": "KMDW",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-wn1659-den-oma",
+      "category": "arrival",
+      "scheduledTime": "22:40",
+      "airlineIcao": "swa",
+      "flightNumber": "1659",
+      "originIcao": "KDEN",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-wn4912-stl-oma",
+      "category": "arrival",
+      "scheduledTime": "22:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4912",
+      "originIcao": "KSTL",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-ua1216-iah-oma",
+      "category": "arrival",
+      "scheduledTime": "22:45",
+      "airlineIcao": "ual",
+      "flightNumber": "1216",
+      "originIcao": "KIAH",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-oo4014-msp-oma",
+      "category": "arrival",
+      "scheduledTime": "22:48",
+      "airlineIcao": "skw",
+      "flightNumber": "4014",
+      "originIcao": "KMSP",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-ua1625-ord-oma",
+      "category": "arrival",
+      "scheduledTime": "23:14",
+      "airlineIcao": "ual",
+      "flightNumber": "1625",
+      "originIcao": "KORD",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-aa2628-dfw-oma",
+      "category": "arrival",
+      "scheduledTime": "23:22",
+      "airlineIcao": "aal",
+      "flightNumber": "2628",
+      "originIcao": "KDFW",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "t100-9e-arrival-klga-f-001",
+      "scheduledTime": "23:26",
+      "category": "arrival",
+      "originIcao": "KLGA",
+      "destinationIcao": "KOMA",
+      "airlineIcao": "edv",
+      "flightNumber": "2831"
+    },
+    {
+      "id": "arrival-wn2579-mco-oma",
+      "category": "arrival",
+      "scheduledTime": "23:30",
+      "airlineIcao": "swa",
+      "flightNumber": "2579",
+      "originIcao": "KMCO",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-wn3311-phx-oma",
+      "category": "arrival",
+      "scheduledTime": "23:40",
+      "airlineIcao": "swa",
+      "flightNumber": "3311",
+      "originIcao": "KPHX",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-ua1787-den-oma",
+      "category": "arrival",
+      "scheduledTime": "23:42",
+      "airlineIcao": "ual",
+      "flightNumber": "1787",
+      "originIcao": "KDEN",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-dl2010-atl-oma",
+      "category": "arrival",
+      "scheduledTime": "23:49",
+      "airlineIcao": "dal",
+      "flightNumber": "2010",
+      "originIcao": "KATL",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-wn3283-las-oma",
+      "category": "arrival",
+      "scheduledTime": "23:50",
+      "airlineIcao": "swa",
+      "flightNumber": "3283",
+      "originIcao": "KLAS",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-oo6224-lax-oma",
+      "category": "arrival",
+      "scheduledTime": "23:57",
+      "airlineIcao": "skw",
+      "flightNumber": "6224",
+      "originIcao": "KLAX",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-oo3706-slc-oma",
+      "category": "arrival",
+      "scheduledTime": "23:58",
+      "airlineIcao": "skw",
+      "flightNumber": "3706",
+      "originIcao": "KSLC",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-oo6420-phx-oma",
+      "category": "arrival",
+      "scheduledTime": "23:58",
+      "airlineIcao": "skw",
+      "flightNumber": "6420",
+      "originIcao": "KPHX",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-as556-sea-oma",
+      "category": "arrival",
+      "scheduledTime": "23:59",
+      "airlineIcao": "asa",
+      "flightNumber": "556",
+      "originIcao": "KSEA",
+      "destinationIcao": "KOMA"
+    }
+  ]
+}

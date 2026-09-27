@@ -59,6 +59,14 @@ export default class ScheduledSpawnPatternModel {
         this.scheduledTime = flight.scheduledTime;
 
         /**
+         * Stable airport-authored pattern key, or null for sourced flights.
+         *
+         * @property spawnPatternKey
+         * @type {string|null}
+         */
+        this.spawnPatternKey = flight.spawnPatternKey ?? null;
+
+        /**
          * `scheduledTime` expressed as local seconds-of-day.
          *
          * @property scheduledSecondsOfDay

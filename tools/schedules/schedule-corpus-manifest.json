@@ -1,0 +1,394 @@
+{
+  "airports": 64,
+  "flights": 47089,
+  "movementsByProfile": {
+    "authored": 23113,
+    "bts": 23976
+  },
+  "schedules": [
+    {
+      "airport": "CYHZ",
+      "profile": "authored",
+      "flights": 258,
+      "sha256": "31d6a64ba7fb94bca3fc184332205f14b8ba06a38facb37843bdb56fb8f9dcde"
+    },
+    {
+      "airport": "EDDF",
+      "profile": "authored",
+      "flights": 1903,
+      "sha256": "a4d066641fa98e917d606051b048551548c51b48bd34ef189b20425d66617732"
+    },
+    {
+      "airport": "EDDH",
+      "profile": "authored",
+      "flights": 456,
+      "sha256": "32ddecd0371ef374f0da0587faf0e4d3dffb46f6d1df68b9fadc3f0104db15e2"
+    },
+    {
+      "airport": "EDDL",
+      "profile": "authored",
+      "flights": 1500,
+      "sha256": "232cd063f080baba30f6c0df72118d1a048f52bf298b9c87cfc5f200d499b73e"
+    },
+    {
+      "airport": "EDDM",
+      "profile": "authored",
+      "flights": 1603,
+      "sha256": "931891bee717ee9186e058f16241918a1fce3106b326ba40b5d5c2dae3b99348"
+    },
+    {
+      "airport": "EGCC",
+      "profile": "authored",
+      "flights": 600,
+      "sha256": "7867a980486c1693d210f6a0052fc764d9477da0c7abb2670779228882462e5d"
+    },
+    {
+      "airport": "EGNM",
+      "profile": "authored",
+      "flights": 318,
+      "sha256": "8b716608962fc7fa5b8e5db30d582f54cde58afe5c773f3a2bd1d65bd7b4cbab"
+    },
+    {
+      "airport": "EICK",
+      "profile": "authored",
+      "flights": 168,
+      "sha256": "1458d5ab54aa08c03ae0ecd43facc964117d9d94ebf5bb616214486e12ccb00e"
+    },
+    {
+      "airport": "EIDW",
+      "profile": "authored",
+      "flights": 1032,
+      "sha256": "d3873d6f8ee47c26212a3ebd41668b7fd7cad1e67e60f15195e305e973219854"
+    },
+    {
+      "airport": "EINN",
+      "profile": "authored",
+      "flights": 158,
+      "sha256": "7d90d64b46a9af8b63bc301d6cd2bfd9b1918ba8861dd58c436e4201c99716ba"
+    },
+    {
+      "airport": "ENGM",
+      "profile": "authored",
+      "flights": 672,
+      "sha256": "13075bb7fdc3cbfe5ec023006717e8dc8c74ca723081632f5bc3bdc8087674e4"
+    },
+    {
+      "airport": "KABQ",
+      "profile": "bts",
+      "flights": 163,
+      "sha256": "989f2a13f637562758078682ea70bd7442b8480353fee494a047f0150d724ff6"
+    },
+    {
+      "airport": "KATL",
+      "profile": "bts",
+      "flights": 2101,
+      "sha256": "330d3b9548aa017be2f9a5f3fd59dc984e19dc5ac56b327fd8ea648462954130"
+    },
+    {
+      "airport": "KAUS",
+      "profile": "bts",
+      "flights": 543,
+      "sha256": "abb576419e61e59f9d6dbce4e843d23c83b68e2a85b9d7c41d6f50726beb4358"
+    },
+    {
+      "airport": "KBNA",
+      "profile": "bts",
+      "flights": 684,
+      "sha256": "c1404541484c5875710ae3025356e370ab36305f6ee1d7acdd1e90507e4683bf"
+    },
+    {
+      "airport": "KBOS",
+      "profile": "bts",
+      "flights": 1086,
+      "sha256": "7019c4cbb8186296bd0b3858f0643badf0c147c3bc594e4d3a6118bf5bb31f04"
+    },
+    {
+      "airport": "KCLT",
+      "profile": "bts",
+      "flights": 1343,
+      "sha256": "864871f6a4da442fecf2e0acec3196092b8d1acaa2bb07afafb7b52036700382"
+    },
+    {
+      "airport": "KCVG",
+      "profile": "bts",
+      "flights": 303,
+      "sha256": "2e11ae677534787054a223f56aed12ba81b2f0132c77489b82e9a1addb9c76a7"
+    },
+    {
+      "airport": "KDAB",
+      "profile": "bts",
+      "flights": 22,
+      "sha256": "9dfc83df938a8f27803c3a64b543bf7c5c2cae8290107d0414b1d36eab028f62"
+    },
+    {
+      "airport": "KDCA",
+      "profile": "bts",
+      "flights": 824,
+      "sha256": "0cb709702e0a2d72a42644af40521a1b7b64f2f8a6eb47b83e88fa997e0f0fb1"
+    },
+    {
+      "airport": "KELP",
+      "profile": "bts",
+      "flights": 106,
+      "sha256": "03fc2fa55480c23298301ec812cdfe1bc7b76e093a72573de316f3b18a6f5dd9"
+    },
+    {
+      "airport": "KEWR",
+      "profile": "bts",
+      "flights": 848,
+      "sha256": "8d8d1ff909041241390847396aafb692e85faaaaf100594d6a2361266224d9ea"
+    },
+    {
+      "airport": "KGSO",
+      "profile": "bts",
+      "flights": 102,
+      "sha256": "166796ac5a296fe657d2d9ae96f91b0eba2ae2ae45b6ae02e0324e0e98077efe"
+    },
+    {
+      "airport": "KIAD",
+      "profile": "bts",
+      "flights": 650,
+      "sha256": "ff903f5ec6b0a7b80f2e065700c32a837566060a9e14c829eb631327d676304d"
+    },
+    {
+      "airport": "KJAX",
+      "profile": "bts",
+      "flights": 200,
+      "sha256": "832fbc2ecf36b459ee05b07c84f4edd6cdb07f98f751ea644f5a58c62ebe4ec8"
+    },
+    {
+      "airport": "KJFK",
+      "profile": "bts",
+      "flights": 977,
+      "sha256": "4e9a77424371c5d07ec4b7794d56be1c426895a3ec7b39fc5af9cbed2e898147"
+    },
+    {
+      "airport": "KLAS",
+      "profile": "bts",
+      "flights": 949,
+      "sha256": "a57d2258cec22d71f8aa9052a7b5adc029896ab62d5a9749081f6f34795022d2"
+    },
+    {
+      "airport": "KLAX",
+      "profile": "bts",
+      "flights": 1400,
+      "sha256": "6ab7af7356d820175fb972827ce6eb7112b98bdec26630d34ef6dc7ccf5e0952"
+    },
+    {
+      "airport": "KMCI",
+      "profile": "bts",
+      "flights": 306,
+      "sha256": "0e5a0a7959786ba8e493bb4f888f5ee82b16e4b21d889b44e272ea4b6128a4c3"
+    },
+    {
+      "airport": "KMCO",
+      "profile": "bts",
+      "flights": 964,
+      "sha256": "cde6607ce1510a20f19b07efca34c5c9e4f800dc306eaed1bc2f526f6d35c80d"
+    },
+    {
+      "airport": "KMEM",
+      "profile": "bts",
+      "flights": 418,
+      "sha256": "12eb614604a3696abdf24041034fcf4f01b6d57f96c167015eca6ee880ccc156"
+    },
+    {
+      "airport": "KMIA",
+      "profile": "bts",
+      "flights": 823,
+      "sha256": "2166e4e1f18d0dafe78dc5c6762cfe645ca383709e67466a7a90792895dfb075"
+    },
+    {
+      "airport": "KOKC",
+      "profile": "bts",
+      "flights": 153,
+      "sha256": "6b45dced207a896ad56c1b9dd4cb477265f27010349a9de9ac8401dfe6999f25"
+    },
+    {
+      "airport": "KOMA",
+      "profile": "bts",
+      "flights": 162,
+      "sha256": "86dbc57c6621621421483cb0db7131e46c710ab052e45aacae3b54ceb77e4a0d"
+    },
+    {
+      "airport": "KORD",
+      "profile": "bts",
+      "flights": 2554,
+      "sha256": "cbb6a7aabda8e9a0572144e323dd702daebaf8dfcfcd04ee7274b29088c8a5b8"
+    },
+    {
+      "airport": "KPDX",
+      "profile": "bts",
+      "flights": 476,
+      "sha256": "1906c9835c5edfa323c6fbf3a007286093b7d78ef1f98834e33c6e980b22cbdb"
+    },
+    {
+      "airport": "KPHL",
+      "profile": "bts",
+      "flights": 856,
+      "sha256": "2d6e6e2ee73c46ee53f98deb0b60cacaad115ac16bb99e6343da06d69c9e1a1c"
+    },
+    {
+      "airport": "KPIT",
+      "profile": "bts",
+      "flights": 295,
+      "sha256": "964ea147b8fb5e1c4ab88f59e846088eddedcbc3d04527205bda36455f32357a"
+    },
+    {
+      "airport": "KRDU",
+      "profile": "bts",
+      "flights": 413,
+      "sha256": "4c7dfdc6b6a0f24ab07792e191aecef09c2481d85000f0c0462738503b93eb27"
+    },
+    {
+      "airport": "KRIC",
+      "profile": "bts",
+      "flights": 171,
+      "sha256": "ed7aadb33247f53ff49c79fde460f998f75d43d40220a57cf5a83b609a24b5ab"
+    },
+    {
+      "airport": "KSAT",
+      "profile": "bts",
+      "flights": 263,
+      "sha256": "fb767140bc75f4dd5a165c97f458877fca1f65b8d3f469548778e18204d4b1f3"
+    },
+    {
+      "airport": "KSEA",
+      "profile": "bts",
+      "flights": 1208,
+      "sha256": "84bcc5e2b00e9bd3a06923044e7cecc5997fed8ac7f218f2b940d5022624faaa"
+    },
+    {
+      "airport": "KSFO",
+      "profile": "bts",
+      "flights": 1012,
+      "sha256": "e156384530e59d33e72772186a6a2e711c4c06207fd4b8cab65b87bcf187e289"
+    },
+    {
+      "airport": "KSLC",
+      "profile": "bts",
+      "flights": 703,
+      "sha256": "63659bc6be6c1b2268c2e836ddac4f0e44c3ecee28732d6e421492f1c17eec66"
+    },
+    {
+      "airport": "KSTL",
+      "profile": "bts",
+      "flights": 398,
+      "sha256": "ac878813967999cc8e0445fbc7ee291a95b3869a6ac114ce9d2508a18c74a1b4"
+    },
+    {
+      "airport": "LIPZ",
+      "profile": "authored",
+      "flights": 922,
+      "sha256": "f3f7ddacd3147822333545fe1cc9753f4d1c4d208d48c973f1bf706d3ba1dc9f"
+    },
+    {
+      "airport": "LKPR",
+      "profile": "authored",
+      "flights": 912,
+      "sha256": "67feecdc3efa02d98638de431939350ba5fc9a76a3f2b7d6147c25fec6ed1ed5"
+    },
+    {
+      "airport": "LOWW",
+      "profile": "authored",
+      "flights": 909,
+      "sha256": "6bde6f6b48f3909fdae646acc85659b92818cb10211033c8a8c38ce4572dbc3d"
+    },
+    {
+      "airport": "LROP",
+      "profile": "authored",
+      "flights": 600,
+      "sha256": "4549ed8ea56c3af32a3d2bf16890f109035b9620ce9f40c3d7762c4a6f0c6267"
+    },
+    {
+      "airport": "LSZH",
+      "profile": "authored",
+      "flights": 1112,
+      "sha256": "7d6a75cd40527aa5fd1861b63fdfeede2f7cad77f8fc39994beed72b07763dee"
+    },
+    {
+      "airport": "LTBA",
+      "profile": "authored",
+      "flights": 1669,
+      "sha256": "b8f7c04e7bf3235696c093e0273ac917afd9a9fffb33d11e07c3c12a18110da9"
+    },
+    {
+      "airport": "OMAA",
+      "profile": "authored",
+      "flights": 661,
+      "sha256": "7160d3d2b46bd023927727e010d11326f93825b623edd2b8d6571afe28de48a7"
+    },
+    {
+      "airport": "OMDB",
+      "profile": "authored",
+      "flights": 1867,
+      "sha256": "fa5f8a0723bdd74d3abe0ab7eb1087fa1f7204b592ce6f90d4983cc2143b12a4"
+    },
+    {
+      "airport": "OTHH",
+      "profile": "authored",
+      "flights": 906,
+      "sha256": "f2e7e491b45923049a0be8c5decbdb5612dae547e328589fee46826afbb1ab4c"
+    },
+    {
+      "airport": "PHNL",
+      "profile": "bts",
+      "flights": 500,
+      "sha256": "e4255a2dafc34275e66ea5003182b5deab720fc66d7dd2b1e981a72e97a29ce1"
+    },
+    {
+      "airport": "RJAA",
+      "profile": "authored",
+      "flights": 612,
+      "sha256": "b361ac96b213ae804a644bf23d140c8584058a8a70a36690c98b7eb0990b3a7a"
+    },
+    {
+      "airport": "RJOA",
+      "profile": "authored",
+      "flights": 64,
+      "sha256": "baa7a426fb0f179a187767b3b29d0fa137fd0d08e1f87cf852c1a0b02bf4e3d8"
+    },
+    {
+      "airport": "RJSS",
+      "profile": "authored",
+      "flights": 152,
+      "sha256": "50f2729c2b7f3a3c315171e8ea4df15ea50466df4d072e55f02755102337b797"
+    },
+    {
+      "airport": "RJTT",
+      "profile": "authored",
+      "flights": 1848,
+      "sha256": "c08ffcf3042feea77d9386bf4a6409c38bc867b02c6f2f7e69baf9b3d6b86d65"
+    },
+    {
+      "airport": "SAEZ",
+      "profile": "authored",
+      "flights": 840,
+      "sha256": "6b4d23abf004c5dd6bf57de0e4412943b41f9763da51b5b41ea5f54565bf4e76"
+    },
+    {
+      "airport": "SAME",
+      "profile": "authored",
+      "flights": 348,
+      "sha256": "ab2af056058a51cf4e7f6ffb24e3004ce3a25375267831ff822a7e46da8815e2"
+    },
+    {
+      "airport": "SAWH",
+      "profile": "authored",
+      "flights": 218,
+      "sha256": "77f22760ee25c96291ae0d4006b52c6bf9eb006c75d2219d1405a77dbc8195e8"
+    },
+    {
+      "airport": "SUMU",
+      "profile": "authored",
+      "flights": 325,
+      "sha256": "251fefb4475b8dcd046ce932f86709656eaf6bdd2caf665123f88dccff37f224"
+    },
+    {
+      "airport": "TNCM",
+      "profile": "authored",
+      "flights": 480,
+      "sha256": "9a237747811e6b2e5ac88cc0299b70171f91f175614db5c81a350618bdb08a19"
+    }
+  ]
+}

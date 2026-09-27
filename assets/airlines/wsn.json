@@ -1,0 +1,6 @@
+{
+    "icao": "wsn",
+    "name": "Advanced Air",
+    "callsign": { "name": "WingSpan", "callsignFormats": ["###"] },
+    "fleets": { "default": [["PC12", 1]] }
+}

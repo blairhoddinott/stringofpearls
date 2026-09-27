@@ -1,0 +1,6 @@
+{
+    "icao": "glg",
+    "name": "Avianca Ecuador",
+    "callsign": { "name": "Galapagos", "callsignFormats": ["###"] },
+    "fleets": { "default": [["A319", 1], ["A320", 1]] }
+}

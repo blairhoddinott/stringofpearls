@@ -1,0 +1,1024 @@
+{
+    "schemaVersion": 2,
+    "profileType": "authored",
+    "airportIcao": "EICK",
+    "timezone": "Europe/Dublin",
+    "sampleDate": "2026-07-15",
+    "source": {
+        "name": "stringofpearls airport-authored spawn patterns",
+        "url": "https://github.com/blairhoddinott/stringofpearls/tree/master/assets/airports",
+        "retrievedAt": "2026-09-27",
+        "license": "MIT",
+        "coverage": "Deterministic representative profile compiled from reviewed airport-authored rates, routes, geometry, and airline rules; movements are generated and are not observed historical flights."
+    },
+    "flights": [
+        {
+            "id": "auth-eick-b891c38e-0001",
+            "category": "arrival",
+            "scheduledTime": "00:02",
+            "spawnPatternKey": "b891c38e"
+        },
+        {
+            "id": "auth-eick-e3bae37d-0008",
+            "category": "departure",
+            "scheduledTime": "00:13",
+            "spawnPatternKey": "e3bae37d"
+        },
+        {
+            "id": "auth-eick-73760d23-0001",
+            "category": "departure",
+            "scheduledTime": "00:27",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-96ec17ad-0003",
+            "category": "departure",
+            "scheduledTime": "00:29",
+            "spawnPatternKey": "96ec17ad"
+        },
+        {
+            "id": "auth-eick-113734bd-0013",
+            "category": "arrival",
+            "scheduledTime": "00:38",
+            "spawnPatternKey": "113734bd"
+        },
+        {
+            "id": "auth-eick-10d25394-0002",
+            "category": "departure",
+            "scheduledTime": "00:41",
+            "spawnPatternKey": "10d25394"
+        },
+        {
+            "id": "auth-eick-1625b529-0010",
+            "category": "arrival",
+            "scheduledTime": "00:52",
+            "spawnPatternKey": "1625b529"
+        },
+        {
+            "id": "auth-eick-bd9dd733-0001",
+            "category": "departure",
+            "scheduledTime": "00:55",
+            "spawnPatternKey": "bd9dd733"
+        },
+        {
+            "id": "auth-eick-7096d975-0008",
+            "category": "arrival",
+            "scheduledTime": "01:08",
+            "spawnPatternKey": "7096d975"
+        },
+        {
+            "id": "auth-eick-73760d23-0002",
+            "category": "departure",
+            "scheduledTime": "01:15",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-eb780d97-0008",
+            "category": "departure",
+            "scheduledTime": "01:23",
+            "spawnPatternKey": "eb780d97"
+        },
+        {
+            "id": "auth-eick-113734bd-0014",
+            "category": "arrival",
+            "scheduledTime": "01:34",
+            "spawnPatternKey": "113734bd"
+        },
+        {
+            "id": "auth-eick-96ec17ad-0004",
+            "category": "departure",
+            "scheduledTime": "01:41",
+            "spawnPatternKey": "96ec17ad"
+        },
+        {
+            "id": "auth-eick-b891c38e-0002",
+            "category": "arrival",
+            "scheduledTime": "01:44",
+            "spawnPatternKey": "b891c38e"
+        },
+        {
+            "id": "auth-eick-1625b529-0011",
+            "category": "arrival",
+            "scheduledTime": "01:55",
+            "spawnPatternKey": "1625b529"
+        },
+        {
+            "id": "auth-eick-73760d23-0003",
+            "category": "departure",
+            "scheduledTime": "02:03",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-e3bae37d-0009",
+            "category": "departure",
+            "scheduledTime": "02:13",
+            "spawnPatternKey": "e3bae37d"
+        },
+        {
+            "id": "auth-eick-7096d975-0009",
+            "category": "arrival",
+            "scheduledTime": "02:20",
+            "spawnPatternKey": "7096d975"
+        },
+        {
+            "id": "auth-eick-113734bd-0015",
+            "category": "arrival",
+            "scheduledTime": "02:29",
+            "spawnPatternKey": "113734bd"
+        },
+        {
+            "id": "auth-eick-73760d23-0004",
+            "category": "departure",
+            "scheduledTime": "02:51",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-96ec17ad-0005",
+            "category": "departure",
+            "scheduledTime": "02:53",
+            "spawnPatternKey": "96ec17ad"
+        },
+        {
+            "id": "auth-eick-1625b529-0012",
+            "category": "arrival",
+            "scheduledTime": "02:57",
+            "spawnPatternKey": "1625b529"
+        },
+        {
+            "id": "auth-eick-eb780d97-0009",
+            "category": "departure",
+            "scheduledTime": "03:05",
+            "spawnPatternKey": "eb780d97"
+        },
+        {
+            "id": "auth-eick-113734bd-0016",
+            "category": "arrival",
+            "scheduledTime": "03:24",
+            "spawnPatternKey": "113734bd"
+        },
+        {
+            "id": "auth-eick-b891c38e-0003",
+            "category": "arrival",
+            "scheduledTime": "03:27",
+            "spawnPatternKey": "b891c38e"
+        },
+        {
+            "id": "auth-eick-7096d975-0010",
+            "category": "arrival",
+            "scheduledTime": "03:32",
+            "spawnPatternKey": "7096d975"
+        },
+        {
+            "id": "auth-eick-73760d23-0005",
+            "category": "departure",
+            "scheduledTime": "03:39",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-1625b529-0013",
+            "category": "arrival",
+            "scheduledTime": "04:00",
+            "spawnPatternKey": "1625b529"
+        },
+        {
+            "id": "auth-eick-96ec17ad-0006",
+            "category": "departure",
+            "scheduledTime": "04:05",
+            "spawnPatternKey": "96ec17ad"
+        },
+        {
+            "id": "auth-eick-e3bae37d-0010",
+            "category": "departure",
+            "scheduledTime": "04:13",
+            "spawnPatternKey": "e3bae37d"
+        },
+        {
+            "id": "auth-eick-113734bd-0017",
+            "category": "arrival",
+            "scheduledTime": "04:20",
+            "spawnPatternKey": "113734bd"
+        },
+        {
+            "id": "auth-eick-73760d23-0006",
+            "category": "departure",
+            "scheduledTime": "04:27",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-7096d975-0011",
+            "category": "arrival",
+            "scheduledTime": "04:44",
+            "spawnPatternKey": "7096d975"
+        },
+        {
+            "id": "auth-eick-eb780d97-0010",
+            "category": "departure",
+            "scheduledTime": "04:48",
+            "spawnPatternKey": "eb780d97"
+        },
+        {
+            "id": "auth-eick-1625b529-0014",
+            "category": "arrival",
+            "scheduledTime": "05:02",
+            "spawnPatternKey": "1625b529"
+        },
+        {
+            "id": "auth-eick-b891c38e-0004",
+            "category": "arrival",
+            "scheduledTime": "05:10",
+            "spawnPatternKey": "b891c38e"
+        },
+        {
+            "id": "auth-eick-113734bd-0018",
+            "category": "arrival",
+            "scheduledTime": "05:15",
+            "spawnPatternKey": "113734bd"
+        },
+        {
+            "id": "auth-eick-73760d23-0007",
+            "category": "departure",
+            "scheduledTime": "05:15",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-96ec17ad-0007",
+            "category": "departure",
+            "scheduledTime": "05:17",
+            "spawnPatternKey": "96ec17ad"
+        },
+        {
+            "id": "auth-eick-7096d975-0012",
+            "category": "arrival",
+            "scheduledTime": "05:56",
+            "spawnPatternKey": "7096d975"
+        },
+        {
+            "id": "auth-eick-73760d23-0008",
+            "category": "departure",
+            "scheduledTime": "06:03",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-1625b529-0015",
+            "category": "arrival",
+            "scheduledTime": "06:05",
+            "spawnPatternKey": "1625b529"
+        },
+        {
+            "id": "auth-eick-113734bd-0019",
+            "category": "arrival",
+            "scheduledTime": "06:10",
+            "spawnPatternKey": "113734bd"
+        },
+        {
+            "id": "auth-eick-e3bae37d-0011",
+            "category": "departure",
+            "scheduledTime": "06:13",
+            "spawnPatternKey": "e3bae37d"
+        },
+        {
+            "id": "auth-eick-96ec17ad-0008",
+            "category": "departure",
+            "scheduledTime": "06:29",
+            "spawnPatternKey": "96ec17ad"
+        },
+        {
+            "id": "auth-eick-eb780d97-0011",
+            "category": "departure",
+            "scheduledTime": "06:31",
+            "spawnPatternKey": "eb780d97"
+        },
+        {
+            "id": "auth-eick-10d25394-0003",
+            "category": "departure",
+            "scheduledTime": "06:41",
+            "spawnPatternKey": "10d25394"
+        },
+        {
+            "id": "auth-eick-73760d23-0009",
+            "category": "departure",
+            "scheduledTime": "06:51",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-b891c38e-0005",
+            "category": "arrival",
+            "scheduledTime": "06:53",
+            "spawnPatternKey": "b891c38e"
+        },
+        {
+            "id": "auth-eick-113734bd-0020",
+            "category": "arrival",
+            "scheduledTime": "07:06",
+            "spawnPatternKey": "113734bd"
+        },
+        {
+            "id": "auth-eick-1625b529-0016",
+            "category": "arrival",
+            "scheduledTime": "07:08",
+            "spawnPatternKey": "1625b529"
+        },
+        {
+            "id": "auth-eick-7096d975-0013",
+            "category": "arrival",
+            "scheduledTime": "07:08",
+            "spawnPatternKey": "7096d975"
+        },
+        {
+            "id": "auth-eick-73760d23-0010",
+            "category": "departure",
+            "scheduledTime": "07:39",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-96ec17ad-0009",
+            "category": "departure",
+            "scheduledTime": "07:41",
+            "spawnPatternKey": "96ec17ad"
+        },
+        {
+            "id": "auth-eick-113734bd-0021",
+            "category": "arrival",
+            "scheduledTime": "08:01",
+            "spawnPatternKey": "113734bd"
+        },
+        {
+            "id": "auth-eick-1625b529-0017",
+            "category": "arrival",
+            "scheduledTime": "08:10",
+            "spawnPatternKey": "1625b529"
+        },
+        {
+            "id": "auth-eick-e3bae37d-0012",
+            "category": "departure",
+            "scheduledTime": "08:13",
+            "spawnPatternKey": "e3bae37d"
+        },
+        {
+            "id": "auth-eick-eb780d97-0012",
+            "category": "departure",
+            "scheduledTime": "08:14",
+            "spawnPatternKey": "eb780d97"
+        },
+        {
+            "id": "auth-eick-7096d975-0014",
+            "category": "arrival",
+            "scheduledTime": "08:20",
+            "spawnPatternKey": "7096d975"
+        },
+        {
+            "id": "auth-eick-73760d23-0011",
+            "category": "departure",
+            "scheduledTime": "08:27",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-b891c38e-0006",
+            "category": "arrival",
+            "scheduledTime": "08:36",
+            "spawnPatternKey": "b891c38e"
+        },
+        {
+            "id": "auth-eick-a5c831fc-0001",
+            "category": "departure",
+            "scheduledTime": "08:49",
+            "spawnPatternKey": "a5c831fc"
+        },
+        {
+            "id": "auth-eick-96ec17ad-0010",
+            "category": "departure",
+            "scheduledTime": "08:53",
+            "spawnPatternKey": "96ec17ad"
+        },
+        {
+            "id": "auth-eick-113734bd-0022",
+            "category": "arrival",
+            "scheduledTime": "08:57",
+            "spawnPatternKey": "113734bd"
+        },
+        {
+            "id": "auth-eick-1625b529-0018",
+            "category": "arrival",
+            "scheduledTime": "09:13",
+            "spawnPatternKey": "1625b529"
+        },
+        {
+            "id": "auth-eick-73760d23-0012",
+            "category": "departure",
+            "scheduledTime": "09:15",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-7096d975-0015",
+            "category": "arrival",
+            "scheduledTime": "09:32",
+            "spawnPatternKey": "7096d975"
+        },
+        {
+            "id": "auth-eick-113734bd-0023",
+            "category": "arrival",
+            "scheduledTime": "09:52",
+            "spawnPatternKey": "113734bd"
+        },
+        {
+            "id": "auth-eick-eb780d97-0013",
+            "category": "departure",
+            "scheduledTime": "09:57",
+            "spawnPatternKey": "eb780d97"
+        },
+        {
+            "id": "auth-eick-73760d23-0013",
+            "category": "departure",
+            "scheduledTime": "10:03",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-96ec17ad-0011",
+            "category": "departure",
+            "scheduledTime": "10:05",
+            "spawnPatternKey": "96ec17ad"
+        },
+        {
+            "id": "auth-eick-e3bae37d-0001",
+            "category": "departure",
+            "scheduledTime": "10:13",
+            "spawnPatternKey": "e3bae37d"
+        },
+        {
+            "id": "auth-eick-1625b529-0019",
+            "category": "arrival",
+            "scheduledTime": "10:15",
+            "spawnPatternKey": "1625b529"
+        },
+        {
+            "id": "auth-eick-b891c38e-0007",
+            "category": "arrival",
+            "scheduledTime": "10:19",
+            "spawnPatternKey": "b891c38e"
+        },
+        {
+            "id": "auth-eick-7096d975-0016",
+            "category": "arrival",
+            "scheduledTime": "10:44",
+            "spawnPatternKey": "7096d975"
+        },
+        {
+            "id": "auth-eick-113734bd-0024",
+            "category": "arrival",
+            "scheduledTime": "10:47",
+            "spawnPatternKey": "113734bd"
+        },
+        {
+            "id": "auth-eick-73760d23-0014",
+            "category": "departure",
+            "scheduledTime": "10:51",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-96ec17ad-0012",
+            "category": "departure",
+            "scheduledTime": "11:17",
+            "spawnPatternKey": "96ec17ad"
+        },
+        {
+            "id": "auth-eick-1625b529-0020",
+            "category": "arrival",
+            "scheduledTime": "11:18",
+            "spawnPatternKey": "1625b529"
+        },
+        {
+            "id": "auth-eick-73760d23-0015",
+            "category": "departure",
+            "scheduledTime": "11:39",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-eb780d97-0014",
+            "category": "departure",
+            "scheduledTime": "11:40",
+            "spawnPatternKey": "eb780d97"
+        },
+        {
+            "id": "auth-eick-113734bd-0025",
+            "category": "arrival",
+            "scheduledTime": "11:43",
+            "spawnPatternKey": "113734bd"
+        },
+        {
+            "id": "auth-eick-7096d975-0017",
+            "category": "arrival",
+            "scheduledTime": "11:56",
+            "spawnPatternKey": "7096d975"
+        },
+        {
+            "id": "auth-eick-b891c38e-0008",
+            "category": "arrival",
+            "scheduledTime": "12:02",
+            "spawnPatternKey": "b891c38e"
+        },
+        {
+            "id": "auth-eick-e3bae37d-0002",
+            "category": "departure",
+            "scheduledTime": "12:13",
+            "spawnPatternKey": "e3bae37d"
+        },
+        {
+            "id": "auth-eick-1625b529-0021",
+            "category": "arrival",
+            "scheduledTime": "12:21",
+            "spawnPatternKey": "1625b529"
+        },
+        {
+            "id": "auth-eick-73760d23-0016",
+            "category": "departure",
+            "scheduledTime": "12:27",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-96ec17ad-0013",
+            "category": "departure",
+            "scheduledTime": "12:29",
+            "spawnPatternKey": "96ec17ad"
+        },
+        {
+            "id": "auth-eick-113734bd-0026",
+            "category": "arrival",
+            "scheduledTime": "12:38",
+            "spawnPatternKey": "113734bd"
+        },
+        {
+            "id": "auth-eick-10d25394-0004",
+            "category": "departure",
+            "scheduledTime": "12:41",
+            "spawnPatternKey": "10d25394"
+        },
+        {
+            "id": "auth-eick-bd9dd733-0002",
+            "category": "departure",
+            "scheduledTime": "12:55",
+            "spawnPatternKey": "bd9dd733"
+        },
+        {
+            "id": "auth-eick-7096d975-0018",
+            "category": "arrival",
+            "scheduledTime": "13:08",
+            "spawnPatternKey": "7096d975"
+        },
+        {
+            "id": "auth-eick-73760d23-0017",
+            "category": "departure",
+            "scheduledTime": "13:15",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-1625b529-0022",
+            "category": "arrival",
+            "scheduledTime": "13:23",
+            "spawnPatternKey": "1625b529"
+        },
+        {
+            "id": "auth-eick-eb780d97-0001",
+            "category": "departure",
+            "scheduledTime": "13:23",
+            "spawnPatternKey": "eb780d97"
+        },
+        {
+            "id": "auth-eick-113734bd-0001",
+            "category": "arrival",
+            "scheduledTime": "13:34",
+            "spawnPatternKey": "113734bd"
+        },
+        {
+            "id": "auth-eick-96ec17ad-0014",
+            "category": "departure",
+            "scheduledTime": "13:41",
+            "spawnPatternKey": "96ec17ad"
+        },
+        {
+            "id": "auth-eick-b891c38e-0009",
+            "category": "arrival",
+            "scheduledTime": "13:44",
+            "spawnPatternKey": "b891c38e"
+        },
+        {
+            "id": "auth-eick-73760d23-0018",
+            "category": "departure",
+            "scheduledTime": "14:03",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-e3bae37d-0003",
+            "category": "departure",
+            "scheduledTime": "14:13",
+            "spawnPatternKey": "e3bae37d"
+        },
+        {
+            "id": "auth-eick-7096d975-0019",
+            "category": "arrival",
+            "scheduledTime": "14:20",
+            "spawnPatternKey": "7096d975"
+        },
+        {
+            "id": "auth-eick-1625b529-0023",
+            "category": "arrival",
+            "scheduledTime": "14:26",
+            "spawnPatternKey": "1625b529"
+        },
+        {
+            "id": "auth-eick-113734bd-0002",
+            "category": "arrival",
+            "scheduledTime": "14:29",
+            "spawnPatternKey": "113734bd"
+        },
+        {
+            "id": "auth-eick-73760d23-0019",
+            "category": "departure",
+            "scheduledTime": "14:51",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-96ec17ad-0015",
+            "category": "departure",
+            "scheduledTime": "14:53",
+            "spawnPatternKey": "96ec17ad"
+        },
+        {
+            "id": "auth-eick-eb780d97-0002",
+            "category": "departure",
+            "scheduledTime": "15:05",
+            "spawnPatternKey": "eb780d97"
+        },
+        {
+            "id": "auth-eick-113734bd-0003",
+            "category": "arrival",
+            "scheduledTime": "15:24",
+            "spawnPatternKey": "113734bd"
+        },
+        {
+            "id": "auth-eick-b891c38e-0010",
+            "category": "arrival",
+            "scheduledTime": "15:27",
+            "spawnPatternKey": "b891c38e"
+        },
+        {
+            "id": "auth-eick-1625b529-0001",
+            "category": "arrival",
+            "scheduledTime": "15:29",
+            "spawnPatternKey": "1625b529"
+        },
+        {
+            "id": "auth-eick-7096d975-0020",
+            "category": "arrival",
+            "scheduledTime": "15:32",
+            "spawnPatternKey": "7096d975"
+        },
+        {
+            "id": "auth-eick-73760d23-0020",
+            "category": "departure",
+            "scheduledTime": "15:39",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-96ec17ad-0016",
+            "category": "departure",
+            "scheduledTime": "16:05",
+            "spawnPatternKey": "96ec17ad"
+        },
+        {
+            "id": "auth-eick-e3bae37d-0004",
+            "category": "departure",
+            "scheduledTime": "16:13",
+            "spawnPatternKey": "e3bae37d"
+        },
+        {
+            "id": "auth-eick-113734bd-0004",
+            "category": "arrival",
+            "scheduledTime": "16:20",
+            "spawnPatternKey": "113734bd"
+        },
+        {
+            "id": "auth-eick-73760d23-0021",
+            "category": "departure",
+            "scheduledTime": "16:27",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-1625b529-0002",
+            "category": "arrival",
+            "scheduledTime": "16:31",
+            "spawnPatternKey": "1625b529"
+        },
+        {
+            "id": "auth-eick-7096d975-0001",
+            "category": "arrival",
+            "scheduledTime": "16:44",
+            "spawnPatternKey": "7096d975"
+        },
+        {
+            "id": "auth-eick-eb780d97-0003",
+            "category": "departure",
+            "scheduledTime": "16:48",
+            "spawnPatternKey": "eb780d97"
+        },
+        {
+            "id": "auth-eick-b891c38e-0011",
+            "category": "arrival",
+            "scheduledTime": "17:10",
+            "spawnPatternKey": "b891c38e"
+        },
+        {
+            "id": "auth-eick-113734bd-0005",
+            "category": "arrival",
+            "scheduledTime": "17:15",
+            "spawnPatternKey": "113734bd"
+        },
+        {
+            "id": "auth-eick-73760d23-0022",
+            "category": "departure",
+            "scheduledTime": "17:15",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-96ec17ad-0017",
+            "category": "departure",
+            "scheduledTime": "17:17",
+            "spawnPatternKey": "96ec17ad"
+        },
+        {
+            "id": "auth-eick-1625b529-0003",
+            "category": "arrival",
+            "scheduledTime": "17:34",
+            "spawnPatternKey": "1625b529"
+        },
+        {
+            "id": "auth-eick-7096d975-0002",
+            "category": "arrival",
+            "scheduledTime": "17:56",
+            "spawnPatternKey": "7096d975"
+        },
+        {
+            "id": "auth-eick-73760d23-0023",
+            "category": "departure",
+            "scheduledTime": "18:03",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-113734bd-0006",
+            "category": "arrival",
+            "scheduledTime": "18:10",
+            "spawnPatternKey": "113734bd"
+        },
+        {
+            "id": "auth-eick-e3bae37d-0005",
+            "category": "departure",
+            "scheduledTime": "18:13",
+            "spawnPatternKey": "e3bae37d"
+        },
+        {
+            "id": "auth-eick-96ec17ad-0018",
+            "category": "departure",
+            "scheduledTime": "18:29",
+            "spawnPatternKey": "96ec17ad"
+        },
+        {
+            "id": "auth-eick-eb780d97-0004",
+            "category": "departure",
+            "scheduledTime": "18:31",
+            "spawnPatternKey": "eb780d97"
+        },
+        {
+            "id": "auth-eick-1625b529-0004",
+            "category": "arrival",
+            "scheduledTime": "18:36",
+            "spawnPatternKey": "1625b529"
+        },
+        {
+            "id": "auth-eick-10d25394-0001",
+            "category": "departure",
+            "scheduledTime": "18:41",
+            "spawnPatternKey": "10d25394"
+        },
+        {
+            "id": "auth-eick-73760d23-0024",
+            "category": "departure",
+            "scheduledTime": "18:51",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-b891c38e-0012",
+            "category": "arrival",
+            "scheduledTime": "18:53",
+            "spawnPatternKey": "b891c38e"
+        },
+        {
+            "id": "auth-eick-113734bd-0007",
+            "category": "arrival",
+            "scheduledTime": "19:06",
+            "spawnPatternKey": "113734bd"
+        },
+        {
+            "id": "auth-eick-7096d975-0003",
+            "category": "arrival",
+            "scheduledTime": "19:08",
+            "spawnPatternKey": "7096d975"
+        },
+        {
+            "id": "auth-eick-1625b529-0005",
+            "category": "arrival",
+            "scheduledTime": "19:39",
+            "spawnPatternKey": "1625b529"
+        },
+        {
+            "id": "auth-eick-73760d23-0025",
+            "category": "departure",
+            "scheduledTime": "19:39",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-96ec17ad-0019",
+            "category": "departure",
+            "scheduledTime": "19:41",
+            "spawnPatternKey": "96ec17ad"
+        },
+        {
+            "id": "auth-eick-113734bd-0008",
+            "category": "arrival",
+            "scheduledTime": "20:01",
+            "spawnPatternKey": "113734bd"
+        },
+        {
+            "id": "auth-eick-e3bae37d-0006",
+            "category": "departure",
+            "scheduledTime": "20:13",
+            "spawnPatternKey": "e3bae37d"
+        },
+        {
+            "id": "auth-eick-eb780d97-0005",
+            "category": "departure",
+            "scheduledTime": "20:14",
+            "spawnPatternKey": "eb780d97"
+        },
+        {
+            "id": "auth-eick-7096d975-0004",
+            "category": "arrival",
+            "scheduledTime": "20:20",
+            "spawnPatternKey": "7096d975"
+        },
+        {
+            "id": "auth-eick-73760d23-0026",
+            "category": "departure",
+            "scheduledTime": "20:27",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-b891c38e-0013",
+            "category": "arrival",
+            "scheduledTime": "20:36",
+            "spawnPatternKey": "b891c38e"
+        },
+        {
+            "id": "auth-eick-1625b529-0006",
+            "category": "arrival",
+            "scheduledTime": "20:42",
+            "spawnPatternKey": "1625b529"
+        },
+        {
+            "id": "auth-eick-96ec17ad-0020",
+            "category": "departure",
+            "scheduledTime": "20:53",
+            "spawnPatternKey": "96ec17ad"
+        },
+        {
+            "id": "auth-eick-113734bd-0009",
+            "category": "arrival",
+            "scheduledTime": "20:57",
+            "spawnPatternKey": "113734bd"
+        },
+        {
+            "id": "auth-eick-73760d23-0027",
+            "category": "departure",
+            "scheduledTime": "21:15",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-7096d975-0005",
+            "category": "arrival",
+            "scheduledTime": "21:32",
+            "spawnPatternKey": "7096d975"
+        },
+        {
+            "id": "auth-eick-1625b529-0007",
+            "category": "arrival",
+            "scheduledTime": "21:44",
+            "spawnPatternKey": "1625b529"
+        },
+        {
+            "id": "auth-eick-113734bd-0010",
+            "category": "arrival",
+            "scheduledTime": "21:52",
+            "spawnPatternKey": "113734bd"
+        },
+        {
+            "id": "auth-eick-eb780d97-0006",
+            "category": "departure",
+            "scheduledTime": "21:57",
+            "spawnPatternKey": "eb780d97"
+        },
+        {
+            "id": "auth-eick-73760d23-0028",
+            "category": "departure",
+            "scheduledTime": "22:03",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-96ec17ad-0001",
+            "category": "departure",
+            "scheduledTime": "22:05",
+            "spawnPatternKey": "96ec17ad"
+        },
+        {
+            "id": "auth-eick-e3bae37d-0007",
+            "category": "departure",
+            "scheduledTime": "22:13",
+            "spawnPatternKey": "e3bae37d"
+        },
+        {
+            "id": "auth-eick-b891c38e-0014",
+            "category": "arrival",
+            "scheduledTime": "22:19",
+            "spawnPatternKey": "b891c38e"
+        },
+        {
+            "id": "auth-eick-7096d975-0006",
+            "category": "arrival",
+            "scheduledTime": "22:44",
+            "spawnPatternKey": "7096d975"
+        },
+        {
+            "id": "auth-eick-113734bd-0011",
+            "category": "arrival",
+            "scheduledTime": "22:47",
+            "spawnPatternKey": "113734bd"
+        },
+        {
+            "id": "auth-eick-1625b529-0008",
+            "category": "arrival",
+            "scheduledTime": "22:47",
+            "spawnPatternKey": "1625b529"
+        },
+        {
+            "id": "auth-eick-73760d23-0029",
+            "category": "departure",
+            "scheduledTime": "22:51",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-96ec17ad-0002",
+            "category": "departure",
+            "scheduledTime": "23:17",
+            "spawnPatternKey": "96ec17ad"
+        },
+        {
+            "id": "auth-eick-231b5c51-0001",
+            "category": "arrival",
+            "scheduledTime": "23:29",
+            "spawnPatternKey": "231b5c51"
+        },
+        {
+            "id": "auth-eick-9907373e-0001",
+            "category": "departure",
+            "scheduledTime": "23:38",
+            "spawnPatternKey": "9907373e"
+        },
+        {
+            "id": "auth-eick-73760d23-0030",
+            "category": "departure",
+            "scheduledTime": "23:39",
+            "spawnPatternKey": "73760d23"
+        },
+        {
+            "id": "auth-eick-eb780d97-0007",
+            "category": "departure",
+            "scheduledTime": "23:40",
+            "spawnPatternKey": "eb780d97"
+        },
+        {
+            "id": "auth-eick-113734bd-0012",
+            "category": "arrival",
+            "scheduledTime": "23:43",
+            "spawnPatternKey": "113734bd"
+        },
+        {
+            "id": "auth-eick-1625b529-0009",
+            "category": "arrival",
+            "scheduledTime": "23:49",
+            "spawnPatternKey": "1625b529"
+        },
+        {
+            "id": "auth-eick-7096d975-0007",
+            "category": "arrival",
+            "scheduledTime": "23:56",
+            "spawnPatternKey": "7096d975"
+        }
+    ]
+}

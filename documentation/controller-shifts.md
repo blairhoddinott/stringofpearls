@@ -14,7 +14,7 @@ Select any enabled airport, a **30-minute** or **60-minute** shift, and a traffi
 
 ## Scheduled traffic
 
-Airports with a reviewed representative schedule use it as the sole traffic plan for the shift. `KSEA` is the first supported airport. Its 24-hour profile combines exact historical slots with aggregate-derived international and cargo additions, starts at Seattle's current IANA-local time, and repeats every 24 simulation hours. Pausing pauses scheduled traffic, and timewarp advances it with the rest of simulation time.
+Airports use one reviewed representative schedule as the sole traffic plan for the shift. All 64 currently selectable airports are covered. The 35 U.S. profiles combine exact BTS On-Time records with aggregate-derived T-100 additions where qualified evidence supports them; the other 29 profiles are deterministic compilations of their airport-authored traffic patterns. Each profile starts at the airport's current IANA-local time and repeats every 24 simulation hours. Pausing pauses scheduled traffic, and timewarp advances it with the rest of simulation time.
 
 The volume control selects deterministic, nested subsets of the schedule: every flight present at 25% is also present at 50%, every 50% flight is present at 75%, and every 75% flight is present at 100%. Repeating the same volume does not roll a new random subset.
 

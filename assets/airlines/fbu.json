@@ -1,0 +1,6 @@
+{
+    "icao": "fbu",
+    "name": "French bee",
+    "callsign": { "name": "French Bee", "callsignFormats": ["###"] },
+    "fleets": { "default": [["A359", 1]] }
+}

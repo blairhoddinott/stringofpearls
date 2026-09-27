@@ -1,0 +1,4515 @@
+{
+  "schemaVersion": 1,
+  "airportIcao": "PHNL",
+  "timezone": "Pacific/Honolulu",
+  "sampleDate": "2026-07-15",
+  "source": {
+    "name": "US DOT BTS On-Time Performance + T-100 Segment (All Carriers)",
+    "url": "https://transtats.bts.gov/DL_SelectFields.aspx?QO_fu146_anzr=Nv4+Pn44vr45&gnoyr_VQ=FMG",
+    "retrievedAt": "2026-09-27",
+    "license": "U.S. Government work in the public domain (17 U.S.C. §105); OurAirports code data is public domain.",
+    "coverage": "Exact On-Time movements are retained; 179 representative movements were deterministically synthesized from 2026-05 T-100 performed-departure aggregates. General aviation is excluded."
+  },
+  "flights": [
+    {
+      "id": "t100-qf-departure-yssy-f-001",
+      "scheduledTime": "00:01",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "YSSY",
+      "airlineIcao": "qfa",
+      "flightNumber": "6581"
+    },
+    {
+      "id": "arrival-as817-las-hnl",
+      "category": "arrival",
+      "scheduledTime": "05:16",
+      "airlineIcao": "asa",
+      "flightNumber": "817",
+      "originIcao": "KLAS",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-fx-arrival-phog-g-001",
+      "scheduledTime": "05:20",
+      "category": "arrival",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdx",
+      "flightNumber": "8360"
+    },
+    {
+      "id": "t100-9x-departure-phmk-f-001",
+      "scheduledTime": "05:47",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHMK",
+      "airlineIcao": "fdy",
+      "flightNumber": "1699"
+    },
+    {
+      "id": "departure-wn1927-hnl-ogg",
+      "category": "departure",
+      "scheduledTime": "05:50",
+      "airlineIcao": "swa",
+      "flightNumber": "1927",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "t100-9x-departure-phlu-f-001",
+      "scheduledTime": "05:57",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLU",
+      "airlineIcao": "fdy",
+      "flightNumber": "5936"
+    },
+    {
+      "id": "departure-as1003-hnl-lih",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "asa",
+      "flightNumber": "1003",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLI"
+    },
+    {
+      "id": "departure-as1016-hnl-ogg",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "asa",
+      "flightNumber": "1016",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "departure-as1018-hnl-koa",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "asa",
+      "flightNumber": "1018",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHKO"
+    },
+    {
+      "id": "departure-wn1902-hnl-ito",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "swa",
+      "flightNumber": "1902",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHTO"
+    },
+    {
+      "id": "t100-kh-departure-phto-g-001",
+      "scheduledTime": "06:03",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHTO",
+      "airlineIcao": "aah",
+      "flightNumber": "1380"
+    },
+    {
+      "id": "departure-as1002-hnl-ito",
+      "category": "departure",
+      "scheduledTime": "06:10",
+      "airlineIcao": "asa",
+      "flightNumber": "1002",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHTO"
+    },
+    {
+      "id": "departure-wn655-hnl-koa",
+      "category": "departure",
+      "scheduledTime": "06:10",
+      "airlineIcao": "swa",
+      "flightNumber": "655",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHKO"
+    },
+    {
+      "id": "t100-9x-departure-phmk-f-014",
+      "scheduledTime": "06:14",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHMK",
+      "airlineIcao": "fdy",
+      "flightNumber": "7421"
+    },
+    {
+      "id": "departure-wn1919-hnl-lih",
+      "category": "departure",
+      "scheduledTime": "06:25",
+      "airlineIcao": "swa",
+      "flightNumber": "1919",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLI"
+    },
+    {
+      "id": "arrival-as1004-lih-hnl",
+      "category": "arrival",
+      "scheduledTime": "06:36",
+      "airlineIcao": "asa",
+      "flightNumber": "1004",
+      "originIcao": "PHLI",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-as1005-ogg-hnl",
+      "category": "arrival",
+      "scheduledTime": "06:40",
+      "airlineIcao": "asa",
+      "flightNumber": "1005",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-kh-arrival-phko-g-002",
+      "scheduledTime": "06:42",
+      "category": "arrival",
+      "originIcao": "PHKO",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "aah",
+      "flightNumber": "691"
+    },
+    {
+      "id": "arrival-wn3091-ogg-hnl",
+      "category": "arrival",
+      "scheduledTime": "06:45",
+      "airlineIcao": "swa",
+      "flightNumber": "3091",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-as1017-koa-hnl",
+      "category": "arrival",
+      "scheduledTime": "06:47",
+      "airlineIcao": "asa",
+      "flightNumber": "1017",
+      "originIcao": "PHKO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-9x-arrival-phmk-f-021",
+      "scheduledTime": "06:51",
+      "category": "arrival",
+      "originIcao": "PHMK",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "4674"
+    },
+    {
+      "id": "t100-lny-arrival-phny-f-007",
+      "scheduledTime": "06:51",
+      "category": "arrival",
+      "originIcao": "PHNY",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "stt",
+      "flightNumber": "8657"
+    },
+    {
+      "id": "arrival-as1001-ito-hnl",
+      "category": "arrival",
+      "scheduledTime": "06:54",
+      "airlineIcao": "asa",
+      "flightNumber": "1001",
+      "originIcao": "PHTO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-wn2166-koa-hnl",
+      "category": "arrival",
+      "scheduledTime": "06:55",
+      "airlineIcao": "swa",
+      "flightNumber": "2166",
+      "originIcao": "PHKO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-wn2508-lih-hnl",
+      "category": "arrival",
+      "scheduledTime": "06:55",
+      "airlineIcao": "swa",
+      "flightNumber": "2508",
+      "originIcao": "PHLI",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-lny-departure-phny-f-001",
+      "scheduledTime": "06:56",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHNY",
+      "airlineIcao": "stt",
+      "flightNumber": "5751"
+    },
+    {
+      "id": "arrival-wn2148-ito-hnl",
+      "category": "arrival",
+      "scheduledTime": "07:00",
+      "airlineIcao": "swa",
+      "flightNumber": "2148",
+      "originIcao": "PHTO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as762-hnl-sea",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "asa",
+      "flightNumber": "762",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-dl422-hnl-lax",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "dal",
+      "flightNumber": "422",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-ua1221-hnl-lax",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "ual",
+      "flightNumber": "1221",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "t100-fx-departure-phli-g-003",
+      "scheduledTime": "07:02",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLI",
+      "airlineIcao": "fdx",
+      "flightNumber": "9403"
+    },
+    {
+      "id": "t100-9x-arrival-phmk-f-020",
+      "scheduledTime": "07:03",
+      "category": "arrival",
+      "originIcao": "PHMK",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "3069"
+    },
+    {
+      "id": "t100-9x-departure-phmk-f-005",
+      "scheduledTime": "07:03",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHMK",
+      "airlineIcao": "fdy",
+      "flightNumber": "8944"
+    },
+    {
+      "id": "departure-as1012-hnl-ito",
+      "category": "departure",
+      "scheduledTime": "07:05",
+      "airlineIcao": "asa",
+      "flightNumber": "1012",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHTO"
+    },
+    {
+      "id": "departure-as1013-hnl-lih",
+      "category": "departure",
+      "scheduledTime": "07:10",
+      "airlineIcao": "asa",
+      "flightNumber": "1013",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLI"
+    },
+    {
+      "id": "departure-ua373-hnl-sfo",
+      "category": "departure",
+      "scheduledTime": "07:10",
+      "airlineIcao": "ual",
+      "flightNumber": "373",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "t100-9x-departure-phny-f-006",
+      "scheduledTime": "07:12",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHNY",
+      "airlineIcao": "fdy",
+      "flightNumber": "9750"
+    },
+    {
+      "id": "departure-as1028-hnl-koa",
+      "category": "departure",
+      "scheduledTime": "07:13",
+      "airlineIcao": "asa",
+      "flightNumber": "1028",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHKO"
+    },
+    {
+      "id": "departure-as1036-hnl-ogg",
+      "category": "departure",
+      "scheduledTime": "07:26",
+      "airlineIcao": "asa",
+      "flightNumber": "1036",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "t100-jl-departure-rjbb-f-001",
+      "scheduledTime": "07:29",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "RJBB",
+      "airlineIcao": "jal",
+      "flightNumber": "3125"
+    },
+    {
+      "id": "departure-as892-hnl-san",
+      "category": "departure",
+      "scheduledTime": "07:30",
+      "airlineIcao": "asa",
+      "flightNumber": "892",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "t100-5x-departure-vhhh-g-001",
+      "scheduledTime": "07:30",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "VHHH",
+      "airlineIcao": "ups",
+      "flightNumber": "3085"
+    },
+    {
+      "id": "arrival-as1014-lih-hnl",
+      "category": "arrival",
+      "scheduledTime": "07:48",
+      "airlineIcao": "asa",
+      "flightNumber": "1014",
+      "originIcao": "PHLI",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-9x-arrival-phmk-f-005",
+      "scheduledTime": "07:52",
+      "category": "arrival",
+      "originIcao": "PHMK",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "24"
+    },
+    {
+      "id": "arrival-as1025-ogg-hnl",
+      "category": "arrival",
+      "scheduledTime": "07:54",
+      "airlineIcao": "asa",
+      "flightNumber": "1025",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as806-hnl-las",
+      "category": "departure",
+      "scheduledTime": "07:55",
+      "airlineIcao": "asa",
+      "flightNumber": "806",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "t100-9x-departure-phmk-f-013",
+      "scheduledTime": "07:56",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHMK",
+      "airlineIcao": "fdy",
+      "flightNumber": "771"
+    },
+    {
+      "id": "t100-lny-departure-phny-f-003",
+      "scheduledTime": "07:56",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHNY",
+      "airlineIcao": "stt",
+      "flightNumber": "4118"
+    },
+    {
+      "id": "departure-as1022-hnl-ito",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "asa",
+      "flightNumber": "1022",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHTO"
+    },
+    {
+      "id": "departure-as1038-hnl-koa",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "asa",
+      "flightNumber": "1038",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHKO"
+    },
+    {
+      "id": "departure-as810-hnl-lax",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "asa",
+      "flightNumber": "810",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-wn1913-hnl-las",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "swa",
+      "flightNumber": "1913",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-as1046-hnl-ogg",
+      "category": "departure",
+      "scheduledTime": "08:02",
+      "airlineIcao": "asa",
+      "flightNumber": "1046",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "t100-ws-departure-cyvr-f-001",
+      "scheduledTime": "08:04",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "CYVR",
+      "airlineIcao": "wja",
+      "flightNumber": "6613"
+    },
+    {
+      "id": "departure-wn574-hnl-ogg",
+      "category": "departure",
+      "scheduledTime": "08:05",
+      "airlineIcao": "swa",
+      "flightNumber": "574",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "arrival-wn3092-ogg-hnl",
+      "category": "arrival",
+      "scheduledTime": "08:10",
+      "airlineIcao": "swa",
+      "flightNumber": "3092",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-wn1938-hnl-san",
+      "category": "departure",
+      "scheduledTime": "08:10",
+      "airlineIcao": "swa",
+      "flightNumber": "1938",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "t100-kh-departure-phto-g-003",
+      "scheduledTime": "08:10",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHTO",
+      "airlineIcao": "aah",
+      "flightNumber": "2284"
+    },
+    {
+      "id": "t100-lny-arrival-phny-f-008",
+      "scheduledTime": "08:10",
+      "category": "arrival",
+      "originIcao": "PHNY",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "stt",
+      "flightNumber": "9274"
+    },
+    {
+      "id": "departure-wn1940-hnl-sjc",
+      "category": "departure",
+      "scheduledTime": "08:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1940",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSJC"
+    },
+    {
+      "id": "t100-9x-departure-phmk-f-008",
+      "scheduledTime": "08:15",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHMK",
+      "airlineIcao": "fdy",
+      "flightNumber": "8895"
+    },
+    {
+      "id": "arrival-as1011-ito-hnl",
+      "category": "arrival",
+      "scheduledTime": "08:29",
+      "airlineIcao": "asa",
+      "flightNumber": "1011",
+      "originIcao": "PHTO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as1033-hnl-lih",
+      "category": "departure",
+      "scheduledTime": "08:33",
+      "airlineIcao": "asa",
+      "flightNumber": "1033",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLI"
+    },
+    {
+      "id": "departure-as1056-hnl-ogg",
+      "category": "departure",
+      "scheduledTime": "08:50",
+      "airlineIcao": "asa",
+      "flightNumber": "1056",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "t100-lny-departure-phny-f-005",
+      "scheduledTime": "08:50",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHNY",
+      "airlineIcao": "stt",
+      "flightNumber": "4556"
+    },
+    {
+      "id": "arrival-wn2167-koa-hnl",
+      "category": "arrival",
+      "scheduledTime": "08:55",
+      "airlineIcao": "swa",
+      "flightNumber": "2167",
+      "originIcao": "PHKO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-wn1903-hnl-ito",
+      "category": "departure",
+      "scheduledTime": "08:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1903",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHTO"
+    },
+    {
+      "id": "arrival-as1024-lih-hnl",
+      "category": "arrival",
+      "scheduledTime": "08:59",
+      "airlineIcao": "asa",
+      "flightNumber": "1024",
+      "originIcao": "PHLI",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-9x-arrival-phmk-f-019",
+      "scheduledTime": "08:59",
+      "category": "arrival",
+      "originIcao": "PHMK",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "8996"
+    },
+    {
+      "id": "t100-fx-arrival-kmem-g-001",
+      "scheduledTime": "08:59",
+      "category": "arrival",
+      "originIcao": "KMEM",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdx",
+      "flightNumber": "4022"
+    },
+    {
+      "id": "arrival-wn2149-ito-hnl",
+      "category": "arrival",
+      "scheduledTime": "09:00",
+      "airlineIcao": "swa",
+      "flightNumber": "2149",
+      "originIcao": "PHTO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-wn2509-lih-hnl",
+      "category": "arrival",
+      "scheduledTime": "09:05",
+      "airlineIcao": "swa",
+      "flightNumber": "2509",
+      "originIcao": "PHLI",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as1183-hnl-lih",
+      "category": "departure",
+      "scheduledTime": "09:15",
+      "airlineIcao": "asa",
+      "flightNumber": "1183",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLI"
+    },
+    {
+      "id": "t100-9x-arrival-phjh-f-001",
+      "scheduledTime": "09:18",
+      "category": "arrival",
+      "originIcao": "PHJH",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "7803"
+    },
+    {
+      "id": "arrival-as1027-koa-hnl",
+      "category": "arrival",
+      "scheduledTime": "09:19",
+      "airlineIcao": "asa",
+      "flightNumber": "1027",
+      "originIcao": "PHKO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-9x-arrival-phmk-f-016",
+      "scheduledTime": "09:19",
+      "category": "arrival",
+      "originIcao": "PHMK",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "2587"
+    },
+    {
+      "id": "t100-fx-departure-phog-g-001",
+      "scheduledTime": "09:19",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG",
+      "airlineIcao": "fdx",
+      "flightNumber": "8650"
+    },
+    {
+      "id": "arrival-as1045-ogg-hnl",
+      "category": "arrival",
+      "scheduledTime": "09:20",
+      "airlineIcao": "asa",
+      "flightNumber": "1045",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-as1430-slc-hnl",
+      "category": "arrival",
+      "scheduledTime": "09:28",
+      "airlineIcao": "asa",
+      "flightNumber": "1430",
+      "originIcao": "KSLC",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as1058-hnl-koa",
+      "category": "departure",
+      "scheduledTime": "09:32",
+      "airlineIcao": "asa",
+      "flightNumber": "1058",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHKO"
+    },
+    {
+      "id": "t100-kh-departure-phog-g-004",
+      "scheduledTime": "09:37",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG",
+      "airlineIcao": "aah",
+      "flightNumber": "6053"
+    },
+    {
+      "id": "arrival-ua1581-sfo-hnl",
+      "category": "arrival",
+      "scheduledTime": "09:40",
+      "airlineIcao": "ual",
+      "flightNumber": "1581",
+      "originIcao": "KSFO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-wn2122-sjc-hnl",
+      "category": "arrival",
+      "scheduledTime": "09:40",
+      "airlineIcao": "swa",
+      "flightNumber": "2122",
+      "originIcao": "KSJC",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-wn1921-hnl-lih",
+      "category": "departure",
+      "scheduledTime": "09:40",
+      "airlineIcao": "swa",
+      "flightNumber": "1921",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLI"
+    },
+    {
+      "id": "t100-lny-arrival-phny-f-002",
+      "scheduledTime": "09:42",
+      "category": "arrival",
+      "originIcao": "PHNY",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "stt",
+      "flightNumber": "2477"
+    },
+    {
+      "id": "t100-5x-arrival-ksdf-g-001",
+      "scheduledTime": "09:44",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "ups",
+      "flightNumber": "7745"
+    },
+    {
+      "id": "arrival-wn456-lgb-hnl",
+      "category": "arrival",
+      "scheduledTime": "09:45",
+      "airlineIcao": "swa",
+      "flightNumber": "456",
+      "originIcao": "KLGB",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-wn675-hnl-koa",
+      "category": "departure",
+      "scheduledTime": "09:45",
+      "airlineIcao": "swa",
+      "flightNumber": "675",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHKO"
+    },
+    {
+      "id": "t100-lny-departure-phny-f-007",
+      "scheduledTime": "09:47",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHNY",
+      "airlineIcao": "stt",
+      "flightNumber": "5796"
+    },
+    {
+      "id": "arrival-as869-lgb-hnl",
+      "category": "arrival",
+      "scheduledTime": "09:50",
+      "airlineIcao": "asa",
+      "flightNumber": "869",
+      "originIcao": "KLGB",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-wn1851-hnl-ogg",
+      "category": "departure",
+      "scheduledTime": "09:50",
+      "airlineIcao": "swa",
+      "flightNumber": "1851",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "arrival-ua1798-lax-hnl",
+      "category": "arrival",
+      "scheduledTime": "09:53",
+      "airlineIcao": "ual",
+      "flightNumber": "1798",
+      "originIcao": "KLAX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-ws-arrival-cyvr-f-001",
+      "scheduledTime": "09:53",
+      "category": "arrival",
+      "originIcao": "CYVR",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "wja",
+      "flightNumber": "1221"
+    },
+    {
+      "id": "arrival-as801-lax-hnl",
+      "category": "arrival",
+      "scheduledTime": "09:54",
+      "airlineIcao": "asa",
+      "flightNumber": "801",
+      "originIcao": "KLAX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-as1055-ogg-hnl",
+      "category": "arrival",
+      "scheduledTime": "09:58",
+      "airlineIcao": "asa",
+      "flightNumber": "1055",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-jl-departure-rjtt-f-002",
+      "scheduledTime": "09:58",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "RJTT",
+      "airlineIcao": "jal",
+      "flightNumber": "6835"
+    },
+    {
+      "id": "arrival-as552-bur-hnl",
+      "category": "arrival",
+      "scheduledTime": "10:00",
+      "airlineIcao": "asa",
+      "flightNumber": "552",
+      "originIcao": "KBUR",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as1043-hnl-lih",
+      "category": "departure",
+      "scheduledTime": "10:00",
+      "airlineIcao": "asa",
+      "flightNumber": "1043",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLI"
+    },
+    {
+      "id": "departure-as1032-hnl-ito",
+      "category": "departure",
+      "scheduledTime": "10:01",
+      "airlineIcao": "asa",
+      "flightNumber": "1032",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHTO"
+    },
+    {
+      "id": "t100-9x-arrival-phny-f-005",
+      "scheduledTime": "10:02",
+      "category": "arrival",
+      "originIcao": "PHNY",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "2851"
+    },
+    {
+      "id": "departure-as839-hnl-sea",
+      "category": "departure",
+      "scheduledTime": "10:10",
+      "airlineIcao": "asa",
+      "flightNumber": "839",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-fx-departure-phjh-g-001",
+      "scheduledTime": "10:13",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHJH",
+      "airlineIcao": "fdx",
+      "flightNumber": "2339"
+    },
+    {
+      "id": "t100-5x-arrival-phko-g-001",
+      "scheduledTime": "10:16",
+      "category": "arrival",
+      "originIcao": "PHKO",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "ups",
+      "flightNumber": "1784"
+    },
+    {
+      "id": "arrival-as1021-ito-hnl",
+      "category": "arrival",
+      "scheduledTime": "10:20",
+      "airlineIcao": "asa",
+      "flightNumber": "1021",
+      "originIcao": "PHTO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-as1044-lih-hnl",
+      "category": "arrival",
+      "scheduledTime": "10:24",
+      "airlineIcao": "asa",
+      "flightNumber": "1044",
+      "originIcao": "PHLI",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-nz-arrival-nzaa-f-001",
+      "scheduledTime": "10:26",
+      "category": "arrival",
+      "originIcao": "NZAA",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "anz",
+      "flightNumber": "3769"
+    },
+    {
+      "id": "arrival-as1065-ogg-hnl",
+      "category": "arrival",
+      "scheduledTime": "10:27",
+      "airlineIcao": "asa",
+      "flightNumber": "1065",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-as819-smf-hnl",
+      "category": "arrival",
+      "scheduledTime": "10:27",
+      "airlineIcao": "asa",
+      "flightNumber": "819",
+      "originIcao": "KSMF",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-kh-arrival-phto-g-003",
+      "scheduledTime": "10:27",
+      "category": "arrival",
+      "originIcao": "PHTO",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "aah",
+      "flightNumber": "807"
+    },
+    {
+      "id": "departure-as1452-hnl-bur",
+      "category": "departure",
+      "scheduledTime": "10:31",
+      "airlineIcao": "asa",
+      "flightNumber": "1452",
+      "originIcao": "PHNL",
+      "destinationIcao": "KBUR"
+    },
+    {
+      "id": "arrival-as879-pdx-hnl",
+      "category": "arrival",
+      "scheduledTime": "10:36",
+      "airlineIcao": "asa",
+      "flightNumber": "879",
+      "originIcao": "KPDX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-9x-arrival-phny-f-007",
+      "scheduledTime": "10:39",
+      "category": "arrival",
+      "originIcao": "PHNY",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "1973"
+    },
+    {
+      "id": "arrival-wn3093-ogg-hnl",
+      "category": "arrival",
+      "scheduledTime": "10:40",
+      "airlineIcao": "swa",
+      "flightNumber": "3093",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as1053-hnl-lih",
+      "category": "departure",
+      "scheduledTime": "10:44",
+      "airlineIcao": "asa",
+      "flightNumber": "1053",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLI"
+    },
+    {
+      "id": "t100-nh-departure-rjtt-f-001",
+      "scheduledTime": "10:46",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "RJTT",
+      "airlineIcao": "ana",
+      "flightNumber": "1377"
+    },
+    {
+      "id": "arrival-as1075-ogg-hnl",
+      "category": "arrival",
+      "scheduledTime": "10:48",
+      "airlineIcao": "asa",
+      "flightNumber": "1075",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-as1416-sjc-hnl",
+      "category": "arrival",
+      "scheduledTime": "10:49",
+      "airlineIcao": "asa",
+      "flightNumber": "1416",
+      "originIcao": "KSJC",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-ac-arrival-cyvr-f-001",
+      "scheduledTime": "10:49",
+      "category": "arrival",
+      "originIcao": "CYVR",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "aca",
+      "flightNumber": "5530"
+    },
+    {
+      "id": "arrival-wn4527-ont-hnl",
+      "category": "arrival",
+      "scheduledTime": "10:50",
+      "airlineIcao": "swa",
+      "flightNumber": "4527",
+      "originIcao": "KONT",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-kh-arrival-phto-g-001",
+      "scheduledTime": "10:51",
+      "category": "arrival",
+      "originIcao": "PHTO",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "aah",
+      "flightNumber": "1495"
+    },
+    {
+      "id": "arrival-aa31-lax-hnl",
+      "category": "arrival",
+      "scheduledTime": "10:53",
+      "airlineIcao": "aal",
+      "flightNumber": "31",
+      "originIcao": "KLAX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-9x-departure-phmk-f-020",
+      "scheduledTime": "10:57",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHMK",
+      "airlineIcao": "fdy",
+      "flightNumber": "218"
+    },
+    {
+      "id": "arrival-as847-oak-hnl",
+      "category": "arrival",
+      "scheduledTime": "10:59",
+      "airlineIcao": "asa",
+      "flightNumber": "847",
+      "originIcao": "KOAK",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as1068-hnl-koa",
+      "category": "departure",
+      "scheduledTime": "10:59",
+      "airlineIcao": "asa",
+      "flightNumber": "1068",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHKO"
+    },
+    {
+      "id": "departure-as1076-hnl-ogg",
+      "category": "departure",
+      "scheduledTime": "10:59",
+      "airlineIcao": "asa",
+      "flightNumber": "1076",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "arrival-wn3781-smf-hnl",
+      "category": "arrival",
+      "scheduledTime": "11:00",
+      "airlineIcao": "swa",
+      "flightNumber": "3781",
+      "originIcao": "KSMF",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-wn1942-hnl-smf",
+      "category": "departure",
+      "scheduledTime": "11:00",
+      "airlineIcao": "swa",
+      "flightNumber": "1942",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSMF"
+    },
+    {
+      "id": "departure-wn4994-hnl-sjc",
+      "category": "departure",
+      "scheduledTime": "11:00",
+      "airlineIcao": "swa",
+      "flightNumber": "4994",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSJC"
+    },
+    {
+      "id": "t100-fx-departure-phli-g-004",
+      "scheduledTime": "11:00",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLI",
+      "airlineIcao": "fdx",
+      "flightNumber": "6297"
+    },
+    {
+      "id": "t100-fx-arrival-phli-g-001",
+      "scheduledTime": "11:02",
+      "category": "arrival",
+      "originIcao": "PHLI",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdx",
+      "flightNumber": "1783"
+    },
+    {
+      "id": "t100-9x-arrival-phmk-f-007",
+      "scheduledTime": "11:05",
+      "category": "arrival",
+      "originIcao": "PHMK",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "7983"
+    },
+    {
+      "id": "arrival-as821-sea-hnl",
+      "category": "arrival",
+      "scheduledTime": "11:08",
+      "airlineIcao": "asa",
+      "flightNumber": "821",
+      "originIcao": "KSEA",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-fx-departure-phmk-g-001",
+      "scheduledTime": "11:09",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHMK",
+      "airlineIcao": "fdx",
+      "flightNumber": "5908"
+    },
+    {
+      "id": "arrival-as811-sfo-hnl",
+      "category": "arrival",
+      "scheduledTime": "11:10",
+      "airlineIcao": "asa",
+      "flightNumber": "811",
+      "originIcao": "KSFO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as1417-hnl-slc",
+      "category": "departure",
+      "scheduledTime": "11:10",
+      "airlineIcao": "asa",
+      "flightNumber": "1417",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-as836-hnl-phx",
+      "category": "departure",
+      "scheduledTime": "11:10",
+      "airlineIcao": "asa",
+      "flightNumber": "836",
+      "originIcao": "PHNL",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-ua1103-hnl-lax",
+      "category": "departure",
+      "scheduledTime": "11:10",
+      "airlineIcao": "ual",
+      "flightNumber": "1103",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "arrival-as1085-ogg-hnl",
+      "category": "arrival",
+      "scheduledTime": "11:12",
+      "airlineIcao": "asa",
+      "flightNumber": "1085",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-9x-departure-phny-f-007",
+      "scheduledTime": "11:12",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHNY",
+      "airlineIcao": "fdy",
+      "flightNumber": "1008"
+    },
+    {
+      "id": "t100-rv-arrival-cyvr-f-001",
+      "scheduledTime": "11:12",
+      "category": "arrival",
+      "originIcao": "CYVR",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "rou",
+      "flightNumber": "7218"
+    },
+    {
+      "id": "departure-ua1572-hnl-sfo",
+      "category": "departure",
+      "scheduledTime": "11:16",
+      "airlineIcao": "ual",
+      "flightNumber": "1572",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "arrival-dl480-lax-hnl",
+      "category": "arrival",
+      "scheduledTime": "11:18",
+      "airlineIcao": "dal",
+      "flightNumber": "480",
+      "originIcao": "KLAX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as1086-hnl-ogg",
+      "category": "departure",
+      "scheduledTime": "11:24",
+      "airlineIcao": "asa",
+      "flightNumber": "1086",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "t100-kh-departure-phli-g-001",
+      "scheduledTime": "11:25",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLI",
+      "airlineIcao": "aah",
+      "flightNumber": "1114"
+    },
+    {
+      "id": "t100-lny-departure-phny-f-012",
+      "scheduledTime": "11:25",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHNY",
+      "airlineIcao": "stt",
+      "flightNumber": "4514"
+    },
+    {
+      "id": "departure-as1063-hnl-lih",
+      "category": "departure",
+      "scheduledTime": "11:26",
+      "airlineIcao": "asa",
+      "flightNumber": "1063",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLI"
+    },
+    {
+      "id": "arrival-as768-lax-hnl",
+      "category": "arrival",
+      "scheduledTime": "11:27",
+      "airlineIcao": "asa",
+      "flightNumber": "768",
+      "originIcao": "KLAX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-aa693-phx-hnl",
+      "category": "arrival",
+      "scheduledTime": "11:28",
+      "airlineIcao": "aal",
+      "flightNumber": "693",
+      "originIcao": "KPHX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as1078-hnl-koa",
+      "category": "departure",
+      "scheduledTime": "11:28",
+      "airlineIcao": "asa",
+      "flightNumber": "1078",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHKO"
+    },
+    {
+      "id": "t100-kh-arrival-phli-g-002",
+      "scheduledTime": "11:29",
+      "category": "arrival",
+      "originIcao": "PHLI",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "aah",
+      "flightNumber": "4319"
+    },
+    {
+      "id": "t100-9x-arrival-phlu-f-001",
+      "scheduledTime": "11:32",
+      "category": "arrival",
+      "originIcao": "PHLU",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "8069"
+    },
+    {
+      "id": "arrival-as1095-ogg-hnl",
+      "category": "arrival",
+      "scheduledTime": "11:34",
+      "airlineIcao": "asa",
+      "flightNumber": "1095",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-dl351-sea-hnl",
+      "category": "arrival",
+      "scheduledTime": "11:34",
+      "airlineIcao": "dal",
+      "flightNumber": "351",
+      "originIcao": "KSEA",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-wn2238-las-hnl",
+      "category": "arrival",
+      "scheduledTime": "11:35",
+      "airlineIcao": "swa",
+      "flightNumber": "2238",
+      "originIcao": "KLAS",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-kh-arrival-phog-g-003",
+      "scheduledTime": "11:36",
+      "category": "arrival",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "aah",
+      "flightNumber": "2128"
+    },
+    {
+      "id": "t100-jl-arrival-rjgg-f-001",
+      "scheduledTime": "11:37",
+      "category": "arrival",
+      "originIcao": "RJGG",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "jal",
+      "flightNumber": "4942"
+    },
+    {
+      "id": "arrival-as1057-koa-hnl",
+      "category": "arrival",
+      "scheduledTime": "11:40",
+      "airlineIcao": "asa",
+      "flightNumber": "1057",
+      "originIcao": "PHKO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-wn1865-san-hnl",
+      "category": "arrival",
+      "scheduledTime": "11:40",
+      "airlineIcao": "swa",
+      "flightNumber": "1865",
+      "originIcao": "KSAN",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-ua1175-sfo-hnl",
+      "category": "arrival",
+      "scheduledTime": "11:43",
+      "airlineIcao": "ual",
+      "flightNumber": "1175",
+      "originIcao": "KSFO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as1096-hnl-ogg",
+      "category": "departure",
+      "scheduledTime": "11:44",
+      "airlineIcao": "asa",
+      "flightNumber": "1096",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "arrival-wn2397-lax-hnl",
+      "category": "arrival",
+      "scheduledTime": "11:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2397",
+      "originIcao": "KLAX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-5x-departure-yssy-g-001",
+      "scheduledTime": "11:45",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "YSSY",
+      "airlineIcao": "ups",
+      "flightNumber": "9810"
+    },
+    {
+      "id": "t100-9x-arrival-phmk-f-002",
+      "scheduledTime": "11:47",
+      "category": "arrival",
+      "originIcao": "PHMK",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "8817"
+    },
+    {
+      "id": "departure-as1088-hnl-koa",
+      "category": "departure",
+      "scheduledTime": "11:51",
+      "airlineIcao": "asa",
+      "flightNumber": "1088",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHKO"
+    },
+    {
+      "id": "departure-as763-hnl-lax",
+      "category": "departure",
+      "scheduledTime": "11:52",
+      "airlineIcao": "asa",
+      "flightNumber": "763",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "arrival-as1054-lih-hnl",
+      "category": "arrival",
+      "scheduledTime": "11:53",
+      "airlineIcao": "asa",
+      "flightNumber": "1054",
+      "originIcao": "PHLI",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-as835-phx-hnl",
+      "category": "arrival",
+      "scheduledTime": "11:53",
+      "airlineIcao": "asa",
+      "flightNumber": "835",
+      "originIcao": "KPHX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-ua1158-lax-hnl",
+      "category": "arrival",
+      "scheduledTime": "11:53",
+      "airlineIcao": "ual",
+      "flightNumber": "1158",
+      "originIcao": "KLAX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-lny-arrival-phny-f-012",
+      "scheduledTime": "11:53",
+      "category": "arrival",
+      "originIcao": "PHNY",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "stt",
+      "flightNumber": "9060"
+    },
+    {
+      "id": "t100-9x-arrival-phny-f-003",
+      "scheduledTime": "11:54",
+      "category": "arrival",
+      "originIcao": "PHNY",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "9342"
+    },
+    {
+      "id": "t100-oz-departure-rksi-f-001",
+      "scheduledTime": "11:54",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "RKSI",
+      "airlineIcao": "aar",
+      "flightNumber": "9855"
+    },
+    {
+      "id": "departure-wn1914-hnl-las",
+      "category": "departure",
+      "scheduledTime": "11:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1914",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-wn4971-hnl-lgb",
+      "category": "departure",
+      "scheduledTime": "12:05",
+      "airlineIcao": "swa",
+      "flightNumber": "4971",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLGB"
+    },
+    {
+      "id": "t100-5x-departure-phli-g-001",
+      "scheduledTime": "12:05",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLI",
+      "airlineIcao": "ups",
+      "flightNumber": "2863"
+    },
+    {
+      "id": "t100-fx-arrival-phny-g-001",
+      "scheduledTime": "12:08",
+      "category": "arrival",
+      "originIcao": "PHNY",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdx",
+      "flightNumber": "3606"
+    },
+    {
+      "id": "arrival-as270-ont-hnl",
+      "category": "arrival",
+      "scheduledTime": "12:09",
+      "airlineIcao": "asa",
+      "flightNumber": "270",
+      "originIcao": "KONT",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-aa115-dfw-hnl",
+      "category": "arrival",
+      "scheduledTime": "12:11",
+      "airlineIcao": "aal",
+      "flightNumber": "115",
+      "originIcao": "KDFW",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-fx-departure-koak-g-001",
+      "scheduledTime": "12:11",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "KOAK",
+      "airlineIcao": "fdx",
+      "flightNumber": "6385"
+    },
+    {
+      "id": "t100-kh-arrival-phto-g-004",
+      "scheduledTime": "12:14",
+      "category": "arrival",
+      "originIcao": "PHTO",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "aah",
+      "flightNumber": "3251"
+    },
+    {
+      "id": "departure-as848-hnl-oak",
+      "category": "departure",
+      "scheduledTime": "12:15",
+      "airlineIcao": "asa",
+      "flightNumber": "848",
+      "originIcao": "PHNL",
+      "destinationIcao": "KOAK"
+    },
+    {
+      "id": "departure-wn3342-hnl-ont",
+      "category": "departure",
+      "scheduledTime": "12:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3342",
+      "originIcao": "PHNL",
+      "destinationIcao": "KONT"
+    },
+    {
+      "id": "t100-9x-departure-phmk-f-002",
+      "scheduledTime": "12:15",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHMK",
+      "airlineIcao": "fdy",
+      "flightNumber": "2633"
+    },
+    {
+      "id": "t100-jl-departure-rjaa-f-001",
+      "scheduledTime": "12:16",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "RJAA",
+      "airlineIcao": "jal",
+      "flightNumber": "1190"
+    },
+    {
+      "id": "arrival-as815-san-hnl",
+      "category": "arrival",
+      "scheduledTime": "12:18",
+      "airlineIcao": "asa",
+      "flightNumber": "815",
+      "originIcao": "KSAN",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as1052-hnl-ito",
+      "category": "departure",
+      "scheduledTime": "12:18",
+      "airlineIcao": "asa",
+      "flightNumber": "1052",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHTO"
+    },
+    {
+      "id": "arrival-ua345-iad-hnl",
+      "category": "arrival",
+      "scheduledTime": "12:20",
+      "airlineIcao": "ual",
+      "flightNumber": "345",
+      "originIcao": "KIAD",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as812-hnl-sfo",
+      "category": "departure",
+      "scheduledTime": "12:20",
+      "airlineIcao": "asa",
+      "flightNumber": "812",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-wn1930-hnl-ogg",
+      "category": "departure",
+      "scheduledTime": "12:20",
+      "airlineIcao": "swa",
+      "flightNumber": "1930",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "t100-9x-departure-phmk-f-004",
+      "scheduledTime": "12:21",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHMK",
+      "airlineIcao": "fdy",
+      "flightNumber": "8098"
+    },
+    {
+      "id": "arrival-as1031-ito-hnl",
+      "category": "arrival",
+      "scheduledTime": "12:22",
+      "airlineIcao": "asa",
+      "flightNumber": "1031",
+      "originIcao": "PHTO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as814-hnl-pdx",
+      "category": "departure",
+      "scheduledTime": "12:22",
+      "airlineIcao": "asa",
+      "flightNumber": "814",
+      "originIcao": "PHNL",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-aa162-hnl-lax",
+      "category": "departure",
+      "scheduledTime": "12:23",
+      "airlineIcao": "aal",
+      "flightNumber": "162",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "t100-lny-departure-phny-f-006",
+      "scheduledTime": "12:23",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHNY",
+      "airlineIcao": "stt",
+      "flightNumber": "5532"
+    },
+    {
+      "id": "t100-ke-arrival-rksi-f-001",
+      "scheduledTime": "12:24",
+      "category": "arrival",
+      "originIcao": "RKSI",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "kal",
+      "flightNumber": "7664"
+    },
+    {
+      "id": "departure-as1098-hnl-koa",
+      "category": "departure",
+      "scheduledTime": "12:25",
+      "airlineIcao": "asa",
+      "flightNumber": "1098",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHKO"
+    },
+    {
+      "id": "departure-as870-hnl-lgb",
+      "category": "departure",
+      "scheduledTime": "12:25",
+      "airlineIcao": "asa",
+      "flightNumber": "870",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLGB"
+    },
+    {
+      "id": "arrival-wn2168-koa-hnl",
+      "category": "arrival",
+      "scheduledTime": "12:30",
+      "airlineIcao": "swa",
+      "flightNumber": "2168",
+      "originIcao": "PHKO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as1411-hnl-sjc",
+      "category": "departure",
+      "scheduledTime": "12:30",
+      "airlineIcao": "asa",
+      "flightNumber": "1411",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSJC"
+    },
+    {
+      "id": "departure-as1106-hnl-ogg",
+      "category": "departure",
+      "scheduledTime": "12:31",
+      "airlineIcao": "asa",
+      "flightNumber": "1106",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "t100-9x-departure-phmk-f-018",
+      "scheduledTime": "12:32",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHMK",
+      "airlineIcao": "fdy",
+      "flightNumber": "4259"
+    },
+    {
+      "id": "t100-lny-departure-phny-f-013",
+      "scheduledTime": "12:33",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHNY",
+      "airlineIcao": "stt",
+      "flightNumber": "2224"
+    },
+    {
+      "id": "arrival-wn2734-lih-hnl",
+      "category": "arrival",
+      "scheduledTime": "12:35",
+      "airlineIcao": "swa",
+      "flightNumber": "2734",
+      "originIcao": "PHLI",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-dl427-hnl-lax",
+      "category": "departure",
+      "scheduledTime": "12:35",
+      "airlineIcao": "dal",
+      "flightNumber": "427",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "t100-9x-arrival-phmk-f-014",
+      "scheduledTime": "12:36",
+      "category": "arrival",
+      "originIcao": "PHMK",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "7011"
+    },
+    {
+      "id": "arrival-as1064-lih-hnl",
+      "category": "arrival",
+      "scheduledTime": "12:37",
+      "airlineIcao": "asa",
+      "flightNumber": "1064",
+      "originIcao": "PHLI",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as816-hnl-san",
+      "category": "departure",
+      "scheduledTime": "12:39",
+      "airlineIcao": "asa",
+      "flightNumber": "816",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "arrival-as1115-ogg-hnl",
+      "category": "arrival",
+      "scheduledTime": "12:40",
+      "airlineIcao": "asa",
+      "flightNumber": "1115",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-wn4109-las-hnl",
+      "category": "arrival",
+      "scheduledTime": "12:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4109",
+      "originIcao": "KLAS",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-9x-arrival-phmk-f-023",
+      "scheduledTime": "12:41",
+      "category": "arrival",
+      "originIcao": "PHMK",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "5354"
+    },
+    {
+      "id": "t100-9x-arrival-phmk-f-017",
+      "scheduledTime": "12:44",
+      "category": "arrival",
+      "originIcao": "PHMK",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "3424"
+    },
+    {
+      "id": "arrival-wn2150-ito-hnl",
+      "category": "arrival",
+      "scheduledTime": "12:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2150",
+      "originIcao": "PHTO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-9x-departure-phmk-f-011",
+      "scheduledTime": "12:49",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHMK",
+      "airlineIcao": "fdy",
+      "flightNumber": "2501"
+    },
+    {
+      "id": "arrival-wn3094-ogg-hnl",
+      "category": "arrival",
+      "scheduledTime": "12:50",
+      "airlineIcao": "swa",
+      "flightNumber": "3094",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as822-hnl-sea",
+      "category": "departure",
+      "scheduledTime": "12:50",
+      "airlineIcao": "asa",
+      "flightNumber": "822",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-5x-arrival-ksdf-g-002",
+      "scheduledTime": "12:53",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "ups",
+      "flightNumber": "1562"
+    },
+    {
+      "id": "arrival-wn3274-phx-hnl",
+      "category": "arrival",
+      "scheduledTime": "12:55",
+      "airlineIcao": "swa",
+      "flightNumber": "3274",
+      "originIcao": "KPHX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-wn1916-hnl-lax",
+      "category": "departure",
+      "scheduledTime": "12:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1916",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "t100-lny-arrival-phny-f-009",
+      "scheduledTime": "12:55",
+      "category": "arrival",
+      "originIcao": "PHNY",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "stt",
+      "flightNumber": "4211"
+    },
+    {
+      "id": "arrival-as803-lax-hnl",
+      "category": "arrival",
+      "scheduledTime": "12:58",
+      "airlineIcao": "asa",
+      "flightNumber": "803",
+      "originIcao": "KLAX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-ua1157-hnl-lax",
+      "category": "departure",
+      "scheduledTime": "13:00",
+      "airlineIcao": "ual",
+      "flightNumber": "1157",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "t100-fx-departure-phto-g-001",
+      "scheduledTime": "13:00",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHTO",
+      "airlineIcao": "fdx",
+      "flightNumber": "1299"
+    },
+    {
+      "id": "departure-as1116-hnl-ogg",
+      "category": "departure",
+      "scheduledTime": "13:01",
+      "airlineIcao": "asa",
+      "flightNumber": "1116",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "arrival-as1067-koa-hnl",
+      "category": "arrival",
+      "scheduledTime": "13:07",
+      "airlineIcao": "asa",
+      "flightNumber": "1067",
+      "originIcao": "PHKO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-dl359-hnl-sea",
+      "category": "departure",
+      "scheduledTime": "13:07",
+      "airlineIcao": "dal",
+      "flightNumber": "359",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-9x-departure-phmk-f-016",
+      "scheduledTime": "13:08",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHMK",
+      "airlineIcao": "fdy",
+      "flightNumber": "1154"
+    },
+    {
+      "id": "departure-as802-hnl-lax",
+      "category": "departure",
+      "scheduledTime": "13:10",
+      "airlineIcao": "asa",
+      "flightNumber": "802",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "t100-9x-departure-phlu-f-002",
+      "scheduledTime": "13:10",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLU",
+      "airlineIcao": "fdy",
+      "flightNumber": "8425"
+    },
+    {
+      "id": "departure-as1332-hnl-ont",
+      "category": "departure",
+      "scheduledTime": "13:12",
+      "airlineIcao": "asa",
+      "flightNumber": "1332",
+      "originIcao": "PHNL",
+      "destinationIcao": "KONT"
+    },
+    {
+      "id": "t100-kh-departure-phog-g-001",
+      "scheduledTime": "13:12",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG",
+      "airlineIcao": "aah",
+      "flightNumber": "6587"
+    },
+    {
+      "id": "departure-as1108-hnl-koa",
+      "category": "departure",
+      "scheduledTime": "13:14",
+      "airlineIcao": "asa",
+      "flightNumber": "1108",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHKO"
+    },
+    {
+      "id": "t100-9x-departure-phmk-f-010",
+      "scheduledTime": "13:14",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHMK",
+      "airlineIcao": "fdy",
+      "flightNumber": "6184"
+    },
+    {
+      "id": "departure-as1073-hnl-lih",
+      "category": "departure",
+      "scheduledTime": "13:15",
+      "airlineIcao": "asa",
+      "flightNumber": "1073",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLI"
+    },
+    {
+      "id": "departure-wn561-hnl-koa",
+      "category": "departure",
+      "scheduledTime": "13:15",
+      "airlineIcao": "swa",
+      "flightNumber": "561",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHKO"
+    },
+    {
+      "id": "arrival-dl837-atl-hnl",
+      "category": "arrival",
+      "scheduledTime": "13:20",
+      "airlineIcao": "dal",
+      "flightNumber": "837",
+      "originIcao": "KATL",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-ua2380-sfo-hnl",
+      "category": "arrival",
+      "scheduledTime": "13:20",
+      "airlineIcao": "ual",
+      "flightNumber": "2380",
+      "originIcao": "KSFO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-lny-arrival-phny-f-003",
+      "scheduledTime": "13:20",
+      "category": "arrival",
+      "originIcao": "PHNY",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "stt",
+      "flightNumber": "8106"
+    },
+    {
+      "id": "t100-nh-departure-rjaa-f-001",
+      "scheduledTime": "13:21",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "RJAA",
+      "airlineIcao": "ana",
+      "flightNumber": "5560"
+    },
+    {
+      "id": "departure-ua1818-hnl-sfo",
+      "category": "departure",
+      "scheduledTime": "13:25",
+      "airlineIcao": "ual",
+      "flightNumber": "1818",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-wn1923-hnl-lih",
+      "category": "departure",
+      "scheduledTime": "13:25",
+      "airlineIcao": "swa",
+      "flightNumber": "1923",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLI"
+    },
+    {
+      "id": "arrival-ua253-iah-hnl",
+      "category": "arrival",
+      "scheduledTime": "13:26",
+      "airlineIcao": "ual",
+      "flightNumber": "253",
+      "originIcao": "KIAH",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-9x-arrival-phny-f-004",
+      "scheduledTime": "13:27",
+      "category": "arrival",
+      "originIcao": "PHNY",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "4699"
+    },
+    {
+      "id": "arrival-as813-pdx-hnl",
+      "category": "arrival",
+      "scheduledTime": "13:28",
+      "airlineIcao": "asa",
+      "flightNumber": "813",
+      "originIcao": "KPDX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-as807-las-hnl",
+      "category": "arrival",
+      "scheduledTime": "13:29",
+      "airlineIcao": "asa",
+      "flightNumber": "807",
+      "originIcao": "KLAS",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-wn648-hnl-ito",
+      "category": "departure",
+      "scheduledTime": "13:30",
+      "airlineIcao": "swa",
+      "flightNumber": "648",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHTO"
+    },
+    {
+      "id": "t100-9x-arrival-phmk-f-004",
+      "scheduledTime": "13:30",
+      "category": "arrival",
+      "originIcao": "PHMK",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "5468"
+    },
+    {
+      "id": "departure-as1062-hnl-ito",
+      "category": "departure",
+      "scheduledTime": "13:31",
+      "airlineIcao": "asa",
+      "flightNumber": "1062",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHTO"
+    },
+    {
+      "id": "t100-fx-arrival-phjh-g-001",
+      "scheduledTime": "13:31",
+      "category": "arrival",
+      "originIcao": "PHJH",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdx",
+      "flightNumber": "9147"
+    },
+    {
+      "id": "arrival-ua219-ord-hnl",
+      "category": "arrival",
+      "scheduledTime": "13:32",
+      "airlineIcao": "ual",
+      "flightNumber": "219",
+      "originIcao": "KORD",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-kh-departure-phli-g-002",
+      "scheduledTime": "13:32",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLI",
+      "airlineIcao": "aah",
+      "flightNumber": "5966"
+    },
+    {
+      "id": "arrival-as1074-lih-hnl",
+      "category": "arrival",
+      "scheduledTime": "13:34",
+      "airlineIcao": "asa",
+      "flightNumber": "1074",
+      "originIcao": "PHLI",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-kh-arrival-phli-g-001",
+      "scheduledTime": "13:37",
+      "category": "arrival",
+      "originIcao": "PHLI",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "aah",
+      "flightNumber": "8341"
+    },
+    {
+      "id": "arrival-wn2240-las-hnl",
+      "category": "arrival",
+      "scheduledTime": "13:40",
+      "airlineIcao": "swa",
+      "flightNumber": "2240",
+      "originIcao": "KLAS",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-dl312-msp-hnl",
+      "category": "arrival",
+      "scheduledTime": "13:43",
+      "airlineIcao": "dal",
+      "flightNumber": "312",
+      "originIcao": "KMSP",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-wn2879-oak-hnl",
+      "category": "arrival",
+      "scheduledTime": "13:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2879",
+      "originIcao": "KOAK",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-as1125-ogg-hnl",
+      "category": "arrival",
+      "scheduledTime": "13:46",
+      "airlineIcao": "asa",
+      "flightNumber": "1125",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-lny-arrival-phny-f-006",
+      "scheduledTime": "13:47",
+      "category": "arrival",
+      "originIcao": "PHNY",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "stt",
+      "flightNumber": "7535"
+    },
+    {
+      "id": "t100-9x-arrival-phny-f-001",
+      "scheduledTime": "13:48",
+      "category": "arrival",
+      "originIcao": "PHNY",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "5995"
+    },
+    {
+      "id": "arrival-as829-jfk-hnl",
+      "category": "arrival",
+      "scheduledTime": "13:49",
+      "airlineIcao": "asa",
+      "flightNumber": "829",
+      "originIcao": "KJFK",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-ua1224-lax-hnl",
+      "category": "arrival",
+      "scheduledTime": "13:56",
+      "airlineIcao": "ual",
+      "flightNumber": "1224",
+      "originIcao": "KLAX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-aa164-hnl-lax",
+      "category": "departure",
+      "scheduledTime": "14:00",
+      "airlineIcao": "aal",
+      "flightNumber": "164",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-as820-hnl-smf",
+      "category": "departure",
+      "scheduledTime": "14:00",
+      "airlineIcao": "asa",
+      "flightNumber": "820",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSMF"
+    },
+    {
+      "id": "departure-wn1931-hnl-ogg",
+      "category": "departure",
+      "scheduledTime": "14:00",
+      "airlineIcao": "swa",
+      "flightNumber": "1931",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "t100-jl-departure-rjgg-f-001",
+      "scheduledTime": "14:00",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "RJGG",
+      "airlineIcao": "jal",
+      "flightNumber": "8938"
+    },
+    {
+      "id": "t100-lny-departure-phny-f-010",
+      "scheduledTime": "14:02",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHNY",
+      "airlineIcao": "stt",
+      "flightNumber": "3136"
+    },
+    {
+      "id": "arrival-as626-sea-hnl",
+      "category": "arrival",
+      "scheduledTime": "14:04",
+      "airlineIcao": "asa",
+      "flightNumber": "626",
+      "originIcao": "KSEA",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-9x-arrival-phmk-f-022",
+      "scheduledTime": "14:05",
+      "category": "arrival",
+      "originIcao": "PHMK",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "3418"
+    },
+    {
+      "id": "arrival-dl307-dtw-hnl",
+      "category": "arrival",
+      "scheduledTime": "14:07",
+      "airlineIcao": "dal",
+      "flightNumber": "307",
+      "originIcao": "KDTW",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-lny-arrival-phny-f-011",
+      "scheduledTime": "14:07",
+      "category": "arrival",
+      "originIcao": "PHNY",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "stt",
+      "flightNumber": "4980"
+    },
+    {
+      "id": "arrival-as1077-koa-hnl",
+      "category": "arrival",
+      "scheduledTime": "14:15",
+      "airlineIcao": "asa",
+      "flightNumber": "1077",
+      "originIcao": "PHKO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as1072-hnl-ito",
+      "category": "departure",
+      "scheduledTime": "14:17",
+      "airlineIcao": "asa",
+      "flightNumber": "1072",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHTO"
+    },
+    {
+      "id": "arrival-dl316-slc-hnl",
+      "category": "arrival",
+      "scheduledTime": "14:19",
+      "airlineIcao": "dal",
+      "flightNumber": "316",
+      "originIcao": "KSLC",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-as1084-lih-hnl",
+      "category": "arrival",
+      "scheduledTime": "14:22",
+      "airlineIcao": "asa",
+      "flightNumber": "1084",
+      "originIcao": "PHLI",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-9x-departure-phny-f-005",
+      "scheduledTime": "14:22",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHNY",
+      "airlineIcao": "fdy",
+      "flightNumber": "3507"
+    },
+    {
+      "id": "t100-qf-arrival-yssy-f-001",
+      "scheduledTime": "14:23",
+      "category": "arrival",
+      "originIcao": "YSSY",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "qfa",
+      "flightNumber": "8366"
+    },
+    {
+      "id": "departure-as1126-hnl-ogg",
+      "category": "departure",
+      "scheduledTime": "14:24",
+      "airlineIcao": "asa",
+      "flightNumber": "1126",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "departure-ua201-hnl-gum",
+      "category": "departure",
+      "scheduledTime": "14:25",
+      "airlineIcao": "ual",
+      "flightNumber": "201",
+      "originIcao": "PHNL",
+      "destinationIcao": "PGUM"
+    },
+    {
+      "id": "arrival-aa5-dfw-hnl",
+      "category": "arrival",
+      "scheduledTime": "14:26",
+      "airlineIcao": "aal",
+      "flightNumber": "5",
+      "originIcao": "KDFW",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-aa675-phx-hnl",
+      "category": "arrival",
+      "scheduledTime": "14:27",
+      "airlineIcao": "aal",
+      "flightNumber": "675",
+      "originIcao": "KPHX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-kh-arrival-phli-g-003",
+      "scheduledTime": "14:30",
+      "category": "arrival",
+      "originIcao": "PHLI",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "aah",
+      "flightNumber": "2808"
+    },
+    {
+      "id": "arrival-ua1260-sfo-hnl",
+      "category": "arrival",
+      "scheduledTime": "14:35",
+      "airlineIcao": "ual",
+      "flightNumber": "1260",
+      "originIcao": "KSFO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-jl-arrival-rjaa-f-001",
+      "scheduledTime": "14:35",
+      "category": "arrival",
+      "originIcao": "RJAA",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "jal",
+      "flightNumber": "9393"
+    },
+    {
+      "id": "departure-as1118-hnl-koa",
+      "category": "departure",
+      "scheduledTime": "14:39",
+      "airlineIcao": "asa",
+      "flightNumber": "1118",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHKO"
+    },
+    {
+      "id": "departure-ua650-hnl-sfo",
+      "category": "departure",
+      "scheduledTime": "14:40",
+      "airlineIcao": "ual",
+      "flightNumber": "650",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "t100-qf-departure-yssy-f-002",
+      "scheduledTime": "14:40",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "YSSY",
+      "airlineIcao": "qfa",
+      "flightNumber": "8784"
+    },
+    {
+      "id": "arrival-as1135-ogg-hnl",
+      "category": "arrival",
+      "scheduledTime": "14:42",
+      "airlineIcao": "asa",
+      "flightNumber": "1135",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-lny-departure-phny-f-004",
+      "scheduledTime": "14:42",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHNY",
+      "airlineIcao": "stt",
+      "flightNumber": "9384"
+    },
+    {
+      "id": "departure-dl310-hnl-dtw",
+      "category": "departure",
+      "scheduledTime": "14:45",
+      "airlineIcao": "dal",
+      "flightNumber": "310",
+      "originIcao": "PHNL",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "t100-jl-arrival-rjtt-f-001",
+      "scheduledTime": "14:51",
+      "category": "arrival",
+      "originIcao": "RJTT",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "jal",
+      "flightNumber": "4092"
+    },
+    {
+      "id": "arrival-as1051-ito-hnl",
+      "category": "arrival",
+      "scheduledTime": "14:54",
+      "airlineIcao": "asa",
+      "flightNumber": "1051",
+      "originIcao": "PHTO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as1093-hnl-lih",
+      "category": "departure",
+      "scheduledTime": "14:55",
+      "airlineIcao": "asa",
+      "flightNumber": "1093",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLI"
+    },
+    {
+      "id": "arrival-as1087-koa-hnl",
+      "category": "arrival",
+      "scheduledTime": "14:57",
+      "airlineIcao": "asa",
+      "flightNumber": "1087",
+      "originIcao": "PHKO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-nh-arrival-rjtt-f-001",
+      "scheduledTime": "14:58",
+      "category": "arrival",
+      "originIcao": "RJTT",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "ana",
+      "flightNumber": "8712"
+    },
+    {
+      "id": "t100-kh-departure-phko-g-003",
+      "scheduledTime": "14:59",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHKO",
+      "airlineIcao": "aah",
+      "flightNumber": "7299"
+    },
+    {
+      "id": "arrival-wn676-ogg-hnl",
+      "category": "arrival",
+      "scheduledTime": "15:00",
+      "airlineIcao": "swa",
+      "flightNumber": "676",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as90-hnl-sea",
+      "category": "departure",
+      "scheduledTime": "15:07",
+      "airlineIcao": "asa",
+      "flightNumber": "90",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-9x-departure-phmk-f-009",
+      "scheduledTime": "15:07",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHMK",
+      "airlineIcao": "fdy",
+      "flightNumber": "1756"
+    },
+    {
+      "id": "departure-as830-hnl-jfk",
+      "category": "departure",
+      "scheduledTime": "15:09",
+      "airlineIcao": "asa",
+      "flightNumber": "830",
+      "originIcao": "PHNL",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "t100-9x-departure-phmk-f-015",
+      "scheduledTime": "15:11",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHMK",
+      "airlineIcao": "fdy",
+      "flightNumber": "2729"
+    },
+    {
+      "id": "t100-nh-arrival-rjaa-f-001",
+      "scheduledTime": "15:11",
+      "category": "arrival",
+      "originIcao": "RJAA",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "ana",
+      "flightNumber": "2236"
+    },
+    {
+      "id": "arrival-ua384-den-hnl",
+      "category": "arrival",
+      "scheduledTime": "15:13",
+      "airlineIcao": "ual",
+      "flightNumber": "384",
+      "originIcao": "KDEN",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as1138-hnl-koa",
+      "category": "departure",
+      "scheduledTime": "15:14",
+      "airlineIcao": "asa",
+      "flightNumber": "1138",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHKO"
+    },
+    {
+      "id": "departure-dl309-hnl-atl",
+      "category": "departure",
+      "scheduledTime": "15:15",
+      "airlineIcao": "dal",
+      "flightNumber": "309",
+      "originIcao": "PHNL",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-ua1636-hnl-lax",
+      "category": "departure",
+      "scheduledTime": "15:15",
+      "airlineIcao": "ual",
+      "flightNumber": "1636",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "t100-fx-departure-phny-g-001",
+      "scheduledTime": "15:19",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHNY",
+      "airlineIcao": "fdx",
+      "flightNumber": "9719"
+    },
+    {
+      "id": "arrival-dl636-jfk-hnl",
+      "category": "arrival",
+      "scheduledTime": "15:21",
+      "airlineIcao": "dal",
+      "flightNumber": "636",
+      "originIcao": "KJFK",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as1082-hnl-ito",
+      "category": "departure",
+      "scheduledTime": "15:21",
+      "airlineIcao": "asa",
+      "flightNumber": "1082",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHTO"
+    },
+    {
+      "id": "arrival-as1097-koa-hnl",
+      "category": "arrival",
+      "scheduledTime": "15:23",
+      "airlineIcao": "asa",
+      "flightNumber": "1097",
+      "originIcao": "PHKO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-ua344-hnl-iad",
+      "category": "departure",
+      "scheduledTime": "15:25",
+      "airlineIcao": "ual",
+      "flightNumber": "344",
+      "originIcao": "PHNL",
+      "destinationIcao": "KIAD"
+    },
+    {
+      "id": "t100-9x-arrival-phlu-f-002",
+      "scheduledTime": "15:26",
+      "category": "arrival",
+      "originIcao": "PHLU",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "2750"
+    },
+    {
+      "id": "t100-fx-departure-phko-g-001",
+      "scheduledTime": "15:29",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHKO",
+      "airlineIcao": "fdx",
+      "flightNumber": "6218"
+    },
+    {
+      "id": "departure-as1136-hnl-ogg",
+      "category": "departure",
+      "scheduledTime": "15:35",
+      "airlineIcao": "asa",
+      "flightNumber": "1136",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "t100-9x-departure-phny-f-004",
+      "scheduledTime": "15:37",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHNY",
+      "airlineIcao": "fdy",
+      "flightNumber": "1795"
+    },
+    {
+      "id": "departure-as1103-hnl-lih",
+      "category": "departure",
+      "scheduledTime": "15:39",
+      "airlineIcao": "asa",
+      "flightNumber": "1103",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLI"
+    },
+    {
+      "id": "arrival-as1145-ogg-hnl",
+      "category": "arrival",
+      "scheduledTime": "15:45",
+      "airlineIcao": "asa",
+      "flightNumber": "1145",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-dl650-hnl-jfk",
+      "category": "departure",
+      "scheduledTime": "15:50",
+      "airlineIcao": "dal",
+      "flightNumber": "650",
+      "originIcao": "PHNL",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "departure-ua1947-hnl-sfo",
+      "category": "departure",
+      "scheduledTime": "15:50",
+      "airlineIcao": "ual",
+      "flightNumber": "1947",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-wn1932-hnl-ogg",
+      "category": "departure",
+      "scheduledTime": "15:50",
+      "airlineIcao": "swa",
+      "flightNumber": "1932",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "t100-fx-departure-kmem-g-001",
+      "scheduledTime": "15:50",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3492"
+    },
+    {
+      "id": "arrival-as1061-ito-hnl",
+      "category": "arrival",
+      "scheduledTime": "15:55",
+      "airlineIcao": "asa",
+      "flightNumber": "1061",
+      "originIcao": "PHTO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-5x-arrival-kont-g-001",
+      "scheduledTime": "15:55",
+      "category": "arrival",
+      "originIcao": "KONT",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "ups",
+      "flightNumber": "251"
+    },
+    {
+      "id": "arrival-ua1431-lax-hnl",
+      "category": "arrival",
+      "scheduledTime": "15:59",
+      "airlineIcao": "ual",
+      "flightNumber": "1431",
+      "originIcao": "KLAX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-9x-departure-phmk-f-017",
+      "scheduledTime": "15:59",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHMK",
+      "airlineIcao": "fdy",
+      "flightNumber": "685"
+    },
+    {
+      "id": "arrival-as1107-koa-hnl",
+      "category": "arrival",
+      "scheduledTime": "16:00",
+      "airlineIcao": "asa",
+      "flightNumber": "1107",
+      "originIcao": "PHKO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-ua218-hnl-ord",
+      "category": "departure",
+      "scheduledTime": "16:00",
+      "airlineIcao": "ual",
+      "flightNumber": "218",
+      "originIcao": "PHNL",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-9x-arrival-phmk-f-001",
+      "scheduledTime": "16:00",
+      "category": "arrival",
+      "originIcao": "PHMK",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "2606"
+    },
+    {
+      "id": "t100-lny-departure-phny-f-002",
+      "scheduledTime": "16:17",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHNY",
+      "airlineIcao": "stt",
+      "flightNumber": "1207"
+    },
+    {
+      "id": "arrival-ua300-sfo-hnl",
+      "category": "arrival",
+      "scheduledTime": "16:18",
+      "airlineIcao": "ual",
+      "flightNumber": "300",
+      "originIcao": "KSFO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-dl313-hnl-msp",
+      "category": "departure",
+      "scheduledTime": "16:20",
+      "airlineIcao": "dal",
+      "flightNumber": "313",
+      "originIcao": "PHNL",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "departure-as1113-hnl-lih",
+      "category": "departure",
+      "scheduledTime": "16:21",
+      "airlineIcao": "asa",
+      "flightNumber": "1113",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLI"
+    },
+    {
+      "id": "t100-9x-arrival-phmk-f-006",
+      "scheduledTime": "16:21",
+      "category": "arrival",
+      "originIcao": "PHMK",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "1627"
+    },
+    {
+      "id": "arrival-as1104-lih-hnl",
+      "category": "arrival",
+      "scheduledTime": "16:22",
+      "airlineIcao": "asa",
+      "flightNumber": "1104",
+      "originIcao": "PHLI",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as1146-hnl-ogg",
+      "category": "departure",
+      "scheduledTime": "16:23",
+      "airlineIcao": "asa",
+      "flightNumber": "1146",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "t100-9x-departure-phmk-f-007",
+      "scheduledTime": "16:24",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHMK",
+      "airlineIcao": "fdy",
+      "flightNumber": "7119"
+    },
+    {
+      "id": "arrival-wn661-lih-hnl",
+      "category": "arrival",
+      "scheduledTime": "16:25",
+      "airlineIcao": "swa",
+      "flightNumber": "661",
+      "originIcao": "PHLI",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-jl-arrival-rjtt-f-002",
+      "scheduledTime": "16:25",
+      "category": "arrival",
+      "originIcao": "RJTT",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "jal",
+      "flightNumber": "4445"
+    },
+    {
+      "id": "arrival-wn2151-ito-hnl",
+      "category": "arrival",
+      "scheduledTime": "16:30",
+      "airlineIcao": "swa",
+      "flightNumber": "2151",
+      "originIcao": "PHTO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-wn2169-koa-hnl",
+      "category": "arrival",
+      "scheduledTime": "16:30",
+      "airlineIcao": "swa",
+      "flightNumber": "2169",
+      "originIcao": "PHKO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-wn3096-ogg-hnl",
+      "category": "arrival",
+      "scheduledTime": "16:30",
+      "airlineIcao": "swa",
+      "flightNumber": "3096",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as1148-hnl-koa",
+      "category": "departure",
+      "scheduledTime": "16:33",
+      "airlineIcao": "asa",
+      "flightNumber": "1148",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHKO"
+    },
+    {
+      "id": "arrival-as899-sea-hnl",
+      "category": "arrival",
+      "scheduledTime": "16:34",
+      "airlineIcao": "asa",
+      "flightNumber": "899",
+      "originIcao": "KSEA",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-fj-arrival-nsfa-f-001",
+      "scheduledTime": "16:34",
+      "category": "arrival",
+      "originIcao": "NSFA",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fji",
+      "flightNumber": "9299"
+    },
+    {
+      "id": "t100-kh-arrival-phog-g-002",
+      "scheduledTime": "16:34",
+      "category": "arrival",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "aah",
+      "flightNumber": "318"
+    },
+    {
+      "id": "arrival-as1071-ito-hnl",
+      "category": "arrival",
+      "scheduledTime": "16:39",
+      "airlineIcao": "asa",
+      "flightNumber": "1071",
+      "originIcao": "PHTO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-9x-departure-phmk-f-003",
+      "scheduledTime": "16:39",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHMK",
+      "airlineIcao": "fdy",
+      "flightNumber": "4303"
+    },
+    {
+      "id": "arrival-dl465-lax-hnl",
+      "category": "arrival",
+      "scheduledTime": "16:43",
+      "airlineIcao": "dal",
+      "flightNumber": "465",
+      "originIcao": "KLAX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as1156-hnl-ogg",
+      "category": "departure",
+      "scheduledTime": "16:43",
+      "airlineIcao": "asa",
+      "flightNumber": "1156",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "t100-kh-arrival-phto-g-002",
+      "scheduledTime": "16:46",
+      "category": "arrival",
+      "originIcao": "PHTO",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "aah",
+      "flightNumber": "8189"
+    },
+    {
+      "id": "arrival-as1117-koa-hnl",
+      "category": "arrival",
+      "scheduledTime": "16:47",
+      "airlineIcao": "asa",
+      "flightNumber": "1117",
+      "originIcao": "PHKO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-as1114-lih-hnl",
+      "category": "arrival",
+      "scheduledTime": "16:49",
+      "airlineIcao": "asa",
+      "flightNumber": "1114",
+      "originIcao": "PHLI",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-9x-arrival-phmk-f-011",
+      "scheduledTime": "16:51",
+      "category": "arrival",
+      "originIcao": "PHMK",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "3169"
+    },
+    {
+      "id": "departure-as1092-hnl-ito",
+      "category": "departure",
+      "scheduledTime": "17:00",
+      "airlineIcao": "asa",
+      "flightNumber": "1092",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHTO"
+    },
+    {
+      "id": "t100-lny-departure-phny-f-015",
+      "scheduledTime": "17:09",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHNY",
+      "airlineIcao": "stt",
+      "flightNumber": "3094"
+    },
+    {
+      "id": "departure-wn1906-hnl-ito",
+      "category": "departure",
+      "scheduledTime": "17:10",
+      "airlineIcao": "swa",
+      "flightNumber": "1906",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHTO"
+    },
+    {
+      "id": "departure-wn1911-hnl-koa",
+      "category": "departure",
+      "scheduledTime": "17:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1911",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHKO"
+    },
+    {
+      "id": "t100-kh-departure-phog-g-002",
+      "scheduledTime": "17:15",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG",
+      "airlineIcao": "aah",
+      "flightNumber": "20"
+    },
+    {
+      "id": "t100-9x-arrival-phny-f-006",
+      "scheduledTime": "17:16",
+      "category": "arrival",
+      "originIcao": "PHNY",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "8053"
+    },
+    {
+      "id": "arrival-as1127-koa-hnl",
+      "category": "arrival",
+      "scheduledTime": "17:20",
+      "airlineIcao": "asa",
+      "flightNumber": "1127",
+      "originIcao": "PHKO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-wn2349-hnl-lih",
+      "category": "departure",
+      "scheduledTime": "17:20",
+      "airlineIcao": "swa",
+      "flightNumber": "2349",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLI"
+    },
+    {
+      "id": "t100-lny-departure-phny-f-009",
+      "scheduledTime": "17:21",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHNY",
+      "airlineIcao": "stt",
+      "flightNumber": "4338"
+    },
+    {
+      "id": "departure-wn1933-hnl-ogg",
+      "category": "departure",
+      "scheduledTime": "17:25",
+      "airlineIcao": "swa",
+      "flightNumber": "1933",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "arrival-as1124-lih-hnl",
+      "category": "arrival",
+      "scheduledTime": "17:29",
+      "airlineIcao": "asa",
+      "flightNumber": "1124",
+      "originIcao": "PHLI",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-as1155-ogg-hnl",
+      "category": "arrival",
+      "scheduledTime": "17:30",
+      "airlineIcao": "asa",
+      "flightNumber": "1155",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-9x-arrival-phmk-f-010",
+      "scheduledTime": "17:33",
+      "category": "arrival",
+      "originIcao": "PHMK",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "1686"
+    },
+    {
+      "id": "departure-aa6-hnl-dfw",
+      "category": "departure",
+      "scheduledTime": "17:39",
+      "airlineIcao": "aal",
+      "flightNumber": "6",
+      "originIcao": "PHNL",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-as1081-ito-hnl",
+      "category": "arrival",
+      "scheduledTime": "17:40",
+      "airlineIcao": "asa",
+      "flightNumber": "1081",
+      "originIcao": "PHTO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as1176-hnl-ogg",
+      "category": "departure",
+      "scheduledTime": "17:42",
+      "airlineIcao": "asa",
+      "flightNumber": "1176",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "t100-fx-departure-phli-g-002",
+      "scheduledTime": "17:44",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLI",
+      "airlineIcao": "fdx",
+      "flightNumber": "3933"
+    },
+    {
+      "id": "t100-fx-arrival-koak-g-001",
+      "scheduledTime": "17:48",
+      "category": "arrival",
+      "originIcao": "KOAK",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdx",
+      "flightNumber": "6998"
+    },
+    {
+      "id": "arrival-as1137-koa-hnl",
+      "category": "arrival",
+      "scheduledTime": "17:49",
+      "airlineIcao": "asa",
+      "flightNumber": "1137",
+      "originIcao": "PHKO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as1158-hnl-koa",
+      "category": "departure",
+      "scheduledTime": "17:59",
+      "airlineIcao": "asa",
+      "flightNumber": "1158",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHKO"
+    },
+    {
+      "id": "t100-kh-departure-phto-g-002",
+      "scheduledTime": "18:06",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHTO",
+      "airlineIcao": "aah",
+      "flightNumber": "7763"
+    },
+    {
+      "id": "departure-as1143-hnl-lih",
+      "category": "departure",
+      "scheduledTime": "18:08",
+      "airlineIcao": "asa",
+      "flightNumber": "1143",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLI"
+    },
+    {
+      "id": "arrival-as1134-lih-hnl",
+      "category": "arrival",
+      "scheduledTime": "18:11",
+      "airlineIcao": "asa",
+      "flightNumber": "1134",
+      "originIcao": "PHLI",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-9x-arrival-phmk-f-003",
+      "scheduledTime": "18:14",
+      "category": "arrival",
+      "originIcao": "PHMK",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "2673"
+    },
+    {
+      "id": "arrival-ua200-gum-hnl",
+      "category": "arrival",
+      "scheduledTime": "18:15",
+      "airlineIcao": "ual",
+      "flightNumber": "200",
+      "originIcao": "PGUM",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-wn3097-ogg-hnl",
+      "category": "arrival",
+      "scheduledTime": "18:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3097",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as1102-hnl-ito",
+      "category": "departure",
+      "scheduledTime": "18:18",
+      "airlineIcao": "asa",
+      "flightNumber": "1102",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHTO"
+    },
+    {
+      "id": "t100-9x-departure-phmk-f-006",
+      "scheduledTime": "18:34",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHMK",
+      "airlineIcao": "fdy",
+      "flightNumber": "7143"
+    },
+    {
+      "id": "departure-aa102-hnl-dfw",
+      "category": "departure",
+      "scheduledTime": "18:36",
+      "airlineIcao": "aal",
+      "flightNumber": "102",
+      "originIcao": "PHNL",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-as1147-koa-hnl",
+      "category": "arrival",
+      "scheduledTime": "18:38",
+      "airlineIcao": "asa",
+      "flightNumber": "1147",
+      "originIcao": "PHKO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-as1165-ogg-hnl",
+      "category": "arrival",
+      "scheduledTime": "18:38",
+      "airlineIcao": "asa",
+      "flightNumber": "1165",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-lny-arrival-phny-f-001",
+      "scheduledTime": "18:38",
+      "category": "arrival",
+      "originIcao": "PHNY",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "stt",
+      "flightNumber": "2599"
+    },
+    {
+      "id": "arrival-aa143-lax-hnl",
+      "category": "arrival",
+      "scheduledTime": "18:41",
+      "airlineIcao": "aal",
+      "flightNumber": "143",
+      "originIcao": "KLAX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-9x-arrival-phmk-f-015",
+      "scheduledTime": "18:41",
+      "category": "arrival",
+      "originIcao": "PHMK",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "9627"
+    },
+    {
+      "id": "departure-as1153-hnl-lih",
+      "category": "departure",
+      "scheduledTime": "18:50",
+      "airlineIcao": "asa",
+      "flightNumber": "1153",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLI"
+    },
+    {
+      "id": "t100-lny-departure-phny-f-011",
+      "scheduledTime": "18:53",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHNY",
+      "airlineIcao": "stt",
+      "flightNumber": "5789"
+    },
+    {
+      "id": "arrival-as94-san-hnl",
+      "category": "arrival",
+      "scheduledTime": "19:03",
+      "airlineIcao": "asa",
+      "flightNumber": "94",
+      "originIcao": "KSAN",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-lny-arrival-phny-f-005",
+      "scheduledTime": "19:05",
+      "category": "arrival",
+      "originIcao": "PHNY",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "stt",
+      "flightNumber": "2749"
+    },
+    {
+      "id": "t100-9x-arrival-phmk-f-013",
+      "scheduledTime": "19:09",
+      "category": "arrival",
+      "originIcao": "PHMK",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "3930"
+    },
+    {
+      "id": "arrival-dl419-sea-hnl",
+      "category": "arrival",
+      "scheduledTime": "19:11",
+      "airlineIcao": "dal",
+      "flightNumber": "419",
+      "originIcao": "KSEA",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-ua1805-den-hnl",
+      "category": "arrival",
+      "scheduledTime": "19:13",
+      "airlineIcao": "ual",
+      "flightNumber": "1805",
+      "originIcao": "KDEN",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-as121-sea-hnl",
+      "category": "arrival",
+      "scheduledTime": "19:16",
+      "airlineIcao": "asa",
+      "flightNumber": "121",
+      "originIcao": "KSEA",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-as1157-koa-hnl",
+      "category": "arrival",
+      "scheduledTime": "19:17",
+      "airlineIcao": "asa",
+      "flightNumber": "1157",
+      "originIcao": "PHKO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-as1091-ito-hnl",
+      "category": "arrival",
+      "scheduledTime": "19:19",
+      "airlineIcao": "asa",
+      "flightNumber": "1091",
+      "originIcao": "PHTO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as1112-hnl-ito",
+      "category": "departure",
+      "scheduledTime": "19:20",
+      "airlineIcao": "asa",
+      "flightNumber": "1112",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHTO"
+    },
+    {
+      "id": "t100-pr-arrival-rpll-f-001",
+      "scheduledTime": "19:21",
+      "category": "arrival",
+      "originIcao": "RPLL",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "pal",
+      "flightNumber": "5688"
+    },
+    {
+      "id": "arrival-ua1509-sfo-hnl",
+      "category": "arrival",
+      "scheduledTime": "19:25",
+      "airlineIcao": "ual",
+      "flightNumber": "1509",
+      "originIcao": "KSFO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-fx-arrival-phmk-g-001",
+      "scheduledTime": "19:26",
+      "category": "arrival",
+      "originIcao": "PHMK",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdx",
+      "flightNumber": "893"
+    },
+    {
+      "id": "t100-fx-departure-phmk-g-002",
+      "scheduledTime": "19:29",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHMK",
+      "airlineIcao": "fdx",
+      "flightNumber": "1322"
+    },
+    {
+      "id": "departure-as1206-hnl-ogg",
+      "category": "departure",
+      "scheduledTime": "19:30",
+      "airlineIcao": "asa",
+      "flightNumber": "1206",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "t100-9x-arrival-phmk-f-008",
+      "scheduledTime": "19:34",
+      "category": "arrival",
+      "originIcao": "PHMK",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "5246"
+    },
+    {
+      "id": "arrival-as1175-ogg-hnl",
+      "category": "arrival",
+      "scheduledTime": "19:37",
+      "airlineIcao": "asa",
+      "flightNumber": "1175",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-9x-departure-phny-f-003",
+      "scheduledTime": "19:37",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHNY",
+      "airlineIcao": "fdy",
+      "flightNumber": "3761"
+    },
+    {
+      "id": "departure-dl534-hnl-slc",
+      "category": "departure",
+      "scheduledTime": "19:40",
+      "airlineIcao": "dal",
+      "flightNumber": "534",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-ua383-hnl-den",
+      "category": "departure",
+      "scheduledTime": "19:40",
+      "airlineIcao": "ual",
+      "flightNumber": "383",
+      "originIcao": "PHNL",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-ua1170-lax-hnl",
+      "category": "arrival",
+      "scheduledTime": "19:44",
+      "airlineIcao": "ual",
+      "flightNumber": "1170",
+      "originIcao": "KLAX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-lny-arrival-phny-f-014",
+      "scheduledTime": "19:44",
+      "category": "arrival",
+      "originIcao": "PHNY",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "stt",
+      "flightNumber": "2952"
+    },
+    {
+      "id": "arrival-wn3098-ogg-hnl",
+      "category": "arrival",
+      "scheduledTime": "19:45",
+      "airlineIcao": "swa",
+      "flightNumber": "3098",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-wn664-lih-hnl",
+      "category": "arrival",
+      "scheduledTime": "19:50",
+      "airlineIcao": "swa",
+      "flightNumber": "664",
+      "originIcao": "PHLI",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-ua252-hnl-iah",
+      "category": "departure",
+      "scheduledTime": "19:50",
+      "airlineIcao": "ual",
+      "flightNumber": "252",
+      "originIcao": "PHNL",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "arrival-wn2152-ito-hnl",
+      "category": "arrival",
+      "scheduledTime": "19:55",
+      "airlineIcao": "swa",
+      "flightNumber": "2152",
+      "originIcao": "PHTO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-wn2170-koa-hnl",
+      "category": "arrival",
+      "scheduledTime": "19:55",
+      "airlineIcao": "swa",
+      "flightNumber": "2170",
+      "originIcao": "PHKO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-kh-arrival-phog-g-001",
+      "scheduledTime": "19:55",
+      "category": "arrival",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "aah",
+      "flightNumber": "737"
+    },
+    {
+      "id": "arrival-as1101-ito-hnl",
+      "category": "arrival",
+      "scheduledTime": "19:56",
+      "airlineIcao": "asa",
+      "flightNumber": "1101",
+      "originIcao": "PHTO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-lny-arrival-phny-f-013",
+      "scheduledTime": "19:56",
+      "category": "arrival",
+      "originIcao": "PHNY",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "stt",
+      "flightNumber": "1034"
+    },
+    {
+      "id": "arrival-as49-anc-hnl",
+      "category": "arrival",
+      "scheduledTime": "20:05",
+      "airlineIcao": "asa",
+      "flightNumber": "49",
+      "originIcao": "PANC",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-as894-san-hnl",
+      "category": "arrival",
+      "scheduledTime": "20:22",
+      "airlineIcao": "asa",
+      "flightNumber": "894",
+      "originIcao": "KSAN",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-jl-arrival-rjbb-f-001",
+      "scheduledTime": "20:25",
+      "category": "arrival",
+      "originIcao": "RJBB",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "jal",
+      "flightNumber": "4537"
+    },
+    {
+      "id": "t100-9x-departure-phmk-f-019",
+      "scheduledTime": "20:27",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHMK",
+      "airlineIcao": "fdy",
+      "flightNumber": "560"
+    },
+    {
+      "id": "departure-aa144-hnl-lax",
+      "category": "departure",
+      "scheduledTime": "20:30",
+      "airlineIcao": "aal",
+      "flightNumber": "144",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-wn508-hnl-ogg",
+      "category": "departure",
+      "scheduledTime": "20:30",
+      "airlineIcao": "swa",
+      "flightNumber": "508",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "t100-9x-departure-phmk-f-012",
+      "scheduledTime": "20:30",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHMK",
+      "airlineIcao": "fdy",
+      "flightNumber": "8520"
+    },
+    {
+      "id": "departure-wn495-hnl-koa",
+      "category": "departure",
+      "scheduledTime": "20:35",
+      "airlineIcao": "swa",
+      "flightNumber": "495",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHKO"
+    },
+    {
+      "id": "departure-as804-hnl-lax",
+      "category": "departure",
+      "scheduledTime": "20:39",
+      "airlineIcao": "asa",
+      "flightNumber": "804",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "arrival-as1164-lih-hnl",
+      "category": "arrival",
+      "scheduledTime": "20:40",
+      "airlineIcao": "asa",
+      "flightNumber": "1164",
+      "originIcao": "PHLI",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-wn1925-hnl-lih",
+      "category": "departure",
+      "scheduledTime": "20:40",
+      "airlineIcao": "swa",
+      "flightNumber": "1925",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLI"
+    },
+    {
+      "id": "arrival-aa297-lax-hnl",
+      "category": "arrival",
+      "scheduledTime": "20:41",
+      "airlineIcao": "aal",
+      "flightNumber": "297",
+      "originIcao": "KLAX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-9x-arrival-phmk-f-018",
+      "scheduledTime": "20:41",
+      "category": "arrival",
+      "originIcao": "PHMK",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "5364"
+    },
+    {
+      "id": "t100-9x-departure-phjh-f-001",
+      "scheduledTime": "20:43",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHJH",
+      "airlineIcao": "fdy",
+      "flightNumber": "7286"
+    },
+    {
+      "id": "departure-wn1907-hnl-ito",
+      "category": "departure",
+      "scheduledTime": "20:45",
+      "airlineIcao": "swa",
+      "flightNumber": "1907",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHTO"
+    },
+    {
+      "id": "t100-9x-departure-phmk-f-021",
+      "scheduledTime": "20:49",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHMK",
+      "airlineIcao": "fdy",
+      "flightNumber": "1331"
+    },
+    {
+      "id": "departure-wn4082-hnl-lax",
+      "category": "departure",
+      "scheduledTime": "20:50",
+      "airlineIcao": "swa",
+      "flightNumber": "4082",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "t100-fx-arrival-phko-g-001",
+      "scheduledTime": "20:52",
+      "category": "arrival",
+      "originIcao": "PHKO",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdx",
+      "flightNumber": "9244"
+    },
+    {
+      "id": "arrival-as1111-ito-hnl",
+      "category": "arrival",
+      "scheduledTime": "20:53",
+      "airlineIcao": "asa",
+      "flightNumber": "1111",
+      "originIcao": "PHTO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-as809-lax-hnl",
+      "category": "arrival",
+      "scheduledTime": "20:53",
+      "airlineIcao": "asa",
+      "flightNumber": "809",
+      "originIcao": "KLAX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-5x-departure-phko-g-001",
+      "scheduledTime": "20:53",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHKO",
+      "airlineIcao": "ups",
+      "flightNumber": "8473"
+    },
+    {
+      "id": "departure-wn1915-hnl-las",
+      "category": "departure",
+      "scheduledTime": "20:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1915",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "t100-fx-departure-phko-g-002",
+      "scheduledTime": "20:59",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHKO",
+      "airlineIcao": "fdx",
+      "flightNumber": "2735"
+    },
+    {
+      "id": "departure-aa692-hnl-phx",
+      "category": "departure",
+      "scheduledTime": "21:00",
+      "airlineIcao": "aal",
+      "flightNumber": "692",
+      "originIcao": "PHNL",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-as1216-hnl-ogg",
+      "category": "departure",
+      "scheduledTime": "21:00",
+      "airlineIcao": "asa",
+      "flightNumber": "1216",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG"
+    },
+    {
+      "id": "departure-wn2277-hnl-phx",
+      "category": "departure",
+      "scheduledTime": "21:00",
+      "airlineIcao": "swa",
+      "flightNumber": "2277",
+      "originIcao": "PHNL",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-as1178-hnl-koa",
+      "category": "departure",
+      "scheduledTime": "21:03",
+      "airlineIcao": "asa",
+      "flightNumber": "1178",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHKO"
+    },
+    {
+      "id": "t100-fx-departure-phli-g-001",
+      "scheduledTime": "21:03",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLI",
+      "airlineIcao": "fdx",
+      "flightNumber": "505"
+    },
+    {
+      "id": "departure-as1122-hnl-ito",
+      "category": "departure",
+      "scheduledTime": "21:05",
+      "airlineIcao": "asa",
+      "flightNumber": "1122",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHTO"
+    },
+    {
+      "id": "t100-kh-departure-phko-g-001",
+      "scheduledTime": "21:07",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHKO",
+      "airlineIcao": "aah",
+      "flightNumber": "5188"
+    },
+    {
+      "id": "departure-as50-hnl-anc",
+      "category": "departure",
+      "scheduledTime": "21:11",
+      "airlineIcao": "asa",
+      "flightNumber": "50",
+      "originIcao": "PHNL",
+      "destinationIcao": "PANC"
+    },
+    {
+      "id": "departure-as1173-hnl-lih",
+      "category": "departure",
+      "scheduledTime": "21:18",
+      "airlineIcao": "asa",
+      "flightNumber": "1173",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHLI"
+    },
+    {
+      "id": "arrival-wn3672-sjc-hnl",
+      "category": "arrival",
+      "scheduledTime": "21:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3672",
+      "originIcao": "KSJC",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as122-hnl-sea",
+      "category": "departure",
+      "scheduledTime": "21:20",
+      "airlineIcao": "asa",
+      "flightNumber": "122",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-9x-departure-phny-f-001",
+      "scheduledTime": "21:21",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHNY",
+      "airlineIcao": "fdy",
+      "flightNumber": "8489"
+    },
+    {
+      "id": "arrival-dl443-lax-hnl",
+      "category": "arrival",
+      "scheduledTime": "21:22",
+      "airlineIcao": "dal",
+      "flightNumber": "443",
+      "originIcao": "KLAX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-as1174-lih-hnl",
+      "category": "arrival",
+      "scheduledTime": "21:23",
+      "airlineIcao": "asa",
+      "flightNumber": "1174",
+      "originIcao": "PHLI",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-lny-arrival-phny-f-004",
+      "scheduledTime": "21:23",
+      "category": "arrival",
+      "originIcao": "PHNY",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "stt",
+      "flightNumber": "3110"
+    },
+    {
+      "id": "t100-9x-arrival-phny-f-002",
+      "scheduledTime": "21:24",
+      "category": "arrival",
+      "originIcao": "PHNY",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "5369"
+    },
+    {
+      "id": "arrival-wn377-lax-hnl",
+      "category": "arrival",
+      "scheduledTime": "21:25",
+      "airlineIcao": "swa",
+      "flightNumber": "377",
+      "originIcao": "KLAX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-wn512-hnl-san",
+      "category": "departure",
+      "scheduledTime": "21:25",
+      "airlineIcao": "swa",
+      "flightNumber": "512",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "arrival-as1195-ogg-hnl",
+      "category": "arrival",
+      "scheduledTime": "21:26",
+      "airlineIcao": "asa",
+      "flightNumber": "1195",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-kh-departure-phog-g-003",
+      "scheduledTime": "21:27",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHOG",
+      "airlineIcao": "aah",
+      "flightNumber": "8969"
+    },
+    {
+      "id": "t100-kh-arrival-phko-g-001",
+      "scheduledTime": "21:29",
+      "category": "arrival",
+      "originIcao": "PHKO",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "aah",
+      "flightNumber": "4448"
+    },
+    {
+      "id": "arrival-wn2329-san-hnl",
+      "category": "arrival",
+      "scheduledTime": "21:30",
+      "airlineIcao": "swa",
+      "flightNumber": "2329",
+      "originIcao": "KSAN",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-dl658-hnl-lax",
+      "category": "departure",
+      "scheduledTime": "21:30",
+      "airlineIcao": "dal",
+      "flightNumber": "658",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-wn1928-hnl-oak",
+      "category": "departure",
+      "scheduledTime": "21:30",
+      "airlineIcao": "swa",
+      "flightNumber": "1928",
+      "originIcao": "PHNL",
+      "destinationIcao": "KOAK"
+    },
+    {
+      "id": "t100-5x-arrival-phog-g-001",
+      "scheduledTime": "21:30",
+      "category": "arrival",
+      "originIcao": "PHOG",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "ups",
+      "flightNumber": "762"
+    },
+    {
+      "id": "arrival-as1177-koa-hnl",
+      "category": "arrival",
+      "scheduledTime": "21:33",
+      "airlineIcao": "asa",
+      "flightNumber": "1177",
+      "originIcao": "PHKO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-as761-sea-hnl",
+      "category": "arrival",
+      "scheduledTime": "21:34",
+      "airlineIcao": "asa",
+      "flightNumber": "761",
+      "originIcao": "KSEA",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-jl-departure-rjtt-f-001",
+      "scheduledTime": "21:34",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "RJTT",
+      "airlineIcao": "jal",
+      "flightNumber": "8353"
+    },
+    {
+      "id": "t100-9x-arrival-phmk-f-009",
+      "scheduledTime": "21:35",
+      "category": "arrival",
+      "originIcao": "PHMK",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "3862"
+    },
+    {
+      "id": "t100-lny-departure-phny-f-008",
+      "scheduledTime": "21:36",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHNY",
+      "airlineIcao": "stt",
+      "flightNumber": "6101"
+    },
+    {
+      "id": "t100-nh-arrival-rjaa-f-002",
+      "scheduledTime": "21:36",
+      "category": "arrival",
+      "originIcao": "RJAA",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "ana",
+      "flightNumber": "299"
+    },
+    {
+      "id": "t100-ke-departure-rksi-f-001",
+      "scheduledTime": "21:37",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "RKSI",
+      "airlineIcao": "kal",
+      "flightNumber": "8969"
+    },
+    {
+      "id": "arrival-ua2390-lax-hnl",
+      "category": "arrival",
+      "scheduledTime": "21:38",
+      "airlineIcao": "ual",
+      "flightNumber": "2390",
+      "originIcao": "KLAX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-as1121-ito-hnl",
+      "category": "arrival",
+      "scheduledTime": "21:39",
+      "airlineIcao": "asa",
+      "flightNumber": "1121",
+      "originIcao": "PHTO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "arrival-as805-las-hnl",
+      "category": "arrival",
+      "scheduledTime": "21:39",
+      "airlineIcao": "asa",
+      "flightNumber": "805",
+      "originIcao": "KLAS",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-as880-hnl-pdx",
+      "category": "departure",
+      "scheduledTime": "21:39",
+      "airlineIcao": "asa",
+      "flightNumber": "880",
+      "originIcao": "PHNL",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "departure-ua1169-hnl-lax",
+      "category": "departure",
+      "scheduledTime": "21:40",
+      "airlineIcao": "ual",
+      "flightNumber": "1169",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-ua1806-hnl-den",
+      "category": "departure",
+      "scheduledTime": "21:40",
+      "airlineIcao": "ual",
+      "flightNumber": "1806",
+      "originIcao": "PHNL",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-ua638-sfo-hnl",
+      "category": "arrival",
+      "scheduledTime": "21:43",
+      "airlineIcao": "ual",
+      "flightNumber": "638",
+      "originIcao": "KSFO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-lny-arrival-phny-f-010",
+      "scheduledTime": "21:44",
+      "category": "arrival",
+      "originIcao": "PHNY",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "stt",
+      "flightNumber": "9235"
+    },
+    {
+      "id": "departure-as1412-hnl-san",
+      "category": "departure",
+      "scheduledTime": "21:55",
+      "airlineIcao": "asa",
+      "flightNumber": "1412",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "arrival-aa1313-lax-hnl",
+      "category": "arrival",
+      "scheduledTime": "22:09",
+      "airlineIcao": "aal",
+      "flightNumber": "1313",
+      "originIcao": "KLAX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-ua1346-hnl-sfo",
+      "category": "departure",
+      "scheduledTime": "22:10",
+      "airlineIcao": "ual",
+      "flightNumber": "1346",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "arrival-as843-sfo-hnl",
+      "category": "arrival",
+      "scheduledTime": "22:11",
+      "airlineIcao": "asa",
+      "flightNumber": "843",
+      "originIcao": "KSFO",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-9x-departure-phmk-f-022",
+      "scheduledTime": "22:13",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHMK",
+      "airlineIcao": "fdy",
+      "flightNumber": "4717"
+    },
+    {
+      "id": "t100-fx-arrival-phto-g-001",
+      "scheduledTime": "22:13",
+      "category": "arrival",
+      "originIcao": "PHTO",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdx",
+      "flightNumber": "9553"
+    },
+    {
+      "id": "departure-aa694-hnl-phx",
+      "category": "departure",
+      "scheduledTime": "22:16",
+      "airlineIcao": "aal",
+      "flightNumber": "694",
+      "originIcao": "PHNL",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-dl440-hnl-sea",
+      "category": "departure",
+      "scheduledTime": "22:47",
+      "airlineIcao": "dal",
+      "flightNumber": "440",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-kh-departure-phko-g-002",
+      "scheduledTime": "22:47",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHKO",
+      "airlineIcao": "aah",
+      "flightNumber": "1132"
+    },
+    {
+      "id": "departure-ua1251-hnl-lax",
+      "category": "departure",
+      "scheduledTime": "22:53",
+      "airlineIcao": "ual",
+      "flightNumber": "1251",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "t100-9x-departure-phny-f-002",
+      "scheduledTime": "22:57",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHNY",
+      "airlineIcao": "fdy",
+      "flightNumber": "6647"
+    },
+    {
+      "id": "departure-ua1176-hnl-sfo",
+      "category": "departure",
+      "scheduledTime": "23:01",
+      "airlineIcao": "ual",
+      "flightNumber": "1176",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "t100-zg-departure-rjaa-f-001",
+      "scheduledTime": "23:18",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "RJAA",
+      "airlineIcao": "tzp",
+      "flightNumber": "2777"
+    },
+    {
+      "id": "departure-as808-hnl-las",
+      "category": "departure",
+      "scheduledTime": "23:20",
+      "airlineIcao": "asa",
+      "flightNumber": "808",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-as900-hnl-sea",
+      "category": "departure",
+      "scheduledTime": "23:20",
+      "airlineIcao": "asa",
+      "flightNumber": "900",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-as842-hnl-sfo",
+      "category": "departure",
+      "scheduledTime": "23:26",
+      "airlineIcao": "asa",
+      "flightNumber": "842",
+      "originIcao": "PHNL",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "arrival-as855-sea-hnl",
+      "category": "arrival",
+      "scheduledTime": "23:28",
+      "airlineIcao": "asa",
+      "flightNumber": "855",
+      "originIcao": "KSEA",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "t100-lny-departure-phny-f-014",
+      "scheduledTime": "23:30",
+      "category": "departure",
+      "originIcao": "PHNL",
+      "destinationIcao": "PHNY",
+      "airlineIcao": "stt",
+      "flightNumber": "8941"
+    },
+    {
+      "id": "t100-9x-arrival-phmk-f-012",
+      "scheduledTime": "23:33",
+      "category": "arrival",
+      "originIcao": "PHMK",
+      "destinationIcao": "PHNL",
+      "airlineIcao": "fdy",
+      "flightNumber": "9302"
+    },
+    {
+      "id": "arrival-as854-lax-hnl",
+      "category": "arrival",
+      "scheduledTime": "23:34",
+      "airlineIcao": "asa",
+      "flightNumber": "854",
+      "originIcao": "KLAX",
+      "destinationIcao": "PHNL"
+    },
+    {
+      "id": "departure-aa2888-hnl-lax",
+      "category": "departure",
+      "scheduledTime": "23:40",
+      "airlineIcao": "aal",
+      "flightNumber": "2888",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-as853-hnl-lax",
+      "category": "departure",
+      "scheduledTime": "23:58",
+      "airlineIcao": "asa",
+      "flightNumber": "853",
+      "originIcao": "PHNL",
+      "destinationIcao": "KLAX"
+    }
+  ]
+}

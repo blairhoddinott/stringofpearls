@@ -6,7 +6,9 @@ import { SpawnSchedulerClass } from '../../../src/assets/scripts/client/trafficG
 import SimulationClock from '../../../src/assets/scripts/client/simulation/SimulationClock';
 import SimulationTimerQueue from '../../../src/assets/scripts/client/simulation/SimulationTimerQueue';
 import ScheduledSpawnPatternModel from '../../../src/assets/scripts/client/trafficGenerator/schedule/ScheduledSpawnPatternModel';
+import { authoredSpawnPatternKey } from '../../../src/assets/scripts/client/trafficGenerator/schedule/authoredSpawnPatternKey';
 import { resolveTrafficPlan } from '../../../src/assets/scripts/client/trafficGenerator/schedule/resolveTrafficPlan';
+import compiler from '../../../tools/schedules/compile-authored-schedule';
 import {
     secondsOfDayInZone,
     secondsUntilNextOccurrence,
@@ -31,6 +33,7 @@ const MAPPING_CONTEXT = {
     isAirlineKnown: () => true,
     isAircraftTypeKnown: () => true
 };
+const { compileAuthoredSchedule } = compiler;
 
 const buildScheduler = (collection, clock) => {
     const scheduledTimeouts = [];
@@ -50,6 +53,54 @@ const buildScheduler = (collection, clock) => {
 
     return { scheduler, scheduledTimeouts, aircraftController };
 };
+
+ava('real authored compiler output crosses validation into the runtime scheduler unchanged', (t) => {
+    const airportJson = JSON.parse(
+        fs.readFileSync(path.join(__dirname, '../../../assets/airports/eick.json'), 'utf8')
+    );
+    const scheduleDocument = compileAuthoredSchedule({
+        airportJson,
+        airportIcao: 'EICK',
+        timezone: 'Europe/Dublin',
+        sampleDate: '2026-07-15',
+        source: {
+            name: 'stringofpearls airport-authored spawn patterns',
+            url: 'https://github.com/blairhoddinott/stringofpearls/tree/master/assets/airports',
+            retrievedAt: '2026-09-27',
+            license: 'MIT',
+            coverage: 'Deterministic representative profile compiled from reviewed airport-authored rates, routes, geometry, and airline rules; movements are generated and are not observed historical flights.'
+        }
+    });
+    const candidatePatterns = airportJson.spawnPatterns.map((pattern) => ({
+        ...pattern,
+        routeString: pattern.route,
+        authoredScheduleKey: authoredSpawnPatternKey(pattern),
+        createPreSpawnAircraft: () => {},
+        getRandomAirlineForSpawn: () => pattern.airlines[0][0]
+    }));
+    const plan = resolveTrafficPlan({
+        airportIcao: 'EICK',
+        scheduleDocument,
+        legacyCollection: {
+            spawnPatternModels: candidatePatterns,
+            getDepartureModelsForPreSpawn: () => []
+        },
+        mappingContext: {
+            candidatePatterns,
+            isAirlineKnown: () => true,
+            isAircraftTypeKnown: () => true
+        },
+        sessionStartDate: SESSION_START
+    });
+    const { scheduler, scheduledTimeouts } = buildScheduler(plan.collection, { accumulatedDeltaTime: 0 });
+
+    scheduler.startScheduler();
+
+    t.is(plan.mode, 'scheduled');
+    t.is(scheduledTimeouts.length, scheduleDocument.flights.length);
+    t.is(scheduleDocument.flights.length, 168);
+    t.true(scheduledTimeouts.every((call) => call[3][0].spawnPatternKey != null));
+});
 
 ava('a real schedule flows through the provider into the real SpawnScheduler, arming one timer per slot at its airport-local delay', (t) => {
     const clock = { accumulatedDeltaTime: 0 };

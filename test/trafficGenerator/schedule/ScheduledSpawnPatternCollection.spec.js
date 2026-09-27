@@ -122,6 +122,58 @@ ava('fromScheduleDocument() builds mapped slots when supplied a local mapping co
     t.true(collection.spawnPatternModels[0] instanceof MappedScheduledSpawnPatternModel);
 });
 
+ava('fromScheduleDocument() validates and maps authored profile slots', (t) => {
+    const authoredDocument = {
+        ...SCHEDULE_DOCUMENT_MOCK,
+        schemaVersion: 2,
+        profileType: 'authored',
+        flights: [{
+            id: 'auth-ksea-deadbeef-0001',
+            category: 'arrival',
+            scheduledTime: '05:30',
+            spawnPatternKey: 'deadbeef'
+        }]
+    };
+    const candidate = {
+        authoredScheduleKey: 'deadbeef',
+        category: 'arrival',
+        routeString: 'A',
+        origin: '',
+        destination: 'KSEA'
+    };
+    const collection = ScheduledSpawnPatternCollection.fromScheduleDocument(authoredDocument, {
+        mappingContext: {
+            candidatePatterns: [candidate],
+            isAirlineKnown: () => true,
+            isAircraftTypeKnown: () => true
+        },
+        sessionStartDate: SESSION_START
+    });
+
+    t.is(collection.spawnPatternModels[0]._candidate, candidate);
+    t.is(collection.spawnPatternModels[0].getScheduledIdentity(), null);
+});
+
+ava('fromScheduleDocument() keeps authored and observed contracts distinct', (t) => {
+    const authoredSlot = {
+        id: 'auth-ksea-deadbeef-0001',
+        category: 'arrival',
+        scheduledTime: '05:30',
+        spawnPatternKey: 'deadbeef'
+    };
+
+    t.throws(() => ScheduledSpawnPatternCollection.fromScheduleDocument({
+        ...SCHEDULE_DOCUMENT_MOCK,
+        flights: [authoredSlot]
+    }, { sessionStartDate: SESSION_START }), { instanceOf: TypeError });
+    t.throws(() => ScheduledSpawnPatternCollection.fromScheduleDocument({
+        ...SCHEDULE_DOCUMENT_MOCK,
+        schemaVersion: 2,
+        profileType: 'authored',
+        flights: [SCHEDULE_DOCUMENT_MOCK.flights[0]]
+    }, { sessionStartDate: SESSION_START }), { instanceOf: TypeError });
+});
+
 ava('fromScheduleDocument() rejects mapped plans with no category-compatible pattern before scheduling', (t) => {
     const mappingContext = {
         candidatePatterns: [{ category: 'arrival', routeString: 'A', origin: 'A', destination: 'KSEA' }],

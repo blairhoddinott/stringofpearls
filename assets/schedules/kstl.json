@@ -1,0 +1,3597 @@
+{
+  "schemaVersion": 1,
+  "airportIcao": "KSTL",
+  "timezone": "America/Chicago",
+  "sampleDate": "2026-07-15",
+  "source": {
+    "name": "US DOT BTS On-Time Performance + T-100 Segment (All Carriers)",
+    "url": "https://transtats.bts.gov/DL_SelectFields.aspx?QO_fu146_anzr=Nv4+Pn44vr45&gnoyr_VQ=FMG",
+    "retrievedAt": "2026-09-27",
+    "license": "U.S. Government work in the public domain (17 U.S.C. §105); OurAirports code data is public domain.",
+    "coverage": "Exact On-Time movements are retained; 28 representative movements were deterministically synthesized from 2026-05 T-100 performed-departure aggregates. General aviation is excluded."
+  },
+  "flights": [
+    {
+      "id": "arrival-aa1004-ord-stl",
+      "category": "arrival",
+      "scheduledTime": "00:16",
+      "airlineIcao": "aal",
+      "flightNumber": "1004",
+      "originIcao": "KORD",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-dl2666-slc-stl",
+      "category": "arrival",
+      "scheduledTime": "00:41",
+      "airlineIcao": "dal",
+      "flightNumber": "2666",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn3985-stl-tpa",
+      "category": "departure",
+      "scheduledTime": "05:05",
+      "airlineIcao": "swa",
+      "flightNumber": "3985",
+      "originIcao": "KSTL",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "departure-aa858-stl-clt",
+      "category": "departure",
+      "scheduledTime": "05:10",
+      "airlineIcao": "aal",
+      "flightNumber": "858",
+      "originIcao": "KSTL",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-ua362-stl-den",
+      "category": "departure",
+      "scheduledTime": "05:10",
+      "airlineIcao": "ual",
+      "flightNumber": "362",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-wn4358-stl-mco",
+      "category": "departure",
+      "scheduledTime": "05:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4358",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-aa1716-stl-mia",
+      "category": "departure",
+      "scheduledTime": "05:18",
+      "airlineIcao": "aal",
+      "flightNumber": "1716",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-wn3919-stl-hou",
+      "category": "departure",
+      "scheduledTime": "05:25",
+      "airlineIcao": "swa",
+      "flightNumber": "3919",
+      "originIcao": "KSTL",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "departure-aa2261-stl-dfw",
+      "category": "departure",
+      "scheduledTime": "05:32",
+      "airlineIcao": "aal",
+      "flightNumber": "2261",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "t100-g7-departure-kord-f-002",
+      "scheduledTime": "05:32",
+      "category": "departure",
+      "originIcao": "KSTL",
+      "destinationIcao": "KORD",
+      "airlineIcao": "gjs",
+      "flightNumber": "2818"
+    },
+    {
+      "id": "departure-wn3934-stl-las",
+      "category": "departure",
+      "scheduledTime": "05:35",
+      "airlineIcao": "swa",
+      "flightNumber": "3934",
+      "originIcao": "KSTL",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-wn1008-stl-mdw",
+      "category": "departure",
+      "scheduledTime": "05:40",
+      "airlineIcao": "swa",
+      "flightNumber": "1008",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "departure-wn4939-stl-lga",
+      "category": "departure",
+      "scheduledTime": "05:45",
+      "airlineIcao": "swa",
+      "flightNumber": "4939",
+      "originIcao": "KSTL",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-wn1396-stl-dal",
+      "category": "departure",
+      "scheduledTime": "05:50",
+      "airlineIcao": "swa",
+      "flightNumber": "1396",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "departure-dl1524-stl-atl",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "dal",
+      "flightNumber": "1524",
+      "originIcao": "KSTL",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-ua2805-stl-ord",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "ual",
+      "flightNumber": "2805",
+      "originIcao": "KSTL",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-wn3909-stl-den",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "swa",
+      "flightNumber": "3909",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-yx4669-stl-lga",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "rpa",
+      "flightNumber": "4669",
+      "originIcao": "KSTL",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-ua648-stl-ewr",
+      "category": "departure",
+      "scheduledTime": "06:01",
+      "airlineIcao": "ual",
+      "flightNumber": "648",
+      "originIcao": "KSTL",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "departure-as473-stl-sea",
+      "category": "departure",
+      "scheduledTime": "06:02",
+      "airlineIcao": "asa",
+      "flightNumber": "473",
+      "originIcao": "KSTL",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-wn3967-stl-phx",
+      "category": "departure",
+      "scheduledTime": "06:10",
+      "airlineIcao": "swa",
+      "flightNumber": "3967",
+      "originIcao": "KSTL",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-aa1308-stl-phl",
+      "category": "departure",
+      "scheduledTime": "06:14",
+      "airlineIcao": "aal",
+      "flightNumber": "1308",
+      "originIcao": "KSTL",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "departure-dl1597-stl-msp",
+      "category": "departure",
+      "scheduledTime": "06:21",
+      "airlineIcao": "dal",
+      "flightNumber": "1597",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "t100-ac-departure-cyul-f-001",
+      "scheduledTime": "06:22",
+      "category": "departure",
+      "originIcao": "KSTL",
+      "destinationIcao": "CYUL",
+      "airlineIcao": "aca",
+      "flightNumber": "633"
+    },
+    {
+      "id": "departure-dl1626-stl-dtw",
+      "category": "departure",
+      "scheduledTime": "06:30",
+      "airlineIcao": "dal",
+      "flightNumber": "1626",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "departure-oo6293-stl-lax",
+      "category": "departure",
+      "scheduledTime": "06:37",
+      "airlineIcao": "skw",
+      "flightNumber": "6293",
+      "originIcao": "KSTL",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-aa309-stl-dca",
+      "category": "departure",
+      "scheduledTime": "06:43",
+      "airlineIcao": "aal",
+      "flightNumber": "309",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-aa1926-stl-ord",
+      "category": "departure",
+      "scheduledTime": "06:55",
+      "airlineIcao": "aal",
+      "flightNumber": "1926",
+      "originIcao": "KSTL",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-wn3894-stl-bwi",
+      "category": "departure",
+      "scheduledTime": "06:55",
+      "airlineIcao": "swa",
+      "flightNumber": "3894",
+      "originIcao": "KSTL",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "departure-aa537-stl-dfw",
+      "category": "departure",
+      "scheduledTime": "07:07",
+      "airlineIcao": "aal",
+      "flightNumber": "537",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-dl1536-stl-atl",
+      "category": "departure",
+      "scheduledTime": "07:08",
+      "airlineIcao": "dal",
+      "flightNumber": "1536",
+      "originIcao": "KSTL",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-wn1874-fll-stl",
+      "category": "arrival",
+      "scheduledTime": "07:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1874",
+      "originIcao": "KFLL",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn3937-atl-stl",
+      "category": "arrival",
+      "scheduledTime": "07:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3937",
+      "originIcao": "KATL",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn3386-pit-stl",
+      "category": "arrival",
+      "scheduledTime": "07:30",
+      "airlineIcao": "swa",
+      "flightNumber": "3386",
+      "originIcao": "KPIT",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn3471-rsw-stl",
+      "category": "arrival",
+      "scheduledTime": "07:30",
+      "airlineIcao": "swa",
+      "flightNumber": "3471",
+      "originIcao": "KRSW",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-aa712-stl-clt",
+      "category": "departure",
+      "scheduledTime": "07:32",
+      "airlineIcao": "aal",
+      "flightNumber": "712",
+      "originIcao": "KSTL",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "arrival-wn1165-cle-stl",
+      "category": "arrival",
+      "scheduledTime": "07:40",
+      "airlineIcao": "swa",
+      "flightNumber": "1165",
+      "originIcao": "KCLE",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn1783-dtw-stl",
+      "category": "arrival",
+      "scheduledTime": "07:40",
+      "airlineIcao": "swa",
+      "flightNumber": "1783",
+      "originIcao": "KDTW",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn2615-mco-stl",
+      "category": "arrival",
+      "scheduledTime": "07:40",
+      "airlineIcao": "swa",
+      "flightNumber": "2615",
+      "originIcao": "KMCO",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn3227-phl-stl",
+      "category": "arrival",
+      "scheduledTime": "07:40",
+      "airlineIcao": "swa",
+      "flightNumber": "3227",
+      "originIcao": "KPHL",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn3435-rdu-stl",
+      "category": "arrival",
+      "scheduledTime": "07:40",
+      "airlineIcao": "swa",
+      "flightNumber": "3435",
+      "originIcao": "KRDU",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn5070-stl-mco",
+      "category": "departure",
+      "scheduledTime": "07:40",
+      "airlineIcao": "swa",
+      "flightNumber": "5070",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "t100-qk-arrival-cyyz-f-001",
+      "scheduledTime": "07:41",
+      "category": "arrival",
+      "originIcao": "CYYZ",
+      "destinationIcao": "KSTL",
+      "airlineIcao": "jza",
+      "flightNumber": "3340"
+    },
+    {
+      "id": "arrival-wn1109-bwi-stl",
+      "category": "arrival",
+      "scheduledTime": "07:45",
+      "airlineIcao": "swa",
+      "flightNumber": "1109",
+      "originIcao": "KBWI",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn1207-cmh-stl",
+      "category": "arrival",
+      "scheduledTime": "07:45",
+      "airlineIcao": "swa",
+      "flightNumber": "1207",
+      "originIcao": "KCMH",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn4048-tpa-stl",
+      "category": "arrival",
+      "scheduledTime": "07:45",
+      "airlineIcao": "swa",
+      "flightNumber": "4048",
+      "originIcao": "KTPA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn679-bna-stl",
+      "category": "arrival",
+      "scheduledTime": "07:45",
+      "airlineIcao": "swa",
+      "flightNumber": "679",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn752-bos-stl",
+      "category": "arrival",
+      "scheduledTime": "07:45",
+      "airlineIcao": "swa",
+      "flightNumber": "752",
+      "originIcao": "KBOS",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-dl2363-stl-slc",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "dal",
+      "flightNumber": "2363",
+      "originIcao": "KSTL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-wn1635-stl-las",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "swa",
+      "flightNumber": "1635",
+      "originIcao": "KSTL",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-aa2574-stl-phx",
+      "category": "departure",
+      "scheduledTime": "08:01",
+      "airlineIcao": "aal",
+      "flightNumber": "2574",
+      "originIcao": "KSTL",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "arrival-wn523-lga-stl",
+      "category": "arrival",
+      "scheduledTime": "08:05",
+      "airlineIcao": "swa",
+      "flightNumber": "523",
+      "originIcao": "KLGA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-dl1571-atl-stl",
+      "category": "arrival",
+      "scheduledTime": "08:19",
+      "airlineIcao": "dal",
+      "flightNumber": "1571",
+      "originIcao": "KATL",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "t100-ac-departure-cyyz-f-001",
+      "scheduledTime": "08:22",
+      "category": "departure",
+      "originIcao": "KSTL",
+      "destinationIcao": "CYYZ",
+      "airlineIcao": "aca",
+      "flightNumber": "1309"
+    },
+    {
+      "id": "departure-wn148-stl-sat",
+      "category": "departure",
+      "scheduledTime": "08:25",
+      "airlineIcao": "swa",
+      "flightNumber": "148",
+      "originIcao": "KSTL",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-wn2047-stl-lax",
+      "category": "departure",
+      "scheduledTime": "08:25",
+      "airlineIcao": "swa",
+      "flightNumber": "2047",
+      "originIcao": "KSTL",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-wn261-stl-sfo",
+      "category": "departure",
+      "scheduledTime": "08:25",
+      "airlineIcao": "swa",
+      "flightNumber": "261",
+      "originIcao": "KSTL",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-wn3790-stl-dal",
+      "category": "departure",
+      "scheduledTime": "08:25",
+      "airlineIcao": "swa",
+      "flightNumber": "3790",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "departure-wn3910-stl-den",
+      "category": "departure",
+      "scheduledTime": "08:25",
+      "airlineIcao": "swa",
+      "flightNumber": "3910",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-wn4362-stl-smf",
+      "category": "departure",
+      "scheduledTime": "08:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4362",
+      "originIcao": "KSTL",
+      "destinationIcao": "KSMF"
+    },
+    {
+      "id": "departure-wn2126-stl-mke",
+      "category": "departure",
+      "scheduledTime": "08:30",
+      "airlineIcao": "swa",
+      "flightNumber": "2126",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMKE"
+    },
+    {
+      "id": "departure-wn3884-stl-aus",
+      "category": "departure",
+      "scheduledTime": "08:30",
+      "airlineIcao": "swa",
+      "flightNumber": "3884",
+      "originIcao": "KSTL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-wn3905-stl-dca",
+      "category": "departure",
+      "scheduledTime": "08:30",
+      "airlineIcao": "swa",
+      "flightNumber": "3905",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-wn4283-stl-san",
+      "category": "departure",
+      "scheduledTime": "08:30",
+      "airlineIcao": "swa",
+      "flightNumber": "4283",
+      "originIcao": "KSTL",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "arrival-mq4104-ord-stl",
+      "category": "arrival",
+      "scheduledTime": "08:31",
+      "airlineIcao": "eny",
+      "flightNumber": "4104",
+      "originIcao": "KORD",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-aa2733-clt-stl",
+      "category": "arrival",
+      "scheduledTime": "08:33",
+      "airlineIcao": "aal",
+      "flightNumber": "2733",
+      "originIcao": "KCLT",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn25-stl-mci",
+      "category": "departure",
+      "scheduledTime": "08:35",
+      "airlineIcao": "swa",
+      "flightNumber": "25",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMCI"
+    },
+    {
+      "id": "departure-wn4318-stl-oma",
+      "category": "departure",
+      "scheduledTime": "08:35",
+      "airlineIcao": "swa",
+      "flightNumber": "4318",
+      "originIcao": "KSTL",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "departure-wn4780-stl-msy",
+      "category": "departure",
+      "scheduledTime": "08:35",
+      "airlineIcao": "swa",
+      "flightNumber": "4780",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMSY"
+    },
+    {
+      "id": "t100-fx-arrival-kmem-g-001",
+      "scheduledTime": "08:37",
+      "category": "arrival",
+      "originIcao": "KMEM",
+      "destinationIcao": "KSTL",
+      "airlineIcao": "fdx",
+      "flightNumber": "4022"
+    },
+    {
+      "id": "departure-aa3194-stl-dfw",
+      "category": "departure",
+      "scheduledTime": "08:38",
+      "airlineIcao": "aal",
+      "flightNumber": "3194",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-wn3928-stl-hou",
+      "category": "departure",
+      "scheduledTime": "08:45",
+      "airlineIcao": "swa",
+      "flightNumber": "3928",
+      "originIcao": "KSTL",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "arrival-aa1410-dfw-stl",
+      "category": "arrival",
+      "scheduledTime": "08:46",
+      "airlineIcao": "aal",
+      "flightNumber": "1410",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-oo5958-ord-stl",
+      "category": "arrival",
+      "scheduledTime": "08:49",
+      "airlineIcao": "skw",
+      "flightNumber": "5958",
+      "originIcao": "KORD",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "t100-yv-departure-kiah-f-002",
+      "scheduledTime": "08:49",
+      "category": "departure",
+      "originIcao": "KSTL",
+      "destinationIcao": "KIAH",
+      "airlineIcao": "ash",
+      "flightNumber": "4948"
+    },
+    {
+      "id": "arrival-yx4508-lga-stl",
+      "category": "arrival",
+      "scheduledTime": "08:52",
+      "airlineIcao": "rpa",
+      "flightNumber": "4508",
+      "originIcao": "KLGA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn353-stl-msp",
+      "category": "departure",
+      "scheduledTime": "08:55",
+      "airlineIcao": "swa",
+      "flightNumber": "353",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "arrival-f94473-atl-stl",
+      "category": "arrival",
+      "scheduledTime": "08:57",
+      "airlineIcao": "fft",
+      "flightNumber": "4473",
+      "originIcao": "KATL",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn2445-dal-stl",
+      "category": "arrival",
+      "scheduledTime": "09:00",
+      "airlineIcao": "swa",
+      "flightNumber": "2445",
+      "originIcao": "KDAL",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-ua2459-stl-den",
+      "category": "departure",
+      "scheduledTime": "09:06",
+      "airlineIcao": "ual",
+      "flightNumber": "2459",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-mq4104-stl-ord",
+      "category": "departure",
+      "scheduledTime": "09:08",
+      "airlineIcao": "eny",
+      "flightNumber": "4104",
+      "originIcao": "KSTL",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-mq3814-bos-stl",
+      "category": "arrival",
+      "scheduledTime": "09:09",
+      "airlineIcao": "eny",
+      "flightNumber": "3814",
+      "originIcao": "KBOS",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn4853-dca-stl",
+      "category": "arrival",
+      "scheduledTime": "09:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4853",
+      "originIcao": "KDCA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn1751-den-stl",
+      "category": "arrival",
+      "scheduledTime": "09:20",
+      "airlineIcao": "swa",
+      "flightNumber": "1751",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-yx4508-stl-lga",
+      "category": "departure",
+      "scheduledTime": "09:22",
+      "airlineIcao": "rpa",
+      "flightNumber": "4508",
+      "originIcao": "KSTL",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-dl1571-stl-atl",
+      "category": "departure",
+      "scheduledTime": "09:24",
+      "airlineIcao": "dal",
+      "flightNumber": "1571",
+      "originIcao": "KSTL",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-wn2327-mke-stl",
+      "category": "arrival",
+      "scheduledTime": "09:25",
+      "airlineIcao": "swa",
+      "flightNumber": "2327",
+      "originIcao": "KMKE",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-aa2733-stl-clt",
+      "category": "departure",
+      "scheduledTime": "09:25",
+      "airlineIcao": "aal",
+      "flightNumber": "2733",
+      "originIcao": "KSTL",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "arrival-wn2518-oma-stl",
+      "category": "arrival",
+      "scheduledTime": "09:30",
+      "airlineIcao": "swa",
+      "flightNumber": "2518",
+      "originIcao": "KOMA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn2931-mia-stl",
+      "category": "arrival",
+      "scheduledTime": "09:30",
+      "airlineIcao": "swa",
+      "flightNumber": "2931",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn2973-msp-stl",
+      "category": "arrival",
+      "scheduledTime": "09:30",
+      "airlineIcao": "swa",
+      "flightNumber": "2973",
+      "originIcao": "KMSP",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn408-aus-stl",
+      "category": "arrival",
+      "scheduledTime": "09:30",
+      "airlineIcao": "swa",
+      "flightNumber": "408",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-oo5572-stl-ord",
+      "category": "departure",
+      "scheduledTime": "09:30",
+      "airlineIcao": "skw",
+      "flightNumber": "5572",
+      "originIcao": "KSTL",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-dl2868-dtw-stl",
+      "category": "arrival",
+      "scheduledTime": "09:31",
+      "airlineIcao": "dal",
+      "flightNumber": "2868",
+      "originIcao": "KDTW",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn2087-jax-stl",
+      "category": "arrival",
+      "scheduledTime": "09:35",
+      "airlineIcao": "swa",
+      "flightNumber": "2087",
+      "originIcao": "KJAX",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn2585-mci-stl",
+      "category": "arrival",
+      "scheduledTime": "09:35",
+      "airlineIcao": "swa",
+      "flightNumber": "2585",
+      "originIcao": "KMCI",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn2900-mdw-stl",
+      "category": "arrival",
+      "scheduledTime": "09:35",
+      "airlineIcao": "swa",
+      "flightNumber": "2900",
+      "originIcao": "KMDW",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn3020-msy-stl",
+      "category": "arrival",
+      "scheduledTime": "09:35",
+      "airlineIcao": "swa",
+      "flightNumber": "3020",
+      "originIcao": "KMSY",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn3662-hou-stl",
+      "category": "arrival",
+      "scheduledTime": "09:35",
+      "airlineIcao": "swa",
+      "flightNumber": "3662",
+      "originIcao": "KHOU",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn4809-sat-stl",
+      "category": "arrival",
+      "scheduledTime": "09:35",
+      "airlineIcao": "swa",
+      "flightNumber": "4809",
+      "originIcao": "KSAT",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "t100-5x-arrival-ksdf-g-001",
+      "scheduledTime": "09:35",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KSTL",
+      "airlineIcao": "ups",
+      "flightNumber": "7745"
+    },
+    {
+      "id": "departure-mq3814-stl-bos",
+      "category": "departure",
+      "scheduledTime": "09:39",
+      "airlineIcao": "eny",
+      "flightNumber": "3814",
+      "originIcao": "KSTL",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-wn12-stl-phx",
+      "category": "departure",
+      "scheduledTime": "09:40",
+      "airlineIcao": "swa",
+      "flightNumber": "12",
+      "originIcao": "KSTL",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-wn2665-stl-mdw",
+      "category": "departure",
+      "scheduledTime": "09:40",
+      "airlineIcao": "swa",
+      "flightNumber": "2665",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "arrival-dl1400-atl-stl",
+      "category": "arrival",
+      "scheduledTime": "09:43",
+      "airlineIcao": "dal",
+      "flightNumber": "1400",
+      "originIcao": "KATL",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-aa1410-stl-dfw",
+      "category": "departure",
+      "scheduledTime": "09:44",
+      "airlineIcao": "aal",
+      "flightNumber": "1410",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-wn3352-phx-stl",
+      "category": "arrival",
+      "scheduledTime": "09:50",
+      "airlineIcao": "swa",
+      "flightNumber": "3352",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-oh5413-dca-stl",
+      "category": "arrival",
+      "scheduledTime": "10:01",
+      "airlineIcao": "jia",
+      "flightNumber": "5413",
+      "originIcao": "KDCA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "t100-9x-departure-kjbr-f-001",
+      "scheduledTime": "10:13",
+      "category": "departure",
+      "originIcao": "KSTL",
+      "destinationIcao": "KJBR",
+      "airlineIcao": "fdy",
+      "flightNumber": "5828"
+    },
+    {
+      "id": "departure-wn257-stl-atl",
+      "category": "departure",
+      "scheduledTime": "10:15",
+      "airlineIcao": "swa",
+      "flightNumber": "257",
+      "originIcao": "KSTL",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-wn3734-stl-bna",
+      "category": "departure",
+      "scheduledTime": "10:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3734",
+      "originIcao": "KSTL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn3771-stl-jax",
+      "category": "departure",
+      "scheduledTime": "10:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3771",
+      "originIcao": "KSTL",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-wn3891-stl-bos",
+      "category": "departure",
+      "scheduledTime": "10:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3891",
+      "originIcao": "KSTL",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-wn3902-stl-cmh",
+      "category": "departure",
+      "scheduledTime": "10:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3902",
+      "originIcao": "KSTL",
+      "destinationIcao": "KCMH"
+    },
+    {
+      "id": "departure-wn4938-stl-fll",
+      "category": "departure",
+      "scheduledTime": "10:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4938",
+      "originIcao": "KSTL",
+      "destinationIcao": "KFLL"
+    },
+    {
+      "id": "departure-wn4940-stl-rsw",
+      "category": "departure",
+      "scheduledTime": "10:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4940",
+      "originIcao": "KSTL",
+      "destinationIcao": "KRSW"
+    },
+    {
+      "id": "departure-dl2868-stl-dtw",
+      "category": "departure",
+      "scheduledTime": "10:19",
+      "airlineIcao": "dal",
+      "flightNumber": "2868",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "arrival-wn4501-mco-stl",
+      "category": "arrival",
+      "scheduledTime": "10:20",
+      "airlineIcao": "swa",
+      "flightNumber": "4501",
+      "originIcao": "KMCO",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn358-stl-rdu",
+      "category": "departure",
+      "scheduledTime": "10:20",
+      "airlineIcao": "swa",
+      "flightNumber": "358",
+      "originIcao": "KSTL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-wn3803-stl-phl",
+      "category": "departure",
+      "scheduledTime": "10:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3803",
+      "originIcao": "KSTL",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "departure-wn3947-stl-mco",
+      "category": "departure",
+      "scheduledTime": "10:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3947",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-wn3986-stl-tpa",
+      "category": "departure",
+      "scheduledTime": "10:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3986",
+      "originIcao": "KSTL",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "arrival-mq3954-mia-stl",
+      "category": "arrival",
+      "scheduledTime": "10:24",
+      "airlineIcao": "eny",
+      "flightNumber": "3954",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn383-stl-pit",
+      "category": "departure",
+      "scheduledTime": "10:25",
+      "airlineIcao": "swa",
+      "flightNumber": "383",
+      "originIcao": "KSTL",
+      "destinationIcao": "KPIT"
+    },
+    {
+      "id": "arrival-dl3188-msp-stl",
+      "category": "arrival",
+      "scheduledTime": "10:28",
+      "airlineIcao": "dal",
+      "flightNumber": "3188",
+      "originIcao": "KMSP",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn908-stl-cle",
+      "category": "departure",
+      "scheduledTime": "10:30",
+      "airlineIcao": "swa",
+      "flightNumber": "908",
+      "originIcao": "KSTL",
+      "destinationIcao": "KCLE"
+    },
+    {
+      "id": "departure-oh5413-stl-dca",
+      "category": "departure",
+      "scheduledTime": "10:31",
+      "airlineIcao": "jia",
+      "flightNumber": "5413",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "t100-g7-departure-kord-f-001",
+      "scheduledTime": "10:31",
+      "category": "departure",
+      "originIcao": "KSTL",
+      "destinationIcao": "KORD",
+      "airlineIcao": "gjs",
+      "flightNumber": "1605"
+    },
+    {
+      "id": "t100-ac-arrival-cyul-f-001",
+      "scheduledTime": "10:32",
+      "category": "arrival",
+      "originIcao": "CYUL",
+      "destinationIcao": "KSTL",
+      "airlineIcao": "aca",
+      "flightNumber": "3373"
+    },
+    {
+      "id": "arrival-aa2720-phl-stl",
+      "category": "arrival",
+      "scheduledTime": "10:35",
+      "airlineIcao": "aal",
+      "flightNumber": "2720",
+      "originIcao": "KPHL",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn4900-lax-stl",
+      "category": "arrival",
+      "scheduledTime": "10:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4900",
+      "originIcao": "KLAX",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn1373-den-stl",
+      "category": "arrival",
+      "scheduledTime": "10:45",
+      "airlineIcao": "swa",
+      "flightNumber": "1373",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-dl1400-stl-atl",
+      "category": "departure",
+      "scheduledTime": "10:51",
+      "airlineIcao": "dal",
+      "flightNumber": "1400",
+      "originIcao": "KSTL",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-mq3954-stl-mia",
+      "category": "departure",
+      "scheduledTime": "11:00",
+      "airlineIcao": "eny",
+      "flightNumber": "3954",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-wn2315-stl-lga",
+      "category": "departure",
+      "scheduledTime": "11:00",
+      "airlineIcao": "swa",
+      "flightNumber": "2315",
+      "originIcao": "KSTL",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "arrival-wn2901-mdw-stl",
+      "category": "arrival",
+      "scheduledTime": "11:15",
+      "airlineIcao": "swa",
+      "flightNumber": "2901",
+      "originIcao": "KMDW",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-aa2720-stl-phl",
+      "category": "departure",
+      "scheduledTime": "11:15",
+      "airlineIcao": "aal",
+      "flightNumber": "2720",
+      "originIcao": "KSTL",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "departure-dl3188-stl-msp",
+      "category": "departure",
+      "scheduledTime": "11:18",
+      "airlineIcao": "dal",
+      "flightNumber": "3188",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "departure-wn1373-stl-mdw",
+      "category": "departure",
+      "scheduledTime": "11:20",
+      "airlineIcao": "swa",
+      "flightNumber": "1373",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "departure-wn4312-stl-den",
+      "category": "departure",
+      "scheduledTime": "11:20",
+      "airlineIcao": "swa",
+      "flightNumber": "4312",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-wn733-bwi-stl",
+      "category": "arrival",
+      "scheduledTime": "11:30",
+      "airlineIcao": "swa",
+      "flightNumber": "733",
+      "originIcao": "KBWI",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-yx3630-ewr-stl",
+      "category": "arrival",
+      "scheduledTime": "11:41",
+      "airlineIcao": "rpa",
+      "flightNumber": "3630",
+      "originIcao": "KEWR",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn2368-las-stl",
+      "category": "arrival",
+      "scheduledTime": "11:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2368",
+      "originIcao": "KLAS",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-aa2717-clt-stl",
+      "category": "arrival",
+      "scheduledTime": "12:00",
+      "airlineIcao": "aal",
+      "flightNumber": "2717",
+      "originIcao": "KCLT",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn1411-dal-stl",
+      "category": "arrival",
+      "scheduledTime": "12:05",
+      "airlineIcao": "swa",
+      "flightNumber": "1411",
+      "originIcao": "KDAL",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn4049-tpa-stl",
+      "category": "arrival",
+      "scheduledTime": "12:05",
+      "airlineIcao": "swa",
+      "flightNumber": "4049",
+      "originIcao": "KTPA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn733-stl-vps",
+      "category": "departure",
+      "scheduledTime": "12:05",
+      "airlineIcao": "swa",
+      "flightNumber": "733",
+      "originIcao": "KSTL",
+      "destinationIcao": "KVPS"
+    },
+    {
+      "id": "departure-wn3981-stl-sea",
+      "category": "departure",
+      "scheduledTime": "12:10",
+      "airlineIcao": "swa",
+      "flightNumber": "3981",
+      "originIcao": "KSTL",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "arrival-ua1355-ord-stl",
+      "category": "arrival",
+      "scheduledTime": "12:11",
+      "airlineIcao": "ual",
+      "flightNumber": "1355",
+      "originIcao": "KORD",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-dl566-atl-stl",
+      "category": "arrival",
+      "scheduledTime": "12:17",
+      "airlineIcao": "dal",
+      "flightNumber": "566",
+      "originIcao": "KATL",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn1467-phx-stl",
+      "category": "arrival",
+      "scheduledTime": "12:20",
+      "airlineIcao": "swa",
+      "flightNumber": "1467",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-yx3573-stl-ewr",
+      "category": "departure",
+      "scheduledTime": "12:23",
+      "airlineIcao": "rpa",
+      "flightNumber": "3573",
+      "originIcao": "KSTL",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "t100-yv-arrival-kiah-f-003",
+      "scheduledTime": "12:33",
+      "category": "arrival",
+      "originIcao": "KIAH",
+      "destinationIcao": "KSTL",
+      "airlineIcao": "ash",
+      "flightNumber": "7666"
+    },
+    {
+      "id": "arrival-wn2902-mdw-stl",
+      "category": "arrival",
+      "scheduledTime": "12:35",
+      "airlineIcao": "swa",
+      "flightNumber": "2902",
+      "originIcao": "KMDW",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-aa2717-stl-clt",
+      "category": "departure",
+      "scheduledTime": "12:40",
+      "airlineIcao": "aal",
+      "flightNumber": "2717",
+      "originIcao": "KSTL",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-wn3749-stl-dal",
+      "category": "departure",
+      "scheduledTime": "12:40",
+      "airlineIcao": "swa",
+      "flightNumber": "3749",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "arrival-ua652-den-stl",
+      "category": "arrival",
+      "scheduledTime": "12:42",
+      "airlineIcao": "ual",
+      "flightNumber": "652",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-oh5655-dfw-stl",
+      "category": "arrival",
+      "scheduledTime": "12:44",
+      "airlineIcao": "jia",
+      "flightNumber": "5655",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn2075-san-stl",
+      "category": "arrival",
+      "scheduledTime": "12:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2075",
+      "originIcao": "KSAN",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn2718-stl-mia",
+      "category": "departure",
+      "scheduledTime": "12:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2718",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-yv-departure-kiah-f-001",
+      "scheduledTime": "12:46",
+      "category": "departure",
+      "originIcao": "KSTL",
+      "destinationIcao": "KIAH",
+      "airlineIcao": "ash",
+      "flightNumber": "7928"
+    },
+    {
+      "id": "departure-wn4913-stl-srq",
+      "category": "departure",
+      "scheduledTime": "12:50",
+      "airlineIcao": "swa",
+      "flightNumber": "4913",
+      "originIcao": "KSTL",
+      "destinationIcao": "KSRQ"
+    },
+    {
+      "id": "arrival-oo6352-ord-stl",
+      "category": "arrival",
+      "scheduledTime": "12:55",
+      "airlineIcao": "skw",
+      "flightNumber": "6352",
+      "originIcao": "KORD",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-dl1371-dtw-stl",
+      "category": "arrival",
+      "scheduledTime": "13:05",
+      "airlineIcao": "dal",
+      "flightNumber": "1371",
+      "originIcao": "KDTW",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn1643-hou-stl",
+      "category": "arrival",
+      "scheduledTime": "13:05",
+      "airlineIcao": "swa",
+      "flightNumber": "1643",
+      "originIcao": "KHOU",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn442-aus-stl",
+      "category": "arrival",
+      "scheduledTime": "13:05",
+      "airlineIcao": "swa",
+      "flightNumber": "442",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn5071-mco-stl",
+      "category": "arrival",
+      "scheduledTime": "13:05",
+      "airlineIcao": "swa",
+      "flightNumber": "5071",
+      "originIcao": "KMCO",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn3908-stl-dca",
+      "category": "departure",
+      "scheduledTime": "13:10",
+      "airlineIcao": "swa",
+      "flightNumber": "3908",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-ua1382-stl-ord",
+      "category": "departure",
+      "scheduledTime": "13:13",
+      "airlineIcao": "ual",
+      "flightNumber": "1382",
+      "originIcao": "KSTL",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-oh5655-stl-dfw",
+      "category": "departure",
+      "scheduledTime": "13:14",
+      "airlineIcao": "jia",
+      "flightNumber": "5655",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-wn644-dca-stl",
+      "category": "arrival",
+      "scheduledTime": "13:15",
+      "airlineIcao": "swa",
+      "flightNumber": "644",
+      "originIcao": "KDCA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn3892-stl-bos",
+      "category": "departure",
+      "scheduledTime": "13:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3892",
+      "originIcao": "KSTL",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-wn4614-stl-bwi",
+      "category": "departure",
+      "scheduledTime": "13:20",
+      "airlineIcao": "swa",
+      "flightNumber": "4614",
+      "originIcao": "KSTL",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "departure-dl566-stl-atl",
+      "category": "departure",
+      "scheduledTime": "13:22",
+      "airlineIcao": "dal",
+      "flightNumber": "566",
+      "originIcao": "KSTL",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-oo6352-stl-ord",
+      "category": "departure",
+      "scheduledTime": "13:25",
+      "airlineIcao": "skw",
+      "flightNumber": "6352",
+      "originIcao": "KSTL",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-wn1753-den-stl",
+      "category": "arrival",
+      "scheduledTime": "13:30",
+      "airlineIcao": "swa",
+      "flightNumber": "1753",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-dl2455-slc-stl",
+      "category": "arrival",
+      "scheduledTime": "13:33",
+      "airlineIcao": "dal",
+      "flightNumber": "2455",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-ua1380-stl-den",
+      "category": "departure",
+      "scheduledTime": "13:38",
+      "airlineIcao": "ual",
+      "flightNumber": "1380",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-wn2473-lga-stl",
+      "category": "arrival",
+      "scheduledTime": "13:40",
+      "airlineIcao": "swa",
+      "flightNumber": "2473",
+      "originIcao": "KLGA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn170-stl-phx",
+      "category": "departure",
+      "scheduledTime": "13:40",
+      "airlineIcao": "swa",
+      "flightNumber": "170",
+      "originIcao": "KSTL",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-wn1860-stl-bna",
+      "category": "departure",
+      "scheduledTime": "13:45",
+      "airlineIcao": "swa",
+      "flightNumber": "1860",
+      "originIcao": "KSTL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn5072-stl-den",
+      "category": "departure",
+      "scheduledTime": "13:45",
+      "airlineIcao": "swa",
+      "flightNumber": "5072",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-g7-arrival-kord-f-001",
+      "scheduledTime": "13:48",
+      "category": "arrival",
+      "originIcao": "KORD",
+      "destinationIcao": "KSTL",
+      "airlineIcao": "gjs",
+      "flightNumber": "1772"
+    },
+    {
+      "id": "departure-wn644-stl-aus",
+      "category": "departure",
+      "scheduledTime": "13:50",
+      "airlineIcao": "swa",
+      "flightNumber": "644",
+      "originIcao": "KSTL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "t100-5x-departure-ksdf-g-001",
+      "scheduledTime": "13:50",
+      "category": "departure",
+      "originIcao": "KSTL",
+      "destinationIcao": "KSDF",
+      "airlineIcao": "ups",
+      "flightNumber": "7831"
+    },
+    {
+      "id": "arrival-as618-sea-stl",
+      "category": "arrival",
+      "scheduledTime": "13:52",
+      "airlineIcao": "asa",
+      "flightNumber": "618",
+      "originIcao": "KSEA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-aa3179-phx-stl",
+      "category": "arrival",
+      "scheduledTime": "13:53",
+      "airlineIcao": "aal",
+      "flightNumber": "3179",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-mq3815-ord-stl",
+      "category": "arrival",
+      "scheduledTime": "13:53",
+      "airlineIcao": "eny",
+      "flightNumber": "3815",
+      "originIcao": "KORD",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-dl1371-stl-dtw",
+      "category": "departure",
+      "scheduledTime": "13:54",
+      "airlineIcao": "dal",
+      "flightNumber": "1371",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "arrival-wn2-las-stl",
+      "category": "arrival",
+      "scheduledTime": "14:10",
+      "airlineIcao": "swa",
+      "flightNumber": "2",
+      "originIcao": "KLAS",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn762-stl-mci",
+      "category": "departure",
+      "scheduledTime": "14:10",
+      "airlineIcao": "swa",
+      "flightNumber": "762",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMCI"
+    },
+    {
+      "id": "arrival-oo5397-iah-stl",
+      "category": "arrival",
+      "scheduledTime": "14:16",
+      "airlineIcao": "skw",
+      "flightNumber": "5397",
+      "originIcao": "KIAH",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn1792-stl-dal",
+      "category": "departure",
+      "scheduledTime": "14:20",
+      "airlineIcao": "swa",
+      "flightNumber": "1792",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "arrival-wn669-clt-stl",
+      "category": "arrival",
+      "scheduledTime": "14:25",
+      "airlineIcao": "swa",
+      "flightNumber": "669",
+      "originIcao": "KCLT",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn714-sav-stl",
+      "category": "arrival",
+      "scheduledTime": "14:30",
+      "airlineIcao": "swa",
+      "flightNumber": "714",
+      "originIcao": "KSAV",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-dl2455-stl-slc",
+      "category": "departure",
+      "scheduledTime": "14:30",
+      "airlineIcao": "dal",
+      "flightNumber": "2455",
+      "originIcao": "KSTL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-mq3815-stl-ord",
+      "category": "departure",
+      "scheduledTime": "14:32",
+      "airlineIcao": "eny",
+      "flightNumber": "3815",
+      "originIcao": "KSTL",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-wn4917-bos-stl",
+      "category": "arrival",
+      "scheduledTime": "14:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4917",
+      "originIcao": "KBOS",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn1371-bna-stl",
+      "category": "arrival",
+      "scheduledTime": "14:45",
+      "airlineIcao": "swa",
+      "flightNumber": "1371",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-aa3179-stl-phx",
+      "category": "departure",
+      "scheduledTime": "14:46",
+      "airlineIcao": "aal",
+      "flightNumber": "3179",
+      "originIcao": "KSTL",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "arrival-dl2700-atl-stl",
+      "category": "arrival",
+      "scheduledTime": "14:48",
+      "airlineIcao": "dal",
+      "flightNumber": "2700",
+      "originIcao": "KATL",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn225-atl-stl",
+      "category": "arrival",
+      "scheduledTime": "14:50",
+      "airlineIcao": "swa",
+      "flightNumber": "225",
+      "originIcao": "KATL",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn286-mci-stl",
+      "category": "arrival",
+      "scheduledTime": "14:50",
+      "airlineIcao": "swa",
+      "flightNumber": "286",
+      "originIcao": "KMCI",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-yx4509-lga-stl",
+      "category": "arrival",
+      "scheduledTime": "14:50",
+      "airlineIcao": "rpa",
+      "flightNumber": "4509",
+      "originIcao": "KLGA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-as618-stl-sea",
+      "category": "departure",
+      "scheduledTime": "14:50",
+      "airlineIcao": "asa",
+      "flightNumber": "618",
+      "originIcao": "KSTL",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-oo5580-stl-iah",
+      "category": "departure",
+      "scheduledTime": "14:57",
+      "airlineIcao": "skw",
+      "flightNumber": "5580",
+      "originIcao": "KSTL",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "arrival-wn493-chs-stl",
+      "category": "arrival",
+      "scheduledTime": "15:00",
+      "airlineIcao": "swa",
+      "flightNumber": "493",
+      "originIcao": "KCHS",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "t100-fx-arrival-kind-g-001",
+      "scheduledTime": "15:04",
+      "category": "arrival",
+      "originIcao": "KIND",
+      "destinationIcao": "KSTL",
+      "airlineIcao": "fdx",
+      "flightNumber": "7137"
+    },
+    {
+      "id": "departure-wn4359-stl-las",
+      "category": "departure",
+      "scheduledTime": "15:05",
+      "airlineIcao": "swa",
+      "flightNumber": "4359",
+      "originIcao": "KSTL",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "arrival-wn1412-dal-stl",
+      "category": "arrival",
+      "scheduledTime": "15:10",
+      "airlineIcao": "swa",
+      "flightNumber": "1412",
+      "originIcao": "KDAL",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn1293-stl-bna",
+      "category": "departure",
+      "scheduledTime": "15:10",
+      "airlineIcao": "swa",
+      "flightNumber": "1293",
+      "originIcao": "KSTL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-oo4167-msp-stl",
+      "category": "arrival",
+      "scheduledTime": "15:13",
+      "airlineIcao": "skw",
+      "flightNumber": "4167",
+      "originIcao": "KMSP",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn3316-mco-stl",
+      "category": "arrival",
+      "scheduledTime": "15:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3316",
+      "originIcao": "KMCO",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn1144-stl-chs",
+      "category": "departure",
+      "scheduledTime": "15:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1144",
+      "originIcao": "KSTL",
+      "destinationIcao": "KCHS"
+    },
+    {
+      "id": "arrival-wn3632-sea-stl",
+      "category": "arrival",
+      "scheduledTime": "15:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3632",
+      "originIcao": "KSEA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn4533-hou-stl",
+      "category": "arrival",
+      "scheduledTime": "15:20",
+      "airlineIcao": "swa",
+      "flightNumber": "4533",
+      "originIcao": "KHOU",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-yx4509-stl-lga",
+      "category": "departure",
+      "scheduledTime": "15:20",
+      "airlineIcao": "rpa",
+      "flightNumber": "4509",
+      "originIcao": "KSTL",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "t100-lh-departure-eddf-f-001",
+      "scheduledTime": "15:23",
+      "category": "departure",
+      "originIcao": "KSTL",
+      "destinationIcao": "EDDF",
+      "airlineIcao": "dlh",
+      "flightNumber": "3411"
+    },
+    {
+      "id": "departure-wn225-stl-dtw",
+      "category": "departure",
+      "scheduledTime": "15:25",
+      "airlineIcao": "swa",
+      "flightNumber": "225",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "departure-wn4962-stl-lga",
+      "category": "departure",
+      "scheduledTime": "15:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4962",
+      "originIcao": "KSTL",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-wn1383-stl-mco",
+      "category": "departure",
+      "scheduledTime": "15:35",
+      "airlineIcao": "swa",
+      "flightNumber": "1383",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "arrival-wn2903-mdw-stl",
+      "category": "arrival",
+      "scheduledTime": "15:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2903",
+      "originIcao": "KMDW",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-ua2000-ord-stl",
+      "category": "arrival",
+      "scheduledTime": "15:46",
+      "airlineIcao": "ual",
+      "flightNumber": "2000",
+      "originIcao": "KORD",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn464-stl-pns",
+      "category": "departure",
+      "scheduledTime": "15:50",
+      "airlineIcao": "swa",
+      "flightNumber": "464",
+      "originIcao": "KSTL",
+      "destinationIcao": "KPNS"
+    },
+    {
+      "id": "departure-wn3907-stl-dca",
+      "category": "departure",
+      "scheduledTime": "15:55",
+      "airlineIcao": "swa",
+      "flightNumber": "3907",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-oo4167-stl-msp",
+      "category": "departure",
+      "scheduledTime": "15:57",
+      "airlineIcao": "skw",
+      "flightNumber": "4167",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "departure-dl2700-stl-atl",
+      "category": "departure",
+      "scheduledTime": "15:58",
+      "airlineIcao": "dal",
+      "flightNumber": "2700",
+      "originIcao": "KSTL",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-wn3912-stl-den",
+      "category": "departure",
+      "scheduledTime": "16:00",
+      "airlineIcao": "swa",
+      "flightNumber": "3912",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-wn448-stl-mdw",
+      "category": "departure",
+      "scheduledTime": "16:00",
+      "airlineIcao": "swa",
+      "flightNumber": "448",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "departure-wn4781-stl-hou",
+      "category": "departure",
+      "scheduledTime": "16:00",
+      "airlineIcao": "swa",
+      "flightNumber": "4781",
+      "originIcao": "KSTL",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "arrival-wn3152-den-stl",
+      "category": "arrival",
+      "scheduledTime": "16:05",
+      "airlineIcao": "swa",
+      "flightNumber": "3152",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-f92636-stl-mco",
+      "category": "departure",
+      "scheduledTime": "16:09",
+      "airlineIcao": "fft",
+      "flightNumber": "2636",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "arrival-yx3556-ewr-stl",
+      "category": "arrival",
+      "scheduledTime": "16:12",
+      "airlineIcao": "rpa",
+      "flightNumber": "3556",
+      "originIcao": "KEWR",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn1461-dca-stl",
+      "category": "arrival",
+      "scheduledTime": "16:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1461",
+      "originIcao": "KDCA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn2369-las-stl",
+      "category": "arrival",
+      "scheduledTime": "16:20",
+      "airlineIcao": "swa",
+      "flightNumber": "2369",
+      "originIcao": "KLAS",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn3882-stl-atl",
+      "category": "departure",
+      "scheduledTime": "16:25",
+      "airlineIcao": "swa",
+      "flightNumber": "3882",
+      "originIcao": "KSTL",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-wn4810-stl-las",
+      "category": "departure",
+      "scheduledTime": "16:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4810",
+      "originIcao": "KSTL",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "arrival-aa2712-dfw-stl",
+      "category": "arrival",
+      "scheduledTime": "16:28",
+      "airlineIcao": "aal",
+      "flightNumber": "2712",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-yx4468-dca-stl",
+      "category": "arrival",
+      "scheduledTime": "16:29",
+      "airlineIcao": "rpa",
+      "flightNumber": "4468",
+      "originIcao": "KDCA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "t100-g7-arrival-kord-f-002",
+      "scheduledTime": "16:32",
+      "category": "arrival",
+      "originIcao": "KORD",
+      "destinationIcao": "KSTL",
+      "airlineIcao": "gjs",
+      "flightNumber": "7328"
+    },
+    {
+      "id": "arrival-ua1639-den-stl",
+      "category": "arrival",
+      "scheduledTime": "16:33",
+      "airlineIcao": "ual",
+      "flightNumber": "1639",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-as1635-pdx-stl",
+      "category": "arrival",
+      "scheduledTime": "16:37",
+      "airlineIcao": "asa",
+      "flightNumber": "1635",
+      "originIcao": "KPDX",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-yx4537-ord-stl",
+      "category": "arrival",
+      "scheduledTime": "16:40",
+      "airlineIcao": "rpa",
+      "flightNumber": "4537",
+      "originIcao": "KORD",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn3817-stl-sav",
+      "category": "departure",
+      "scheduledTime": "16:45",
+      "airlineIcao": "swa",
+      "flightNumber": "3817",
+      "originIcao": "KSTL",
+      "destinationIcao": "KSAV"
+    },
+    {
+      "id": "arrival-dl3185-msp-stl",
+      "category": "arrival",
+      "scheduledTime": "16:46",
+      "airlineIcao": "dal",
+      "flightNumber": "3185",
+      "originIcao": "KMSP",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-ua1483-stl-den",
+      "category": "departure",
+      "scheduledTime": "16:48",
+      "airlineIcao": "ual",
+      "flightNumber": "1483",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-fx-departure-kmem-g-001",
+      "scheduledTime": "16:48",
+      "category": "departure",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3492"
+    },
+    {
+      "id": "departure-wn4937-stl-clt",
+      "category": "departure",
+      "scheduledTime": "16:50",
+      "airlineIcao": "swa",
+      "flightNumber": "4937",
+      "originIcao": "KSTL",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-yx3564-stl-ewr",
+      "category": "departure",
+      "scheduledTime": "16:53",
+      "airlineIcao": "rpa",
+      "flightNumber": "3564",
+      "originIcao": "KSTL",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "departure-f94474-stl-atl",
+      "category": "departure",
+      "scheduledTime": "16:57",
+      "airlineIcao": "fft",
+      "flightNumber": "4474",
+      "originIcao": "KSTL",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-aa2714-phl-stl",
+      "category": "arrival",
+      "scheduledTime": "17:02",
+      "airlineIcao": "aal",
+      "flightNumber": "2714",
+      "originIcao": "KPHL",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-yx4468-stl-dca",
+      "category": "departure",
+      "scheduledTime": "17:02",
+      "airlineIcao": "rpa",
+      "flightNumber": "4468",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "arrival-wn2740-lga-stl",
+      "category": "arrival",
+      "scheduledTime": "17:05",
+      "airlineIcao": "swa",
+      "flightNumber": "2740",
+      "originIcao": "KLGA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-aa2712-stl-dfw",
+      "category": "departure",
+      "scheduledTime": "17:13",
+      "airlineIcao": "aal",
+      "flightNumber": "2712",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-wn3880-srq-stl",
+      "category": "arrival",
+      "scheduledTime": "17:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3880",
+      "originIcao": "KSRQ",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn824-stl-den",
+      "category": "departure",
+      "scheduledTime": "17:20",
+      "airlineIcao": "swa",
+      "flightNumber": "824",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-aa2731-clt-stl",
+      "category": "arrival",
+      "scheduledTime": "17:21",
+      "airlineIcao": "aal",
+      "flightNumber": "2731",
+      "originIcao": "KCLT",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-dl2822-dtw-stl",
+      "category": "arrival",
+      "scheduledTime": "17:24",
+      "airlineIcao": "dal",
+      "flightNumber": "2822",
+      "originIcao": "KDTW",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn770-bna-stl",
+      "category": "arrival",
+      "scheduledTime": "17:25",
+      "airlineIcao": "swa",
+      "flightNumber": "770",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn3949-stl-mco",
+      "category": "departure",
+      "scheduledTime": "17:35",
+      "airlineIcao": "swa",
+      "flightNumber": "3949",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-dl3185-stl-msp",
+      "category": "departure",
+      "scheduledTime": "17:36",
+      "airlineIcao": "dal",
+      "flightNumber": "3185",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "departure-as1538-stl-pdx",
+      "category": "departure",
+      "scheduledTime": "17:37",
+      "airlineIcao": "asa",
+      "flightNumber": "1538",
+      "originIcao": "KSTL",
+      "destinationIcao": "KPDX"
+    },
+    {
+      "id": "arrival-wn482-aus-stl",
+      "category": "arrival",
+      "scheduledTime": "17:40",
+      "airlineIcao": "swa",
+      "flightNumber": "482",
+      "originIcao": "KAUS",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn174-sat-stl",
+      "category": "arrival",
+      "scheduledTime": "17:45",
+      "airlineIcao": "swa",
+      "flightNumber": "174",
+      "originIcao": "KSAT",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn556-vps-stl",
+      "category": "arrival",
+      "scheduledTime": "17:45",
+      "airlineIcao": "swa",
+      "flightNumber": "556",
+      "originIcao": "KVPS",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-aa2714-stl-phl",
+      "category": "departure",
+      "scheduledTime": "17:48",
+      "airlineIcao": "aal",
+      "flightNumber": "2714",
+      "originIcao": "KSTL",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "t100-yv-arrival-kiah-f-001",
+      "scheduledTime": "17:49",
+      "category": "arrival",
+      "originIcao": "KIAH",
+      "destinationIcao": "KSTL",
+      "airlineIcao": "ash",
+      "flightNumber": "3042"
+    },
+    {
+      "id": "arrival-dl1393-atl-stl",
+      "category": "arrival",
+      "scheduledTime": "17:53",
+      "airlineIcao": "dal",
+      "flightNumber": "1393",
+      "originIcao": "KATL",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn2289-stl-mdw",
+      "category": "departure",
+      "scheduledTime": "17:55",
+      "airlineIcao": "swa",
+      "flightNumber": "2289",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "departure-yx4537-stl-ord",
+      "category": "departure",
+      "scheduledTime": "17:58",
+      "airlineIcao": "rpa",
+      "flightNumber": "4537",
+      "originIcao": "KSTL",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-ua1639-stl-ord",
+      "category": "departure",
+      "scheduledTime": "17:59",
+      "airlineIcao": "ual",
+      "flightNumber": "1639",
+      "originIcao": "KSTL",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-wn4642-hou-stl",
+      "category": "arrival",
+      "scheduledTime": "18:00",
+      "airlineIcao": "swa",
+      "flightNumber": "4642",
+      "originIcao": "KHOU",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn770-stl-hou",
+      "category": "departure",
+      "scheduledTime": "18:00",
+      "airlineIcao": "swa",
+      "flightNumber": "770",
+      "originIcao": "KSTL",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "t100-qk-departure-cyyz-f-001",
+      "scheduledTime": "18:01",
+      "category": "departure",
+      "originIcao": "KSTL",
+      "destinationIcao": "CYYZ",
+      "airlineIcao": "jza",
+      "flightNumber": "3358"
+    },
+    {
+      "id": "arrival-f93108-las-stl",
+      "category": "arrival",
+      "scheduledTime": "18:05",
+      "airlineIcao": "fft",
+      "flightNumber": "3108",
+      "originIcao": "KLAS",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-dl2822-stl-dtw",
+      "category": "departure",
+      "scheduledTime": "18:09",
+      "airlineIcao": "dal",
+      "flightNumber": "2822",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "arrival-wn2305-sfo-stl",
+      "category": "arrival",
+      "scheduledTime": "18:10",
+      "airlineIcao": "swa",
+      "flightNumber": "2305",
+      "originIcao": "KSFO",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-aa2731-stl-clt",
+      "category": "departure",
+      "scheduledTime": "18:13",
+      "airlineIcao": "aal",
+      "flightNumber": "2731",
+      "originIcao": "KSTL",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "arrival-wn1285-las-stl",
+      "category": "arrival",
+      "scheduledTime": "18:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1285",
+      "originIcao": "KLAS",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn920-smf-stl",
+      "category": "arrival",
+      "scheduledTime": "18:15",
+      "airlineIcao": "swa",
+      "flightNumber": "920",
+      "originIcao": "KSMF",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn3597-stl-dal",
+      "category": "departure",
+      "scheduledTime": "18:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3597",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "departure-wn482-stl-bna",
+      "category": "departure",
+      "scheduledTime": "18:15",
+      "airlineIcao": "swa",
+      "flightNumber": "482",
+      "originIcao": "KSTL",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-ua2090-sfo-stl",
+      "category": "arrival",
+      "scheduledTime": "18:17",
+      "airlineIcao": "ual",
+      "flightNumber": "2090",
+      "originIcao": "KSFO",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn2904-mdw-stl",
+      "category": "arrival",
+      "scheduledTime": "18:20",
+      "airlineIcao": "swa",
+      "flightNumber": "2904",
+      "originIcao": "KMDW",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn1946-stl-bwi",
+      "category": "departure",
+      "scheduledTime": "18:20",
+      "airlineIcao": "swa",
+      "flightNumber": "1946",
+      "originIcao": "KSTL",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "departure-wn3306-stl-phx",
+      "category": "departure",
+      "scheduledTime": "18:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3306",
+      "originIcao": "KSTL",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "t100-yv-arrival-kiah-f-002",
+      "scheduledTime": "18:22",
+      "category": "arrival",
+      "originIcao": "KIAH",
+      "destinationIcao": "KSTL",
+      "airlineIcao": "ash",
+      "flightNumber": "9348"
+    },
+    {
+      "id": "arrival-wn1014-mke-stl",
+      "category": "arrival",
+      "scheduledTime": "18:25",
+      "airlineIcao": "swa",
+      "flightNumber": "1014",
+      "originIcao": "KMKE",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn2208-oma-stl",
+      "category": "arrival",
+      "scheduledTime": "18:25",
+      "airlineIcao": "swa",
+      "flightNumber": "2208",
+      "originIcao": "KOMA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn2400-lax-stl",
+      "category": "arrival",
+      "scheduledTime": "18:25",
+      "airlineIcao": "swa",
+      "flightNumber": "2400",
+      "originIcao": "KLAX",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn298-msp-stl",
+      "category": "arrival",
+      "scheduledTime": "18:25",
+      "airlineIcao": "swa",
+      "flightNumber": "298",
+      "originIcao": "KMSP",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn4341-mci-stl",
+      "category": "arrival",
+      "scheduledTime": "18:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4341",
+      "originIcao": "KMCI",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn4444-dal-stl",
+      "category": "arrival",
+      "scheduledTime": "18:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4444",
+      "originIcao": "KDAL",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn2679-phl-stl",
+      "category": "arrival",
+      "scheduledTime": "18:40",
+      "airlineIcao": "swa",
+      "flightNumber": "2679",
+      "originIcao": "KPHL",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn3353-phx-stl",
+      "category": "arrival",
+      "scheduledTime": "18:40",
+      "airlineIcao": "swa",
+      "flightNumber": "3353",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn3913-stl-den",
+      "category": "departure",
+      "scheduledTime": "18:40",
+      "airlineIcao": "swa",
+      "flightNumber": "3913",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-wn3935-stl-las",
+      "category": "departure",
+      "scheduledTime": "18:55",
+      "airlineIcao": "swa",
+      "flightNumber": "3935",
+      "originIcao": "KSTL",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "arrival-as647-sea-stl",
+      "category": "arrival",
+      "scheduledTime": "18:57",
+      "airlineIcao": "asa",
+      "flightNumber": "647",
+      "originIcao": "KSEA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-dl1393-stl-atl",
+      "category": "departure",
+      "scheduledTime": "18:58",
+      "airlineIcao": "dal",
+      "flightNumber": "1393",
+      "originIcao": "KSTL",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-dl1492-slc-stl",
+      "category": "arrival",
+      "scheduledTime": "19:00",
+      "airlineIcao": "dal",
+      "flightNumber": "1492",
+      "originIcao": "KSLC",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-f92017-stl-las",
+      "category": "departure",
+      "scheduledTime": "19:03",
+      "airlineIcao": "fft",
+      "flightNumber": "2017",
+      "originIcao": "KSTL",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "arrival-wn4159-dtw-stl",
+      "category": "arrival",
+      "scheduledTime": "19:05",
+      "airlineIcao": "swa",
+      "flightNumber": "4159",
+      "originIcao": "KDTW",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn4213-den-stl",
+      "category": "arrival",
+      "scheduledTime": "19:05",
+      "airlineIcao": "swa",
+      "flightNumber": "4213",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "t100-9e-departure-klga-f-001",
+      "scheduledTime": "19:08",
+      "category": "departure",
+      "originIcao": "KSTL",
+      "destinationIcao": "KLGA",
+      "airlineIcao": "edv",
+      "flightNumber": "7477"
+    },
+    {
+      "id": "departure-wn2400-stl-atl",
+      "category": "departure",
+      "scheduledTime": "19:10",
+      "airlineIcao": "swa",
+      "flightNumber": "2400",
+      "originIcao": "KSTL",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-wn2416-stl-bos",
+      "category": "departure",
+      "scheduledTime": "19:10",
+      "airlineIcao": "swa",
+      "flightNumber": "2416",
+      "originIcao": "KSTL",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-wn3810-stl-rdu",
+      "category": "departure",
+      "scheduledTime": "19:10",
+      "airlineIcao": "swa",
+      "flightNumber": "3810",
+      "originIcao": "KSTL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-wn3966-stl-phl",
+      "category": "departure",
+      "scheduledTime": "19:10",
+      "airlineIcao": "swa",
+      "flightNumber": "3966",
+      "originIcao": "KSTL",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "departure-wn3972-stl-pit",
+      "category": "departure",
+      "scheduledTime": "19:10",
+      "airlineIcao": "swa",
+      "flightNumber": "3972",
+      "originIcao": "KSTL",
+      "destinationIcao": "KPIT"
+    },
+    {
+      "id": "departure-wn4619-stl-tpa",
+      "category": "departure",
+      "scheduledTime": "19:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4619",
+      "originIcao": "KSTL",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "departure-wn4812-stl-cmh",
+      "category": "departure",
+      "scheduledTime": "19:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4812",
+      "originIcao": "KSTL",
+      "destinationIcao": "KCMH"
+    },
+    {
+      "id": "departure-wn4831-stl-rsw",
+      "category": "departure",
+      "scheduledTime": "19:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4831",
+      "originIcao": "KSTL",
+      "destinationIcao": "KRSW"
+    },
+    {
+      "id": "arrival-wn1111-bwi-stl",
+      "category": "arrival",
+      "scheduledTime": "19:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1111",
+      "originIcao": "KBWI",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn349-stl-cle",
+      "category": "departure",
+      "scheduledTime": "19:15",
+      "airlineIcao": "swa",
+      "flightNumber": "349",
+      "originIcao": "KSTL",
+      "destinationIcao": "KCLE"
+    },
+    {
+      "id": "arrival-wn654-ecp-stl",
+      "category": "arrival",
+      "scheduledTime": "19:20",
+      "airlineIcao": "swa",
+      "flightNumber": "654",
+      "originIcao": "KECP",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-yx4678-bos-stl",
+      "category": "arrival",
+      "scheduledTime": "19:21",
+      "airlineIcao": "rpa",
+      "flightNumber": "4678",
+      "originIcao": "KBOS",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-f93302-den-stl",
+      "category": "arrival",
+      "scheduledTime": "19:23",
+      "airlineIcao": "fft",
+      "flightNumber": "3302",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-ua2482-stl-sfo",
+      "category": "departure",
+      "scheduledTime": "19:23",
+      "airlineIcao": "ual",
+      "flightNumber": "2482",
+      "originIcao": "KSTL",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-wn4988-stl-ecp",
+      "category": "departure",
+      "scheduledTime": "19:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4988",
+      "originIcao": "KSTL",
+      "destinationIcao": "KECP"
+    },
+    {
+      "id": "arrival-mq4144-ord-stl",
+      "category": "arrival",
+      "scheduledTime": "19:26",
+      "airlineIcao": "eny",
+      "flightNumber": "4144",
+      "originIcao": "KORD",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn3918-stl-fll",
+      "category": "departure",
+      "scheduledTime": "19:30",
+      "airlineIcao": "swa",
+      "flightNumber": "3918",
+      "originIcao": "KSTL",
+      "destinationIcao": "KFLL"
+    },
+    {
+      "id": "departure-wn3897-stl-bwi",
+      "category": "departure",
+      "scheduledTime": "19:40",
+      "airlineIcao": "swa",
+      "flightNumber": "3897",
+      "originIcao": "KSTL",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "departure-wn4213-stl-dtw",
+      "category": "departure",
+      "scheduledTime": "19:40",
+      "airlineIcao": "swa",
+      "flightNumber": "4213",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "arrival-wn4895-lga-stl",
+      "category": "arrival",
+      "scheduledTime": "19:45",
+      "airlineIcao": "swa",
+      "flightNumber": "4895",
+      "originIcao": "KLGA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-yx4678-stl-bos",
+      "category": "departure",
+      "scheduledTime": "19:51",
+      "airlineIcao": "rpa",
+      "flightNumber": "4678",
+      "originIcao": "KSTL",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "arrival-aa2761-dfw-stl",
+      "category": "arrival",
+      "scheduledTime": "19:53",
+      "airlineIcao": "aal",
+      "flightNumber": "2761",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-dl1492-stl-slc",
+      "category": "departure",
+      "scheduledTime": "19:55",
+      "airlineIcao": "dal",
+      "flightNumber": "1492",
+      "originIcao": "KSTL",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-wn4684-stl-lga",
+      "category": "departure",
+      "scheduledTime": "19:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4684",
+      "originIcao": "KSTL",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-wn654-stl-dca",
+      "category": "departure",
+      "scheduledTime": "19:55",
+      "airlineIcao": "swa",
+      "flightNumber": "654",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-as647-stl-sea",
+      "category": "departure",
+      "scheduledTime": "19:56",
+      "airlineIcao": "asa",
+      "flightNumber": "647",
+      "originIcao": "KSTL",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-mq4144-stl-ord",
+      "category": "departure",
+      "scheduledTime": "19:56",
+      "airlineIcao": "eny",
+      "flightNumber": "4144",
+      "originIcao": "KSTL",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-9e-arrival-klga-f-001",
+      "scheduledTime": "19:57",
+      "category": "arrival",
+      "originIcao": "KLGA",
+      "destinationIcao": "KSTL",
+      "airlineIcao": "edv",
+      "flightNumber": "2831"
+    },
+    {
+      "id": "t100-9e-departure-kmsp-f-001",
+      "scheduledTime": "19:59",
+      "category": "departure",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMSP",
+      "airlineIcao": "edv",
+      "flightNumber": "5874"
+    },
+    {
+      "id": "arrival-aa2686-clt-stl",
+      "category": "arrival",
+      "scheduledTime": "20:03",
+      "airlineIcao": "aal",
+      "flightNumber": "2686",
+      "originIcao": "KCLT",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn1462-dca-stl",
+      "category": "arrival",
+      "scheduledTime": "20:05",
+      "airlineIcao": "swa",
+      "flightNumber": "1462",
+      "originIcao": "KDCA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-f94567-stl-den",
+      "category": "departure",
+      "scheduledTime": "20:08",
+      "airlineIcao": "fft",
+      "flightNumber": "4567",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-wn2614-cmh-stl",
+      "category": "arrival",
+      "scheduledTime": "20:20",
+      "airlineIcao": "swa",
+      "flightNumber": "2614",
+      "originIcao": "KCMH",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn3236-mco-stl",
+      "category": "arrival",
+      "scheduledTime": "20:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3236",
+      "originIcao": "KMCO",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-aa890-phx-stl",
+      "category": "arrival",
+      "scheduledTime": "20:23",
+      "airlineIcao": "aal",
+      "flightNumber": "890",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn339-fll-stl",
+      "category": "arrival",
+      "scheduledTime": "20:25",
+      "airlineIcao": "swa",
+      "flightNumber": "339",
+      "originIcao": "KFLL",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn3472-rsw-stl",
+      "category": "arrival",
+      "scheduledTime": "20:25",
+      "airlineIcao": "swa",
+      "flightNumber": "3472",
+      "originIcao": "KRSW",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn3950-stl-mco",
+      "category": "departure",
+      "scheduledTime": "20:25",
+      "airlineIcao": "swa",
+      "flightNumber": "3950",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "t100-9e-arrival-kmsp-f-001",
+      "scheduledTime": "20:29",
+      "category": "arrival",
+      "originIcao": "KMSP",
+      "destinationIcao": "KSTL",
+      "airlineIcao": "edv",
+      "flightNumber": "8858"
+    },
+    {
+      "id": "arrival-wn2533-pns-stl",
+      "category": "arrival",
+      "scheduledTime": "20:30",
+      "airlineIcao": "swa",
+      "flightNumber": "2533",
+      "originIcao": "KPNS",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn266-atl-stl",
+      "category": "arrival",
+      "scheduledTime": "20:30",
+      "airlineIcao": "swa",
+      "flightNumber": "266",
+      "originIcao": "KATL",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn3021-msy-stl",
+      "category": "arrival",
+      "scheduledTime": "20:30",
+      "airlineIcao": "swa",
+      "flightNumber": "3021",
+      "originIcao": "KMSY",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn3387-pit-stl",
+      "category": "arrival",
+      "scheduledTime": "20:30",
+      "airlineIcao": "swa",
+      "flightNumber": "3387",
+      "originIcao": "KPIT",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn3457-rdu-stl",
+      "category": "arrival",
+      "scheduledTime": "20:30",
+      "airlineIcao": "swa",
+      "flightNumber": "3457",
+      "originIcao": "KRDU",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn4964-tpa-stl",
+      "category": "arrival",
+      "scheduledTime": "20:30",
+      "airlineIcao": "swa",
+      "flightNumber": "4964",
+      "originIcao": "KTPA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn5073-den-stl",
+      "category": "arrival",
+      "scheduledTime": "20:30",
+      "airlineIcao": "swa",
+      "flightNumber": "5073",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn754-bos-stl",
+      "category": "arrival",
+      "scheduledTime": "20:30",
+      "airlineIcao": "swa",
+      "flightNumber": "754",
+      "originIcao": "KBOS",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn792-cle-stl",
+      "category": "arrival",
+      "scheduledTime": "20:30",
+      "airlineIcao": "swa",
+      "flightNumber": "792",
+      "originIcao": "KCLE",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-dl1541-dtw-stl",
+      "category": "arrival",
+      "scheduledTime": "20:37",
+      "airlineIcao": "dal",
+      "flightNumber": "1541",
+      "originIcao": "KDTW",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-ua1422-den-stl",
+      "category": "arrival",
+      "scheduledTime": "20:43",
+      "airlineIcao": "ual",
+      "flightNumber": "1422",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-yx4728-lga-stl",
+      "category": "arrival",
+      "scheduledTime": "20:55",
+      "airlineIcao": "rpa",
+      "flightNumber": "4728",
+      "originIcao": "KLGA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn1413-hou-stl",
+      "category": "arrival",
+      "scheduledTime": "21:10",
+      "airlineIcao": "swa",
+      "flightNumber": "1413",
+      "originIcao": "KHOU",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn3406-stl-mke",
+      "category": "departure",
+      "scheduledTime": "21:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3406",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMKE"
+    },
+    {
+      "id": "departure-wn3904-stl-dal",
+      "category": "departure",
+      "scheduledTime": "21:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3904",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "departure-wn3914-stl-den",
+      "category": "departure",
+      "scheduledTime": "21:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3914",
+      "originIcao": "KSTL",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-wn3936-stl-las",
+      "category": "departure",
+      "scheduledTime": "21:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3936",
+      "originIcao": "KSTL",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-wn3964-stl-msy",
+      "category": "departure",
+      "scheduledTime": "21:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3964",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMSY"
+    },
+    {
+      "id": "departure-wn4360-stl-phx",
+      "category": "departure",
+      "scheduledTime": "21:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4360",
+      "originIcao": "KSTL",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-wn4880-stl-msp",
+      "category": "departure",
+      "scheduledTime": "21:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4880",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "t100-ba-departure-egll-f-001",
+      "scheduledTime": "21:18",
+      "category": "departure",
+      "originIcao": "KSTL",
+      "destinationIcao": "EGLL",
+      "airlineIcao": "baw",
+      "flightNumber": "1094"
+    },
+    {
+      "id": "departure-wn3979-stl-sat",
+      "category": "departure",
+      "scheduledTime": "21:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3979",
+      "originIcao": "KSTL",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "departure-wn4556-stl-lax",
+      "category": "departure",
+      "scheduledTime": "21:20",
+      "airlineIcao": "swa",
+      "flightNumber": "4556",
+      "originIcao": "KSTL",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-wn4912-stl-oma",
+      "category": "departure",
+      "scheduledTime": "21:20",
+      "airlineIcao": "swa",
+      "flightNumber": "4912",
+      "originIcao": "KSTL",
+      "destinationIcao": "KOMA"
+    },
+    {
+      "id": "arrival-aa3028-dca-stl",
+      "category": "arrival",
+      "scheduledTime": "21:21",
+      "airlineIcao": "aal",
+      "flightNumber": "3028",
+      "originIcao": "KDCA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn2453-stl-mci",
+      "category": "departure",
+      "scheduledTime": "21:25",
+      "airlineIcao": "swa",
+      "flightNumber": "2453",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMCI"
+    },
+    {
+      "id": "arrival-ua2144-ord-stl",
+      "category": "arrival",
+      "scheduledTime": "21:26",
+      "airlineIcao": "ual",
+      "flightNumber": "2144",
+      "originIcao": "KORD",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn3957-stl-mdw",
+      "category": "departure",
+      "scheduledTime": "21:30",
+      "airlineIcao": "swa",
+      "flightNumber": "3957",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "arrival-wn22-phx-stl",
+      "category": "arrival",
+      "scheduledTime": "21:45",
+      "airlineIcao": "swa",
+      "flightNumber": "22",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-wn4515-stl-aus",
+      "category": "departure",
+      "scheduledTime": "21:50",
+      "airlineIcao": "swa",
+      "flightNumber": "4515",
+      "originIcao": "KSTL",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-aa1010-dfw-stl",
+      "category": "arrival",
+      "scheduledTime": "21:52",
+      "airlineIcao": "aal",
+      "flightNumber": "1010",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn1767-las-stl",
+      "category": "arrival",
+      "scheduledTime": "21:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1767",
+      "originIcao": "KLAS",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn1338-dal-stl",
+      "category": "arrival",
+      "scheduledTime": "22:05",
+      "airlineIcao": "swa",
+      "flightNumber": "1338",
+      "originIcao": "KDAL",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "t100-ac-arrival-cyyz-f-001",
+      "scheduledTime": "22:14",
+      "category": "arrival",
+      "originIcao": "CYYZ",
+      "destinationIcao": "KSTL",
+      "airlineIcao": "aca",
+      "flightNumber": "6465"
+    },
+    {
+      "id": "arrival-dl2833-atl-stl",
+      "category": "arrival",
+      "scheduledTime": "22:15",
+      "airlineIcao": "dal",
+      "flightNumber": "2833",
+      "originIcao": "KATL",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn1756-den-stl",
+      "category": "arrival",
+      "scheduledTime": "22:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1756",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn2905-mdw-stl",
+      "category": "arrival",
+      "scheduledTime": "22:30",
+      "airlineIcao": "swa",
+      "flightNumber": "2905",
+      "originIcao": "KMDW",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-aa1594-mia-stl",
+      "category": "arrival",
+      "scheduledTime": "22:54",
+      "airlineIcao": "aal",
+      "flightNumber": "1594",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn682-bna-stl",
+      "category": "arrival",
+      "scheduledTime": "23:05",
+      "airlineIcao": "swa",
+      "flightNumber": "682",
+      "originIcao": "KBNA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn142-mco-stl",
+      "category": "arrival",
+      "scheduledTime": "23:15",
+      "airlineIcao": "swa",
+      "flightNumber": "142",
+      "originIcao": "KMCO",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-dl1609-msp-stl",
+      "category": "arrival",
+      "scheduledTime": "23:22",
+      "airlineIcao": "dal",
+      "flightNumber": "1609",
+      "originIcao": "KMSP",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-aa1368-phl-stl",
+      "category": "arrival",
+      "scheduledTime": "23:32",
+      "airlineIcao": "aal",
+      "flightNumber": "1368",
+      "originIcao": "KPHL",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn878-phx-stl",
+      "category": "arrival",
+      "scheduledTime": "23:35",
+      "airlineIcao": "swa",
+      "flightNumber": "878",
+      "originIcao": "KPHX",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-ua1527-ewr-stl",
+      "category": "arrival",
+      "scheduledTime": "23:44",
+      "airlineIcao": "ual",
+      "flightNumber": "1527",
+      "originIcao": "KEWR",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn1414-dal-stl",
+      "category": "arrival",
+      "scheduledTime": "23:45",
+      "airlineIcao": "swa",
+      "flightNumber": "1414",
+      "originIcao": "KDAL",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn2371-las-stl",
+      "category": "arrival",
+      "scheduledTime": "23:50",
+      "airlineIcao": "swa",
+      "flightNumber": "2371",
+      "originIcao": "KLAS",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "t100-9x-arrival-kjbr-f-001",
+      "scheduledTime": "23:51",
+      "category": "arrival",
+      "originIcao": "KJBR",
+      "destinationIcao": "KSTL",
+      "airlineIcao": "fdy",
+      "flightNumber": "181"
+    },
+    {
+      "id": "arrival-dl1403-atl-stl",
+      "category": "arrival",
+      "scheduledTime": "23:53",
+      "airlineIcao": "dal",
+      "flightNumber": "1403",
+      "originIcao": "KATL",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-wn1324-den-stl",
+      "category": "arrival",
+      "scheduledTime": "23:55",
+      "airlineIcao": "swa",
+      "flightNumber": "1324",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-ua214-den-stl",
+      "category": "arrival",
+      "scheduledTime": "23:57",
+      "airlineIcao": "ual",
+      "flightNumber": "214",
+      "originIcao": "KDEN",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-aa3049-dfw-stl",
+      "category": "arrival",
+      "scheduledTime": "23:58",
+      "airlineIcao": "aal",
+      "flightNumber": "3049",
+      "originIcao": "KDFW",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-aa459-clt-stl",
+      "category": "arrival",
+      "scheduledTime": "23:58",
+      "airlineIcao": "aal",
+      "flightNumber": "459",
+      "originIcao": "KCLT",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-as615-sea-stl",
+      "category": "arrival",
+      "scheduledTime": "23:59",
+      "airlineIcao": "asa",
+      "flightNumber": "615",
+      "originIcao": "KSEA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-f92635-mco-stl",
+      "category": "arrival",
+      "scheduledTime": "23:59",
+      "airlineIcao": "fft",
+      "flightNumber": "2635",
+      "originIcao": "KMCO",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-oo5000-lax-stl",
+      "category": "arrival",
+      "scheduledTime": "23:59",
+      "airlineIcao": "skw",
+      "flightNumber": "5000",
+      "originIcao": "KLAX",
+      "destinationIcao": "KSTL"
+    }
+  ]
+}

@@ -1,0 +1,5470 @@
+{
+    "schemaVersion": 2,
+    "profileType": "authored",
+    "airportIcao": "LOWW",
+    "timezone": "Europe/Vienna",
+    "sampleDate": "2026-07-15",
+    "source": {
+        "name": "stringofpearls airport-authored spawn patterns",
+        "url": "https://github.com/blairhoddinott/stringofpearls/tree/master/assets/airports",
+        "retrievedAt": "2026-09-27",
+        "license": "MIT",
+        "coverage": "Deterministic representative profile compiled from reviewed airport-authored rates, routes, geometry, and airline rules; movements are generated and are not observed historical flights."
+    },
+    "flights": [
+        {
+            "id": "auth-loww-ea1c4f6a-0028",
+            "category": "departure",
+            "scheduledTime": "00:00",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-68132d09-0022",
+            "category": "departure",
+            "scheduledTime": "00:01",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-b09c067e-0015",
+            "category": "arrival",
+            "scheduledTime": "00:02",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-ed857285-0014",
+            "category": "departure",
+            "scheduledTime": "00:04",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0019",
+            "category": "departure",
+            "scheduledTime": "00:05",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0035",
+            "category": "arrival",
+            "scheduledTime": "00:06",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-0c577870-0051",
+            "category": "departure",
+            "scheduledTime": "00:07",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0035",
+            "category": "departure",
+            "scheduledTime": "00:08",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0008",
+            "category": "departure",
+            "scheduledTime": "00:09",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0069",
+            "category": "arrival",
+            "scheduledTime": "00:10",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-d86877e6-0050",
+            "category": "arrival",
+            "scheduledTime": "00:14",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-786a98c4-0029",
+            "category": "arrival",
+            "scheduledTime": "00:18",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0006",
+            "category": "departure",
+            "scheduledTime": "00:18",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0010",
+            "category": "departure",
+            "scheduledTime": "00:20",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-35864ada-0022",
+            "category": "departure",
+            "scheduledTime": "00:21",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-b09c067e-0016",
+            "category": "arrival",
+            "scheduledTime": "00:22",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-11101250-0025",
+            "category": "arrival",
+            "scheduledTime": "00:23",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0018",
+            "category": "departure",
+            "scheduledTime": "00:24",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0070",
+            "category": "arrival",
+            "scheduledTime": "00:29",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0036",
+            "category": "arrival",
+            "scheduledTime": "00:30",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0020",
+            "category": "departure",
+            "scheduledTime": "00:31",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0029",
+            "category": "departure",
+            "scheduledTime": "00:31",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0009",
+            "category": "arrival",
+            "scheduledTime": "00:33",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-ed857285-0015",
+            "category": "departure",
+            "scheduledTime": "00:33",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-0c577870-0052",
+            "category": "departure",
+            "scheduledTime": "00:35",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-d86877e6-0051",
+            "category": "arrival",
+            "scheduledTime": "00:35",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0009",
+            "category": "departure",
+            "scheduledTime": "00:41",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-2337a242-0012",
+            "category": "departure",
+            "scheduledTime": "00:42",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-b09c067e-0017",
+            "category": "arrival",
+            "scheduledTime": "00:43",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0036",
+            "category": "departure",
+            "scheduledTime": "00:46",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0022",
+            "category": "arrival",
+            "scheduledTime": "00:47",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0071",
+            "category": "arrival",
+            "scheduledTime": "00:49",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-35864ada-0023",
+            "category": "departure",
+            "scheduledTime": "00:52",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-68132d09-0023",
+            "category": "departure",
+            "scheduledTime": "00:52",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-11101250-0026",
+            "category": "arrival",
+            "scheduledTime": "00:55",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0037",
+            "category": "arrival",
+            "scheduledTime": "00:55",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-d86877e6-0052",
+            "category": "arrival",
+            "scheduledTime": "00:57",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0007",
+            "category": "departure",
+            "scheduledTime": "00:57",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0021",
+            "category": "departure",
+            "scheduledTime": "00:58",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-786a98c4-0030",
+            "category": "arrival",
+            "scheduledTime": "00:58",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0030",
+            "category": "departure",
+            "scheduledTime": "01:02",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-ed857285-0016",
+            "category": "departure",
+            "scheduledTime": "01:02",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0019",
+            "category": "departure",
+            "scheduledTime": "01:02",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-0c577870-0001",
+            "category": "departure",
+            "scheduledTime": "01:03",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-b09c067e-0018",
+            "category": "arrival",
+            "scheduledTime": "01:03",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0011",
+            "category": "departure",
+            "scheduledTime": "01:06",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0072",
+            "category": "arrival",
+            "scheduledTime": "01:08",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0010",
+            "category": "departure",
+            "scheduledTime": "01:14",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-d86877e6-0053",
+            "category": "arrival",
+            "scheduledTime": "01:18",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0038",
+            "category": "arrival",
+            "scheduledTime": "01:20",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0010",
+            "category": "arrival",
+            "scheduledTime": "01:20",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-35864ada-0024",
+            "category": "departure",
+            "scheduledTime": "01:24",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0037",
+            "category": "departure",
+            "scheduledTime": "01:24",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-b09c067e-0019",
+            "category": "arrival",
+            "scheduledTime": "01:24",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-2337a242-0013",
+            "category": "departure",
+            "scheduledTime": "01:25",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0022",
+            "category": "departure",
+            "scheduledTime": "01:25",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-11101250-0027",
+            "category": "arrival",
+            "scheduledTime": "01:27",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0073",
+            "category": "arrival",
+            "scheduledTime": "01:27",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-0c577870-0002",
+            "category": "departure",
+            "scheduledTime": "01:30",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-ed857285-0017",
+            "category": "departure",
+            "scheduledTime": "01:30",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0031",
+            "category": "departure",
+            "scheduledTime": "01:34",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0023",
+            "category": "arrival",
+            "scheduledTime": "01:35",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0008",
+            "category": "departure",
+            "scheduledTime": "01:36",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-786a98c4-0031",
+            "category": "arrival",
+            "scheduledTime": "01:38",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-d86877e6-0054",
+            "category": "arrival",
+            "scheduledTime": "01:40",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0020",
+            "category": "departure",
+            "scheduledTime": "01:40",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-68132d09-0024",
+            "category": "departure",
+            "scheduledTime": "01:43",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-b09c067e-0020",
+            "category": "arrival",
+            "scheduledTime": "01:44",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0039",
+            "category": "arrival",
+            "scheduledTime": "01:45",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0074",
+            "category": "arrival",
+            "scheduledTime": "01:46",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0011",
+            "category": "departure",
+            "scheduledTime": "01:47",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0023",
+            "category": "departure",
+            "scheduledTime": "01:51",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0012",
+            "category": "departure",
+            "scheduledTime": "01:52",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-35864ada-0025",
+            "category": "departure",
+            "scheduledTime": "01:55",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-0c577870-0003",
+            "category": "departure",
+            "scheduledTime": "01:58",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-11101250-0028",
+            "category": "arrival",
+            "scheduledTime": "01:59",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-ed857285-0018",
+            "category": "departure",
+            "scheduledTime": "01:59",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-d86877e6-0055",
+            "category": "arrival",
+            "scheduledTime": "02:01",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0038",
+            "category": "departure",
+            "scheduledTime": "02:02",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0075",
+            "category": "arrival",
+            "scheduledTime": "02:05",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-b09c067e-0021",
+            "category": "arrival",
+            "scheduledTime": "02:05",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0032",
+            "category": "departure",
+            "scheduledTime": "02:05",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0011",
+            "category": "arrival",
+            "scheduledTime": "02:06",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-2337a242-0014",
+            "category": "departure",
+            "scheduledTime": "02:09",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0040",
+            "category": "arrival",
+            "scheduledTime": "02:10",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0009",
+            "category": "departure",
+            "scheduledTime": "02:15",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0021",
+            "category": "departure",
+            "scheduledTime": "02:17",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0024",
+            "category": "departure",
+            "scheduledTime": "02:18",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-786a98c4-0032",
+            "category": "arrival",
+            "scheduledTime": "02:18",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0012",
+            "category": "departure",
+            "scheduledTime": "02:20",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0024",
+            "category": "arrival",
+            "scheduledTime": "02:23",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-d86877e6-0056",
+            "category": "arrival",
+            "scheduledTime": "02:23",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0001",
+            "category": "arrival",
+            "scheduledTime": "02:25",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-0c577870-0004",
+            "category": "departure",
+            "scheduledTime": "02:26",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-35864ada-0026",
+            "category": "departure",
+            "scheduledTime": "02:26",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-b09c067e-0022",
+            "category": "arrival",
+            "scheduledTime": "02:26",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-ed857285-0019",
+            "category": "departure",
+            "scheduledTime": "02:28",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-11101250-0029",
+            "category": "arrival",
+            "scheduledTime": "02:31",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0041",
+            "category": "arrival",
+            "scheduledTime": "02:35",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-68132d09-0025",
+            "category": "departure",
+            "scheduledTime": "02:35",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0033",
+            "category": "departure",
+            "scheduledTime": "02:36",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0013",
+            "category": "departure",
+            "scheduledTime": "02:39",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0001",
+            "category": "departure",
+            "scheduledTime": "02:40",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0002",
+            "category": "arrival",
+            "scheduledTime": "02:44",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-d86877e6-0057",
+            "category": "arrival",
+            "scheduledTime": "02:44",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0025",
+            "category": "departure",
+            "scheduledTime": "02:45",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-b09c067e-0023",
+            "category": "arrival",
+            "scheduledTime": "02:46",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-2337a242-0015",
+            "category": "departure",
+            "scheduledTime": "02:52",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0013",
+            "category": "departure",
+            "scheduledTime": "02:52",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0012",
+            "category": "arrival",
+            "scheduledTime": "02:52",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-0c577870-0005",
+            "category": "departure",
+            "scheduledTime": "02:53",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0010",
+            "category": "departure",
+            "scheduledTime": "02:54",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0022",
+            "category": "departure",
+            "scheduledTime": "02:55",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-35864ada-0027",
+            "category": "departure",
+            "scheduledTime": "02:57",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-ed857285-0020",
+            "category": "departure",
+            "scheduledTime": "02:57",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-786a98c4-0033",
+            "category": "arrival",
+            "scheduledTime": "02:58",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0042",
+            "category": "arrival",
+            "scheduledTime": "02:59",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-11101250-0030",
+            "category": "arrival",
+            "scheduledTime": "03:03",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0003",
+            "category": "arrival",
+            "scheduledTime": "03:03",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-d86877e6-0058",
+            "category": "arrival",
+            "scheduledTime": "03:06",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-b09c067e-0024",
+            "category": "arrival",
+            "scheduledTime": "03:07",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0034",
+            "category": "departure",
+            "scheduledTime": "03:08",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0026",
+            "category": "departure",
+            "scheduledTime": "03:11",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0025",
+            "category": "arrival",
+            "scheduledTime": "03:11",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0002",
+            "category": "departure",
+            "scheduledTime": "03:17",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-0c577870-0006",
+            "category": "departure",
+            "scheduledTime": "03:21",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0004",
+            "category": "arrival",
+            "scheduledTime": "03:22",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0043",
+            "category": "arrival",
+            "scheduledTime": "03:24",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0014",
+            "category": "departure",
+            "scheduledTime": "03:25",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0014",
+            "category": "departure",
+            "scheduledTime": "03:25",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-68132d09-0026",
+            "category": "departure",
+            "scheduledTime": "03:26",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-ed857285-0021",
+            "category": "departure",
+            "scheduledTime": "03:26",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-b09c067e-0025",
+            "category": "arrival",
+            "scheduledTime": "03:27",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-d86877e6-0059",
+            "category": "arrival",
+            "scheduledTime": "03:27",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-35864ada-0028",
+            "category": "departure",
+            "scheduledTime": "03:29",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0011",
+            "category": "departure",
+            "scheduledTime": "03:33",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0023",
+            "category": "departure",
+            "scheduledTime": "03:33",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-11101250-0031",
+            "category": "arrival",
+            "scheduledTime": "03:35",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-2337a242-0016",
+            "category": "departure",
+            "scheduledTime": "03:36",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0027",
+            "category": "departure",
+            "scheduledTime": "03:38",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-786a98c4-0034",
+            "category": "arrival",
+            "scheduledTime": "03:38",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0013",
+            "category": "arrival",
+            "scheduledTime": "03:39",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0035",
+            "category": "departure",
+            "scheduledTime": "03:39",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0005",
+            "category": "arrival",
+            "scheduledTime": "03:41",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-b09c067e-0026",
+            "category": "arrival",
+            "scheduledTime": "03:48",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-0c577870-0007",
+            "category": "departure",
+            "scheduledTime": "03:49",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0044",
+            "category": "arrival",
+            "scheduledTime": "03:49",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-d86877e6-0060",
+            "category": "arrival",
+            "scheduledTime": "03:49",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-ed857285-0022",
+            "category": "departure",
+            "scheduledTime": "03:54",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0003",
+            "category": "departure",
+            "scheduledTime": "03:55",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0015",
+            "category": "departure",
+            "scheduledTime": "03:58",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0026",
+            "category": "arrival",
+            "scheduledTime": "03:59",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-35864ada-0029",
+            "category": "departure",
+            "scheduledTime": "04:00",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0006",
+            "category": "arrival",
+            "scheduledTime": "04:01",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0028",
+            "category": "departure",
+            "scheduledTime": "04:05",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-11101250-0032",
+            "category": "arrival",
+            "scheduledTime": "04:07",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-b09c067e-0027",
+            "category": "arrival",
+            "scheduledTime": "04:08",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-d86877e6-0061",
+            "category": "arrival",
+            "scheduledTime": "04:10",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0036",
+            "category": "departure",
+            "scheduledTime": "04:10",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0024",
+            "category": "departure",
+            "scheduledTime": "04:11",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0015",
+            "category": "departure",
+            "scheduledTime": "04:12",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0012",
+            "category": "departure",
+            "scheduledTime": "04:12",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0045",
+            "category": "arrival",
+            "scheduledTime": "04:14",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-0c577870-0008",
+            "category": "departure",
+            "scheduledTime": "04:16",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-68132d09-0027",
+            "category": "departure",
+            "scheduledTime": "04:18",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-786a98c4-0035",
+            "category": "arrival",
+            "scheduledTime": "04:18",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-2337a242-0017",
+            "category": "departure",
+            "scheduledTime": "04:20",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0007",
+            "category": "arrival",
+            "scheduledTime": "04:20",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-ed857285-0023",
+            "category": "departure",
+            "scheduledTime": "04:23",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0014",
+            "category": "arrival",
+            "scheduledTime": "04:25",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-b09c067e-0028",
+            "category": "arrival",
+            "scheduledTime": "04:29",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0016",
+            "category": "departure",
+            "scheduledTime": "04:30",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-35864ada-0030",
+            "category": "departure",
+            "scheduledTime": "04:31",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0029",
+            "category": "departure",
+            "scheduledTime": "04:31",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-d86877e6-0062",
+            "category": "arrival",
+            "scheduledTime": "04:32",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0004",
+            "category": "departure",
+            "scheduledTime": "04:33",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-11101250-0033",
+            "category": "arrival",
+            "scheduledTime": "04:39",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0046",
+            "category": "arrival",
+            "scheduledTime": "04:39",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0008",
+            "category": "arrival",
+            "scheduledTime": "04:39",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0037",
+            "category": "departure",
+            "scheduledTime": "04:41",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-0c577870-0009",
+            "category": "departure",
+            "scheduledTime": "04:44",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0027",
+            "category": "arrival",
+            "scheduledTime": "04:47",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0025",
+            "category": "departure",
+            "scheduledTime": "04:49",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-b09c067e-0029",
+            "category": "arrival",
+            "scheduledTime": "04:50",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0013",
+            "category": "departure",
+            "scheduledTime": "04:51",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-ed857285-0024",
+            "category": "departure",
+            "scheduledTime": "04:52",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-d86877e6-0063",
+            "category": "arrival",
+            "scheduledTime": "04:53",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0030",
+            "category": "departure",
+            "scheduledTime": "04:58",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-786a98c4-0036",
+            "category": "arrival",
+            "scheduledTime": "04:58",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0009",
+            "category": "arrival",
+            "scheduledTime": "04:58",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0016",
+            "category": "departure",
+            "scheduledTime": "04:58",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-2337a242-0018",
+            "category": "departure",
+            "scheduledTime": "05:03",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-35864ada-0031",
+            "category": "departure",
+            "scheduledTime": "05:03",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0017",
+            "category": "departure",
+            "scheduledTime": "05:03",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0047",
+            "category": "arrival",
+            "scheduledTime": "05:04",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-68132d09-0028",
+            "category": "departure",
+            "scheduledTime": "05:09",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-b09c067e-0030",
+            "category": "arrival",
+            "scheduledTime": "05:10",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-11101250-0034",
+            "category": "arrival",
+            "scheduledTime": "05:11",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0005",
+            "category": "departure",
+            "scheduledTime": "05:11",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-0c577870-0010",
+            "category": "departure",
+            "scheduledTime": "05:12",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0015",
+            "category": "arrival",
+            "scheduledTime": "05:12",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0038",
+            "category": "departure",
+            "scheduledTime": "05:13",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-d86877e6-0064",
+            "category": "arrival",
+            "scheduledTime": "05:15",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0010",
+            "category": "arrival",
+            "scheduledTime": "05:17",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-ed857285-0025",
+            "category": "departure",
+            "scheduledTime": "05:21",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0031",
+            "category": "departure",
+            "scheduledTime": "05:25",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0026",
+            "category": "departure",
+            "scheduledTime": "05:27",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0048",
+            "category": "arrival",
+            "scheduledTime": "05:28",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0014",
+            "category": "departure",
+            "scheduledTime": "05:29",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-b09c067e-0031",
+            "category": "arrival",
+            "scheduledTime": "05:31",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-35864ada-0032",
+            "category": "departure",
+            "scheduledTime": "05:34",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0028",
+            "category": "arrival",
+            "scheduledTime": "05:35",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0018",
+            "category": "departure",
+            "scheduledTime": "05:36",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-d86877e6-0065",
+            "category": "arrival",
+            "scheduledTime": "05:36",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0011",
+            "category": "arrival",
+            "scheduledTime": "05:37",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-786a98c4-0001",
+            "category": "arrival",
+            "scheduledTime": "05:38",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-0c577870-0011",
+            "category": "departure",
+            "scheduledTime": "05:39",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-11101250-0035",
+            "category": "arrival",
+            "scheduledTime": "05:43",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0039",
+            "category": "departure",
+            "scheduledTime": "05:44",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0017",
+            "category": "departure",
+            "scheduledTime": "05:45",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-2337a242-0019",
+            "category": "departure",
+            "scheduledTime": "05:47",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0006",
+            "category": "departure",
+            "scheduledTime": "05:49",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-ed857285-0026",
+            "category": "departure",
+            "scheduledTime": "05:50",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0032",
+            "category": "departure",
+            "scheduledTime": "05:51",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-b09c067e-0032",
+            "category": "arrival",
+            "scheduledTime": "05:51",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0049",
+            "category": "arrival",
+            "scheduledTime": "05:53",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0012",
+            "category": "arrival",
+            "scheduledTime": "05:56",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0016",
+            "category": "arrival",
+            "scheduledTime": "05:58",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-d86877e6-0066",
+            "category": "arrival",
+            "scheduledTime": "05:58",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-68132d09-0001",
+            "category": "departure",
+            "scheduledTime": "06:01",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-35864ada-0033",
+            "category": "departure",
+            "scheduledTime": "06:05",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0027",
+            "category": "departure",
+            "scheduledTime": "06:05",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-0c577870-0012",
+            "category": "departure",
+            "scheduledTime": "06:07",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0015",
+            "category": "departure",
+            "scheduledTime": "06:08",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0019",
+            "category": "departure",
+            "scheduledTime": "06:09",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-b09c067e-0033",
+            "category": "arrival",
+            "scheduledTime": "06:12",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-11101250-0036",
+            "category": "arrival",
+            "scheduledTime": "06:15",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0013",
+            "category": "arrival",
+            "scheduledTime": "06:15",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0040",
+            "category": "departure",
+            "scheduledTime": "06:15",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0033",
+            "category": "departure",
+            "scheduledTime": "06:18",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0050",
+            "category": "arrival",
+            "scheduledTime": "06:18",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-786a98c4-0002",
+            "category": "arrival",
+            "scheduledTime": "06:18",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-ed857285-0027",
+            "category": "departure",
+            "scheduledTime": "06:18",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-d86877e6-0067",
+            "category": "arrival",
+            "scheduledTime": "06:19",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0029",
+            "category": "arrival",
+            "scheduledTime": "06:23",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0007",
+            "category": "departure",
+            "scheduledTime": "06:27",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-2337a242-0020",
+            "category": "departure",
+            "scheduledTime": "06:31",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0018",
+            "category": "departure",
+            "scheduledTime": "06:31",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-b09c067e-0034",
+            "category": "arrival",
+            "scheduledTime": "06:32",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0014",
+            "category": "arrival",
+            "scheduledTime": "06:34",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-0c577870-0013",
+            "category": "departure",
+            "scheduledTime": "06:35",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-35864ada-0034",
+            "category": "departure",
+            "scheduledTime": "06:37",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0020",
+            "category": "departure",
+            "scheduledTime": "06:41",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-d86877e6-0001",
+            "category": "arrival",
+            "scheduledTime": "06:41",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0051",
+            "category": "arrival",
+            "scheduledTime": "06:43",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0028",
+            "category": "departure",
+            "scheduledTime": "06:43",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0034",
+            "category": "departure",
+            "scheduledTime": "06:45",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0017",
+            "category": "arrival",
+            "scheduledTime": "06:45",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-11101250-0037",
+            "category": "arrival",
+            "scheduledTime": "06:47",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0016",
+            "category": "departure",
+            "scheduledTime": "06:47",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0041",
+            "category": "departure",
+            "scheduledTime": "06:47",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-ed857285-0028",
+            "category": "departure",
+            "scheduledTime": "06:47",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-68132d09-0002",
+            "category": "departure",
+            "scheduledTime": "06:52",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0015",
+            "category": "arrival",
+            "scheduledTime": "06:53",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-b09c067e-0035",
+            "category": "arrival",
+            "scheduledTime": "06:53",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-786a98c4-0003",
+            "category": "arrival",
+            "scheduledTime": "06:58",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-d86877e6-0002",
+            "category": "arrival",
+            "scheduledTime": "07:02",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-0c577870-0014",
+            "category": "departure",
+            "scheduledTime": "07:03",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0008",
+            "category": "departure",
+            "scheduledTime": "07:05",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-35864ada-0035",
+            "category": "departure",
+            "scheduledTime": "07:08",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0052",
+            "category": "arrival",
+            "scheduledTime": "07:08",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0035",
+            "category": "departure",
+            "scheduledTime": "07:11",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0030",
+            "category": "arrival",
+            "scheduledTime": "07:11",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0016",
+            "category": "arrival",
+            "scheduledTime": "07:13",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-2337a242-0021",
+            "category": "departure",
+            "scheduledTime": "07:14",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0021",
+            "category": "departure",
+            "scheduledTime": "07:14",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-b09c067e-0036",
+            "category": "arrival",
+            "scheduledTime": "07:14",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-ed857285-0029",
+            "category": "departure",
+            "scheduledTime": "07:16",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0019",
+            "category": "departure",
+            "scheduledTime": "07:18",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0042",
+            "category": "departure",
+            "scheduledTime": "07:18",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-11101250-0038",
+            "category": "arrival",
+            "scheduledTime": "07:19",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0029",
+            "category": "departure",
+            "scheduledTime": "07:21",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-d86877e6-0003",
+            "category": "arrival",
+            "scheduledTime": "07:23",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0017",
+            "category": "departure",
+            "scheduledTime": "07:26",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-0c577870-0015",
+            "category": "departure",
+            "scheduledTime": "07:30",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0018",
+            "category": "arrival",
+            "scheduledTime": "07:31",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0017",
+            "category": "arrival",
+            "scheduledTime": "07:32",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0053",
+            "category": "arrival",
+            "scheduledTime": "07:33",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-b09c067e-0037",
+            "category": "arrival",
+            "scheduledTime": "07:34",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0036",
+            "category": "departure",
+            "scheduledTime": "07:38",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-786a98c4-0004",
+            "category": "arrival",
+            "scheduledTime": "07:38",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-35864ada-0036",
+            "category": "departure",
+            "scheduledTime": "07:39",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-68132d09-0003",
+            "category": "departure",
+            "scheduledTime": "07:43",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0009",
+            "category": "departure",
+            "scheduledTime": "07:43",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-d86877e6-0004",
+            "category": "arrival",
+            "scheduledTime": "07:45",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-ed857285-0030",
+            "category": "departure",
+            "scheduledTime": "07:45",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0022",
+            "category": "departure",
+            "scheduledTime": "07:47",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0043",
+            "category": "departure",
+            "scheduledTime": "07:49",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-11101250-0039",
+            "category": "arrival",
+            "scheduledTime": "07:51",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0018",
+            "category": "arrival",
+            "scheduledTime": "07:51",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-b09c067e-0038",
+            "category": "arrival",
+            "scheduledTime": "07:55",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0054",
+            "category": "arrival",
+            "scheduledTime": "07:57",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-0c577870-0016",
+            "category": "departure",
+            "scheduledTime": "07:58",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-2337a242-0022",
+            "category": "departure",
+            "scheduledTime": "07:58",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0030",
+            "category": "departure",
+            "scheduledTime": "07:58",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0001",
+            "category": "arrival",
+            "scheduledTime": "07:59",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0020",
+            "category": "departure",
+            "scheduledTime": "08:04",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0037",
+            "category": "departure",
+            "scheduledTime": "08:05",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0018",
+            "category": "departure",
+            "scheduledTime": "08:05",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-d86877e6-0005",
+            "category": "arrival",
+            "scheduledTime": "08:06",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-35864ada-0037",
+            "category": "departure",
+            "scheduledTime": "08:10",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0019",
+            "category": "arrival",
+            "scheduledTime": "08:10",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-ed857285-0031",
+            "category": "departure",
+            "scheduledTime": "08:14",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-b09c067e-0039",
+            "category": "arrival",
+            "scheduledTime": "08:15",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-786a98c4-0005",
+            "category": "arrival",
+            "scheduledTime": "08:18",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0019",
+            "category": "arrival",
+            "scheduledTime": "08:18",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0023",
+            "category": "departure",
+            "scheduledTime": "08:20",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0010",
+            "category": "departure",
+            "scheduledTime": "08:21",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0044",
+            "category": "departure",
+            "scheduledTime": "08:21",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0055",
+            "category": "arrival",
+            "scheduledTime": "08:22",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-11101250-0040",
+            "category": "arrival",
+            "scheduledTime": "08:23",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-0c577870-0017",
+            "category": "departure",
+            "scheduledTime": "08:26",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-d86877e6-0006",
+            "category": "arrival",
+            "scheduledTime": "08:28",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0020",
+            "category": "arrival",
+            "scheduledTime": "08:29",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0038",
+            "category": "departure",
+            "scheduledTime": "08:31",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-68132d09-0004",
+            "category": "departure",
+            "scheduledTime": "08:35",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-b09c067e-0040",
+            "category": "arrival",
+            "scheduledTime": "08:36",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0031",
+            "category": "departure",
+            "scheduledTime": "08:36",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-2337a242-0023",
+            "category": "departure",
+            "scheduledTime": "08:42",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-35864ada-0038",
+            "category": "departure",
+            "scheduledTime": "08:42",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-ed857285-0032",
+            "category": "departure",
+            "scheduledTime": "08:42",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0019",
+            "category": "departure",
+            "scheduledTime": "08:44",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0056",
+            "category": "arrival",
+            "scheduledTime": "08:47",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0002",
+            "category": "arrival",
+            "scheduledTime": "08:47",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0021",
+            "category": "arrival",
+            "scheduledTime": "08:49",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-d86877e6-0007",
+            "category": "arrival",
+            "scheduledTime": "08:49",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0021",
+            "category": "departure",
+            "scheduledTime": "08:51",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0024",
+            "category": "departure",
+            "scheduledTime": "08:52",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0045",
+            "category": "departure",
+            "scheduledTime": "08:52",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-0c577870-0018",
+            "category": "departure",
+            "scheduledTime": "08:53",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-11101250-0041",
+            "category": "arrival",
+            "scheduledTime": "08:55",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-b09c067e-0041",
+            "category": "arrival",
+            "scheduledTime": "08:56",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0039",
+            "category": "departure",
+            "scheduledTime": "08:58",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0011",
+            "category": "departure",
+            "scheduledTime": "08:58",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-786a98c4-0006",
+            "category": "arrival",
+            "scheduledTime": "08:58",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0020",
+            "category": "arrival",
+            "scheduledTime": "09:04",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0022",
+            "category": "arrival",
+            "scheduledTime": "09:08",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-d86877e6-0008",
+            "category": "arrival",
+            "scheduledTime": "09:11",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-ed857285-0033",
+            "category": "departure",
+            "scheduledTime": "09:11",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0057",
+            "category": "arrival",
+            "scheduledTime": "09:12",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-35864ada-0039",
+            "category": "departure",
+            "scheduledTime": "09:13",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0032",
+            "category": "departure",
+            "scheduledTime": "09:14",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-b09c067e-0042",
+            "category": "arrival",
+            "scheduledTime": "09:17",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-0c577870-0019",
+            "category": "departure",
+            "scheduledTime": "09:21",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0020",
+            "category": "departure",
+            "scheduledTime": "09:23",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0046",
+            "category": "departure",
+            "scheduledTime": "09:23",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-2337a242-0024",
+            "category": "departure",
+            "scheduledTime": "09:25",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0040",
+            "category": "departure",
+            "scheduledTime": "09:25",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0025",
+            "category": "departure",
+            "scheduledTime": "09:25",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-68132d09-0005",
+            "category": "departure",
+            "scheduledTime": "09:26",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-11101250-0042",
+            "category": "arrival",
+            "scheduledTime": "09:27",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0023",
+            "category": "arrival",
+            "scheduledTime": "09:27",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-d86877e6-0009",
+            "category": "arrival",
+            "scheduledTime": "09:32",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0003",
+            "category": "arrival",
+            "scheduledTime": "09:35",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0012",
+            "category": "departure",
+            "scheduledTime": "09:36",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0058",
+            "category": "arrival",
+            "scheduledTime": "09:37",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0022",
+            "category": "departure",
+            "scheduledTime": "09:37",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-786a98c4-0007",
+            "category": "arrival",
+            "scheduledTime": "09:38",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-b09c067e-0043",
+            "category": "arrival",
+            "scheduledTime": "09:38",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-ed857285-0034",
+            "category": "departure",
+            "scheduledTime": "09:40",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-35864ada-0040",
+            "category": "departure",
+            "scheduledTime": "09:44",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0024",
+            "category": "arrival",
+            "scheduledTime": "09:46",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-0c577870-0020",
+            "category": "departure",
+            "scheduledTime": "09:49",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0041",
+            "category": "departure",
+            "scheduledTime": "09:51",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0021",
+            "category": "arrival",
+            "scheduledTime": "09:51",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0033",
+            "category": "departure",
+            "scheduledTime": "09:52",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-d86877e6-0010",
+            "category": "arrival",
+            "scheduledTime": "09:54",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0001",
+            "category": "departure",
+            "scheduledTime": "09:55",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0026",
+            "category": "departure",
+            "scheduledTime": "09:58",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-b09c067e-0044",
+            "category": "arrival",
+            "scheduledTime": "09:58",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-11101250-0043",
+            "category": "arrival",
+            "scheduledTime": "09:59",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0001",
+            "category": "arrival",
+            "scheduledTime": "10:02",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0021",
+            "category": "departure",
+            "scheduledTime": "10:02",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0025",
+            "category": "arrival",
+            "scheduledTime": "10:05",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-2337a242-0025",
+            "category": "departure",
+            "scheduledTime": "10:09",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-ed857285-0035",
+            "category": "departure",
+            "scheduledTime": "10:09",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0013",
+            "category": "departure",
+            "scheduledTime": "10:14",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-d86877e6-0011",
+            "category": "arrival",
+            "scheduledTime": "10:15",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-0c577870-0021",
+            "category": "departure",
+            "scheduledTime": "10:16",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-35864ada-0041",
+            "category": "departure",
+            "scheduledTime": "10:16",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0042",
+            "category": "departure",
+            "scheduledTime": "10:18",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-68132d09-0006",
+            "category": "departure",
+            "scheduledTime": "10:18",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-786a98c4-0008",
+            "category": "arrival",
+            "scheduledTime": "10:18",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-b09c067e-0045",
+            "category": "arrival",
+            "scheduledTime": "10:19",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0004",
+            "category": "arrival",
+            "scheduledTime": "10:23",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0023",
+            "category": "departure",
+            "scheduledTime": "10:23",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0026",
+            "category": "arrival",
+            "scheduledTime": "10:25",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0002",
+            "category": "arrival",
+            "scheduledTime": "10:26",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0002",
+            "category": "departure",
+            "scheduledTime": "10:26",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0027",
+            "category": "departure",
+            "scheduledTime": "10:30",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0034",
+            "category": "departure",
+            "scheduledTime": "10:30",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-11101250-0044",
+            "category": "arrival",
+            "scheduledTime": "10:31",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0022",
+            "category": "arrival",
+            "scheduledTime": "10:37",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-d86877e6-0012",
+            "category": "arrival",
+            "scheduledTime": "10:37",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-ed857285-0036",
+            "category": "departure",
+            "scheduledTime": "10:38",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-b09c067e-0046",
+            "category": "arrival",
+            "scheduledTime": "10:39",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0022",
+            "category": "departure",
+            "scheduledTime": "10:41",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-0c577870-0022",
+            "category": "departure",
+            "scheduledTime": "10:44",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0027",
+            "category": "arrival",
+            "scheduledTime": "10:44",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0043",
+            "category": "departure",
+            "scheduledTime": "10:45",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-35864ada-0042",
+            "category": "departure",
+            "scheduledTime": "10:47",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0003",
+            "category": "arrival",
+            "scheduledTime": "10:51",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-2337a242-0026",
+            "category": "departure",
+            "scheduledTime": "10:52",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0014",
+            "category": "departure",
+            "scheduledTime": "10:52",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0003",
+            "category": "departure",
+            "scheduledTime": "10:57",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-786a98c4-0009",
+            "category": "arrival",
+            "scheduledTime": "10:58",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-d86877e6-0013",
+            "category": "arrival",
+            "scheduledTime": "10:58",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-b09c067e-0047",
+            "category": "arrival",
+            "scheduledTime": "11:00",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-11101250-0045",
+            "category": "arrival",
+            "scheduledTime": "11:03",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0028",
+            "category": "departure",
+            "scheduledTime": "11:03",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0028",
+            "category": "arrival",
+            "scheduledTime": "11:03",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-ed857285-0037",
+            "category": "departure",
+            "scheduledTime": "11:06",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0035",
+            "category": "departure",
+            "scheduledTime": "11:08",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-68132d09-0007",
+            "category": "departure",
+            "scheduledTime": "11:09",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0024",
+            "category": "departure",
+            "scheduledTime": "11:10",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0044",
+            "category": "departure",
+            "scheduledTime": "11:11",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0005",
+            "category": "arrival",
+            "scheduledTime": "11:11",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-0c577870-0023",
+            "category": "departure",
+            "scheduledTime": "11:12",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0004",
+            "category": "arrival",
+            "scheduledTime": "11:16",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-35864ada-0043",
+            "category": "departure",
+            "scheduledTime": "11:18",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-b09c067e-0048",
+            "category": "arrival",
+            "scheduledTime": "11:20",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-d86877e6-0014",
+            "category": "arrival",
+            "scheduledTime": "11:20",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0023",
+            "category": "departure",
+            "scheduledTime": "11:20",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0029",
+            "category": "arrival",
+            "scheduledTime": "11:22",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0023",
+            "category": "arrival",
+            "scheduledTime": "11:23",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0004",
+            "category": "departure",
+            "scheduledTime": "11:28",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0015",
+            "category": "departure",
+            "scheduledTime": "11:30",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-11101250-0001",
+            "category": "arrival",
+            "scheduledTime": "11:35",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-ed857285-0038",
+            "category": "departure",
+            "scheduledTime": "11:35",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-2337a242-0027",
+            "category": "departure",
+            "scheduledTime": "11:36",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0029",
+            "category": "departure",
+            "scheduledTime": "11:36",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0045",
+            "category": "departure",
+            "scheduledTime": "11:38",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-786a98c4-0010",
+            "category": "arrival",
+            "scheduledTime": "11:38",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-0c577870-0024",
+            "category": "departure",
+            "scheduledTime": "11:39",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0005",
+            "category": "arrival",
+            "scheduledTime": "11:41",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0030",
+            "category": "arrival",
+            "scheduledTime": "11:41",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-b09c067e-0049",
+            "category": "arrival",
+            "scheduledTime": "11:41",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-d86877e6-0015",
+            "category": "arrival",
+            "scheduledTime": "11:41",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0036",
+            "category": "departure",
+            "scheduledTime": "11:46",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-35864ada-0044",
+            "category": "departure",
+            "scheduledTime": "11:50",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0025",
+            "category": "departure",
+            "scheduledTime": "11:56",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0006",
+            "category": "arrival",
+            "scheduledTime": "11:59",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0024",
+            "category": "departure",
+            "scheduledTime": "11:59",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0005",
+            "category": "departure",
+            "scheduledTime": "12:00",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-68132d09-0008",
+            "category": "departure",
+            "scheduledTime": "12:01",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0031",
+            "category": "arrival",
+            "scheduledTime": "12:01",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-b09c067e-0050",
+            "category": "arrival",
+            "scheduledTime": "12:02",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-d86877e6-0016",
+            "category": "arrival",
+            "scheduledTime": "12:03",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-ed857285-0039",
+            "category": "departure",
+            "scheduledTime": "12:04",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0046",
+            "category": "departure",
+            "scheduledTime": "12:05",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0006",
+            "category": "arrival",
+            "scheduledTime": "12:06",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-0c577870-0025",
+            "category": "departure",
+            "scheduledTime": "12:07",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-11101250-0002",
+            "category": "arrival",
+            "scheduledTime": "12:07",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0016",
+            "category": "departure",
+            "scheduledTime": "12:08",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0030",
+            "category": "departure",
+            "scheduledTime": "12:09",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0024",
+            "category": "arrival",
+            "scheduledTime": "12:10",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-786a98c4-0011",
+            "category": "arrival",
+            "scheduledTime": "12:18",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-2337a242-0028",
+            "category": "departure",
+            "scheduledTime": "12:20",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0032",
+            "category": "arrival",
+            "scheduledTime": "12:20",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-35864ada-0045",
+            "category": "departure",
+            "scheduledTime": "12:21",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-b09c067e-0051",
+            "category": "arrival",
+            "scheduledTime": "12:22",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-d86877e6-0017",
+            "category": "arrival",
+            "scheduledTime": "12:24",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0037",
+            "category": "departure",
+            "scheduledTime": "12:24",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0007",
+            "category": "arrival",
+            "scheduledTime": "12:30",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0047",
+            "category": "departure",
+            "scheduledTime": "12:31",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0006",
+            "category": "departure",
+            "scheduledTime": "12:31",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-ed857285-0040",
+            "category": "departure",
+            "scheduledTime": "12:33",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-0c577870-0026",
+            "category": "departure",
+            "scheduledTime": "12:35",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0025",
+            "category": "departure",
+            "scheduledTime": "12:38",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-11101250-0003",
+            "category": "arrival",
+            "scheduledTime": "12:39",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0033",
+            "category": "arrival",
+            "scheduledTime": "12:39",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0031",
+            "category": "departure",
+            "scheduledTime": "12:41",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-b09c067e-0052",
+            "category": "arrival",
+            "scheduledTime": "12:43",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0026",
+            "category": "departure",
+            "scheduledTime": "12:43",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0017",
+            "category": "departure",
+            "scheduledTime": "12:46",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-d86877e6-0018",
+            "category": "arrival",
+            "scheduledTime": "12:46",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0007",
+            "category": "arrival",
+            "scheduledTime": "12:47",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-35864ada-0046",
+            "category": "departure",
+            "scheduledTime": "12:52",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-68132d09-0009",
+            "category": "departure",
+            "scheduledTime": "12:52",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0008",
+            "category": "arrival",
+            "scheduledTime": "12:55",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0025",
+            "category": "arrival",
+            "scheduledTime": "12:56",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0048",
+            "category": "departure",
+            "scheduledTime": "12:58",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-786a98c4-0012",
+            "category": "arrival",
+            "scheduledTime": "12:58",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0034",
+            "category": "arrival",
+            "scheduledTime": "12:58",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0007",
+            "category": "departure",
+            "scheduledTime": "13:02",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-ed857285-0041",
+            "category": "departure",
+            "scheduledTime": "13:02",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0038",
+            "category": "departure",
+            "scheduledTime": "13:02",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-0c577870-0027",
+            "category": "departure",
+            "scheduledTime": "13:03",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-2337a242-0029",
+            "category": "departure",
+            "scheduledTime": "13:03",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-b09c067e-0053",
+            "category": "arrival",
+            "scheduledTime": "13:03",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-d86877e6-0019",
+            "category": "arrival",
+            "scheduledTime": "13:07",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-11101250-0004",
+            "category": "arrival",
+            "scheduledTime": "13:11",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0032",
+            "category": "departure",
+            "scheduledTime": "13:14",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0026",
+            "category": "departure",
+            "scheduledTime": "13:16",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0035",
+            "category": "arrival",
+            "scheduledTime": "13:17",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0009",
+            "category": "arrival",
+            "scheduledTime": "13:20",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-35864ada-0001",
+            "category": "departure",
+            "scheduledTime": "13:24",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0018",
+            "category": "departure",
+            "scheduledTime": "13:24",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-b09c067e-0054",
+            "category": "arrival",
+            "scheduledTime": "13:24",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0049",
+            "category": "departure",
+            "scheduledTime": "13:25",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0027",
+            "category": "departure",
+            "scheduledTime": "13:29",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-d86877e6-0020",
+            "category": "arrival",
+            "scheduledTime": "13:29",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-0c577870-0028",
+            "category": "departure",
+            "scheduledTime": "13:30",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-ed857285-0042",
+            "category": "departure",
+            "scheduledTime": "13:30",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0008",
+            "category": "departure",
+            "scheduledTime": "13:34",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0008",
+            "category": "arrival",
+            "scheduledTime": "13:35",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0036",
+            "category": "arrival",
+            "scheduledTime": "13:37",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-786a98c4-0013",
+            "category": "arrival",
+            "scheduledTime": "13:38",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0001",
+            "category": "departure",
+            "scheduledTime": "13:40",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-11101250-0005",
+            "category": "arrival",
+            "scheduledTime": "13:43",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-68132d09-0010",
+            "category": "departure",
+            "scheduledTime": "13:43",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0026",
+            "category": "arrival",
+            "scheduledTime": "13:43",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-b09c067e-0055",
+            "category": "arrival",
+            "scheduledTime": "13:44",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0010",
+            "category": "arrival",
+            "scheduledTime": "13:45",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-2337a242-0030",
+            "category": "departure",
+            "scheduledTime": "13:47",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0033",
+            "category": "departure",
+            "scheduledTime": "13:47",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-d86877e6-0021",
+            "category": "arrival",
+            "scheduledTime": "13:50",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0050",
+            "category": "departure",
+            "scheduledTime": "13:51",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-35864ada-0002",
+            "category": "departure",
+            "scheduledTime": "13:55",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0027",
+            "category": "departure",
+            "scheduledTime": "13:55",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0037",
+            "category": "arrival",
+            "scheduledTime": "13:56",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-0c577870-0029",
+            "category": "departure",
+            "scheduledTime": "13:58",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-ed857285-0043",
+            "category": "departure",
+            "scheduledTime": "13:59",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0019",
+            "category": "departure",
+            "scheduledTime": "14:02",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-b09c067e-0056",
+            "category": "arrival",
+            "scheduledTime": "14:05",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0009",
+            "category": "departure",
+            "scheduledTime": "14:05",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0011",
+            "category": "arrival",
+            "scheduledTime": "14:10",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-d86877e6-0022",
+            "category": "arrival",
+            "scheduledTime": "14:12",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-11101250-0006",
+            "category": "arrival",
+            "scheduledTime": "14:15",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0038",
+            "category": "arrival",
+            "scheduledTime": "14:15",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0028",
+            "category": "departure",
+            "scheduledTime": "14:16",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0002",
+            "category": "departure",
+            "scheduledTime": "14:17",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0051",
+            "category": "departure",
+            "scheduledTime": "14:18",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-786a98c4-0014",
+            "category": "arrival",
+            "scheduledTime": "14:18",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0034",
+            "category": "departure",
+            "scheduledTime": "14:20",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0009",
+            "category": "arrival",
+            "scheduledTime": "14:23",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-0c577870-0030",
+            "category": "departure",
+            "scheduledTime": "14:26",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-35864ada-0003",
+            "category": "departure",
+            "scheduledTime": "14:26",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-b09c067e-0057",
+            "category": "arrival",
+            "scheduledTime": "14:26",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-ed857285-0044",
+            "category": "departure",
+            "scheduledTime": "14:28",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0027",
+            "category": "arrival",
+            "scheduledTime": "14:29",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-2337a242-0031",
+            "category": "departure",
+            "scheduledTime": "14:31",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-d86877e6-0023",
+            "category": "arrival",
+            "scheduledTime": "14:33",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0039",
+            "category": "arrival",
+            "scheduledTime": "14:34",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0028",
+            "category": "departure",
+            "scheduledTime": "14:34",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0012",
+            "category": "arrival",
+            "scheduledTime": "14:35",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-68132d09-0011",
+            "category": "departure",
+            "scheduledTime": "14:35",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0010",
+            "category": "departure",
+            "scheduledTime": "14:36",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0020",
+            "category": "departure",
+            "scheduledTime": "14:40",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0052",
+            "category": "departure",
+            "scheduledTime": "14:45",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-b09c067e-0058",
+            "category": "arrival",
+            "scheduledTime": "14:46",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-11101250-0007",
+            "category": "arrival",
+            "scheduledTime": "14:47",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0035",
+            "category": "departure",
+            "scheduledTime": "14:52",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-0c577870-0031",
+            "category": "departure",
+            "scheduledTime": "14:53",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0040",
+            "category": "arrival",
+            "scheduledTime": "14:53",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-d86877e6-0024",
+            "category": "arrival",
+            "scheduledTime": "14:55",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0003",
+            "category": "departure",
+            "scheduledTime": "14:55",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-35864ada-0004",
+            "category": "departure",
+            "scheduledTime": "14:57",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-ed857285-0045",
+            "category": "departure",
+            "scheduledTime": "14:57",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-786a98c4-0015",
+            "category": "arrival",
+            "scheduledTime": "14:58",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0013",
+            "category": "arrival",
+            "scheduledTime": "14:59",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0029",
+            "category": "departure",
+            "scheduledTime": "15:02",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-b09c067e-0059",
+            "category": "arrival",
+            "scheduledTime": "15:07",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0011",
+            "category": "departure",
+            "scheduledTime": "15:08",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0053",
+            "category": "departure",
+            "scheduledTime": "15:11",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0010",
+            "category": "arrival",
+            "scheduledTime": "15:11",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0041",
+            "category": "arrival",
+            "scheduledTime": "15:13",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0029",
+            "category": "departure",
+            "scheduledTime": "15:13",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-2337a242-0032",
+            "category": "departure",
+            "scheduledTime": "15:14",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0028",
+            "category": "arrival",
+            "scheduledTime": "15:16",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-d86877e6-0025",
+            "category": "arrival",
+            "scheduledTime": "15:16",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0021",
+            "category": "departure",
+            "scheduledTime": "15:17",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-11101250-0008",
+            "category": "arrival",
+            "scheduledTime": "15:19",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-0c577870-0032",
+            "category": "departure",
+            "scheduledTime": "15:21",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0014",
+            "category": "arrival",
+            "scheduledTime": "15:24",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0036",
+            "category": "departure",
+            "scheduledTime": "15:25",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-68132d09-0012",
+            "category": "departure",
+            "scheduledTime": "15:26",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-ed857285-0046",
+            "category": "departure",
+            "scheduledTime": "15:26",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-b09c067e-0060",
+            "category": "arrival",
+            "scheduledTime": "15:27",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-35864ada-0005",
+            "category": "departure",
+            "scheduledTime": "15:29",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0042",
+            "category": "arrival",
+            "scheduledTime": "15:32",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0004",
+            "category": "departure",
+            "scheduledTime": "15:33",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0054",
+            "category": "departure",
+            "scheduledTime": "15:38",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-786a98c4-0016",
+            "category": "arrival",
+            "scheduledTime": "15:38",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-d86877e6-0026",
+            "category": "arrival",
+            "scheduledTime": "15:38",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0012",
+            "category": "departure",
+            "scheduledTime": "15:39",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-b09c067e-0061",
+            "category": "arrival",
+            "scheduledTime": "15:48",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-0c577870-0033",
+            "category": "departure",
+            "scheduledTime": "15:49",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0015",
+            "category": "arrival",
+            "scheduledTime": "15:49",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0030",
+            "category": "departure",
+            "scheduledTime": "15:49",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-11101250-0009",
+            "category": "arrival",
+            "scheduledTime": "15:51",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0043",
+            "category": "arrival",
+            "scheduledTime": "15:51",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0030",
+            "category": "departure",
+            "scheduledTime": "15:52",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-ed857285-0047",
+            "category": "departure",
+            "scheduledTime": "15:54",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0022",
+            "category": "departure",
+            "scheduledTime": "15:55",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-2337a242-0033",
+            "category": "departure",
+            "scheduledTime": "15:58",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0037",
+            "category": "departure",
+            "scheduledTime": "15:58",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0011",
+            "category": "arrival",
+            "scheduledTime": "15:59",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-d86877e6-0027",
+            "category": "arrival",
+            "scheduledTime": "15:59",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-35864ada-0006",
+            "category": "departure",
+            "scheduledTime": "16:00",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0029",
+            "category": "arrival",
+            "scheduledTime": "16:02",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0001",
+            "category": "departure",
+            "scheduledTime": "16:05",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-b09c067e-0062",
+            "category": "arrival",
+            "scheduledTime": "16:08",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0044",
+            "category": "arrival",
+            "scheduledTime": "16:10",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0013",
+            "category": "departure",
+            "scheduledTime": "16:10",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0005",
+            "category": "departure",
+            "scheduledTime": "16:11",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0016",
+            "category": "arrival",
+            "scheduledTime": "16:14",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-0c577870-0034",
+            "category": "departure",
+            "scheduledTime": "16:16",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-68132d09-0013",
+            "category": "departure",
+            "scheduledTime": "16:18",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-786a98c4-0017",
+            "category": "arrival",
+            "scheduledTime": "16:18",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-d86877e6-0028",
+            "category": "arrival",
+            "scheduledTime": "16:21",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-11101250-0010",
+            "category": "arrival",
+            "scheduledTime": "16:23",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-ed857285-0048",
+            "category": "departure",
+            "scheduledTime": "16:23",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0045",
+            "category": "arrival",
+            "scheduledTime": "16:29",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-b09c067e-0063",
+            "category": "arrival",
+            "scheduledTime": "16:29",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0038",
+            "category": "departure",
+            "scheduledTime": "16:30",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-35864ada-0007",
+            "category": "departure",
+            "scheduledTime": "16:31",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0002",
+            "category": "departure",
+            "scheduledTime": "16:31",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0031",
+            "category": "departure",
+            "scheduledTime": "16:31",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0023",
+            "category": "departure",
+            "scheduledTime": "16:33",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0031",
+            "category": "departure",
+            "scheduledTime": "16:35",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0017",
+            "category": "arrival",
+            "scheduledTime": "16:39",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0014",
+            "category": "departure",
+            "scheduledTime": "16:41",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-2337a242-0001",
+            "category": "departure",
+            "scheduledTime": "16:42",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-d86877e6-0029",
+            "category": "arrival",
+            "scheduledTime": "16:42",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-0c577870-0035",
+            "category": "departure",
+            "scheduledTime": "16:44",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0012",
+            "category": "arrival",
+            "scheduledTime": "16:47",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0030",
+            "category": "arrival",
+            "scheduledTime": "16:49",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0046",
+            "category": "arrival",
+            "scheduledTime": "16:49",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0006",
+            "category": "departure",
+            "scheduledTime": "16:49",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-b09c067e-0064",
+            "category": "arrival",
+            "scheduledTime": "16:50",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-ed857285-0049",
+            "category": "departure",
+            "scheduledTime": "16:52",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-11101250-0011",
+            "category": "arrival",
+            "scheduledTime": "16:55",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0003",
+            "category": "departure",
+            "scheduledTime": "16:58",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-786a98c4-0018",
+            "category": "arrival",
+            "scheduledTime": "16:58",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-35864ada-0008",
+            "category": "departure",
+            "scheduledTime": "17:03",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0039",
+            "category": "departure",
+            "scheduledTime": "17:03",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0018",
+            "category": "arrival",
+            "scheduledTime": "17:04",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-d86877e6-0030",
+            "category": "arrival",
+            "scheduledTime": "17:04",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0047",
+            "category": "arrival",
+            "scheduledTime": "17:08",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-68132d09-0014",
+            "category": "departure",
+            "scheduledTime": "17:09",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-b09c067e-0065",
+            "category": "arrival",
+            "scheduledTime": "17:10",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0032",
+            "category": "departure",
+            "scheduledTime": "17:10",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0024",
+            "category": "departure",
+            "scheduledTime": "17:11",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-0c577870-0036",
+            "category": "departure",
+            "scheduledTime": "17:12",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0015",
+            "category": "departure",
+            "scheduledTime": "17:13",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-ed857285-0050",
+            "category": "departure",
+            "scheduledTime": "17:21",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0001",
+            "category": "departure",
+            "scheduledTime": "17:22",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-2337a242-0002",
+            "category": "departure",
+            "scheduledTime": "17:25",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0004",
+            "category": "departure",
+            "scheduledTime": "17:25",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-d86877e6-0031",
+            "category": "arrival",
+            "scheduledTime": "17:25",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-11101250-0012",
+            "category": "arrival",
+            "scheduledTime": "17:27",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0048",
+            "category": "arrival",
+            "scheduledTime": "17:27",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0007",
+            "category": "departure",
+            "scheduledTime": "17:27",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0019",
+            "category": "arrival",
+            "scheduledTime": "17:28",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-b09c067e-0066",
+            "category": "arrival",
+            "scheduledTime": "17:31",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-35864ada-0009",
+            "category": "departure",
+            "scheduledTime": "17:34",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0031",
+            "category": "arrival",
+            "scheduledTime": "17:35",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0013",
+            "category": "arrival",
+            "scheduledTime": "17:35",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0040",
+            "category": "departure",
+            "scheduledTime": "17:36",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-786a98c4-0019",
+            "category": "arrival",
+            "scheduledTime": "17:38",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-0c577870-0037",
+            "category": "departure",
+            "scheduledTime": "17:39",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0016",
+            "category": "departure",
+            "scheduledTime": "17:44",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0049",
+            "category": "arrival",
+            "scheduledTime": "17:46",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-d86877e6-0032",
+            "category": "arrival",
+            "scheduledTime": "17:47",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0025",
+            "category": "departure",
+            "scheduledTime": "17:49",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0033",
+            "category": "departure",
+            "scheduledTime": "17:49",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-ed857285-0001",
+            "category": "departure",
+            "scheduledTime": "17:50",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0005",
+            "category": "departure",
+            "scheduledTime": "17:51",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-b09c067e-0067",
+            "category": "arrival",
+            "scheduledTime": "17:51",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0020",
+            "category": "arrival",
+            "scheduledTime": "17:53",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-11101250-0013",
+            "category": "arrival",
+            "scheduledTime": "17:59",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-68132d09-0015",
+            "category": "departure",
+            "scheduledTime": "18:01",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-35864ada-0010",
+            "category": "departure",
+            "scheduledTime": "18:05",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0050",
+            "category": "arrival",
+            "scheduledTime": "18:05",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0008",
+            "category": "departure",
+            "scheduledTime": "18:05",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-0c577870-0038",
+            "category": "departure",
+            "scheduledTime": "18:07",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0002",
+            "category": "departure",
+            "scheduledTime": "18:08",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-d86877e6-0033",
+            "category": "arrival",
+            "scheduledTime": "18:08",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-2337a242-0003",
+            "category": "departure",
+            "scheduledTime": "18:09",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0041",
+            "category": "departure",
+            "scheduledTime": "18:09",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-b09c067e-0068",
+            "category": "arrival",
+            "scheduledTime": "18:12",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0017",
+            "category": "departure",
+            "scheduledTime": "18:15",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0006",
+            "category": "departure",
+            "scheduledTime": "18:18",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0021",
+            "category": "arrival",
+            "scheduledTime": "18:18",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-786a98c4-0020",
+            "category": "arrival",
+            "scheduledTime": "18:18",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-ed857285-0002",
+            "category": "departure",
+            "scheduledTime": "18:18",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0001",
+            "category": "arrival",
+            "scheduledTime": "18:22",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0014",
+            "category": "arrival",
+            "scheduledTime": "18:23",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0051",
+            "category": "arrival",
+            "scheduledTime": "18:25",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0026",
+            "category": "departure",
+            "scheduledTime": "18:27",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0034",
+            "category": "departure",
+            "scheduledTime": "18:28",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-d86877e6-0034",
+            "category": "arrival",
+            "scheduledTime": "18:30",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-11101250-0014",
+            "category": "arrival",
+            "scheduledTime": "18:31",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-b09c067e-0069",
+            "category": "arrival",
+            "scheduledTime": "18:32",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-0c577870-0039",
+            "category": "departure",
+            "scheduledTime": "18:35",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-35864ada-0011",
+            "category": "departure",
+            "scheduledTime": "18:37",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0042",
+            "category": "departure",
+            "scheduledTime": "18:41",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0022",
+            "category": "arrival",
+            "scheduledTime": "18:43",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0009",
+            "category": "departure",
+            "scheduledTime": "18:43",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0052",
+            "category": "arrival",
+            "scheduledTime": "18:44",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0007",
+            "category": "departure",
+            "scheduledTime": "18:45",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0018",
+            "category": "departure",
+            "scheduledTime": "18:47",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-ed857285-0003",
+            "category": "departure",
+            "scheduledTime": "18:47",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-d86877e6-0035",
+            "category": "arrival",
+            "scheduledTime": "18:51",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-2337a242-0004",
+            "category": "departure",
+            "scheduledTime": "18:52",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-68132d09-0016",
+            "category": "departure",
+            "scheduledTime": "18:52",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-b09c067e-0070",
+            "category": "arrival",
+            "scheduledTime": "18:53",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0003",
+            "category": "departure",
+            "scheduledTime": "18:54",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-786a98c4-0021",
+            "category": "arrival",
+            "scheduledTime": "18:58",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-0c577870-0040",
+            "category": "departure",
+            "scheduledTime": "19:03",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-11101250-0015",
+            "category": "arrival",
+            "scheduledTime": "19:03",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0053",
+            "category": "arrival",
+            "scheduledTime": "19:03",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0027",
+            "category": "departure",
+            "scheduledTime": "19:05",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0035",
+            "category": "departure",
+            "scheduledTime": "19:07",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-35864ada-0012",
+            "category": "departure",
+            "scheduledTime": "19:08",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0023",
+            "category": "arrival",
+            "scheduledTime": "19:08",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0002",
+            "category": "arrival",
+            "scheduledTime": "19:08",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0008",
+            "category": "departure",
+            "scheduledTime": "19:11",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0015",
+            "category": "arrival",
+            "scheduledTime": "19:11",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-d86877e6-0036",
+            "category": "arrival",
+            "scheduledTime": "19:13",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0043",
+            "category": "departure",
+            "scheduledTime": "19:14",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-b09c067e-0001",
+            "category": "arrival",
+            "scheduledTime": "19:14",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-ed857285-0004",
+            "category": "departure",
+            "scheduledTime": "19:16",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0019",
+            "category": "departure",
+            "scheduledTime": "19:18",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0010",
+            "category": "departure",
+            "scheduledTime": "19:21",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0054",
+            "category": "arrival",
+            "scheduledTime": "19:22",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-0c577870-0041",
+            "category": "departure",
+            "scheduledTime": "19:30",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0024",
+            "category": "arrival",
+            "scheduledTime": "19:33",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-b09c067e-0002",
+            "category": "arrival",
+            "scheduledTime": "19:34",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-d86877e6-0037",
+            "category": "arrival",
+            "scheduledTime": "19:34",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-11101250-0016",
+            "category": "arrival",
+            "scheduledTime": "19:35",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-2337a242-0005",
+            "category": "departure",
+            "scheduledTime": "19:36",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0009",
+            "category": "departure",
+            "scheduledTime": "19:38",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-786a98c4-0022",
+            "category": "arrival",
+            "scheduledTime": "19:38",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-35864ada-0013",
+            "category": "departure",
+            "scheduledTime": "19:39",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0055",
+            "category": "arrival",
+            "scheduledTime": "19:41",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0004",
+            "category": "departure",
+            "scheduledTime": "19:41",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-68132d09-0017",
+            "category": "departure",
+            "scheduledTime": "19:43",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0028",
+            "category": "departure",
+            "scheduledTime": "19:43",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-ed857285-0005",
+            "category": "departure",
+            "scheduledTime": "19:45",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0036",
+            "category": "departure",
+            "scheduledTime": "19:46",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0044",
+            "category": "departure",
+            "scheduledTime": "19:47",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0020",
+            "category": "departure",
+            "scheduledTime": "19:49",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0003",
+            "category": "arrival",
+            "scheduledTime": "19:54",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-b09c067e-0003",
+            "category": "arrival",
+            "scheduledTime": "19:55",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-d86877e6-0038",
+            "category": "arrival",
+            "scheduledTime": "19:56",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0025",
+            "category": "arrival",
+            "scheduledTime": "19:57",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-0c577870-0042",
+            "category": "departure",
+            "scheduledTime": "19:58",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0011",
+            "category": "departure",
+            "scheduledTime": "19:58",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0016",
+            "category": "arrival",
+            "scheduledTime": "19:59",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0056",
+            "category": "arrival",
+            "scheduledTime": "20:01",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0010",
+            "category": "departure",
+            "scheduledTime": "20:05",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-11101250-0017",
+            "category": "arrival",
+            "scheduledTime": "20:07",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-35864ada-0014",
+            "category": "departure",
+            "scheduledTime": "20:10",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-ed857285-0006",
+            "category": "departure",
+            "scheduledTime": "20:14",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-b09c067e-0004",
+            "category": "arrival",
+            "scheduledTime": "20:15",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-d86877e6-0039",
+            "category": "arrival",
+            "scheduledTime": "20:17",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-786a98c4-0023",
+            "category": "arrival",
+            "scheduledTime": "20:18",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-2337a242-0006",
+            "category": "departure",
+            "scheduledTime": "20:20",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0001",
+            "category": "departure",
+            "scheduledTime": "20:20",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0057",
+            "category": "arrival",
+            "scheduledTime": "20:20",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0029",
+            "category": "departure",
+            "scheduledTime": "20:21",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0021",
+            "category": "departure",
+            "scheduledTime": "20:21",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0026",
+            "category": "arrival",
+            "scheduledTime": "20:22",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0037",
+            "category": "departure",
+            "scheduledTime": "20:25",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-0c577870-0043",
+            "category": "departure",
+            "scheduledTime": "20:26",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0005",
+            "category": "departure",
+            "scheduledTime": "20:27",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0011",
+            "category": "departure",
+            "scheduledTime": "20:31",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-68132d09-0018",
+            "category": "departure",
+            "scheduledTime": "20:35",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-b09c067e-0005",
+            "category": "arrival",
+            "scheduledTime": "20:36",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0012",
+            "category": "departure",
+            "scheduledTime": "20:36",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-11101250-0018",
+            "category": "arrival",
+            "scheduledTime": "20:39",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0058",
+            "category": "arrival",
+            "scheduledTime": "20:39",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-d86877e6-0040",
+            "category": "arrival",
+            "scheduledTime": "20:39",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0004",
+            "category": "arrival",
+            "scheduledTime": "20:41",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-35864ada-0015",
+            "category": "departure",
+            "scheduledTime": "20:42",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-ed857285-0007",
+            "category": "departure",
+            "scheduledTime": "20:42",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0027",
+            "category": "arrival",
+            "scheduledTime": "20:47",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0017",
+            "category": "arrival",
+            "scheduledTime": "20:47",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0002",
+            "category": "departure",
+            "scheduledTime": "20:52",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0022",
+            "category": "departure",
+            "scheduledTime": "20:52",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-0c577870-0044",
+            "category": "departure",
+            "scheduledTime": "20:53",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-b09c067e-0006",
+            "category": "arrival",
+            "scheduledTime": "20:56",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0012",
+            "category": "departure",
+            "scheduledTime": "20:58",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0030",
+            "category": "departure",
+            "scheduledTime": "20:58",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-786a98c4-0024",
+            "category": "arrival",
+            "scheduledTime": "20:58",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0059",
+            "category": "arrival",
+            "scheduledTime": "20:58",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-d86877e6-0041",
+            "category": "arrival",
+            "scheduledTime": "21:00",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-2337a242-0007",
+            "category": "departure",
+            "scheduledTime": "21:03",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0001",
+            "category": "departure",
+            "scheduledTime": "21:04",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-11101250-0019",
+            "category": "arrival",
+            "scheduledTime": "21:11",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-ed857285-0008",
+            "category": "departure",
+            "scheduledTime": "21:11",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0028",
+            "category": "arrival",
+            "scheduledTime": "21:12",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-35864ada-0016",
+            "category": "departure",
+            "scheduledTime": "21:13",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0006",
+            "category": "departure",
+            "scheduledTime": "21:14",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0013",
+            "category": "departure",
+            "scheduledTime": "21:14",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0060",
+            "category": "arrival",
+            "scheduledTime": "21:17",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-b09c067e-0007",
+            "category": "arrival",
+            "scheduledTime": "21:17",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-0c577870-0045",
+            "category": "departure",
+            "scheduledTime": "21:21",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-d86877e6-0042",
+            "category": "arrival",
+            "scheduledTime": "21:22",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0023",
+            "category": "departure",
+            "scheduledTime": "21:23",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0013",
+            "category": "departure",
+            "scheduledTime": "21:25",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0003",
+            "category": "departure",
+            "scheduledTime": "21:25",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-68132d09-0019",
+            "category": "departure",
+            "scheduledTime": "21:26",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0005",
+            "category": "arrival",
+            "scheduledTime": "21:27",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0018",
+            "category": "arrival",
+            "scheduledTime": "21:35",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0031",
+            "category": "departure",
+            "scheduledTime": "21:36",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0029",
+            "category": "arrival",
+            "scheduledTime": "21:37",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0061",
+            "category": "arrival",
+            "scheduledTime": "21:37",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-786a98c4-0025",
+            "category": "arrival",
+            "scheduledTime": "21:38",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-b09c067e-0008",
+            "category": "arrival",
+            "scheduledTime": "21:38",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-ed857285-0009",
+            "category": "departure",
+            "scheduledTime": "21:40",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0002",
+            "category": "departure",
+            "scheduledTime": "21:42",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-11101250-0020",
+            "category": "arrival",
+            "scheduledTime": "21:43",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-d86877e6-0043",
+            "category": "arrival",
+            "scheduledTime": "21:43",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-35864ada-0017",
+            "category": "departure",
+            "scheduledTime": "21:44",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-2337a242-0008",
+            "category": "departure",
+            "scheduledTime": "21:47",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-0c577870-0046",
+            "category": "departure",
+            "scheduledTime": "21:49",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0014",
+            "category": "departure",
+            "scheduledTime": "21:51",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0014",
+            "category": "departure",
+            "scheduledTime": "21:52",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0024",
+            "category": "departure",
+            "scheduledTime": "21:55",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0062",
+            "category": "arrival",
+            "scheduledTime": "21:56",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0004",
+            "category": "departure",
+            "scheduledTime": "21:58",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-b09c067e-0009",
+            "category": "arrival",
+            "scheduledTime": "21:58",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0007",
+            "category": "departure",
+            "scheduledTime": "22:00",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0030",
+            "category": "arrival",
+            "scheduledTime": "22:02",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-d86877e6-0044",
+            "category": "arrival",
+            "scheduledTime": "22:05",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-ed857285-0010",
+            "category": "departure",
+            "scheduledTime": "22:09",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0032",
+            "category": "departure",
+            "scheduledTime": "22:14",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0006",
+            "category": "arrival",
+            "scheduledTime": "22:14",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-11101250-0021",
+            "category": "arrival",
+            "scheduledTime": "22:15",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0063",
+            "category": "arrival",
+            "scheduledTime": "22:15",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-0c577870-0047",
+            "category": "departure",
+            "scheduledTime": "22:16",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-35864ada-0018",
+            "category": "departure",
+            "scheduledTime": "22:16",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0015",
+            "category": "departure",
+            "scheduledTime": "22:18",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-68132d09-0020",
+            "category": "departure",
+            "scheduledTime": "22:18",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-786a98c4-0026",
+            "category": "arrival",
+            "scheduledTime": "22:18",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-b09c067e-0010",
+            "category": "arrival",
+            "scheduledTime": "22:19",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0003",
+            "category": "departure",
+            "scheduledTime": "22:21",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0019",
+            "category": "arrival",
+            "scheduledTime": "22:23",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0031",
+            "category": "arrival",
+            "scheduledTime": "22:26",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-d86877e6-0045",
+            "category": "arrival",
+            "scheduledTime": "22:26",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0025",
+            "category": "departure",
+            "scheduledTime": "22:26",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0005",
+            "category": "departure",
+            "scheduledTime": "22:30",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0015",
+            "category": "departure",
+            "scheduledTime": "22:30",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-2337a242-0009",
+            "category": "departure",
+            "scheduledTime": "22:31",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0064",
+            "category": "arrival",
+            "scheduledTime": "22:34",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-ed857285-0011",
+            "category": "departure",
+            "scheduledTime": "22:38",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-b09c067e-0011",
+            "category": "arrival",
+            "scheduledTime": "22:39",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-0c577870-0048",
+            "category": "departure",
+            "scheduledTime": "22:44",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0016",
+            "category": "departure",
+            "scheduledTime": "22:45",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-11101250-0022",
+            "category": "arrival",
+            "scheduledTime": "22:47",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-35864ada-0019",
+            "category": "departure",
+            "scheduledTime": "22:47",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0008",
+            "category": "departure",
+            "scheduledTime": "22:47",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-d86877e6-0046",
+            "category": "arrival",
+            "scheduledTime": "22:48",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0032",
+            "category": "arrival",
+            "scheduledTime": "22:51",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0033",
+            "category": "departure",
+            "scheduledTime": "22:52",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0065",
+            "category": "arrival",
+            "scheduledTime": "22:53",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0026",
+            "category": "departure",
+            "scheduledTime": "22:57",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-786a98c4-0027",
+            "category": "arrival",
+            "scheduledTime": "22:58",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0007",
+            "category": "arrival",
+            "scheduledTime": "23:00",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-b09c067e-0012",
+            "category": "arrival",
+            "scheduledTime": "23:00",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0004",
+            "category": "departure",
+            "scheduledTime": "23:00",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0006",
+            "category": "departure",
+            "scheduledTime": "23:03",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-ed857285-0012",
+            "category": "departure",
+            "scheduledTime": "23:06",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0016",
+            "category": "departure",
+            "scheduledTime": "23:08",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-68132d09-0021",
+            "category": "departure",
+            "scheduledTime": "23:09",
+            "spawnPatternKey": "68132d09"
+        },
+        {
+            "id": "auth-loww-d86877e6-0047",
+            "category": "arrival",
+            "scheduledTime": "23:09",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0017",
+            "category": "departure",
+            "scheduledTime": "23:11",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0020",
+            "category": "arrival",
+            "scheduledTime": "23:11",
+            "spawnPatternKey": "bc52b95c"
+        },
+        {
+            "id": "auth-loww-0c577870-0049",
+            "category": "departure",
+            "scheduledTime": "23:12",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0066",
+            "category": "arrival",
+            "scheduledTime": "23:13",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-2337a242-0010",
+            "category": "departure",
+            "scheduledTime": "23:14",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0033",
+            "category": "arrival",
+            "scheduledTime": "23:16",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-35864ada-0020",
+            "category": "departure",
+            "scheduledTime": "23:18",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-11101250-0023",
+            "category": "arrival",
+            "scheduledTime": "23:19",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-b09c067e-0013",
+            "category": "arrival",
+            "scheduledTime": "23:20",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-ea1c4f6a-0027",
+            "category": "departure",
+            "scheduledTime": "23:28",
+            "spawnPatternKey": "ea1c4f6a"
+        },
+        {
+            "id": "auth-loww-73f8b39d-0034",
+            "category": "departure",
+            "scheduledTime": "23:30",
+            "spawnPatternKey": "73f8b39d"
+        },
+        {
+            "id": "auth-loww-d86877e6-0048",
+            "category": "arrival",
+            "scheduledTime": "23:31",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0067",
+            "category": "arrival",
+            "scheduledTime": "23:32",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-bdc5b9e2-0009",
+            "category": "departure",
+            "scheduledTime": "23:33",
+            "spawnPatternKey": "bdc5b9e2"
+        },
+        {
+            "id": "auth-loww-ed857285-0013",
+            "category": "departure",
+            "scheduledTime": "23:35",
+            "spawnPatternKey": "ed857285"
+        },
+        {
+            "id": "auth-loww-8c4e6886-0007",
+            "category": "departure",
+            "scheduledTime": "23:36",
+            "spawnPatternKey": "8c4e6886"
+        },
+        {
+            "id": "auth-loww-3d0e3b86-0018",
+            "category": "departure",
+            "scheduledTime": "23:38",
+            "spawnPatternKey": "3d0e3b86"
+        },
+        {
+            "id": "auth-loww-786a98c4-0028",
+            "category": "arrival",
+            "scheduledTime": "23:38",
+            "spawnPatternKey": "786a98c4"
+        },
+        {
+            "id": "auth-loww-0c577870-0050",
+            "category": "departure",
+            "scheduledTime": "23:39",
+            "spawnPatternKey": "0c577870"
+        },
+        {
+            "id": "auth-loww-e32a7c3f-0005",
+            "category": "departure",
+            "scheduledTime": "23:39",
+            "spawnPatternKey": "e32a7c3f"
+        },
+        {
+            "id": "auth-loww-4a8b8a24-0034",
+            "category": "arrival",
+            "scheduledTime": "23:41",
+            "spawnPatternKey": "4a8b8a24"
+        },
+        {
+            "id": "auth-loww-b09c067e-0014",
+            "category": "arrival",
+            "scheduledTime": "23:41",
+            "spawnPatternKey": "b09c067e"
+        },
+        {
+            "id": "auth-loww-f99b5d54-0017",
+            "category": "departure",
+            "scheduledTime": "23:46",
+            "spawnPatternKey": "f99b5d54"
+        },
+        {
+            "id": "auth-loww-9a5c9fc6-0008",
+            "category": "arrival",
+            "scheduledTime": "23:47",
+            "spawnPatternKey": "9a5c9fc6"
+        },
+        {
+            "id": "auth-loww-35864ada-0021",
+            "category": "departure",
+            "scheduledTime": "23:50",
+            "spawnPatternKey": "35864ada"
+        },
+        {
+            "id": "auth-loww-11101250-0024",
+            "category": "arrival",
+            "scheduledTime": "23:51",
+            "spawnPatternKey": "11101250"
+        },
+        {
+            "id": "auth-loww-a2fe7caf-0068",
+            "category": "arrival",
+            "scheduledTime": "23:51",
+            "spawnPatternKey": "a2fe7caf"
+        },
+        {
+            "id": "auth-loww-d86877e6-0049",
+            "category": "arrival",
+            "scheduledTime": "23:52",
+            "spawnPatternKey": "d86877e6"
+        },
+        {
+            "id": "auth-loww-2337a242-0011",
+            "category": "departure",
+            "scheduledTime": "23:58",
+            "spawnPatternKey": "2337a242"
+        },
+        {
+            "id": "auth-loww-bc52b95c-0021",
+            "category": "arrival",
+            "scheduledTime": "23:59",
+            "spawnPatternKey": "bc52b95c"
+        }
+    ]
+}

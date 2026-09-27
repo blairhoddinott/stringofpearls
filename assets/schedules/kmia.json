@@ -1,0 +1,7422 @@
+{
+  "schemaVersion": 1,
+  "airportIcao": "KMIA",
+  "timezone": "America/New_York",
+  "sampleDate": "2026-07-15",
+  "source": {
+    "name": "US DOT BTS On-Time Performance + T-100 Segment (All Carriers)",
+    "url": "https://transtats.bts.gov/DL_SelectFields.aspx?QO_fu146_anzr=Nv4+Pn44vr45&gnoyr_VQ=FMG",
+    "retrievedAt": "2026-09-27",
+    "license": "U.S. Government work in the public domain (17 U.S.C. §105); OurAirports code data is public domain.",
+    "coverage": "Exact On-Time movements are retained; 255 representative movements were deterministically synthesized from 2026-05 T-100 performed-departure aggregates. General aviation is excluded."
+  },
+  "flights": [
+    {
+      "id": "arrival-aa2026-jfk-mia",
+      "category": "arrival",
+      "scheduledTime": "00:21",
+      "airlineIcao": "aal",
+      "flightNumber": "2026",
+      "originIcao": "KJFK",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-mp-arrival-eham-g-001",
+      "scheduledTime": "00:28",
+      "category": "arrival",
+      "originIcao": "EHAM",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "mph",
+      "flightNumber": "8268"
+    },
+    {
+      "id": "arrival-f91068-iah-mia",
+      "category": "arrival",
+      "scheduledTime": "00:31",
+      "airlineIcao": "fft",
+      "flightNumber": "1068",
+      "originIcao": "KIAH",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa1596-clt-mia",
+      "category": "arrival",
+      "scheduledTime": "00:46",
+      "airlineIcao": "aal",
+      "flightNumber": "1596",
+      "originIcao": "KCLT",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-5x-arrival-mggt-g-001",
+      "scheduledTime": "00:49",
+      "category": "arrival",
+      "originIcao": "MGGT",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ups",
+      "flightNumber": "5037"
+    },
+    {
+      "id": "arrival-aa2936-phl-mia",
+      "category": "arrival",
+      "scheduledTime": "00:52",
+      "airlineIcao": "aal",
+      "flightNumber": "2936",
+      "originIcao": "KPHL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-dl1589-atl-mia",
+      "category": "arrival",
+      "scheduledTime": "00:55",
+      "airlineIcao": "dal",
+      "flightNumber": "1589",
+      "originIcao": "KATL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa2942-lax-mia",
+      "category": "arrival",
+      "scheduledTime": "05:01",
+      "airlineIcao": "aal",
+      "flightNumber": "2942",
+      "originIcao": "KLAX",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-m6-arrival-mhsc-g-001",
+      "scheduledTime": "05:04",
+      "category": "arrival",
+      "originIcao": "MHSC",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ajt",
+      "flightNumber": "3390"
+    },
+    {
+      "id": "arrival-aa2205-phx-mia",
+      "category": "arrival",
+      "scheduledTime": "05:22",
+      "airlineIcao": "aal",
+      "flightNumber": "2205",
+      "originIcao": "KPHX",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa1226-mia-dfw",
+      "category": "departure",
+      "scheduledTime": "05:25",
+      "airlineIcao": "aal",
+      "flightNumber": "1226",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "t100-m6-arrival-mhlm-g-002",
+      "scheduledTime": "05:35",
+      "category": "arrival",
+      "originIcao": "MHLM",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ajt",
+      "flightNumber": "6370"
+    },
+    {
+      "id": "arrival-aa1471-sea-mia",
+      "category": "arrival",
+      "scheduledTime": "05:37",
+      "airlineIcao": "aal",
+      "flightNumber": "1471",
+      "originIcao": "KSEA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-dl2040-slc-mia",
+      "category": "arrival",
+      "scheduledTime": "05:40",
+      "airlineIcao": "dal",
+      "flightNumber": "2040",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa1737-den-mia",
+      "category": "arrival",
+      "scheduledTime": "05:41",
+      "airlineIcao": "aal",
+      "flightNumber": "1737",
+      "originIcao": "KDEN",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-bf-arrival-lfpo-f-001",
+      "scheduledTime": "05:43",
+      "category": "arrival",
+      "originIcao": "LFPO",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "fbu",
+      "flightNumber": "1093"
+    },
+    {
+      "id": "departure-wn2927-mia-hou",
+      "category": "departure",
+      "scheduledTime": "05:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2927",
+      "originIcao": "KMIA",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "t100-m6-departure-tjsj-g-001",
+      "scheduledTime": "05:47",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "TJSJ",
+      "airlineIcao": "ajt",
+      "flightNumber": "4801"
+    },
+    {
+      "id": "arrival-f91280-den-mia",
+      "category": "arrival",
+      "scheduledTime": "05:51",
+      "airlineIcao": "fft",
+      "flightNumber": "1280",
+      "originIcao": "KDEN",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa1040-mia-jfk",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "aal",
+      "flightNumber": "1040",
+      "originIcao": "KMIA",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "departure-aa491-mia-dca",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "aal",
+      "flightNumber": "491",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-dl1249-mia-atl",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "dal",
+      "flightNumber": "1249",
+      "originIcao": "KMIA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-f91279-mia-den",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "fft",
+      "flightNumber": "1279",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-wn2715-mia-mco",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "swa",
+      "flightNumber": "2715",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "t100-ta-departure-mslp-f-001",
+      "scheduledTime": "06:03",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MSLP",
+      "airlineIcao": "tai",
+      "flightNumber": "9161"
+    },
+    {
+      "id": "t100-af-departure-lfpg-f-003",
+      "scheduledTime": "06:04",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "LFPG",
+      "airlineIcao": "afr",
+      "flightNumber": "7457"
+    },
+    {
+      "id": "arrival-aa1221-lax-mia",
+      "category": "arrival",
+      "scheduledTime": "06:14",
+      "airlineIcao": "aal",
+      "flightNumber": "1221",
+      "originIcao": "KLAX",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2187-mia-clt",
+      "category": "departure",
+      "scheduledTime": "06:21",
+      "airlineIcao": "aal",
+      "flightNumber": "2187",
+      "originIcao": "KMIA",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "t100-la-departure-ebbr-g-001",
+      "scheduledTime": "06:21",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "EBBR",
+      "airlineIcao": "lan",
+      "flightNumber": "9655"
+    },
+    {
+      "id": "departure-dl2387-mia-lga",
+      "category": "departure",
+      "scheduledTime": "06:25",
+      "airlineIcao": "dal",
+      "flightNumber": "2387",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "t100-m6-arrival-skbo-g-001",
+      "scheduledTime": "06:27",
+      "category": "arrival",
+      "originIcao": "SKBO",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ajt",
+      "flightNumber": "6119"
+    },
+    {
+      "id": "arrival-aa2654-phx-mia",
+      "category": "arrival",
+      "scheduledTime": "06:28",
+      "airlineIcao": "aal",
+      "flightNumber": "2654",
+      "originIcao": "KPHX",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa1080-las-mia",
+      "category": "arrival",
+      "scheduledTime": "06:30",
+      "airlineIcao": "aal",
+      "flightNumber": "1080",
+      "originIcao": "KLAS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-f94552-las-mia",
+      "category": "arrival",
+      "scheduledTime": "06:30",
+      "airlineIcao": "fft",
+      "flightNumber": "4552",
+      "originIcao": "KLAS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-f91067-mia-iah",
+      "category": "departure",
+      "scheduledTime": "06:30",
+      "airlineIcao": "fft",
+      "flightNumber": "1067",
+      "originIcao": "KMIA",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "t100-ba-arrival-egll-f-002",
+      "scheduledTime": "06:31",
+      "category": "arrival",
+      "originIcao": "EGLL",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "baw",
+      "flightNumber": "8966"
+    },
+    {
+      "id": "t100-vs-arrival-egll-f-002",
+      "scheduledTime": "06:33",
+      "category": "arrival",
+      "originIcao": "EGLL",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "vir",
+      "flightNumber": "3097"
+    },
+    {
+      "id": "arrival-aa1545-sfo-mia",
+      "category": "arrival",
+      "scheduledTime": "06:34",
+      "airlineIcao": "aal",
+      "flightNumber": "1545",
+      "originIcao": "KSFO",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-dl1056-mia-msp",
+      "category": "departure",
+      "scheduledTime": "06:35",
+      "airlineIcao": "dal",
+      "flightNumber": "1056",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "departure-wn2827-mia-bwi",
+      "category": "departure",
+      "scheduledTime": "06:35",
+      "airlineIcao": "swa",
+      "flightNumber": "2827",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "arrival-aa1480-san-mia",
+      "category": "arrival",
+      "scheduledTime": "06:36",
+      "airlineIcao": "aal",
+      "flightNumber": "1480",
+      "originIcao": "KSAN",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-ba-departure-egll-f-002",
+      "scheduledTime": "06:36",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "EGLL",
+      "airlineIcao": "baw",
+      "flightNumber": "3359"
+    },
+    {
+      "id": "departure-aa581-mia-ord",
+      "category": "departure",
+      "scheduledTime": "06:40",
+      "airlineIcao": "aal",
+      "flightNumber": "581",
+      "originIcao": "KMIA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-mq3820-mia-tlh",
+      "category": "departure",
+      "scheduledTime": "06:40",
+      "airlineIcao": "eny",
+      "flightNumber": "3820",
+      "originIcao": "KMIA",
+      "destinationIcao": "KTLH"
+    },
+    {
+      "id": "t100-ly-departure-llbg-f-001",
+      "scheduledTime": "06:41",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "LLBG",
+      "airlineIcao": "ely",
+      "flightNumber": "1084"
+    },
+    {
+      "id": "arrival-aa3070-slc-mia",
+      "category": "arrival",
+      "scheduledTime": "06:43",
+      "airlineIcao": "aal",
+      "flightNumber": "3070",
+      "originIcao": "KSLC",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-abx-departure-kcvg-g-001",
+      "scheduledTime": "06:44",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "KCVG",
+      "airlineIcao": "abx",
+      "flightNumber": "8045"
+    },
+    {
+      "id": "departure-aa2129-mia-phl",
+      "category": "departure",
+      "scheduledTime": "06:45",
+      "airlineIcao": "aal",
+      "flightNumber": "2129",
+      "originIcao": "KMIA",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "departure-f92135-mia-dfw",
+      "category": "departure",
+      "scheduledTime": "06:50",
+      "airlineIcao": "fft",
+      "flightNumber": "2135",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-dl2021-mia-slc",
+      "category": "departure",
+      "scheduledTime": "06:55",
+      "airlineIcao": "dal",
+      "flightNumber": "2021",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "departure-aa3205-mia-lga",
+      "category": "departure",
+      "scheduledTime": "06:56",
+      "airlineIcao": "aal",
+      "flightNumber": "3205",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "t100-av-departure-skrg-f-001",
+      "scheduledTime": "06:59",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SKRG",
+      "airlineIcao": "ava",
+      "flightNumber": "9979"
+    },
+    {
+      "id": "t100-m6-departure-skbo-g-001",
+      "scheduledTime": "06:59",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SKBO",
+      "airlineIcao": "ajt",
+      "flightNumber": "1665"
+    },
+    {
+      "id": "departure-aa2575-mia-dfw",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "aal",
+      "flightNumber": "2575",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-aa603-mia-iah",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "aal",
+      "flightNumber": "603",
+      "originIcao": "KMIA",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-aa3001-mia-sju",
+      "category": "departure",
+      "scheduledTime": "07:02",
+      "airlineIcao": "aal",
+      "flightNumber": "3001",
+      "originIcao": "KMIA",
+      "destinationIcao": "TJSJ"
+    },
+    {
+      "id": "departure-dl2428-mia-jfk",
+      "category": "departure",
+      "scheduledTime": "07:05",
+      "airlineIcao": "dal",
+      "flightNumber": "2428",
+      "originIcao": "KMIA",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "t100-vs-departure-egll-f-002",
+      "scheduledTime": "07:06",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "EGLL",
+      "airlineIcao": "vir",
+      "flightNumber": "8497"
+    },
+    {
+      "id": "departure-aa713-mia-lax",
+      "category": "departure",
+      "scheduledTime": "07:07",
+      "airlineIcao": "aal",
+      "flightNumber": "713",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-ua1864-mia-ewr",
+      "category": "departure",
+      "scheduledTime": "07:07",
+      "airlineIcao": "ual",
+      "flightNumber": "1864",
+      "originIcao": "KMIA",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "t100-fx-departure-mmmd-g-001",
+      "scheduledTime": "07:09",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MMMD",
+      "airlineIcao": "fdx",
+      "flightNumber": "6290"
+    },
+    {
+      "id": "arrival-aa3215-tpa-mia",
+      "category": "arrival",
+      "scheduledTime": "07:10",
+      "airlineIcao": "aal",
+      "flightNumber": "3215",
+      "originIcao": "KTPA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-dl1211-mia-atl",
+      "category": "departure",
+      "scheduledTime": "07:10",
+      "airlineIcao": "dal",
+      "flightNumber": "1211",
+      "originIcao": "KMIA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-ly-arrival-llbg-f-001",
+      "scheduledTime": "07:10",
+      "category": "arrival",
+      "originIcao": "LLBG",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ely",
+      "flightNumber": "4265"
+    },
+    {
+      "id": "arrival-aa2894-mco-mia",
+      "category": "arrival",
+      "scheduledTime": "07:12",
+      "airlineIcao": "aal",
+      "flightNumber": "2894",
+      "originIcao": "KMCO",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa1135-atl-mia",
+      "category": "arrival",
+      "scheduledTime": "07:15",
+      "airlineIcao": "aal",
+      "flightNumber": "1135",
+      "originIcao": "KATL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-mq3877-gnv-mia",
+      "category": "arrival",
+      "scheduledTime": "07:16",
+      "airlineIcao": "eny",
+      "flightNumber": "3877",
+      "originIcao": "KGNV",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa2289-lax-mia",
+      "category": "arrival",
+      "scheduledTime": "07:18",
+      "airlineIcao": "aal",
+      "flightNumber": "2289",
+      "originIcao": "KLAX",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa1165-clt-mia",
+      "category": "arrival",
+      "scheduledTime": "07:20",
+      "airlineIcao": "aal",
+      "flightNumber": "1165",
+      "originIcao": "KCLT",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2565-mia-sfo",
+      "category": "departure",
+      "scheduledTime": "07:20",
+      "airlineIcao": "aal",
+      "flightNumber": "2565",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "t100-fx-arrival-skrg-g-001",
+      "scheduledTime": "07:20",
+      "category": "arrival",
+      "originIcao": "SKRG",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "fdx",
+      "flightNumber": "7018"
+    },
+    {
+      "id": "t100-cm-departure-mpto-f-004",
+      "scheduledTime": "07:21",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MPTO",
+      "airlineIcao": "cmp",
+      "flightNumber": "5584"
+    },
+    {
+      "id": "arrival-aa2711-jax-mia",
+      "category": "arrival",
+      "scheduledTime": "07:23",
+      "airlineIcao": "aal",
+      "flightNumber": "2711",
+      "originIcao": "KJAX",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-lp-arrival-spim-f-002",
+      "scheduledTime": "07:23",
+      "category": "arrival",
+      "originIcao": "SPIM",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "lpe",
+      "flightNumber": "1989"
+    },
+    {
+      "id": "arrival-mq4139-srq-mia",
+      "category": "arrival",
+      "scheduledTime": "07:24",
+      "airlineIcao": "eny",
+      "flightNumber": "4139",
+      "originIcao": "KSRQ",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-y4-arrival-mmmx-f-001",
+      "scheduledTime": "07:26",
+      "category": "arrival",
+      "originIcao": "MMMX",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "voi",
+      "flightNumber": "9260"
+    },
+    {
+      "id": "arrival-mq3858-tlh-mia",
+      "category": "arrival",
+      "scheduledTime": "07:27",
+      "airlineIcao": "eny",
+      "flightNumber": "3858",
+      "originIcao": "KTLH",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-tp-arrival-lppt-f-001",
+      "scheduledTime": "07:30",
+      "category": "arrival",
+      "originIcao": "LPPT",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "tap",
+      "flightNumber": "8575"
+    },
+    {
+      "id": "arrival-mq3682-sav-mia",
+      "category": "arrival",
+      "scheduledTime": "07:34",
+      "airlineIcao": "eny",
+      "flightNumber": "3682",
+      "originIcao": "KSAV",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa1061-mia-phx",
+      "category": "departure",
+      "scheduledTime": "07:35",
+      "airlineIcao": "aal",
+      "flightNumber": "1061",
+      "originIcao": "KMIA",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-ua2045-mia-den",
+      "category": "departure",
+      "scheduledTime": "07:37",
+      "airlineIcao": "ual",
+      "flightNumber": "2045",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-aa2025-las-mia",
+      "category": "arrival",
+      "scheduledTime": "07:40",
+      "airlineIcao": "aal",
+      "flightNumber": "2025",
+      "originIcao": "KLAS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-wn2931-mia-stl",
+      "category": "departure",
+      "scheduledTime": "07:40",
+      "airlineIcao": "swa",
+      "flightNumber": "2931",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "t100-xl-arrival-seqm-g-001",
+      "scheduledTime": "07:40",
+      "category": "arrival",
+      "originIcao": "SEQM",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "lne",
+      "flightNumber": "8275"
+    },
+    {
+      "id": "arrival-aa1287-chs-mia",
+      "category": "arrival",
+      "scheduledTime": "07:43",
+      "airlineIcao": "aal",
+      "flightNumber": "1287",
+      "originIcao": "KCHS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-xl-departure-seqm-g-001",
+      "scheduledTime": "07:44",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SEQM",
+      "airlineIcao": "lne",
+      "flightNumber": "3267"
+    },
+    {
+      "id": "departure-aa2328-mia-phl",
+      "category": "departure",
+      "scheduledTime": "07:45",
+      "airlineIcao": "aal",
+      "flightNumber": "2328",
+      "originIcao": "KMIA",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "arrival-mq3662-cmh-mia",
+      "category": "arrival",
+      "scheduledTime": "07:51",
+      "airlineIcao": "eny",
+      "flightNumber": "3662",
+      "originIcao": "KCMH",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-4c-departure-skbo-f-001",
+      "scheduledTime": "07:53",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SKBO",
+      "airlineIcao": "are",
+      "flightNumber": "8167"
+    },
+    {
+      "id": "arrival-mq3888-ilm-mia",
+      "category": "arrival",
+      "scheduledTime": "07:54",
+      "airlineIcao": "eny",
+      "flightNumber": "3888",
+      "originIcao": "KILM",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa1088-rdu-mia",
+      "category": "arrival",
+      "scheduledTime": "07:55",
+      "airlineIcao": "aal",
+      "flightNumber": "1088",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-cm-arrival-mpto-f-007",
+      "scheduledTime": "07:55",
+      "category": "arrival",
+      "originIcao": "MPTO",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "cmp",
+      "flightNumber": "8200"
+    },
+    {
+      "id": "arrival-aa1178-dca-mia",
+      "category": "arrival",
+      "scheduledTime": "07:56",
+      "airlineIcao": "aal",
+      "flightNumber": "1178",
+      "originIcao": "KDCA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa3085-mia-clt",
+      "category": "departure",
+      "scheduledTime": "07:57",
+      "airlineIcao": "aal",
+      "flightNumber": "3085",
+      "originIcao": "KMIA",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "t100-cm-departure-mpto-f-001",
+      "scheduledTime": "07:59",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MPTO",
+      "airlineIcao": "cmp",
+      "flightNumber": "2028"
+    },
+    {
+      "id": "departure-aa2168-mia-msy",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "aal",
+      "flightNumber": "2168",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMSY"
+    },
+    {
+      "id": "departure-ua1257-mia-sfo",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "ual",
+      "flightNumber": "1257",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-aa1299-mia-dca",
+      "category": "departure",
+      "scheduledTime": "08:02",
+      "airlineIcao": "aal",
+      "flightNumber": "1299",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-aa512-mia-atl",
+      "category": "departure",
+      "scheduledTime": "08:02",
+      "airlineIcao": "aal",
+      "flightNumber": "512",
+      "originIcao": "KMIA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-mq3609-mia-jax",
+      "category": "departure",
+      "scheduledTime": "08:02",
+      "airlineIcao": "eny",
+      "flightNumber": "3609",
+      "originIcao": "KMIA",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "t100-av-departure-skrg-f-002",
+      "scheduledTime": "08:04",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SKRG",
+      "airlineIcao": "ava",
+      "flightNumber": "4259"
+    },
+    {
+      "id": "departure-aa1417-mia-aus",
+      "category": "departure",
+      "scheduledTime": "08:05",
+      "airlineIcao": "aal",
+      "flightNumber": "1417",
+      "originIcao": "KMIA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-aa2405-mia-rdu",
+      "category": "departure",
+      "scheduledTime": "08:05",
+      "airlineIcao": "aal",
+      "flightNumber": "2405",
+      "originIcao": "KMIA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-aa2781-mia-tpa",
+      "category": "departure",
+      "scheduledTime": "08:05",
+      "airlineIcao": "aal",
+      "flightNumber": "2781",
+      "originIcao": "KMIA",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "t100-qt-departure-sgas-g-001",
+      "scheduledTime": "08:07",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SGAS",
+      "airlineIcao": "tpa",
+      "flightNumber": "4623"
+    },
+    {
+      "id": "arrival-aa2730-tys-mia",
+      "category": "arrival",
+      "scheduledTime": "08:12",
+      "airlineIcao": "aal",
+      "flightNumber": "2730",
+      "originIcao": "KTYS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-dl2339-mia-lga",
+      "category": "departure",
+      "scheduledTime": "08:15",
+      "airlineIcao": "dal",
+      "flightNumber": "2339",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "t100-yx-departure-keyw-f-001",
+      "scheduledTime": "08:15",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "KEYW",
+      "airlineIcao": "rpa",
+      "flightNumber": "8283"
+    },
+    {
+      "id": "t100-fx-arrival-kmem-g-001",
+      "scheduledTime": "08:16",
+      "category": "arrival",
+      "originIcao": "KMEM",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "fdx",
+      "flightNumber": "4022"
+    },
+    {
+      "id": "departure-aa2582-mia-sju",
+      "category": "departure",
+      "scheduledTime": "08:20",
+      "airlineIcao": "aal",
+      "flightNumber": "2582",
+      "originIcao": "KMIA",
+      "destinationIcao": "TJSJ"
+    },
+    {
+      "id": "departure-aa654-mia-sea",
+      "category": "departure",
+      "scheduledTime": "08:20",
+      "airlineIcao": "aal",
+      "flightNumber": "654",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-dl1261-mia-atl",
+      "category": "departure",
+      "scheduledTime": "08:20",
+      "airlineIcao": "dal",
+      "flightNumber": "1261",
+      "originIcao": "KMIA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-aa1521-mia-bna",
+      "category": "departure",
+      "scheduledTime": "08:21",
+      "airlineIcao": "aal",
+      "flightNumber": "1521",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-aa1051-mia-jfk",
+      "category": "departure",
+      "scheduledTime": "08:22",
+      "airlineIcao": "aal",
+      "flightNumber": "1051",
+      "originIcao": "KMIA",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "t100-ac-departure-cyul-f-001",
+      "scheduledTime": "08:22",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "CYUL",
+      "airlineIcao": "aca",
+      "flightNumber": "633"
+    },
+    {
+      "id": "departure-mq3954-mia-stl",
+      "category": "departure",
+      "scheduledTime": "08:23",
+      "airlineIcao": "eny",
+      "flightNumber": "3954",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "arrival-aa756-orf-mia",
+      "category": "arrival",
+      "scheduledTime": "08:24",
+      "airlineIcao": "aal",
+      "flightNumber": "756",
+      "originIcao": "KORF",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-vs-departure-egll-f-001",
+      "scheduledTime": "08:24",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "EGLL",
+      "airlineIcao": "vir",
+      "flightNumber": "6433"
+    },
+    {
+      "id": "departure-aa1589-mia-bos",
+      "category": "departure",
+      "scheduledTime": "08:25",
+      "airlineIcao": "aal",
+      "flightNumber": "1589",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-aa1822-mia-ewr",
+      "category": "departure",
+      "scheduledTime": "08:25",
+      "airlineIcao": "aal",
+      "flightNumber": "1822",
+      "originIcao": "KMIA",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "t100-rv-departure-cyul-f-001",
+      "scheduledTime": "08:25",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "CYUL",
+      "airlineIcao": "rou",
+      "flightNumber": "8319"
+    },
+    {
+      "id": "arrival-mq3806-gsp-mia",
+      "category": "arrival",
+      "scheduledTime": "08:26",
+      "airlineIcao": "eny",
+      "flightNumber": "3806",
+      "originIcao": "KGSP",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa1431-mia-ord",
+      "category": "departure",
+      "scheduledTime": "08:28",
+      "airlineIcao": "aal",
+      "flightNumber": "1431",
+      "originIcao": "KMIA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-av-departure-skbo-f-003",
+      "scheduledTime": "08:28",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SKBO",
+      "airlineIcao": "ava",
+      "flightNumber": "4570"
+    },
+    {
+      "id": "t100-la-departure-saez-f-001",
+      "scheduledTime": "08:29",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SAEZ",
+      "airlineIcao": "lan",
+      "flightNumber": "5887"
+    },
+    {
+      "id": "departure-aa1642-mia-chs",
+      "category": "departure",
+      "scheduledTime": "08:30",
+      "airlineIcao": "aal",
+      "flightNumber": "1642",
+      "originIcao": "KMIA",
+      "destinationIcao": "KCHS"
+    },
+    {
+      "id": "departure-f92483-mia-atl",
+      "category": "departure",
+      "scheduledTime": "08:30",
+      "airlineIcao": "fft",
+      "flightNumber": "2483",
+      "originIcao": "KMIA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-cm-arrival-mpto-f-001",
+      "scheduledTime": "08:30",
+      "category": "arrival",
+      "originIcao": "MPTO",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "cmp",
+      "flightNumber": "7350"
+    },
+    {
+      "id": "arrival-aa1325-sdf-mia",
+      "category": "arrival",
+      "scheduledTime": "08:33",
+      "airlineIcao": "aal",
+      "flightNumber": "1325",
+      "originIcao": "KSDF",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa2799-sfo-mia",
+      "category": "arrival",
+      "scheduledTime": "08:35",
+      "airlineIcao": "aal",
+      "flightNumber": "2799",
+      "originIcao": "KSFO",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa843-mia-lax",
+      "category": "departure",
+      "scheduledTime": "08:35",
+      "airlineIcao": "aal",
+      "flightNumber": "843",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "t100-am-departure-mmmx-f-002",
+      "scheduledTime": "08:35",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MMMX",
+      "airlineIcao": "amx",
+      "flightNumber": "7038"
+    },
+    {
+      "id": "t100-qt-arrival-scel-g-001",
+      "scheduledTime": "08:36",
+      "category": "arrival",
+      "originIcao": "SCEL",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "tpa",
+      "flightNumber": "2984"
+    },
+    {
+      "id": "t100-y4-departure-mmgl-f-001",
+      "scheduledTime": "08:36",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MMGL",
+      "airlineIcao": "voi",
+      "flightNumber": "7517"
+    },
+    {
+      "id": "arrival-aa1418-bos-mia",
+      "category": "arrival",
+      "scheduledTime": "08:38",
+      "airlineIcao": "aal",
+      "flightNumber": "1418",
+      "originIcao": "KBOS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa1918-mia-iah",
+      "category": "departure",
+      "scheduledTime": "08:38",
+      "airlineIcao": "aal",
+      "flightNumber": "1918",
+      "originIcao": "KMIA",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-aa1046-mia-lga",
+      "category": "departure",
+      "scheduledTime": "08:40",
+      "airlineIcao": "aal",
+      "flightNumber": "1046",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-aa3044-mia-clt",
+      "category": "departure",
+      "scheduledTime": "08:40",
+      "airlineIcao": "aal",
+      "flightNumber": "3044",
+      "originIcao": "KMIA",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-mq4121-mia-cvg",
+      "category": "departure",
+      "scheduledTime": "08:41",
+      "airlineIcao": "eny",
+      "flightNumber": "4121",
+      "originIcao": "KMIA",
+      "destinationIcao": "KCVG"
+    },
+    {
+      "id": "arrival-mq3405-avl-mia",
+      "category": "arrival",
+      "scheduledTime": "08:44",
+      "airlineIcao": "eny",
+      "flightNumber": "3405",
+      "originIcao": "KAVL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-cx-arrival-panc-g-001",
+      "scheduledTime": "08:44",
+      "category": "arrival",
+      "originIcao": "PANC",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "cpa",
+      "flightNumber": "8358"
+    },
+    {
+      "id": "arrival-aa1196-ewr-mia",
+      "category": "arrival",
+      "scheduledTime": "08:45",
+      "airlineIcao": "aal",
+      "flightNumber": "1196",
+      "originIcao": "KEWR",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-ac-departure-cyyz-f-001",
+      "scheduledTime": "08:45",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "CYYZ",
+      "airlineIcao": "aca",
+      "flightNumber": "1309"
+    },
+    {
+      "id": "t100-jj-arrival-sbgr-f-002",
+      "scheduledTime": "08:45",
+      "category": "arrival",
+      "originIcao": "SBGR",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "tam",
+      "flightNumber": "981"
+    },
+    {
+      "id": "arrival-aa1183-bwi-mia",
+      "category": "arrival",
+      "scheduledTime": "08:46",
+      "airlineIcao": "aal",
+      "flightNumber": "1183",
+      "originIcao": "KBWI",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa1733-mco-mia",
+      "category": "arrival",
+      "scheduledTime": "08:46",
+      "airlineIcao": "aal",
+      "flightNumber": "1733",
+      "originIcao": "KMCO",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-mq4301-vps-mia",
+      "category": "arrival",
+      "scheduledTime": "08:46",
+      "airlineIcao": "eny",
+      "flightNumber": "4301",
+      "originIcao": "KVPS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-ua2417-mia-iah",
+      "category": "departure",
+      "scheduledTime": "08:48",
+      "airlineIcao": "ual",
+      "flightNumber": "2417",
+      "originIcao": "KMIA",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-ua408-mia-ewr",
+      "category": "departure",
+      "scheduledTime": "08:48",
+      "airlineIcao": "ual",
+      "flightNumber": "408",
+      "originIcao": "KMIA",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "t100-fx-arrival-mkjp-g-001",
+      "scheduledTime": "08:48",
+      "category": "arrival",
+      "originIcao": "MKJP",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "fdx",
+      "flightNumber": "563"
+    },
+    {
+      "id": "arrival-mq3386-pns-mia",
+      "category": "arrival",
+      "scheduledTime": "08:49",
+      "airlineIcao": "eny",
+      "flightNumber": "3386",
+      "originIcao": "KPNS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa2308-ind-mia",
+      "category": "arrival",
+      "scheduledTime": "08:50",
+      "airlineIcao": "aal",
+      "flightNumber": "2308",
+      "originIcao": "KIND",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa401-dca-mia",
+      "category": "arrival",
+      "scheduledTime": "08:50",
+      "airlineIcao": "aal",
+      "flightNumber": "401",
+      "originIcao": "KDCA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2979-mia-san",
+      "category": "departure",
+      "scheduledTime": "08:50",
+      "airlineIcao": "aal",
+      "flightNumber": "2979",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "arrival-aa1047-iah-mia",
+      "category": "arrival",
+      "scheduledTime": "08:51",
+      "airlineIcao": "aal",
+      "flightNumber": "1047",
+      "originIcao": "KIAH",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa604-ric-mia",
+      "category": "arrival",
+      "scheduledTime": "08:52",
+      "airlineIcao": "aal",
+      "flightNumber": "604",
+      "originIcao": "KRIC",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-ac-arrival-cyul-f-001",
+      "scheduledTime": "08:52",
+      "category": "arrival",
+      "originIcao": "CYUL",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "aca",
+      "flightNumber": "3373"
+    },
+    {
+      "id": "t100-cm-arrival-mpto-f-002",
+      "scheduledTime": "08:53",
+      "category": "arrival",
+      "originIcao": "MPTO",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "cmp",
+      "flightNumber": "1869"
+    },
+    {
+      "id": "t100-5x-arrival-ksdf-g-001",
+      "scheduledTime": "08:54",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ups",
+      "flightNumber": "7745"
+    },
+    {
+      "id": "arrival-aa2817-sju-mia",
+      "category": "arrival",
+      "scheduledTime": "08:55",
+      "airlineIcao": "aal",
+      "flightNumber": "2817",
+      "originIcao": "TJSJ",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa3189-dfw-mia",
+      "category": "arrival",
+      "scheduledTime": "08:55",
+      "airlineIcao": "aal",
+      "flightNumber": "3189",
+      "originIcao": "KDFW",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-kx-departure-mwcr-f-002",
+      "scheduledTime": "08:55",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MWCR",
+      "airlineIcao": "cay",
+      "flightNumber": "4923"
+    },
+    {
+      "id": "arrival-aa1252-phl-mia",
+      "category": "arrival",
+      "scheduledTime": "08:56",
+      "airlineIcao": "aal",
+      "flightNumber": "1252",
+      "originIcao": "KPHL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa1739-mia-den",
+      "category": "departure",
+      "scheduledTime": "08:57",
+      "airlineIcao": "aal",
+      "flightNumber": "1739",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-abx-arrival-kcvg-g-001",
+      "scheduledTime": "08:57",
+      "category": "arrival",
+      "originIcao": "KCVG",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "abx",
+      "flightNumber": "197"
+    },
+    {
+      "id": "t100-la-arrival-scel-f-002",
+      "scheduledTime": "08:57",
+      "category": "arrival",
+      "originIcao": "SCEL",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "lan",
+      "flightNumber": "7034"
+    },
+    {
+      "id": "arrival-aa406-aus-mia",
+      "category": "arrival",
+      "scheduledTime": "08:58",
+      "airlineIcao": "aal",
+      "flightNumber": "406",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa1604-sat-mia",
+      "category": "arrival",
+      "scheduledTime": "09:00",
+      "airlineIcao": "aal",
+      "flightNumber": "1604",
+      "originIcao": "KSAT",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa2887-cle-mia",
+      "category": "arrival",
+      "scheduledTime": "09:00",
+      "airlineIcao": "aal",
+      "flightNumber": "2887",
+      "originIcao": "KCLE",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa412-bdl-mia",
+      "category": "arrival",
+      "scheduledTime": "09:00",
+      "airlineIcao": "aal",
+      "flightNumber": "412",
+      "originIcao": "KBDL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa1227-mia-dfw",
+      "category": "departure",
+      "scheduledTime": "09:00",
+      "airlineIcao": "aal",
+      "flightNumber": "1227",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "t100-rv-arrival-cyul-f-001",
+      "scheduledTime": "09:02",
+      "category": "arrival",
+      "originIcao": "CYUL",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "rou",
+      "flightNumber": "1053"
+    },
+    {
+      "id": "arrival-aa1340-mem-mia",
+      "category": "arrival",
+      "scheduledTime": "09:03",
+      "airlineIcao": "aal",
+      "flightNumber": "1340",
+      "originIcao": "KMEM",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa1342-bna-mia",
+      "category": "arrival",
+      "scheduledTime": "09:04",
+      "airlineIcao": "aal",
+      "flightNumber": "1342",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa3190-atl-mia",
+      "category": "arrival",
+      "scheduledTime": "09:05",
+      "airlineIcao": "aal",
+      "flightNumber": "3190",
+      "originIcao": "KATL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa1020-dtw-mia",
+      "category": "arrival",
+      "scheduledTime": "09:06",
+      "airlineIcao": "aal",
+      "flightNumber": "1020",
+      "originIcao": "KDTW",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa1712-mia-mco",
+      "category": "departure",
+      "scheduledTime": "09:06",
+      "airlineIcao": "aal",
+      "flightNumber": "1712",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "t100-cm-arrival-mpto-f-005",
+      "scheduledTime": "09:06",
+      "category": "arrival",
+      "originIcao": "MPTO",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "cmp",
+      "flightNumber": "2374"
+    },
+    {
+      "id": "t100-l7-departure-skbo-g-002",
+      "scheduledTime": "09:06",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SKBO",
+      "airlineIcao": "lco",
+      "flightNumber": "7384"
+    },
+    {
+      "id": "arrival-mq3423-bhm-mia",
+      "category": "arrival",
+      "scheduledTime": "09:07",
+      "airlineIcao": "eny",
+      "flightNumber": "3423",
+      "originIcao": "KBHM",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa2313-pit-mia",
+      "category": "arrival",
+      "scheduledTime": "09:08",
+      "airlineIcao": "aal",
+      "flightNumber": "2313",
+      "originIcao": "KPIT",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-mq3638-cvg-mia",
+      "category": "arrival",
+      "scheduledTime": "09:08",
+      "airlineIcao": "eny",
+      "flightNumber": "3638",
+      "originIcao": "KCVG",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-cm-arrival-mpto-f-006",
+      "scheduledTime": "09:08",
+      "category": "arrival",
+      "originIcao": "MPTO",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "cmp",
+      "flightNumber": "1154"
+    },
+    {
+      "id": "t100-jj-arrival-sbgr-f-001",
+      "scheduledTime": "09:08",
+      "category": "arrival",
+      "originIcao": "SBGR",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "tam",
+      "flightNumber": "2137"
+    },
+    {
+      "id": "arrival-aa2984-ord-mia",
+      "category": "arrival",
+      "scheduledTime": "09:09",
+      "airlineIcao": "aal",
+      "flightNumber": "2984",
+      "originIcao": "KORD",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-ac-arrival-cyyz-g-001",
+      "scheduledTime": "09:09",
+      "category": "arrival",
+      "originIcao": "CYYZ",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "aca",
+      "flightNumber": "5414"
+    },
+    {
+      "id": "arrival-mq3501-rdu-mia",
+      "category": "arrival",
+      "scheduledTime": "09:10",
+      "airlineIcao": "eny",
+      "flightNumber": "3501",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-mq3640-gso-mia",
+      "category": "arrival",
+      "scheduledTime": "09:10",
+      "airlineIcao": "eny",
+      "flightNumber": "3640",
+      "originIcao": "KGSO",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa386-msy-mia",
+      "category": "arrival",
+      "scheduledTime": "09:11",
+      "airlineIcao": "aal",
+      "flightNumber": "386",
+      "originIcao": "KMSY",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-ba-arrival-egll-f-001",
+      "scheduledTime": "09:11",
+      "category": "arrival",
+      "originIcao": "EGLL",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "baw",
+      "flightNumber": "9323"
+    },
+    {
+      "id": "arrival-aa2737-tpa-mia",
+      "category": "arrival",
+      "scheduledTime": "09:12",
+      "airlineIcao": "aal",
+      "flightNumber": "2737",
+      "originIcao": "KTPA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa655-jfk-mia",
+      "category": "arrival",
+      "scheduledTime": "09:12",
+      "airlineIcao": "aal",
+      "flightNumber": "655",
+      "originIcao": "KJFK",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa770-clt-mia",
+      "category": "arrival",
+      "scheduledTime": "09:12",
+      "airlineIcao": "aal",
+      "flightNumber": "770",
+      "originIcao": "KCLT",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa1249-lga-mia",
+      "category": "arrival",
+      "scheduledTime": "09:15",
+      "airlineIcao": "aal",
+      "flightNumber": "1249",
+      "originIcao": "KLGA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa1716-stl-mia",
+      "category": "arrival",
+      "scheduledTime": "09:15",
+      "airlineIcao": "aal",
+      "flightNumber": "1716",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa551-mia-phl",
+      "category": "departure",
+      "scheduledTime": "09:15",
+      "airlineIcao": "aal",
+      "flightNumber": "551",
+      "originIcao": "KMIA",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "t100-av-arrival-skbo-f-001",
+      "scheduledTime": "09:16",
+      "category": "arrival",
+      "originIcao": "SKBO",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ava",
+      "flightNumber": "1393"
+    },
+    {
+      "id": "t100-l7-arrival-mroc-g-001",
+      "scheduledTime": "09:16",
+      "category": "arrival",
+      "originIcao": "MROC",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "lco",
+      "flightNumber": "9911"
+    },
+    {
+      "id": "arrival-aa892-mci-mia",
+      "category": "arrival",
+      "scheduledTime": "09:18",
+      "airlineIcao": "aal",
+      "flightNumber": "892",
+      "originIcao": "KMCI",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-mq3492-jax-mia",
+      "category": "arrival",
+      "scheduledTime": "09:20",
+      "airlineIcao": "eny",
+      "flightNumber": "3492",
+      "originIcao": "KJAX",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2010-mia-las",
+      "category": "departure",
+      "scheduledTime": "09:25",
+      "airlineIcao": "aal",
+      "flightNumber": "2010",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-aa620-mia-aus",
+      "category": "departure",
+      "scheduledTime": "09:25",
+      "airlineIcao": "aal",
+      "flightNumber": "620",
+      "originIcao": "KMIA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "t100-l7-departure-sbgr-g-001",
+      "scheduledTime": "09:29",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SBGR",
+      "airlineIcao": "lco",
+      "flightNumber": "2995"
+    },
+    {
+      "id": "arrival-aa873-bos-mia",
+      "category": "arrival",
+      "scheduledTime": "09:30",
+      "airlineIcao": "aal",
+      "flightNumber": "873",
+      "originIcao": "KBOS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-dl2836-atl-mia",
+      "category": "arrival",
+      "scheduledTime": "09:30",
+      "airlineIcao": "dal",
+      "flightNumber": "2836",
+      "originIcao": "KATL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-l7-arrival-skbo-g-003",
+      "scheduledTime": "09:34",
+      "category": "arrival",
+      "originIcao": "SKBO",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "lco",
+      "flightNumber": "7816"
+    },
+    {
+      "id": "arrival-mq3667-cmh-mia",
+      "category": "arrival",
+      "scheduledTime": "09:44",
+      "airlineIcao": "eny",
+      "flightNumber": "3667",
+      "originIcao": "KCMH",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-mq4052-xna-mia",
+      "category": "arrival",
+      "scheduledTime": "09:47",
+      "airlineIcao": "eny",
+      "flightNumber": "4052",
+      "originIcao": "KXNA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-av-arrival-skrg-f-001",
+      "scheduledTime": "09:48",
+      "category": "arrival",
+      "originIcao": "SKRG",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ava",
+      "flightNumber": "2004"
+    },
+    {
+      "id": "t100-5x-departure-mnmg-g-001",
+      "scheduledTime": "09:53",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MNMG",
+      "airlineIcao": "ups",
+      "flightNumber": "7210"
+    },
+    {
+      "id": "departure-aa1052-mia-jfk",
+      "category": "departure",
+      "scheduledTime": "09:55",
+      "airlineIcao": "aal",
+      "flightNumber": "1052",
+      "originIcao": "KMIA",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "departure-aa3288-mia-lax",
+      "category": "departure",
+      "scheduledTime": "09:55",
+      "airlineIcao": "aal",
+      "flightNumber": "3288",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-aa840-mia-clt",
+      "category": "departure",
+      "scheduledTime": "09:55",
+      "airlineIcao": "aal",
+      "flightNumber": "840",
+      "originIcao": "KMIA",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-mq3515-mia-eyw",
+      "category": "departure",
+      "scheduledTime": "09:55",
+      "airlineIcao": "eny",
+      "flightNumber": "3515",
+      "originIcao": "KMIA",
+      "destinationIcao": "KEYW"
+    },
+    {
+      "id": "t100-qt-departure-skbo-g-001",
+      "scheduledTime": "09:55",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SKBO",
+      "airlineIcao": "tpa",
+      "flightNumber": "2409"
+    },
+    {
+      "id": "departure-aa3256-mia-lga",
+      "category": "departure",
+      "scheduledTime": "09:56",
+      "airlineIcao": "aal",
+      "flightNumber": "3256",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "arrival-mq3367-tul-mia",
+      "category": "arrival",
+      "scheduledTime": "09:57",
+      "airlineIcao": "eny",
+      "flightNumber": "3367",
+      "originIcao": "KTUL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-l7-departure-skrg-g-001",
+      "scheduledTime": "09:57",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SKRG",
+      "airlineIcao": "lco",
+      "flightNumber": "5123"
+    },
+    {
+      "id": "departure-aa2915-mia-dca",
+      "category": "departure",
+      "scheduledTime": "09:59",
+      "airlineIcao": "aal",
+      "flightNumber": "2915",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "t100-qt-arrival-skbo-g-001",
+      "scheduledTime": "09:59",
+      "category": "arrival",
+      "originIcao": "SKBO",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "tpa",
+      "flightNumber": "5967"
+    },
+    {
+      "id": "arrival-aa3055-dfw-mia",
+      "category": "arrival",
+      "scheduledTime": "10:00",
+      "airlineIcao": "aal",
+      "flightNumber": "3055",
+      "originIcao": "KDFW",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa3081-mia-dfw",
+      "category": "departure",
+      "scheduledTime": "10:05",
+      "airlineIcao": "aal",
+      "flightNumber": "3081",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-aa2744-mia-stt",
+      "category": "departure",
+      "scheduledTime": "10:07",
+      "airlineIcao": "aal",
+      "flightNumber": "2744",
+      "originIcao": "KMIA",
+      "destinationIcao": "TIST"
+    },
+    {
+      "id": "t100-dm-departure-mdsd-f-001",
+      "scheduledTime": "10:08",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MDSD",
+      "airlineIcao": "dwi",
+      "flightNumber": "4596"
+    },
+    {
+      "id": "arrival-mq3820-tlh-mia",
+      "category": "arrival",
+      "scheduledTime": "10:10",
+      "airlineIcao": "eny",
+      "flightNumber": "3820",
+      "originIcao": "KTLH",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-cm-arrival-mpto-f-004",
+      "scheduledTime": "10:11",
+      "category": "arrival",
+      "originIcao": "MPTO",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "cmp",
+      "flightNumber": "6114"
+    },
+    {
+      "id": "arrival-aa1530-lga-mia",
+      "category": "arrival",
+      "scheduledTime": "10:15",
+      "airlineIcao": "aal",
+      "flightNumber": "1530",
+      "originIcao": "KLGA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-f93377-sju-mia",
+      "category": "arrival",
+      "scheduledTime": "10:15",
+      "airlineIcao": "fft",
+      "flightNumber": "3377",
+      "originIcao": "TJSJ",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-dl2347-lga-mia",
+      "category": "arrival",
+      "scheduledTime": "10:19",
+      "airlineIcao": "dal",
+      "flightNumber": "2347",
+      "originIcao": "KLGA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-fx-arrival-mhlm-g-001",
+      "scheduledTime": "10:20",
+      "category": "arrival",
+      "originIcao": "MHLM",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "fdx",
+      "flightNumber": "9976"
+    },
+    {
+      "id": "arrival-aa1380-ord-mia",
+      "category": "arrival",
+      "scheduledTime": "10:22",
+      "airlineIcao": "aal",
+      "flightNumber": "1380",
+      "originIcao": "KORD",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-qt-arrival-skrg-g-002",
+      "scheduledTime": "10:22",
+      "category": "arrival",
+      "originIcao": "SKRG",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "tpa",
+      "flightNumber": "5897"
+    },
+    {
+      "id": "arrival-mq3679-okc-mia",
+      "category": "arrival",
+      "scheduledTime": "10:23",
+      "airlineIcao": "eny",
+      "flightNumber": "3679",
+      "originIcao": "KOKC",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-dl1528-jfk-mia",
+      "category": "arrival",
+      "scheduledTime": "10:24",
+      "airlineIcao": "dal",
+      "flightNumber": "1528",
+      "originIcao": "KJFK",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-dl890-rdu-mia",
+      "category": "arrival",
+      "scheduledTime": "10:26",
+      "airlineIcao": "dal",
+      "flightNumber": "890",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-mq4163-mia-cmh",
+      "category": "departure",
+      "scheduledTime": "10:32",
+      "airlineIcao": "eny",
+      "flightNumber": "4163",
+      "originIcao": "KMIA",
+      "destinationIcao": "KCMH"
+    },
+    {
+      "id": "arrival-dl1399-bos-mia",
+      "category": "arrival",
+      "scheduledTime": "10:35",
+      "airlineIcao": "dal",
+      "flightNumber": "1399",
+      "originIcao": "KBOS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-5x-arrival-ksdf-g-002",
+      "scheduledTime": "10:38",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ups",
+      "flightNumber": "1562"
+    },
+    {
+      "id": "departure-dl2836-mia-atl",
+      "category": "departure",
+      "scheduledTime": "10:40",
+      "airlineIcao": "dal",
+      "flightNumber": "2836",
+      "originIcao": "KMIA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-aa3010-rdu-mia",
+      "category": "arrival",
+      "scheduledTime": "10:44",
+      "airlineIcao": "aal",
+      "flightNumber": "3010",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-m6-arrival-mhlm-g-001",
+      "scheduledTime": "10:44",
+      "category": "arrival",
+      "originIcao": "MHLM",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ajt",
+      "flightNumber": "6106"
+    },
+    {
+      "id": "arrival-aa2017-jfk-mia",
+      "category": "arrival",
+      "scheduledTime": "10:45",
+      "airlineIcao": "aal",
+      "flightNumber": "2017",
+      "originIcao": "KJFK",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-wn3278-bwi-mia",
+      "category": "arrival",
+      "scheduledTime": "10:45",
+      "airlineIcao": "swa",
+      "flightNumber": "3278",
+      "originIcao": "KBWI",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa487-bna-mia",
+      "category": "arrival",
+      "scheduledTime": "10:48",
+      "airlineIcao": "aal",
+      "flightNumber": "487",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa3172-mia-phx",
+      "category": "departure",
+      "scheduledTime": "10:49",
+      "airlineIcao": "aal",
+      "flightNumber": "3172",
+      "originIcao": "KMIA",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "t100-qr-departure-othh-f-001",
+      "scheduledTime": "10:49",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "OTHH",
+      "airlineIcao": "qtr",
+      "flightNumber": "3932"
+    },
+    {
+      "id": "arrival-aa1870-msp-mia",
+      "category": "arrival",
+      "scheduledTime": "10:50",
+      "airlineIcao": "aal",
+      "flightNumber": "1870",
+      "originIcao": "KMSP",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-la-arrival-seqm-g-001",
+      "scheduledTime": "10:50",
+      "category": "arrival",
+      "originIcao": "SEQM",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "lan",
+      "flightNumber": "1369"
+    },
+    {
+      "id": "departure-aa1565-mia-bos",
+      "category": "departure",
+      "scheduledTime": "10:51",
+      "airlineIcao": "aal",
+      "flightNumber": "1565",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "arrival-dl1510-atl-mia",
+      "category": "arrival",
+      "scheduledTime": "10:57",
+      "airlineIcao": "dal",
+      "flightNumber": "1510",
+      "originIcao": "KATL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-la-departure-scel-f-002",
+      "scheduledTime": "10:57",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SCEL",
+      "airlineIcao": "lan",
+      "flightNumber": "3911"
+    },
+    {
+      "id": "arrival-aa2294-aus-mia",
+      "category": "arrival",
+      "scheduledTime": "11:00",
+      "airlineIcao": "aal",
+      "flightNumber": "2294",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa3055-mia-dfw",
+      "category": "departure",
+      "scheduledTime": "11:00",
+      "airlineIcao": "aal",
+      "flightNumber": "3055",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "t100-vs-arrival-egll-f-001",
+      "scheduledTime": "11:01",
+      "category": "arrival",
+      "originIcao": "EGLL",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "vir",
+      "flightNumber": "9343"
+    },
+    {
+      "id": "arrival-aa1591-msy-mia",
+      "category": "arrival",
+      "scheduledTime": "11:04",
+      "airlineIcao": "aal",
+      "flightNumber": "1591",
+      "originIcao": "KMSY",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-wn528-mci-mia",
+      "category": "arrival",
+      "scheduledTime": "11:05",
+      "airlineIcao": "swa",
+      "flightNumber": "528",
+      "originIcao": "KMCI",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-ib-arrival-lemd-f-001",
+      "scheduledTime": "11:05",
+      "category": "arrival",
+      "originIcao": "LEMD",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ibe",
+      "flightNumber": "4586"
+    },
+    {
+      "id": "arrival-aa2781-tpa-mia",
+      "category": "arrival",
+      "scheduledTime": "11:06",
+      "airlineIcao": "aal",
+      "flightNumber": "2781",
+      "originIcao": "KTPA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-yx-arrival-katl-f-001",
+      "scheduledTime": "11:06",
+      "category": "arrival",
+      "originIcao": "KATL",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "rpa",
+      "flightNumber": "5526"
+    },
+    {
+      "id": "arrival-aa2526-atl-mia",
+      "category": "arrival",
+      "scheduledTime": "11:07",
+      "airlineIcao": "aal",
+      "flightNumber": "2526",
+      "originIcao": "KATL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa1152-ewr-mia",
+      "category": "arrival",
+      "scheduledTime": "11:10",
+      "airlineIcao": "aal",
+      "flightNumber": "1152",
+      "originIcao": "KEWR",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa3290-dfw-mia",
+      "category": "arrival",
+      "scheduledTime": "11:11",
+      "airlineIcao": "aal",
+      "flightNumber": "3290",
+      "originIcao": "KDFW",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa2184-phl-mia",
+      "category": "arrival",
+      "scheduledTime": "11:12",
+      "airlineIcao": "aal",
+      "flightNumber": "2184",
+      "originIcao": "KPHL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa835-ord-mia",
+      "category": "arrival",
+      "scheduledTime": "11:12",
+      "airlineIcao": "aal",
+      "flightNumber": "835",
+      "originIcao": "KORD",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-ua1966-iah-mia",
+      "category": "arrival",
+      "scheduledTime": "11:12",
+      "airlineIcao": "ual",
+      "flightNumber": "1966",
+      "originIcao": "KIAH",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-ua2080-mia-ewr",
+      "category": "departure",
+      "scheduledTime": "11:12",
+      "airlineIcao": "ual",
+      "flightNumber": "2080",
+      "originIcao": "KMIA",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "t100-dm-arrival-mdpc-f-001",
+      "scheduledTime": "11:12",
+      "category": "arrival",
+      "originIcao": "MDPC",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "dwi",
+      "flightNumber": "9777"
+    },
+    {
+      "id": "t100-tk-departure-ltfm-f-001",
+      "scheduledTime": "11:13",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "LTFM",
+      "airlineIcao": "thy",
+      "flightNumber": "2063"
+    },
+    {
+      "id": "arrival-aa970-lga-mia",
+      "category": "arrival",
+      "scheduledTime": "11:14",
+      "airlineIcao": "aal",
+      "flightNumber": "970",
+      "originIcao": "KLGA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-lx-arrival-lszh-f-001",
+      "scheduledTime": "11:14",
+      "category": "arrival",
+      "originIcao": "LSZH",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "swr",
+      "flightNumber": "5341"
+    },
+    {
+      "id": "arrival-aa2240-mco-mia",
+      "category": "arrival",
+      "scheduledTime": "11:15",
+      "airlineIcao": "aal",
+      "flightNumber": "2240",
+      "originIcao": "KMCO",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-rv-arrival-cyyz-f-001",
+      "scheduledTime": "11:16",
+      "category": "arrival",
+      "originIcao": "CYYZ",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "rou",
+      "flightNumber": "4360"
+    },
+    {
+      "id": "departure-aa2584-mia-sju",
+      "category": "departure",
+      "scheduledTime": "11:17",
+      "airlineIcao": "aal",
+      "flightNumber": "2584",
+      "originIcao": "KMIA",
+      "destinationIcao": "TJSJ"
+    },
+    {
+      "id": "t100-nk-arrival-kdfw-f-001",
+      "scheduledTime": "11:17",
+      "category": "arrival",
+      "originIcao": "KDFW",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "nks",
+      "flightNumber": "7350"
+    },
+    {
+      "id": "arrival-aa422-dca-mia",
+      "category": "arrival",
+      "scheduledTime": "11:18",
+      "airlineIcao": "aal",
+      "flightNumber": "422",
+      "originIcao": "KDCA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-f93059-mia-atl",
+      "category": "departure",
+      "scheduledTime": "11:19",
+      "airlineIcao": "fft",
+      "flightNumber": "3059",
+      "originIcao": "KMIA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-aa1347-iah-mia",
+      "category": "arrival",
+      "scheduledTime": "11:20",
+      "airlineIcao": "aal",
+      "flightNumber": "1347",
+      "originIcao": "KIAH",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-mq3609-jax-mia",
+      "category": "arrival",
+      "scheduledTime": "11:20",
+      "airlineIcao": "eny",
+      "flightNumber": "3609",
+      "originIcao": "KJAX",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-tp-arrival-lppt-f-002",
+      "scheduledTime": "11:20",
+      "category": "arrival",
+      "originIcao": "LPPT",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "tap",
+      "flightNumber": "3029"
+    },
+    {
+      "id": "departure-dl2888-mia-dca",
+      "category": "departure",
+      "scheduledTime": "11:22",
+      "airlineIcao": "dal",
+      "flightNumber": "2888",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "t100-cm-departure-mpto-f-005",
+      "scheduledTime": "11:22",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MPTO",
+      "airlineIcao": "cmp",
+      "flightNumber": "6584"
+    },
+    {
+      "id": "arrival-ua1358-ord-mia",
+      "category": "arrival",
+      "scheduledTime": "11:24",
+      "airlineIcao": "ual",
+      "flightNumber": "1358",
+      "originIcao": "KORD",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-dl1520-mia-jfk",
+      "category": "departure",
+      "scheduledTime": "11:25",
+      "airlineIcao": "dal",
+      "flightNumber": "1520",
+      "originIcao": "KMIA",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "departure-wn2825-mia-bna",
+      "category": "departure",
+      "scheduledTime": "11:25",
+      "airlineIcao": "swa",
+      "flightNumber": "2825",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-m6-departure-tjsj-g-002",
+      "scheduledTime": "11:26",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "TJSJ",
+      "airlineIcao": "ajt",
+      "flightNumber": "1740"
+    },
+    {
+      "id": "departure-dl2346-mia-lga",
+      "category": "departure",
+      "scheduledTime": "11:29",
+      "airlineIcao": "dal",
+      "flightNumber": "2346",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-dl1399-mia-bos",
+      "category": "departure",
+      "scheduledTime": "11:30",
+      "airlineIcao": "dal",
+      "flightNumber": "1399",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-aa2090-mia-mco",
+      "category": "departure",
+      "scheduledTime": "11:32",
+      "airlineIcao": "aal",
+      "flightNumber": "2090",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "arrival-aa1259-bos-mia",
+      "category": "arrival",
+      "scheduledTime": "11:34",
+      "airlineIcao": "aal",
+      "flightNumber": "1259",
+      "originIcao": "KBOS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-ua1073-iad-mia",
+      "category": "arrival",
+      "scheduledTime": "11:35",
+      "airlineIcao": "ual",
+      "flightNumber": "1073",
+      "originIcao": "KIAD",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-la-departure-scel-f-001",
+      "scheduledTime": "11:36",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SCEL",
+      "airlineIcao": "lan",
+      "flightNumber": "6257"
+    },
+    {
+      "id": "arrival-aa1436-clt-mia",
+      "category": "arrival",
+      "scheduledTime": "11:37",
+      "airlineIcao": "aal",
+      "flightNumber": "1436",
+      "originIcao": "KCLT",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-abx-arrival-kafw-g-001",
+      "scheduledTime": "11:39",
+      "category": "arrival",
+      "originIcao": "KAFW",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "abx",
+      "flightNumber": "6785"
+    },
+    {
+      "id": "departure-wn3850-mia-mci",
+      "category": "departure",
+      "scheduledTime": "11:45",
+      "airlineIcao": "swa",
+      "flightNumber": "3850",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMCI"
+    },
+    {
+      "id": "t100-fx-departure-kmem-g-003",
+      "scheduledTime": "11:57",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "6778"
+    },
+    {
+      "id": "t100-kx-departure-mwcr-f-001",
+      "scheduledTime": "11:58",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MWCR",
+      "airlineIcao": "cay",
+      "flightNumber": "6007"
+    },
+    {
+      "id": "departure-aa1606-mia-dca",
+      "category": "departure",
+      "scheduledTime": "11:59",
+      "airlineIcao": "aal",
+      "flightNumber": "1606",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "arrival-aa3020-stx-mia",
+      "category": "arrival",
+      "scheduledTime": "12:00",
+      "airlineIcao": "aal",
+      "flightNumber": "3020",
+      "originIcao": "TISX",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2753-mia-stx",
+      "category": "departure",
+      "scheduledTime": "12:00",
+      "airlineIcao": "aal",
+      "flightNumber": "2753",
+      "originIcao": "KMIA",
+      "destinationIcao": "TISX"
+    },
+    {
+      "id": "departure-aa2831-mia-tpa",
+      "category": "departure",
+      "scheduledTime": "12:00",
+      "airlineIcao": "aal",
+      "flightNumber": "2831",
+      "originIcao": "KMIA",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "departure-dl1510-mia-atl",
+      "category": "departure",
+      "scheduledTime": "12:05",
+      "airlineIcao": "dal",
+      "flightNumber": "1510",
+      "originIcao": "KMIA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-mq3518-mia-eyw",
+      "category": "departure",
+      "scheduledTime": "12:10",
+      "airlineIcao": "eny",
+      "flightNumber": "3518",
+      "originIcao": "KMIA",
+      "destinationIcao": "KEYW"
+    },
+    {
+      "id": "t100-lp-arrival-spim-f-001",
+      "scheduledTime": "12:10",
+      "category": "arrival",
+      "originIcao": "SPIM",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "lpe",
+      "flightNumber": "5874"
+    },
+    {
+      "id": "arrival-aa1712-mco-mia",
+      "category": "arrival",
+      "scheduledTime": "12:14",
+      "airlineIcao": "aal",
+      "flightNumber": "1712",
+      "originIcao": "KMCO",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-abx-departure-mpto-g-001",
+      "scheduledTime": "12:16",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MPTO",
+      "airlineIcao": "abx",
+      "flightNumber": "5793"
+    },
+    {
+      "id": "departure-aa3019-mia-dfw",
+      "category": "departure",
+      "scheduledTime": "12:18",
+      "airlineIcao": "aal",
+      "flightNumber": "3019",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-mq3515-eyw-mia",
+      "category": "arrival",
+      "scheduledTime": "12:20",
+      "airlineIcao": "eny",
+      "flightNumber": "3515",
+      "originIcao": "KEYW",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2910-mia-ord",
+      "category": "departure",
+      "scheduledTime": "12:22",
+      "airlineIcao": "aal",
+      "flightNumber": "2910",
+      "originIcao": "KMIA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-dl1468-dtw-mia",
+      "category": "arrival",
+      "scheduledTime": "12:28",
+      "airlineIcao": "dal",
+      "flightNumber": "1468",
+      "originIcao": "KDTW",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-ua470-mia-iah",
+      "category": "departure",
+      "scheduledTime": "12:29",
+      "airlineIcao": "ual",
+      "flightNumber": "470",
+      "originIcao": "KMIA",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-aa1938-mia-ind",
+      "category": "departure",
+      "scheduledTime": "12:30",
+      "airlineIcao": "aal",
+      "flightNumber": "1938",
+      "originIcao": "KMIA",
+      "destinationIcao": "KIND"
+    },
+    {
+      "id": "departure-ua1983-mia-ord",
+      "category": "departure",
+      "scheduledTime": "12:30",
+      "airlineIcao": "ual",
+      "flightNumber": "1983",
+      "originIcao": "KMIA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-xl-arrival-seqm-g-003",
+      "scheduledTime": "12:31",
+      "category": "arrival",
+      "originIcao": "SEQM",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "lne",
+      "flightNumber": "7765"
+    },
+    {
+      "id": "t100-am-departure-mmmx-f-003",
+      "scheduledTime": "12:32",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MMMX",
+      "airlineIcao": "amx",
+      "flightNumber": "5802"
+    },
+    {
+      "id": "t100-qt-departure-segu-g-001",
+      "scheduledTime": "12:33",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SEGU",
+      "airlineIcao": "tpa",
+      "flightNumber": "5087"
+    },
+    {
+      "id": "arrival-dl2507-aus-mia",
+      "category": "arrival",
+      "scheduledTime": "12:35",
+      "airlineIcao": "dal",
+      "flightNumber": "2507",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa1173-dca-mia",
+      "category": "arrival",
+      "scheduledTime": "12:38",
+      "airlineIcao": "aal",
+      "flightNumber": "1173",
+      "originIcao": "KDCA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa1538-mia-bos",
+      "category": "departure",
+      "scheduledTime": "12:42",
+      "airlineIcao": "aal",
+      "flightNumber": "1538",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "t100-m6-arrival-tjsj-g-001",
+      "scheduledTime": "12:42",
+      "category": "arrival",
+      "originIcao": "TJSJ",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ajt",
+      "flightNumber": "7913"
+    },
+    {
+      "id": "arrival-aa1250-ord-mia",
+      "category": "arrival",
+      "scheduledTime": "12:45",
+      "airlineIcao": "aal",
+      "flightNumber": "1250",
+      "originIcao": "KORD",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa3211-lga-mia",
+      "category": "arrival",
+      "scheduledTime": "12:45",
+      "airlineIcao": "aal",
+      "flightNumber": "3211",
+      "originIcao": "KLGA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-m6-arrival-mslp-g-001",
+      "scheduledTime": "12:47",
+      "category": "arrival",
+      "originIcao": "MSLP",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ajt",
+      "flightNumber": "8458"
+    },
+    {
+      "id": "t100-qt-departure-skrg-g-001",
+      "scheduledTime": "12:47",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SKRG",
+      "airlineIcao": "tpa",
+      "flightNumber": "5007"
+    },
+    {
+      "id": "arrival-aa1642-chs-mia",
+      "category": "arrival",
+      "scheduledTime": "12:48",
+      "airlineIcao": "aal",
+      "flightNumber": "1642",
+      "originIcao": "KCHS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-e7-arrival-mmmx-g-001",
+      "scheduledTime": "12:49",
+      "category": "arrival",
+      "originIcao": "MMMX",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "esf",
+      "flightNumber": "2140"
+    },
+    {
+      "id": "arrival-aa512-atl-mia",
+      "category": "arrival",
+      "scheduledTime": "12:50",
+      "airlineIcao": "aal",
+      "flightNumber": "512",
+      "originIcao": "KATL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa3229-mia-lga",
+      "category": "departure",
+      "scheduledTime": "12:51",
+      "airlineIcao": "aal",
+      "flightNumber": "3229",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "arrival-aa2168-msy-mia",
+      "category": "arrival",
+      "scheduledTime": "12:58",
+      "airlineIcao": "aal",
+      "flightNumber": "2168",
+      "originIcao": "KMSY",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa796-phl-mia",
+      "category": "arrival",
+      "scheduledTime": "12:59",
+      "airlineIcao": "aal",
+      "flightNumber": "796",
+      "originIcao": "KPHL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-dl1332-atl-mia",
+      "category": "arrival",
+      "scheduledTime": "13:02",
+      "airlineIcao": "dal",
+      "flightNumber": "1332",
+      "originIcao": "KATL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2581-mia-sju",
+      "category": "departure",
+      "scheduledTime": "13:03",
+      "airlineIcao": "aal",
+      "flightNumber": "2581",
+      "originIcao": "KMIA",
+      "destinationIcao": "TJSJ"
+    },
+    {
+      "id": "arrival-wn1361-dal-mia",
+      "category": "arrival",
+      "scheduledTime": "13:05",
+      "airlineIcao": "swa",
+      "flightNumber": "1361",
+      "originIcao": "KDAL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-am-arrival-mmmx-f-003",
+      "scheduledTime": "13:05",
+      "category": "arrival",
+      "originIcao": "MMMX",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "amx",
+      "flightNumber": "6582"
+    },
+    {
+      "id": "departure-aa2738-mia-stt",
+      "category": "departure",
+      "scheduledTime": "13:08",
+      "airlineIcao": "aal",
+      "flightNumber": "2738",
+      "originIcao": "KMIA",
+      "destinationIcao": "TIST"
+    },
+    {
+      "id": "t100-bw-arrival-ttpp-f-001",
+      "scheduledTime": "13:08",
+      "category": "arrival",
+      "originIcao": "TTPP",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "bwa",
+      "flightNumber": "650"
+    },
+    {
+      "id": "departure-ua2435-mia-iad",
+      "category": "departure",
+      "scheduledTime": "13:10",
+      "airlineIcao": "ual",
+      "flightNumber": "2435",
+      "originIcao": "KMIA",
+      "destinationIcao": "KIAD"
+    },
+    {
+      "id": "arrival-aa969-clt-mia",
+      "category": "arrival",
+      "scheduledTime": "13:11",
+      "airlineIcao": "aal",
+      "flightNumber": "969",
+      "originIcao": "KCLT",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-af-departure-lfpg-f-002",
+      "scheduledTime": "13:11",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "LFPG",
+      "airlineIcao": "afr",
+      "flightNumber": "8635"
+    },
+    {
+      "id": "t100-fx-arrival-mmmd-g-001",
+      "scheduledTime": "13:17",
+      "category": "arrival",
+      "originIcao": "MMMD",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "fdx",
+      "flightNumber": "6967"
+    },
+    {
+      "id": "arrival-aa2405-rdu-mia",
+      "category": "arrival",
+      "scheduledTime": "13:19",
+      "airlineIcao": "aal",
+      "flightNumber": "2405",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa3001-sju-mia",
+      "category": "arrival",
+      "scheduledTime": "13:21",
+      "airlineIcao": "aal",
+      "flightNumber": "3001",
+      "originIcao": "TJSJ",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa603-iah-mia",
+      "category": "arrival",
+      "scheduledTime": "13:22",
+      "airlineIcao": "aal",
+      "flightNumber": "603",
+      "originIcao": "KIAH",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-lp-departure-spim-f-001",
+      "scheduledTime": "13:28",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SPIM",
+      "airlineIcao": "lpe",
+      "flightNumber": "8363"
+    },
+    {
+      "id": "arrival-aa2762-dfw-mia",
+      "category": "arrival",
+      "scheduledTime": "13:29",
+      "airlineIcao": "aal",
+      "flightNumber": "2762",
+      "originIcao": "KDFW",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2297-mia-clt",
+      "category": "departure",
+      "scheduledTime": "13:30",
+      "airlineIcao": "aal",
+      "flightNumber": "2297",
+      "originIcao": "KMIA",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-aa1823-mia-ewr",
+      "category": "departure",
+      "scheduledTime": "13:31",
+      "airlineIcao": "aal",
+      "flightNumber": "1823",
+      "originIcao": "KMIA",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "t100-m6-arrival-mnmg-g-001",
+      "scheduledTime": "13:33",
+      "category": "arrival",
+      "originIcao": "MNMG",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ajt",
+      "flightNumber": "1420"
+    },
+    {
+      "id": "arrival-dl2129-msp-mia",
+      "category": "arrival",
+      "scheduledTime": "13:37",
+      "airlineIcao": "dal",
+      "flightNumber": "2129",
+      "originIcao": "KMSP",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-dl1468-mia-dtw",
+      "category": "departure",
+      "scheduledTime": "13:38",
+      "airlineIcao": "dal",
+      "flightNumber": "1468",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "t100-dm-departure-mdpc-f-001",
+      "scheduledTime": "13:39",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MDPC",
+      "airlineIcao": "dwi",
+      "flightNumber": "9472"
+    },
+    {
+      "id": "departure-aa2092-mia-mco",
+      "category": "departure",
+      "scheduledTime": "13:40",
+      "airlineIcao": "aal",
+      "flightNumber": "2092",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-aa896-mia-phx",
+      "category": "departure",
+      "scheduledTime": "13:40",
+      "airlineIcao": "aal",
+      "flightNumber": "896",
+      "originIcao": "KMIA",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "t100-5x-departure-ksdf-g-005",
+      "scheduledTime": "13:41",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSDF",
+      "airlineIcao": "ups",
+      "flightNumber": "8106"
+    },
+    {
+      "id": "departure-aa3310-mia-dca",
+      "category": "departure",
+      "scheduledTime": "13:42",
+      "airlineIcao": "aal",
+      "flightNumber": "3310",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-aa1684-mia-phl",
+      "category": "departure",
+      "scheduledTime": "13:45",
+      "airlineIcao": "aal",
+      "flightNumber": "1684",
+      "originIcao": "KMIA",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "departure-wn1361-mia-bwi",
+      "category": "departure",
+      "scheduledTime": "13:45",
+      "airlineIcao": "swa",
+      "flightNumber": "1361",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "t100-kl-arrival-eham-f-001",
+      "scheduledTime": "13:49",
+      "category": "arrival",
+      "originIcao": "EHAM",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "klm",
+      "flightNumber": "384"
+    },
+    {
+      "id": "arrival-f94406-atl-mia",
+      "category": "arrival",
+      "scheduledTime": "13:53",
+      "airlineIcao": "fft",
+      "flightNumber": "4406",
+      "originIcao": "KATL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-5x-departure-ksdf-g-004",
+      "scheduledTime": "13:59",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSDF",
+      "airlineIcao": "ups",
+      "flightNumber": "579"
+    },
+    {
+      "id": "arrival-aa1521-bna-mia",
+      "category": "arrival",
+      "scheduledTime": "14:00",
+      "airlineIcao": "aal",
+      "flightNumber": "1521",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa642-mia-jfk",
+      "category": "departure",
+      "scheduledTime": "14:00",
+      "airlineIcao": "aal",
+      "flightNumber": "642",
+      "originIcao": "KMIA",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "departure-dl1332-mia-atl",
+      "category": "departure",
+      "scheduledTime": "14:09",
+      "airlineIcao": "dal",
+      "flightNumber": "1332",
+      "originIcao": "KMIA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-aa2945-lga-mia",
+      "category": "arrival",
+      "scheduledTime": "14:11",
+      "airlineIcao": "aal",
+      "flightNumber": "2945",
+      "originIcao": "KLGA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-f92676-dfw-mia",
+      "category": "arrival",
+      "scheduledTime": "14:12",
+      "airlineIcao": "fft",
+      "flightNumber": "2676",
+      "originIcao": "KDFW",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa834-mia-pit",
+      "category": "departure",
+      "scheduledTime": "14:12",
+      "airlineIcao": "aal",
+      "flightNumber": "834",
+      "originIcao": "KMIA",
+      "destinationIcao": "KPIT"
+    },
+    {
+      "id": "t100-af-arrival-lfpg-f-001",
+      "scheduledTime": "14:13",
+      "category": "arrival",
+      "originIcao": "LFPG",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "afr",
+      "flightNumber": "9270"
+    },
+    {
+      "id": "t100-m6-departure-mnmg-g-001",
+      "scheduledTime": "14:14",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MNMG",
+      "airlineIcao": "ajt",
+      "flightNumber": "3653"
+    },
+    {
+      "id": "arrival-aa1474-ord-mia",
+      "category": "arrival",
+      "scheduledTime": "14:18",
+      "airlineIcao": "aal",
+      "flightNumber": "1474",
+      "originIcao": "KORD",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-dl1514-jfk-mia",
+      "category": "arrival",
+      "scheduledTime": "14:22",
+      "airlineIcao": "dal",
+      "flightNumber": "1514",
+      "originIcao": "KJFK",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa716-mia-lga",
+      "category": "departure",
+      "scheduledTime": "14:22",
+      "airlineIcao": "aal",
+      "flightNumber": "716",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "t100-lr-arrival-mroc-f-001",
+      "scheduledTime": "14:22",
+      "category": "arrival",
+      "originIcao": "MROC",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "lrc",
+      "flightNumber": "4515"
+    },
+    {
+      "id": "arrival-dl1538-lga-mia",
+      "category": "arrival",
+      "scheduledTime": "14:24",
+      "airlineIcao": "dal",
+      "flightNumber": "1538",
+      "originIcao": "KLGA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-wn1355-bwi-mia",
+      "category": "arrival",
+      "scheduledTime": "14:25",
+      "airlineIcao": "swa",
+      "flightNumber": "1355",
+      "originIcao": "KBWI",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa778-mia-lax",
+      "category": "departure",
+      "scheduledTime": "14:25",
+      "airlineIcao": "aal",
+      "flightNumber": "778",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "t100-am-arrival-mmmx-f-002",
+      "scheduledTime": "14:25",
+      "category": "arrival",
+      "originIcao": "MMMX",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "amx",
+      "flightNumber": "9064"
+    },
+    {
+      "id": "t100-xl-departure-seqm-f-001",
+      "scheduledTime": "14:25",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SEQM",
+      "airlineIcao": "lne",
+      "flightNumber": "2880"
+    },
+    {
+      "id": "arrival-aa3302-phl-mia",
+      "category": "arrival",
+      "scheduledTime": "14:29",
+      "airlineIcao": "aal",
+      "flightNumber": "3302",
+      "originIcao": "KPHL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2762-mia-dfw",
+      "category": "departure",
+      "scheduledTime": "14:29",
+      "airlineIcao": "aal",
+      "flightNumber": "2762",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-aa899-dfw-mia",
+      "category": "arrival",
+      "scheduledTime": "14:30",
+      "airlineIcao": "aal",
+      "flightNumber": "899",
+      "originIcao": "KDFW",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-tk-arrival-ltfm-f-002",
+      "scheduledTime": "14:32",
+      "category": "arrival",
+      "originIcao": "LTFM",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "thy",
+      "flightNumber": "5327"
+    },
+    {
+      "id": "departure-aa2406-mia-rdu",
+      "category": "departure",
+      "scheduledTime": "14:34",
+      "airlineIcao": "aal",
+      "flightNumber": "2406",
+      "originIcao": "KMIA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-aa1411-mia-aus",
+      "category": "departure",
+      "scheduledTime": "14:35",
+      "airlineIcao": "aal",
+      "flightNumber": "1411",
+      "originIcao": "KMIA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "t100-l7-departure-spim-g-001",
+      "scheduledTime": "14:35",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SPIM",
+      "airlineIcao": "lco",
+      "flightNumber": "723"
+    },
+    {
+      "id": "arrival-aa1627-dca-mia",
+      "category": "arrival",
+      "scheduledTime": "14:38",
+      "airlineIcao": "aal",
+      "flightNumber": "1627",
+      "originIcao": "KDCA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-ua2295-ewr-mia",
+      "category": "arrival",
+      "scheduledTime": "14:38",
+      "airlineIcao": "ual",
+      "flightNumber": "2295",
+      "originIcao": "KEWR",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa1417-aus-mia",
+      "category": "arrival",
+      "scheduledTime": "14:39",
+      "airlineIcao": "aal",
+      "flightNumber": "1417",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-mq3518-eyw-mia",
+      "category": "arrival",
+      "scheduledTime": "14:40",
+      "airlineIcao": "eny",
+      "flightNumber": "3518",
+      "originIcao": "KEYW",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa2090-mco-mia",
+      "category": "arrival",
+      "scheduledTime": "14:41",
+      "airlineIcao": "aal",
+      "flightNumber": "2090",
+      "originIcao": "KMCO",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-lo-arrival-epwa-f-001",
+      "scheduledTime": "14:41",
+      "category": "arrival",
+      "originIcao": "EPWA",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "lot",
+      "flightNumber": "8508"
+    },
+    {
+      "id": "departure-dl2129-mia-msp",
+      "category": "departure",
+      "scheduledTime": "14:42",
+      "airlineIcao": "dal",
+      "flightNumber": "2129",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "arrival-aa2582-sju-mia",
+      "category": "arrival",
+      "scheduledTime": "14:43",
+      "airlineIcao": "aal",
+      "flightNumber": "2582",
+      "originIcao": "TJSJ",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-vb-arrival-mmmy-f-001",
+      "scheduledTime": "14:43",
+      "category": "arrival",
+      "originIcao": "MMMY",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "viv",
+      "flightNumber": "9528"
+    },
+    {
+      "id": "t100-fx-arrival-kmem-g-003",
+      "scheduledTime": "14:44",
+      "category": "arrival",
+      "originIcao": "KMEM",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "fdx",
+      "flightNumber": "9487"
+    },
+    {
+      "id": "arrival-mq3954-stl-mia",
+      "category": "arrival",
+      "scheduledTime": "14:46",
+      "airlineIcao": "eny",
+      "flightNumber": "3954",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-mq3939-mia-mci",
+      "category": "departure",
+      "scheduledTime": "14:48",
+      "airlineIcao": "eny",
+      "flightNumber": "3939",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMCI"
+    },
+    {
+      "id": "t100-mp-departure-eham-g-001",
+      "scheduledTime": "14:48",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "EHAM",
+      "airlineIcao": "mph",
+      "flightNumber": "9818"
+    },
+    {
+      "id": "arrival-aa315-lax-mia",
+      "category": "arrival",
+      "scheduledTime": "14:49",
+      "airlineIcao": "aal",
+      "flightNumber": "315",
+      "originIcao": "KLAX",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa525-jfk-mia",
+      "category": "arrival",
+      "scheduledTime": "14:50",
+      "airlineIcao": "aal",
+      "flightNumber": "525",
+      "originIcao": "KJFK",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-4c-arrival-skbo-f-002",
+      "scheduledTime": "14:51",
+      "category": "arrival",
+      "originIcao": "SKBO",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "are",
+      "flightNumber": "6089"
+    },
+    {
+      "id": "arrival-aa2404-las-mia",
+      "category": "arrival",
+      "scheduledTime": "14:53",
+      "airlineIcao": "aal",
+      "flightNumber": "2404",
+      "originIcao": "KLAS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-f93037-mia-clt",
+      "category": "departure",
+      "scheduledTime": "14:53",
+      "airlineIcao": "fft",
+      "flightNumber": "3037",
+      "originIcao": "KMIA",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "arrival-dl1579-atl-mia",
+      "category": "arrival",
+      "scheduledTime": "14:55",
+      "airlineIcao": "dal",
+      "flightNumber": "1579",
+      "originIcao": "KATL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-ua1620-ord-mia",
+      "category": "arrival",
+      "scheduledTime": "14:57",
+      "airlineIcao": "ual",
+      "flightNumber": "1620",
+      "originIcao": "KORD",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-ib-arrival-lemd-f-002",
+      "scheduledTime": "14:59",
+      "category": "arrival",
+      "originIcao": "LEMD",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ibe",
+      "flightNumber": "5677"
+    },
+    {
+      "id": "t100-qt-departure-mslp-g-001",
+      "scheduledTime": "14:59",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MSLP",
+      "airlineIcao": "tpa",
+      "flightNumber": "2677"
+    },
+    {
+      "id": "departure-aa797-mia-phl",
+      "category": "departure",
+      "scheduledTime": "15:00",
+      "airlineIcao": "aal",
+      "flightNumber": "797",
+      "originIcao": "KMIA",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "arrival-aa1918-iah-mia",
+      "category": "arrival",
+      "scheduledTime": "15:01",
+      "airlineIcao": "aal",
+      "flightNumber": "1918",
+      "originIcao": "KIAH",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-la-arrival-saez-f-001",
+      "scheduledTime": "15:01",
+      "category": "arrival",
+      "originIcao": "SAEZ",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "lan",
+      "flightNumber": "7319"
+    },
+    {
+      "id": "arrival-aa2831-tpa-mia",
+      "category": "arrival",
+      "scheduledTime": "15:03",
+      "airlineIcao": "aal",
+      "flightNumber": "2831",
+      "originIcao": "KTPA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-wn1355-mia-dal",
+      "category": "departure",
+      "scheduledTime": "15:05",
+      "airlineIcao": "swa",
+      "flightNumber": "1355",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "t100-lr-departure-mroc-f-001",
+      "scheduledTime": "15:06",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MROC",
+      "airlineIcao": "lrc",
+      "flightNumber": "1472"
+    },
+    {
+      "id": "departure-aa2247-mia-ord",
+      "category": "departure",
+      "scheduledTime": "15:08",
+      "airlineIcao": "aal",
+      "flightNumber": "2247",
+      "originIcao": "KMIA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-wn498-aus-mia",
+      "category": "arrival",
+      "scheduledTime": "15:10",
+      "airlineIcao": "swa",
+      "flightNumber": "498",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-dl1514-mia-jfk",
+      "category": "departure",
+      "scheduledTime": "15:17",
+      "airlineIcao": "dal",
+      "flightNumber": "1514",
+      "originIcao": "KMIA",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "t100-av-departure-skbo-f-004",
+      "scheduledTime": "15:21",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SKBO",
+      "airlineIcao": "ava",
+      "flightNumber": "9233"
+    },
+    {
+      "id": "departure-aa2945-mia-lga",
+      "category": "departure",
+      "scheduledTime": "15:22",
+      "airlineIcao": "aal",
+      "flightNumber": "2945",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "t100-l7-departure-mggt-g-001",
+      "scheduledTime": "15:26",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MGGT",
+      "airlineIcao": "lco",
+      "flightNumber": "7094"
+    },
+    {
+      "id": "departure-dl1538-mia-lga",
+      "category": "departure",
+      "scheduledTime": "15:29",
+      "airlineIcao": "dal",
+      "flightNumber": "1538",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-mq3595-mia-bna",
+      "category": "departure",
+      "scheduledTime": "15:29",
+      "airlineIcao": "eny",
+      "flightNumber": "3595",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-aa1199-mia-dfw",
+      "category": "departure",
+      "scheduledTime": "15:30",
+      "airlineIcao": "aal",
+      "flightNumber": "1199",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-aa1931-mia-iah",
+      "category": "departure",
+      "scheduledTime": "15:30",
+      "airlineIcao": "aal",
+      "flightNumber": "1931",
+      "originIcao": "KMIA",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-mq3749-mia-pns",
+      "category": "departure",
+      "scheduledTime": "15:31",
+      "airlineIcao": "eny",
+      "flightNumber": "3749",
+      "originIcao": "KMIA",
+      "destinationIcao": "KPNS"
+    },
+    {
+      "id": "departure-mq4057-mia-cle",
+      "category": "departure",
+      "scheduledTime": "15:31",
+      "airlineIcao": "eny",
+      "flightNumber": "4057",
+      "originIcao": "KMIA",
+      "destinationIcao": "KCLE"
+    },
+    {
+      "id": "t100-5x-departure-ksdf-g-003",
+      "scheduledTime": "15:31",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSDF",
+      "airlineIcao": "ups",
+      "flightNumber": "2272"
+    },
+    {
+      "id": "arrival-aa2912-clt-mia",
+      "category": "arrival",
+      "scheduledTime": "15:38",
+      "airlineIcao": "aal",
+      "flightNumber": "2912",
+      "originIcao": "KCLT",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa2981-ewr-mia",
+      "category": "arrival",
+      "scheduledTime": "15:38",
+      "airlineIcao": "aal",
+      "flightNumber": "2981",
+      "originIcao": "KEWR",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-av-arrival-skrg-f-002",
+      "scheduledTime": "15:38",
+      "category": "arrival",
+      "originIcao": "SKRG",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ava",
+      "flightNumber": "5660"
+    },
+    {
+      "id": "departure-f92940-mia-bwi",
+      "category": "departure",
+      "scheduledTime": "15:39",
+      "airlineIcao": "fft",
+      "flightNumber": "2940",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "departure-aa3165-mia-sju",
+      "category": "departure",
+      "scheduledTime": "15:40",
+      "airlineIcao": "aal",
+      "flightNumber": "3165",
+      "originIcao": "KMIA",
+      "destinationIcao": "TJSJ"
+    },
+    {
+      "id": "t100-ib-departure-lemd-f-001",
+      "scheduledTime": "15:41",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "LEMD",
+      "airlineIcao": "ibe",
+      "flightNumber": "7911"
+    },
+    {
+      "id": "t100-la-departure-mdpc-f-001",
+      "scheduledTime": "15:41",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MDPC",
+      "airlineIcao": "lan",
+      "flightNumber": "6614"
+    },
+    {
+      "id": "departure-aa3183-mia-dca",
+      "category": "departure",
+      "scheduledTime": "15:42",
+      "airlineIcao": "aal",
+      "flightNumber": "3183",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-aa1634-mia-bwi",
+      "category": "departure",
+      "scheduledTime": "15:44",
+      "airlineIcao": "aal",
+      "flightNumber": "1634",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "departure-ua2852-mia-den",
+      "category": "departure",
+      "scheduledTime": "15:44",
+      "airlineIcao": "ual",
+      "flightNumber": "2852",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-wn2464-mdw-mia",
+      "category": "arrival",
+      "scheduledTime": "15:45",
+      "airlineIcao": "swa",
+      "flightNumber": "2464",
+      "originIcao": "KMDW",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-ua410-iah-mia",
+      "category": "arrival",
+      "scheduledTime": "15:47",
+      "airlineIcao": "ual",
+      "flightNumber": "410",
+      "originIcao": "KIAH",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-qt-arrival-seqm-g-001",
+      "scheduledTime": "15:48",
+      "category": "arrival",
+      "originIcao": "SEQM",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "tpa",
+      "flightNumber": "2123"
+    },
+    {
+      "id": "arrival-wn581-bna-mia",
+      "category": "arrival",
+      "scheduledTime": "15:50",
+      "airlineIcao": "swa",
+      "flightNumber": "581",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2201-mia-msy",
+      "category": "departure",
+      "scheduledTime": "15:50",
+      "airlineIcao": "aal",
+      "flightNumber": "2201",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMSY"
+    },
+    {
+      "id": "t100-yx-arrival-kjan-f-001",
+      "scheduledTime": "15:52",
+      "category": "arrival",
+      "originIcao": "KJAN",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "rpa",
+      "flightNumber": "9351"
+    },
+    {
+      "id": "t100-cm-departure-mpto-f-007",
+      "scheduledTime": "15:53",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MPTO",
+      "airlineIcao": "cmp",
+      "flightNumber": "4836"
+    },
+    {
+      "id": "departure-mq3566-mia-tlh",
+      "category": "departure",
+      "scheduledTime": "15:55",
+      "airlineIcao": "eny",
+      "flightNumber": "3566",
+      "originIcao": "KMIA",
+      "destinationIcao": "KTLH"
+    },
+    {
+      "id": "t100-m6-departure-mslp-g-001",
+      "scheduledTime": "15:57",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MSLP",
+      "airlineIcao": "ajt",
+      "flightNumber": "3166"
+    },
+    {
+      "id": "departure-aa3236-mia-las",
+      "category": "departure",
+      "scheduledTime": "15:59",
+      "airlineIcao": "aal",
+      "flightNumber": "3236",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "arrival-aa620-aus-mia",
+      "category": "arrival",
+      "scheduledTime": "16:00",
+      "airlineIcao": "aal",
+      "flightNumber": "620",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa1367-mia-atl",
+      "category": "departure",
+      "scheduledTime": "16:00",
+      "airlineIcao": "aal",
+      "flightNumber": "1367",
+      "originIcao": "KMIA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-aa315-mia-lax",
+      "category": "departure",
+      "scheduledTime": "16:00",
+      "airlineIcao": "aal",
+      "flightNumber": "315",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-dl1579-mia-atl",
+      "category": "departure",
+      "scheduledTime": "16:00",
+      "airlineIcao": "dal",
+      "flightNumber": "1579",
+      "originIcao": "KMIA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-wn2930-mia-mdw",
+      "category": "departure",
+      "scheduledTime": "16:00",
+      "airlineIcao": "swa",
+      "flightNumber": "2930",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "t100-fx-departure-mggt-g-001",
+      "scheduledTime": "16:00",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MGGT",
+      "airlineIcao": "fdx",
+      "flightNumber": "7999"
+    },
+    {
+      "id": "departure-aa985-mia-clt",
+      "category": "departure",
+      "scheduledTime": "16:01",
+      "airlineIcao": "aal",
+      "flightNumber": "985",
+      "originIcao": "KMIA",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "t100-la-departure-ebbr-g-002",
+      "scheduledTime": "16:02",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "EBBR",
+      "airlineIcao": "lan",
+      "flightNumber": "5496"
+    },
+    {
+      "id": "departure-aa1202-mia-jfk",
+      "category": "departure",
+      "scheduledTime": "16:03",
+      "airlineIcao": "aal",
+      "flightNumber": "1202",
+      "originIcao": "KMIA",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "t100-ib-departure-lemd-f-002",
+      "scheduledTime": "16:03",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "LEMD",
+      "airlineIcao": "ibe",
+      "flightNumber": "907"
+    },
+    {
+      "id": "arrival-aa369-sfo-mia",
+      "category": "arrival",
+      "scheduledTime": "16:06",
+      "airlineIcao": "aal",
+      "flightNumber": "369",
+      "originIcao": "KSFO",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-5x-arrival-kont-g-001",
+      "scheduledTime": "16:06",
+      "category": "arrival",
+      "originIcao": "KONT",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ups",
+      "flightNumber": "251"
+    },
+    {
+      "id": "departure-ua2106-mia-ord",
+      "category": "departure",
+      "scheduledTime": "16:10",
+      "airlineIcao": "ual",
+      "flightNumber": "2106",
+      "originIcao": "KMIA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-aa1184-phx-mia",
+      "category": "arrival",
+      "scheduledTime": "16:12",
+      "airlineIcao": "aal",
+      "flightNumber": "1184",
+      "originIcao": "KPHX",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa1643-lga-mia",
+      "category": "arrival",
+      "scheduledTime": "16:14",
+      "airlineIcao": "aal",
+      "flightNumber": "1643",
+      "originIcao": "KLGA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-dm-arrival-mdsd-f-001",
+      "scheduledTime": "16:14",
+      "category": "arrival",
+      "originIcao": "MDSD",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "dwi",
+      "flightNumber": "7882"
+    },
+    {
+      "id": "departure-mq3594-mia-tpa",
+      "category": "departure",
+      "scheduledTime": "16:15",
+      "airlineIcao": "eny",
+      "flightNumber": "3594",
+      "originIcao": "KMIA",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "arrival-ua1496-den-mia",
+      "category": "arrival",
+      "scheduledTime": "16:16",
+      "airlineIcao": "ual",
+      "flightNumber": "1496",
+      "originIcao": "KDEN",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-ua1511-ewr-mia",
+      "category": "arrival",
+      "scheduledTime": "16:16",
+      "airlineIcao": "ual",
+      "flightNumber": "1511",
+      "originIcao": "KEWR",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-lp-departure-spim-f-003",
+      "scheduledTime": "16:17",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SPIM",
+      "airlineIcao": "lpe",
+      "flightNumber": "2264"
+    },
+    {
+      "id": "arrival-aa345-lax-mia",
+      "category": "arrival",
+      "scheduledTime": "16:19",
+      "airlineIcao": "aal",
+      "flightNumber": "345",
+      "originIcao": "KLAX",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-ta-arrival-mslp-f-001",
+      "scheduledTime": "16:19",
+      "category": "arrival",
+      "originIcao": "MSLP",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "tai",
+      "flightNumber": "6522"
+    },
+    {
+      "id": "departure-wn4799-mia-bna",
+      "category": "departure",
+      "scheduledTime": "16:20",
+      "airlineIcao": "swa",
+      "flightNumber": "4799",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-aa1589-bos-mia",
+      "category": "arrival",
+      "scheduledTime": "16:21",
+      "airlineIcao": "aal",
+      "flightNumber": "1589",
+      "originIcao": "KBOS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-5x-arrival-skbo-g-001",
+      "scheduledTime": "16:23",
+      "category": "arrival",
+      "originIcao": "SKBO",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ups",
+      "flightNumber": "7180"
+    },
+    {
+      "id": "arrival-wn2718-stl-mia",
+      "category": "arrival",
+      "scheduledTime": "16:25",
+      "airlineIcao": "swa",
+      "flightNumber": "2718",
+      "originIcao": "KSTL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa952-mia-lga",
+      "category": "departure",
+      "scheduledTime": "16:25",
+      "airlineIcao": "aal",
+      "flightNumber": "952",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "t100-5x-departure-ksdf-g-001",
+      "scheduledTime": "16:25",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSDF",
+      "airlineIcao": "ups",
+      "flightNumber": "7831"
+    },
+    {
+      "id": "t100-tk-departure-ltfm-f-002",
+      "scheduledTime": "16:27",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "LTFM",
+      "airlineIcao": "thy",
+      "flightNumber": "8457"
+    },
+    {
+      "id": "arrival-aa2915-dca-mia",
+      "category": "arrival",
+      "scheduledTime": "16:29",
+      "airlineIcao": "aal",
+      "flightNumber": "2915",
+      "originIcao": "KDCA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2072-mia-mco",
+      "category": "departure",
+      "scheduledTime": "16:29",
+      "airlineIcao": "aal",
+      "flightNumber": "2072",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-aa3208-mia-bna",
+      "category": "departure",
+      "scheduledTime": "16:29",
+      "airlineIcao": "aal",
+      "flightNumber": "3208",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-wn2926-mia-den",
+      "category": "departure",
+      "scheduledTime": "16:30",
+      "airlineIcao": "swa",
+      "flightNumber": "2926",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-f92272-atl-mia",
+      "category": "arrival",
+      "scheduledTime": "16:33",
+      "airlineIcao": "fft",
+      "flightNumber": "2272",
+      "originIcao": "KATL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-5x-arrival-kphl-g-001",
+      "scheduledTime": "16:37",
+      "category": "arrival",
+      "originIcao": "KPHL",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ups",
+      "flightNumber": "7186"
+    },
+    {
+      "id": "departure-aa2823-mia-dfw",
+      "category": "departure",
+      "scheduledTime": "16:39",
+      "airlineIcao": "aal",
+      "flightNumber": "2823",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-aa3117-dfw-mia",
+      "category": "arrival",
+      "scheduledTime": "16:43",
+      "airlineIcao": "aal",
+      "flightNumber": "3117",
+      "originIcao": "KDFW",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-lh-departure-eddf-f-001",
+      "scheduledTime": "16:43",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "EDDF",
+      "airlineIcao": "dlh",
+      "flightNumber": "3411"
+    },
+    {
+      "id": "departure-aa1871-mia-phl",
+      "category": "departure",
+      "scheduledTime": "16:45",
+      "airlineIcao": "aal",
+      "flightNumber": "1871",
+      "originIcao": "KMIA",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "arrival-aa2092-mco-mia",
+      "category": "arrival",
+      "scheduledTime": "16:50",
+      "airlineIcao": "aal",
+      "flightNumber": "2092",
+      "originIcao": "KMCO",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa2744-stt-mia",
+      "category": "arrival",
+      "scheduledTime": "16:50",
+      "airlineIcao": "aal",
+      "flightNumber": "2744",
+      "originIcao": "TIST",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa880-mia-orf",
+      "category": "departure",
+      "scheduledTime": "16:51",
+      "airlineIcao": "aal",
+      "flightNumber": "880",
+      "originIcao": "KMIA",
+      "destinationIcao": "KORF"
+    },
+    {
+      "id": "departure-mq3629-mia-bhm",
+      "category": "departure",
+      "scheduledTime": "16:52",
+      "airlineIcao": "eny",
+      "flightNumber": "3629",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBHM"
+    },
+    {
+      "id": "t100-5x-departure-skbo-g-001",
+      "scheduledTime": "16:52",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SKBO",
+      "airlineIcao": "ups",
+      "flightNumber": "3106"
+    },
+    {
+      "id": "departure-ua1216-mia-iah",
+      "category": "departure",
+      "scheduledTime": "16:53",
+      "airlineIcao": "ual",
+      "flightNumber": "1216",
+      "originIcao": "KMIA",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "t100-ar-arrival-saez-f-001",
+      "scheduledTime": "16:54",
+      "category": "arrival",
+      "originIcao": "SAEZ",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "arg",
+      "flightNumber": "8004"
+    },
+    {
+      "id": "arrival-dl1386-atl-mia",
+      "category": "arrival",
+      "scheduledTime": "16:55",
+      "airlineIcao": "dal",
+      "flightNumber": "1386",
+      "originIcao": "KATL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa1657-mia-chs",
+      "category": "departure",
+      "scheduledTime": "17:00",
+      "airlineIcao": "aal",
+      "flightNumber": "1657",
+      "originIcao": "KMIA",
+      "destinationIcao": "KCHS"
+    },
+    {
+      "id": "departure-aa3056-mia-ord",
+      "category": "departure",
+      "scheduledTime": "17:00",
+      "airlineIcao": "aal",
+      "flightNumber": "3056",
+      "originIcao": "KMIA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-abx-departure-krfd-g-001",
+      "scheduledTime": "17:03",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "KRFD",
+      "airlineIcao": "abx",
+      "flightNumber": "8604"
+    },
+    {
+      "id": "departure-wn2561-mia-aus",
+      "category": "departure",
+      "scheduledTime": "17:10",
+      "airlineIcao": "swa",
+      "flightNumber": "2561",
+      "originIcao": "KMIA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-wn1624-den-mia",
+      "category": "arrival",
+      "scheduledTime": "17:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1624",
+      "originIcao": "KDEN",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2035-mia-sfo",
+      "category": "departure",
+      "scheduledTime": "17:15",
+      "airlineIcao": "aal",
+      "flightNumber": "2035",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "arrival-aa683-jfk-mia",
+      "category": "arrival",
+      "scheduledTime": "17:16",
+      "airlineIcao": "aal",
+      "flightNumber": "683",
+      "originIcao": "KJFK",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-dl506-sea-mia",
+      "category": "arrival",
+      "scheduledTime": "17:16",
+      "airlineIcao": "dal",
+      "flightNumber": "506",
+      "originIcao": "KSEA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-m6-departure-mdsd-g-002",
+      "scheduledTime": "17:16",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MDSD",
+      "airlineIcao": "ajt",
+      "flightNumber": "3198"
+    },
+    {
+      "id": "t100-ta-arrival-mnmg-f-001",
+      "scheduledTime": "17:16",
+      "category": "arrival",
+      "originIcao": "MNMG",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "tai",
+      "flightNumber": "2720"
+    },
+    {
+      "id": "arrival-as305-sea-mia",
+      "category": "arrival",
+      "scheduledTime": "17:17",
+      "airlineIcao": "asa",
+      "flightNumber": "305",
+      "originIcao": "KSEA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-5x-arrival-seqm-g-001",
+      "scheduledTime": "17:19",
+      "category": "arrival",
+      "originIcao": "SEQM",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ups",
+      "flightNumber": "6231"
+    },
+    {
+      "id": "departure-mq3558-mia-gsp",
+      "category": "departure",
+      "scheduledTime": "17:20",
+      "airlineIcao": "eny",
+      "flightNumber": "3558",
+      "originIcao": "KMIA",
+      "destinationIcao": "KGSP"
+    },
+    {
+      "id": "departure-ua2691-mia-ewr",
+      "category": "departure",
+      "scheduledTime": "17:22",
+      "airlineIcao": "ual",
+      "flightNumber": "2691",
+      "originIcao": "KMIA",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "departure-aa400-mia-clt",
+      "category": "departure",
+      "scheduledTime": "17:23",
+      "airlineIcao": "aal",
+      "flightNumber": "400",
+      "originIcao": "KMIA",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "t100-ar-departure-saez-f-002",
+      "scheduledTime": "17:25",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SAEZ",
+      "airlineIcao": "arg",
+      "flightNumber": "6484"
+    },
+    {
+      "id": "arrival-aa3265-phl-mia",
+      "category": "arrival",
+      "scheduledTime": "17:27",
+      "airlineIcao": "aal",
+      "flightNumber": "3265",
+      "originIcao": "KPHL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-f94405-mia-atl",
+      "category": "departure",
+      "scheduledTime": "17:28",
+      "airlineIcao": "fft",
+      "flightNumber": "4405",
+      "originIcao": "KMIA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-ua2029-sfo-mia",
+      "category": "arrival",
+      "scheduledTime": "17:29",
+      "airlineIcao": "ual",
+      "flightNumber": "2029",
+      "originIcao": "KSFO",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-m6-arrival-skbo-g-002",
+      "scheduledTime": "17:29",
+      "category": "arrival",
+      "originIcao": "SKBO",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ajt",
+      "flightNumber": "2912"
+    },
+    {
+      "id": "departure-aa2953-mia-lax",
+      "category": "departure",
+      "scheduledTime": "17:30",
+      "airlineIcao": "aal",
+      "flightNumber": "2953",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-aa3260-mia-dfw",
+      "category": "departure",
+      "scheduledTime": "17:30",
+      "airlineIcao": "aal",
+      "flightNumber": "3260",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "t100-cx-departure-kiah-g-001",
+      "scheduledTime": "17:30",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "KIAH",
+      "airlineIcao": "cpa",
+      "flightNumber": "894"
+    },
+    {
+      "id": "t100-xl-arrival-seqm-f-001",
+      "scheduledTime": "17:30",
+      "category": "arrival",
+      "originIcao": "SEQM",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "lne",
+      "flightNumber": "4223"
+    },
+    {
+      "id": "t100-5x-departure-ksdf-g-002",
+      "scheduledTime": "17:31",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSDF",
+      "airlineIcao": "ups",
+      "flightNumber": "7801"
+    },
+    {
+      "id": "departure-ua2311-mia-ord",
+      "category": "departure",
+      "scheduledTime": "17:32",
+      "airlineIcao": "ual",
+      "flightNumber": "2311",
+      "originIcao": "KMIA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-dl2576-dca-mia",
+      "category": "arrival",
+      "scheduledTime": "17:33",
+      "airlineIcao": "dal",
+      "flightNumber": "2576",
+      "originIcao": "KDCA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2147-mia-mco",
+      "category": "departure",
+      "scheduledTime": "17:34",
+      "airlineIcao": "aal",
+      "flightNumber": "2147",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-mq3605-mia-jax",
+      "category": "departure",
+      "scheduledTime": "17:39",
+      "airlineIcao": "eny",
+      "flightNumber": "3605",
+      "originIcao": "KMIA",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-aa2982-mia-phx",
+      "category": "departure",
+      "scheduledTime": "17:40",
+      "airlineIcao": "aal",
+      "flightNumber": "2982",
+      "originIcao": "KMIA",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "t100-xl-departure-segu-g-001",
+      "scheduledTime": "17:40",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SEGU",
+      "airlineIcao": "lne",
+      "flightNumber": "1357"
+    },
+    {
+      "id": "t100-ke-departure-kjfk-g-001",
+      "scheduledTime": "17:46",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "KJFK",
+      "airlineIcao": "kal",
+      "flightNumber": "1163"
+    },
+    {
+      "id": "arrival-aa2664-dca-mia",
+      "category": "arrival",
+      "scheduledTime": "17:48",
+      "airlineIcao": "aal",
+      "flightNumber": "2664",
+      "originIcao": "KDCA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa3128-mia-lga",
+      "category": "departure",
+      "scheduledTime": "17:50",
+      "airlineIcao": "aal",
+      "flightNumber": "3128",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-wn1624-mia-bwi",
+      "category": "departure",
+      "scheduledTime": "17:50",
+      "airlineIcao": "swa",
+      "flightNumber": "1624",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "departure-mq3743-mia-pns",
+      "category": "departure",
+      "scheduledTime": "17:51",
+      "airlineIcao": "eny",
+      "flightNumber": "3743",
+      "originIcao": "KMIA",
+      "destinationIcao": "KPNS"
+    },
+    {
+      "id": "arrival-aa2584-sju-mia",
+      "category": "arrival",
+      "scheduledTime": "17:53",
+      "airlineIcao": "aal",
+      "flightNumber": "2584",
+      "originIcao": "TJSJ",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2755-mia-stx",
+      "category": "departure",
+      "scheduledTime": "17:55",
+      "airlineIcao": "aal",
+      "flightNumber": "2755",
+      "originIcao": "KMIA",
+      "destinationIcao": "TISX"
+    },
+    {
+      "id": "t100-m6-departure-ttpp-g-001",
+      "scheduledTime": "17:57",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "TTPP",
+      "airlineIcao": "ajt",
+      "flightNumber": "8133"
+    },
+    {
+      "id": "t100-m6-departure-mkjp-g-001",
+      "scheduledTime": "17:58",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MKJP",
+      "airlineIcao": "ajt",
+      "flightNumber": "2506"
+    },
+    {
+      "id": "departure-mq3555-mia-tpa",
+      "category": "departure",
+      "scheduledTime": "17:59",
+      "airlineIcao": "eny",
+      "flightNumber": "3555",
+      "originIcao": "KMIA",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "departure-dl1386-mia-atl",
+      "category": "departure",
+      "scheduledTime": "18:00",
+      "airlineIcao": "dal",
+      "flightNumber": "1386",
+      "originIcao": "KMIA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-mq3517-mia-eyw",
+      "category": "departure",
+      "scheduledTime": "18:05",
+      "airlineIcao": "eny",
+      "flightNumber": "3517",
+      "originIcao": "KMIA",
+      "destinationIcao": "KEYW"
+    },
+    {
+      "id": "arrival-dl811-lax-mia",
+      "category": "arrival",
+      "scheduledTime": "18:07",
+      "airlineIcao": "dal",
+      "flightNumber": "811",
+      "originIcao": "KLAX",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-qt-arrival-skbo-g-002",
+      "scheduledTime": "18:08",
+      "category": "arrival",
+      "originIcao": "SKBO",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "tpa",
+      "flightNumber": "4150"
+    },
+    {
+      "id": "t100-xl-departure-mpto-g-001",
+      "scheduledTime": "18:13",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MPTO",
+      "airlineIcao": "lne",
+      "flightNumber": "2312"
+    },
+    {
+      "id": "departure-mq3821-mia-tlh",
+      "category": "departure",
+      "scheduledTime": "18:16",
+      "airlineIcao": "eny",
+      "flightNumber": "3821",
+      "originIcao": "KMIA",
+      "destinationIcao": "KTLH"
+    },
+    {
+      "id": "t100-l7-arrival-skbo-g-004",
+      "scheduledTime": "18:18",
+      "category": "arrival",
+      "originIcao": "SKBO",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "lco",
+      "flightNumber": "5000"
+    },
+    {
+      "id": "arrival-aa3118-den-mia",
+      "category": "arrival",
+      "scheduledTime": "18:19",
+      "airlineIcao": "aal",
+      "flightNumber": "3118",
+      "originIcao": "KDEN",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-dl1323-atl-mia",
+      "category": "arrival",
+      "scheduledTime": "18:20",
+      "airlineIcao": "dal",
+      "flightNumber": "1323",
+      "originIcao": "KATL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa1074-mia-bos",
+      "category": "departure",
+      "scheduledTime": "18:20",
+      "airlineIcao": "aal",
+      "flightNumber": "1074",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-aa535-mia-atl",
+      "category": "departure",
+      "scheduledTime": "18:20",
+      "airlineIcao": "aal",
+      "flightNumber": "535",
+      "originIcao": "KMIA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-as305-mia-sea",
+      "category": "departure",
+      "scheduledTime": "18:20",
+      "airlineIcao": "asa",
+      "flightNumber": "305",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-ar-departure-saez-f-001",
+      "scheduledTime": "18:21",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SAEZ",
+      "airlineIcao": "arg",
+      "flightNumber": "2319"
+    },
+    {
+      "id": "arrival-aa1167-dfw-mia",
+      "category": "arrival",
+      "scheduledTime": "18:24",
+      "airlineIcao": "aal",
+      "flightNumber": "1167",
+      "originIcao": "KDFW",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa1349-mia-phl",
+      "category": "departure",
+      "scheduledTime": "18:25",
+      "airlineIcao": "aal",
+      "flightNumber": "1349",
+      "originIcao": "KMIA",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "departure-aa667-mia-dca",
+      "category": "departure",
+      "scheduledTime": "18:25",
+      "airlineIcao": "aal",
+      "flightNumber": "667",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-dl506-mia-sea",
+      "category": "departure",
+      "scheduledTime": "18:26",
+      "airlineIcao": "dal",
+      "flightNumber": "506",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-av-arrival-skbo-f-002",
+      "scheduledTime": "18:26",
+      "category": "arrival",
+      "originIcao": "SKBO",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ava",
+      "flightNumber": "9503"
+    },
+    {
+      "id": "t100-lx-departure-lszh-f-001",
+      "scheduledTime": "18:26",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "LSZH",
+      "airlineIcao": "swr",
+      "flightNumber": "926"
+    },
+    {
+      "id": "departure-dl2992-mia-rdu",
+      "category": "departure",
+      "scheduledTime": "18:28",
+      "airlineIcao": "dal",
+      "flightNumber": "2992",
+      "originIcao": "KMIA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-fx-departure-kmem-g-001",
+      "scheduledTime": "18:28",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3492"
+    },
+    {
+      "id": "arrival-dl2300-lga-mia",
+      "category": "arrival",
+      "scheduledTime": "18:30",
+      "airlineIcao": "dal",
+      "flightNumber": "2300",
+      "originIcao": "KLGA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa1922-mia-jfk",
+      "category": "departure",
+      "scheduledTime": "18:33",
+      "airlineIcao": "aal",
+      "flightNumber": "1922",
+      "originIcao": "KMIA",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "arrival-aa3148-ord-mia",
+      "category": "arrival",
+      "scheduledTime": "18:48",
+      "airlineIcao": "aal",
+      "flightNumber": "3148",
+      "originIcao": "KORD",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-am-arrival-mmmx-f-001",
+      "scheduledTime": "18:52",
+      "category": "arrival",
+      "originIcao": "MMMX",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "amx",
+      "flightNumber": "9900"
+    },
+    {
+      "id": "arrival-dl2500-jfk-mia",
+      "category": "arrival",
+      "scheduledTime": "18:53",
+      "airlineIcao": "dal",
+      "flightNumber": "2500",
+      "originIcao": "KJFK",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-fx-arrival-kmem-g-002",
+      "scheduledTime": "18:54",
+      "category": "arrival",
+      "originIcao": "KMEM",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "fdx",
+      "flightNumber": "1789"
+    },
+    {
+      "id": "arrival-aa2753-stx-mia",
+      "category": "arrival",
+      "scheduledTime": "18:55",
+      "airlineIcao": "aal",
+      "flightNumber": "2753",
+      "originIcao": "TISX",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-abx-departure-skbo-g-001",
+      "scheduledTime": "18:56",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SKBO",
+      "airlineIcao": "abx",
+      "flightNumber": "1574"
+    },
+    {
+      "id": "arrival-aa2231-clt-mia",
+      "category": "arrival",
+      "scheduledTime": "18:57",
+      "airlineIcao": "aal",
+      "flightNumber": "2231",
+      "originIcao": "KCLT",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-av-arrival-skbo-f-003",
+      "scheduledTime": "18:57",
+      "category": "arrival",
+      "originIcao": "SKBO",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ava",
+      "flightNumber": "3954"
+    },
+    {
+      "id": "arrival-aa1565-bos-mia",
+      "category": "arrival",
+      "scheduledTime": "18:58",
+      "airlineIcao": "aal",
+      "flightNumber": "1565",
+      "originIcao": "KBOS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-dl776-bos-mia",
+      "category": "arrival",
+      "scheduledTime": "18:58",
+      "airlineIcao": "dal",
+      "flightNumber": "776",
+      "originIcao": "KBOS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-av-arrival-skbo-f-004",
+      "scheduledTime": "18:58",
+      "category": "arrival",
+      "originIcao": "SKBO",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ava",
+      "flightNumber": "3722"
+    },
+    {
+      "id": "arrival-aa2410-ind-mia",
+      "category": "arrival",
+      "scheduledTime": "19:00",
+      "airlineIcao": "aal",
+      "flightNumber": "2410",
+      "originIcao": "KIND",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa3016-lax-mia",
+      "category": "arrival",
+      "scheduledTime": "19:00",
+      "airlineIcao": "aal",
+      "flightNumber": "3016",
+      "originIcao": "KLAX",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa1566-mia-rdu",
+      "category": "departure",
+      "scheduledTime": "19:00",
+      "airlineIcao": "aal",
+      "flightNumber": "1566",
+      "originIcao": "KMIA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-aa2054-mia-lga",
+      "category": "departure",
+      "scheduledTime": "19:00",
+      "airlineIcao": "aal",
+      "flightNumber": "2054",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "arrival-mq3594-tpa-mia",
+      "category": "arrival",
+      "scheduledTime": "19:01",
+      "airlineIcao": "eny",
+      "flightNumber": "3594",
+      "originIcao": "KTPA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-xl-departure-mdsd-g-001",
+      "scheduledTime": "19:01",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MDSD",
+      "airlineIcao": "lne",
+      "flightNumber": "9279"
+    },
+    {
+      "id": "departure-aa2648-mia-dca",
+      "category": "departure",
+      "scheduledTime": "19:05",
+      "airlineIcao": "aal",
+      "flightNumber": "2648",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-dl2344-mia-aus",
+      "category": "departure",
+      "scheduledTime": "19:05",
+      "airlineIcao": "dal",
+      "flightNumber": "2344",
+      "originIcao": "KMIA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "arrival-aa3017-lga-mia",
+      "category": "arrival",
+      "scheduledTime": "19:06",
+      "airlineIcao": "aal",
+      "flightNumber": "3017",
+      "originIcao": "KLGA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa3131-mia-clt",
+      "category": "departure",
+      "scheduledTime": "19:10",
+      "airlineIcao": "aal",
+      "flightNumber": "3131",
+      "originIcao": "KMIA",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "t100-tp-departure-lppt-f-001",
+      "scheduledTime": "19:12",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "LPPT",
+      "airlineIcao": "tap",
+      "flightNumber": "8390"
+    },
+    {
+      "id": "departure-aa1364-mia-sju",
+      "category": "departure",
+      "scheduledTime": "19:16",
+      "airlineIcao": "aal",
+      "flightNumber": "1364",
+      "originIcao": "KMIA",
+      "destinationIcao": "TJSJ"
+    },
+    {
+      "id": "departure-dl450-mia-lax",
+      "category": "departure",
+      "scheduledTime": "19:17",
+      "airlineIcao": "dal",
+      "flightNumber": "450",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "arrival-dl866-dtw-mia",
+      "category": "arrival",
+      "scheduledTime": "19:18",
+      "airlineIcao": "dal",
+      "flightNumber": "866",
+      "originIcao": "KDTW",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-av-departure-skbo-f-001",
+      "scheduledTime": "19:19",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SKBO",
+      "airlineIcao": "ava",
+      "flightNumber": "8280"
+    },
+    {
+      "id": "departure-aa3304-mia-ord",
+      "category": "departure",
+      "scheduledTime": "19:21",
+      "airlineIcao": "aal",
+      "flightNumber": "3304",
+      "originIcao": "KMIA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-5x-arrival-ktpa-g-001",
+      "scheduledTime": "19:22",
+      "category": "arrival",
+      "originIcao": "KTPA",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ups",
+      "flightNumber": "9208"
+    },
+    {
+      "id": "t100-qt-arrival-skbo-g-003",
+      "scheduledTime": "19:22",
+      "category": "arrival",
+      "originIcao": "SKBO",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "tpa",
+      "flightNumber": "802"
+    },
+    {
+      "id": "arrival-dl1631-atl-mia",
+      "category": "arrival",
+      "scheduledTime": "19:25",
+      "airlineIcao": "dal",
+      "flightNumber": "1631",
+      "originIcao": "KATL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-dl1323-mia-atl",
+      "category": "departure",
+      "scheduledTime": "19:25",
+      "airlineIcao": "dal",
+      "flightNumber": "1323",
+      "originIcao": "KMIA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-aa1479-jfk-mia",
+      "category": "arrival",
+      "scheduledTime": "19:26",
+      "airlineIcao": "aal",
+      "flightNumber": "1479",
+      "originIcao": "KJFK",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-ua2213-ewr-mia",
+      "category": "arrival",
+      "scheduledTime": "19:26",
+      "airlineIcao": "ual",
+      "flightNumber": "2213",
+      "originIcao": "KEWR",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-cm-departure-mpto-f-006",
+      "scheduledTime": "19:26",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MPTO",
+      "airlineIcao": "cmp",
+      "flightNumber": "8414"
+    },
+    {
+      "id": "arrival-aa3306-phl-mia",
+      "category": "arrival",
+      "scheduledTime": "19:27",
+      "airlineIcao": "aal",
+      "flightNumber": "3306",
+      "originIcao": "KPHL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-m6-arrival-mdsd-g-001",
+      "scheduledTime": "19:27",
+      "category": "arrival",
+      "originIcao": "MDSD",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ajt",
+      "flightNumber": "9902"
+    },
+    {
+      "id": "arrival-mq3566-tlh-mia",
+      "category": "arrival",
+      "scheduledTime": "19:28",
+      "airlineIcao": "eny",
+      "flightNumber": "3566",
+      "originIcao": "KTLH",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2799-mia-sfo",
+      "category": "departure",
+      "scheduledTime": "19:30",
+      "airlineIcao": "aal",
+      "flightNumber": "2799",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-aa3104-mia-dfw",
+      "category": "departure",
+      "scheduledTime": "19:30",
+      "airlineIcao": "aal",
+      "flightNumber": "3104",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-aa2581-sju-mia",
+      "category": "arrival",
+      "scheduledTime": "19:33",
+      "airlineIcao": "aal",
+      "flightNumber": "2581",
+      "originIcao": "TJSJ",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-abx-arrival-krfd-g-001",
+      "scheduledTime": "19:39",
+      "category": "arrival",
+      "originIcao": "KRFD",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "abx",
+      "flightNumber": "7529"
+    },
+    {
+      "id": "arrival-aa3083-dfw-mia",
+      "category": "arrival",
+      "scheduledTime": "19:40",
+      "airlineIcao": "aal",
+      "flightNumber": "3083",
+      "originIcao": "KDFW",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2629-mia-aus",
+      "category": "departure",
+      "scheduledTime": "19:40",
+      "airlineIcao": "aal",
+      "flightNumber": "2629",
+      "originIcao": "KMIA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-dl2300-mia-lga",
+      "category": "departure",
+      "scheduledTime": "19:40",
+      "airlineIcao": "dal",
+      "flightNumber": "2300",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-aa2541-mia-iah",
+      "category": "departure",
+      "scheduledTime": "19:42",
+      "airlineIcao": "aal",
+      "flightNumber": "2541",
+      "originIcao": "KMIA",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "t100-l7-departure-skbo-g-001",
+      "scheduledTime": "19:44",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SKBO",
+      "airlineIcao": "lco",
+      "flightNumber": "9095"
+    },
+    {
+      "id": "departure-aa2649-mia-dtw",
+      "category": "departure",
+      "scheduledTime": "19:45",
+      "airlineIcao": "aal",
+      "flightNumber": "2649",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "departure-mq4115-mia-cvg",
+      "category": "departure",
+      "scheduledTime": "19:45",
+      "airlineIcao": "eny",
+      "flightNumber": "4115",
+      "originIcao": "KMIA",
+      "destinationIcao": "KCVG"
+    },
+    {
+      "id": "t100-m3-departure-sbeg-g-001",
+      "scheduledTime": "19:45",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SBEG",
+      "airlineIcao": "ltg",
+      "flightNumber": "7969"
+    },
+    {
+      "id": "departure-aa322-mia-ewr",
+      "category": "departure",
+      "scheduledTime": "19:48",
+      "airlineIcao": "aal",
+      "flightNumber": "322",
+      "originIcao": "KMIA",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "arrival-aa2406-rdu-mia",
+      "category": "arrival",
+      "scheduledTime": "19:49",
+      "airlineIcao": "aal",
+      "flightNumber": "2406",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa1357-mia-jfk",
+      "category": "departure",
+      "scheduledTime": "19:50",
+      "airlineIcao": "aal",
+      "flightNumber": "1357",
+      "originIcao": "KMIA",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "departure-aa1921-mia-tpa",
+      "category": "departure",
+      "scheduledTime": "19:50",
+      "airlineIcao": "aal",
+      "flightNumber": "1921",
+      "originIcao": "KMIA",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "departure-mq3660-mia-cmh",
+      "category": "departure",
+      "scheduledTime": "19:50",
+      "airlineIcao": "eny",
+      "flightNumber": "3660",
+      "originIcao": "KMIA",
+      "destinationIcao": "KCMH"
+    },
+    {
+      "id": "t100-yx-departure-katl-f-001",
+      "scheduledTime": "19:50",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "KATL",
+      "airlineIcao": "rpa",
+      "flightNumber": "8485"
+    },
+    {
+      "id": "arrival-mq3749-pns-mia",
+      "category": "arrival",
+      "scheduledTime": "19:52",
+      "airlineIcao": "eny",
+      "flightNumber": "3749",
+      "originIcao": "KPNS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa2738-stt-mia",
+      "category": "arrival",
+      "scheduledTime": "19:54",
+      "airlineIcao": "aal",
+      "flightNumber": "2738",
+      "originIcao": "TIST",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-fx-departure-skbo-g-001",
+      "scheduledTime": "19:54",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SKBO",
+      "airlineIcao": "fdx",
+      "flightNumber": "9304"
+    },
+    {
+      "id": "t100-m6-departure-mdsd-g-001",
+      "scheduledTime": "19:54",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MDSD",
+      "airlineIcao": "ajt",
+      "flightNumber": "7770"
+    },
+    {
+      "id": "departure-aa3061-mia-phl",
+      "category": "departure",
+      "scheduledTime": "19:55",
+      "airlineIcao": "aal",
+      "flightNumber": "3061",
+      "originIcao": "KMIA",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "departure-dl776-mia-bos",
+      "category": "departure",
+      "scheduledTime": "19:55",
+      "airlineIcao": "dal",
+      "flightNumber": "776",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "t100-at-arrival-gmmn-f-001",
+      "scheduledTime": "19:55",
+      "category": "arrival",
+      "originIcao": "GMMN",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ram",
+      "flightNumber": "1248"
+    },
+    {
+      "id": "departure-dl2500-mia-jfk",
+      "category": "departure",
+      "scheduledTime": "19:59",
+      "airlineIcao": "dal",
+      "flightNumber": "2500",
+      "originIcao": "KMIA",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "departure-aa2833-mia-bna",
+      "category": "departure",
+      "scheduledTime": "20:03",
+      "airlineIcao": "aal",
+      "flightNumber": "2833",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-m6-departure-mpto-g-001",
+      "scheduledTime": "20:03",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MPTO",
+      "airlineIcao": "ajt",
+      "flightNumber": "2764"
+    },
+    {
+      "id": "departure-aa1045-mia-atl",
+      "category": "departure",
+      "scheduledTime": "20:04",
+      "airlineIcao": "aal",
+      "flightNumber": "1045",
+      "originIcao": "KMIA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-tk-arrival-seqm-g-001",
+      "scheduledTime": "20:04",
+      "category": "arrival",
+      "originIcao": "SEQM",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "thy",
+      "flightNumber": "5837"
+    },
+    {
+      "id": "arrival-aa2565-sfo-mia",
+      "category": "arrival",
+      "scheduledTime": "20:05",
+      "airlineIcao": "aal",
+      "flightNumber": "2565",
+      "originIcao": "KSFO",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-5x-departure-sbkp-g-001",
+      "scheduledTime": "20:05",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SBKP",
+      "airlineIcao": "ups",
+      "flightNumber": "81"
+    },
+    {
+      "id": "departure-mq3893-mia-jax",
+      "category": "departure",
+      "scheduledTime": "20:08",
+      "airlineIcao": "eny",
+      "flightNumber": "3893",
+      "originIcao": "KMIA",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "t100-jj-departure-sbgr-f-001",
+      "scheduledTime": "20:09",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SBGR",
+      "airlineIcao": "tam",
+      "flightNumber": "6084"
+    },
+    {
+      "id": "departure-aa3328-mia-lax",
+      "category": "departure",
+      "scheduledTime": "20:10",
+      "airlineIcao": "aal",
+      "flightNumber": "3328",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-aa2463-mia-san",
+      "category": "departure",
+      "scheduledTime": "20:12",
+      "airlineIcao": "aal",
+      "flightNumber": "2463",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "departure-aa2196-mia-msy",
+      "category": "departure",
+      "scheduledTime": "20:15",
+      "airlineIcao": "aal",
+      "flightNumber": "2196",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMSY"
+    },
+    {
+      "id": "t100-az-arrival-lirf-f-002",
+      "scheduledTime": "20:19",
+      "category": "arrival",
+      "originIcao": "LIRF",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ity",
+      "flightNumber": "2922"
+    },
+    {
+      "id": "departure-aa2539-mia-bos",
+      "category": "departure",
+      "scheduledTime": "20:20",
+      "airlineIcao": "aal",
+      "flightNumber": "2539",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "arrival-aa488-clt-mia",
+      "category": "arrival",
+      "scheduledTime": "20:21",
+      "airlineIcao": "aal",
+      "flightNumber": "488",
+      "originIcao": "KCLT",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa605-lga-mia",
+      "category": "arrival",
+      "scheduledTime": "20:22",
+      "airlineIcao": "aal",
+      "flightNumber": "605",
+      "originIcao": "KLGA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-af-departure-lfpg-f-001",
+      "scheduledTime": "20:22",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "LFPG",
+      "airlineIcao": "afr",
+      "flightNumber": "203"
+    },
+    {
+      "id": "arrival-aa2910-ord-mia",
+      "category": "arrival",
+      "scheduledTime": "20:26",
+      "airlineIcao": "aal",
+      "flightNumber": "2910",
+      "originIcao": "KORD",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-f91203-phl-mia",
+      "category": "arrival",
+      "scheduledTime": "20:26",
+      "airlineIcao": "fft",
+      "flightNumber": "1203",
+      "originIcao": "KPHL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2025-mia-las",
+      "category": "departure",
+      "scheduledTime": "20:26",
+      "airlineIcao": "aal",
+      "flightNumber": "2025",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-dl866-mia-dtw",
+      "category": "departure",
+      "scheduledTime": "20:26",
+      "airlineIcao": "dal",
+      "flightNumber": "866",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "arrival-aa1983-phx-mia",
+      "category": "arrival",
+      "scheduledTime": "20:28",
+      "airlineIcao": "aal",
+      "flightNumber": "1983",
+      "originIcao": "KPHX",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-ta-arrival-mnmg-f-002",
+      "scheduledTime": "20:28",
+      "category": "arrival",
+      "originIcao": "MNMG",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "tai",
+      "flightNumber": "3017"
+    },
+    {
+      "id": "t100-az-arrival-lirf-f-001",
+      "scheduledTime": "20:29",
+      "category": "arrival",
+      "originIcao": "LIRF",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ity",
+      "flightNumber": "8371"
+    },
+    {
+      "id": "arrival-mq3517-eyw-mia",
+      "category": "arrival",
+      "scheduledTime": "20:30",
+      "airlineIcao": "eny",
+      "flightNumber": "3517",
+      "originIcao": "KEYW",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2897-mia-dca",
+      "category": "departure",
+      "scheduledTime": "20:30",
+      "airlineIcao": "aal",
+      "flightNumber": "2897",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-dl1632-mia-atl",
+      "category": "departure",
+      "scheduledTime": "20:30",
+      "airlineIcao": "dal",
+      "flightNumber": "1632",
+      "originIcao": "KMIA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-aa1737-mia-den",
+      "category": "departure",
+      "scheduledTime": "20:31",
+      "airlineIcao": "aal",
+      "flightNumber": "1737",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-g3-departure-sbbr-f-001",
+      "scheduledTime": "20:32",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SBBR",
+      "airlineIcao": "glo",
+      "flightNumber": "6228"
+    },
+    {
+      "id": "arrival-ua2740-iah-mia",
+      "category": "arrival",
+      "scheduledTime": "20:33",
+      "airlineIcao": "ual",
+      "flightNumber": "2740",
+      "originIcao": "KIAH",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-fx-departure-kmem-g-002",
+      "scheduledTime": "20:33",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "316"
+    },
+    {
+      "id": "arrival-aa1612-dca-mia",
+      "category": "arrival",
+      "scheduledTime": "20:34",
+      "airlineIcao": "aal",
+      "flightNumber": "1612",
+      "originIcao": "KDCA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-fx-departure-mwcr-g-001",
+      "scheduledTime": "20:34",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MWCR",
+      "airlineIcao": "fdx",
+      "flightNumber": "7420"
+    },
+    {
+      "id": "arrival-aa3308-dfw-mia",
+      "category": "arrival",
+      "scheduledTime": "20:35",
+      "airlineIcao": "aal",
+      "flightNumber": "3308",
+      "originIcao": "KDFW",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2426-mia-sfo",
+      "category": "departure",
+      "scheduledTime": "20:35",
+      "airlineIcao": "aal",
+      "flightNumber": "2426",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-aa3252-mia-sea",
+      "category": "departure",
+      "scheduledTime": "20:35",
+      "airlineIcao": "aal",
+      "flightNumber": "3252",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-aa670-mia-mci",
+      "category": "departure",
+      "scheduledTime": "20:35",
+      "airlineIcao": "aal",
+      "flightNumber": "670",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMCI"
+    },
+    {
+      "id": "t100-fx-arrival-seqm-g-001",
+      "scheduledTime": "20:38",
+      "category": "arrival",
+      "originIcao": "SEQM",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "fdx",
+      "flightNumber": "2064"
+    },
+    {
+      "id": "t100-ta-departure-mnmg-f-002",
+      "scheduledTime": "20:39",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MNMG",
+      "airlineIcao": "tai",
+      "flightNumber": "3954"
+    },
+    {
+      "id": "departure-aa1389-mia-lga",
+      "category": "departure",
+      "scheduledTime": "20:40",
+      "airlineIcao": "aal",
+      "flightNumber": "1389",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-mq3754-mia-gso",
+      "category": "departure",
+      "scheduledTime": "20:40",
+      "airlineIcao": "eny",
+      "flightNumber": "3754",
+      "originIcao": "KMIA",
+      "destinationIcao": "KGSO"
+    },
+    {
+      "id": "departure-mq4042-mia-avl",
+      "category": "departure",
+      "scheduledTime": "20:40",
+      "airlineIcao": "eny",
+      "flightNumber": "4042",
+      "originIcao": "KMIA",
+      "destinationIcao": "KAVL"
+    },
+    {
+      "id": "departure-ua2029-mia-ewr",
+      "category": "departure",
+      "scheduledTime": "20:40",
+      "airlineIcao": "ual",
+      "flightNumber": "2029",
+      "originIcao": "KMIA",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "t100-qt-departure-skbo-g-002",
+      "scheduledTime": "20:40",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SKBO",
+      "airlineIcao": "tpa",
+      "flightNumber": "7050"
+    },
+    {
+      "id": "arrival-aa1105-las-mia",
+      "category": "arrival",
+      "scheduledTime": "20:41",
+      "airlineIcao": "aal",
+      "flightNumber": "1105",
+      "originIcao": "KLAS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa1134-mia-slc",
+      "category": "departure",
+      "scheduledTime": "20:42",
+      "airlineIcao": "aal",
+      "flightNumber": "1134",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "t100-l7-arrival-skbo-g-002",
+      "scheduledTime": "20:43",
+      "category": "arrival",
+      "originIcao": "SKBO",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "lco",
+      "flightNumber": "1502"
+    },
+    {
+      "id": "departure-aa1272-mia-bdl",
+      "category": "departure",
+      "scheduledTime": "20:44",
+      "airlineIcao": "aal",
+      "flightNumber": "1272",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBDL"
+    },
+    {
+      "id": "t100-5x-departure-mdsd-g-001",
+      "scheduledTime": "20:44",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MDSD",
+      "airlineIcao": "ups",
+      "flightNumber": "6379"
+    },
+    {
+      "id": "arrival-aa3124-lax-mia",
+      "category": "arrival",
+      "scheduledTime": "20:45",
+      "airlineIcao": "aal",
+      "flightNumber": "3124",
+      "originIcao": "KLAX",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa363-mia-cle",
+      "category": "departure",
+      "scheduledTime": "20:45",
+      "airlineIcao": "aal",
+      "flightNumber": "363",
+      "originIcao": "KMIA",
+      "destinationIcao": "KCLE"
+    },
+    {
+      "id": "arrival-mq3555-tpa-mia",
+      "category": "arrival",
+      "scheduledTime": "20:46",
+      "airlineIcao": "eny",
+      "flightNumber": "3555",
+      "originIcao": "KTPA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-lp-departure-spim-f-002",
+      "scheduledTime": "20:48",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SPIM",
+      "airlineIcao": "lpe",
+      "flightNumber": "7994"
+    },
+    {
+      "id": "departure-mq3474-mia-rdu",
+      "category": "departure",
+      "scheduledTime": "20:49",
+      "airlineIcao": "eny",
+      "flightNumber": "3474",
+      "originIcao": "KMIA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-aa1700-mia-mco",
+      "category": "departure",
+      "scheduledTime": "20:50",
+      "airlineIcao": "aal",
+      "flightNumber": "1700",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "t100-m3-arrival-seqm-g-001",
+      "scheduledTime": "20:52",
+      "category": "arrival",
+      "originIcao": "SEQM",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ltg",
+      "flightNumber": "682"
+    },
+    {
+      "id": "arrival-aa2201-msy-mia",
+      "category": "arrival",
+      "scheduledTime": "20:53",
+      "airlineIcao": "aal",
+      "flightNumber": "2201",
+      "originIcao": "KMSY",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa2979-san-mia",
+      "category": "arrival",
+      "scheduledTime": "20:54",
+      "airlineIcao": "aal",
+      "flightNumber": "2979",
+      "originIcao": "KSAN",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa1594-mia-stl",
+      "category": "departure",
+      "scheduledTime": "20:54",
+      "airlineIcao": "aal",
+      "flightNumber": "1594",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-aa1881-mia-ord",
+      "category": "departure",
+      "scheduledTime": "20:54",
+      "airlineIcao": "aal",
+      "flightNumber": "1881",
+      "originIcao": "KMIA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-la-arrival-scel-g-001",
+      "scheduledTime": "20:54",
+      "category": "arrival",
+      "originIcao": "SCEL",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "lan",
+      "flightNumber": "1815"
+    },
+    {
+      "id": "t100-ll-departure-lebl-f-001",
+      "scheduledTime": "20:55",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "LEBL",
+      "airlineIcao": "lvl",
+      "flightNumber": "6834"
+    },
+    {
+      "id": "arrival-mq3595-bna-mia",
+      "category": "arrival",
+      "scheduledTime": "20:56",
+      "airlineIcao": "eny",
+      "flightNumber": "3595",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-xl-arrival-seqm-g-002",
+      "scheduledTime": "20:56",
+      "category": "arrival",
+      "originIcao": "SEQM",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "lne",
+      "flightNumber": "930"
+    },
+    {
+      "id": "arrival-aa2147-mco-mia",
+      "category": "arrival",
+      "scheduledTime": "20:57",
+      "airlineIcao": "aal",
+      "flightNumber": "2147",
+      "originIcao": "KMCO",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-mq3605-jax-mia",
+      "category": "arrival",
+      "scheduledTime": "20:57",
+      "airlineIcao": "eny",
+      "flightNumber": "3605",
+      "originIcao": "KJAX",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa688-jfk-mia",
+      "category": "arrival",
+      "scheduledTime": "20:59",
+      "airlineIcao": "aal",
+      "flightNumber": "688",
+      "originIcao": "KJFK",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa1702-mia-pit",
+      "category": "departure",
+      "scheduledTime": "20:59",
+      "airlineIcao": "aal",
+      "flightNumber": "1702",
+      "originIcao": "KMIA",
+      "destinationIcao": "KPIT"
+    },
+    {
+      "id": "departure-aa2518-mia-ind",
+      "category": "departure",
+      "scheduledTime": "20:59",
+      "airlineIcao": "aal",
+      "flightNumber": "2518",
+      "originIcao": "KMIA",
+      "destinationIcao": "KIND"
+    },
+    {
+      "id": "t100-av-departure-skbo-f-002",
+      "scheduledTime": "20:59",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SKBO",
+      "airlineIcao": "ava",
+      "flightNumber": "6755"
+    },
+    {
+      "id": "arrival-mq4085-cmh-mia",
+      "category": "arrival",
+      "scheduledTime": "21:02",
+      "airlineIcao": "eny",
+      "flightNumber": "4085",
+      "originIcao": "KCMH",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-mq3487-cvg-mia",
+      "category": "arrival",
+      "scheduledTime": "21:04",
+      "airlineIcao": "eny",
+      "flightNumber": "3487",
+      "originIcao": "KCVG",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa1367-atl-mia",
+      "category": "arrival",
+      "scheduledTime": "21:05",
+      "airlineIcao": "aal",
+      "flightNumber": "1367",
+      "originIcao": "KATL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-f93699-clt-mia",
+      "category": "arrival",
+      "scheduledTime": "21:05",
+      "airlineIcao": "fft",
+      "flightNumber": "3699",
+      "originIcao": "KCLT",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa1968-mia-phx",
+      "category": "departure",
+      "scheduledTime": "21:05",
+      "airlineIcao": "aal",
+      "flightNumber": "1968",
+      "originIcao": "KMIA",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-aa647-mia-sdf",
+      "category": "departure",
+      "scheduledTime": "21:05",
+      "airlineIcao": "aal",
+      "flightNumber": "647",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSDF"
+    },
+    {
+      "id": "t100-qt-departure-seqm-g-001",
+      "scheduledTime": "21:05",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SEQM",
+      "airlineIcao": "tpa",
+      "flightNumber": "4229"
+    },
+    {
+      "id": "t100-5x-arrival-mroc-g-001",
+      "scheduledTime": "21:07",
+      "category": "arrival",
+      "originIcao": "MROC",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ups",
+      "flightNumber": "848"
+    },
+    {
+      "id": "t100-abx-arrival-kcvg-g-002",
+      "scheduledTime": "21:08",
+      "category": "arrival",
+      "originIcao": "KCVG",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "abx",
+      "flightNumber": "356"
+    },
+    {
+      "id": "departure-aa983-mia-ric",
+      "category": "departure",
+      "scheduledTime": "21:09",
+      "airlineIcao": "aal",
+      "flightNumber": "983",
+      "originIcao": "KMIA",
+      "destinationIcao": "KRIC"
+    },
+    {
+      "id": "departure-aa3216-mia-bwi",
+      "category": "departure",
+      "scheduledTime": "21:12",
+      "airlineIcao": "aal",
+      "flightNumber": "3216",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "departure-mq3680-mia-okc",
+      "category": "departure",
+      "scheduledTime": "21:12",
+      "airlineIcao": "eny",
+      "flightNumber": "3680",
+      "originIcao": "KMIA",
+      "destinationIcao": "KOKC"
+    },
+    {
+      "id": "t100-fx-departure-saez-g-001",
+      "scheduledTime": "21:12",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SAEZ",
+      "airlineIcao": "fdx",
+      "flightNumber": "5246"
+    },
+    {
+      "id": "departure-aa775-mia-orf",
+      "category": "departure",
+      "scheduledTime": "21:14",
+      "airlineIcao": "aal",
+      "flightNumber": "775",
+      "originIcao": "KMIA",
+      "destinationIcao": "KORF"
+    },
+    {
+      "id": "t100-bw-departure-ttpp-f-001",
+      "scheduledTime": "21:14",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "TTPP",
+      "airlineIcao": "bwa",
+      "flightNumber": "759"
+    },
+    {
+      "id": "departure-mq4049-mia-xna",
+      "category": "departure",
+      "scheduledTime": "21:16",
+      "airlineIcao": "eny",
+      "flightNumber": "4049",
+      "originIcao": "KMIA",
+      "destinationIcao": "KXNA"
+    },
+    {
+      "id": "arrival-aa1657-chs-mia",
+      "category": "arrival",
+      "scheduledTime": "21:19",
+      "airlineIcao": "aal",
+      "flightNumber": "1657",
+      "originIcao": "KCHS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-dl1620-lga-mia",
+      "category": "arrival",
+      "scheduledTime": "21:21",
+      "airlineIcao": "dal",
+      "flightNumber": "1620",
+      "originIcao": "KLGA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-f91204-mia-phl",
+      "category": "departure",
+      "scheduledTime": "21:21",
+      "airlineIcao": "fft",
+      "flightNumber": "1204",
+      "originIcao": "KMIA",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "t100-ux-arrival-lemd-f-001",
+      "scheduledTime": "21:21",
+      "category": "arrival",
+      "originIcao": "LEMD",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "aea",
+      "flightNumber": "9971"
+    },
+    {
+      "id": "departure-aa458-mia-msp",
+      "category": "departure",
+      "scheduledTime": "21:22",
+      "airlineIcao": "aal",
+      "flightNumber": "458",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "t100-am-departure-mmmx-f-001",
+      "scheduledTime": "21:23",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MMMX",
+      "airlineIcao": "amx",
+      "flightNumber": "4956"
+    },
+    {
+      "id": "arrival-aa1619-bwi-mia",
+      "category": "arrival",
+      "scheduledTime": "21:25",
+      "airlineIcao": "aal",
+      "flightNumber": "1619",
+      "originIcao": "KBWI",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-wn235-bwi-mia",
+      "category": "arrival",
+      "scheduledTime": "21:25",
+      "airlineIcao": "swa",
+      "flightNumber": "235",
+      "originIcao": "KBWI",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-mq3380-mia-tul",
+      "category": "departure",
+      "scheduledTime": "21:25",
+      "airlineIcao": "eny",
+      "flightNumber": "3380",
+      "originIcao": "KMIA",
+      "destinationIcao": "KTUL"
+    },
+    {
+      "id": "t100-l7-arrival-mggt-g-001",
+      "scheduledTime": "21:26",
+      "category": "arrival",
+      "originIcao": "MGGT",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "lco",
+      "flightNumber": "8859"
+    },
+    {
+      "id": "arrival-aa1411-aus-mia",
+      "category": "arrival",
+      "scheduledTime": "21:30",
+      "airlineIcao": "aal",
+      "flightNumber": "1411",
+      "originIcao": "KAUS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-mq3629-bhm-mia",
+      "category": "arrival",
+      "scheduledTime": "21:30",
+      "airlineIcao": "eny",
+      "flightNumber": "3629",
+      "originIcao": "KBHM",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-ci-departure-ksea-g-001",
+      "scheduledTime": "21:32",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSEA",
+      "airlineIcao": "cal",
+      "flightNumber": "4804"
+    },
+    {
+      "id": "departure-f93378-mia-sju",
+      "category": "departure",
+      "scheduledTime": "21:33",
+      "airlineIcao": "fft",
+      "flightNumber": "3378",
+      "originIcao": "KMIA",
+      "destinationIcao": "TJSJ"
+    },
+    {
+      "id": "arrival-aa1562-bos-mia",
+      "category": "arrival",
+      "scheduledTime": "21:35",
+      "airlineIcao": "aal",
+      "flightNumber": "1562",
+      "originIcao": "KBOS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa2111-phl-mia",
+      "category": "arrival",
+      "scheduledTime": "21:38",
+      "airlineIcao": "aal",
+      "flightNumber": "2111",
+      "originIcao": "KPHL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-qt-arrival-skrg-g-001",
+      "scheduledTime": "21:39",
+      "category": "arrival",
+      "originIcao": "SKRG",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "tpa",
+      "flightNumber": "499"
+    },
+    {
+      "id": "t100-cm-departure-mpto-f-002",
+      "scheduledTime": "21:42",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MPTO",
+      "airlineIcao": "cmp",
+      "flightNumber": "9958"
+    },
+    {
+      "id": "arrival-aa1069-pit-mia",
+      "category": "arrival",
+      "scheduledTime": "21:44",
+      "airlineIcao": "aal",
+      "flightNumber": "1069",
+      "originIcao": "KPIT",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-5x-departure-mpto-g-001",
+      "scheduledTime": "21:44",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MPTO",
+      "airlineIcao": "ups",
+      "flightNumber": "1875"
+    },
+    {
+      "id": "departure-aa1054-mia-bos",
+      "category": "departure",
+      "scheduledTime": "21:45",
+      "airlineIcao": "aal",
+      "flightNumber": "1054",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-aa2716-mia-tys",
+      "category": "departure",
+      "scheduledTime": "21:45",
+      "airlineIcao": "aal",
+      "flightNumber": "2716",
+      "originIcao": "KMIA",
+      "destinationIcao": "KTYS"
+    },
+    {
+      "id": "departure-mq3550-mia-cmh",
+      "category": "departure",
+      "scheduledTime": "21:45",
+      "airlineIcao": "eny",
+      "flightNumber": "3550",
+      "originIcao": "KMIA",
+      "destinationIcao": "KCMH"
+    },
+    {
+      "id": "t100-l7-arrival-skrg-g-001",
+      "scheduledTime": "21:45",
+      "category": "arrival",
+      "originIcao": "SKRG",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "lco",
+      "flightNumber": "731"
+    },
+    {
+      "id": "t100-cm-departure-mpto-f-003",
+      "scheduledTime": "21:46",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MPTO",
+      "airlineIcao": "cmp",
+      "flightNumber": "1680"
+    },
+    {
+      "id": "departure-aa1286-mia-rdu",
+      "category": "departure",
+      "scheduledTime": "21:47",
+      "airlineIcao": "aal",
+      "flightNumber": "1286",
+      "originIcao": "KMIA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-ac-arrival-cyyz-f-001",
+      "scheduledTime": "21:47",
+      "category": "arrival",
+      "originIcao": "CYYZ",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "aca",
+      "flightNumber": "6465"
+    },
+    {
+      "id": "arrival-aa716-lga-mia",
+      "category": "arrival",
+      "scheduledTime": "21:48",
+      "airlineIcao": "aal",
+      "flightNumber": "716",
+      "originIcao": "KLGA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-mq3821-tlh-mia",
+      "category": "arrival",
+      "scheduledTime": "21:48",
+      "airlineIcao": "eny",
+      "flightNumber": "3821",
+      "originIcao": "KTLH",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa1931-iah-mia",
+      "category": "arrival",
+      "scheduledTime": "21:50",
+      "airlineIcao": "aal",
+      "flightNumber": "1931",
+      "originIcao": "KIAH",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2323-mia-ord",
+      "category": "departure",
+      "scheduledTime": "21:50",
+      "airlineIcao": "aal",
+      "flightNumber": "2323",
+      "originIcao": "KMIA",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-aa3076-mia-las",
+      "category": "departure",
+      "scheduledTime": "21:50",
+      "airlineIcao": "aal",
+      "flightNumber": "3076",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-aa944-mia-jfk",
+      "category": "departure",
+      "scheduledTime": "21:51",
+      "airlineIcao": "aal",
+      "flightNumber": "944",
+      "originIcao": "KMIA",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "departure-mq3435-mia-gsp",
+      "category": "departure",
+      "scheduledTime": "21:51",
+      "airlineIcao": "eny",
+      "flightNumber": "3435",
+      "originIcao": "KMIA",
+      "destinationIcao": "KGSP"
+    },
+    {
+      "id": "departure-aa1468-mia-sat",
+      "category": "departure",
+      "scheduledTime": "21:52",
+      "airlineIcao": "aal",
+      "flightNumber": "1468",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSAT"
+    },
+    {
+      "id": "t100-vb-departure-mmmy-f-001",
+      "scheduledTime": "21:52",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MMMY",
+      "airlineIcao": "viv",
+      "flightNumber": "3007"
+    },
+    {
+      "id": "arrival-mq3558-gsp-mia",
+      "category": "arrival",
+      "scheduledTime": "21:54",
+      "airlineIcao": "eny",
+      "flightNumber": "3558",
+      "originIcao": "KGSP",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-5x-arrival-mdsd-g-001",
+      "scheduledTime": "21:54",
+      "category": "arrival",
+      "originIcao": "MDSD",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ups",
+      "flightNumber": "1165"
+    },
+    {
+      "id": "t100-jj-departure-sbgr-f-002",
+      "scheduledTime": "21:54",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SBGR",
+      "airlineIcao": "tam",
+      "flightNumber": "4029"
+    },
+    {
+      "id": "arrival-aa3119-ewr-mia",
+      "category": "arrival",
+      "scheduledTime": "21:55",
+      "airlineIcao": "aal",
+      "flightNumber": "3119",
+      "originIcao": "KEWR",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa654-sea-mia",
+      "category": "arrival",
+      "scheduledTime": "21:55",
+      "airlineIcao": "aal",
+      "flightNumber": "654",
+      "originIcao": "KSEA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-wn4575-bna-mia",
+      "category": "arrival",
+      "scheduledTime": "21:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4575",
+      "originIcao": "KBNA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa659-mia-atl",
+      "category": "departure",
+      "scheduledTime": "21:56",
+      "airlineIcao": "aal",
+      "flightNumber": "659",
+      "originIcao": "KMIA",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-aa3013-lax-mia",
+      "category": "arrival",
+      "scheduledTime": "21:57",
+      "airlineIcao": "aal",
+      "flightNumber": "3013",
+      "originIcao": "KLAX",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-4c-arrival-skbo-f-001",
+      "scheduledTime": "21:57",
+      "category": "arrival",
+      "originIcao": "SKBO",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "are",
+      "flightNumber": "1786"
+    },
+    {
+      "id": "departure-mq3897-mia-ilm",
+      "category": "departure",
+      "scheduledTime": "21:58",
+      "airlineIcao": "eny",
+      "flightNumber": "3897",
+      "originIcao": "KMIA",
+      "destinationIcao": "KILM"
+    },
+    {
+      "id": "arrival-dl1588-atl-mia",
+      "category": "arrival",
+      "scheduledTime": "21:59",
+      "airlineIcao": "dal",
+      "flightNumber": "1588",
+      "originIcao": "KATL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-ua1741-den-mia",
+      "category": "arrival",
+      "scheduledTime": "21:59",
+      "airlineIcao": "ual",
+      "flightNumber": "1741",
+      "originIcao": "KDEN",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2008-mia-ewr",
+      "category": "departure",
+      "scheduledTime": "22:00",
+      "airlineIcao": "aal",
+      "flightNumber": "2008",
+      "originIcao": "KMIA",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "t100-kx-arrival-mwcr-f-001",
+      "scheduledTime": "22:00",
+      "category": "arrival",
+      "originIcao": "MWCR",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "cay",
+      "flightNumber": "9584"
+    },
+    {
+      "id": "t100-l7-departure-skbo-g-003",
+      "scheduledTime": "22:01",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SKBO",
+      "airlineIcao": "lco",
+      "flightNumber": "4636"
+    },
+    {
+      "id": "t100-af-arrival-lfpg-f-002",
+      "scheduledTime": "22:02",
+      "category": "arrival",
+      "originIcao": "LFPG",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "afr",
+      "flightNumber": "5363"
+    },
+    {
+      "id": "arrival-aa3244-dca-mia",
+      "category": "arrival",
+      "scheduledTime": "22:03",
+      "airlineIcao": "aal",
+      "flightNumber": "3244",
+      "originIcao": "KDCA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-mq4057-cle-mia",
+      "category": "arrival",
+      "scheduledTime": "22:04",
+      "airlineIcao": "eny",
+      "flightNumber": "4057",
+      "originIcao": "KCLE",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2188-mia-phl",
+      "category": "departure",
+      "scheduledTime": "22:04",
+      "airlineIcao": "aal",
+      "flightNumber": "2188",
+      "originIcao": "KMIA",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "t100-cm-arrival-mpto-f-003",
+      "scheduledTime": "22:04",
+      "category": "arrival",
+      "originIcao": "MPTO",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "cmp",
+      "flightNumber": "6813"
+    },
+    {
+      "id": "arrival-aa2206-dfw-mia",
+      "category": "arrival",
+      "scheduledTime": "22:05",
+      "airlineIcao": "aal",
+      "flightNumber": "2206",
+      "originIcao": "KDFW",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa3165-sju-mia",
+      "category": "arrival",
+      "scheduledTime": "22:05",
+      "airlineIcao": "aal",
+      "flightNumber": "3165",
+      "originIcao": "TJSJ",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-mq3743-pns-mia",
+      "category": "arrival",
+      "scheduledTime": "22:05",
+      "airlineIcao": "eny",
+      "flightNumber": "3743",
+      "originIcao": "KPNS",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-mq3939-mci-mia",
+      "category": "arrival",
+      "scheduledTime": "22:05",
+      "airlineIcao": "eny",
+      "flightNumber": "3939",
+      "originIcao": "KMCI",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-l7-arrival-skbo-g-001",
+      "scheduledTime": "22:08",
+      "category": "arrival",
+      "originIcao": "SKBO",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "lco",
+      "flightNumber": "2154"
+    },
+    {
+      "id": "departure-aa3188-mia-tpa",
+      "category": "departure",
+      "scheduledTime": "22:09",
+      "airlineIcao": "aal",
+      "flightNumber": "3188",
+      "originIcao": "KMIA",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "t100-2k-departure-segu-f-001",
+      "scheduledTime": "22:09",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SEGU",
+      "airlineIcao": "glg",
+      "flightNumber": "3726"
+    },
+    {
+      "id": "departure-aa1427-mia-aus",
+      "category": "departure",
+      "scheduledTime": "22:10",
+      "airlineIcao": "aal",
+      "flightNumber": "1427",
+      "originIcao": "KMIA",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-aa708-mia-dca",
+      "category": "departure",
+      "scheduledTime": "22:10",
+      "airlineIcao": "aal",
+      "flightNumber": "708",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "arrival-wn1483-mco-mia",
+      "category": "arrival",
+      "scheduledTime": "22:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1483",
+      "originIcao": "KMCO",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2230-mia-iah",
+      "category": "departure",
+      "scheduledTime": "22:15",
+      "airlineIcao": "aal",
+      "flightNumber": "2230",
+      "originIcao": "KMIA",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "departure-f94551-mia-las",
+      "category": "departure",
+      "scheduledTime": "22:15",
+      "airlineIcao": "fft",
+      "flightNumber": "4551",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLAS"
+    },
+    {
+      "id": "departure-aa2948-mia-chs",
+      "category": "departure",
+      "scheduledTime": "22:16",
+      "airlineIcao": "aal",
+      "flightNumber": "2948",
+      "originIcao": "KMIA",
+      "destinationIcao": "KCHS"
+    },
+    {
+      "id": "t100-5x-arrival-ksdf-g-003",
+      "scheduledTime": "22:16",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "ups",
+      "flightNumber": "9999"
+    },
+    {
+      "id": "t100-ba-departure-egll-f-001",
+      "scheduledTime": "22:18",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "EGLL",
+      "airlineIcao": "baw",
+      "flightNumber": "1094"
+    },
+    {
+      "id": "arrival-f91665-bwi-mia",
+      "category": "arrival",
+      "scheduledTime": "22:19",
+      "airlineIcao": "fft",
+      "flightNumber": "1665",
+      "originIcao": "KBWI",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa2690-ord-mia",
+      "category": "arrival",
+      "scheduledTime": "22:20",
+      "airlineIcao": "aal",
+      "flightNumber": "2690",
+      "originIcao": "KORD",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa801-orf-mia",
+      "category": "arrival",
+      "scheduledTime": "22:20",
+      "airlineIcao": "aal",
+      "flightNumber": "801",
+      "originIcao": "KORF",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa669-mia-lax",
+      "category": "departure",
+      "scheduledTime": "22:20",
+      "airlineIcao": "aal",
+      "flightNumber": "669",
+      "originIcao": "KMIA",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "arrival-aa2321-clt-mia",
+      "category": "arrival",
+      "scheduledTime": "22:21",
+      "airlineIcao": "aal",
+      "flightNumber": "2321",
+      "originIcao": "KCLT",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-mq3920-mia-sav",
+      "category": "departure",
+      "scheduledTime": "22:21",
+      "airlineIcao": "eny",
+      "flightNumber": "3920",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSAV"
+    },
+    {
+      "id": "arrival-aa1174-jfk-mia",
+      "category": "arrival",
+      "scheduledTime": "22:22",
+      "airlineIcao": "aal",
+      "flightNumber": "1174",
+      "originIcao": "KJFK",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-lh-arrival-eddf-f-001",
+      "scheduledTime": "22:22",
+      "category": "arrival",
+      "originIcao": "EDDF",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "dlh",
+      "flightNumber": "6264"
+    },
+    {
+      "id": "t100-rv-departure-cyyz-f-001",
+      "scheduledTime": "22:23",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "CYYZ",
+      "airlineIcao": "rou",
+      "flightNumber": "8700"
+    },
+    {
+      "id": "departure-aa1212-mia-clt",
+      "category": "departure",
+      "scheduledTime": "22:25",
+      "airlineIcao": "aal",
+      "flightNumber": "1212",
+      "originIcao": "KMIA",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "t100-yx-arrival-keyw-f-001",
+      "scheduledTime": "22:25",
+      "category": "arrival",
+      "originIcao": "KEYW",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "rpa",
+      "flightNumber": "1602"
+    },
+    {
+      "id": "arrival-ua2180-ord-mia",
+      "category": "arrival",
+      "scheduledTime": "22:27",
+      "airlineIcao": "ual",
+      "flightNumber": "2180",
+      "originIcao": "KORD",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-y4-departure-mmmx-f-001",
+      "scheduledTime": "22:27",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MMMX",
+      "airlineIcao": "voi",
+      "flightNumber": "2182"
+    },
+    {
+      "id": "departure-aa1551-mia-mem",
+      "category": "departure",
+      "scheduledTime": "22:28",
+      "airlineIcao": "aal",
+      "flightNumber": "1551",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMEM"
+    },
+    {
+      "id": "departure-mq3585-mia-tlh",
+      "category": "departure",
+      "scheduledTime": "22:30",
+      "airlineIcao": "eny",
+      "flightNumber": "3585",
+      "originIcao": "KMIA",
+      "destinationIcao": "KTLH"
+    },
+    {
+      "id": "t100-qt-departure-sges-g-001",
+      "scheduledTime": "22:32",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "SGES",
+      "airlineIcao": "tpa",
+      "flightNumber": "6987"
+    },
+    {
+      "id": "departure-mq3876-mia-gnv",
+      "category": "departure",
+      "scheduledTime": "22:45",
+      "airlineIcao": "eny",
+      "flightNumber": "3876",
+      "originIcao": "KMIA",
+      "destinationIcao": "KGNV"
+    },
+    {
+      "id": "arrival-aa1576-lga-mia",
+      "category": "arrival",
+      "scheduledTime": "22:48",
+      "airlineIcao": "aal",
+      "flightNumber": "1576",
+      "originIcao": "KLGA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-ux-departure-lemd-f-001",
+      "scheduledTime": "22:48",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "LEMD",
+      "airlineIcao": "aea",
+      "flightNumber": "2706"
+    },
+    {
+      "id": "departure-aa1813-mia-mco",
+      "category": "departure",
+      "scheduledTime": "22:49",
+      "airlineIcao": "aal",
+      "flightNumber": "1813",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-aa2343-mia-dfw",
+      "category": "departure",
+      "scheduledTime": "22:49",
+      "airlineIcao": "aal",
+      "flightNumber": "2343",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "t100-2k-arrival-segu-f-001",
+      "scheduledTime": "22:49",
+      "category": "arrival",
+      "originIcao": "SEGU",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "glg",
+      "flightNumber": "7994"
+    },
+    {
+      "id": "departure-aa416-mia-jax",
+      "category": "departure",
+      "scheduledTime": "22:53",
+      "airlineIcao": "aal",
+      "flightNumber": "416",
+      "originIcao": "KMIA",
+      "destinationIcao": "KJAX"
+    },
+    {
+      "id": "departure-mq4071-mia-srq",
+      "category": "departure",
+      "scheduledTime": "22:54",
+      "airlineIcao": "eny",
+      "flightNumber": "4071",
+      "originIcao": "KMIA",
+      "destinationIcao": "KSRQ"
+    },
+    {
+      "id": "arrival-wn197-hou-mia",
+      "category": "arrival",
+      "scheduledTime": "22:55",
+      "airlineIcao": "swa",
+      "flightNumber": "197",
+      "originIcao": "KHOU",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-mq3427-mia-bhm",
+      "category": "departure",
+      "scheduledTime": "22:56",
+      "airlineIcao": "eny",
+      "flightNumber": "3427",
+      "originIcao": "KMIA",
+      "destinationIcao": "KBHM"
+    },
+    {
+      "id": "t100-ta-departure-mnmg-f-001",
+      "scheduledTime": "22:58",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "MNMG",
+      "airlineIcao": "tai",
+      "flightNumber": "9833"
+    },
+    {
+      "id": "arrival-aa1824-dfw-mia",
+      "category": "arrival",
+      "scheduledTime": "22:59",
+      "airlineIcao": "aal",
+      "flightNumber": "1824",
+      "originIcao": "KDFW",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-f93442-atl-mia",
+      "category": "arrival",
+      "scheduledTime": "23:05",
+      "airlineIcao": "fft",
+      "flightNumber": "3442",
+      "originIcao": "KATL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2552-mia-msy",
+      "category": "departure",
+      "scheduledTime": "23:05",
+      "airlineIcao": "aal",
+      "flightNumber": "2552",
+      "originIcao": "KMIA",
+      "destinationIcao": "KMSY"
+    },
+    {
+      "id": "t100-qr-arrival-othh-f-001",
+      "scheduledTime": "23:07",
+      "category": "arrival",
+      "originIcao": "OTHH",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "qtr",
+      "flightNumber": "8622"
+    },
+    {
+      "id": "departure-mq4109-mia-pns",
+      "category": "departure",
+      "scheduledTime": "23:08",
+      "airlineIcao": "eny",
+      "flightNumber": "4109",
+      "originIcao": "KMIA",
+      "destinationIcao": "KPNS"
+    },
+    {
+      "id": "arrival-aa1181-phl-mia",
+      "category": "arrival",
+      "scheduledTime": "23:09",
+      "airlineIcao": "aal",
+      "flightNumber": "1181",
+      "originIcao": "KPHL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-abx-departure-kafw-g-001",
+      "scheduledTime": "23:09",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "KAFW",
+      "airlineIcao": "abx",
+      "flightNumber": "9994"
+    },
+    {
+      "id": "departure-mq4300-mia-vps",
+      "category": "departure",
+      "scheduledTime": "23:10",
+      "airlineIcao": "eny",
+      "flightNumber": "4300",
+      "originIcao": "KMIA",
+      "destinationIcao": "KVPS"
+    },
+    {
+      "id": "t100-5x-departure-kdfw-g-001",
+      "scheduledTime": "23:11",
+      "category": "departure",
+      "originIcao": "KMIA",
+      "destinationIcao": "KDFW",
+      "airlineIcao": "ups",
+      "flightNumber": "5587"
+    },
+    {
+      "id": "departure-aa1714-mia-tpa",
+      "category": "departure",
+      "scheduledTime": "23:13",
+      "airlineIcao": "aal",
+      "flightNumber": "1714",
+      "originIcao": "KMIA",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "arrival-dl2382-lga-mia",
+      "category": "arrival",
+      "scheduledTime": "23:22",
+      "airlineIcao": "dal",
+      "flightNumber": "2382",
+      "originIcao": "KLGA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-ua1128-ewr-mia",
+      "category": "arrival",
+      "scheduledTime": "23:22",
+      "airlineIcao": "ual",
+      "flightNumber": "1128",
+      "originIcao": "KEWR",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-g3-arrival-sbbr-f-001",
+      "scheduledTime": "23:22",
+      "category": "arrival",
+      "originIcao": "SBBR",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "glo",
+      "flightNumber": "6163"
+    },
+    {
+      "id": "arrival-aa1233-dca-mia",
+      "category": "arrival",
+      "scheduledTime": "23:28",
+      "airlineIcao": "aal",
+      "flightNumber": "1233",
+      "originIcao": "KDCA",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-la-arrival-scel-f-001",
+      "scheduledTime": "23:29",
+      "category": "arrival",
+      "originIcao": "SCEL",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "lan",
+      "flightNumber": "9473"
+    },
+    {
+      "id": "arrival-dl2187-msp-mia",
+      "category": "arrival",
+      "scheduledTime": "23:35",
+      "airlineIcao": "dal",
+      "flightNumber": "2187",
+      "originIcao": "KMSP",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-dl1428-jfk-mia",
+      "category": "arrival",
+      "scheduledTime": "23:37",
+      "airlineIcao": "dal",
+      "flightNumber": "1428",
+      "originIcao": "KJFK",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-tk-arrival-ltfm-f-001",
+      "scheduledTime": "23:37",
+      "category": "arrival",
+      "originIcao": "LTFM",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "thy",
+      "flightNumber": "3507"
+    },
+    {
+      "id": "arrival-dl1234-atl-mia",
+      "category": "arrival",
+      "scheduledTime": "23:39",
+      "airlineIcao": "dal",
+      "flightNumber": "1234",
+      "originIcao": "KATL",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-abx-arrival-skbo-g-001",
+      "scheduledTime": "23:50",
+      "category": "arrival",
+      "originIcao": "SKBO",
+      "destinationIcao": "KMIA",
+      "airlineIcao": "abx",
+      "flightNumber": "7089"
+    },
+    {
+      "id": "arrival-aa496-phx-mia",
+      "category": "arrival",
+      "scheduledTime": "23:54",
+      "airlineIcao": "aal",
+      "flightNumber": "496",
+      "originIcao": "KPHX",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-aa2823-dfw-mia",
+      "category": "arrival",
+      "scheduledTime": "23:56",
+      "airlineIcao": "aal",
+      "flightNumber": "2823",
+      "originIcao": "KDFW",
+      "destinationIcao": "KMIA"
+    }
+  ]
+}

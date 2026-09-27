@@ -23,11 +23,11 @@ const AIRPORT_REQUIRED_KEYS = [
 ];
 const AIRPORT_LIST_KEYS = ['icao', 'level', 'name', 'premium', 'disabled', '_comment'];
 const DIFFICULTY_LEVELS = ['beginner', 'easy', 'medium', 'hard'];
-const SCHEDULE_KEYS = ['schemaVersion', 'airportIcao', 'timezone', 'sampleDate', 'source', 'flights'];
+const SCHEDULE_KEYS = ['schemaVersion', 'profileType', 'airportIcao', 'timezone', 'sampleDate', 'source', 'flights'];
 const SCHEDULE_SOURCE_KEYS = ['name', 'url', 'retrievedAt', 'license', 'coverage'];
 const SCHEDULE_LIST_KEYS = ['icao', 'file'];
-const SCHEDULE_SCHEMA_SHA256 = 'dd444b4739c8823d29deadd73c344f482aafb864a93706ac681a206dad7e1f87';
-const SCHEDULE_FLIGHT_KEYS = [
+const SCHEDULE_SCHEMA_SHA256 = '615b3ee373b3ea573d7030126c31cde9830d1d56809230ed60318b06acf74d80';
+const OBSERVED_SCHEDULE_FLIGHT_KEYS = [
     'id',
     'category',
     'scheduledTime',
@@ -37,6 +37,7 @@ const SCHEDULE_FLIGHT_KEYS = [
     'destinationIcao',
     'aircraftTypeIcao'
 ];
+const AUTHORED_SCHEDULE_FLIGHT_KEYS = ['id', 'category', 'scheduledTime', 'spawnPatternKey'];
 
 function isObject(value) {
     return value !== null && typeof value === 'object' && !Array.isArray(value);
@@ -318,8 +319,14 @@ function validateScheduleDocument(assetsRoot, filePath, doc, airlineIcaos, error
         errors.push(`${prefix}: unsupported property ${key}`);
     });
 
-    if (doc.schemaVersion !== 1) {
-        errors.push(`${prefix}: schemaVersion must equal 1`);
+    if (doc.schemaVersion !== 1 && doc.schemaVersion !== 2) {
+        errors.push(`${prefix}: schemaVersion must equal 1 or 2`);
+    }
+    if (doc.schemaVersion === 1 && Object.prototype.hasOwnProperty.call(doc, 'profileType')) {
+        errors.push(`${prefix}: schemaVersion 1 must not define profileType`);
+    }
+    if (doc.schemaVersion === 2 && doc.profileType !== 'authored') {
+        errors.push(`${prefix}: schemaVersion 2 profileType must equal authored`);
     }
     if (typeof doc.airportIcao !== 'string' || !/^[A-Z]{4}$/.test(doc.airportIcao)) {
         errors.push(`${prefix}: airportIcao must contain exactly four uppercase letters`);
@@ -345,13 +352,16 @@ function isValidClockTime(value) {
     return Number(match[1]) <= 23 && Number(match[2]) <= 59;
 }
 
-function validateScheduleFlight(prefix, flight, airportIcao, airlineIcaos, errors) {
+function validateScheduleFlight(prefix, flight, doc, airlineIcaos, errors) {
     if (!isObject(flight)) {
         errors.push(`${prefix}: expected an object`);
         return;
     }
 
-    Object.keys(flight).filter((key) => SCHEDULE_FLIGHT_KEYS.indexOf(key) === -1).forEach((key) => {
+    const isAuthored = doc.schemaVersion === 2 && doc.profileType === 'authored';
+    const allowedKeys = isAuthored ? AUTHORED_SCHEDULE_FLIGHT_KEYS : OBSERVED_SCHEDULE_FLIGHT_KEYS;
+
+    Object.keys(flight).filter((key) => allowedKeys.indexOf(key) === -1).forEach((key) => {
         errors.push(`${prefix}: unsupported property ${key}`);
     });
 
@@ -364,6 +374,14 @@ function validateScheduleFlight(prefix, flight, airportIcao, airlineIcaos, error
     if (!isValidClockTime(flight.scheduledTime)) {
         errors.push(`${prefix}: scheduledTime must be a HH:mm local time`);
     }
+
+    if (isAuthored) {
+        if (typeof flight.spawnPatternKey !== 'string' || !/^[0-9a-f]{8}$/.test(flight.spawnPatternKey)) {
+            errors.push(`${prefix}: spawnPatternKey must contain exactly eight lowercase hexadecimal characters`);
+        }
+        return;
+    }
+
     if (typeof flight.airlineIcao !== 'string' || !/^[a-z]{3}$/.test(flight.airlineIcao)) {
         errors.push(`${prefix}: airlineIcao must contain exactly three lowercase letters`);
     } else if (!airlineIcaos.has(flight.airlineIcao)) {
@@ -383,18 +401,18 @@ function validateScheduleFlight(prefix, flight, airportIcao, airlineIcaos, error
     }
 
     if (flight.category === 'arrival') {
-        if (flight.destinationIcao !== airportIcao) {
-            errors.push(`${prefix}: arrival destinationIcao must equal ${airportIcao}`);
+        if (flight.destinationIcao !== doc.airportIcao) {
+            errors.push(`${prefix}: arrival destinationIcao must equal ${doc.airportIcao}`);
         }
-        if (flight.originIcao === airportIcao) {
-            errors.push(`${prefix}: arrival originIcao must differ from ${airportIcao}`);
+        if (flight.originIcao === doc.airportIcao) {
+            errors.push(`${prefix}: arrival originIcao must differ from ${doc.airportIcao}`);
         }
     } else if (flight.category === 'departure') {
-        if (flight.originIcao !== airportIcao) {
-            errors.push(`${prefix}: departure originIcao must equal ${airportIcao}`);
+        if (flight.originIcao !== doc.airportIcao) {
+            errors.push(`${prefix}: departure originIcao must equal ${doc.airportIcao}`);
         }
-        if (flight.destinationIcao === airportIcao) {
-            errors.push(`${prefix}: departure destinationIcao must differ from ${airportIcao}`);
+        if (flight.destinationIcao === doc.airportIcao) {
+            errors.push(`${prefix}: departure destinationIcao must differ from ${doc.airportIcao}`);
         }
     }
 }
@@ -413,7 +431,7 @@ function validateScheduleFlights(prefix, doc, airlineIcaos, errors) {
     let previousKey = null;
 
     doc.flights.forEach((flight, index) => {
-        validateScheduleFlight(`${prefix} flights[${index}]`, flight, doc.airportIcao, airlineIcaos, errors);
+        validateScheduleFlight(`${prefix} flights[${index}]`, flight, doc, airlineIcaos, errors);
 
         if (!isObject(flight)) {
             return;
@@ -469,7 +487,7 @@ function validateScheduleSchema(schedulesRoot, documents, errors) {
 
     const digest = crypto.createHash('sha256').update(fs.readFileSync(schemaPath)).digest('hex');
     if (digest !== SCHEDULE_SCHEMA_SHA256) {
-        errors.push('schedules/schedule.schema.json: contents do not match the reviewed schemaVersion 1 contract');
+        errors.push('schedules/schedule.schema.json: contents do not match the reviewed schedule contract');
     }
 }
 

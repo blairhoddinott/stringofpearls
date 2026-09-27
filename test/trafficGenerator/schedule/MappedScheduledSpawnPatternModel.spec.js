@@ -138,3 +138,52 @@ ava('fails closed when no category-compatible candidate exists', (t) => {
         buildMappingContext(departureCandidate)
     ), { instanceOf: RangeError });
 });
+
+const AUTHORED_ARRIVAL_SLOT = {
+    id: 'auth-ksea-deadbeef-0001',
+    category: 'arrival',
+    scheduledTime: '05:30',
+    spawnPatternKey: 'deadbeef'
+};
+
+ava('authored slots select the exact keyed candidate and always use generated identity', (t) => {
+    const otherCandidate = buildCandidate({ authoredScheduleKey: '01234567', routeString: 'OTHER.KSEA16R' });
+    const exactCandidate = buildCandidate({ authoredScheduleKey: 'deadbeef', routeString: 'EXACT.KSEA16R' });
+    const isAirlineKnown = sinon.stub().returns(true);
+    const model = new MappedScheduledSpawnPatternModel(
+        AUTHORED_ARRIVAL_SLOT,
+        CONTEXT,
+        buildMappingContext(otherCandidate, {
+            candidatePatterns: [otherCandidate, exactCandidate],
+            isAirlineKnown
+        })
+    );
+
+    t.is(model.routeString, 'EXACT.KSEA16R');
+    t.is(model.getScheduledIdentity(), null);
+    t.is(model.getRandomAirlineForSpawn(), 'ual');
+    t.is(model.origin, '');
+    t.is(model.destination, 'KSEA');
+    t.true(isAirlineKnown.notCalled);
+});
+
+ava('authored slot mapping rejects missing, duplicate, and category-incompatible keys', (t) => {
+    const exactArrival = buildCandidate({ authoredScheduleKey: 'deadbeef' });
+    const exactDeparture = buildCandidate({ authoredScheduleKey: 'deadbeef', category: 'departure' });
+
+    t.throws(() => new MappedScheduledSpawnPatternModel(
+        AUTHORED_ARRIVAL_SLOT,
+        CONTEXT,
+        buildMappingContext(exactArrival, { candidatePatterns: [] })
+    ), { instanceOf: RangeError, message: /No spawn pattern.*deadbeef/ });
+    t.throws(() => new MappedScheduledSpawnPatternModel(
+        AUTHORED_ARRIVAL_SLOT,
+        CONTEXT,
+        buildMappingContext(exactArrival, { candidatePatterns: [exactArrival, buildCandidate({ authoredScheduleKey: 'deadbeef' })] })
+    ), { instanceOf: RangeError, message: /Multiple spawn patterns.*deadbeef/ });
+    t.throws(() => new MappedScheduledSpawnPatternModel(
+        AUTHORED_ARRIVAL_SLOT,
+        CONTEXT,
+        buildMappingContext(exactDeparture)
+    ), { instanceOf: RangeError, message: /category/ });
+});

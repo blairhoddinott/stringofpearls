@@ -1,0 +1,6 @@
+{
+    "icao": "bma",
+    "name": "BermudAir",
+    "callsign": { "name": "Gosling", "callsignFormats": ["###"] },
+    "fleets": { "default": [["E190", 1]] }
+}

@@ -1,0 +1,2896 @@
+{
+    "schemaVersion": 2,
+    "profileType": "authored",
+    "airportIcao": "TNCM",
+    "timezone": "America/Lower_Princes",
+    "sampleDate": "2026-07-15",
+    "source": {
+        "name": "stringofpearls airport-authored spawn patterns",
+        "url": "https://github.com/blairhoddinott/stringofpearls/tree/master/assets/airports",
+        "retrievedAt": "2026-09-27",
+        "license": "MIT",
+        "coverage": "Deterministic representative profile compiled from reviewed airport-authored rates, routes, geometry, and airline rules; movements are generated and are not observed historical flights."
+    },
+    "flights": [
+        {
+            "id": "auth-tncm-613fb14a-0066",
+            "category": "arrival",
+            "scheduledTime": "00:00",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-6cd1a9cd-0004",
+            "category": "arrival",
+            "scheduledTime": "00:02",
+            "spawnPatternKey": "6cd1a9cd"
+        },
+        {
+            "id": "auth-tncm-e7211147-0002",
+            "category": "departure",
+            "scheduledTime": "00:03",
+            "spawnPatternKey": "e7211147"
+        },
+        {
+            "id": "auth-tncm-795cd452-0031",
+            "category": "departure",
+            "scheduledTime": "00:05",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-95137547-0012",
+            "category": "departure",
+            "scheduledTime": "00:06",
+            "spawnPatternKey": "95137547"
+        },
+        {
+            "id": "auth-tncm-281c2486-0017",
+            "category": "departure",
+            "scheduledTime": "00:07",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0020",
+            "category": "departure",
+            "scheduledTime": "00:11",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0067",
+            "category": "arrival",
+            "scheduledTime": "00:12",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0018",
+            "category": "arrival",
+            "scheduledTime": "00:16",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-13b97bce-0003",
+            "category": "arrival",
+            "scheduledTime": "00:21",
+            "spawnPatternKey": "13b97bce"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0068",
+            "category": "arrival",
+            "scheduledTime": "00:24",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0018",
+            "category": "departure",
+            "scheduledTime": "00:25",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-9a24cf7a-0007",
+            "category": "departure",
+            "scheduledTime": "00:33",
+            "spawnPatternKey": "9a24cf7a"
+        },
+        {
+            "id": "auth-tncm-9f8c39e3-0010",
+            "category": "departure",
+            "scheduledTime": "00:35",
+            "spawnPatternKey": "9f8c39e3"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0069",
+            "category": "arrival",
+            "scheduledTime": "00:36",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-8b6db9c9-0012",
+            "category": "arrival",
+            "scheduledTime": "00:41",
+            "spawnPatternKey": "8b6db9c9"
+        },
+        {
+            "id": "auth-tncm-281c2486-0019",
+            "category": "departure",
+            "scheduledTime": "00:43",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0019",
+            "category": "arrival",
+            "scheduledTime": "00:43",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-795cd452-0032",
+            "category": "departure",
+            "scheduledTime": "00:44",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0070",
+            "category": "arrival",
+            "scheduledTime": "00:49",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-e1994f1d-0014",
+            "category": "arrival",
+            "scheduledTime": "00:58",
+            "spawnPatternKey": "e1994f1d"
+        },
+        {
+            "id": "auth-tncm-281c2486-0020",
+            "category": "departure",
+            "scheduledTime": "01:01",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0071",
+            "category": "arrival",
+            "scheduledTime": "01:01",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0021",
+            "category": "departure",
+            "scheduledTime": "01:04",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-95137547-0013",
+            "category": "departure",
+            "scheduledTime": "01:09",
+            "spawnPatternKey": "95137547"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0020",
+            "category": "arrival",
+            "scheduledTime": "01:09",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0072",
+            "category": "arrival",
+            "scheduledTime": "01:13",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0021",
+            "category": "departure",
+            "scheduledTime": "01:19",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-795cd452-0033",
+            "category": "departure",
+            "scheduledTime": "01:23",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0073",
+            "category": "arrival",
+            "scheduledTime": "01:25",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-6cd1a9cd-0005",
+            "category": "arrival",
+            "scheduledTime": "01:32",
+            "spawnPatternKey": "6cd1a9cd"
+        },
+        {
+            "id": "auth-tncm-9f8c39e3-0011",
+            "category": "departure",
+            "scheduledTime": "01:35",
+            "spawnPatternKey": "9f8c39e3"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0021",
+            "category": "arrival",
+            "scheduledTime": "01:36",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-281c2486-0022",
+            "category": "departure",
+            "scheduledTime": "01:37",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0074",
+            "category": "arrival",
+            "scheduledTime": "01:37",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-8b6db9c9-0013",
+            "category": "arrival",
+            "scheduledTime": "01:39",
+            "spawnPatternKey": "8b6db9c9"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0075",
+            "category": "arrival",
+            "scheduledTime": "01:50",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-159378cc-0007",
+            "category": "departure",
+            "scheduledTime": "01:55",
+            "spawnPatternKey": "159378cc"
+        },
+        {
+            "id": "auth-tncm-281c2486-0023",
+            "category": "departure",
+            "scheduledTime": "01:55",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0022",
+            "category": "departure",
+            "scheduledTime": "01:58",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-e1994f1d-0015",
+            "category": "arrival",
+            "scheduledTime": "01:58",
+            "spawnPatternKey": "e1994f1d"
+        },
+        {
+            "id": "auth-tncm-f0f21c44-0010",
+            "category": "arrival",
+            "scheduledTime": "02:01",
+            "spawnPatternKey": "f0f21c44"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0076",
+            "category": "arrival",
+            "scheduledTime": "02:02",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-795cd452-0034",
+            "category": "departure",
+            "scheduledTime": "02:02",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0022",
+            "category": "arrival",
+            "scheduledTime": "02:03",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-95137547-0014",
+            "category": "departure",
+            "scheduledTime": "02:11",
+            "spawnPatternKey": "95137547"
+        },
+        {
+            "id": "auth-tncm-281c2486-0024",
+            "category": "departure",
+            "scheduledTime": "02:13",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0077",
+            "category": "arrival",
+            "scheduledTime": "02:14",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0078",
+            "category": "arrival",
+            "scheduledTime": "02:26",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0023",
+            "category": "arrival",
+            "scheduledTime": "02:29",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-281c2486-0025",
+            "category": "departure",
+            "scheduledTime": "02:31",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-9f8c39e3-0012",
+            "category": "departure",
+            "scheduledTime": "02:35",
+            "spawnPatternKey": "9f8c39e3"
+        },
+        {
+            "id": "auth-tncm-8b6db9c9-0014",
+            "category": "arrival",
+            "scheduledTime": "02:36",
+            "spawnPatternKey": "8b6db9c9"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0079",
+            "category": "arrival",
+            "scheduledTime": "02:38",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-795cd452-0035",
+            "category": "departure",
+            "scheduledTime": "02:41",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-9a24cf7a-0008",
+            "category": "departure",
+            "scheduledTime": "02:44",
+            "spawnPatternKey": "9a24cf7a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0026",
+            "category": "departure",
+            "scheduledTime": "02:49",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0080",
+            "category": "arrival",
+            "scheduledTime": "02:51",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0023",
+            "category": "departure",
+            "scheduledTime": "02:51",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0024",
+            "category": "arrival",
+            "scheduledTime": "02:56",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-e1994f1d-0016",
+            "category": "arrival",
+            "scheduledTime": "02:58",
+            "spawnPatternKey": "e1994f1d"
+        },
+        {
+            "id": "auth-tncm-6cd1a9cd-0006",
+            "category": "arrival",
+            "scheduledTime": "03:02",
+            "spawnPatternKey": "6cd1a9cd"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0081",
+            "category": "arrival",
+            "scheduledTime": "03:03",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0027",
+            "category": "departure",
+            "scheduledTime": "03:07",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-95137547-0015",
+            "category": "departure",
+            "scheduledTime": "03:14",
+            "spawnPatternKey": "95137547"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0082",
+            "category": "arrival",
+            "scheduledTime": "03:15",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-795cd452-0036",
+            "category": "departure",
+            "scheduledTime": "03:20",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0025",
+            "category": "arrival",
+            "scheduledTime": "03:23",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-281c2486-0028",
+            "category": "departure",
+            "scheduledTime": "03:25",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0083",
+            "category": "arrival",
+            "scheduledTime": "03:27",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-8b6db9c9-0015",
+            "category": "arrival",
+            "scheduledTime": "03:34",
+            "spawnPatternKey": "8b6db9c9"
+        },
+        {
+            "id": "auth-tncm-9f8c39e3-0013",
+            "category": "departure",
+            "scheduledTime": "03:35",
+            "spawnPatternKey": "9f8c39e3"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0084",
+            "category": "arrival",
+            "scheduledTime": "03:39",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0029",
+            "category": "departure",
+            "scheduledTime": "03:43",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0024",
+            "category": "departure",
+            "scheduledTime": "03:44",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0026",
+            "category": "arrival",
+            "scheduledTime": "03:49",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-f7ddc984-0003",
+            "category": "departure",
+            "scheduledTime": "03:50",
+            "spawnPatternKey": "f7ddc984"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0085",
+            "category": "arrival",
+            "scheduledTime": "03:52",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-e1994f1d-0017",
+            "category": "arrival",
+            "scheduledTime": "03:58",
+            "spawnPatternKey": "e1994f1d"
+        },
+        {
+            "id": "auth-tncm-795cd452-0037",
+            "category": "departure",
+            "scheduledTime": "03:59",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-281c2486-0030",
+            "category": "departure",
+            "scheduledTime": "04:01",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0086",
+            "category": "arrival",
+            "scheduledTime": "04:04",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-159378cc-0008",
+            "category": "departure",
+            "scheduledTime": "04:06",
+            "spawnPatternKey": "159378cc"
+        },
+        {
+            "id": "auth-tncm-f0f21c44-0011",
+            "category": "arrival",
+            "scheduledTime": "04:12",
+            "spawnPatternKey": "f0f21c44"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0087",
+            "category": "arrival",
+            "scheduledTime": "04:16",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0027",
+            "category": "arrival",
+            "scheduledTime": "04:16",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-95137547-0016",
+            "category": "departure",
+            "scheduledTime": "04:17",
+            "spawnPatternKey": "95137547"
+        },
+        {
+            "id": "auth-tncm-281c2486-0031",
+            "category": "departure",
+            "scheduledTime": "04:19",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0088",
+            "category": "arrival",
+            "scheduledTime": "04:28",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-6cd1a9cd-0007",
+            "category": "arrival",
+            "scheduledTime": "04:32",
+            "spawnPatternKey": "6cd1a9cd"
+        },
+        {
+            "id": "auth-tncm-8b6db9c9-0016",
+            "category": "arrival",
+            "scheduledTime": "04:32",
+            "spawnPatternKey": "8b6db9c9"
+        },
+        {
+            "id": "auth-tncm-9f8c39e3-0014",
+            "category": "departure",
+            "scheduledTime": "04:35",
+            "spawnPatternKey": "9f8c39e3"
+        },
+        {
+            "id": "auth-tncm-281c2486-0032",
+            "category": "departure",
+            "scheduledTime": "04:37",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0025",
+            "category": "departure",
+            "scheduledTime": "04:38",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-795cd452-0001",
+            "category": "departure",
+            "scheduledTime": "04:38",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0089",
+            "category": "arrival",
+            "scheduledTime": "04:40",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0028",
+            "category": "arrival",
+            "scheduledTime": "04:43",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-e7211147-0003",
+            "category": "departure",
+            "scheduledTime": "04:51",
+            "spawnPatternKey": "e7211147"
+        },
+        {
+            "id": "auth-tncm-207ccc12-0001",
+            "category": "departure",
+            "scheduledTime": "04:52",
+            "spawnPatternKey": "207ccc12"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0090",
+            "category": "arrival",
+            "scheduledTime": "04:53",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0033",
+            "category": "departure",
+            "scheduledTime": "04:55",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-9a24cf7a-0009",
+            "category": "departure",
+            "scheduledTime": "04:55",
+            "spawnPatternKey": "9a24cf7a"
+        },
+        {
+            "id": "auth-tncm-e1994f1d-0018",
+            "category": "arrival",
+            "scheduledTime": "04:58",
+            "spawnPatternKey": "e1994f1d"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0091",
+            "category": "arrival",
+            "scheduledTime": "05:05",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-13b97bce-0004",
+            "category": "arrival",
+            "scheduledTime": "05:09",
+            "spawnPatternKey": "13b97bce"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0029",
+            "category": "arrival",
+            "scheduledTime": "05:09",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-281c2486-0034",
+            "category": "departure",
+            "scheduledTime": "05:13",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-795cd452-0002",
+            "category": "departure",
+            "scheduledTime": "05:16",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0092",
+            "category": "arrival",
+            "scheduledTime": "05:17",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-95137547-0017",
+            "category": "departure",
+            "scheduledTime": "05:19",
+            "spawnPatternKey": "95137547"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0093",
+            "category": "arrival",
+            "scheduledTime": "05:29",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-8b6db9c9-0017",
+            "category": "arrival",
+            "scheduledTime": "05:29",
+            "spawnPatternKey": "8b6db9c9"
+        },
+        {
+            "id": "auth-tncm-281c2486-0035",
+            "category": "departure",
+            "scheduledTime": "05:31",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0026",
+            "category": "departure",
+            "scheduledTime": "05:31",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-9f8c39e3-0015",
+            "category": "departure",
+            "scheduledTime": "05:35",
+            "spawnPatternKey": "9f8c39e3"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0030",
+            "category": "arrival",
+            "scheduledTime": "05:36",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0094",
+            "category": "arrival",
+            "scheduledTime": "05:41",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0036",
+            "category": "departure",
+            "scheduledTime": "05:49",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0095",
+            "category": "arrival",
+            "scheduledTime": "05:54",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-795cd452-0003",
+            "category": "departure",
+            "scheduledTime": "05:55",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-e1994f1d-0019",
+            "category": "arrival",
+            "scheduledTime": "05:58",
+            "spawnPatternKey": "e1994f1d"
+        },
+        {
+            "id": "auth-tncm-6cd1a9cd-0008",
+            "category": "arrival",
+            "scheduledTime": "06:02",
+            "spawnPatternKey": "6cd1a9cd"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0031",
+            "category": "arrival",
+            "scheduledTime": "06:03",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0096",
+            "category": "arrival",
+            "scheduledTime": "06:06",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0037",
+            "category": "departure",
+            "scheduledTime": "06:07",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-159378cc-0009",
+            "category": "departure",
+            "scheduledTime": "06:17",
+            "spawnPatternKey": "159378cc"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0097",
+            "category": "arrival",
+            "scheduledTime": "06:18",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-95137547-0018",
+            "category": "departure",
+            "scheduledTime": "06:22",
+            "spawnPatternKey": "95137547"
+        },
+        {
+            "id": "auth-tncm-f0f21c44-0001",
+            "category": "arrival",
+            "scheduledTime": "06:23",
+            "spawnPatternKey": "f0f21c44"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0027",
+            "category": "departure",
+            "scheduledTime": "06:24",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-281c2486-0038",
+            "category": "departure",
+            "scheduledTime": "06:25",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-8b6db9c9-0018",
+            "category": "arrival",
+            "scheduledTime": "06:27",
+            "spawnPatternKey": "8b6db9c9"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0032",
+            "category": "arrival",
+            "scheduledTime": "06:29",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0098",
+            "category": "arrival",
+            "scheduledTime": "06:30",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-795cd452-0004",
+            "category": "departure",
+            "scheduledTime": "06:34",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-9f8c39e3-0016",
+            "category": "departure",
+            "scheduledTime": "06:35",
+            "spawnPatternKey": "9f8c39e3"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0099",
+            "category": "arrival",
+            "scheduledTime": "06:42",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0039",
+            "category": "departure",
+            "scheduledTime": "06:43",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0100",
+            "category": "arrival",
+            "scheduledTime": "06:55",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0033",
+            "category": "arrival",
+            "scheduledTime": "06:56",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-e1994f1d-0020",
+            "category": "arrival",
+            "scheduledTime": "06:58",
+            "spawnPatternKey": "e1994f1d"
+        },
+        {
+            "id": "auth-tncm-281c2486-0040",
+            "category": "departure",
+            "scheduledTime": "07:01",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-9a24cf7a-0010",
+            "category": "departure",
+            "scheduledTime": "07:06",
+            "spawnPatternKey": "9a24cf7a"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0101",
+            "category": "arrival",
+            "scheduledTime": "07:07",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-795cd452-0005",
+            "category": "departure",
+            "scheduledTime": "07:13",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0001",
+            "category": "departure",
+            "scheduledTime": "07:18",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-281c2486-0041",
+            "category": "departure",
+            "scheduledTime": "07:19",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0102",
+            "category": "arrival",
+            "scheduledTime": "07:19",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0034",
+            "category": "arrival",
+            "scheduledTime": "07:23",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-8b6db9c9-0019",
+            "category": "arrival",
+            "scheduledTime": "07:24",
+            "spawnPatternKey": "8b6db9c9"
+        },
+        {
+            "id": "auth-tncm-95137547-0019",
+            "category": "departure",
+            "scheduledTime": "07:24",
+            "spawnPatternKey": "95137547"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0103",
+            "category": "arrival",
+            "scheduledTime": "07:31",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-6cd1a9cd-0009",
+            "category": "arrival",
+            "scheduledTime": "07:32",
+            "spawnPatternKey": "6cd1a9cd"
+        },
+        {
+            "id": "auth-tncm-9f8c39e3-0017",
+            "category": "departure",
+            "scheduledTime": "07:35",
+            "spawnPatternKey": "9f8c39e3"
+        },
+        {
+            "id": "auth-tncm-281c2486-0042",
+            "category": "departure",
+            "scheduledTime": "07:37",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0104",
+            "category": "arrival",
+            "scheduledTime": "07:43",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0035",
+            "category": "arrival",
+            "scheduledTime": "07:49",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-795cd452-0006",
+            "category": "departure",
+            "scheduledTime": "07:52",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-281c2486-0043",
+            "category": "departure",
+            "scheduledTime": "07:55",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0105",
+            "category": "arrival",
+            "scheduledTime": "07:56",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-e1994f1d-0021",
+            "category": "arrival",
+            "scheduledTime": "07:58",
+            "spawnPatternKey": "e1994f1d"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0106",
+            "category": "arrival",
+            "scheduledTime": "08:08",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0002",
+            "category": "departure",
+            "scheduledTime": "08:11",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-281c2486-0044",
+            "category": "departure",
+            "scheduledTime": "08:13",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0036",
+            "category": "arrival",
+            "scheduledTime": "08:16",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0107",
+            "category": "arrival",
+            "scheduledTime": "08:20",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-8b6db9c9-0020",
+            "category": "arrival",
+            "scheduledTime": "08:22",
+            "spawnPatternKey": "8b6db9c9"
+        },
+        {
+            "id": "auth-tncm-95137547-0020",
+            "category": "departure",
+            "scheduledTime": "08:27",
+            "spawnPatternKey": "95137547"
+        },
+        {
+            "id": "auth-tncm-159378cc-0010",
+            "category": "departure",
+            "scheduledTime": "08:28",
+            "spawnPatternKey": "159378cc"
+        },
+        {
+            "id": "auth-tncm-281c2486-0045",
+            "category": "departure",
+            "scheduledTime": "08:31",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-795cd452-0007",
+            "category": "departure",
+            "scheduledTime": "08:31",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0108",
+            "category": "arrival",
+            "scheduledTime": "08:32",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-f0f21c44-0002",
+            "category": "arrival",
+            "scheduledTime": "08:33",
+            "spawnPatternKey": "f0f21c44"
+        },
+        {
+            "id": "auth-tncm-9f8c39e3-0018",
+            "category": "departure",
+            "scheduledTime": "08:35",
+            "spawnPatternKey": "9f8c39e3"
+        },
+        {
+            "id": "auth-tncm-f7ddc984-0004",
+            "category": "departure",
+            "scheduledTime": "08:38",
+            "spawnPatternKey": "f7ddc984"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0037",
+            "category": "arrival",
+            "scheduledTime": "08:43",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0109",
+            "category": "arrival",
+            "scheduledTime": "08:44",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0046",
+            "category": "departure",
+            "scheduledTime": "08:49",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0110",
+            "category": "arrival",
+            "scheduledTime": "08:57",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-e1994f1d-0022",
+            "category": "arrival",
+            "scheduledTime": "08:58",
+            "spawnPatternKey": "e1994f1d"
+        },
+        {
+            "id": "auth-tncm-6cd1a9cd-0010",
+            "category": "arrival",
+            "scheduledTime": "09:02",
+            "spawnPatternKey": "6cd1a9cd"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0003",
+            "category": "departure",
+            "scheduledTime": "09:04",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-281c2486-0047",
+            "category": "departure",
+            "scheduledTime": "09:07",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0111",
+            "category": "arrival",
+            "scheduledTime": "09:09",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0038",
+            "category": "arrival",
+            "scheduledTime": "09:09",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-795cd452-0008",
+            "category": "departure",
+            "scheduledTime": "09:10",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-9a24cf7a-0011",
+            "category": "departure",
+            "scheduledTime": "09:17",
+            "spawnPatternKey": "9a24cf7a"
+        },
+        {
+            "id": "auth-tncm-8b6db9c9-0021",
+            "category": "arrival",
+            "scheduledTime": "09:20",
+            "spawnPatternKey": "8b6db9c9"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0112",
+            "category": "arrival",
+            "scheduledTime": "09:21",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0048",
+            "category": "departure",
+            "scheduledTime": "09:25",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-95137547-0021",
+            "category": "departure",
+            "scheduledTime": "09:30",
+            "spawnPatternKey": "95137547"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0113",
+            "category": "arrival",
+            "scheduledTime": "09:33",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-9f8c39e3-0019",
+            "category": "departure",
+            "scheduledTime": "09:35",
+            "spawnPatternKey": "9f8c39e3"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0039",
+            "category": "arrival",
+            "scheduledTime": "09:36",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-e7211147-0004",
+            "category": "departure",
+            "scheduledTime": "09:39",
+            "spawnPatternKey": "e7211147"
+        },
+        {
+            "id": "auth-tncm-281c2486-0049",
+            "category": "departure",
+            "scheduledTime": "09:43",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0114",
+            "category": "arrival",
+            "scheduledTime": "09:45",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-795cd452-0009",
+            "category": "departure",
+            "scheduledTime": "09:49",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-13b97bce-0005",
+            "category": "arrival",
+            "scheduledTime": "09:57",
+            "spawnPatternKey": "13b97bce"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0115",
+            "category": "arrival",
+            "scheduledTime": "09:58",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0004",
+            "category": "departure",
+            "scheduledTime": "09:58",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-e1994f1d-0023",
+            "category": "arrival",
+            "scheduledTime": "09:58",
+            "spawnPatternKey": "e1994f1d"
+        },
+        {
+            "id": "auth-tncm-281c2486-0050",
+            "category": "departure",
+            "scheduledTime": "10:01",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0040",
+            "category": "arrival",
+            "scheduledTime": "10:03",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0116",
+            "category": "arrival",
+            "scheduledTime": "10:10",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-8b6db9c9-0022",
+            "category": "arrival",
+            "scheduledTime": "10:17",
+            "spawnPatternKey": "8b6db9c9"
+        },
+        {
+            "id": "auth-tncm-281c2486-0051",
+            "category": "departure",
+            "scheduledTime": "10:19",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0117",
+            "category": "arrival",
+            "scheduledTime": "10:22",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-795cd452-0010",
+            "category": "departure",
+            "scheduledTime": "10:28",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0041",
+            "category": "arrival",
+            "scheduledTime": "10:29",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-6cd1a9cd-0011",
+            "category": "arrival",
+            "scheduledTime": "10:32",
+            "spawnPatternKey": "6cd1a9cd"
+        },
+        {
+            "id": "auth-tncm-95137547-0022",
+            "category": "departure",
+            "scheduledTime": "10:32",
+            "spawnPatternKey": "95137547"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0118",
+            "category": "arrival",
+            "scheduledTime": "10:34",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-9f8c39e3-0020",
+            "category": "departure",
+            "scheduledTime": "10:35",
+            "spawnPatternKey": "9f8c39e3"
+        },
+        {
+            "id": "auth-tncm-281c2486-0052",
+            "category": "departure",
+            "scheduledTime": "10:37",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-159378cc-0011",
+            "category": "departure",
+            "scheduledTime": "10:39",
+            "spawnPatternKey": "159378cc"
+        },
+        {
+            "id": "auth-tncm-f0f21c44-0003",
+            "category": "arrival",
+            "scheduledTime": "10:44",
+            "spawnPatternKey": "f0f21c44"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0001",
+            "category": "arrival",
+            "scheduledTime": "10:47",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0005",
+            "category": "departure",
+            "scheduledTime": "10:51",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-281c2486-0053",
+            "category": "departure",
+            "scheduledTime": "10:55",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0042",
+            "category": "arrival",
+            "scheduledTime": "10:56",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-e1994f1d-0024",
+            "category": "arrival",
+            "scheduledTime": "10:58",
+            "spawnPatternKey": "e1994f1d"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0002",
+            "category": "arrival",
+            "scheduledTime": "10:59",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-795cd452-0011",
+            "category": "departure",
+            "scheduledTime": "11:07",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0003",
+            "category": "arrival",
+            "scheduledTime": "11:11",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0054",
+            "category": "departure",
+            "scheduledTime": "11:13",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-8b6db9c9-0023",
+            "category": "arrival",
+            "scheduledTime": "11:15",
+            "spawnPatternKey": "8b6db9c9"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0004",
+            "category": "arrival",
+            "scheduledTime": "11:23",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0043",
+            "category": "arrival",
+            "scheduledTime": "11:23",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-9a24cf7a-0001",
+            "category": "departure",
+            "scheduledTime": "11:28",
+            "spawnPatternKey": "9a24cf7a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0055",
+            "category": "departure",
+            "scheduledTime": "11:31",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0005",
+            "category": "arrival",
+            "scheduledTime": "11:35",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-95137547-0023",
+            "category": "departure",
+            "scheduledTime": "11:35",
+            "spawnPatternKey": "95137547"
+        },
+        {
+            "id": "auth-tncm-9f8c39e3-0021",
+            "category": "departure",
+            "scheduledTime": "11:35",
+            "spawnPatternKey": "9f8c39e3"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0006",
+            "category": "departure",
+            "scheduledTime": "11:44",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-795cd452-0012",
+            "category": "departure",
+            "scheduledTime": "11:46",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0006",
+            "category": "arrival",
+            "scheduledTime": "11:48",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0056",
+            "category": "departure",
+            "scheduledTime": "11:49",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0044",
+            "category": "arrival",
+            "scheduledTime": "11:49",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-e1994f1d-0001",
+            "category": "arrival",
+            "scheduledTime": "11:58",
+            "spawnPatternKey": "e1994f1d"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0007",
+            "category": "arrival",
+            "scheduledTime": "12:00",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-6cd1a9cd-0012",
+            "category": "arrival",
+            "scheduledTime": "12:02",
+            "spawnPatternKey": "6cd1a9cd"
+        },
+        {
+            "id": "auth-tncm-281c2486-0057",
+            "category": "departure",
+            "scheduledTime": "12:07",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0008",
+            "category": "arrival",
+            "scheduledTime": "12:12",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-8b6db9c9-0024",
+            "category": "arrival",
+            "scheduledTime": "12:12",
+            "spawnPatternKey": "8b6db9c9"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0045",
+            "category": "arrival",
+            "scheduledTime": "12:16",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0009",
+            "category": "arrival",
+            "scheduledTime": "12:24",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0058",
+            "category": "departure",
+            "scheduledTime": "12:25",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-795cd452-0013",
+            "category": "departure",
+            "scheduledTime": "12:25",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-9f8c39e3-0022",
+            "category": "departure",
+            "scheduledTime": "12:35",
+            "spawnPatternKey": "9f8c39e3"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0010",
+            "category": "arrival",
+            "scheduledTime": "12:36",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0007",
+            "category": "departure",
+            "scheduledTime": "12:38",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-95137547-0001",
+            "category": "departure",
+            "scheduledTime": "12:38",
+            "spawnPatternKey": "95137547"
+        },
+        {
+            "id": "auth-tncm-281c2486-0059",
+            "category": "departure",
+            "scheduledTime": "12:43",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0046",
+            "category": "arrival",
+            "scheduledTime": "12:43",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0011",
+            "category": "arrival",
+            "scheduledTime": "12:49",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-159378cc-0001",
+            "category": "departure",
+            "scheduledTime": "12:50",
+            "spawnPatternKey": "159378cc"
+        },
+        {
+            "id": "auth-tncm-207ccc12-0002",
+            "category": "departure",
+            "scheduledTime": "12:52",
+            "spawnPatternKey": "207ccc12"
+        },
+        {
+            "id": "auth-tncm-f0f21c44-0004",
+            "category": "arrival",
+            "scheduledTime": "12:55",
+            "spawnPatternKey": "f0f21c44"
+        },
+        {
+            "id": "auth-tncm-e1994f1d-0002",
+            "category": "arrival",
+            "scheduledTime": "12:58",
+            "spawnPatternKey": "e1994f1d"
+        },
+        {
+            "id": "auth-tncm-281c2486-0060",
+            "category": "departure",
+            "scheduledTime": "13:01",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0012",
+            "category": "arrival",
+            "scheduledTime": "13:01",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-795cd452-0014",
+            "category": "departure",
+            "scheduledTime": "13:03",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0047",
+            "category": "arrival",
+            "scheduledTime": "13:09",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-8b6db9c9-0025",
+            "category": "arrival",
+            "scheduledTime": "13:10",
+            "spawnPatternKey": "8b6db9c9"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0013",
+            "category": "arrival",
+            "scheduledTime": "13:13",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0061",
+            "category": "departure",
+            "scheduledTime": "13:19",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0014",
+            "category": "arrival",
+            "scheduledTime": "13:25",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-f7ddc984-0005",
+            "category": "departure",
+            "scheduledTime": "13:26",
+            "spawnPatternKey": "f7ddc984"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0008",
+            "category": "departure",
+            "scheduledTime": "13:31",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-6cd1a9cd-0013",
+            "category": "arrival",
+            "scheduledTime": "13:32",
+            "spawnPatternKey": "6cd1a9cd"
+        },
+        {
+            "id": "auth-tncm-9f8c39e3-0023",
+            "category": "departure",
+            "scheduledTime": "13:35",
+            "spawnPatternKey": "9f8c39e3"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0048",
+            "category": "arrival",
+            "scheduledTime": "13:36",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-281c2486-0062",
+            "category": "departure",
+            "scheduledTime": "13:37",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0015",
+            "category": "arrival",
+            "scheduledTime": "13:37",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-9a24cf7a-0002",
+            "category": "departure",
+            "scheduledTime": "13:38",
+            "spawnPatternKey": "9a24cf7a"
+        },
+        {
+            "id": "auth-tncm-95137547-0002",
+            "category": "departure",
+            "scheduledTime": "13:40",
+            "spawnPatternKey": "95137547"
+        },
+        {
+            "id": "auth-tncm-795cd452-0015",
+            "category": "departure",
+            "scheduledTime": "13:42",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0016",
+            "category": "arrival",
+            "scheduledTime": "13:50",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0063",
+            "category": "departure",
+            "scheduledTime": "13:55",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-e1994f1d-0003",
+            "category": "arrival",
+            "scheduledTime": "13:58",
+            "spawnPatternKey": "e1994f1d"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0017",
+            "category": "arrival",
+            "scheduledTime": "14:02",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0049",
+            "category": "arrival",
+            "scheduledTime": "14:03",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-8b6db9c9-0001",
+            "category": "arrival",
+            "scheduledTime": "14:08",
+            "spawnPatternKey": "8b6db9c9"
+        },
+        {
+            "id": "auth-tncm-281c2486-0064",
+            "category": "departure",
+            "scheduledTime": "14:13",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0018",
+            "category": "arrival",
+            "scheduledTime": "14:14",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-795cd452-0016",
+            "category": "departure",
+            "scheduledTime": "14:21",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0009",
+            "category": "departure",
+            "scheduledTime": "14:24",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0019",
+            "category": "arrival",
+            "scheduledTime": "14:26",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-e7211147-0005",
+            "category": "departure",
+            "scheduledTime": "14:27",
+            "spawnPatternKey": "e7211147"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0050",
+            "category": "arrival",
+            "scheduledTime": "14:29",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-281c2486-0065",
+            "category": "departure",
+            "scheduledTime": "14:31",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-9f8c39e3-0024",
+            "category": "departure",
+            "scheduledTime": "14:35",
+            "spawnPatternKey": "9f8c39e3"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0020",
+            "category": "arrival",
+            "scheduledTime": "14:38",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-95137547-0003",
+            "category": "departure",
+            "scheduledTime": "14:43",
+            "spawnPatternKey": "95137547"
+        },
+        {
+            "id": "auth-tncm-13b97bce-0001",
+            "category": "arrival",
+            "scheduledTime": "14:45",
+            "spawnPatternKey": "13b97bce"
+        },
+        {
+            "id": "auth-tncm-281c2486-0066",
+            "category": "departure",
+            "scheduledTime": "14:49",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0021",
+            "category": "arrival",
+            "scheduledTime": "14:51",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0051",
+            "category": "arrival",
+            "scheduledTime": "14:56",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-e1994f1d-0004",
+            "category": "arrival",
+            "scheduledTime": "14:58",
+            "spawnPatternKey": "e1994f1d"
+        },
+        {
+            "id": "auth-tncm-159378cc-0002",
+            "category": "departure",
+            "scheduledTime": "15:00",
+            "spawnPatternKey": "159378cc"
+        },
+        {
+            "id": "auth-tncm-795cd452-0017",
+            "category": "departure",
+            "scheduledTime": "15:00",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-6cd1a9cd-0014",
+            "category": "arrival",
+            "scheduledTime": "15:02",
+            "spawnPatternKey": "6cd1a9cd"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0022",
+            "category": "arrival",
+            "scheduledTime": "15:03",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-8b6db9c9-0002",
+            "category": "arrival",
+            "scheduledTime": "15:05",
+            "spawnPatternKey": "8b6db9c9"
+        },
+        {
+            "id": "auth-tncm-f0f21c44-0005",
+            "category": "arrival",
+            "scheduledTime": "15:06",
+            "spawnPatternKey": "f0f21c44"
+        },
+        {
+            "id": "auth-tncm-281c2486-0067",
+            "category": "departure",
+            "scheduledTime": "15:07",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0023",
+            "category": "arrival",
+            "scheduledTime": "15:15",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0010",
+            "category": "departure",
+            "scheduledTime": "15:18",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0052",
+            "category": "arrival",
+            "scheduledTime": "15:23",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-281c2486-0068",
+            "category": "departure",
+            "scheduledTime": "15:25",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0024",
+            "category": "arrival",
+            "scheduledTime": "15:27",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-9f8c39e3-0001",
+            "category": "departure",
+            "scheduledTime": "15:35",
+            "spawnPatternKey": "9f8c39e3"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0025",
+            "category": "arrival",
+            "scheduledTime": "15:39",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-795cd452-0018",
+            "category": "departure",
+            "scheduledTime": "15:39",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-281c2486-0069",
+            "category": "departure",
+            "scheduledTime": "15:43",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-95137547-0004",
+            "category": "departure",
+            "scheduledTime": "15:45",
+            "spawnPatternKey": "95137547"
+        },
+        {
+            "id": "auth-tncm-9a24cf7a-0003",
+            "category": "departure",
+            "scheduledTime": "15:49",
+            "spawnPatternKey": "9a24cf7a"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0053",
+            "category": "arrival",
+            "scheduledTime": "15:49",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0026",
+            "category": "arrival",
+            "scheduledTime": "15:52",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-e1994f1d-0005",
+            "category": "arrival",
+            "scheduledTime": "15:58",
+            "spawnPatternKey": "e1994f1d"
+        },
+        {
+            "id": "auth-tncm-281c2486-0070",
+            "category": "departure",
+            "scheduledTime": "16:01",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-8b6db9c9-0003",
+            "category": "arrival",
+            "scheduledTime": "16:03",
+            "spawnPatternKey": "8b6db9c9"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0027",
+            "category": "arrival",
+            "scheduledTime": "16:04",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0011",
+            "category": "departure",
+            "scheduledTime": "16:11",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0028",
+            "category": "arrival",
+            "scheduledTime": "16:16",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0054",
+            "category": "arrival",
+            "scheduledTime": "16:16",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-795cd452-0019",
+            "category": "departure",
+            "scheduledTime": "16:18",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-281c2486-0071",
+            "category": "departure",
+            "scheduledTime": "16:19",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0029",
+            "category": "arrival",
+            "scheduledTime": "16:28",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-6cd1a9cd-0015",
+            "category": "arrival",
+            "scheduledTime": "16:32",
+            "spawnPatternKey": "6cd1a9cd"
+        },
+        {
+            "id": "auth-tncm-9f8c39e3-0002",
+            "category": "departure",
+            "scheduledTime": "16:35",
+            "spawnPatternKey": "9f8c39e3"
+        },
+        {
+            "id": "auth-tncm-281c2486-0072",
+            "category": "departure",
+            "scheduledTime": "16:37",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0030",
+            "category": "arrival",
+            "scheduledTime": "16:40",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0001",
+            "category": "arrival",
+            "scheduledTime": "16:43",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-95137547-0005",
+            "category": "departure",
+            "scheduledTime": "16:48",
+            "spawnPatternKey": "95137547"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0031",
+            "category": "arrival",
+            "scheduledTime": "16:53",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0073",
+            "category": "departure",
+            "scheduledTime": "16:55",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-795cd452-0020",
+            "category": "departure",
+            "scheduledTime": "16:57",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-e1994f1d-0006",
+            "category": "arrival",
+            "scheduledTime": "16:58",
+            "spawnPatternKey": "e1994f1d"
+        },
+        {
+            "id": "auth-tncm-8b6db9c9-0004",
+            "category": "arrival",
+            "scheduledTime": "17:00",
+            "spawnPatternKey": "8b6db9c9"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0012",
+            "category": "departure",
+            "scheduledTime": "17:04",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0032",
+            "category": "arrival",
+            "scheduledTime": "17:05",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0002",
+            "category": "arrival",
+            "scheduledTime": "17:09",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-159378cc-0003",
+            "category": "departure",
+            "scheduledTime": "17:11",
+            "spawnPatternKey": "159378cc"
+        },
+        {
+            "id": "auth-tncm-281c2486-0074",
+            "category": "departure",
+            "scheduledTime": "17:13",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0033",
+            "category": "arrival",
+            "scheduledTime": "17:17",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-f0f21c44-0006",
+            "category": "arrival",
+            "scheduledTime": "17:17",
+            "spawnPatternKey": "f0f21c44"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0034",
+            "category": "arrival",
+            "scheduledTime": "17:29",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0075",
+            "category": "departure",
+            "scheduledTime": "17:31",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-9f8c39e3-0003",
+            "category": "departure",
+            "scheduledTime": "17:35",
+            "spawnPatternKey": "9f8c39e3"
+        },
+        {
+            "id": "auth-tncm-795cd452-0021",
+            "category": "departure",
+            "scheduledTime": "17:36",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0003",
+            "category": "arrival",
+            "scheduledTime": "17:36",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0035",
+            "category": "arrival",
+            "scheduledTime": "17:41",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0076",
+            "category": "departure",
+            "scheduledTime": "17:49",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-95137547-0006",
+            "category": "departure",
+            "scheduledTime": "17:51",
+            "spawnPatternKey": "95137547"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0036",
+            "category": "arrival",
+            "scheduledTime": "17:54",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0013",
+            "category": "departure",
+            "scheduledTime": "17:58",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-8b6db9c9-0005",
+            "category": "arrival",
+            "scheduledTime": "17:58",
+            "spawnPatternKey": "8b6db9c9"
+        },
+        {
+            "id": "auth-tncm-e1994f1d-0007",
+            "category": "arrival",
+            "scheduledTime": "17:58",
+            "spawnPatternKey": "e1994f1d"
+        },
+        {
+            "id": "auth-tncm-9a24cf7a-0004",
+            "category": "departure",
+            "scheduledTime": "18:00",
+            "spawnPatternKey": "9a24cf7a"
+        },
+        {
+            "id": "auth-tncm-6cd1a9cd-0016",
+            "category": "arrival",
+            "scheduledTime": "18:02",
+            "spawnPatternKey": "6cd1a9cd"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0004",
+            "category": "arrival",
+            "scheduledTime": "18:03",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0037",
+            "category": "arrival",
+            "scheduledTime": "18:06",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0077",
+            "category": "departure",
+            "scheduledTime": "18:07",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-f7ddc984-0001",
+            "category": "departure",
+            "scheduledTime": "18:14",
+            "spawnPatternKey": "f7ddc984"
+        },
+        {
+            "id": "auth-tncm-795cd452-0022",
+            "category": "departure",
+            "scheduledTime": "18:15",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0038",
+            "category": "arrival",
+            "scheduledTime": "18:18",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0078",
+            "category": "departure",
+            "scheduledTime": "18:25",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0005",
+            "category": "arrival",
+            "scheduledTime": "18:29",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0039",
+            "category": "arrival",
+            "scheduledTime": "18:30",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-9f8c39e3-0004",
+            "category": "departure",
+            "scheduledTime": "18:35",
+            "spawnPatternKey": "9f8c39e3"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0040",
+            "category": "arrival",
+            "scheduledTime": "18:42",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0079",
+            "category": "departure",
+            "scheduledTime": "18:43",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0014",
+            "category": "departure",
+            "scheduledTime": "18:51",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-95137547-0007",
+            "category": "departure",
+            "scheduledTime": "18:53",
+            "spawnPatternKey": "95137547"
+        },
+        {
+            "id": "auth-tncm-795cd452-0023",
+            "category": "departure",
+            "scheduledTime": "18:54",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0041",
+            "category": "arrival",
+            "scheduledTime": "18:55",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-8b6db9c9-0006",
+            "category": "arrival",
+            "scheduledTime": "18:56",
+            "spawnPatternKey": "8b6db9c9"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0006",
+            "category": "arrival",
+            "scheduledTime": "18:56",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-e1994f1d-0008",
+            "category": "arrival",
+            "scheduledTime": "18:58",
+            "spawnPatternKey": "e1994f1d"
+        },
+        {
+            "id": "auth-tncm-281c2486-0080",
+            "category": "departure",
+            "scheduledTime": "19:01",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0042",
+            "category": "arrival",
+            "scheduledTime": "19:07",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-e7211147-0001",
+            "category": "departure",
+            "scheduledTime": "19:15",
+            "spawnPatternKey": "e7211147"
+        },
+        {
+            "id": "auth-tncm-281c2486-0001",
+            "category": "departure",
+            "scheduledTime": "19:19",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0043",
+            "category": "arrival",
+            "scheduledTime": "19:19",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-159378cc-0004",
+            "category": "departure",
+            "scheduledTime": "19:22",
+            "spawnPatternKey": "159378cc"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0007",
+            "category": "arrival",
+            "scheduledTime": "19:23",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-f0f21c44-0007",
+            "category": "arrival",
+            "scheduledTime": "19:28",
+            "spawnPatternKey": "f0f21c44"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0044",
+            "category": "arrival",
+            "scheduledTime": "19:31",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-6cd1a9cd-0001",
+            "category": "arrival",
+            "scheduledTime": "19:32",
+            "spawnPatternKey": "6cd1a9cd"
+        },
+        {
+            "id": "auth-tncm-13b97bce-0002",
+            "category": "arrival",
+            "scheduledTime": "19:33",
+            "spawnPatternKey": "13b97bce"
+        },
+        {
+            "id": "auth-tncm-795cd452-0024",
+            "category": "departure",
+            "scheduledTime": "19:33",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-9f8c39e3-0005",
+            "category": "departure",
+            "scheduledTime": "19:35",
+            "spawnPatternKey": "9f8c39e3"
+        },
+        {
+            "id": "auth-tncm-281c2486-0002",
+            "category": "departure",
+            "scheduledTime": "19:37",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0045",
+            "category": "arrival",
+            "scheduledTime": "19:43",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0015",
+            "category": "departure",
+            "scheduledTime": "19:44",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0008",
+            "category": "arrival",
+            "scheduledTime": "19:49",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-8b6db9c9-0007",
+            "category": "arrival",
+            "scheduledTime": "19:53",
+            "spawnPatternKey": "8b6db9c9"
+        },
+        {
+            "id": "auth-tncm-281c2486-0003",
+            "category": "departure",
+            "scheduledTime": "19:55",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0046",
+            "category": "arrival",
+            "scheduledTime": "19:56",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-95137547-0008",
+            "category": "departure",
+            "scheduledTime": "19:56",
+            "spawnPatternKey": "95137547"
+        },
+        {
+            "id": "auth-tncm-e1994f1d-0009",
+            "category": "arrival",
+            "scheduledTime": "19:58",
+            "spawnPatternKey": "e1994f1d"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0047",
+            "category": "arrival",
+            "scheduledTime": "20:08",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-9a24cf7a-0005",
+            "category": "departure",
+            "scheduledTime": "20:11",
+            "spawnPatternKey": "9a24cf7a"
+        },
+        {
+            "id": "auth-tncm-795cd452-0025",
+            "category": "departure",
+            "scheduledTime": "20:12",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-281c2486-0004",
+            "category": "departure",
+            "scheduledTime": "20:13",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0009",
+            "category": "arrival",
+            "scheduledTime": "20:16",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0048",
+            "category": "arrival",
+            "scheduledTime": "20:20",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0005",
+            "category": "departure",
+            "scheduledTime": "20:31",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0049",
+            "category": "arrival",
+            "scheduledTime": "20:32",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-9f8c39e3-0006",
+            "category": "departure",
+            "scheduledTime": "20:35",
+            "spawnPatternKey": "9f8c39e3"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0016",
+            "category": "departure",
+            "scheduledTime": "20:38",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0010",
+            "category": "arrival",
+            "scheduledTime": "20:43",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0050",
+            "category": "arrival",
+            "scheduledTime": "20:44",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0006",
+            "category": "departure",
+            "scheduledTime": "20:49",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-795cd452-0026",
+            "category": "departure",
+            "scheduledTime": "20:50",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-8b6db9c9-0008",
+            "category": "arrival",
+            "scheduledTime": "20:51",
+            "spawnPatternKey": "8b6db9c9"
+        },
+        {
+            "id": "auth-tncm-207ccc12-0003",
+            "category": "departure",
+            "scheduledTime": "20:52",
+            "spawnPatternKey": "207ccc12"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0051",
+            "category": "arrival",
+            "scheduledTime": "20:57",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-95137547-0009",
+            "category": "departure",
+            "scheduledTime": "20:58",
+            "spawnPatternKey": "95137547"
+        },
+        {
+            "id": "auth-tncm-e1994f1d-0010",
+            "category": "arrival",
+            "scheduledTime": "20:58",
+            "spawnPatternKey": "e1994f1d"
+        },
+        {
+            "id": "auth-tncm-6cd1a9cd-0002",
+            "category": "arrival",
+            "scheduledTime": "21:02",
+            "spawnPatternKey": "6cd1a9cd"
+        },
+        {
+            "id": "auth-tncm-281c2486-0007",
+            "category": "departure",
+            "scheduledTime": "21:07",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0052",
+            "category": "arrival",
+            "scheduledTime": "21:09",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0011",
+            "category": "arrival",
+            "scheduledTime": "21:09",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0053",
+            "category": "arrival",
+            "scheduledTime": "21:21",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0008",
+            "category": "departure",
+            "scheduledTime": "21:25",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-795cd452-0027",
+            "category": "departure",
+            "scheduledTime": "21:29",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0017",
+            "category": "departure",
+            "scheduledTime": "21:31",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-159378cc-0005",
+            "category": "departure",
+            "scheduledTime": "21:33",
+            "spawnPatternKey": "159378cc"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0054",
+            "category": "arrival",
+            "scheduledTime": "21:33",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-9f8c39e3-0007",
+            "category": "departure",
+            "scheduledTime": "21:35",
+            "spawnPatternKey": "9f8c39e3"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0012",
+            "category": "arrival",
+            "scheduledTime": "21:36",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-f0f21c44-0008",
+            "category": "arrival",
+            "scheduledTime": "21:39",
+            "spawnPatternKey": "f0f21c44"
+        },
+        {
+            "id": "auth-tncm-281c2486-0009",
+            "category": "departure",
+            "scheduledTime": "21:43",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-dd554782-0001",
+            "category": "departure",
+            "scheduledTime": "21:44",
+            "spawnPatternKey": "dd554782"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0055",
+            "category": "arrival",
+            "scheduledTime": "21:45",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-8b6db9c9-0009",
+            "category": "arrival",
+            "scheduledTime": "21:48",
+            "spawnPatternKey": "8b6db9c9"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0056",
+            "category": "arrival",
+            "scheduledTime": "21:58",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-e1994f1d-0011",
+            "category": "arrival",
+            "scheduledTime": "21:58",
+            "spawnPatternKey": "e1994f1d"
+        },
+        {
+            "id": "auth-tncm-281c2486-0010",
+            "category": "departure",
+            "scheduledTime": "22:01",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-95137547-0010",
+            "category": "departure",
+            "scheduledTime": "22:01",
+            "spawnPatternKey": "95137547"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0013",
+            "category": "arrival",
+            "scheduledTime": "22:03",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-795cd452-0028",
+            "category": "departure",
+            "scheduledTime": "22:08",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0057",
+            "category": "arrival",
+            "scheduledTime": "22:10",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0011",
+            "category": "departure",
+            "scheduledTime": "22:19",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0058",
+            "category": "arrival",
+            "scheduledTime": "22:22",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-9a24cf7a-0006",
+            "category": "departure",
+            "scheduledTime": "22:22",
+            "spawnPatternKey": "9a24cf7a"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0018",
+            "category": "departure",
+            "scheduledTime": "22:24",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0014",
+            "category": "arrival",
+            "scheduledTime": "22:29",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-6cd1a9cd-0003",
+            "category": "arrival",
+            "scheduledTime": "22:32",
+            "spawnPatternKey": "6cd1a9cd"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0059",
+            "category": "arrival",
+            "scheduledTime": "22:34",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-9f8c39e3-0008",
+            "category": "departure",
+            "scheduledTime": "22:35",
+            "spawnPatternKey": "9f8c39e3"
+        },
+        {
+            "id": "auth-tncm-281c2486-0012",
+            "category": "departure",
+            "scheduledTime": "22:37",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-8b6db9c9-0010",
+            "category": "arrival",
+            "scheduledTime": "22:46",
+            "spawnPatternKey": "8b6db9c9"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0060",
+            "category": "arrival",
+            "scheduledTime": "22:47",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-795cd452-0029",
+            "category": "departure",
+            "scheduledTime": "22:47",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-281c2486-0013",
+            "category": "departure",
+            "scheduledTime": "22:55",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0015",
+            "category": "arrival",
+            "scheduledTime": "22:56",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-e1994f1d-0012",
+            "category": "arrival",
+            "scheduledTime": "22:58",
+            "spawnPatternKey": "e1994f1d"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0061",
+            "category": "arrival",
+            "scheduledTime": "22:59",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-f7ddc984-0002",
+            "category": "departure",
+            "scheduledTime": "23:02",
+            "spawnPatternKey": "f7ddc984"
+        },
+        {
+            "id": "auth-tncm-95137547-0011",
+            "category": "departure",
+            "scheduledTime": "23:04",
+            "spawnPatternKey": "95137547"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0062",
+            "category": "arrival",
+            "scheduledTime": "23:11",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0014",
+            "category": "departure",
+            "scheduledTime": "23:13",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-6b3f7d7b-0019",
+            "category": "departure",
+            "scheduledTime": "23:18",
+            "spawnPatternKey": "6b3f7d7b"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0063",
+            "category": "arrival",
+            "scheduledTime": "23:23",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0016",
+            "category": "arrival",
+            "scheduledTime": "23:23",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-795cd452-0030",
+            "category": "departure",
+            "scheduledTime": "23:26",
+            "spawnPatternKey": "795cd452"
+        },
+        {
+            "id": "auth-tncm-281c2486-0015",
+            "category": "departure",
+            "scheduledTime": "23:31",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0064",
+            "category": "arrival",
+            "scheduledTime": "23:35",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-9f8c39e3-0009",
+            "category": "departure",
+            "scheduledTime": "23:35",
+            "spawnPatternKey": "9f8c39e3"
+        },
+        {
+            "id": "auth-tncm-159378cc-0006",
+            "category": "departure",
+            "scheduledTime": "23:44",
+            "spawnPatternKey": "159378cc"
+        },
+        {
+            "id": "auth-tncm-8b6db9c9-0011",
+            "category": "arrival",
+            "scheduledTime": "23:44",
+            "spawnPatternKey": "8b6db9c9"
+        },
+        {
+            "id": "auth-tncm-613fb14a-0065",
+            "category": "arrival",
+            "scheduledTime": "23:48",
+            "spawnPatternKey": "613fb14a"
+        },
+        {
+            "id": "auth-tncm-281c2486-0016",
+            "category": "departure",
+            "scheduledTime": "23:49",
+            "spawnPatternKey": "281c2486"
+        },
+        {
+            "id": "auth-tncm-c0b81c30-0017",
+            "category": "arrival",
+            "scheduledTime": "23:49",
+            "spawnPatternKey": "c0b81c30"
+        },
+        {
+            "id": "auth-tncm-f0f21c44-0009",
+            "category": "arrival",
+            "scheduledTime": "23:50",
+            "spawnPatternKey": "f0f21c44"
+        },
+        {
+            "id": "auth-tncm-e1994f1d-0013",
+            "category": "arrival",
+            "scheduledTime": "23:58",
+            "spawnPatternKey": "e1994f1d"
+        }
+    ]
+}

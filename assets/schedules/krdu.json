@@ -1,0 +1,3732 @@
+{
+  "schemaVersion": 1,
+  "airportIcao": "KRDU",
+  "timezone": "America/New_York",
+  "sampleDate": "2026-07-15",
+  "source": {
+    "name": "US DOT BTS On-Time Performance + T-100 Segment (All Carriers)",
+    "url": "https://transtats.bts.gov/DL_SelectFields.aspx?QO_fu146_anzr=Nv4+Pn44vr45&gnoyr_VQ=FMG",
+    "retrievedAt": "2026-09-27",
+    "license": "U.S. Government work in the public domain (17 U.S.C. §105); OurAirports code data is public domain.",
+    "coverage": "Exact On-Time movements are retained; 112 representative movements were deterministically synthesized from 2026-05 T-100 performed-departure aggregates. General aviation is excluded."
+  },
+  "flights": [
+    {
+      "id": "arrival-f91670-atl-rdu",
+      "category": "arrival",
+      "scheduledTime": "00:04",
+      "airlineIcao": "fft",
+      "flightNumber": "1670",
+      "originIcao": "KATL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-dl2938-atl-rdu",
+      "category": "arrival",
+      "scheduledTime": "00:10",
+      "airlineIcao": "dal",
+      "flightNumber": "2938",
+      "originIcao": "KATL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-qk-arrival-cyyz-f-001",
+      "scheduledTime": "00:11",
+      "category": "arrival",
+      "originIcao": "CYYZ",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "jza",
+      "flightNumber": "3340"
+    },
+    {
+      "id": "arrival-yx4573-jfk-rdu",
+      "category": "arrival",
+      "scheduledTime": "00:12",
+      "airlineIcao": "rpa",
+      "flightNumber": "4573",
+      "originIcao": "KJFK",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-wn1692-den-rdu",
+      "category": "arrival",
+      "scheduledTime": "00:40",
+      "airlineIcao": "swa",
+      "flightNumber": "1692",
+      "originIcao": "KDEN",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-aa1903-rdu-clt",
+      "category": "departure",
+      "scheduledTime": "05:01",
+      "airlineIcao": "aal",
+      "flightNumber": "1903",
+      "originIcao": "KRDU",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "t100-mx-departure-ksdf-f-001",
+      "scheduledTime": "05:06",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KSDF",
+      "airlineIcao": "mxy",
+      "flightNumber": "43"
+    },
+    {
+      "id": "departure-dl1552-rdu-atl",
+      "category": "departure",
+      "scheduledTime": "05:10",
+      "airlineIcao": "dal",
+      "flightNumber": "1552",
+      "originIcao": "KRDU",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-aa2605-rdu-dfw",
+      "category": "departure",
+      "scheduledTime": "05:16",
+      "airlineIcao": "aal",
+      "flightNumber": "2605",
+      "originIcao": "KRDU",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "t100-9e-departure-kjfk-f-002",
+      "scheduledTime": "05:31",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KJFK",
+      "airlineIcao": "edv",
+      "flightNumber": "7254"
+    },
+    {
+      "id": "departure-dl1388-rdu-dtw",
+      "category": "departure",
+      "scheduledTime": "05:33",
+      "airlineIcao": "dal",
+      "flightNumber": "1388",
+      "originIcao": "KRDU",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "departure-yx4805-rdu-jfk",
+      "category": "departure",
+      "scheduledTime": "05:34",
+      "airlineIcao": "rpa",
+      "flightNumber": "4805",
+      "originIcao": "KRDU",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "departure-wn4083-rdu-den",
+      "category": "departure",
+      "scheduledTime": "05:35",
+      "airlineIcao": "swa",
+      "flightNumber": "4083",
+      "originIcao": "KRDU",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-as677-sea-rdu",
+      "category": "arrival",
+      "scheduledTime": "05:40",
+      "airlineIcao": "asa",
+      "flightNumber": "677",
+      "originIcao": "KSEA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-9e-arrival-kjfk-f-001",
+      "scheduledTime": "05:41",
+      "category": "arrival",
+      "originIcao": "KJFK",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "edv",
+      "flightNumber": "9812"
+    },
+    {
+      "id": "t100-mx-departure-kpbi-f-001",
+      "scheduledTime": "05:41",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KPBI",
+      "airlineIcao": "mxy",
+      "flightNumber": "6675"
+    },
+    {
+      "id": "departure-aa1088-rdu-mia",
+      "category": "departure",
+      "scheduledTime": "05:45",
+      "airlineIcao": "aal",
+      "flightNumber": "1088",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-9e-departure-kcvg-f-001",
+      "scheduledTime": "05:58",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KCVG",
+      "airlineIcao": "edv",
+      "flightNumber": "3140"
+    },
+    {
+      "id": "t100-9e-departure-klga-f-004",
+      "scheduledTime": "05:58",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KLGA",
+      "airlineIcao": "edv",
+      "flightNumber": "4043"
+    },
+    {
+      "id": "departure-aa1248-rdu-phl",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "aal",
+      "flightNumber": "1248",
+      "originIcao": "KRDU",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "departure-aa2985-rdu-dca",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "aal",
+      "flightNumber": "2985",
+      "originIcao": "KRDU",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-b61484-rdu-bos",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "jbu",
+      "flightNumber": "1484",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-dl1337-rdu-mco",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "dal",
+      "flightNumber": "1337",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "departure-dl2538-rdu-msp",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "dal",
+      "flightNumber": "2538",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "departure-ua1525-rdu-ewr",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "ual",
+      "flightNumber": "1525",
+      "originIcao": "KRDU",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "departure-ua1789-rdu-iad",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "ual",
+      "flightNumber": "1789",
+      "originIcao": "KRDU",
+      "destinationIcao": "KIAD"
+    },
+    {
+      "id": "departure-wn3422-rdu-bwi",
+      "category": "departure",
+      "scheduledTime": "06:00",
+      "airlineIcao": "swa",
+      "flightNumber": "3422",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "t100-9e-departure-kjfk-f-003",
+      "scheduledTime": "06:03",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KJFK",
+      "airlineIcao": "edv",
+      "flightNumber": "6227"
+    },
+    {
+      "id": "departure-f94797-rdu-atl",
+      "category": "departure",
+      "scheduledTime": "06:15",
+      "airlineIcao": "fft",
+      "flightNumber": "4797",
+      "originIcao": "KRDU",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-cm-departure-mpto-f-001",
+      "scheduledTime": "06:17",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "MPTO",
+      "airlineIcao": "cmp",
+      "flightNumber": "2028"
+    },
+    {
+      "id": "departure-b62625-rdu-fll",
+      "category": "departure",
+      "scheduledTime": "06:20",
+      "airlineIcao": "jbu",
+      "flightNumber": "2625",
+      "originIcao": "KRDU",
+      "destinationIcao": "KFLL"
+    },
+    {
+      "id": "departure-dl1192-rdu-atl",
+      "category": "departure",
+      "scheduledTime": "06:20",
+      "airlineIcao": "dal",
+      "flightNumber": "1192",
+      "originIcao": "KRDU",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-dl1279-rdu-tpa",
+      "category": "departure",
+      "scheduledTime": "06:25",
+      "airlineIcao": "dal",
+      "flightNumber": "1279",
+      "originIcao": "KRDU",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "t100-qk-departure-cyul-f-001",
+      "scheduledTime": "06:26",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "CYUL",
+      "airlineIcao": "jza",
+      "flightNumber": "2697"
+    },
+    {
+      "id": "departure-ua2074-rdu-iah",
+      "category": "departure",
+      "scheduledTime": "06:30",
+      "airlineIcao": "ual",
+      "flightNumber": "2074",
+      "originIcao": "KRDU",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "t100-9e-departure-kewr-f-002",
+      "scheduledTime": "06:34",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KEWR",
+      "airlineIcao": "edv",
+      "flightNumber": "4870"
+    },
+    {
+      "id": "departure-wn3435-rdu-stl",
+      "category": "departure",
+      "scheduledTime": "06:35",
+      "airlineIcao": "swa",
+      "flightNumber": "3435",
+      "originIcao": "KRDU",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "departure-aa2601-rdu-phx",
+      "category": "departure",
+      "scheduledTime": "06:36",
+      "airlineIcao": "aal",
+      "flightNumber": "2601",
+      "originIcao": "KRDU",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "departure-dl354-rdu-sea",
+      "category": "departure",
+      "scheduledTime": "06:38",
+      "airlineIcao": "dal",
+      "flightNumber": "354",
+      "originIcao": "KRDU",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "departure-aa2420-rdu-clt",
+      "category": "departure",
+      "scheduledTime": "06:41",
+      "airlineIcao": "aal",
+      "flightNumber": "2420",
+      "originIcao": "KRDU",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-wn3418-rdu-bna",
+      "category": "departure",
+      "scheduledTime": "06:45",
+      "airlineIcao": "swa",
+      "flightNumber": "3418",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-mx-departure-ktpa-f-001",
+      "scheduledTime": "06:48",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KTPA",
+      "airlineIcao": "mxy",
+      "flightNumber": "2547"
+    },
+    {
+      "id": "departure-aa1083-rdu-lga",
+      "category": "departure",
+      "scheduledTime": "06:50",
+      "airlineIcao": "aal",
+      "flightNumber": "1083",
+      "originIcao": "KRDU",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "departure-b6286-rdu-jfk",
+      "category": "departure",
+      "scheduledTime": "06:50",
+      "airlineIcao": "jbu",
+      "flightNumber": "286",
+      "originIcao": "KRDU",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "t100-9e-departure-kewr-f-001",
+      "scheduledTime": "06:58",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KEWR",
+      "airlineIcao": "edv",
+      "flightNumber": "4120"
+    },
+    {
+      "id": "t100-mx-departure-kbtv-f-001",
+      "scheduledTime": "06:59",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBTV",
+      "airlineIcao": "mxy",
+      "flightNumber": "7445"
+    },
+    {
+      "id": "departure-aa1943-rdu-lax",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "aal",
+      "flightNumber": "1943",
+      "originIcao": "KRDU",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "departure-dl1054-rdu-bos",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "dal",
+      "flightNumber": "1054",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-mq3501-rdu-mia",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "eny",
+      "flightNumber": "3501",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-ua1753-rdu-ewr",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "ual",
+      "flightNumber": "1753",
+      "originIcao": "KRDU",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "departure-wn2576-rdu-aus",
+      "category": "departure",
+      "scheduledTime": "07:00",
+      "airlineIcao": "swa",
+      "flightNumber": "2576",
+      "originIcao": "KRDU",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-as670-rdu-sea",
+      "category": "departure",
+      "scheduledTime": "07:02",
+      "airlineIcao": "asa",
+      "flightNumber": "670",
+      "originIcao": "KRDU",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "t100-mx-departure-kcmh-f-001",
+      "scheduledTime": "07:05",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KCMH",
+      "airlineIcao": "mxy",
+      "flightNumber": "2430"
+    },
+    {
+      "id": "departure-aa2849-rdu-ord",
+      "category": "departure",
+      "scheduledTime": "07:08",
+      "airlineIcao": "aal",
+      "flightNumber": "2849",
+      "originIcao": "KRDU",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-dl580-rdu-slc",
+      "category": "departure",
+      "scheduledTime": "07:10",
+      "airlineIcao": "dal",
+      "flightNumber": "580",
+      "originIcao": "KRDU",
+      "destinationIcao": "KSLC"
+    },
+    {
+      "id": "t100-ac-departure-cyvr-f-001",
+      "scheduledTime": "07:27",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "CYVR",
+      "airlineIcao": "aca",
+      "flightNumber": "5069"
+    },
+    {
+      "id": "departure-dl2478-rdu-atl",
+      "category": "departure",
+      "scheduledTime": "07:30",
+      "airlineIcao": "dal",
+      "flightNumber": "2478",
+      "originIcao": "KRDU",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-wn2946-rdu-mdw",
+      "category": "departure",
+      "scheduledTime": "07:40",
+      "airlineIcao": "swa",
+      "flightNumber": "2946",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "departure-aa1217-rdu-dfw",
+      "category": "departure",
+      "scheduledTime": "07:47",
+      "airlineIcao": "aal",
+      "flightNumber": "1217",
+      "originIcao": "KRDU",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "departure-wn3430-rdu-mco",
+      "category": "departure",
+      "scheduledTime": "07:50",
+      "airlineIcao": "swa",
+      "flightNumber": "3430",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "t100-qk-departure-cyyz-f-002",
+      "scheduledTime": "07:50",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "CYYZ",
+      "airlineIcao": "jza",
+      "flightNumber": "7310"
+    },
+    {
+      "id": "departure-yx4633-rdu-ord",
+      "category": "departure",
+      "scheduledTime": "07:53",
+      "airlineIcao": "rpa",
+      "flightNumber": "4633",
+      "originIcao": "KRDU",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-mx-departure-kmco-f-002",
+      "scheduledTime": "07:58",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMCO",
+      "airlineIcao": "mxy",
+      "flightNumber": "7712"
+    },
+    {
+      "id": "departure-yx4532-rdu-pit",
+      "category": "departure",
+      "scheduledTime": "08:00",
+      "airlineIcao": "rpa",
+      "flightNumber": "4532",
+      "originIcao": "KRDU",
+      "destinationIcao": "KPIT"
+    },
+    {
+      "id": "departure-aa1115-rdu-phl",
+      "category": "departure",
+      "scheduledTime": "08:01",
+      "airlineIcao": "aal",
+      "flightNumber": "1115",
+      "originIcao": "KRDU",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "arrival-aa2362-clt-rdu",
+      "category": "arrival",
+      "scheduledTime": "08:04",
+      "airlineIcao": "aal",
+      "flightNumber": "2362",
+      "originIcao": "KCLT",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-ua1297-rdu-ord",
+      "category": "departure",
+      "scheduledTime": "08:05",
+      "airlineIcao": "ual",
+      "flightNumber": "1297",
+      "originIcao": "KRDU",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-f91168-atl-rdu",
+      "category": "arrival",
+      "scheduledTime": "08:11",
+      "airlineIcao": "fft",
+      "flightNumber": "1168",
+      "originIcao": "KATL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-9e-departure-kbna-f-002",
+      "scheduledTime": "08:11",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBNA",
+      "airlineIcao": "edv",
+      "flightNumber": "8092"
+    },
+    {
+      "id": "t100-mx-arrival-kpit-f-001",
+      "scheduledTime": "08:13",
+      "category": "arrival",
+      "originIcao": "KPIT",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "mxy",
+      "flightNumber": "7199"
+    },
+    {
+      "id": "arrival-yx4494-lga-rdu",
+      "category": "arrival",
+      "scheduledTime": "08:14",
+      "airlineIcao": "rpa",
+      "flightNumber": "4494",
+      "originIcao": "KLGA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-dl890-rdu-mia",
+      "category": "departure",
+      "scheduledTime": "08:15",
+      "airlineIcao": "dal",
+      "flightNumber": "890",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "arrival-ua1965-sfo-rdu",
+      "category": "arrival",
+      "scheduledTime": "08:21",
+      "airlineIcao": "ual",
+      "flightNumber": "1965",
+      "originIcao": "KSFO",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-wn4550-rdu-bwi",
+      "category": "departure",
+      "scheduledTime": "08:25",
+      "airlineIcao": "swa",
+      "flightNumber": "4550",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "arrival-dl2066-bos-rdu",
+      "category": "arrival",
+      "scheduledTime": "08:28",
+      "airlineIcao": "dal",
+      "flightNumber": "2066",
+      "originIcao": "KBOS",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-mx-arrival-ksdf-f-001",
+      "scheduledTime": "08:28",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "mxy",
+      "flightNumber": "7155"
+    },
+    {
+      "id": "t100-mx-departure-ktpa-f-002",
+      "scheduledTime": "08:28",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KTPA",
+      "airlineIcao": "mxy",
+      "flightNumber": "4049"
+    },
+    {
+      "id": "departure-aa3010-rdu-mia",
+      "category": "departure",
+      "scheduledTime": "08:30",
+      "airlineIcao": "aal",
+      "flightNumber": "3010",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-ua2383-rdu-den",
+      "category": "departure",
+      "scheduledTime": "08:30",
+      "airlineIcao": "ual",
+      "flightNumber": "2383",
+      "originIcao": "KRDU",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "arrival-b61883-bos-rdu",
+      "category": "arrival",
+      "scheduledTime": "08:33",
+      "airlineIcao": "jbu",
+      "flightNumber": "1883",
+      "originIcao": "KBOS",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-yx4494-rdu-lga",
+      "category": "departure",
+      "scheduledTime": "08:44",
+      "airlineIcao": "rpa",
+      "flightNumber": "4494",
+      "originIcao": "KRDU",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "arrival-dl1427-dtw-rdu",
+      "category": "arrival",
+      "scheduledTime": "08:48",
+      "airlineIcao": "dal",
+      "flightNumber": "1427",
+      "originIcao": "KDTW",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-f92059-phl-rdu",
+      "category": "arrival",
+      "scheduledTime": "08:48",
+      "airlineIcao": "fft",
+      "flightNumber": "2059",
+      "originIcao": "KPHL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-dl1530-rdu-atl",
+      "category": "departure",
+      "scheduledTime": "08:50",
+      "airlineIcao": "dal",
+      "flightNumber": "1530",
+      "originIcao": "KRDU",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-9e-departure-klga-f-005",
+      "scheduledTime": "08:51",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KLGA",
+      "airlineIcao": "edv",
+      "flightNumber": "2152"
+    },
+    {
+      "id": "t100-fx-arrival-kmem-g-001",
+      "scheduledTime": "08:52",
+      "category": "arrival",
+      "originIcao": "KMEM",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "fdx",
+      "flightNumber": "4022"
+    },
+    {
+      "id": "arrival-dl2634-atl-rdu",
+      "category": "arrival",
+      "scheduledTime": "08:53",
+      "airlineIcao": "dal",
+      "flightNumber": "2634",
+      "originIcao": "KATL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-aa2362-rdu-clt",
+      "category": "departure",
+      "scheduledTime": "08:54",
+      "airlineIcao": "aal",
+      "flightNumber": "2362",
+      "originIcao": "KRDU",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "arrival-ua1890-ewr-rdu",
+      "category": "arrival",
+      "scheduledTime": "08:56",
+      "airlineIcao": "ual",
+      "flightNumber": "1890",
+      "originIcao": "KEWR",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-f93058-rdu-bos",
+      "category": "departure",
+      "scheduledTime": "08:56",
+      "airlineIcao": "fft",
+      "flightNumber": "3058",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "t100-qk-arrival-cyyz-f-002",
+      "scheduledTime": "09:19",
+      "category": "arrival",
+      "originIcao": "CYYZ",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "jza",
+      "flightNumber": "2358"
+    },
+    {
+      "id": "arrival-wn3942-bwi-rdu",
+      "category": "arrival",
+      "scheduledTime": "09:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3942",
+      "originIcao": "KBWI",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-b6484-rdu-bos",
+      "category": "departure",
+      "scheduledTime": "09:23",
+      "airlineIcao": "jbu",
+      "flightNumber": "484",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-dl1022-rdu-bos",
+      "category": "departure",
+      "scheduledTime": "09:23",
+      "airlineIcao": "dal",
+      "flightNumber": "1022",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "arrival-b6726-fll-rdu",
+      "category": "arrival",
+      "scheduledTime": "09:24",
+      "airlineIcao": "jbu",
+      "flightNumber": "726",
+      "originIcao": "KFLL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-ei-arrival-eidw-f-001",
+      "scheduledTime": "09:24",
+      "category": "arrival",
+      "originIcao": "EIDW",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "ein",
+      "flightNumber": "5365"
+    },
+    {
+      "id": "t100-mx-departure-kcak-f-001",
+      "scheduledTime": "09:24",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KCAK",
+      "airlineIcao": "mxy",
+      "flightNumber": "6530"
+    },
+    {
+      "id": "arrival-f91040-mco-rdu",
+      "category": "arrival",
+      "scheduledTime": "09:25",
+      "airlineIcao": "fft",
+      "flightNumber": "1040",
+      "originIcao": "KMCO",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-yx4531-pit-rdu",
+      "category": "arrival",
+      "scheduledTime": "09:26",
+      "airlineIcao": "rpa",
+      "flightNumber": "4531",
+      "originIcao": "KPIT",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-ua529-iad-rdu",
+      "category": "arrival",
+      "scheduledTime": "09:34",
+      "airlineIcao": "ual",
+      "flightNumber": "529",
+      "originIcao": "KIAD",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-f92060-rdu-phl",
+      "category": "departure",
+      "scheduledTime": "09:43",
+      "airlineIcao": "fft",
+      "flightNumber": "2060",
+      "originIcao": "KRDU",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "t100-mx-departure-kpit-f-001",
+      "scheduledTime": "09:43",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KPIT",
+      "airlineIcao": "mxy",
+      "flightNumber": "5056"
+    },
+    {
+      "id": "arrival-wn684-mco-rdu",
+      "category": "arrival",
+      "scheduledTime": "09:50",
+      "airlineIcao": "swa",
+      "flightNumber": "684",
+      "originIcao": "KMCO",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-ua795-rdu-sfo",
+      "category": "departure",
+      "scheduledTime": "09:50",
+      "airlineIcao": "ual",
+      "flightNumber": "795",
+      "originIcao": "KRDU",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-dl1427-rdu-dtw",
+      "category": "departure",
+      "scheduledTime": "09:54",
+      "airlineIcao": "dal",
+      "flightNumber": "1427",
+      "originIcao": "KRDU",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "t100-fx-arrival-kilm-g-001",
+      "scheduledTime": "09:54",
+      "category": "arrival",
+      "originIcao": "KILM",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "fdx",
+      "flightNumber": "5943"
+    },
+    {
+      "id": "arrival-aa1846-phl-rdu",
+      "category": "arrival",
+      "scheduledTime": "09:56",
+      "airlineIcao": "aal",
+      "flightNumber": "1846",
+      "originIcao": "KPHL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-dl2634-rdu-atl",
+      "category": "departure",
+      "scheduledTime": "09:58",
+      "airlineIcao": "dal",
+      "flightNumber": "2634",
+      "originIcao": "KRDU",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-9e-departure-kbna-f-001",
+      "scheduledTime": "09:59",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBNA",
+      "airlineIcao": "edv",
+      "flightNumber": "1748"
+    },
+    {
+      "id": "departure-ua1448-rdu-ord",
+      "category": "departure",
+      "scheduledTime": "10:00",
+      "airlineIcao": "ual",
+      "flightNumber": "1448",
+      "originIcao": "KRDU",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-yx4344-rdu-bna",
+      "category": "departure",
+      "scheduledTime": "10:00",
+      "airlineIcao": "rpa",
+      "flightNumber": "4344",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-9e-departure-kjfk-f-004",
+      "scheduledTime": "10:03",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KJFK",
+      "airlineIcao": "edv",
+      "flightNumber": "5974"
+    },
+    {
+      "id": "t100-mx-arrival-kmsy-f-001",
+      "scheduledTime": "10:04",
+      "category": "arrival",
+      "originIcao": "KMSY",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "mxy",
+      "flightNumber": "8285"
+    },
+    {
+      "id": "departure-wn2773-rdu-tpa",
+      "category": "departure",
+      "scheduledTime": "10:05",
+      "airlineIcao": "swa",
+      "flightNumber": "2773",
+      "originIcao": "KRDU",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "arrival-b62285-jfk-rdu",
+      "category": "arrival",
+      "scheduledTime": "10:08",
+      "airlineIcao": "jbu",
+      "flightNumber": "2285",
+      "originIcao": "KJFK",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-oo5926-ord-rdu",
+      "category": "arrival",
+      "scheduledTime": "10:08",
+      "airlineIcao": "skw",
+      "flightNumber": "5926",
+      "originIcao": "KORD",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-dl1699-atl-rdu",
+      "category": "arrival",
+      "scheduledTime": "10:10",
+      "airlineIcao": "dal",
+      "flightNumber": "1699",
+      "originIcao": "KATL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-oh5581-dca-rdu",
+      "category": "arrival",
+      "scheduledTime": "10:15",
+      "airlineIcao": "jia",
+      "flightNumber": "5581",
+      "originIcao": "KDCA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-b6725-rdu-fll",
+      "category": "departure",
+      "scheduledTime": "10:19",
+      "airlineIcao": "jbu",
+      "flightNumber": "725",
+      "originIcao": "KRDU",
+      "destinationIcao": "KFLL"
+    },
+    {
+      "id": "arrival-aa2405-mia-rdu",
+      "category": "arrival",
+      "scheduledTime": "10:20",
+      "airlineIcao": "aal",
+      "flightNumber": "2405",
+      "originIcao": "KMIA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-f91741-rdu-iah",
+      "category": "departure",
+      "scheduledTime": "10:20",
+      "airlineIcao": "fft",
+      "flightNumber": "1741",
+      "originIcao": "KRDU",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "t100-9e-departure-klga-f-002",
+      "scheduledTime": "10:21",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KLGA",
+      "airlineIcao": "edv",
+      "flightNumber": "6004"
+    },
+    {
+      "id": "arrival-aa2381-clt-rdu",
+      "category": "arrival",
+      "scheduledTime": "10:23",
+      "airlineIcao": "aal",
+      "flightNumber": "2381",
+      "originIcao": "KCLT",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-5x-arrival-ksdf-g-001",
+      "scheduledTime": "10:24",
+      "category": "arrival",
+      "originIcao": "KSDF",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "ups",
+      "flightNumber": "7745"
+    },
+    {
+      "id": "departure-wn684-rdu-bna",
+      "category": "departure",
+      "scheduledTime": "10:25",
+      "airlineIcao": "swa",
+      "flightNumber": "684",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "arrival-dl1337-mco-rdu",
+      "category": "arrival",
+      "scheduledTime": "10:26",
+      "airlineIcao": "dal",
+      "flightNumber": "1337",
+      "originIcao": "KMCO",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-mx-arrival-kpvd-f-001",
+      "scheduledTime": "10:30",
+      "category": "arrival",
+      "originIcao": "KPVD",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "mxy",
+      "flightNumber": "2718"
+    },
+    {
+      "id": "arrival-dl2783-msp-rdu",
+      "category": "arrival",
+      "scheduledTime": "10:31",
+      "airlineIcao": "dal",
+      "flightNumber": "2783",
+      "originIcao": "KMSP",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-ua1535-rdu-iad",
+      "category": "departure",
+      "scheduledTime": "10:32",
+      "airlineIcao": "ual",
+      "flightNumber": "1535",
+      "originIcao": "KRDU",
+      "destinationIcao": "KIAD"
+    },
+    {
+      "id": "t100-mx-departure-khpn-f-001",
+      "scheduledTime": "10:32",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KHPN",
+      "airlineIcao": "mxy",
+      "flightNumber": "678"
+    },
+    {
+      "id": "arrival-wn3761-mdw-rdu",
+      "category": "arrival",
+      "scheduledTime": "10:35",
+      "airlineIcao": "swa",
+      "flightNumber": "3761",
+      "originIcao": "KMDW",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-aa1846-rdu-phl",
+      "category": "departure",
+      "scheduledTime": "10:36",
+      "airlineIcao": "aal",
+      "flightNumber": "1846",
+      "originIcao": "KRDU",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "departure-oh5581-rdu-dca",
+      "category": "departure",
+      "scheduledTime": "10:45",
+      "airlineIcao": "jia",
+      "flightNumber": "5581",
+      "originIcao": "KRDU",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "arrival-aa2366-dfw-rdu",
+      "category": "arrival",
+      "scheduledTime": "10:46",
+      "airlineIcao": "aal",
+      "flightNumber": "2366",
+      "originIcao": "KDFW",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-9e-arrival-kjfk-f-004",
+      "scheduledTime": "10:47",
+      "category": "arrival",
+      "originIcao": "KJFK",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "edv",
+      "flightNumber": "2904"
+    },
+    {
+      "id": "arrival-f93057-bos-rdu",
+      "category": "arrival",
+      "scheduledTime": "10:49",
+      "airlineIcao": "fft",
+      "flightNumber": "3057",
+      "originIcao": "KBOS",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-mx-departure-kpvd-f-001",
+      "scheduledTime": "10:56",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KPVD",
+      "airlineIcao": "mxy",
+      "flightNumber": "8673"
+    },
+    {
+      "id": "departure-b62786-rdu-jfk",
+      "category": "departure",
+      "scheduledTime": "10:58",
+      "airlineIcao": "jbu",
+      "flightNumber": "2786",
+      "originIcao": "KRDU",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "departure-oo5732-rdu-ord",
+      "category": "departure",
+      "scheduledTime": "10:59",
+      "airlineIcao": "skw",
+      "flightNumber": "5732",
+      "originIcao": "KRDU",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "arrival-dl1279-tpa-rdu",
+      "category": "arrival",
+      "scheduledTime": "11:04",
+      "airlineIcao": "dal",
+      "flightNumber": "1279",
+      "originIcao": "KTPA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-fx-departure-kilm-g-001",
+      "scheduledTime": "11:09",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KILM",
+      "airlineIcao": "fdx",
+      "flightNumber": "6994"
+    },
+    {
+      "id": "departure-aa2405-rdu-mia",
+      "category": "departure",
+      "scheduledTime": "11:10",
+      "airlineIcao": "aal",
+      "flightNumber": "2405",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "departure-aa2381-rdu-clt",
+      "category": "departure",
+      "scheduledTime": "11:13",
+      "airlineIcao": "aal",
+      "flightNumber": "2381",
+      "originIcao": "KRDU",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-dl1699-rdu-atl",
+      "category": "departure",
+      "scheduledTime": "11:15",
+      "airlineIcao": "dal",
+      "flightNumber": "1699",
+      "originIcao": "KRDU",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "departure-wn1059-rdu-bwi",
+      "category": "departure",
+      "scheduledTime": "11:15",
+      "airlineIcao": "swa",
+      "flightNumber": "1059",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "departure-dl1377-rdu-mco",
+      "category": "departure",
+      "scheduledTime": "11:26",
+      "airlineIcao": "dal",
+      "flightNumber": "1377",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "t100-5d-arrival-mmmx-f-001",
+      "scheduledTime": "11:27",
+      "category": "arrival",
+      "originIcao": "MMMX",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "sli",
+      "flightNumber": "7124"
+    },
+    {
+      "id": "t100-yv-departure-kiah-f-001",
+      "scheduledTime": "11:27",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KIAH",
+      "airlineIcao": "ash",
+      "flightNumber": "7928"
+    },
+    {
+      "id": "arrival-f92440-den-rdu",
+      "category": "arrival",
+      "scheduledTime": "11:31",
+      "airlineIcao": "fft",
+      "flightNumber": "2440",
+      "originIcao": "KDEN",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-dl2052-atl-rdu",
+      "category": "arrival",
+      "scheduledTime": "11:35",
+      "airlineIcao": "dal",
+      "flightNumber": "2052",
+      "originIcao": "KATL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-dl2519-rdu-msp",
+      "category": "departure",
+      "scheduledTime": "11:36",
+      "airlineIcao": "dal",
+      "flightNumber": "2519",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "arrival-yx4354-ord-rdu",
+      "category": "arrival",
+      "scheduledTime": "11:38",
+      "airlineIcao": "rpa",
+      "flightNumber": "4354",
+      "originIcao": "KORD",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-aa2366-rdu-dfw",
+      "category": "departure",
+      "scheduledTime": "11:41",
+      "airlineIcao": "aal",
+      "flightNumber": "2366",
+      "originIcao": "KRDU",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "t100-9e-arrival-klga-f-002",
+      "scheduledTime": "11:50",
+      "category": "arrival",
+      "originIcao": "KLGA",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "edv",
+      "flightNumber": "6289"
+    },
+    {
+      "id": "arrival-yx3631-ewr-rdu",
+      "category": "arrival",
+      "scheduledTime": "11:52",
+      "airlineIcao": "rpa",
+      "flightNumber": "3631",
+      "originIcao": "KEWR",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-f91669-rdu-atl",
+      "category": "departure",
+      "scheduledTime": "11:56",
+      "airlineIcao": "fft",
+      "flightNumber": "1669",
+      "originIcao": "KRDU",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-mx-arrival-ktpa-f-001",
+      "scheduledTime": "11:56",
+      "category": "arrival",
+      "originIcao": "KTPA",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "mxy",
+      "flightNumber": "5042"
+    },
+    {
+      "id": "arrival-dl2164-dtw-rdu",
+      "category": "arrival",
+      "scheduledTime": "11:57",
+      "airlineIcao": "dal",
+      "flightNumber": "2164",
+      "originIcao": "KDTW",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-9e-departure-kaus-f-002",
+      "scheduledTime": "11:58",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KAUS",
+      "airlineIcao": "edv",
+      "flightNumber": "8586"
+    },
+    {
+      "id": "departure-dl1038-rdu-fll",
+      "category": "departure",
+      "scheduledTime": "11:59",
+      "airlineIcao": "dal",
+      "flightNumber": "1038",
+      "originIcao": "KRDU",
+      "destinationIcao": "KFLL"
+    },
+    {
+      "id": "arrival-yx4496-lga-rdu",
+      "category": "arrival",
+      "scheduledTime": "12:00",
+      "airlineIcao": "rpa",
+      "flightNumber": "4496",
+      "originIcao": "KLGA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-aa2363-clt-rdu",
+      "category": "arrival",
+      "scheduledTime": "12:02",
+      "airlineIcao": "aal",
+      "flightNumber": "2363",
+      "originIcao": "KCLT",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-dl2118-bos-rdu",
+      "category": "arrival",
+      "scheduledTime": "12:04",
+      "airlineIcao": "dal",
+      "flightNumber": "2118",
+      "originIcao": "KBOS",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-5d-departure-mmmx-f-001",
+      "scheduledTime": "12:05",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "MMMX",
+      "airlineIcao": "sli",
+      "flightNumber": "1392"
+    },
+    {
+      "id": "departure-yx4765-rdu-jfk",
+      "category": "departure",
+      "scheduledTime": "12:08",
+      "airlineIcao": "rpa",
+      "flightNumber": "4765",
+      "originIcao": "KRDU",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "departure-f92225-rdu-den",
+      "category": "departure",
+      "scheduledTime": "12:26",
+      "airlineIcao": "fft",
+      "flightNumber": "2225",
+      "originIcao": "KRDU",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-yx4496-rdu-lga",
+      "category": "departure",
+      "scheduledTime": "12:31",
+      "airlineIcao": "rpa",
+      "flightNumber": "4496",
+      "originIcao": "KRDU",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "arrival-oo5326-ord-rdu",
+      "category": "arrival",
+      "scheduledTime": "12:33",
+      "airlineIcao": "skw",
+      "flightNumber": "5326",
+      "originIcao": "KORD",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-9e-arrival-kaus-f-002",
+      "scheduledTime": "12:35",
+      "category": "arrival",
+      "originIcao": "KAUS",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "edv",
+      "flightNumber": "8725"
+    },
+    {
+      "id": "arrival-wn162-bna-rdu",
+      "category": "arrival",
+      "scheduledTime": "12:40",
+      "airlineIcao": "swa",
+      "flightNumber": "162",
+      "originIcao": "KBNA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-dl2052-rdu-atl",
+      "category": "departure",
+      "scheduledTime": "12:40",
+      "airlineIcao": "dal",
+      "flightNumber": "2052",
+      "originIcao": "KRDU",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-9e-departure-kmci-f-001",
+      "scheduledTime": "12:41",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMCI",
+      "airlineIcao": "edv",
+      "flightNumber": "9975"
+    },
+    {
+      "id": "arrival-dl1488-atl-rdu",
+      "category": "arrival",
+      "scheduledTime": "12:42",
+      "airlineIcao": "dal",
+      "flightNumber": "1488",
+      "originIcao": "KATL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-yx4700-dca-rdu",
+      "category": "arrival",
+      "scheduledTime": "12:44",
+      "airlineIcao": "rpa",
+      "flightNumber": "4700",
+      "originIcao": "KDCA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-mx-arrival-kbtv-f-001",
+      "scheduledTime": "12:44",
+      "category": "arrival",
+      "originIcao": "KBTV",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "mxy",
+      "flightNumber": "2966"
+    },
+    {
+      "id": "arrival-yx4756-ord-rdu",
+      "category": "arrival",
+      "scheduledTime": "12:48",
+      "airlineIcao": "rpa",
+      "flightNumber": "4756",
+      "originIcao": "KORD",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-wn4442-bwi-rdu",
+      "category": "arrival",
+      "scheduledTime": "12:50",
+      "airlineIcao": "swa",
+      "flightNumber": "4442",
+      "originIcao": "KBWI",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-5x-departure-ksdf-g-001",
+      "scheduledTime": "12:53",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KSDF",
+      "airlineIcao": "ups",
+      "flightNumber": "7831"
+    },
+    {
+      "id": "departure-dl1033-rdu-bos",
+      "category": "departure",
+      "scheduledTime": "12:55",
+      "airlineIcao": "dal",
+      "flightNumber": "1033",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "departure-aa2363-rdu-clt",
+      "category": "departure",
+      "scheduledTime": "12:57",
+      "airlineIcao": "aal",
+      "flightNumber": "2363",
+      "originIcao": "KRDU",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-dl2265-rdu-dtw",
+      "category": "departure",
+      "scheduledTime": "13:00",
+      "airlineIcao": "dal",
+      "flightNumber": "2265",
+      "originIcao": "KRDU",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "arrival-b62926-fll-rdu",
+      "category": "arrival",
+      "scheduledTime": "13:04",
+      "airlineIcao": "jbu",
+      "flightNumber": "2926",
+      "originIcao": "KFLL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-mx-arrival-kpbi-f-001",
+      "scheduledTime": "13:04",
+      "category": "arrival",
+      "originIcao": "KPBI",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "mxy",
+      "flightNumber": "190"
+    },
+    {
+      "id": "departure-yx3443-rdu-ewr",
+      "category": "departure",
+      "scheduledTime": "13:08",
+      "airlineIcao": "rpa",
+      "flightNumber": "3443",
+      "originIcao": "KRDU",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "arrival-wn358-stl-rdu",
+      "category": "arrival",
+      "scheduledTime": "13:10",
+      "airlineIcao": "swa",
+      "flightNumber": "358",
+      "originIcao": "KSTL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-9e-departure-kdca-f-003",
+      "scheduledTime": "13:12",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KDCA",
+      "airlineIcao": "edv",
+      "flightNumber": "4998"
+    },
+    {
+      "id": "departure-yx4700-rdu-dca",
+      "category": "departure",
+      "scheduledTime": "13:14",
+      "airlineIcao": "rpa",
+      "flightNumber": "4700",
+      "originIcao": "KRDU",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-oo5465-rdu-ord",
+      "category": "departure",
+      "scheduledTime": "13:15",
+      "airlineIcao": "skw",
+      "flightNumber": "5465",
+      "originIcao": "KRDU",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-wn3317-rdu-hou",
+      "category": "departure",
+      "scheduledTime": "13:15",
+      "airlineIcao": "swa",
+      "flightNumber": "3317",
+      "originIcao": "KRDU",
+      "destinationIcao": "KHOU"
+    },
+    {
+      "id": "t100-lh-departure-eddf-f-001",
+      "scheduledTime": "13:16",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "EDDF",
+      "airlineIcao": "dlh",
+      "flightNumber": "3411"
+    },
+    {
+      "id": "departure-yx4756-rdu-ord",
+      "category": "departure",
+      "scheduledTime": "13:18",
+      "airlineIcao": "rpa",
+      "flightNumber": "4756",
+      "originIcao": "KRDU",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-mx-arrival-kcak-f-001",
+      "scheduledTime": "13:18",
+      "category": "arrival",
+      "originIcao": "KCAK",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "mxy",
+      "flightNumber": "5484"
+    },
+    {
+      "id": "arrival-b62283-bos-rdu",
+      "category": "arrival",
+      "scheduledTime": "13:20",
+      "airlineIcao": "jbu",
+      "flightNumber": "2283",
+      "originIcao": "KBOS",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-aa2400-dfw-rdu",
+      "category": "arrival",
+      "scheduledTime": "13:27",
+      "airlineIcao": "aal",
+      "flightNumber": "2400",
+      "originIcao": "KDFW",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-wn4516-rdu-mdw",
+      "category": "departure",
+      "scheduledTime": "13:30",
+      "airlineIcao": "swa",
+      "flightNumber": "4516",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "arrival-f91742-iah-rdu",
+      "category": "arrival",
+      "scheduledTime": "13:36",
+      "airlineIcao": "fft",
+      "flightNumber": "1742",
+      "originIcao": "KIAH",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-dl1488-rdu-atl",
+      "category": "departure",
+      "scheduledTime": "13:47",
+      "airlineIcao": "dal",
+      "flightNumber": "1488",
+      "originIcao": "KRDU",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-9e-arrival-klga-f-003",
+      "scheduledTime": "13:47",
+      "category": "arrival",
+      "originIcao": "KLGA",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "edv",
+      "flightNumber": "8768"
+    },
+    {
+      "id": "departure-wn936-rdu-dal",
+      "category": "departure",
+      "scheduledTime": "13:50",
+      "airlineIcao": "swa",
+      "flightNumber": "936",
+      "originIcao": "KRDU",
+      "destinationIcao": "KDAL"
+    },
+    {
+      "id": "arrival-dl2521-msp-rdu",
+      "category": "arrival",
+      "scheduledTime": "13:51",
+      "airlineIcao": "dal",
+      "flightNumber": "2521",
+      "originIcao": "KMSP",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-9e-departure-kewr-f-003",
+      "scheduledTime": "13:51",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KEWR",
+      "airlineIcao": "edv",
+      "flightNumber": "4852"
+    },
+    {
+      "id": "departure-b62925-rdu-fll",
+      "category": "departure",
+      "scheduledTime": "14:00",
+      "airlineIcao": "jbu",
+      "flightNumber": "2925",
+      "originIcao": "KRDU",
+      "destinationIcao": "KFLL"
+    },
+    {
+      "id": "arrival-ua2616-ord-rdu",
+      "category": "arrival",
+      "scheduledTime": "14:01",
+      "airlineIcao": "ual",
+      "flightNumber": "2616",
+      "originIcao": "KORD",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-wn2665-mdw-rdu",
+      "category": "arrival",
+      "scheduledTime": "14:15",
+      "airlineIcao": "swa",
+      "flightNumber": "2665",
+      "originIcao": "KMDW",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-b62184-rdu-bos",
+      "category": "departure",
+      "scheduledTime": "14:15",
+      "airlineIcao": "jbu",
+      "flightNumber": "2184",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "t100-9e-departure-kjfk-f-001",
+      "scheduledTime": "14:16",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KJFK",
+      "airlineIcao": "edv",
+      "flightNumber": "938"
+    },
+    {
+      "id": "arrival-aa2390-clt-rdu",
+      "category": "arrival",
+      "scheduledTime": "14:17",
+      "airlineIcao": "aal",
+      "flightNumber": "2390",
+      "originIcao": "KCLT",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-xp-arrival-khvn-f-001",
+      "scheduledTime": "14:19",
+      "category": "arrival",
+      "originIcao": "KHVN",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "vxp",
+      "flightNumber": "9071"
+    },
+    {
+      "id": "departure-aa2400-rdu-dfw",
+      "category": "departure",
+      "scheduledTime": "14:20",
+      "airlineIcao": "aal",
+      "flightNumber": "2400",
+      "originIcao": "KRDU",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-dl2026-atl-rdu",
+      "category": "arrival",
+      "scheduledTime": "14:30",
+      "airlineIcao": "dal",
+      "flightNumber": "2026",
+      "originIcao": "KATL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-f91111-rdu-mco",
+      "category": "departure",
+      "scheduledTime": "14:31",
+      "airlineIcao": "fft",
+      "flightNumber": "1111",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "arrival-f93074-cle-rdu",
+      "category": "arrival",
+      "scheduledTime": "14:37",
+      "airlineIcao": "fft",
+      "flightNumber": "3074",
+      "originIcao": "KCLE",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-yx4639-bna-rdu",
+      "category": "arrival",
+      "scheduledTime": "14:42",
+      "airlineIcao": "rpa",
+      "flightNumber": "4639",
+      "originIcao": "KBNA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-oh5644-phl-rdu",
+      "category": "arrival",
+      "scheduledTime": "14:44",
+      "airlineIcao": "jia",
+      "flightNumber": "5644",
+      "originIcao": "KPHL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-9e-arrival-klga-f-004",
+      "scheduledTime": "14:45",
+      "category": "arrival",
+      "originIcao": "KLGA",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "edv",
+      "flightNumber": "9516"
+    },
+    {
+      "id": "departure-dl2521-rdu-msp",
+      "category": "departure",
+      "scheduledTime": "14:46",
+      "airlineIcao": "dal",
+      "flightNumber": "2521",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "t100-9e-departure-kaus-f-001",
+      "scheduledTime": "14:48",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KAUS",
+      "airlineIcao": "edv",
+      "flightNumber": "6675"
+    },
+    {
+      "id": "departure-wn4052-rdu-phx",
+      "category": "departure",
+      "scheduledTime": "14:55",
+      "airlineIcao": "swa",
+      "flightNumber": "4052",
+      "originIcao": "KRDU",
+      "destinationIcao": "KPHX"
+    },
+    {
+      "id": "t100-9e-arrival-kind-f-001",
+      "scheduledTime": "14:56",
+      "category": "arrival",
+      "originIcao": "KIND",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "edv",
+      "flightNumber": "2107"
+    },
+    {
+      "id": "arrival-yx4658-jfk-rdu",
+      "category": "arrival",
+      "scheduledTime": "14:57",
+      "airlineIcao": "rpa",
+      "flightNumber": "4658",
+      "originIcao": "KJFK",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-aa2390-rdu-clt",
+      "category": "departure",
+      "scheduledTime": "15:07",
+      "airlineIcao": "aal",
+      "flightNumber": "2390",
+      "originIcao": "KRDU",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "t100-9e-departure-kind-f-001",
+      "scheduledTime": "15:07",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KIND",
+      "airlineIcao": "edv",
+      "flightNumber": "4380"
+    },
+    {
+      "id": "arrival-dl2283-bos-rdu",
+      "category": "arrival",
+      "scheduledTime": "15:09",
+      "airlineIcao": "dal",
+      "flightNumber": "2283",
+      "originIcao": "KBOS",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-ua2415-rdu-ewr",
+      "category": "departure",
+      "scheduledTime": "15:14",
+      "airlineIcao": "ual",
+      "flightNumber": "2415",
+      "originIcao": "KRDU",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "departure-oh5644-rdu-phl",
+      "category": "departure",
+      "scheduledTime": "15:15",
+      "airlineIcao": "jia",
+      "flightNumber": "5644",
+      "originIcao": "KRDU",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "arrival-ua2269-den-rdu",
+      "category": "arrival",
+      "scheduledTime": "15:16",
+      "airlineIcao": "ual",
+      "flightNumber": "2269",
+      "originIcao": "KDEN",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-9e-departure-kdca-f-002",
+      "scheduledTime": "15:18",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KDCA",
+      "airlineIcao": "edv",
+      "flightNumber": "1253"
+    },
+    {
+      "id": "departure-f93073-rdu-cle",
+      "category": "departure",
+      "scheduledTime": "15:22",
+      "airlineIcao": "fft",
+      "flightNumber": "3073",
+      "originIcao": "KRDU",
+      "destinationIcao": "KCLE"
+    },
+    {
+      "id": "arrival-aa2402-clt-rdu",
+      "category": "arrival",
+      "scheduledTime": "15:25",
+      "airlineIcao": "aal",
+      "flightNumber": "2402",
+      "originIcao": "KCLT",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-af-arrival-lfpg-f-001",
+      "scheduledTime": "15:26",
+      "category": "arrival",
+      "originIcao": "LFPG",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "afr",
+      "flightNumber": "9270"
+    },
+    {
+      "id": "arrival-wn294-tpa-rdu",
+      "category": "arrival",
+      "scheduledTime": "15:35",
+      "airlineIcao": "swa",
+      "flightNumber": "294",
+      "originIcao": "KTPA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-dl2026-rdu-atl",
+      "category": "departure",
+      "scheduledTime": "15:35",
+      "airlineIcao": "dal",
+      "flightNumber": "2026",
+      "originIcao": "KRDU",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "arrival-wn1063-aus-rdu",
+      "category": "arrival",
+      "scheduledTime": "15:50",
+      "airlineIcao": "swa",
+      "flightNumber": "1063",
+      "originIcao": "KAUS",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-ua2196-iah-rdu",
+      "category": "arrival",
+      "scheduledTime": "15:55",
+      "airlineIcao": "ual",
+      "flightNumber": "2196",
+      "originIcao": "KIAH",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-aa2371-dfw-rdu",
+      "category": "arrival",
+      "scheduledTime": "15:59",
+      "airlineIcao": "aal",
+      "flightNumber": "2371",
+      "originIcao": "KDFW",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-yx4489-rdu-bna",
+      "category": "departure",
+      "scheduledTime": "15:59",
+      "airlineIcao": "rpa",
+      "flightNumber": "4489",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-9e-arrival-kdca-f-001",
+      "scheduledTime": "15:59",
+      "category": "arrival",
+      "originIcao": "KDCA",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "edv",
+      "flightNumber": "9427"
+    },
+    {
+      "id": "t100-fx-departure-kmem-g-001",
+      "scheduledTime": "15:59",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMEM",
+      "airlineIcao": "fdx",
+      "flightNumber": "3492"
+    },
+    {
+      "id": "departure-dl1075-rdu-bos",
+      "category": "departure",
+      "scheduledTime": "16:05",
+      "airlineIcao": "dal",
+      "flightNumber": "1075",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "arrival-dl1312-mco-rdu",
+      "category": "arrival",
+      "scheduledTime": "16:07",
+      "airlineIcao": "dal",
+      "flightNumber": "1312",
+      "originIcao": "KMCO",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-oh5367-dca-rdu",
+      "category": "arrival",
+      "scheduledTime": "16:10",
+      "airlineIcao": "jia",
+      "flightNumber": "5367",
+      "originIcao": "KDCA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-wn294-rdu-bna",
+      "category": "departure",
+      "scheduledTime": "16:10",
+      "airlineIcao": "swa",
+      "flightNumber": "294",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "t100-mx-arrival-krsw-f-001",
+      "scheduledTime": "16:10",
+      "category": "arrival",
+      "originIcao": "KRSW",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "mxy",
+      "flightNumber": "2606"
+    },
+    {
+      "id": "arrival-ua2485-ewr-rdu",
+      "category": "arrival",
+      "scheduledTime": "16:11",
+      "airlineIcao": "ual",
+      "flightNumber": "2485",
+      "originIcao": "KEWR",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-aa2402-rdu-clt",
+      "category": "departure",
+      "scheduledTime": "16:15",
+      "airlineIcao": "aal",
+      "flightNumber": "2402",
+      "originIcao": "KRDU",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "departure-yx4563-rdu-ord",
+      "category": "departure",
+      "scheduledTime": "16:15",
+      "airlineIcao": "rpa",
+      "flightNumber": "4563",
+      "originIcao": "KRDU",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-mx-departure-kisp-f-001",
+      "scheduledTime": "16:16",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KISP",
+      "airlineIcao": "mxy",
+      "flightNumber": "3109"
+    },
+    {
+      "id": "arrival-dl1550-atl-rdu",
+      "category": "arrival",
+      "scheduledTime": "16:20",
+      "airlineIcao": "dal",
+      "flightNumber": "1550",
+      "originIcao": "KATL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-aa543-phx-rdu",
+      "category": "arrival",
+      "scheduledTime": "16:22",
+      "airlineIcao": "aal",
+      "flightNumber": "543",
+      "originIcao": "KPHX",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-ua2288-rdu-den",
+      "category": "departure",
+      "scheduledTime": "16:22",
+      "airlineIcao": "ual",
+      "flightNumber": "2288",
+      "originIcao": "KRDU",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "t100-mx-arrival-ktpa-f-002",
+      "scheduledTime": "16:24",
+      "category": "arrival",
+      "originIcao": "KTPA",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "mxy",
+      "flightNumber": "3527"
+    },
+    {
+      "id": "arrival-ua1205-sfo-rdu",
+      "category": "arrival",
+      "scheduledTime": "16:25",
+      "airlineIcao": "ual",
+      "flightNumber": "1205",
+      "originIcao": "KSFO",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-wn1063-rdu-bwi",
+      "category": "departure",
+      "scheduledTime": "16:25",
+      "airlineIcao": "swa",
+      "flightNumber": "1063",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "t100-qk-departure-cyyz-f-001",
+      "scheduledTime": "16:27",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "CYYZ",
+      "airlineIcao": "jza",
+      "flightNumber": "3358"
+    },
+    {
+      "id": "arrival-as572-sea-rdu",
+      "category": "arrival",
+      "scheduledTime": "16:31",
+      "airlineIcao": "asa",
+      "flightNumber": "572",
+      "originIcao": "KSEA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-9e-arrival-kaus-f-001",
+      "scheduledTime": "16:35",
+      "category": "arrival",
+      "originIcao": "KAUS",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "edv",
+      "flightNumber": "6525"
+    },
+    {
+      "id": "departure-oh5367-rdu-dca",
+      "category": "departure",
+      "scheduledTime": "16:40",
+      "airlineIcao": "jia",
+      "flightNumber": "5367",
+      "originIcao": "KRDU",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "arrival-aa2360-phl-rdu",
+      "category": "arrival",
+      "scheduledTime": "16:42",
+      "airlineIcao": "aal",
+      "flightNumber": "2360",
+      "originIcao": "KPHL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-mx-arrival-kisp-f-001",
+      "scheduledTime": "16:42",
+      "category": "arrival",
+      "originIcao": "KISP",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "mxy",
+      "flightNumber": "6692"
+    },
+    {
+      "id": "arrival-f91234-mco-rdu",
+      "category": "arrival",
+      "scheduledTime": "16:44",
+      "airlineIcao": "fft",
+      "flightNumber": "1234",
+      "originIcao": "KMCO",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-wn3780-den-rdu",
+      "category": "arrival",
+      "scheduledTime": "16:45",
+      "airlineIcao": "swa",
+      "flightNumber": "3780",
+      "originIcao": "KDEN",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-aa2396-lax-rdu",
+      "category": "arrival",
+      "scheduledTime": "16:46",
+      "airlineIcao": "aal",
+      "flightNumber": "2396",
+      "originIcao": "KLAX",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-b62785-jfk-rdu",
+      "category": "arrival",
+      "scheduledTime": "16:47",
+      "airlineIcao": "jbu",
+      "flightNumber": "2785",
+      "originIcao": "KJFK",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-9e-arrival-kewr-f-002",
+      "scheduledTime": "16:48",
+      "category": "arrival",
+      "originIcao": "KEWR",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "edv",
+      "flightNumber": "1198"
+    },
+    {
+      "id": "arrival-aa2406-mia-rdu",
+      "category": "arrival",
+      "scheduledTime": "16:50",
+      "airlineIcao": "aal",
+      "flightNumber": "2406",
+      "originIcao": "KMIA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-ua2407-rdu-iah",
+      "category": "departure",
+      "scheduledTime": "16:51",
+      "airlineIcao": "ual",
+      "flightNumber": "2407",
+      "originIcao": "KRDU",
+      "destinationIcao": "KIAH"
+    },
+    {
+      "id": "t100-9e-departure-kdca-f-001",
+      "scheduledTime": "16:54",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KDCA",
+      "airlineIcao": "edv",
+      "flightNumber": "3304"
+    },
+    {
+      "id": "departure-dl1319-rdu-mco",
+      "category": "departure",
+      "scheduledTime": "17:03",
+      "airlineIcao": "dal",
+      "flightNumber": "1319",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "arrival-dl1018-fll-rdu",
+      "category": "arrival",
+      "scheduledTime": "17:12",
+      "airlineIcao": "dal",
+      "flightNumber": "1018",
+      "originIcao": "KFLL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-ua630-rdu-ord",
+      "category": "departure",
+      "scheduledTime": "17:12",
+      "airlineIcao": "ual",
+      "flightNumber": "630",
+      "originIcao": "KRDU",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-9e-departure-klga-f-001",
+      "scheduledTime": "17:18",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KLGA",
+      "airlineIcao": "edv",
+      "flightNumber": "7477"
+    },
+    {
+      "id": "departure-wn4818-rdu-aus",
+      "category": "departure",
+      "scheduledTime": "17:20",
+      "airlineIcao": "swa",
+      "flightNumber": "4818",
+      "originIcao": "KRDU",
+      "destinationIcao": "KAUS"
+    },
+    {
+      "id": "departure-aa2360-rdu-phl",
+      "category": "departure",
+      "scheduledTime": "17:22",
+      "airlineIcao": "aal",
+      "flightNumber": "2360",
+      "originIcao": "KRDU",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "arrival-dl2600-atl-rdu",
+      "category": "arrival",
+      "scheduledTime": "17:25",
+      "airlineIcao": "dal",
+      "flightNumber": "2600",
+      "originIcao": "KATL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-oh5347-dca-rdu",
+      "category": "arrival",
+      "scheduledTime": "17:25",
+      "airlineIcao": "jia",
+      "flightNumber": "5347",
+      "originIcao": "KDCA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-dl1550-rdu-atl",
+      "category": "departure",
+      "scheduledTime": "17:25",
+      "airlineIcao": "dal",
+      "flightNumber": "1550",
+      "originIcao": "KRDU",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-9e-arrival-kjfk-f-002",
+      "scheduledTime": "17:26",
+      "category": "arrival",
+      "originIcao": "KJFK",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "edv",
+      "flightNumber": "9277"
+    },
+    {
+      "id": "arrival-ua2091-ord-rdu",
+      "category": "arrival",
+      "scheduledTime": "17:27",
+      "airlineIcao": "ual",
+      "flightNumber": "2091",
+      "originIcao": "KORD",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-ua1769-rdu-sfo",
+      "category": "departure",
+      "scheduledTime": "17:27",
+      "airlineIcao": "ual",
+      "flightNumber": "1769",
+      "originIcao": "KRDU",
+      "destinationIcao": "KSFO"
+    },
+    {
+      "id": "departure-f91785-rdu-mco",
+      "category": "departure",
+      "scheduledTime": "17:29",
+      "airlineIcao": "fft",
+      "flightNumber": "1785",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "t100-5x-arrival-kphl-g-001",
+      "scheduledTime": "17:29",
+      "category": "arrival",
+      "originIcao": "KPHL",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "ups",
+      "flightNumber": "7186"
+    },
+    {
+      "id": "t100-fx-departure-kewn-g-001",
+      "scheduledTime": "17:29",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KEWN",
+      "airlineIcao": "fdx",
+      "flightNumber": "2835"
+    },
+    {
+      "id": "arrival-dl508-lax-rdu",
+      "category": "arrival",
+      "scheduledTime": "17:30",
+      "airlineIcao": "dal",
+      "flightNumber": "508",
+      "originIcao": "KLAX",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-wn506-bwi-rdu",
+      "category": "arrival",
+      "scheduledTime": "17:30",
+      "airlineIcao": "swa",
+      "flightNumber": "506",
+      "originIcao": "KBWI",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-aa2406-rdu-mia",
+      "category": "departure",
+      "scheduledTime": "17:30",
+      "airlineIcao": "aal",
+      "flightNumber": "2406",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMIA"
+    },
+    {
+      "id": "t100-xp-departure-khvn-f-001",
+      "scheduledTime": "17:33",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KHVN",
+      "airlineIcao": "vxp",
+      "flightNumber": "1684"
+    },
+    {
+      "id": "departure-as572-rdu-sea",
+      "category": "departure",
+      "scheduledTime": "17:34",
+      "airlineIcao": "asa",
+      "flightNumber": "572",
+      "originIcao": "KRDU",
+      "destinationIcao": "KSEA"
+    },
+    {
+      "id": "arrival-aa2379-clt-rdu",
+      "category": "arrival",
+      "scheduledTime": "17:36",
+      "airlineIcao": "aal",
+      "flightNumber": "2379",
+      "originIcao": "KCLT",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-wn3214-phx-rdu",
+      "category": "arrival",
+      "scheduledTime": "17:40",
+      "airlineIcao": "swa",
+      "flightNumber": "3214",
+      "originIcao": "KPHX",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-wn653-bna-rdu",
+      "category": "arrival",
+      "scheduledTime": "17:40",
+      "airlineIcao": "swa",
+      "flightNumber": "653",
+      "originIcao": "KBNA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-mx-arrival-kcmh-f-001",
+      "scheduledTime": "17:40",
+      "category": "arrival",
+      "originIcao": "KCMH",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "mxy",
+      "flightNumber": "9714"
+    },
+    {
+      "id": "t100-mx-arrival-khpn-f-001",
+      "scheduledTime": "17:43",
+      "category": "arrival",
+      "originIcao": "KHPN",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "mxy",
+      "flightNumber": "5379"
+    },
+    {
+      "id": "arrival-mq3696-ord-rdu",
+      "category": "arrival",
+      "scheduledTime": "17:46",
+      "airlineIcao": "eny",
+      "flightNumber": "3696",
+      "originIcao": "KORD",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-dl1407-dtw-rdu",
+      "category": "arrival",
+      "scheduledTime": "17:47",
+      "airlineIcao": "dal",
+      "flightNumber": "1407",
+      "originIcao": "KDTW",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-b62286-rdu-jfk",
+      "category": "departure",
+      "scheduledTime": "17:50",
+      "airlineIcao": "jbu",
+      "flightNumber": "2286",
+      "originIcao": "KRDU",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "arrival-dl2699-msp-rdu",
+      "category": "arrival",
+      "scheduledTime": "17:51",
+      "airlineIcao": "dal",
+      "flightNumber": "2699",
+      "originIcao": "KMSP",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-oh5347-rdu-dca",
+      "category": "departure",
+      "scheduledTime": "17:56",
+      "airlineIcao": "jia",
+      "flightNumber": "5347",
+      "originIcao": "KRDU",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "t100-af-departure-lfpg-f-001",
+      "scheduledTime": "17:58",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "LFPG",
+      "airlineIcao": "afr",
+      "flightNumber": "203"
+    },
+    {
+      "id": "t100-mx-arrival-kmco-f-002",
+      "scheduledTime": "17:59",
+      "category": "arrival",
+      "originIcao": "KMCO",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "mxy",
+      "flightNumber": "9976"
+    },
+    {
+      "id": "arrival-as434-san-rdu",
+      "category": "arrival",
+      "scheduledTime": "18:01",
+      "airlineIcao": "asa",
+      "flightNumber": "434",
+      "originIcao": "KSAN",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-dl1275-rdu-tpa",
+      "category": "departure",
+      "scheduledTime": "18:07",
+      "airlineIcao": "dal",
+      "flightNumber": "1275",
+      "originIcao": "KRDU",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "departure-wn3431-rdu-mco",
+      "category": "departure",
+      "scheduledTime": "18:10",
+      "airlineIcao": "swa",
+      "flightNumber": "3431",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMCO"
+    },
+    {
+      "id": "arrival-wn4411-hou-rdu",
+      "category": "arrival",
+      "scheduledTime": "18:20",
+      "airlineIcao": "swa",
+      "flightNumber": "4411",
+      "originIcao": "KHOU",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-wn2553-rdu-den",
+      "category": "departure",
+      "scheduledTime": "18:20",
+      "airlineIcao": "swa",
+      "flightNumber": "2553",
+      "originIcao": "KRDU",
+      "destinationIcao": "KDEN"
+    },
+    {
+      "id": "departure-wn3425-rdu-bwi",
+      "category": "departure",
+      "scheduledTime": "18:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3425",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBWI"
+    },
+    {
+      "id": "t100-fi-departure-bikf-f-001",
+      "scheduledTime": "18:20",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "BIKF",
+      "airlineIcao": "ice",
+      "flightNumber": "2690"
+    },
+    {
+      "id": "t100-9e-departure-klga-f-003",
+      "scheduledTime": "18:22",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KLGA",
+      "airlineIcao": "edv",
+      "flightNumber": "855"
+    },
+    {
+      "id": "departure-mq3696-rdu-ord",
+      "category": "departure",
+      "scheduledTime": "18:24",
+      "airlineIcao": "eny",
+      "flightNumber": "3696",
+      "originIcao": "KRDU",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "departure-aa2379-rdu-clt",
+      "category": "departure",
+      "scheduledTime": "18:29",
+      "airlineIcao": "aal",
+      "flightNumber": "2379",
+      "originIcao": "KRDU",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "arrival-yx4493-pit-rdu",
+      "category": "arrival",
+      "scheduledTime": "18:30",
+      "airlineIcao": "rpa",
+      "flightNumber": "4493",
+      "originIcao": "KPIT",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-ua1205-rdu-ewr",
+      "category": "departure",
+      "scheduledTime": "18:33",
+      "airlineIcao": "ual",
+      "flightNumber": "1205",
+      "originIcao": "KRDU",
+      "destinationIcao": "KEWR"
+    },
+    {
+      "id": "t100-yv-arrival-kiah-f-001",
+      "scheduledTime": "18:34",
+      "category": "arrival",
+      "originIcao": "KIAH",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "ash",
+      "flightNumber": "3042"
+    },
+    {
+      "id": "arrival-aa2361-dfw-rdu",
+      "category": "arrival",
+      "scheduledTime": "18:38",
+      "airlineIcao": "aal",
+      "flightNumber": "2361",
+      "originIcao": "KDFW",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-dl508-rdu-lax",
+      "category": "departure",
+      "scheduledTime": "18:40",
+      "airlineIcao": "dal",
+      "flightNumber": "508",
+      "originIcao": "KRDU",
+      "destinationIcao": "KLAX"
+    },
+    {
+      "id": "arrival-ua1975-ewr-rdu",
+      "category": "arrival",
+      "scheduledTime": "18:43",
+      "airlineIcao": "ual",
+      "flightNumber": "1975",
+      "originIcao": "KEWR",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-yx4436-lga-rdu",
+      "category": "arrival",
+      "scheduledTime": "18:43",
+      "airlineIcao": "rpa",
+      "flightNumber": "4436",
+      "originIcao": "KLGA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-5x-departure-kphl-g-001",
+      "scheduledTime": "18:44",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KPHL",
+      "airlineIcao": "ups",
+      "flightNumber": "363"
+    },
+    {
+      "id": "arrival-wn1389-dal-rdu",
+      "category": "arrival",
+      "scheduledTime": "18:45",
+      "airlineIcao": "swa",
+      "flightNumber": "1389",
+      "originIcao": "KDAL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-dl1407-rdu-dtw",
+      "category": "departure",
+      "scheduledTime": "18:45",
+      "airlineIcao": "dal",
+      "flightNumber": "1407",
+      "originIcao": "KRDU",
+      "destinationIcao": "KDTW"
+    },
+    {
+      "id": "t100-9e-arrival-kdca-f-002",
+      "scheduledTime": "18:45",
+      "category": "arrival",
+      "originIcao": "KDCA",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "edv",
+      "flightNumber": "9073"
+    },
+    {
+      "id": "arrival-dl1097-atl-rdu",
+      "category": "arrival",
+      "scheduledTime": "18:54",
+      "airlineIcao": "dal",
+      "flightNumber": "1097",
+      "originIcao": "KATL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-yx3624-iad-rdu",
+      "category": "arrival",
+      "scheduledTime": "18:55",
+      "airlineIcao": "rpa",
+      "flightNumber": "3624",
+      "originIcao": "KIAD",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-fi-arrival-bikf-f-001",
+      "scheduledTime": "18:57",
+      "category": "arrival",
+      "originIcao": "BIKF",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "ice",
+      "flightNumber": "3584"
+    },
+    {
+      "id": "t100-mx-departure-kalb-f-001",
+      "scheduledTime": "18:57",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KALB",
+      "airlineIcao": "mxy",
+      "flightNumber": "7335"
+    },
+    {
+      "id": "departure-wn3766-rdu-mdw",
+      "category": "departure",
+      "scheduledTime": "19:00",
+      "airlineIcao": "swa",
+      "flightNumber": "3766",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMDW"
+    },
+    {
+      "id": "departure-yx4493-rdu-pit",
+      "category": "departure",
+      "scheduledTime": "19:00",
+      "airlineIcao": "rpa",
+      "flightNumber": "4493",
+      "originIcao": "KRDU",
+      "destinationIcao": "KPIT"
+    },
+    {
+      "id": "arrival-b6404-sju-rdu",
+      "category": "arrival",
+      "scheduledTime": "19:01",
+      "airlineIcao": "jbu",
+      "flightNumber": "404",
+      "originIcao": "TJSJ",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-as474-rdu-san",
+      "category": "departure",
+      "scheduledTime": "19:08",
+      "airlineIcao": "asa",
+      "flightNumber": "474",
+      "originIcao": "KRDU",
+      "destinationIcao": "KSAN"
+    },
+    {
+      "id": "departure-dl1020-rdu-msp",
+      "category": "departure",
+      "scheduledTime": "19:10",
+      "airlineIcao": "dal",
+      "flightNumber": "1020",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMSP"
+    },
+    {
+      "id": "arrival-oh5590-phl-rdu",
+      "category": "arrival",
+      "scheduledTime": "19:11",
+      "airlineIcao": "jia",
+      "flightNumber": "5590",
+      "originIcao": "KPHL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-mx-departure-kmco-f-001",
+      "scheduledTime": "19:12",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMCO",
+      "airlineIcao": "mxy",
+      "flightNumber": "4211"
+    },
+    {
+      "id": "departure-yx4492-rdu-ord",
+      "category": "departure",
+      "scheduledTime": "19:14",
+      "airlineIcao": "rpa",
+      "flightNumber": "4492",
+      "originIcao": "KRDU",
+      "destinationIcao": "KORD"
+    },
+    {
+      "id": "t100-9e-arrival-kjfk-f-003",
+      "scheduledTime": "19:14",
+      "category": "arrival",
+      "originIcao": "KJFK",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "edv",
+      "flightNumber": "6253"
+    },
+    {
+      "id": "arrival-wn4820-bna-rdu",
+      "category": "arrival",
+      "scheduledTime": "19:15",
+      "airlineIcao": "swa",
+      "flightNumber": "4820",
+      "originIcao": "KBNA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-aa2394-clt-rdu",
+      "category": "arrival",
+      "scheduledTime": "19:18",
+      "airlineIcao": "aal",
+      "flightNumber": "2394",
+      "originIcao": "KCLT",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-yv-arrival-kiah-f-002",
+      "scheduledTime": "19:21",
+      "category": "arrival",
+      "originIcao": "KIAH",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "ash",
+      "flightNumber": "9348"
+    },
+    {
+      "id": "arrival-yx4518-ord-rdu",
+      "category": "arrival",
+      "scheduledTime": "19:23",
+      "airlineIcao": "rpa",
+      "flightNumber": "4518",
+      "originIcao": "KORD",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-yx4752-dca-rdu",
+      "category": "arrival",
+      "scheduledTime": "19:24",
+      "airlineIcao": "rpa",
+      "flightNumber": "4752",
+      "originIcao": "KDCA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-wn3457-rdu-stl",
+      "category": "departure",
+      "scheduledTime": "19:25",
+      "airlineIcao": "swa",
+      "flightNumber": "3457",
+      "originIcao": "KRDU",
+      "destinationIcao": "KSTL"
+    },
+    {
+      "id": "t100-mx-departure-kroc-f-001",
+      "scheduledTime": "19:27",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KROC",
+      "airlineIcao": "mxy",
+      "flightNumber": "7078"
+    },
+    {
+      "id": "departure-aa2361-rdu-dfw",
+      "category": "departure",
+      "scheduledTime": "19:31",
+      "airlineIcao": "aal",
+      "flightNumber": "2361",
+      "originIcao": "KRDU",
+      "destinationIcao": "KDFW"
+    },
+    {
+      "id": "arrival-dl2782-bos-rdu",
+      "category": "arrival",
+      "scheduledTime": "19:37",
+      "airlineIcao": "dal",
+      "flightNumber": "2782",
+      "originIcao": "KBOS",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-yx4596-bna-rdu",
+      "category": "arrival",
+      "scheduledTime": "19:43",
+      "airlineIcao": "rpa",
+      "flightNumber": "4596",
+      "originIcao": "KBNA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-oh5590-rdu-phl",
+      "category": "departure",
+      "scheduledTime": "19:45",
+      "airlineIcao": "jia",
+      "flightNumber": "5590",
+      "originIcao": "KRDU",
+      "destinationIcao": "KPHL"
+    },
+    {
+      "id": "departure-yx3520-rdu-iad",
+      "category": "departure",
+      "scheduledTime": "19:45",
+      "airlineIcao": "rpa",
+      "flightNumber": "3520",
+      "originIcao": "KRDU",
+      "destinationIcao": "KIAD"
+    },
+    {
+      "id": "t100-mx-departure-kmsy-f-001",
+      "scheduledTime": "19:46",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KMSY",
+      "airlineIcao": "mxy",
+      "flightNumber": "6701"
+    },
+    {
+      "id": "departure-b61903-rdu-sju",
+      "category": "departure",
+      "scheduledTime": "19:56",
+      "airlineIcao": "jbu",
+      "flightNumber": "1903",
+      "originIcao": "KRDU",
+      "destinationIcao": "TJSJ"
+    },
+    {
+      "id": "departure-dl2621-rdu-atl",
+      "category": "departure",
+      "scheduledTime": "19:59",
+      "airlineIcao": "dal",
+      "flightNumber": "2621",
+      "originIcao": "KRDU",
+      "destinationIcao": "KATL"
+    },
+    {
+      "id": "t100-mx-departure-kbdl-f-001",
+      "scheduledTime": "19:59",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBDL",
+      "airlineIcao": "mxy",
+      "flightNumber": "8103"
+    },
+    {
+      "id": "departure-yx4417-rdu-jfk",
+      "category": "departure",
+      "scheduledTime": "20:03",
+      "airlineIcao": "rpa",
+      "flightNumber": "4417",
+      "originIcao": "KRDU",
+      "destinationIcao": "KJFK"
+    },
+    {
+      "id": "departure-yx4752-rdu-dca",
+      "category": "departure",
+      "scheduledTime": "20:04",
+      "airlineIcao": "rpa",
+      "flightNumber": "4752",
+      "originIcao": "KRDU",
+      "destinationIcao": "KDCA"
+    },
+    {
+      "id": "departure-aa2394-rdu-clt",
+      "category": "departure",
+      "scheduledTime": "20:08",
+      "airlineIcao": "aal",
+      "flightNumber": "2394",
+      "originIcao": "KRDU",
+      "destinationIcao": "KCLT"
+    },
+    {
+      "id": "arrival-ua2861-sfo-rdu",
+      "category": "arrival",
+      "scheduledTime": "20:18",
+      "airlineIcao": "ual",
+      "flightNumber": "2861",
+      "originIcao": "KSFO",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-wn3421-rdu-bna",
+      "category": "departure",
+      "scheduledTime": "20:20",
+      "airlineIcao": "swa",
+      "flightNumber": "3421",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBNA"
+    },
+    {
+      "id": "departure-yx4560-rdu-lga",
+      "category": "departure",
+      "scheduledTime": "20:20",
+      "airlineIcao": "rpa",
+      "flightNumber": "4560",
+      "originIcao": "KRDU",
+      "destinationIcao": "KLGA"
+    },
+    {
+      "id": "t100-9e-arrival-kmci-f-001",
+      "scheduledTime": "20:22",
+      "category": "arrival",
+      "originIcao": "KMCI",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "edv",
+      "flightNumber": "6573"
+    },
+    {
+      "id": "t100-mx-departure-ksyr-f-001",
+      "scheduledTime": "20:24",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KSYR",
+      "airlineIcao": "mxy",
+      "flightNumber": "820"
+    },
+    {
+      "id": "arrival-yx4804-jfk-rdu",
+      "category": "arrival",
+      "scheduledTime": "20:27",
+      "airlineIcao": "rpa",
+      "flightNumber": "4804",
+      "originIcao": "KJFK",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-dl2393-rdu-bos",
+      "category": "departure",
+      "scheduledTime": "20:35",
+      "airlineIcao": "dal",
+      "flightNumber": "2393",
+      "originIcao": "KRDU",
+      "destinationIcao": "KBOS"
+    },
+    {
+      "id": "t100-mx-departure-krsw-f-001",
+      "scheduledTime": "20:36",
+      "category": "departure",
+      "originIcao": "KRDU",
+      "destinationIcao": "KRSW",
+      "airlineIcao": "mxy",
+      "flightNumber": "4174"
+    },
+    {
+      "id": "arrival-dl2992-mia-rdu",
+      "category": "arrival",
+      "scheduledTime": "20:53",
+      "airlineIcao": "dal",
+      "flightNumber": "2992",
+      "originIcao": "KMIA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-mx-arrival-kalb-f-001",
+      "scheduledTime": "20:54",
+      "category": "arrival",
+      "originIcao": "KALB",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "mxy",
+      "flightNumber": "9654"
+    },
+    {
+      "id": "arrival-dl1518-atl-rdu",
+      "category": "arrival",
+      "scheduledTime": "20:57",
+      "airlineIcao": "dal",
+      "flightNumber": "1518",
+      "originIcao": "KATL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-mx-arrival-kmco-f-001",
+      "scheduledTime": "21:09",
+      "category": "arrival",
+      "originIcao": "KMCO",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "mxy",
+      "flightNumber": "9624"
+    },
+    {
+      "id": "arrival-ua1233-ewr-rdu",
+      "category": "arrival",
+      "scheduledTime": "21:10",
+      "airlineIcao": "ual",
+      "flightNumber": "1233",
+      "originIcao": "KEWR",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-wn4221-mdw-rdu",
+      "category": "arrival",
+      "scheduledTime": "21:10",
+      "airlineIcao": "swa",
+      "flightNumber": "4221",
+      "originIcao": "KMDW",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-aa2083-dca-rdu",
+      "category": "arrival",
+      "scheduledTime": "21:12",
+      "airlineIcao": "aal",
+      "flightNumber": "2083",
+      "originIcao": "KDCA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-aa2969-lga-rdu",
+      "category": "arrival",
+      "scheduledTime": "21:12",
+      "airlineIcao": "aal",
+      "flightNumber": "2969",
+      "originIcao": "KLGA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-qk-arrival-cyul-f-001",
+      "scheduledTime": "21:14",
+      "category": "arrival",
+      "originIcao": "CYUL",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "jza",
+      "flightNumber": "9533"
+    },
+    {
+      "id": "arrival-wn793-bwi-rdu",
+      "category": "arrival",
+      "scheduledTime": "21:15",
+      "airlineIcao": "swa",
+      "flightNumber": "793",
+      "originIcao": "KBWI",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-aa1566-mia-rdu",
+      "category": "arrival",
+      "scheduledTime": "21:17",
+      "airlineIcao": "aal",
+      "flightNumber": "1566",
+      "originIcao": "KMIA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-b62626-fll-rdu",
+      "category": "arrival",
+      "scheduledTime": "21:24",
+      "airlineIcao": "jbu",
+      "flightNumber": "2626",
+      "originIcao": "KFLL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-ua1989-ord-rdu",
+      "category": "arrival",
+      "scheduledTime": "21:37",
+      "airlineIcao": "ual",
+      "flightNumber": "1989",
+      "originIcao": "KORD",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-9e-arrival-klga-f-001",
+      "scheduledTime": "21:41",
+      "category": "arrival",
+      "originIcao": "KLGA",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "edv",
+      "flightNumber": "2831"
+    },
+    {
+      "id": "t100-mx-arrival-kbdl-f-001",
+      "scheduledTime": "21:48",
+      "category": "arrival",
+      "originIcao": "KBDL",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "mxy",
+      "flightNumber": "431"
+    },
+    {
+      "id": "arrival-f93372-tpa-rdu",
+      "category": "arrival",
+      "scheduledTime": "21:49",
+      "airlineIcao": "fft",
+      "flightNumber": "3372",
+      "originIcao": "KTPA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-aa706-phl-rdu",
+      "category": "arrival",
+      "scheduledTime": "21:51",
+      "airlineIcao": "aal",
+      "flightNumber": "706",
+      "originIcao": "KPHL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-aa3178-clt-rdu",
+      "category": "arrival",
+      "scheduledTime": "21:54",
+      "airlineIcao": "aal",
+      "flightNumber": "3178",
+      "originIcao": "KCLT",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-dl1370-mco-rdu",
+      "category": "arrival",
+      "scheduledTime": "21:55",
+      "airlineIcao": "dal",
+      "flightNumber": "1370",
+      "originIcao": "KMCO",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-wn2690-mco-rdu",
+      "category": "arrival",
+      "scheduledTime": "21:55",
+      "airlineIcao": "swa",
+      "flightNumber": "2690",
+      "originIcao": "KMCO",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-ua2498-iah-rdu",
+      "category": "arrival",
+      "scheduledTime": "21:59",
+      "airlineIcao": "ual",
+      "flightNumber": "2498",
+      "originIcao": "KIAH",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-9e-arrival-kbna-f-001",
+      "scheduledTime": "21:59",
+      "category": "arrival",
+      "originIcao": "KBNA",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "edv",
+      "flightNumber": "8987"
+    },
+    {
+      "id": "arrival-dl3244-atl-rdu",
+      "category": "arrival",
+      "scheduledTime": "22:00",
+      "airlineIcao": "dal",
+      "flightNumber": "3244",
+      "originIcao": "KATL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-9e-arrival-kcvg-f-001",
+      "scheduledTime": "22:03",
+      "category": "arrival",
+      "originIcao": "KCVG",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "edv",
+      "flightNumber": "1881"
+    },
+    {
+      "id": "arrival-wn3810-stl-rdu",
+      "category": "arrival",
+      "scheduledTime": "22:05",
+      "airlineIcao": "swa",
+      "flightNumber": "3810",
+      "originIcao": "KSTL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-dl817-bos-rdu",
+      "category": "arrival",
+      "scheduledTime": "22:15",
+      "airlineIcao": "dal",
+      "flightNumber": "817",
+      "originIcao": "KBOS",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-wn4431-bna-rdu",
+      "category": "arrival",
+      "scheduledTime": "22:20",
+      "airlineIcao": "swa",
+      "flightNumber": "4431",
+      "originIcao": "KBNA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-b6185-jfk-rdu",
+      "category": "arrival",
+      "scheduledTime": "22:32",
+      "airlineIcao": "jbu",
+      "flightNumber": "185",
+      "originIcao": "KJFK",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "departure-f93371-rdu-tpa",
+      "category": "departure",
+      "scheduledTime": "22:34",
+      "airlineIcao": "fft",
+      "flightNumber": "3371",
+      "originIcao": "KRDU",
+      "destinationIcao": "KTPA"
+    },
+    {
+      "id": "t100-lh-arrival-eddf-f-001",
+      "scheduledTime": "22:34",
+      "category": "arrival",
+      "originIcao": "EDDF",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "dlh",
+      "flightNumber": "6264"
+    },
+    {
+      "id": "arrival-dl1275-tpa-rdu",
+      "category": "arrival",
+      "scheduledTime": "22:55",
+      "airlineIcao": "dal",
+      "flightNumber": "1275",
+      "originIcao": "KTPA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-wn161-bwi-rdu",
+      "category": "arrival",
+      "scheduledTime": "22:55",
+      "airlineIcao": "swa",
+      "flightNumber": "161",
+      "originIcao": "KBWI",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-9e-arrival-kewr-f-001",
+      "scheduledTime": "22:58",
+      "category": "arrival",
+      "originIcao": "KEWR",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "edv",
+      "flightNumber": "2914"
+    },
+    {
+      "id": "arrival-b62783-bos-rdu",
+      "category": "arrival",
+      "scheduledTime": "22:59",
+      "airlineIcao": "jbu",
+      "flightNumber": "2783",
+      "originIcao": "KBOS",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-mq3474-mia-rdu",
+      "category": "arrival",
+      "scheduledTime": "23:07",
+      "airlineIcao": "eny",
+      "flightNumber": "3474",
+      "originIcao": "KMIA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-ua2671-den-rdu",
+      "category": "arrival",
+      "scheduledTime": "23:16",
+      "airlineIcao": "ual",
+      "flightNumber": "2671",
+      "originIcao": "KDEN",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-9e-arrival-kdca-f-003",
+      "scheduledTime": "23:18",
+      "category": "arrival",
+      "originIcao": "KDCA",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "edv",
+      "flightNumber": "1794"
+    },
+    {
+      "id": "arrival-dl2839-dtw-rdu",
+      "category": "arrival",
+      "scheduledTime": "23:25",
+      "airlineIcao": "dal",
+      "flightNumber": "2839",
+      "originIcao": "KDTW",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-wn1056-aus-rdu",
+      "category": "arrival",
+      "scheduledTime": "23:30",
+      "airlineIcao": "swa",
+      "flightNumber": "1056",
+      "originIcao": "KAUS",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-aa3125-phl-rdu",
+      "category": "arrival",
+      "scheduledTime": "23:34",
+      "airlineIcao": "aal",
+      "flightNumber": "3125",
+      "originIcao": "KPHL",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-dl1409-slc-rdu",
+      "category": "arrival",
+      "scheduledTime": "23:37",
+      "airlineIcao": "dal",
+      "flightNumber": "1409",
+      "originIcao": "KSLC",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-9e-arrival-kbna-f-002",
+      "scheduledTime": "23:38",
+      "category": "arrival",
+      "originIcao": "KBNA",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "edv",
+      "flightNumber": "6328"
+    },
+    {
+      "id": "arrival-yx4615-ord-rdu",
+      "category": "arrival",
+      "scheduledTime": "23:42",
+      "airlineIcao": "rpa",
+      "flightNumber": "4615",
+      "originIcao": "KORD",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-ua2382-iad-rdu",
+      "category": "arrival",
+      "scheduledTime": "23:44",
+      "airlineIcao": "ual",
+      "flightNumber": "2382",
+      "originIcao": "KIAD",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-fx-arrival-kewn-g-001",
+      "scheduledTime": "23:46",
+      "category": "arrival",
+      "originIcao": "KEWN",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "fdx",
+      "flightNumber": "7518"
+    },
+    {
+      "id": "arrival-aa542-dfw-rdu",
+      "category": "arrival",
+      "scheduledTime": "23:48",
+      "airlineIcao": "aal",
+      "flightNumber": "542",
+      "originIcao": "KDFW",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-9e-arrival-klga-f-005",
+      "scheduledTime": "23:52",
+      "category": "arrival",
+      "originIcao": "KLGA",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "edv",
+      "flightNumber": "3933"
+    },
+    {
+      "id": "arrival-dl489-sea-rdu",
+      "category": "arrival",
+      "scheduledTime": "23:55",
+      "airlineIcao": "dal",
+      "flightNumber": "489",
+      "originIcao": "KSEA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-aa494-clt-rdu",
+      "category": "arrival",
+      "scheduledTime": "23:58",
+      "airlineIcao": "aal",
+      "flightNumber": "494",
+      "originIcao": "KCLT",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-aa1286-mia-rdu",
+      "category": "arrival",
+      "scheduledTime": "23:59",
+      "airlineIcao": "aal",
+      "flightNumber": "1286",
+      "originIcao": "KMIA",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-aa2167-ord-rdu",
+      "category": "arrival",
+      "scheduledTime": "23:59",
+      "airlineIcao": "aal",
+      "flightNumber": "2167",
+      "originIcao": "KORD",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "arrival-dl2932-msp-rdu",
+      "category": "arrival",
+      "scheduledTime": "23:59",
+      "airlineIcao": "dal",
+      "flightNumber": "2932",
+      "originIcao": "KMSP",
+      "destinationIcao": "KRDU"
+    },
+    {
+      "id": "t100-mx-arrival-kroc-f-001",
+      "scheduledTime": "23:59",
+      "category": "arrival",
+      "originIcao": "KROC",
+      "destinationIcao": "KRDU",
+      "airlineIcao": "mxy",
+      "flightNumber": "9901"
+    }
+  ]
+}

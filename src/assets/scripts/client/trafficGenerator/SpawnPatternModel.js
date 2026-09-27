@@ -10,6 +10,7 @@ import BaseModel from '../base/BaseModel';
 import StaticPositionModel from '../base/StaticPositionModel';
 import { buildPreSpawnAircraft } from './buildPreSpawnAircraft';
 import { spawnPatternModelJsonValidator } from './spawnPatternModelJsonValidator';
+import { authoredSpawnPatternKey } from './schedule/authoredSpawnPatternKey';
 import { tau } from '../math/circle';
 import { FLIGHT_CATEGORY } from '../constants/aircraftConstants';
 import { AIRPORT_CONSTANTS } from '../constants/airportConstants';
@@ -129,6 +130,14 @@ export default class SpawnPatternModel extends BaseModel {
          * @private
          */
         this.scheduleId = INVALID_NUMBER;
+
+        /**
+         * Stable schedule key derived only from airport-authored operational fields.
+         *
+         * @property authoredScheduleKey
+         * @type {string}
+         */
+        this.authoredScheduleKey = '';
 
         /**
          * One of `FLIGHT_CATEGORY`
@@ -528,6 +537,7 @@ export default class SpawnPatternModel extends BaseModel {
             console.error('### Invalid spawnPatternJson received', spawnPatternJson);
         }
 
+        this.authoredScheduleKey = authoredSpawnPatternKey(spawnPatternJson);
         this.origin = spawnPatternJson.origin;
         this.destination = spawnPatternJson.destination;
         this.category = spawnPatternJson.category;
@@ -594,6 +604,7 @@ export default class SpawnPatternModel extends BaseModel {
      */
     reset() {
         this.scheduleId = INVALID_NUMBER;
+        this.authoredScheduleKey = '';
         this.category = '';
         this.method = '';
         this.origin = '';

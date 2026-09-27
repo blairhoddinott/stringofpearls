@@ -1,0 +1,6 @@
+{
+    "icao": "lvl",
+    "name": "LEVEL",
+    "callsign": { "name": "Dali", "callsignFormats": ["###"] },
+    "fleets": { "default": [["A332", 1]] }
+}

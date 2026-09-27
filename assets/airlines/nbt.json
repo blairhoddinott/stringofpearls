@@ -1,0 +1,6 @@
+{
+    "icao": "nbt",
+    "name": "Norse Atlantic Airways",
+    "callsign": { "name": "Longship", "callsignFormats": ["###"] },
+    "fleets": { "default": [["B789", 1]] }
+}

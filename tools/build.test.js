@@ -542,7 +542,7 @@ async function assertPublishedScheduleSchemaIsValidated() {
         assertBuildFailure(
             ['--production'],
             { SOURCE_DATE_EPOCH: FIXED_BUILD_EPOCH },
-            /schedule\.schema\.json: contents do not match the reviewed schemaVersion 1 contract/
+            /schedule\.schema\.json: contents do not match the reviewed schedule contract/
         );
     } finally {
         await fsp.writeFile(filename, original);

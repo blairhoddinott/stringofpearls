@@ -20,6 +20,17 @@ const KSEA_SCHEDULE = JSON.parse(
 
 // Fixed instant so the airport-zone anchor is deterministic across hosts.
 const SESSION_START = new Date('2026-07-15T12:00:00Z');
+const LEGACY_COLLECTION = {
+    spawnPatternModels: [
+        { category: 'arrival', routeString: 'A', origin: 'A', destination: 'KSEA', createPreSpawnAircraft: () => {} },
+        { category: 'departure', routeString: 'D', origin: 'KSEA', destination: 'D' }
+    ],
+    getDepartureModelsForPreSpawn: () => []
+};
+const MAPPING_CONTEXT = {
+    isAirlineKnown: () => true,
+    isAircraftTypeKnown: () => true
+};
 
 const buildScheduler = (collection, clock) => {
     const scheduledTimeouts = [];
@@ -45,7 +56,8 @@ ava('a real schedule flows through the provider into the real SpawnScheduler, ar
     const plan = resolveTrafficPlan({
         airportIcao: KSEA_SCHEDULE.airportIcao,
         scheduleDocument: KSEA_SCHEDULE,
-        legacyCollection: null,
+        legacyCollection: LEGACY_COLLECTION,
+        mappingContext: MAPPING_CONTEXT,
         sessionStartDate: SESSION_START
     });
     const { scheduler, scheduledTimeouts } = buildScheduler(plan.collection, clock);
@@ -78,7 +90,8 @@ ava('the armed timers preserve the scheduled identity needed by the mapping slic
     const plan = resolveTrafficPlan({
         airportIcao: KSEA_SCHEDULE.airportIcao,
         scheduleDocument: KSEA_SCHEDULE,
-        legacyCollection: null,
+        legacyCollection: LEGACY_COLLECTION,
+        mappingContext: MAPPING_CONTEXT,
         sessionStartDate: SESSION_START
     });
     const { scheduler, scheduledTimeouts } = buildScheduler(plan.collection, clock);
@@ -106,7 +119,8 @@ ava('a nested 25% subset arms a deterministic, smaller set of timers through the
     const plan = resolveTrafficPlan({
         airportIcao: KSEA_SCHEDULE.airportIcao,
         scheduleDocument: KSEA_SCHEDULE,
-        legacyCollection: null,
+        legacyCollection: LEGACY_COLLECTION,
+        mappingContext: MAPPING_CONTEXT,
         subsetPercent: 25,
         sessionStartDate: SESSION_START
     });

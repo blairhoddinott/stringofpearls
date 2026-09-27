@@ -1,6 +1,7 @@
 import ava from 'ava';
 import ScheduledSpawnPatternCollection from '../../../src/assets/scripts/client/trafficGenerator/schedule/ScheduledSpawnPatternCollection';
 import ScheduledSpawnPatternModel from '../../../src/assets/scripts/client/trafficGenerator/schedule/ScheduledSpawnPatternModel';
+import MappedScheduledSpawnPatternModel from '../../../src/assets/scripts/client/trafficGenerator/schedule/MappedScheduledSpawnPatternModel';
 import { resolveTrafficPlan } from '../../../src/assets/scripts/client/trafficGenerator/schedule/resolveTrafficPlan';
 import { secondsOfDayInZone } from '../../../src/assets/scripts/client/trafficGenerator/schedule/scheduleTrafficPlanUtils';
 
@@ -89,12 +90,71 @@ ava('fromScheduleDocument() honours a nested subset selection', (t) => {
     t.is(collection.subsetPercent, 50);
 });
 
-ava('getDepartureModelsForPreSpawn() defers departure pre-spawn geometry to the mapping slice', (t) => {
-    const collection = ScheduledSpawnPatternCollection.fromScheduleDocument(SCHEDULE_DOCUMENT_MOCK, {
-        sessionStartDate: SESSION_START
-    });
+ava('fromScheduleDocument() builds mapped slots when supplied a local mapping context', (t) => {
+    const mappingContext = {
+        candidatePatterns: [{ category: 'arrival', routeString: 'A', origin: 'A', destination: 'KSEA' }],
+        isAirlineKnown: () => true,
+        isAircraftTypeKnown: () => true
+    };
+    const collection = ScheduledSpawnPatternCollection.fromScheduleDocument({
+        ...SCHEDULE_DOCUMENT_MOCK,
+        flights: [SCHEDULE_DOCUMENT_MOCK.flights[0]]
+    }, { mappingContext, sessionStartDate: SESSION_START });
 
-    t.deepEqual(collection.getDepartureModelsForPreSpawn(), []);
+    t.true(collection.spawnPatternModels[0] instanceof MappedScheduledSpawnPatternModel);
+});
+
+ava('fromScheduleDocument() rejects mapped plans with no category-compatible pattern before scheduling', (t) => {
+    const mappingContext = {
+        candidatePatterns: [{ category: 'arrival', routeString: 'A', origin: 'A', destination: 'KSEA' }],
+        isAirlineKnown: () => true,
+        isAircraftTypeKnown: () => true
+    };
+
+    t.throws(() => ScheduledSpawnPatternCollection.fromScheduleDocument({
+        ...SCHEDULE_DOCUMENT_MOCK,
+        flights: [SCHEDULE_DOCUMENT_MOCK.flights[1]]
+    }, { mappingContext, sessionStartDate: SESSION_START }), { instanceOf: RangeError });
+});
+
+ava('getDepartureModelsForPreSpawn() returns the local generated departure baseline for mapped traffic', (t) => {
+    const departurePreSpawnModel = { category: 'departure' };
+    const mappingContext = {
+        candidatePatterns: [departurePreSpawnModel],
+        departurePreSpawnModels: [departurePreSpawnModel],
+        isAirlineKnown: () => true,
+        isAircraftTypeKnown: () => true
+    };
+    const collection = ScheduledSpawnPatternCollection.fromScheduleDocument({
+        ...SCHEDULE_DOCUMENT_MOCK,
+        flights: [SCHEDULE_DOCUMENT_MOCK.flights[1]]
+    }, { mappingContext, sessionStartDate: SESSION_START });
+
+    t.deepEqual(collection.getDepartureModelsForPreSpawn(), [departurePreSpawnModel]);
+});
+
+ava('mapped arrivals pre-spawn each selected local route once rather than once per scheduled slot', (t) => {
+    let callCount = 0;
+    const arrivalCandidate = {
+        category: 'arrival',
+        routeString: 'A',
+        origin: 'A',
+        destination: 'KSEA',
+        createPreSpawnAircraft: () => callCount++
+    };
+    const mappingContext = {
+        candidatePatterns: [arrivalCandidate],
+        isAirlineKnown: () => true,
+        isAircraftTypeKnown: () => true
+    };
+    const collection = ScheduledSpawnPatternCollection.fromScheduleDocument({
+        ...SCHEDULE_DOCUMENT_MOCK,
+        flights: [SCHEDULE_DOCUMENT_MOCK.flights[0], SCHEDULE_DOCUMENT_MOCK.flights[3]]
+    }, { mappingContext, sessionStartDate: SESSION_START });
+
+    collection.spawnPatternModels.forEach((model) => model.createPreSpawnAircraft({}));
+
+    t.is(callCount, 1);
 });
 
 ava('departureModels exposes only the departure slots', (t) => {
@@ -173,17 +233,43 @@ ava('fromScheduleDocument() fails closed on missing timezone, empty flights, and
 });
 
 ava('resolveTrafficPlan() returns the schedule-backed plan when a schedule exists', (t) => {
-    const legacyCollection = { spawnPatternModels: ['legacy'] };
+    const departurePreSpawnModel = { category: 'departure', routeString: 'D', origin: 'KSEA', destination: 'D' };
+    const legacyCollection = {
+        spawnPatternModels: [
+            { category: 'arrival', routeString: 'A', origin: 'A', destination: 'KSEA', createPreSpawnAircraft: () => {} },
+            departurePreSpawnModel
+        ],
+        getDepartureModelsForPreSpawn: () => [departurePreSpawnModel]
+    };
     const plan = resolveTrafficPlan({
         airportIcao: 'KSEA',
         scheduleDocument: SCHEDULE_DOCUMENT_MOCK,
         legacyCollection,
+        mappingContext: {
+            isAirlineKnown: () => true,
+            isAircraftTypeKnown: () => true
+        },
         sessionStartDate: SESSION_START
     });
 
     t.is(plan.mode, 'scheduled');
     t.true(plan.collection instanceof ScheduledSpawnPatternCollection);
     t.not(plan.collection, legacyCollection);
+    t.true(plan.collection.spawnPatternModels.every((model) => model instanceof MappedScheduledSpawnPatternModel));
+    t.deepEqual(plan.collection.getDepartureModelsForPreSpawn(), [departurePreSpawnModel]);
+});
+
+ava('resolveTrafficPlan() rejects a schedule without mapping resolvers', (t) => {
+    const legacyCollection = {
+        spawnPatternModels: [{ category: 'arrival', routeString: 'A', origin: 'A', destination: 'KSEA' }],
+        getDepartureModelsForPreSpawn: () => []
+    };
+
+    t.throws(() => resolveTrafficPlan({
+        airportIcao: 'KSEA',
+        scheduleDocument: SCHEDULE_DOCUMENT_MOCK,
+        legacyCollection
+    }), { message: /mappingContext/ });
 });
 
 ava('resolveTrafficPlan() preserves legacy generated traffic when no schedule exists', (t) => {

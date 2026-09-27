@@ -34,6 +34,7 @@ export function resolveTrafficPlan({
     airportIcao,
     scheduleDocument = null,
     legacyCollection,
+    mappingContext,
     subsetPercent,
     sessionStartDate
 }) {
@@ -55,7 +56,23 @@ export function resolveTrafficPlan({
         );
     }
 
+    if (legacyCollection == null || !Array.isArray(legacyCollection.spawnPatternModels) ||
+        typeof legacyCollection.getDepartureModelsForPreSpawn !== 'function') {
+        throw new TypeError('A usable legacyCollection is required to map scheduled slots onto local patterns.');
+    }
+    if (mappingContext == null || typeof mappingContext.isAirlineKnown !== 'function' ||
+        typeof mappingContext.isAircraftTypeKnown !== 'function') {
+        throw new TypeError('A mappingContext with airline and aircraft-type resolvers is required for scheduled traffic.');
+    }
+
+    const scheduledMappingContext = {
+        ...mappingContext,
+        candidatePatterns: legacyCollection.spawnPatternModels,
+        departurePreSpawnModels: legacyCollection.getDepartureModelsForPreSpawn()
+    };
+
     const collection = ScheduledSpawnPatternCollection.fromScheduleDocument(scheduleDocument, {
+        mappingContext: scheduledMappingContext,
         subsetPercent,
         sessionStartDate
     });

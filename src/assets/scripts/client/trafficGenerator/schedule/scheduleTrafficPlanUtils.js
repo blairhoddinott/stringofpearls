@@ -123,14 +123,14 @@ export function secondsUntilNextOccurrence(slotSecondsOfDay, zoneSecondsOfDayAtS
  *
  * Used to assign each flight a stable, time-independent selection rank so that
  * subsets are reproducible and spread across the representative day rather than
- * clustered at its start.
+ * clustered at its start, and to drive deterministic candidate-pattern selection
+ * during schedule-to-local mapping.
  *
- * @function fnv1aHash
+ * @function fnv1a32
  * @param value {string}
  * @return {number} unsigned 32-bit hash
- * @private
  */
-function fnv1aHash(value) {
+export function fnv1a32(value) {
     let hash = 0x811c9dc5;
 
     for (let i = 0; i < value.length; i++) {
@@ -167,7 +167,7 @@ export function selectScheduleSubset(flights, subsetPercent = DEFAULT_SCHEDULE_S
     }
 
     const rankedIds = flights
-        .map((flight) => ({ id: flight.id, rank: fnv1aHash(flight.id) }))
+        .map((flight) => ({ id: flight.id, rank: fnv1a32(flight.id) }))
         .sort((a, b) => (a.rank - b.rank) || (a.id < b.id ? -1 : 1));
     const selectedCount = Math.round((flights.length * subsetPercent) / 100);
     const selectedIds = new Set(rankedIds.slice(0, selectedCount).map((entry) => entry.id));

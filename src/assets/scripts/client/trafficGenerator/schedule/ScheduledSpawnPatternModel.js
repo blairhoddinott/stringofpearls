@@ -18,9 +18,8 @@ import {
  * The delay is computed from the slot's local `HH:mm`, anchored to the selected
  * airport's IANA time zone, and repeats every 24 hours.
  *
- * Mapping a slot's scheduled identity (airline, flight number, route endpoints,
- * optional aircraft type) onto concrete spawn geometry is deliberately deferred to
- * the next slice; the identity is carried here so that work has everything it needs.
+ * Concrete mapped models extend this timing contract with airport-authored geometry
+ * and either exact scheduled identity or a generated same-slot fallback.
  *
  * @class ScheduledSpawnPatternModel
  */
@@ -143,7 +142,8 @@ export default class ScheduledSpawnPatternModel {
         this.scheduleId = INVALID_NUMBER;
 
         /**
-         * Pre-spawn geometry is produced by the mapping slice; empty for now.
+         * Base timing-only models have no pre-spawn geometry. Mapped subclasses
+         * preserve the airport-authored pre-spawn lifecycle.
          *
          * @property preSpawnAircraftList
          * @type {array<object>}
@@ -227,8 +227,7 @@ export default class ScheduledSpawnPatternModel {
     /**
      * Pre-spawn hook invoked by the scheduler on session start.
      *
-     * Inert until the mapping slice provides spawn geometry; kept so the scheduler's
-     * pre-spawn lifecycle is preserved unchanged.
+     * Timing-only models are inert; mapped subclasses override this hook.
      *
      * @for ScheduledSpawnPatternModel
      * @method createPreSpawnAircraft

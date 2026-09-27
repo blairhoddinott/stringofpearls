@@ -1,5 +1,6 @@
 import _filter from 'lodash/filter';
 import ScheduledSpawnPatternModel from './ScheduledSpawnPatternModel';
+import MappedScheduledSpawnPatternModel from './MappedScheduledSpawnPatternModel';
 import {
     secondsOfDayInZone,
     selectScheduleSubset,
@@ -104,8 +105,14 @@ export default class ScheduledSpawnPatternCollection {
      * @param context.timezone {string}
      * @param context.subsetPercent {number}
      */
-    constructor(spawnPatternModels, { airportIcao, timezone, subsetPercent }) {
+    constructor(spawnPatternModels, {
+        airportIcao,
+        timezone,
+        subsetPercent,
+        departurePreSpawnModels = []
+    }) {
         this._items = spawnPatternModels;
+        this._departurePreSpawnModels = departurePreSpawnModels;
 
         /**
          * Schedule airport ICAO this plan was built for.
@@ -145,9 +152,11 @@ export default class ScheduledSpawnPatternCollection {
      * @param options {object} [optional]
      * @param options.subsetPercent {number} one of `SCHEDULE_SUBSET_PERCENTS`; defaults to 100
      * @param options.sessionStartDate {Date} wall-clock instant mapped to sim time zero
+     * @param options.mappingContext {object|null} local pattern and identity resolvers
      * @return {ScheduledSpawnPatternCollection}
      */
     static fromScheduleDocument(scheduleDocument, {
+        mappingContext = null,
         subsetPercent = DEFAULT_SCHEDULE_SUBSET_PERCENT,
         sessionStartDate = new Date()
     } = {}) {
@@ -156,16 +165,35 @@ export default class ScheduledSpawnPatternCollection {
         const { airportIcao, timezone } = scheduleDocument;
         const zoneSecondsOfDayAtSimZero = secondsOfDayInZone(sessionStartDate, timezone);
         const selectedFlights = selectScheduleSubset(scheduleDocument.flights, subsetPercent);
-        const spawnPatternModels = selectedFlights.map((flight) => new ScheduledSpawnPatternModel(flight, {
-            airportIcao,
-            timezone,
-            zoneSecondsOfDayAtSimZero
-        }));
+        const ScheduledModel = mappingContext === null
+            ? ScheduledSpawnPatternModel
+            : MappedScheduledSpawnPatternModel;
+        const spawnPatternModels = selectedFlights.map((flight) => new ScheduledModel(
+            flight,
+            { airportIcao, timezone, zoneSecondsOfDayAtSimZero },
+            ...(mappingContext === null ? [] : [mappingContext])
+        ));
+
+        if (mappingContext !== null) {
+            const ownedArrivalCandidates = new Set();
+
+            spawnPatternModels
+                .filter((model) => model.isArrival())
+                .forEach((model) => {
+                    if (ownedArrivalCandidates.has(model._candidate)) {
+                        return;
+                    }
+
+                    ownedArrivalCandidates.add(model._candidate);
+                    model.enableCandidatePreSpawn();
+                });
+        }
 
         return new ScheduledSpawnPatternCollection(spawnPatternModels, {
             airportIcao,
             timezone,
-            subsetPercent
+            subsetPercent,
+            departurePreSpawnModels: mappingContext?.departurePreSpawnModels ?? []
         });
     }
 
@@ -189,15 +217,16 @@ export default class ScheduledSpawnPatternCollection {
      * Departure pre-spawn selection.
      *
      * The scheduler calls this on session start to seed a departure ready to taxi.
-     * Choosing and placing that departure depends on spawn geometry, which is deferred
-     * to the mapping slice, so this returns nothing for now while preserving the seam.
+     * Scheduled slots reuse the legacy collection only as authored mapping data. Its
+     * bounded departure pre-spawn selection is retained here without scheduling the
+     * legacy collection's random traffic loop.
      *
      * @for ScheduledSpawnPatternCollection
      * @method getDepartureModelsForPreSpawn
      * @return {array<ScheduledSpawnPatternModel>}
      */
     getDepartureModelsForPreSpawn() {
-        return [];
+        return this._departurePreSpawnModels;
     }
 
     /**

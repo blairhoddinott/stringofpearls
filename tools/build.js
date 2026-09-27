@@ -13,6 +13,7 @@ const less = require('less');
 const postcss = require('postcss');
 const showdown = require('showdown');
 const { newestReleaseBody } = require('./release/changelog');
+const { validateAssets } = require('./validate-assets');
 
 const ROOT = path.resolve(__dirname, '..');
 const PUBLIC_DIR = path.join(ROOT, 'public');
@@ -263,6 +264,31 @@ async function copyStaticAssets(publicDirectory) {
     }
 }
 
+async function buildSchedules(publicDirectory) {
+    const sourceDirectory = path.join(ASSET_DIR, 'schedules');
+
+    if (!await pathExists(sourceDirectory)) {
+        return;
+    }
+
+    const entries = await listDirectory(sourceDirectory);
+    const unexpected = entries.filter((entry) => !entry.isFile() || path.extname(entry.name) !== '.json');
+
+    if (unexpected.length > 0) {
+        throw new Error(
+            `schedule assets must be top-level .json files; rejected: ${unexpected.map((entry) => entry.name).join(', ')}`
+        );
+    }
+
+    const outputDirectory = path.join(publicDirectory, 'assets/schedules');
+    for (const entry of entries) {
+        await writeFile(
+            path.join(outputDirectory, entry.name),
+            await fsp.readFile(path.join(sourceDirectory, entry.name))
+        );
+    }
+}
+
 async function buildAirports(publicDirectory) {
     const sourceDirectory = path.join(ASSET_DIR, 'airports');
     const outputDirectory = path.join(publicDirectory, 'assets/airports');
@@ -447,6 +473,10 @@ async function buildUnlocked(options = {}) {
 
     try {
         await recoverBuildDirectories();
+        const assetValidation = validateAssets(ASSET_DIR);
+        if (assetValidation.errors.length > 0) {
+            throw new Error(`asset validation failed before build:\n- ${assetValidation.errors.join('\n- ')}`);
+        }
         stagedDirectory = await fsp.mkdtemp(path.join(ROOT, `.public-build-${process.pid}-`));
         const results = await Promise.allSettled([
             buildClient({ production, publicDirectory: stagedDirectory }),
@@ -458,7 +488,8 @@ async function buildUnlocked(options = {}) {
             buildGuides(stagedDirectory),
             buildChangelog(stagedDirectory),
             copyStaticAssets(stagedDirectory),
-            buildAirports(stagedDirectory)
+            buildAirports(stagedDirectory),
+            buildSchedules(stagedDirectory)
         ]);
         const failures = results
             .filter((result) => result.status === 'rejected')

@@ -20,6 +20,7 @@
     "release:check": "node tools/release/cli.js --check",
     "release:prepare": "node tools/release/cli.js --prepare",
     "release:test": "node --test tools/release/*.test.js tools/build-changelog.test.js tools/ci/classify-master-acceptance.test.js",
+    "schedule:test": "node tools/schedules/import-bts-schedule.test.js",
     "server": "npm run start",
     "server:test": "npm run weather:test && npm run build && node tools/server.test.js",
     "start": "node public/assets/scripts/server/index.js",
@@ -27,7 +28,7 @@
     "test:coverage": "c8 ava --concurrency=5 && npm run coverage:test",
     "typecheck:contracts": "tsc --project tsconfig.contracts.json",
     "validator": "npm run validate:assets",
-    "validator:test": "node tools/validate-assets.test.js",
+    "validator:test": "node tools/validate-assets.test.js && npm run schedule:test",
     "validate:assets": "node tools/validate-assets.js",
     "watch": "node tools/build.js --watch",
     "weather:test": "node --test tools/weather/*.test.js"

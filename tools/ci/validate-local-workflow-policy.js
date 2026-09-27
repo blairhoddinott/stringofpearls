@@ -7,7 +7,7 @@ const yaml = require('js-yaml');
 
 const WORKFLOW_DIRECTORY = path.resolve(__dirname, '../../.github/workflows');
 const APPROVED_WORKFLOW_DIGESTS = Object.freeze({
-    'local-ci.yml': 'd1cb21439ad0703118a35e9f505ec3f05672fd2b6d0b3e7de7a188a86e55ad35',
+    'local-ci.yml': '3b01f001c0a69be4a13ef3e97655c74cdc0834613d6dbca96394db62667b1639',
     'local-master-acceptance.yml': '0887a21d5256be6fd886be15371033b60e5f023e1016b5218a606b5965c8cd52',
     'local-release.yml': '5d5e1025e1598f04a50577b7081b63680d35658e525ee4973e07f269f89f64d5'
 });

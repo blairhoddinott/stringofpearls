@@ -257,6 +257,7 @@ export default class App {
      * @param airlineList {array}             List of all Airline definitions
      * @param aircraftTypeDefinitionList {array}  List of all Aircraft definitions
      * @param airportGuides {object}          Airport guide JSON
+     * @param schedulesByAirport {object}     Normalized schedules keyed by lowercase ICAO
      */
     setupChildren(
         airportLoadList,
@@ -264,7 +265,8 @@ export default class App {
         initialAirportData,
         airlineList,
         aircraftTypeDefinitionList,
-        airportGuides
+        airportGuides,
+        schedulesByAirport
     ) {
         this._appController.setupChildren(
             airportLoadList,
@@ -272,7 +274,8 @@ export default class App {
             initialAirportData,
             airlineList,
             aircraftTypeDefinitionList,
-            airportGuides
+            airportGuides,
+            schedulesByAirport
         );
 
         this.enable();

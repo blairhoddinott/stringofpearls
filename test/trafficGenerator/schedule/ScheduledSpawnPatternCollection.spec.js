@@ -10,7 +10,13 @@ const SCHEDULE_DOCUMENT_MOCK = {
     airportIcao: 'KSEA',
     timezone: 'America/Los_Angeles',
     sampleDate: '2026-07-15',
-    source: {},
+    source: {
+        name: 'Test schedule source',
+        url: 'https://example.test/schedule.csv',
+        retrievedAt: '2026-09-26',
+        license: 'Public domain test fixture',
+        coverage: 'Synthetic schedule used only by runtime tests.'
+    },
     flights: [
         {
             id: 'arrival-aal1-kmia-ksea',
@@ -193,6 +199,49 @@ ava('reset() empties the collection so it can be torn down through the airport l
 ava('fromScheduleDocument() rejects a document without a flights array', (t) => {
     t.throws(() => ScheduledSpawnPatternCollection.fromScheduleDocument({}, { sessionStartDate: SESSION_START }));
     t.throws(() => ScheduledSpawnPatternCollection.fromScheduleDocument(null, { sessionStartDate: SESSION_START }));
+});
+
+ava('fromScheduleDocument() enforces top-level metadata and source provenance at runtime', (t) => {
+    const malformedDocuments = [
+        { ...SCHEDULE_DOCUMENT_MOCK, sampleDate: undefined },
+        { ...SCHEDULE_DOCUMENT_MOCK, sampleDate: '2026-02-30' },
+        { ...SCHEDULE_DOCUMENT_MOCK, source: undefined },
+        { ...SCHEDULE_DOCUMENT_MOCK, source: {} },
+        { ...SCHEDULE_DOCUMENT_MOCK, source: { ...SCHEDULE_DOCUMENT_MOCK.source, url: 'ftp://example.test/data.csv' } },
+        { ...SCHEDULE_DOCUMENT_MOCK, source: { ...SCHEDULE_DOCUMENT_MOCK.source, retrievedAt: '2026-13-01' } },
+        { ...SCHEDULE_DOCUMENT_MOCK, source: { ...SCHEDULE_DOCUMENT_MOCK.source, unexpected: true } },
+        { ...SCHEDULE_DOCUMENT_MOCK, unexpected: true }
+    ];
+
+    for (const document of malformedDocuments) {
+        t.throws(
+            () => ScheduledSpawnPatternCollection.fromScheduleDocument(document, { sessionStartDate: SESSION_START }),
+            { instanceOf: TypeError }
+        );
+    }
+});
+
+ava('fromScheduleDocument() rejects flights not ordered by scheduledTime then id', (t) => {
+    const reversedTimes = {
+        ...SCHEDULE_DOCUMENT_MOCK,
+        flights: [SCHEDULE_DOCUMENT_MOCK.flights[1], SCHEDULE_DOCUMENT_MOCK.flights[0]]
+    };
+    const sameTimeOutOfOrder = {
+        ...SCHEDULE_DOCUMENT_MOCK,
+        flights: [
+            { ...SCHEDULE_DOCUMENT_MOCK.flights[0], id: 'z-flight' },
+            { ...SCHEDULE_DOCUMENT_MOCK.flights[0], id: 'a-flight' }
+        ]
+    };
+
+    t.throws(
+        () => ScheduledSpawnPatternCollection.fromScheduleDocument(reversedTimes, { sessionStartDate: SESSION_START }),
+        { message: /ordered/ }
+    );
+    t.throws(
+        () => ScheduledSpawnPatternCollection.fromScheduleDocument(sameTimeOutOfOrder, { sessionStartDate: SESSION_START }),
+        { message: /ordered/ }
+    );
 });
 
 ava('fromScheduleDocument() fails closed on missing timezone, empty flights, and invalid flight identity', (t) => {

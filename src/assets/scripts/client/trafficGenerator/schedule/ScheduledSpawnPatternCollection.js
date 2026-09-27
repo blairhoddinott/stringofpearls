@@ -10,6 +10,60 @@ import {
 import { FLIGHT_CATEGORY } from '../../constants/aircraftConstants';
 import { isEmptyOrNotObject } from '../../utilities/validatorUtilities';
 
+const SCHEDULE_KEYS = ['schemaVersion', 'airportIcao', 'timezone', 'sampleDate', 'source', 'flights'];
+const SCHEDULE_SOURCE_KEYS = ['name', 'url', 'retrievedAt', 'license', 'coverage'];
+
+function isNonEmptyString(value) {
+    return typeof value === 'string' && value.trim() !== '';
+}
+
+function isRealCalendarDate(value) {
+    const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(typeof value === 'string' ? value : '');
+
+    if (match === null) {
+        return false;
+    }
+
+    const year = Number(match[1]);
+    const month = Number(match[2]);
+    const day = Number(match[3]);
+    const isLeapYear = (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+    const daysInMonth = [31, isLeapYear ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+    return month >= 1 && month <= 12 && day >= 1 && day <= daysInMonth[month - 1];
+}
+
+function isAbsoluteHttpUrl(value) {
+    try {
+        const url = new URL(value);
+
+        return url.protocol === 'https:' || url.protocol === 'http:';
+    } catch {
+        return false;
+    }
+}
+
+function validateScheduleSource(source) {
+    if (isEmptyOrNotObject(source)) {
+        throw new TypeError('scheduleDocument source must be an object.');
+    }
+
+    Object.keys(source).filter((key) => !SCHEDULE_SOURCE_KEYS.includes(key)).forEach((key) => {
+        throw new TypeError(`scheduleDocument source has unsupported property ${key}.`);
+    });
+    SCHEDULE_SOURCE_KEYS.forEach((key) => {
+        if (!isNonEmptyString(source[key])) {
+            throw new TypeError(`scheduleDocument source.${key} must be a non-empty string.`);
+        }
+    });
+    if (!isAbsoluteHttpUrl(source.url)) {
+        throw new TypeError('scheduleDocument source.url must be an absolute HTTP(S) URL.');
+    }
+    if (!isRealCalendarDate(source.retrievedAt)) {
+        throw new TypeError('scheduleDocument source.retrievedAt must be a real YYYY-MM-DD calendar date.');
+    }
+}
+
 function validateScheduleDocument(scheduleDocument) {
     if (isEmptyOrNotObject(scheduleDocument) || !Array.isArray(scheduleDocument.flights)) {
         throw new TypeError('Invalid scheduleDocument passed to ScheduledSpawnPatternCollection.fromScheduleDocument.');
@@ -17,6 +71,9 @@ function validateScheduleDocument(scheduleDocument) {
     if (scheduleDocument.schemaVersion !== 1) {
         throw new TypeError('scheduleDocument schemaVersion must be 1.');
     }
+    Object.keys(scheduleDocument).filter((key) => !SCHEDULE_KEYS.includes(key)).forEach((key) => {
+        throw new TypeError(`scheduleDocument has unsupported property ${key}.`);
+    });
     if (typeof scheduleDocument.airportIcao !== 'string' || !/^[A-Z]{4}$/.test(scheduleDocument.airportIcao)) {
         throw new TypeError('scheduleDocument airportIcao must contain four uppercase letters.');
     }
@@ -28,6 +85,10 @@ function validateScheduleDocument(scheduleDocument) {
     } catch {
         throw new TypeError('scheduleDocument timezone must be a valid IANA time zone.');
     }
+    if (!isRealCalendarDate(scheduleDocument.sampleDate)) {
+        throw new TypeError('scheduleDocument sampleDate must be a real YYYY-MM-DD calendar date.');
+    }
+    validateScheduleSource(scheduleDocument.source);
     if (scheduleDocument.flights.length === 0) {
         throw new TypeError('scheduleDocument flights must contain at least one flight.');
     }
@@ -37,6 +98,8 @@ function validateScheduleDocument(scheduleDocument) {
         'id', 'category', 'scheduledTime', 'airlineIcao', 'flightNumber',
         'originIcao', 'destinationIcao', 'aircraftTypeIcao'
     ];
+
+    let previousFlightKey = null;
 
     scheduleDocument.flights.forEach((flight, index) => {
         const prefix = `scheduleDocument flights[${index}]`;
@@ -82,6 +145,12 @@ function validateScheduleDocument(scheduleDocument) {
         Object.keys(flight).filter((key) => !flightKeys.includes(key)).forEach((key) => {
             throw new TypeError(`${prefix} has unsupported property ${key}.`);
         });
+
+        const currentFlightKey = `${flight.scheduledTime}\u0000${flight.id}`;
+        if (previousFlightKey !== null && currentFlightKey < previousFlightKey) {
+            throw new TypeError('scheduleDocument flights must be ordered by scheduledTime then id.');
+        }
+        previousFlightKey = currentFlightKey;
     });
 }
 

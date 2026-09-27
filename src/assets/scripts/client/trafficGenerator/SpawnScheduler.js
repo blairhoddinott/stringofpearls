@@ -301,12 +301,18 @@ export class SpawnSchedulerClass {
             return;
         }
 
-        let nextDelay = spawnPatternModel.getNextDelayValue(this._clock.accumulatedDeltaTime);
+        let nextDelay;
 
-        if (timePassed < nextDelay) {
-            nextDelay -= timePassed;
+        if (typeof spawnPatternModel.getResetDelayValue === 'function') {
+            nextDelay = spawnPatternModel.getResetDelayValue(this._clock.accumulatedDeltaTime);
         } else {
-            this._aircraftController.createAircraftWithSpawnPatternModel(spawnPatternModel);
+            nextDelay = spawnPatternModel.getNextDelayValue(this._clock.accumulatedDeltaTime);
+
+            if (timePassed < nextDelay) {
+                nextDelay -= timePassed;
+            } else {
+                this._aircraftController.createAircraftWithSpawnPatternModel(spawnPatternModel);
+            }
         }
 
         spawnPatternModel.scheduleId = this._createTimeout(spawnPatternModel, nextDelay);

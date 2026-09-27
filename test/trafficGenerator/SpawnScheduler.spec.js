@@ -202,6 +202,40 @@ ava('.resetTimer() destroys existing timers but does not create a new spawn sche
     getNextDelayValueStub.restore();
 });
 
+ava('.resetTimer() preserves legacy remaining-delay and overdue-spawn behavior', (t) => {
+    const timerQueue = {
+        destroyTimer: sinon.stub(),
+        scheduleTimeout: sinon.stub().callsFake((callback, delay) => [callback, 40 + delay, null, delay])
+    };
+    const aircraftController = { createAircraftWithSpawnPatternModel: sinon.stub() };
+    const clock = { accumulatedDeltaTime: 20 };
+    const scheduler = new SpawnSchedulerClass(
+        { spawnPatternModels: [] },
+        clock,
+        timerQueue,
+        aircraftController
+    );
+    const pattern = {
+        category: 'arrival',
+        rate: 1,
+        scheduleId: [null, 30, null, 30],
+        getNextDelayValue: sinon.stub().returns(50)
+    };
+
+    scheduler.resetTimer(pattern);
+
+    t.is(timerQueue.scheduleTimeout.firstCall.args[1], 30, 'pending legacy interval subtracts elapsed timer age');
+    t.true(aircraftController.createAircraftWithSpawnPatternModel.notCalled);
+
+    clock.accumulatedDeltaTime = 40;
+    pattern.scheduleId = [null, 30, null, 30];
+    pattern.getNextDelayValue.returns(30);
+    scheduler.resetTimer(pattern);
+
+    t.true(aircraftController.createAircraftWithSpawnPatternModel.calledOnceWithExactly(pattern));
+    t.is(timerQueue.scheduleTimeout.secondCall.args[1], 30, 'overdue legacy interval rearms with its full sampled delay');
+});
+
 ava('.createSchedulesFromList() schedules and pre-spawns only categories allowed by the traffic mode', (t) => {
     const buildPattern = (category) => ({
         category,

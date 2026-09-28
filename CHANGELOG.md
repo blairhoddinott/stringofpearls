@@ -12,6 +12,12 @@ at `1.0.0`. New releases use the [Keep a Changelog](https://keepachangelog.com/)
 The `# X.Y.Z (Month D, YYYY)` sections below this preamble are the preserved
 inherited openScope history and are retained verbatim for attribution.
 
+## [1.5.0] - 2026-09-28
+
+### Features
+
+- **controller:** improve shift defaults and handoffs ([`2590313`](https://github.com/blairhoddinott/stringofpearls/commit/25903135300684010d8ae36b0498589a7b1c1d68))
+
 ## [1.4.0] - 2026-09-27
 
 ### Features

@@ -33,7 +33,7 @@ The test builds the production image and verifies:
 3. the loading overlay closes;
 4. both simulator canvases have non-zero dimensions;
 5. the airport selector is populated;
-6. KPDX can be fetched and selected;
+6. CYYZ can be fetched and selected;
 7. the selection is persisted and shown as active; and
 8. no uncaught exceptions, console errors, or failed same-origin requests occur.
 

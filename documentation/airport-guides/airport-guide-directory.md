@@ -2,6 +2,7 @@
 
 - [CYHZ - Halifax Stanfield International Airport](cyhz.md)
 - [CYOW - Ottawa Macdonald–Cartier International Airport](cyow.md)
+- [CYYZ - Toronto Pearson International Airport](cyyz.md)
 - [EDDF - Flughafen Frankfurt am Main](eddf.md)
 - [EDDH - Hamburg Airport](eddh.md)
 - [EDDL - Flughafen Düsseldorf](eddl.md)

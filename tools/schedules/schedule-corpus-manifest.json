@@ -1,8 +1,8 @@
 {
-  "airports": 64,
-  "flights": 47089,
+  "airports": 65,
+  "flights": 48165,
   "movementsByProfile": {
-    "authored": 23113,
+    "authored": 24189,
     "bts": 23976
   },
   "schedules": [
@@ -11,6 +11,12 @@
       "profile": "authored",
       "flights": 258,
       "sha256": "31d6a64ba7fb94bca3fc184332205f14b8ba06a38facb37843bdb56fb8f9dcde"
+    },
+    {
+      "airport": "CYYZ",
+      "profile": "authored",
+      "flights": 1076,
+      "sha256": "a6caffa33091a408c28379cfcaf124874ed42f603567fba5a70f8050c26402d4"
     },
     {
       "airport": "EDDF",

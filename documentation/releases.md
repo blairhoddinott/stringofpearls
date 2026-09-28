@@ -36,7 +36,7 @@ merged since the last release. The highest-ranked change wins:
 
 If no commit demands a bump, there is **nothing to release** and no files change.
 
-Merge commits and previously generated `chore(release): …` commits are ignored. After the `1.0.0` bootstrap, any non-excluded commit whose subject is **not** a well-formed Conventional Commit fails preparation closed—the tooling never guesses. The bootstrap alone preserves pre-policy continuation commits under **Other Changes**, so the modernization history is not discarded.
+Merge commits and previously generated `chore(release): …` commits are ignored. After the `1.0.0` bootstrap, any non-excluded commit whose subject is **not** a well-formed Conventional Commit fails preparation closed—the tooling never guesses. If malformed history has already reached `master`, recovery requires a reviewed correction bound to the full immutable commit SHA and its exact original subject; all other malformed or mismatched commits still fail closed. The bootstrap alone preserves pre-policy continuation commits under **Other Changes**, so the modernization history is not discarded.
 
 ## Generated changelog categories
 

@@ -12,6 +12,21 @@ at `1.0.0`. New releases use the [Keep a Changelog](https://keepachangelog.com/)
 The `# X.Y.Z (Month D, YYYY)` sections below this preamble are the preserved
 inherited openScope history and are retained verbatim for attribution.
 
+## [1.6.0] - 2026-09-28
+
+### Features
+
+- **airports:** add Toronto Pearson CYYZ ([`71dc071`](https://github.com/blairhoddinott/stringofpearls/commit/71dc0715bb49a54b7e35ed74265c9826dd89bd99))
+
+### Bug Fixes
+
+- **release:** recover malformed commit history ([`24419b0`](https://github.com/blairhoddinott/stringofpearls/commit/24419b00a8d3dc48274b3b4effa5d2219a80a7f5))
+- **airports:** recognize CYYZ zero-padded runways ([`e347a0e`](https://github.com/blairhoddinott/stringofpearls/commit/e347a0e99fe397a2d6618f872b7f1f90c2a0d0e6))
+
+### Tests & Maintenance
+
+- **dev:** add dev container build and start script ([`0c83151`](https://github.com/blairhoddinott/stringofpearls/commit/0c83151510cd289abf419628f73ed241ed6bd1bf))
+
 ## [1.5.0] - 2026-09-28
 
 ### Features

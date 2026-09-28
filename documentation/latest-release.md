@@ -10,10 +10,19 @@ signed `vX.Y.Z` tag and a matching GitHub Release.
 - All releases: [https://github.com/blairhoddinott/stringofpearls/releases](https://github.com/blairhoddinott/stringofpearls/releases)
 - How releases work: [Release automation](releases.md)
 
-## Latest release — v1.5.0 (September 28, 2026)
+## Latest release — v1.6.0 (September 28, 2026)
 
 ### Features
 
-- **controller:** improve shift defaults and handoffs ([`2590313`](https://github.com/blairhoddinott/stringofpearls/commit/25903135300684010d8ae36b0498589a7b1c1d68))
+- **airports:** add Toronto Pearson CYYZ ([`71dc071`](https://github.com/blairhoddinott/stringofpearls/commit/71dc0715bb49a54b7e35ed74265c9826dd89bd99))
 
-[View v1.5.0 on GitHub](https://github.com/blairhoddinott/stringofpearls/releases/tag/v1.5.0)
+### Bug Fixes
+
+- **release:** recover malformed commit history ([`24419b0`](https://github.com/blairhoddinott/stringofpearls/commit/24419b00a8d3dc48274b3b4effa5d2219a80a7f5))
+- **airports:** recognize CYYZ zero-padded runways ([`e347a0e`](https://github.com/blairhoddinott/stringofpearls/commit/e347a0e99fe397a2d6618f872b7f1f90c2a0d0e6))
+
+### Tests & Maintenance
+
+- **dev:** add dev container build and start script ([`0c83151`](https://github.com/blairhoddinott/stringofpearls/commit/0c83151510cd289abf419628f73ed241ed6bd1bf))
+
+[View v1.6.0 on GitHub](https://github.com/blairhoddinott/stringofpearls/releases/tag/v1.6.0)

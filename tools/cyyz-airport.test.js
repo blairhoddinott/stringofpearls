@@ -25,9 +25,9 @@ assert.strictEqual(airport.arrivalRunway, '24L');
 assert.strictEqual(airport.departureRunway, '24R');
 assert.strictEqual(airport.has_terrain, true);
 assert.deepStrictEqual(airport.runways.map((runway) => runway.name), [
-    ['5', '23'],
-    ['6L', '24R'],
-    ['6R', '24L'],
+    ['05', '23'],
+    ['06L', '24R'],
+    ['06R', '24L'],
     ['15L', '33R'],
     ['15R', '33L']
 ]);
@@ -44,9 +44,9 @@ const expectedStars = [
 ];
 assert.deepStrictEqual(Object.keys(airport.sids).sort(), expectedSids);
 assert.deepStrictEqual(Object.keys(airport.stars).sort(), expectedStars);
-assert.deepStrictEqual(airport.sids.ARROW4.rwy.CYYZ5, ['#055']);
+assert.deepStrictEqual(airport.sids.ARROW4.rwy.CYYZ05, ['#055']);
 assert.deepStrictEqual(airport.sids.ARROW4.rwy.CYYZ23, ['#240']);
-assert.deepStrictEqual(airport.sids.TRNTO4.rwy.CYYZ5, ['#057']);
+assert.deepStrictEqual(airport.sids.TRNTO4.rwy.CYYZ05, ['#057']);
 assert.notDeepStrictEqual(airport.sids.ARROW4.rwy, airport.sids.TRNTO4.rwy);
 assert.deepStrictEqual(Object.keys(airport.stars.DUVOS4.entryPoints).sort(), ['IRKIM', 'OTNIK', 'SSM']);
 assert.strictEqual(airport.stars.NAKBO6.entryPoints.FINGL[0][1], 'A190-');

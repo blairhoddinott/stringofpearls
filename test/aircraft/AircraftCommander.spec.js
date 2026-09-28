@@ -2,7 +2,9 @@ import ava from 'ava';
 import sinon from 'sinon';
 import AircraftCommander from '../../src/assets/scripts/client/aircraft/AircraftCommander';
 import AircraftModel from '../../src/assets/scripts/client/aircraft/AircraftModel';
+import AirportModel from '../../src/assets/scripts/client/airport/AirportModel';
 import UiController from '../../src/assets/scripts/client/ui/UiController';
+import CYYZ_AIRPORT_JSON from '../../assets/airports/cyyz.json';
 import {
     AIRCRAFT_MOCK_BASE,
     AIRCRAFT_MOCK_WITH_NE_HEADING,
@@ -95,6 +97,29 @@ ava('.runContactCenter() delegates the exact aircraft to the center handoff boun
 
     t.deepEqual(result, [true, 'contact center']);
     t.true(initiateCenterHandoff.calledOnceWithExactly(aircraft));
+});
+
+ava('.runExpectArrivalRunway() accepts CYYZ zero-padded runway identifiers', (t) => {
+    const airportModel = new AirportModel(CYYZ_AIRPORT_JSON);
+    const airportController = { airport_get: sinon.stub().returns(airportModel) };
+    const commander = new AircraftCommander(
+        onChangeTransponderCodeFixture,
+        findAircraftByIdFixture,
+        undefined,
+        airportController
+    );
+    const updateStarLegForArrivalRunway = sinon.stub().returns([true, 'runway accepted']);
+    const aircraft = {
+        fms: { arrivalRunwayModel: airportModel.getRunway('24L') },
+        pilot: { updateStarLegForArrivalRunway }
+    };
+
+    for (const runwayName of ['05', '06L', '06R']) {
+        const result = commander.runExpectArrivalRunway(aircraft, [runwayName]);
+
+        t.deepEqual(result, [true, 'runway accepted']);
+        t.is(updateStarLegForArrivalRunway.lastCall.args[1].name, runwayName);
+    }
 });
 
 ava('.runSayHeading() returns correct when heading north', (t) => {

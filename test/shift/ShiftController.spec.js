@@ -47,6 +47,7 @@ const buildHarness = (overrides = {}) => {
         destroyTimers: sinon.stub()
     };
     const stripView = { apply: sinon.stub() };
+    const scopeView = { applyShiftDefaults: sinon.stub() };
     const airportController = {
         airport_set: sinon.stub(),
         setAirportSelectionGuard: sinon.stub(),
@@ -74,6 +75,7 @@ const buildHarness = (overrides = {}) => {
         scopeModel,
         gameController,
         stripView,
+        scopeView,
         airportController,
         leaderboardAdapter,
         startView,
@@ -84,7 +86,7 @@ const buildHarness = (overrides = {}) => {
 
     return {
         controller, eventBus, shiftModel, timeKeeper, scheduler, radarTargetCollection,
-        scopeModel, aircraftController, gameController, stripView, airportController,
+        scopeModel, aircraftController, gameController, stripView, scopeView, airportController,
         leaderboardAdapter, startView, resultsView, statusView
     };
 };
@@ -138,6 +140,7 @@ ava('.beginShift() rejects malformed or unavailable configuration before side ef
     invalidConfigs.forEach((config) => {
         t.throws(() => h.controller.beginShift(config), { instanceOf: RangeError });
     });
+    t.true(h.scopeView.applyShiftDefaults.notCalled);
     t.true(h.scheduler.selectTrafficMode.notCalled);
     t.true(h.airportController.airport_set.notCalled);
 });
@@ -160,6 +163,7 @@ ava('.beginShift() selects the mode, applies strips, and routes airport before s
 
     t.true(h.scheduler.selectTrafficMode.calledOnceWithExactly(TRAFFIC_MODE.ARRIVALS));
     t.true(h.stripView.apply.calledOnceWithExactly(TRAFFIC_MODE.ARRIVALS));
+    t.true(h.scopeView.applyShiftDefaults.calledOnceWithExactly(SHIFT_SECTOR.APPROACH));
     t.true(h.scheduler.resumeSpawning.called);
     t.true(h.scheduler.setAircraftController.calledOnceWithExactly(h.aircraftController));
     t.true(h.airportController.airport_set.calledOnceWithExactly('klas'));

@@ -10,7 +10,7 @@ Choose one of the following positions:
 - **Departure** generates departures and shows departure flight strips.
 - **Both** generates both traffic flows and shows both flight-strip sections.
 
-Select any enabled airport, a **30-minute** or **60-minute** shift, and a traffic volume of **25%**, **50%**, **75%**, or **100%**. Traffic volume defaults to **100%** each time the shift configuration screen opens. The configured airport loads before the shift clock and traffic generation begin. The airport cannot be changed while a shift is pending or active.
+Select any enabled airport, a **30-minute** or **60-minute** shift, and a traffic volume of **25%**, **50%**, **75%**, or **100%**. The configuration screen defaults to **Approach** and resets traffic volume to **100%** each time it opens. Runway/fix labels are enabled for every shift; STARs are enabled for Approach, SIDs for Departure, and both procedure displays for Both. Pilot speech defaults on for players who have not saved a preference, while an explicit off preference remains respected. The configured airport loads before the shift clock and traffic generation begin. The airport cannot be changed while a shift is pending or active.
 
 ## Scheduled traffic
 
@@ -58,5 +58,7 @@ The representative profile is currently fixed. Choosing a historical date, weekd
 The application currently has an internal leaderboard integration boundary, but it does not publish results to an external leaderboard.
 
 ## Pilot speech after handoff
+
+Center-owned arrivals offer the handoff when they reach the player-controlled airspace rather than when they approach an authored route fix farther outside the boundary.
 
 Once a center or tower handoff is accepted, that aircraft is no longer controlled by the player and produces no further player-facing transmissions. Active and queued transmissions from that aircraft are canceled or discarded without interrupting transmissions from other aircraft. Normal terminal announcements remain audible when no accepted handoff transferred the aircraft away.

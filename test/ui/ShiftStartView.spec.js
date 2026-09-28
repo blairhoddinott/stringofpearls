@@ -43,7 +43,20 @@ ava('.show() populates airports, selects the default, and opens the modal focuse
     t.is($element.attr('aria-hidden'), 'false');
     t.is($element.find('[data-shift-airport] option').length, 2);
     t.is($element.find('[data-shift-airport]').val(), 'ksea');
+    t.is($element.find('[data-shift-sector]').val(), 'approach');
     t.is(window.document.activeElement, $element.find('[data-shift-sector]')[0]);
+});
+
+ava('show restores approach after a prior shift selected another sector', (t) => {
+    const $element = buildViewElement().attr('data-test-shift-start', '').appendTo('body');
+    const view = new ShiftStartView($element);
+
+    view.show(AIRPORT_OPTIONS, 'ksea', () => {});
+    $element.find('[data-shift-sector]').val('both');
+    view.hide();
+    view.show(AIRPORT_OPTIONS, 'ksea', () => {});
+
+    t.is($element.find('[data-shift-sector]').val(), 'approach');
 });
 
 ava('show isolates background content and hide restores focus and native hidden state', (t) => {

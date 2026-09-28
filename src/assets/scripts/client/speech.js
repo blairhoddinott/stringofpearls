@@ -93,9 +93,13 @@ export const speech_init = (storageAdapter = null, speechSynthesisAdapter = null
     prop.speech.synthesis = _speechSynthesisAdapter;
     prop.speech.enabled = false;
 
-    if (_storageAdapter !== null && _storageAdapter.get(STORAGE_KEY.ATC_SPEECH_ENABLED) === true) {
-        prop.speech.enabled = true;
-        $(SELECTORS.DOM_SELECTORS.TOGGLE_SPEECH).addClass(SELECTORS.CLASSNAMES.ACTIVE);
+    if (_storageAdapter !== null) {
+        const storedPreference = _storageAdapter.get(STORAGE_KEY.ATC_SPEECH_ENABLED);
+
+        prop.speech.enabled = storedPreference == null ||
+            storedPreference === true || storedPreference === 'true';
+        $(SELECTORS.DOM_SELECTORS.TOGGLE_SPEECH)
+            .toggleClass(SELECTORS.CLASSNAMES.ACTIVE, prop.speech.enabled);
     }
 };
 

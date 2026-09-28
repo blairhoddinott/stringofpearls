@@ -58,7 +58,7 @@ const observedManifest = catalog.map(({ icao, file }) => {
     };
 });
 assert.deepStrictEqual(manifest.schedules, observedManifest, 'the reviewed corpus manifest must pin every published schedule byte-for-byte');
-assert.strictEqual(manifest.airports, 65);
+assert.strictEqual(manifest.airports, 73);
 assert.strictEqual(manifest.flights, observedManifest.reduce((sum, entry) => sum + entry.flights, 0));
 assert.deepStrictEqual(manifest.movementsByProfile, observedManifest.reduce((counts, entry) => {
     counts[entry.profile] += entry.flights;

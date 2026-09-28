@@ -148,6 +148,6 @@ assert.ok(exists('documentation/sources/cyyz.md'));
 const smokeSource = fs.readFileSync(path.join(root, 'tools/browser-smoke/smoke.js'), 'utf8');
 assert.match(smokeSource, /TARGET_AIRPORT \|\| 'cyyz'/, 'browser smoke script must default to CYYZ');
 const smokeCompose = fs.readFileSync(path.join(root, 'compose.browser-smoke.yaml'), 'utf8');
-assert.match(smokeCompose, /TARGET_AIRPORT: cyyz/, 'browser-smoke composition must not override the CYYZ target');
+assert.match(smokeCompose, /TARGET_AIRPORT: \$\{TARGET_AIRPORT:-cyyz\}/, 'browser-smoke composition must default to CYYZ while allowing an explicit target');
 
 console.log('CYYZ airport publication contract passed');

@@ -1,0 +1,28 @@
+# KIND - Indianapolis International Airport
+
+## Overview
+
+This simulator asset models Indianapolis International Airport and its practical terminal control area. It is not an aeronautical publication and must not be used for navigation.
+
+## Runways
+
+The modeled runway pairs are: `05L/23R, 05R/23L, 14/32`. Low-number runway designators retain their leading zero because runway identifiers are strings, not integers wearing a cheap disguise.
+
+## Procedures
+
+- SIDs: DAWNN1, INDY1, MAREO5, MEARZ7, OOM5, ROCKY1
+- STARs: CLANG7, GIIBS3, JAKKS2, KOLTS2, RACYR6, SMUKE2, SNKPT2
+
+The routes are normalized from the historical openScope contribution and all committed route references resolve locally. Controllers remain responsible for vectors, climb gradients, runway eligibility, and operational restrictions the legacy route grammar cannot express.
+
+## Traffic and handoff
+
+The representative random traffic model totals approximately 20 arrivals and 20 departures per hour. Every arrival has an explicit route-entry centre-handoff boundary (`DELHI`, `HAGAL`, `RINTE`, `TERGE`, `USIRE`). The deterministic daily schedule uses `America/Indiana/Indianapolis` and is synthesized from those route weights; it is not a copied airline timetable.
+
+## Maps and terrain
+
+The package includes the contributed terminal maps and normalized GeoJSON terrain. Exact duplicate and degenerate geometry is removed at publication time.
+
+## Data limitations
+
+This independent community-fork asset uses an MIT-licensed historical implementation baseline. Procedure currency and legal airspace remain subject to current official publications. See [the source dossier](../sources/kind.md) for exact provenance and publication limits.

@@ -4,12 +4,7 @@ const assert = require('assert');
 const { chromium } = require('playwright');
 
 const baseUrl = process.env.BASE_URL || 'http://simulator:8080';
-const targetAirport = process.env.TARGET_AIRPORT || 'kpdx';
-// The application version is interpolated in Node-side (from package.json via
-// the launcher) rather than hard-coded, so the "what's new" dialog is suppressed
-// deterministically for whatever version is under test. Fail closed if missing.
-const appVersion = process.env.APP_VERSION;
-assert(appVersion, 'APP_VERSION must be provided (the launcher reads it from package.json)');
+const targetAirport = process.env.TARGET_AIRPORT || 'cyyz';
 
 async function main() {
     const browser = await chromium.launch({
@@ -63,11 +58,13 @@ async function main() {
             });
         });
 
-        await page.addInitScript((version) => {
+        // ChangelogController currently has no public version value. A missing
+        // storage entry therefore normalizes to the same undefined value and
+        // suppresses the supplementary dialog deterministically.
+        await page.addInitScript(() => {
             localStorage.clear();
-            localStorage.setItem('atc-last-version', version);
             localStorage.setItem('first-run-time', '0');
-        }, appVersion);
+        });
 
         const response = await page.goto(baseUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
         assert(response && response.ok(), `startup returned HTTP ${response ? response.status() : 'no response'}`);
@@ -160,7 +157,11 @@ async function main() {
         assert(await page.locator('.toggle-labels').evaluate((element) => element.classList.contains('active')));
         assert(await page.locator('.toggle-sids').evaluate((element) => element.classList.contains('active')));
         assert(!await page.locator('.toggle-stars').evaluate((element) => element.classList.contains('active')));
-        assert.match(await page.locator('[data-shift-countdown]').textContent(), /^29:\d{2}$/);
+        assert.match(
+            await page.locator('[data-shift-countdown]').textContent(),
+            /^29:\d{2}$/,
+            `target airport shift did not start cleanly: ${errors.join(' | ')}`
+        );
 
         await page.locator('[data-shift-end-button]').click();
         await shiftResultsDialog.waitFor({ state: 'visible', timeout: 30000 });

@@ -9,9 +9,10 @@
   "packageManager": "npm@11.19.0",
   "scripts": {
     "audit:production": "npm audit --omit=dev --audit-level=low",
+    "airport:test": "node tools/cyyz-airport.test.js",
     "build": "node tools/build.js --production",
     "build:dev": "node tools/build.js",
-    "build:test": "node tools/build.test.js",
+    "build:test": "node tools/build.test.js && npm run airport:test",
     "browser:smoke": "tools/browser-smoke/run.sh",
     "core:browser-free": "node tools/core-services-browser-free.test.js",
     "coverage:test": "node tools/coverage.test.js",

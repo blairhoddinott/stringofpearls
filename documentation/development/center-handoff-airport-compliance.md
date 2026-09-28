@@ -59,13 +59,13 @@ node tools/audit-center-handoff-fixes.js --write-obvious
 
 ## Current compliance status
 
-This snapshot reflects the airport assets on `feat/controller-handoffs`:
+This snapshot reflects the current airport asset corpus:
 
-- 104 airport assets;
-- 524 arrival spawn patterns;
-- 337 arrival patterns with an explicit handoff fix;
+- 105 airport assets;
+- 534 arrival spawn patterns;
+- 347 arrival patterns with an explicit handoff fix;
 - 187 arrival patterns still requiring review;
-- 44 fully compliant airports;
+- 45 fully compliant airports;
 - 55 airports needing at least one arrival-pattern correction;
 - 5 airports with no arrival spawn patterns, for which this check is not applicable.
 
@@ -73,7 +73,7 @@ This snapshot reflects the airport assets on `feat/controller-handoffs`:
 
 Every arrival spawn pattern at these airports has an explicit handoff fix:
 
-- `CYOW`, `EDDH`, `EDDL`, `EDDM`, `EDDT`
+- `CYOW`, `CYYZ`, `EDDH`, `EDDL`, `EDDM`, `EDDT`
 - `EGCC`, `EGGW`, `EGKK`, `EGNM`, `ENGM`
 - `KABQ`, `KATL`, `KBNA`, `KBOS`, `KCLT`, `KCVG`, `KDCA`, `KELP`, `KEWR`
 - `KIAD`, `KJAX`, `KLAS`, `KMCI`, `KMCO`, `KMEM`, `KMIA`, `KPDX`, `KPHL`

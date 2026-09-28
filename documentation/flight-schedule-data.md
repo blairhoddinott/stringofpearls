@@ -6,16 +6,16 @@ String of Pearls ships a deterministic representative 24-hour traffic profile fo
 
 The reviewed corpus contains:
 
-- 64 selectable airports and 64 catalogued schedules;
-- 47,089 representative movements;
+- 65 selectable airports and 65 catalogued schedules;
+- 48,165 representative movements;
 - 35 U.S. profiles containing 23,976 movements derived from BTS On-Time and T-100 evidence;
-- 29 profiles containing 23,113 movements compiled from the airport's authored spawn patterns; and
+- 30 profiles containing 24,189 movements compiled from the airport's authored spawn patterns; and
 - one IANA timezone policy entry for every selectable airport.
 
 `tools/schedules/schedule-corpus-manifest.json` records every airport, profile tier, movement count, and normalized file SHA-256. `tools/schedules/schedule-corpus.test.js` recalculates those facts from the published files. The manifest SHA-256 is:
 
 ```text
-b4ee27d858070eae314cb438f80911392e2ab6e33601034d77b5695ea3369be8
+4e9f62ef33495ac22c1c9c6843088a490b0887eb96d1cce24deee0b396515ef5
 ```
 
 KSEA remains byte-identical to the reviewed reference profile:
@@ -43,7 +43,7 @@ BTS is a U.S. federal agency. These normalized assets contain factual federal tr
 
 ### Airport-authored profiles
 
-The other 29 selectable airports use `schemaVersion: 2` and `profileType: "authored"`. Their traffic is compiled from the airport asset's reviewed spawn-pattern rates and operating details under the repository's MIT licence.
+The other 30 selectable airports use `schemaVersion: 2` and `profileType: "authored"`. Their traffic is compiled from the airport asset's reviewed spawn-pattern rates and operating details under the repository's MIT licence.
 
 These schedules are realistic deterministic profiles, not historical records. Each slot stores local time, category, and a stable `spawnPatternKey`. Runtime resolution binds that key back to the exact authored spawn pattern, preserving its route, position, geometry, altitude, commands, airlines, and generated identity behavior. No airline, flight number, aircraft, or remote endpoint is fabricated merely to imitate a sourced record.
 

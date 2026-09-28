@@ -150,6 +150,52 @@ test('collectReleaseCommits fails closed when a non-excluded commit is malformed
     assert.throws(() => collectReleaseCommits(raw), ReleaseError);
 });
 
+test('collectReleaseCommits repairs only the exact immutable malformed commit', () => {
+    const malformedSubject = 'added dev container build and start script';
+    const commits = collectReleaseCommits([{
+        hash: '0c83151510cd289abf419628f73ed241ed6bd1bf',
+        subject: malformedSubject
+    }]);
+
+    assert.deepEqual(commits, [{
+        hash: '0c83151510cd289abf419628f73ed241ed6bd1bf',
+        shortHash: '0c83151',
+        type: 'chore',
+        scope: 'dev',
+        breaking: false,
+        description: 'add dev container build and start script',
+        breakingDescription: null,
+        group: 'maintenance'
+    }]);
+    assert.throws(() => collectReleaseCommits([{
+        hash: '1'.repeat(40),
+        subject: malformedSubject
+    }]), ReleaseError);
+    assert.throws(() => collectReleaseCommits([{
+        hash: '0c83151510cd289abf419628f73ed241ed6bd1bf',
+        subject: 'a different malformed subject'
+    }]), (error) => error instanceof ReleaseError && error.code === 'commit-correction-mismatch');
+    assert.throws(() => collectReleaseCommits([{
+        hash: 'toString',
+        subject: malformedSubject
+    }]), (error) => error instanceof ReleaseError && error.code === 'malformed-commit');
+});
+
+test('collectReleaseCommits applies immutable corrections during bootstrap without weakening mismatch rejection', () => {
+    const hash = '0c83151510cd289abf419628f73ed241ed6bd1bf';
+    const commits = collectReleaseCommits([{
+        hash,
+        subject: 'added dev container build and start script'
+    }], { allowLegacy: true });
+
+    assert.equal(commits[0].type, 'chore');
+    assert.equal(commits[0].description, 'add dev container build and start script');
+    assert.throws(() => collectReleaseCommits([{
+        hash,
+        subject: 'unexpected history'
+    }], { allowLegacy: true }), (error) => error instanceof ReleaseError && error.code === 'commit-correction-mismatch');
+});
+
 test('collectReleaseCommits preserves legacy subjects only when bootstrap explicitly allows them', () => {
     const raw = [
         { hash: '3333333', subject: 'feat(traffic): add mode selection' },

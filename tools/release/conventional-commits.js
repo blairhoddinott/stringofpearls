@@ -1,6 +1,7 @@
 'use strict';
 
 const { ReleaseError } = require('./errors');
+const { COMMIT_SUBJECT_CORRECTIONS } = require('./constants');
 
 /**
  * Ordered release-note groups. The order here is the order sections render in
@@ -133,8 +134,23 @@ function collectReleaseCommits(rawCommits, { allowLegacy = false } = {}) {
             continue;
         }
 
+        let commit = raw;
+        const hasCorrection = Object.hasOwn(COMMIT_SUBJECT_CORRECTIONS, raw.hash);
+        const correction = hasCorrection ? COMMIT_SUBJECT_CORRECTIONS[raw.hash] : null;
+
+        if (correction) {
+            if (raw.subject !== correction.original) {
+                throw new ReleaseError(
+                    `commit ${raw.hash} does not match its immutable subject correction`,
+                    'commit-correction-mismatch'
+                );
+            }
+
+            commit = { ...raw, subject: correction.corrected };
+        }
+
         try {
-            commits.push(parseCommit(raw));
+            commits.push(parseCommit(commit));
         } catch (error) {
             if (!allowLegacy || !(error instanceof ReleaseError) || error.code !== 'malformed-commit') {
                 throw error;

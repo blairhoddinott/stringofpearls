@@ -24,6 +24,17 @@ const SIGNING_FINGERPRINT = '55752C968BC2E769D973F65727D0742393C6CAA3';
 // no signed semver tag exists yet.
 const BOOTSTRAP_BASELINE = '485a4c74942ed003ec0ea973e14cbc3cc50bbd2c';
 
+// Immutable corrections for malformed subjects that already landed on the
+// protected branch. Each exception is bound to the full commit SHA and its
+// original subject so release preparation still fails closed for every other
+// malformed commit and for any unexpected history.
+const COMMIT_SUBJECT_CORRECTIONS = Object.freeze({
+    '0c83151510cd289abf419628f73ed241ed6bd1bf': Object.freeze({
+        original: 'added dev container build and start script',
+        corrected: 'chore(dev): add dev container build and start script'
+    })
+});
+
 // The machine-owned branch namespace for generated release-preparation commits.
 const RELEASE_BRANCH_PREFIX = 'chore/release-';
 
@@ -40,6 +51,7 @@ module.exports = {
     REPO_FULL_NAME,
     SIGNING_FINGERPRINT,
     BOOTSTRAP_BASELINE,
+    COMMIT_SUBJECT_CORRECTIONS,
     RELEASE_BRANCH_PREFIX,
     BASE_BRANCH,
     TOKEN_ENV_VAR

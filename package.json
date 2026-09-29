@@ -95,6 +95,7 @@
     "statements": 68
   },
   "dependencies": {
+    "@huggingface/transformers": "4.3.0",
     "ansi-colors": "3.2.4",
     "express": "4.22.3",
     "handlebars": "4.7.9",

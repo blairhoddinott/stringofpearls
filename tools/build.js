@@ -20,6 +20,12 @@ const PUBLIC_DIR = path.join(ROOT, 'public');
 const SOURCE_DIR = path.join(ROOT, 'src');
 const ASSET_DIR = path.join(ROOT, 'assets');
 const CLIENT_ENTRY = path.join(SOURCE_DIR, 'assets/scripts/client/index.js');
+const SPEECH_WORKER_ENTRY = path.join(SOURCE_DIR, 'assets/scripts/client/speechRecognition/speechRecognitionWorker.js');
+const ONNX_RUNTIME_DIST = path.dirname(require.resolve('onnxruntime-web'));
+const SPEECH_WORKER_RUNTIME_ASSETS = [
+    'ort-wasm-simd-threaded.asyncify.mjs',
+    'ort-wasm-simd-threaded.asyncify.wasm'
+];
 const SERVER_SOURCE = path.join(SOURCE_DIR, 'assets/scripts/server');
 const STYLE_ENTRY = path.join(SOURCE_DIR, 'assets/style/main.less');
 const TEMPLATE_DIR = path.join(SOURCE_DIR, 'templates');
@@ -97,6 +103,44 @@ async function buildClient({ production, publicDirectory }) {
         sourcemap: 'linked',
         target: ['chrome109', 'firefox115', 'safari16']
     });
+}
+
+async function buildSpeechRecognitionWorker({ production, publicDirectory }) {
+    const outputDirectory = path.join(publicDirectory, 'assets/scripts/client');
+    await fsp.mkdir(outputDirectory, { recursive: true });
+
+    // Built as a separate ES module worker artifact (distinct from the IIFE
+    // client bundle). No model weights are bundled: Transformers.js downloads
+    // them at runtime, and never via a CDN <script>.
+    await esbuild.build({
+        absWorkingDir: ROOT,
+        alias: {
+            fs: path.join(__dirname, 'build-shims/empty.js')
+        },
+        bundle: true,
+        define: {
+            global: 'globalThis'
+        },
+        entryPoints: [SPEECH_WORKER_ENTRY],
+        format: 'esm',
+        legalComments: 'none',
+        logLevel: 'warning',
+        minifyIdentifiers: false,
+        minifySyntax: production,
+        minifyWhitespace: production,
+        outfile: path.join(outputDirectory, 'speech-recognition-worker.min.js'),
+        platform: 'browser',
+        sourcemap: 'linked',
+        target: ['chrome109', 'firefox115', 'safari16']
+    });
+
+    // onnxruntime-web resolves these files relative to the worker module at
+    // runtime. esbuild leaves those URL references intact, so publish the exact
+    // runtime pair beside the worker rather than letting the WASM fallback 404.
+    await Promise.all(SPEECH_WORKER_RUNTIME_ASSETS.map((filename) => fsp.copyFile(
+        path.join(ONNX_RUNTIME_DIST, filename),
+        path.join(outputDirectory, filename)
+    )));
 }
 
 async function buildServer(publicDirectory) {
@@ -480,6 +524,7 @@ async function buildUnlocked(options = {}) {
         stagedDirectory = await fsp.mkdtemp(path.join(ROOT, `.public-build-${process.pid}-`));
         const results = await Promise.allSettled([
             buildClient({ production, publicDirectory: stagedDirectory }),
+            buildSpeechRecognitionWorker({ production, publicDirectory: stagedDirectory }),
             buildServer(stagedDirectory),
             buildStyles(stagedDirectory),
             buildMarkup(stagedDirectory),

@@ -40,6 +40,42 @@
            autocomplete="off"
            spellcheck="false"
            autofocus />
+    <section class="voice-command" aria-label="Voice command input">
+        <button id="voice-command-enable"
+                class="voice-command-button"
+                type="button">
+            Enable voice
+        </button>
+        <button id="voice-command-push-to-talk"
+                class="voice-command-button voice-command-push-to-talk"
+                type="button"
+                aria-pressed="false"
+                disabled>
+            Hold to talk
+        </button>
+        <p id="voice-command-status"
+           class="voice-command-status"
+           role="status"
+           aria-live="polite"
+           aria-atomic="true">
+            Voice commands are off
+        </p>
+        <div id="voice-command-preview"
+             class="voice-command-preview"
+             aria-label="Voice command preview"
+             role="status"
+             aria-live="polite"
+             aria-atomic="true"
+             hidden>
+            <p id="voice-command-message" class="voice-command-message"></p>
+            <p id="voice-command-transcript-line">
+                Heard: <span id="voice-command-transcript"></span>
+            </p>
+            <p id="voice-command-normalized-line">
+                Command: <span id="voice-command-normalized"></span>
+            </p>
+        </div>
+    </section>
     {{!-- move to ul li.hlist --}}
 
     <ul class="controls-menu">

@@ -26,7 +26,7 @@ import {
  * @param dependencies {object}
  * @param dependencies.createPipeline {Function}  `(backend, { onProgress }) => Promise<(pcm) => Promise<{ text }>>`
  * @param dependencies.postMessage {Function}  `(message) => void`
- * @param dependencies.hasWebGpu {Function}  `() => boolean`
+ * @param dependencies.hasWebGpu {Function}  `() => boolean|Promise<boolean>`
  * @return {{ handleMessage: (data: *) => void }}
  */
 export const createWorkerRuntime = ({ createPipeline, postMessage, hasWebGpu }) => {
@@ -64,7 +64,7 @@ export const createWorkerRuntime = ({ createPipeline, postMessage, hasWebGpu }) 
     };
 
     const createWithFallback = async () => {
-        const backends = hasWebGpu()
+        const backends = await hasWebGpu()
             ? [RECOGNITION_BACKEND.WEBGPU, RECOGNITION_BACKEND.WASM]
             : [RECOGNITION_BACKEND.WASM];
         let lastError = null;

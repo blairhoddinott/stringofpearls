@@ -55,6 +55,7 @@ export default class MicrophoneCapture {
         this._pendingStop = null;
         this._recorderError = null;
         this._tracksStopped = false;
+        this._startGeneration = 0;
     }
 
     /**
@@ -94,6 +95,8 @@ export default class MicrophoneCapture {
             throw new Error('microphone capture is not supported in this environment');
         }
 
+        const startGeneration = ++this._startGeneration;
+
         this._status = CAPTURE_STATUS.STARTING;
 
         let stream;
@@ -101,6 +104,10 @@ export default class MicrophoneCapture {
         try {
             stream = await this._getUserMedia({ audio: true });
         } catch (error) {
+            if (startGeneration !== this._startGeneration) {
+                throw new Error('microphone capture cancelled', { cause: error });
+            }
+
             if (this._status !== CAPTURE_STATUS.DESTROYED) {
                 this._status = CAPTURE_STATUS.IDLE;
             }
@@ -108,15 +115,20 @@ export default class MicrophoneCapture {
             throw error;
         }
 
-        this._stream = stream;
-        this._tracksStopped = false;
-
         if (this._status === CAPTURE_STATUS.DESTROYED) {
-            this._stopTracks();
-            this._stream = null;
+            this._stopStreamTracks(stream);
 
             throw new Error('microphone capture has been destroyed');
         }
+
+        if (startGeneration !== this._startGeneration || this._status !== CAPTURE_STATUS.STARTING) {
+            this._stopStreamTracks(stream);
+
+            throw new Error('microphone capture cancelled');
+        }
+
+        this._stream = stream;
+        this._tracksStopped = false;
 
         try {
             this._chunks = [];
@@ -167,6 +179,26 @@ export default class MicrophoneCapture {
     }
 
     /**
+     * Abort an in-flight permission request or active capture without decoding.
+     * Unlike {@link destroy}, cancellation leaves the capture reusable.
+     *
+     * @for MicrophoneCapture
+     * @method cancel
+     * @return {void}
+     */
+    cancel() {
+        if (this._status === CAPTURE_STATUS.IDLE || this._status === CAPTURE_STATUS.DESTROYED) {
+            return;
+        }
+
+        this._startGeneration += 1;
+        this._teardown();
+        this._closeContext();
+        this._settlePendingStop(null, new Error('microphone capture cancelled'));
+        this._status = CAPTURE_STATUS.IDLE;
+    }
+
+    /**
      * Permanently tear down the capture, stopping tracks and detaching
      * listeners. Rejects any in-flight `stop()`.
      *
@@ -179,6 +211,7 @@ export default class MicrophoneCapture {
             return;
         }
 
+        this._startGeneration += 1;
         this._teardown();
         this._closeContext();
         this._settlePendingStop(null, new Error('microphone capture destroyed'));
@@ -252,8 +285,11 @@ export default class MicrophoneCapture {
         }
 
         this._tracksStopped = true;
+        this._stopStreamTracks(this._stream);
+    }
 
-        for (const track of this._stream.getTracks()) {
+    _stopStreamTracks(stream) {
+        for (const track of stream.getTracks()) {
             track.stop();
         }
     }

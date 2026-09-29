@@ -163,6 +163,59 @@ ava('destroy during pending permission stops a late stream and does not resurrec
     t.is(capture.status, 'destroyed');
 });
 
+ava('cancel during pending permission stops a late stream and leaves capture reusable', async (t) => {
+    let resolveFirstMedia;
+    const firstTracks = [fakeTrack()];
+    const secondTracks = [fakeTrack()];
+    const getUserMedia = sinon.stub();
+    getUserMedia.onFirstCall().returns(new Promise((resolve) => { resolveFirstMedia = resolve; }));
+    getUserMedia.onSecondCall().resolves(fakeStream(secondTracks));
+    const { capture } = buildHarness({ getUserMedia });
+
+    const pending = capture.start();
+    await Promise.resolve();
+    capture.cancel();
+    resolveFirstMedia(fakeStream(firstTracks));
+
+    await t.throwsAsync(pending, { message: /cancelled/ });
+    t.true(firstTracks[0].stop.calledOnce);
+    t.is(capture.status, 'idle');
+
+    await capture.start();
+    capture.cancel();
+    t.true(secondTracks[0].stop.calledOnce);
+    t.is(capture.status, 'idle');
+});
+
+ava('cancel during pending permission does not let a late first request corrupt an immediate restart', async (t) => {
+    let resolveFirstMedia;
+    const firstTracks = [fakeTrack()];
+    const secondTracks = [fakeTrack()];
+    const firstStream = fakeStream(firstTracks);
+    const secondStream = fakeStream(secondTracks);
+    const getUserMedia = sinon.stub();
+    getUserMedia.onFirstCall().returns(new Promise((resolve) => { resolveFirstMedia = resolve; }));
+    getUserMedia.onSecondCall().resolves(secondStream);
+    const { capture, getRecorder } = buildHarness({ getUserMedia });
+
+    const firstStart = capture.start();
+    await Promise.resolve();
+    capture.cancel();
+    const secondStart = capture.start();
+    await secondStart;
+
+    resolveFirstMedia(firstStream);
+    await t.throwsAsync(firstStart, { message: /cancelled/ });
+
+    t.true(firstTracks[0].stop.calledOnce);
+    t.true(secondTracks[0].stop.notCalled);
+    t.is(getRecorder().stream, secondStream);
+    t.is(capture.status, 'recording');
+
+    capture.cancel();
+    t.true(secondTracks[0].stop.calledOnce);
+});
+
 ava('recorder construction failure stops every acquired track', async (t) => {
     const failure = new Error('recorder unavailable');
     const { capture, tracks } = buildHarness({ createRecorder: () => { throw failure; } });
@@ -208,6 +261,17 @@ ava('a recorder error surfaces on stop with cleanup and no leaked tracks', async
     await t.throwsAsync(capture.stop(), { is: boom }, 'the original recorder error is preserved');
     tracks.forEach((track) => t.true(track.stop.calledOnce));
     t.true(audioContext.close.notCalled, 'no context is opened when decoding never starts');
+});
+
+ava('cancel while recording releases tracks without decoding and leaves capture reusable', async (t) => {
+    const { capture, tracks, audioContext } = buildHarness();
+
+    await capture.start();
+    capture.cancel();
+
+    tracks.forEach((track) => t.true(track.stop.calledOnce));
+    t.true(audioContext.decodeAudioData.notCalled);
+    t.is(capture.status, 'idle');
 });
 
 // -------------------------------------------------------------------------- //

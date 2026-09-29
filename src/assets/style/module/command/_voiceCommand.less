@@ -1,0 +1,93 @@
+.voice-command {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 0 1 auto;
+    min-width: 0;
+    height: 100%;
+    gap: @spacing-1x;
+    padding-right: @spacing-2x;
+    color: @medium-light-gray;
+}
+
+.voice-command-button {
+    height: calc(100% - 8px);
+    padding: 0 @spacing-2x;
+    border: 1px solid @gray-40;
+    border-radius: 2px;
+    background: @dark-gray;
+    color: @light-gray;
+    font: inherit;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.voice-command-button:hover:not(:disabled),
+.voice-command-button:focus-visible {
+    border-color: @blue-light;
+    outline: 1px solid @blue-light;
+    outline-offset: 1px;
+}
+
+.voice-command-button:disabled {
+    color: @medium-gray;
+    cursor: default;
+}
+
+.voice-command-push-to-talk[aria-pressed='true'] {
+    border-color: @red;
+    background: @darkgreen-medium;
+    color: @white;
+}
+
+.voice-command-status {
+    width: 155px;
+    overflow: hidden;
+    font-size: 11px;
+    line-height: 1.15;
+    text-overflow: ellipsis;
+}
+
+.voice-command-preview {
+    position: absolute;
+    z-index: @autocomplete-z;
+    right: @spacing-2x;
+    bottom: calc(100% + @spacing-1x);
+    width: min(460px, calc(100vw - 20px));
+    padding: @spacing-2x;
+    border: 1px solid @gray-40;
+    border-radius: 2px;
+    background: @dark-085;
+    box-shadow: 0 2px 8px @black-07;
+    color: @light-gray;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.voice-command-preview[hidden] {
+    display: none;
+}
+
+.voice-command-message {
+    margin-bottom: @spacing-1x;
+    color: @medium-light-gray;
+}
+
+@media screen and (max-width: 900px) {
+    .voice-command-status {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    .voice-command-button {
+        padding: 0 @spacing-1x;
+        font-size: 12px;
+    }
+}

@@ -21,10 +21,9 @@ import { pipeline, env } from '@huggingface/transformers';
 
 import { MODEL_ID, RECOGNITION_BACKEND } from './workerProtocol';
 import { createWorkerRuntime } from './speechRecognitionWorkerCore';
+import { configureWorkerEnvironment, hasUsableWebGpu } from './workerEnvironment';
 
-// Never probe a local `/models` path (which would 404 when served); the hub is
-// the only weight source, and only after the user opts in upstream.
-env.allowLocalModels = false;
+configureWorkerEnvironment(env, self.location.href);
 
 const createPipeline = (backend, { onProgress }) => pipeline(
     'automatic-speech-recognition',
@@ -35,7 +34,7 @@ const createPipeline = (backend, { onProgress }) => pipeline(
     }
 );
 
-const hasWebGpu = () => typeof navigator !== 'undefined' && Boolean(navigator.gpu);
+const hasWebGpu = () => hasUsableWebGpu(navigator);
 
 const runtime = createWorkerRuntime({
     createPipeline,

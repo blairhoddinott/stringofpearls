@@ -36,7 +36,7 @@ const buildRuntime = ({ hasWebGpu = false, asr, pipelineBehavior } = {}) => {
     const runtime = createWorkerRuntime({
         createPipeline,
         postMessage,
-        hasWebGpu: () => hasWebGpu
+        hasWebGpu: typeof hasWebGpu === 'function' ? hasWebGpu : () => hasWebGpu
     });
 
     const postsOfType = (type) => posts.filter((message) => message.type === type);
@@ -57,6 +57,21 @@ ava('load reports loading then ready on the wasm backend when WebGPU is absent',
     t.true(createPipeline.calledOnceWith(RECOGNITION_BACKEND.WASM));
     t.deepEqual(posts[0], { type: 'state', state: RECOGNITION_STATE.LOADING });
     t.deepEqual(posts[posts.length - 1], { type: 'state', state: RECOGNITION_STATE.READY, backend: RECOGNITION_BACKEND.WASM });
+});
+
+ava('awaits an asynchronous WebGPU capability probe before selecting WASM', async (t) => {
+    const { runtime, posts, createPipeline } = buildRuntime({ hasWebGpu: async () => false });
+
+    runtime.handleMessage(createLoadMessage());
+    await flush();
+
+    t.false(createPipeline.calledWith(RECOGNITION_BACKEND.WEBGPU));
+    t.true(createPipeline.calledWith(RECOGNITION_BACKEND.WASM));
+    t.deepEqual(posts[posts.length - 1], {
+        type: 'state',
+        state: RECOGNITION_STATE.READY,
+        backend: RECOGNITION_BACKEND.WASM
+    });
 });
 
 ava('load prefers WebGPU when navigator.gpu exists', async (t) => {

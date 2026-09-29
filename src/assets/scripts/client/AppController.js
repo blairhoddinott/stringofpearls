@@ -10,6 +10,7 @@ import ContentQueue from './contentQueue/ContentQueue';
 import EventTracker from './EventTracker';
 import GameController from './game/GameController';
 import InputController from './InputController';
+import { createVoiceCommandFeature } from './input/VoiceCommandFeature';
 import EventBus from './lib/EventBus';
 import LoadingView from './LoadingView';
 import NavigationLibrary from './navigationLibrary/NavigationLibrary';
@@ -55,6 +56,7 @@ export default class AppController {
      * @param pageVisibilityAdapter {PageVisibilityAdapter|null} composition-root page focus/visibility boundary threaded to `GameController` for pause/resume
      * @param weatherClient {WeatherClient|null} same-origin weather transport
      * @param timerScheduler {TimerScheduler|null} cancellable weather polling scheduler
+     * @param voiceCommandFeatureFactory {Function} injected voice-command composition factory
      */
     constructor(
         element,
@@ -69,7 +71,8 @@ export default class AppController {
         clipboardAdapter,
         pageVisibilityAdapter,
         weatherClient = null,
-        timerScheduler = null
+        timerScheduler = null,
+        voiceCommandFeatureFactory = createVoiceCommandFeature
     ) {
         /**
          * Root DOM element.
@@ -140,6 +143,7 @@ export default class AppController {
          * @type {PageVisibilityAdapter|null}
          */
         this._pageVisibilityAdapter = pageVisibilityAdapter ?? null;
+        this._voiceCommandFeatureFactory = voiceCommandFeatureFactory;
         this.weatherController = weatherClient && timerScheduler
             ? new WeatherController(weatherClient, clockAdapter, timerScheduler, EventBus)
             : null;
@@ -154,6 +158,7 @@ export default class AppController {
         this.canvasController = null;
         this.changelogController = null;
         this.shiftController = null;
+        this.voiceCommandFeature = null;
 
         return this._init()
             .setupHandlers()
@@ -223,6 +228,10 @@ export default class AppController {
             this.weatherController.destroy();
         }
 
+        if (this.voiceCommandFeature) {
+            this.voiceCommandFeature.destroy();
+        }
+
         this.$element = null;
         this._assetLoader = null;
         this.$canvasesElement = null;
@@ -235,6 +244,8 @@ export default class AppController {
         this.canvasController = null;
         this.shiftController = null;
         this.weatherController = null;
+        this.voiceCommandFeature = null;
+        this._voiceCommandFeatureFactory = null;
 
         return this;
     }
@@ -345,6 +356,17 @@ export default class AppController {
             this._asyncErrorReporter,
             this._clipboardAdapter
         );
+        this.voiceCommandFeature = this._voiceCommandFeatureFactory({
+            rootElement: this.$element[0],
+            windowTarget: window,
+            navigatorTarget: window.navigator,
+            WorkerClass: window.Worker,
+            MediaRecorderClass: window.MediaRecorder,
+            AudioContextClass: window.AudioContext || window.webkitAudioContext,
+            aircraftController: this.aircraftController,
+            navigationLibrary: NavigationLibrary,
+            airportController: AirportController
+        });
         this.airportInfoController = new AirportInfoController(
             this.$element,
             this._clockAdapter,
@@ -481,6 +503,8 @@ export default class AppController {
             // if `current` is null, then this is the initial load and we dont need to reset andything
             return;
         }
+
+        this.voiceCommandFeature?.cancel();
 
         EventTracker.recordEvent(TRACKABLE_EVENT.AIRPORTS, 'airport-switcher', nextAirportJson.icao);
         NavigationLibrary.reset();

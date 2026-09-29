@@ -19,8 +19,13 @@ const { newestReleaseBody } = require('./release/changelog');
 const ROOT = path.resolve(__dirname, '..');
 const PUBLIC_DIR = path.join(ROOT, 'public');
 const BUILD_SCRIPT = path.join(__dirname, 'build.js');
+const ONNX_RUNTIME_DIST = path.join(ROOT, 'node_modules', 'onnxruntime-web', 'dist');
 const COPY_DIRECTORIES = ['fonts', 'images', 'tutorial', 'autocomplete'];
 const FIXED_BUILD_EPOCH = '0';
+const SPEECH_WORKER_RUNTIME_ASSETS = [
+    'ort-wasm-simd-threaded.asyncify.mjs',
+    'ort-wasm-simd-threaded.asyncify.wasm'
+];
 
 async function listFiles(directory) {
     const entries = await fsp.readdir(directory, { withFileTypes: true });
@@ -52,9 +57,15 @@ async function expectedOutputPaths() {
         'assets/guides/guides.json',
         'assets/scripts/client/bundle.min.js',
         'assets/scripts/client/bundle.min.js.map',
+        'assets/scripts/client/speech-recognition-worker.min.js',
+        'assets/scripts/client/speech-recognition-worker.min.js.map',
         'assets/style/main.min.css',
         'assets/style/main.min.css.map'
     ]);
+
+    for (const filename of SPEECH_WORKER_RUNTIME_ASSETS) {
+        expected.add(`assets/scripts/client/${filename}`);
+    }
 
     for (const directory of COPY_DIRECTORIES) {
         const sourceDirectory = path.join(ROOT, 'assets', directory);
@@ -112,6 +123,28 @@ async function assertServerOutput() {
 
         assert.deepStrictEqual(output, source, `${relative} server output was not copied byte-for-byte`);
     }
+}
+
+async function assertSpeechRecognitionWorkerOutput() {
+    const outputDirectory = path.join(PUBLIC_DIR, 'assets', 'scripts', 'client');
+    const worker = await fsp.readFile(path.join(outputDirectory, 'speech-recognition-worker.min.js'), 'utf8');
+
+    assert.match(worker, /onnx-community\/whisper-tiny\.en/);
+    assert.match(worker, /ort-wasm-simd-threaded\.asyncify\.wasm/);
+    assert.match(worker, /sourceMappingURL=speech-recognition-worker\.min\.js\.map/);
+    JSON.parse(await fsp.readFile(path.join(outputDirectory, 'speech-recognition-worker.min.js.map'), 'utf8'));
+
+    for (const filename of SPEECH_WORKER_RUNTIME_ASSETS) {
+        const [source, output] = await Promise.all([
+            fsp.readFile(path.join(ONNX_RUNTIME_DIST, filename)),
+            fsp.readFile(path.join(outputDirectory, filename))
+        ]);
+
+        assert.deepStrictEqual(output, source, `${filename} was not copied byte-for-byte`);
+    }
+
+    const modelWeights = (await listFiles(PUBLIC_DIR)).filter((filename) => /\.(?:onnx|safetensors)$/i.test(filename));
+    assert.deepStrictEqual(modelWeights, [], 'speech model weights must not be bundled in public output');
 }
 
 async function assertAirportOutputs() {
@@ -803,6 +836,7 @@ async function main() {
     }
 
     await assertServerOutput();
+    await assertSpeechRecognitionWorkerOutput();
     await assertAirportOutputs();
 
     const aircraft = JSON.parse(await fsp.readFile(path.join(PUBLIC_DIR, 'assets/aircraft/aircraft.json'), 'utf8'));

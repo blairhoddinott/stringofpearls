@@ -75,7 +75,6 @@ export default class CenterHandoffCoordinator {
         }
 
         if (handoffModel.state === HANDOFF_STATE.CENTER_OWNED &&
-            aircraftModel.centerHandoffFix &&
             aircraftModel.isControllable) {
             handoffModel.offerFromCenter();
             this._arrivalState.set(aircraftModel, {

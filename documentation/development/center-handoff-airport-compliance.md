@@ -4,13 +4,13 @@ This document records how center handoffs use the simulator's existing holding s
 
 ## Operational behavior
 
-Arrival ownership follows this sequence for audited routes:
+Arrival ownership follows this sequence:
 
 ```text
 CENTER → PLAYER → TOWER
 ```
 
-An outside arrival whose spawn pattern has an explicit, validated `centerHandoffFix` still ahead in its active FMS route starts under center ownership. Center offers the aircraft to the player when the remaining active-route distance to that boundary fix reaches 10 NM. If route progression passes the fix without an offer, entering controlled airspace triggers an immediate fallback offer so center-owned traffic cannot silently cross the boundary. If the player ignores the offer until 8 NM remains, center sends the aircraft to the configured fix and activates a hold there. Center always leaves an offer active for at least 10 seconds of simulation time before assigning that hold, including when an arrival first appears inside the 8 NM decision point. Holding traffic is offered again after 60 seconds of simulation time.
+Every arrival that starts outside controlled airspace starts under center ownership, including pre-spawn traffic that has already passed an authored handoff fix. Center offers the aircraft to the player as soon as it enters controlled airspace, so ownership follows geography rather than optional route metadata. If the player ignores the offer and the spawn pattern has an explicit, validated `centerHandoffFix`, center sends the aircraft to that fix and activates a hold once 8 NM remains. Center always leaves an offer active for at least 10 seconds of simulation time before assigning that hold, including when an arrival first appears inside the 8 NM decision point. Holding traffic is offered again after 60 seconds of simulation time. Without a validated handoff fix, the offer remains available but no route-aware fallback hold is assigned.
 
 Aircraft owned by center or tower use a compact `C - <callsign>` or `T - <callsign>` data block and have no player flight strip. Accepting an inbound handoff replaces the compact block with the full player data block, gives the player command authority, triggers the aircraft's radio check-in, and creates its flight strip even when the aircraft remains outside controlled airspace. A completed outbound handoff removes the player strip and restores the appropriate compact block. A late inbound acceptance changes controller ownership but does not cancel the flight instruction. The aircraft remains in the hold until the player issues the existing `cancelhold`/`continue` instruction. A successfully assigned fallback hold records the missed-handoff scoring penalty; if the FMS rejects the hold, the offer remains active and no penalty is recorded.
 
@@ -33,7 +33,7 @@ When center assigns the fallback hold, it activates the route waypoint named by 
 
 ## Airport data requirements
 
-A route opts into center ownership only when its arrival spawn pattern defines:
+A route opts into route-aware missed-handoff holding when its arrival spawn pattern defines:
 
 ```json
 "centerHandoffFix": "FIX"
@@ -44,9 +44,9 @@ The fix must:
 - be a named, non-vector waypoint in the resolved arrival route;
 - be immediately outside the controlled-airspace boundary;
 - have a following route segment that enters controlled airspace;
-- remain ahead of the aircraft in its active FMS route.
+- have been reviewed as the correct boundary holding point.
 
-Runtime code never guesses or substitutes a fix. Arrival patterns without reviewed data retain legacy player ownership, so incomplete migration does not make an airport unusable or strand an aircraft under center ownership.
+Runtime code never guesses or substitutes a fix. Arrival patterns without reviewed data still begin under center ownership and receive a geographic handoff offer on entering controlled airspace; they simply do not receive the route-aware fallback hold.
 
 Use the audit tool to inspect the asset corpus:
 
@@ -61,11 +61,11 @@ node tools/audit-center-handoff-fixes.js --write-obvious
 
 This snapshot reflects the current airport asset corpus:
 
-- 105 airport assets;
-- 534 arrival spawn patterns;
-- 347 arrival patterns with an explicit handoff fix;
+- 113 airport assets;
+- 580 arrival spawn patterns;
+- 393 arrival patterns with an explicit handoff fix;
 - 187 arrival patterns still requiring review;
-- 45 fully compliant airports;
+- 53 fully compliant airports;
 - 55 airports needing at least one arrival-pattern correction;
 - 5 airports with no arrival spawn patterns, for which this check is not applicable.
 
@@ -73,12 +73,12 @@ This snapshot reflects the current airport asset corpus:
 
 Every arrival spawn pattern at these airports has an explicit handoff fix:
 
-- `CYOW`, `CYYZ`, `EDDH`, `EDDL`, `EDDM`, `EDDT`
+- `CYOW`, `CYYC`, `CYYZ`, `EDDH`, `EDDL`, `EDDM`, `EDDT`
 - `EGCC`, `EGGW`, `EGKK`, `EGNM`, `ENGM`
-- `KABQ`, `KATL`, `KBNA`, `KBOS`, `KCLT`, `KCVG`, `KDCA`, `KELP`, `KEWR`
-- `KIAD`, `KJAX`, `KLAS`, `KMCI`, `KMCO`, `KMEM`, `KMIA`, `KPDX`, `KPHL`
+- `KABQ`, `KATL`, `KBNA`, `KBOS`, `KCLE`, `KCLT`, `KCVG`, `KDCA`, `KDEN`, `KELP`, `KEWR`, `KFLL`
+- `KIAD`, `KIAH`, `KIND`, `KJAX`, `KLAS`, `KLGA`, `KMCI`, `KMCO`, `KMEM`, `KMIA`, `KPDX`, `KPHL`
 - `KRDU`, `KRIC`, `KSEA`, `KSFO`, `KSLC`, `KSTL`
-- `LIPZ`, `LOWW`, `LROP`, `LSZH`
+- `LIPZ`, `LOWW`, `LROP`, `LSZH`, `MKJP`
 - `OMDB`, `OTHH`, `RJAA`, `RJTT`, `SBGR`, `UUDD`
 
 ### Airports needing review

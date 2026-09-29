@@ -1,0 +1,3256 @@
+{
+    "schemaVersion": 2,
+    "profileType": "authored",
+    "airportIcao": "CYYC",
+    "timezone": "America/Edmonton",
+    "sampleDate": "2026-09-28",
+    "source": {
+        "name": "stringofpearls airport-authored spawn patterns",
+        "url": "https://github.com/blairhoddinott/stringofpearls/tree/master/assets/airports",
+        "retrievedAt": "2026-09-28",
+        "license": "MIT",
+        "coverage": "Deterministic representative profile compiled from reviewed airport-authored rates, routes, geometry, and airline rules; movements are generated and are not observed historical flights."
+    },
+    "flights": [
+        {
+            "id": "auth-cyyc-9ed4861f-0005",
+            "category": "departure",
+            "scheduledTime": "00:01",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0022",
+            "category": "departure",
+            "scheduledTime": "00:05",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0045",
+            "category": "arrival",
+            "scheduledTime": "00:07",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0010",
+            "category": "arrival",
+            "scheduledTime": "00:07",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0064",
+            "category": "arrival",
+            "scheduledTime": "00:09",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0019",
+            "category": "departure",
+            "scheduledTime": "00:12",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0026",
+            "category": "departure",
+            "scheduledTime": "00:13",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0021",
+            "category": "arrival",
+            "scheduledTime": "00:13",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0022",
+            "category": "departure",
+            "scheduledTime": "00:17",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0019",
+            "category": "departure",
+            "scheduledTime": "00:17",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0022",
+            "category": "departure",
+            "scheduledTime": "00:21",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0002",
+            "category": "departure",
+            "scheduledTime": "00:26",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0046",
+            "category": "arrival",
+            "scheduledTime": "00:28",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0011",
+            "category": "arrival",
+            "scheduledTime": "00:28",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0065",
+            "category": "arrival",
+            "scheduledTime": "00:30",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0015",
+            "category": "departure",
+            "scheduledTime": "00:35",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0022",
+            "category": "arrival",
+            "scheduledTime": "00:35",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0004",
+            "category": "departure",
+            "scheduledTime": "00:45",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0047",
+            "category": "arrival",
+            "scheduledTime": "00:50",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0012",
+            "category": "arrival",
+            "scheduledTime": "00:50",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0066",
+            "category": "arrival",
+            "scheduledTime": "00:51",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-9ed4861f-0006",
+            "category": "departure",
+            "scheduledTime": "00:54",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0023",
+            "category": "arrival",
+            "scheduledTime": "00:56",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0023",
+            "category": "departure",
+            "scheduledTime": "00:58",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0020",
+            "category": "departure",
+            "scheduledTime": "01:05",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0027",
+            "category": "departure",
+            "scheduledTime": "01:06",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0023",
+            "category": "departure",
+            "scheduledTime": "01:10",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0020",
+            "category": "departure",
+            "scheduledTime": "01:10",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0048",
+            "category": "arrival",
+            "scheduledTime": "01:11",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0013",
+            "category": "arrival",
+            "scheduledTime": "01:11",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0067",
+            "category": "arrival",
+            "scheduledTime": "01:12",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0023",
+            "category": "departure",
+            "scheduledTime": "01:14",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0024",
+            "category": "arrival",
+            "scheduledTime": "01:18",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0003",
+            "category": "departure",
+            "scheduledTime": "01:19",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0016",
+            "category": "departure",
+            "scheduledTime": "01:29",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0049",
+            "category": "arrival",
+            "scheduledTime": "01:32",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0068",
+            "category": "arrival",
+            "scheduledTime": "01:33",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0014",
+            "category": "arrival",
+            "scheduledTime": "01:33",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0005",
+            "category": "departure",
+            "scheduledTime": "01:38",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0025",
+            "category": "arrival",
+            "scheduledTime": "01:39",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-9ed4861f-0007",
+            "category": "departure",
+            "scheduledTime": "01:48",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0024",
+            "category": "departure",
+            "scheduledTime": "01:51",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0050",
+            "category": "arrival",
+            "scheduledTime": "01:53",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0015",
+            "category": "arrival",
+            "scheduledTime": "01:54",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0001",
+            "category": "arrival",
+            "scheduledTime": "01:55",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0021",
+            "category": "departure",
+            "scheduledTime": "01:58",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0001",
+            "category": "departure",
+            "scheduledTime": "02:00",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0026",
+            "category": "arrival",
+            "scheduledTime": "02:01",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0024",
+            "category": "departure",
+            "scheduledTime": "02:03",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0021",
+            "category": "departure",
+            "scheduledTime": "02:03",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0024",
+            "category": "departure",
+            "scheduledTime": "02:07",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0004",
+            "category": "departure",
+            "scheduledTime": "02:13",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0051",
+            "category": "arrival",
+            "scheduledTime": "02:14",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0002",
+            "category": "arrival",
+            "scheduledTime": "02:16",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0016",
+            "category": "arrival",
+            "scheduledTime": "02:16",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0017",
+            "category": "departure",
+            "scheduledTime": "02:22",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0027",
+            "category": "arrival",
+            "scheduledTime": "02:22",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0006",
+            "category": "departure",
+            "scheduledTime": "02:31",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0052",
+            "category": "arrival",
+            "scheduledTime": "02:36",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0003",
+            "category": "arrival",
+            "scheduledTime": "02:37",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0017",
+            "category": "arrival",
+            "scheduledTime": "02:37",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-9ed4861f-0008",
+            "category": "departure",
+            "scheduledTime": "02:41",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0028",
+            "category": "arrival",
+            "scheduledTime": "02:44",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0025",
+            "category": "departure",
+            "scheduledTime": "02:45",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0022",
+            "category": "departure",
+            "scheduledTime": "02:52",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0002",
+            "category": "departure",
+            "scheduledTime": "02:53",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0025",
+            "category": "departure",
+            "scheduledTime": "02:57",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0022",
+            "category": "departure",
+            "scheduledTime": "02:57",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0053",
+            "category": "arrival",
+            "scheduledTime": "02:57",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0004",
+            "category": "arrival",
+            "scheduledTime": "02:58",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0018",
+            "category": "arrival",
+            "scheduledTime": "02:59",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0025",
+            "category": "departure",
+            "scheduledTime": "03:01",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0029",
+            "category": "arrival",
+            "scheduledTime": "03:05",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0005",
+            "category": "departure",
+            "scheduledTime": "03:06",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0018",
+            "category": "departure",
+            "scheduledTime": "03:15",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0054",
+            "category": "arrival",
+            "scheduledTime": "03:18",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0005",
+            "category": "arrival",
+            "scheduledTime": "03:19",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0019",
+            "category": "arrival",
+            "scheduledTime": "03:20",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0007",
+            "category": "departure",
+            "scheduledTime": "03:25",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0030",
+            "category": "arrival",
+            "scheduledTime": "03:27",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-9ed4861f-0009",
+            "category": "departure",
+            "scheduledTime": "03:34",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0026",
+            "category": "departure",
+            "scheduledTime": "03:38",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0055",
+            "category": "arrival",
+            "scheduledTime": "03:39",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0006",
+            "category": "arrival",
+            "scheduledTime": "03:40",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0020",
+            "category": "arrival",
+            "scheduledTime": "03:42",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0023",
+            "category": "departure",
+            "scheduledTime": "03:45",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0003",
+            "category": "departure",
+            "scheduledTime": "03:46",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0031",
+            "category": "arrival",
+            "scheduledTime": "03:48",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0026",
+            "category": "departure",
+            "scheduledTime": "03:50",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0023",
+            "category": "departure",
+            "scheduledTime": "03:50",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0026",
+            "category": "departure",
+            "scheduledTime": "03:54",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0006",
+            "category": "departure",
+            "scheduledTime": "03:59",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0056",
+            "category": "arrival",
+            "scheduledTime": "04:00",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0007",
+            "category": "arrival",
+            "scheduledTime": "04:02",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0021",
+            "category": "arrival",
+            "scheduledTime": "04:03",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0019",
+            "category": "departure",
+            "scheduledTime": "04:09",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0032",
+            "category": "arrival",
+            "scheduledTime": "04:10",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0008",
+            "category": "departure",
+            "scheduledTime": "04:18",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0057",
+            "category": "arrival",
+            "scheduledTime": "04:21",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0008",
+            "category": "arrival",
+            "scheduledTime": "04:23",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0022",
+            "category": "arrival",
+            "scheduledTime": "04:25",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-9ed4861f-0010",
+            "category": "departure",
+            "scheduledTime": "04:28",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0027",
+            "category": "departure",
+            "scheduledTime": "04:31",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0033",
+            "category": "arrival",
+            "scheduledTime": "04:31",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0024",
+            "category": "departure",
+            "scheduledTime": "04:38",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0004",
+            "category": "departure",
+            "scheduledTime": "04:40",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0027",
+            "category": "departure",
+            "scheduledTime": "04:43",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0024",
+            "category": "departure",
+            "scheduledTime": "04:43",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0058",
+            "category": "arrival",
+            "scheduledTime": "04:43",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0009",
+            "category": "arrival",
+            "scheduledTime": "04:44",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0023",
+            "category": "arrival",
+            "scheduledTime": "04:46",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0027",
+            "category": "departure",
+            "scheduledTime": "04:47",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0007",
+            "category": "departure",
+            "scheduledTime": "04:53",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0034",
+            "category": "arrival",
+            "scheduledTime": "04:53",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0020",
+            "category": "departure",
+            "scheduledTime": "05:02",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0059",
+            "category": "arrival",
+            "scheduledTime": "05:04",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0010",
+            "category": "arrival",
+            "scheduledTime": "05:05",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0024",
+            "category": "arrival",
+            "scheduledTime": "05:08",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0009",
+            "category": "departure",
+            "scheduledTime": "05:11",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0035",
+            "category": "arrival",
+            "scheduledTime": "05:14",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-9ed4861f-0011",
+            "category": "departure",
+            "scheduledTime": "05:21",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0001",
+            "category": "departure",
+            "scheduledTime": "05:25",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0060",
+            "category": "arrival",
+            "scheduledTime": "05:25",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0011",
+            "category": "arrival",
+            "scheduledTime": "05:26",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0025",
+            "category": "arrival",
+            "scheduledTime": "05:29",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0025",
+            "category": "departure",
+            "scheduledTime": "05:32",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0005",
+            "category": "departure",
+            "scheduledTime": "05:33",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0036",
+            "category": "arrival",
+            "scheduledTime": "05:36",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0001",
+            "category": "departure",
+            "scheduledTime": "05:37",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0025",
+            "category": "departure",
+            "scheduledTime": "05:37",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0001",
+            "category": "departure",
+            "scheduledTime": "05:41",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0008",
+            "category": "departure",
+            "scheduledTime": "05:46",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0061",
+            "category": "arrival",
+            "scheduledTime": "05:46",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0012",
+            "category": "arrival",
+            "scheduledTime": "05:47",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0026",
+            "category": "arrival",
+            "scheduledTime": "05:51",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0021",
+            "category": "departure",
+            "scheduledTime": "05:55",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0037",
+            "category": "arrival",
+            "scheduledTime": "05:57",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0010",
+            "category": "departure",
+            "scheduledTime": "06:05",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0062",
+            "category": "arrival",
+            "scheduledTime": "06:07",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0013",
+            "category": "arrival",
+            "scheduledTime": "06:09",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0027",
+            "category": "arrival",
+            "scheduledTime": "06:12",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-9ed4861f-0012",
+            "category": "departure",
+            "scheduledTime": "06:14",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0002",
+            "category": "departure",
+            "scheduledTime": "06:18",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0038",
+            "category": "arrival",
+            "scheduledTime": "06:19",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0026",
+            "category": "departure",
+            "scheduledTime": "06:25",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0006",
+            "category": "departure",
+            "scheduledTime": "06:26",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0063",
+            "category": "arrival",
+            "scheduledTime": "06:28",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0014",
+            "category": "arrival",
+            "scheduledTime": "06:30",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0002",
+            "category": "departure",
+            "scheduledTime": "06:30",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0026",
+            "category": "departure",
+            "scheduledTime": "06:30",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0028",
+            "category": "arrival",
+            "scheduledTime": "06:34",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0002",
+            "category": "departure",
+            "scheduledTime": "06:34",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0009",
+            "category": "departure",
+            "scheduledTime": "06:39",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0039",
+            "category": "arrival",
+            "scheduledTime": "06:40",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0022",
+            "category": "departure",
+            "scheduledTime": "06:49",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0064",
+            "category": "arrival",
+            "scheduledTime": "06:50",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0015",
+            "category": "arrival",
+            "scheduledTime": "06:51",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0029",
+            "category": "arrival",
+            "scheduledTime": "06:55",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0011",
+            "category": "departure",
+            "scheduledTime": "06:58",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0040",
+            "category": "arrival",
+            "scheduledTime": "07:02",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-9ed4861f-0013",
+            "category": "departure",
+            "scheduledTime": "07:08",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0003",
+            "category": "departure",
+            "scheduledTime": "07:11",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0065",
+            "category": "arrival",
+            "scheduledTime": "07:11",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0016",
+            "category": "arrival",
+            "scheduledTime": "07:12",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0030",
+            "category": "arrival",
+            "scheduledTime": "07:17",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0027",
+            "category": "departure",
+            "scheduledTime": "07:18",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0007",
+            "category": "departure",
+            "scheduledTime": "07:20",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0003",
+            "category": "departure",
+            "scheduledTime": "07:23",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0027",
+            "category": "departure",
+            "scheduledTime": "07:23",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0041",
+            "category": "arrival",
+            "scheduledTime": "07:23",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0003",
+            "category": "departure",
+            "scheduledTime": "07:27",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0066",
+            "category": "arrival",
+            "scheduledTime": "07:32",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0017",
+            "category": "arrival",
+            "scheduledTime": "07:33",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0010",
+            "category": "departure",
+            "scheduledTime": "07:33",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0031",
+            "category": "arrival",
+            "scheduledTime": "07:38",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0023",
+            "category": "departure",
+            "scheduledTime": "07:42",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0042",
+            "category": "arrival",
+            "scheduledTime": "07:45",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0012",
+            "category": "departure",
+            "scheduledTime": "07:51",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0067",
+            "category": "arrival",
+            "scheduledTime": "07:53",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0018",
+            "category": "arrival",
+            "scheduledTime": "07:55",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0032",
+            "category": "arrival",
+            "scheduledTime": "08:00",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-9ed4861f-0014",
+            "category": "departure",
+            "scheduledTime": "08:01",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0004",
+            "category": "departure",
+            "scheduledTime": "08:05",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0043",
+            "category": "arrival",
+            "scheduledTime": "08:06",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0001",
+            "category": "departure",
+            "scheduledTime": "08:12",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0008",
+            "category": "departure",
+            "scheduledTime": "08:13",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0068",
+            "category": "arrival",
+            "scheduledTime": "08:14",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0019",
+            "category": "arrival",
+            "scheduledTime": "08:16",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0004",
+            "category": "departure",
+            "scheduledTime": "08:17",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0001",
+            "category": "departure",
+            "scheduledTime": "08:17",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0033",
+            "category": "arrival",
+            "scheduledTime": "08:21",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0004",
+            "category": "departure",
+            "scheduledTime": "08:21",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0011",
+            "category": "departure",
+            "scheduledTime": "08:26",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0044",
+            "category": "arrival",
+            "scheduledTime": "08:28",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0024",
+            "category": "departure",
+            "scheduledTime": "08:35",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0001",
+            "category": "arrival",
+            "scheduledTime": "08:36",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0020",
+            "category": "arrival",
+            "scheduledTime": "08:37",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0034",
+            "category": "arrival",
+            "scheduledTime": "08:43",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0013",
+            "category": "departure",
+            "scheduledTime": "08:45",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0045",
+            "category": "arrival",
+            "scheduledTime": "08:49",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-9ed4861f-0015",
+            "category": "departure",
+            "scheduledTime": "08:54",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0002",
+            "category": "arrival",
+            "scheduledTime": "08:57",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0021",
+            "category": "arrival",
+            "scheduledTime": "08:58",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0005",
+            "category": "departure",
+            "scheduledTime": "08:58",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0035",
+            "category": "arrival",
+            "scheduledTime": "09:04",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0002",
+            "category": "departure",
+            "scheduledTime": "09:05",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0009",
+            "category": "departure",
+            "scheduledTime": "09:06",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0005",
+            "category": "departure",
+            "scheduledTime": "09:10",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0002",
+            "category": "departure",
+            "scheduledTime": "09:10",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0046",
+            "category": "arrival",
+            "scheduledTime": "09:11",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0005",
+            "category": "departure",
+            "scheduledTime": "09:14",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0003",
+            "category": "arrival",
+            "scheduledTime": "09:18",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0022",
+            "category": "arrival",
+            "scheduledTime": "09:19",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0012",
+            "category": "departure",
+            "scheduledTime": "09:19",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0036",
+            "category": "arrival",
+            "scheduledTime": "09:26",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0025",
+            "category": "departure",
+            "scheduledTime": "09:29",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0047",
+            "category": "arrival",
+            "scheduledTime": "09:32",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0014",
+            "category": "departure",
+            "scheduledTime": "09:38",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0004",
+            "category": "arrival",
+            "scheduledTime": "09:39",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0023",
+            "category": "arrival",
+            "scheduledTime": "09:40",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0037",
+            "category": "arrival",
+            "scheduledTime": "09:47",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-9ed4861f-0016",
+            "category": "departure",
+            "scheduledTime": "09:48",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0006",
+            "category": "departure",
+            "scheduledTime": "09:51",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0048",
+            "category": "arrival",
+            "scheduledTime": "09:54",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0003",
+            "category": "departure",
+            "scheduledTime": "09:58",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0010",
+            "category": "departure",
+            "scheduledTime": "10:00",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0005",
+            "category": "arrival",
+            "scheduledTime": "10:00",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0024",
+            "category": "arrival",
+            "scheduledTime": "10:02",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0006",
+            "category": "departure",
+            "scheduledTime": "10:03",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0003",
+            "category": "departure",
+            "scheduledTime": "10:03",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0006",
+            "category": "departure",
+            "scheduledTime": "10:07",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0038",
+            "category": "arrival",
+            "scheduledTime": "10:09",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0013",
+            "category": "departure",
+            "scheduledTime": "10:13",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0049",
+            "category": "arrival",
+            "scheduledTime": "10:15",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0006",
+            "category": "arrival",
+            "scheduledTime": "10:21",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0026",
+            "category": "departure",
+            "scheduledTime": "10:22",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0025",
+            "category": "arrival",
+            "scheduledTime": "10:23",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0039",
+            "category": "arrival",
+            "scheduledTime": "10:30",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0015",
+            "category": "departure",
+            "scheduledTime": "10:31",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0050",
+            "category": "arrival",
+            "scheduledTime": "10:37",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-9ed4861f-0017",
+            "category": "departure",
+            "scheduledTime": "10:41",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0007",
+            "category": "arrival",
+            "scheduledTime": "10:43",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0026",
+            "category": "arrival",
+            "scheduledTime": "10:44",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0007",
+            "category": "departure",
+            "scheduledTime": "10:45",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0040",
+            "category": "arrival",
+            "scheduledTime": "10:52",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0004",
+            "category": "departure",
+            "scheduledTime": "10:52",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0011",
+            "category": "departure",
+            "scheduledTime": "10:53",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0007",
+            "category": "departure",
+            "scheduledTime": "10:57",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0004",
+            "category": "departure",
+            "scheduledTime": "10:57",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0051",
+            "category": "arrival",
+            "scheduledTime": "10:58",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0007",
+            "category": "departure",
+            "scheduledTime": "11:01",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0008",
+            "category": "arrival",
+            "scheduledTime": "11:04",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0027",
+            "category": "arrival",
+            "scheduledTime": "11:05",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0014",
+            "category": "departure",
+            "scheduledTime": "11:06",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0041",
+            "category": "arrival",
+            "scheduledTime": "11:13",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0027",
+            "category": "departure",
+            "scheduledTime": "11:15",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0052",
+            "category": "arrival",
+            "scheduledTime": "11:20",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0016",
+            "category": "departure",
+            "scheduledTime": "11:25",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0009",
+            "category": "arrival",
+            "scheduledTime": "11:25",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0028",
+            "category": "arrival",
+            "scheduledTime": "11:26",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-9ed4861f-0018",
+            "category": "departure",
+            "scheduledTime": "11:34",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0042",
+            "category": "arrival",
+            "scheduledTime": "11:35",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0008",
+            "category": "departure",
+            "scheduledTime": "11:38",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0053",
+            "category": "arrival",
+            "scheduledTime": "11:41",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0005",
+            "category": "departure",
+            "scheduledTime": "11:45",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0012",
+            "category": "departure",
+            "scheduledTime": "11:46",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0010",
+            "category": "arrival",
+            "scheduledTime": "11:46",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0029",
+            "category": "arrival",
+            "scheduledTime": "11:47",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0008",
+            "category": "departure",
+            "scheduledTime": "11:50",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0005",
+            "category": "departure",
+            "scheduledTime": "11:50",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0008",
+            "category": "departure",
+            "scheduledTime": "11:54",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0043",
+            "category": "arrival",
+            "scheduledTime": "11:56",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0015",
+            "category": "departure",
+            "scheduledTime": "11:59",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0054",
+            "category": "arrival",
+            "scheduledTime": "12:03",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0011",
+            "category": "arrival",
+            "scheduledTime": "12:07",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0030",
+            "category": "arrival",
+            "scheduledTime": "12:09",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0001",
+            "category": "departure",
+            "scheduledTime": "12:09",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0017",
+            "category": "departure",
+            "scheduledTime": "12:18",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0044",
+            "category": "arrival",
+            "scheduledTime": "12:18",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0055",
+            "category": "arrival",
+            "scheduledTime": "12:24",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-9ed4861f-0019",
+            "category": "departure",
+            "scheduledTime": "12:28",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0012",
+            "category": "arrival",
+            "scheduledTime": "12:28",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0031",
+            "category": "arrival",
+            "scheduledTime": "12:30",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0009",
+            "category": "departure",
+            "scheduledTime": "12:31",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0006",
+            "category": "departure",
+            "scheduledTime": "12:38",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0045",
+            "category": "arrival",
+            "scheduledTime": "12:39",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0013",
+            "category": "departure",
+            "scheduledTime": "12:40",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0009",
+            "category": "departure",
+            "scheduledTime": "12:43",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0006",
+            "category": "departure",
+            "scheduledTime": "12:43",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0056",
+            "category": "arrival",
+            "scheduledTime": "12:46",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0009",
+            "category": "departure",
+            "scheduledTime": "12:47",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0013",
+            "category": "arrival",
+            "scheduledTime": "12:50",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0032",
+            "category": "arrival",
+            "scheduledTime": "12:51",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0016",
+            "category": "departure",
+            "scheduledTime": "12:53",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0046",
+            "category": "arrival",
+            "scheduledTime": "13:01",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0002",
+            "category": "departure",
+            "scheduledTime": "13:02",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0057",
+            "category": "arrival",
+            "scheduledTime": "13:07",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0018",
+            "category": "departure",
+            "scheduledTime": "13:11",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0014",
+            "category": "arrival",
+            "scheduledTime": "13:11",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0033",
+            "category": "arrival",
+            "scheduledTime": "13:12",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-9ed4861f-0020",
+            "category": "departure",
+            "scheduledTime": "13:21",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0047",
+            "category": "arrival",
+            "scheduledTime": "13:22",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0010",
+            "category": "departure",
+            "scheduledTime": "13:25",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0058",
+            "category": "arrival",
+            "scheduledTime": "13:29",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0015",
+            "category": "arrival",
+            "scheduledTime": "13:32",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0007",
+            "category": "departure",
+            "scheduledTime": "13:32",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0034",
+            "category": "arrival",
+            "scheduledTime": "13:33",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0014",
+            "category": "departure",
+            "scheduledTime": "13:33",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0010",
+            "category": "departure",
+            "scheduledTime": "13:37",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0007",
+            "category": "departure",
+            "scheduledTime": "13:37",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0010",
+            "category": "departure",
+            "scheduledTime": "13:41",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0048",
+            "category": "arrival",
+            "scheduledTime": "13:44",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0017",
+            "category": "departure",
+            "scheduledTime": "13:46",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0059",
+            "category": "arrival",
+            "scheduledTime": "13:50",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0016",
+            "category": "arrival",
+            "scheduledTime": "13:53",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0035",
+            "category": "arrival",
+            "scheduledTime": "13:55",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0003",
+            "category": "departure",
+            "scheduledTime": "13:55",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0019",
+            "category": "departure",
+            "scheduledTime": "14:05",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0049",
+            "category": "arrival",
+            "scheduledTime": "14:05",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0060",
+            "category": "arrival",
+            "scheduledTime": "14:12",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-9ed4861f-0021",
+            "category": "departure",
+            "scheduledTime": "14:14",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0017",
+            "category": "arrival",
+            "scheduledTime": "14:14",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0036",
+            "category": "arrival",
+            "scheduledTime": "14:16",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0011",
+            "category": "departure",
+            "scheduledTime": "14:18",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0008",
+            "category": "departure",
+            "scheduledTime": "14:25",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0015",
+            "category": "departure",
+            "scheduledTime": "14:26",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0050",
+            "category": "arrival",
+            "scheduledTime": "14:27",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0011",
+            "category": "departure",
+            "scheduledTime": "14:30",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0008",
+            "category": "departure",
+            "scheduledTime": "14:30",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0061",
+            "category": "arrival",
+            "scheduledTime": "14:33",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0011",
+            "category": "departure",
+            "scheduledTime": "14:34",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0018",
+            "category": "arrival",
+            "scheduledTime": "14:36",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0037",
+            "category": "arrival",
+            "scheduledTime": "14:37",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0018",
+            "category": "departure",
+            "scheduledTime": "14:39",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0051",
+            "category": "arrival",
+            "scheduledTime": "14:48",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0004",
+            "category": "departure",
+            "scheduledTime": "14:49",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0062",
+            "category": "arrival",
+            "scheduledTime": "14:55",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0019",
+            "category": "arrival",
+            "scheduledTime": "14:57",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0020",
+            "category": "departure",
+            "scheduledTime": "14:58",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0038",
+            "category": "arrival",
+            "scheduledTime": "14:58",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-9ed4861f-0022",
+            "category": "departure",
+            "scheduledTime": "15:08",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0052",
+            "category": "arrival",
+            "scheduledTime": "15:10",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0012",
+            "category": "departure",
+            "scheduledTime": "15:11",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0063",
+            "category": "arrival",
+            "scheduledTime": "15:16",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0020",
+            "category": "arrival",
+            "scheduledTime": "15:18",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0009",
+            "category": "departure",
+            "scheduledTime": "15:18",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0039",
+            "category": "arrival",
+            "scheduledTime": "15:19",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0016",
+            "category": "departure",
+            "scheduledTime": "15:20",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0012",
+            "category": "departure",
+            "scheduledTime": "15:23",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0009",
+            "category": "departure",
+            "scheduledTime": "15:23",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0012",
+            "category": "departure",
+            "scheduledTime": "15:27",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0053",
+            "category": "arrival",
+            "scheduledTime": "15:31",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0019",
+            "category": "departure",
+            "scheduledTime": "15:33",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0064",
+            "category": "arrival",
+            "scheduledTime": "15:38",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0021",
+            "category": "arrival",
+            "scheduledTime": "15:39",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0040",
+            "category": "arrival",
+            "scheduledTime": "15:40",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0005",
+            "category": "departure",
+            "scheduledTime": "15:42",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0021",
+            "category": "departure",
+            "scheduledTime": "15:51",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0054",
+            "category": "arrival",
+            "scheduledTime": "15:53",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0065",
+            "category": "arrival",
+            "scheduledTime": "15:59",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0022",
+            "category": "arrival",
+            "scheduledTime": "16:00",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-9ed4861f-0023",
+            "category": "departure",
+            "scheduledTime": "16:01",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0041",
+            "category": "arrival",
+            "scheduledTime": "16:02",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0013",
+            "category": "departure",
+            "scheduledTime": "16:05",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0010",
+            "category": "departure",
+            "scheduledTime": "16:12",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0017",
+            "category": "departure",
+            "scheduledTime": "16:13",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0055",
+            "category": "arrival",
+            "scheduledTime": "16:14",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0013",
+            "category": "departure",
+            "scheduledTime": "16:17",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0010",
+            "category": "departure",
+            "scheduledTime": "16:17",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0023",
+            "category": "arrival",
+            "scheduledTime": "16:21",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0013",
+            "category": "departure",
+            "scheduledTime": "16:21",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0066",
+            "category": "arrival",
+            "scheduledTime": "16:21",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0042",
+            "category": "arrival",
+            "scheduledTime": "16:23",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0020",
+            "category": "departure",
+            "scheduledTime": "16:26",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0006",
+            "category": "departure",
+            "scheduledTime": "16:35",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0056",
+            "category": "arrival",
+            "scheduledTime": "16:36",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0067",
+            "category": "arrival",
+            "scheduledTime": "16:42",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0024",
+            "category": "arrival",
+            "scheduledTime": "16:43",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0043",
+            "category": "arrival",
+            "scheduledTime": "16:44",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0022",
+            "category": "departure",
+            "scheduledTime": "16:45",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-9ed4861f-0024",
+            "category": "departure",
+            "scheduledTime": "16:54",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0057",
+            "category": "arrival",
+            "scheduledTime": "16:57",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0014",
+            "category": "departure",
+            "scheduledTime": "16:58",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0025",
+            "category": "arrival",
+            "scheduledTime": "17:04",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0001",
+            "category": "arrival",
+            "scheduledTime": "17:04",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0044",
+            "category": "arrival",
+            "scheduledTime": "17:05",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0011",
+            "category": "departure",
+            "scheduledTime": "17:05",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0018",
+            "category": "departure",
+            "scheduledTime": "17:06",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0014",
+            "category": "departure",
+            "scheduledTime": "17:10",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0011",
+            "category": "departure",
+            "scheduledTime": "17:10",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0014",
+            "category": "departure",
+            "scheduledTime": "17:14",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0021",
+            "category": "departure",
+            "scheduledTime": "17:19",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0058",
+            "category": "arrival",
+            "scheduledTime": "17:19",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0026",
+            "category": "arrival",
+            "scheduledTime": "17:25",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0002",
+            "category": "arrival",
+            "scheduledTime": "17:25",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0045",
+            "category": "arrival",
+            "scheduledTime": "17:26",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0007",
+            "category": "departure",
+            "scheduledTime": "17:29",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0023",
+            "category": "departure",
+            "scheduledTime": "17:38",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0059",
+            "category": "arrival",
+            "scheduledTime": "17:40",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0027",
+            "category": "arrival",
+            "scheduledTime": "17:46",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0003",
+            "category": "arrival",
+            "scheduledTime": "17:46",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0046",
+            "category": "arrival",
+            "scheduledTime": "17:47",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-9ed4861f-0025",
+            "category": "departure",
+            "scheduledTime": "17:48",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0015",
+            "category": "departure",
+            "scheduledTime": "17:51",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0012",
+            "category": "departure",
+            "scheduledTime": "17:58",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0019",
+            "category": "departure",
+            "scheduledTime": "18:00",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0060",
+            "category": "arrival",
+            "scheduledTime": "18:02",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0015",
+            "category": "departure",
+            "scheduledTime": "18:03",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0012",
+            "category": "departure",
+            "scheduledTime": "18:03",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0028",
+            "category": "arrival",
+            "scheduledTime": "18:07",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0015",
+            "category": "departure",
+            "scheduledTime": "18:07",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0004",
+            "category": "arrival",
+            "scheduledTime": "18:08",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0047",
+            "category": "arrival",
+            "scheduledTime": "18:09",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0022",
+            "category": "departure",
+            "scheduledTime": "18:13",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0008",
+            "category": "departure",
+            "scheduledTime": "18:22",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0061",
+            "category": "arrival",
+            "scheduledTime": "18:23",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0029",
+            "category": "arrival",
+            "scheduledTime": "18:28",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0005",
+            "category": "arrival",
+            "scheduledTime": "18:29",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0048",
+            "category": "arrival",
+            "scheduledTime": "18:30",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0024",
+            "category": "departure",
+            "scheduledTime": "18:31",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-9ed4861f-0026",
+            "category": "departure",
+            "scheduledTime": "18:41",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0016",
+            "category": "departure",
+            "scheduledTime": "18:45",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0062",
+            "category": "arrival",
+            "scheduledTime": "18:45",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0030",
+            "category": "arrival",
+            "scheduledTime": "18:50",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0049",
+            "category": "arrival",
+            "scheduledTime": "18:51",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0006",
+            "category": "arrival",
+            "scheduledTime": "18:51",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0013",
+            "category": "departure",
+            "scheduledTime": "18:52",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0020",
+            "category": "departure",
+            "scheduledTime": "18:53",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0016",
+            "category": "departure",
+            "scheduledTime": "18:57",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0013",
+            "category": "departure",
+            "scheduledTime": "18:57",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0016",
+            "category": "departure",
+            "scheduledTime": "19:01",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0023",
+            "category": "departure",
+            "scheduledTime": "19:06",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0063",
+            "category": "arrival",
+            "scheduledTime": "19:06",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0031",
+            "category": "arrival",
+            "scheduledTime": "19:11",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0050",
+            "category": "arrival",
+            "scheduledTime": "19:12",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0007",
+            "category": "arrival",
+            "scheduledTime": "19:12",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0009",
+            "category": "departure",
+            "scheduledTime": "19:15",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0025",
+            "category": "departure",
+            "scheduledTime": "19:25",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0064",
+            "category": "arrival",
+            "scheduledTime": "19:28",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0032",
+            "category": "arrival",
+            "scheduledTime": "19:32",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0051",
+            "category": "arrival",
+            "scheduledTime": "19:33",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-9ed4861f-0027",
+            "category": "departure",
+            "scheduledTime": "19:34",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0008",
+            "category": "arrival",
+            "scheduledTime": "19:34",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0017",
+            "category": "departure",
+            "scheduledTime": "19:38",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0014",
+            "category": "departure",
+            "scheduledTime": "19:45",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0021",
+            "category": "departure",
+            "scheduledTime": "19:46",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0065",
+            "category": "arrival",
+            "scheduledTime": "19:49",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0017",
+            "category": "departure",
+            "scheduledTime": "19:50",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0014",
+            "category": "departure",
+            "scheduledTime": "19:50",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0033",
+            "category": "arrival",
+            "scheduledTime": "19:53",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0017",
+            "category": "departure",
+            "scheduledTime": "19:54",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0052",
+            "category": "arrival",
+            "scheduledTime": "19:55",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0009",
+            "category": "arrival",
+            "scheduledTime": "19:55",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0024",
+            "category": "departure",
+            "scheduledTime": "19:59",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0010",
+            "category": "departure",
+            "scheduledTime": "20:09",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0066",
+            "category": "arrival",
+            "scheduledTime": "20:11",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0034",
+            "category": "arrival",
+            "scheduledTime": "20:14",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0053",
+            "category": "arrival",
+            "scheduledTime": "20:16",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0010",
+            "category": "arrival",
+            "scheduledTime": "20:17",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0026",
+            "category": "departure",
+            "scheduledTime": "20:18",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-9ed4861f-0001",
+            "category": "departure",
+            "scheduledTime": "20:28",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0018",
+            "category": "departure",
+            "scheduledTime": "20:31",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0067",
+            "category": "arrival",
+            "scheduledTime": "20:32",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0035",
+            "category": "arrival",
+            "scheduledTime": "20:36",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0054",
+            "category": "arrival",
+            "scheduledTime": "20:37",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0011",
+            "category": "arrival",
+            "scheduledTime": "20:38",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0015",
+            "category": "departure",
+            "scheduledTime": "20:38",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0022",
+            "category": "departure",
+            "scheduledTime": "20:40",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0018",
+            "category": "departure",
+            "scheduledTime": "20:43",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0015",
+            "category": "departure",
+            "scheduledTime": "20:43",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0018",
+            "category": "departure",
+            "scheduledTime": "20:47",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0025",
+            "category": "departure",
+            "scheduledTime": "20:53",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0001",
+            "category": "arrival",
+            "scheduledTime": "20:54",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0036",
+            "category": "arrival",
+            "scheduledTime": "20:57",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0055",
+            "category": "arrival",
+            "scheduledTime": "20:58",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0012",
+            "category": "arrival",
+            "scheduledTime": "21:00",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0011",
+            "category": "departure",
+            "scheduledTime": "21:02",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0027",
+            "category": "departure",
+            "scheduledTime": "21:11",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0002",
+            "category": "arrival",
+            "scheduledTime": "21:15",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0037",
+            "category": "arrival",
+            "scheduledTime": "21:18",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0056",
+            "category": "arrival",
+            "scheduledTime": "21:19",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-9ed4861f-0002",
+            "category": "departure",
+            "scheduledTime": "21:21",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0013",
+            "category": "arrival",
+            "scheduledTime": "21:21",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0019",
+            "category": "departure",
+            "scheduledTime": "21:25",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0016",
+            "category": "departure",
+            "scheduledTime": "21:32",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0023",
+            "category": "departure",
+            "scheduledTime": "21:33",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0003",
+            "category": "arrival",
+            "scheduledTime": "21:36",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0019",
+            "category": "departure",
+            "scheduledTime": "21:37",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0016",
+            "category": "departure",
+            "scheduledTime": "21:37",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0038",
+            "category": "arrival",
+            "scheduledTime": "21:39",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0057",
+            "category": "arrival",
+            "scheduledTime": "21:40",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0019",
+            "category": "departure",
+            "scheduledTime": "21:41",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0014",
+            "category": "arrival",
+            "scheduledTime": "21:43",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0026",
+            "category": "departure",
+            "scheduledTime": "21:46",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0012",
+            "category": "departure",
+            "scheduledTime": "21:55",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0004",
+            "category": "arrival",
+            "scheduledTime": "21:58",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0039",
+            "category": "arrival",
+            "scheduledTime": "22:00",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0058",
+            "category": "arrival",
+            "scheduledTime": "22:02",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0015",
+            "category": "arrival",
+            "scheduledTime": "22:04",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0001",
+            "category": "departure",
+            "scheduledTime": "22:05",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-9ed4861f-0003",
+            "category": "departure",
+            "scheduledTime": "22:14",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0020",
+            "category": "departure",
+            "scheduledTime": "22:18",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0005",
+            "category": "arrival",
+            "scheduledTime": "22:19",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0040",
+            "category": "arrival",
+            "scheduledTime": "22:21",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0059",
+            "category": "arrival",
+            "scheduledTime": "22:23",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0017",
+            "category": "departure",
+            "scheduledTime": "22:25",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0024",
+            "category": "departure",
+            "scheduledTime": "22:26",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0016",
+            "category": "arrival",
+            "scheduledTime": "22:26",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0020",
+            "category": "departure",
+            "scheduledTime": "22:30",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0017",
+            "category": "departure",
+            "scheduledTime": "22:30",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0020",
+            "category": "departure",
+            "scheduledTime": "22:34",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0027",
+            "category": "departure",
+            "scheduledTime": "22:39",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0006",
+            "category": "arrival",
+            "scheduledTime": "22:41",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0041",
+            "category": "arrival",
+            "scheduledTime": "22:43",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0060",
+            "category": "arrival",
+            "scheduledTime": "22:44",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0017",
+            "category": "arrival",
+            "scheduledTime": "22:47",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0013",
+            "category": "departure",
+            "scheduledTime": "22:49",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0002",
+            "category": "departure",
+            "scheduledTime": "22:58",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0007",
+            "category": "arrival",
+            "scheduledTime": "23:02",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0042",
+            "category": "arrival",
+            "scheduledTime": "23:04",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0061",
+            "category": "arrival",
+            "scheduledTime": "23:05",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-9ed4861f-0004",
+            "category": "departure",
+            "scheduledTime": "23:08",
+            "spawnPatternKey": "9ed4861f"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0018",
+            "category": "arrival",
+            "scheduledTime": "23:09",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-47dd1565-0021",
+            "category": "departure",
+            "scheduledTime": "23:11",
+            "spawnPatternKey": "47dd1565"
+        },
+        {
+            "id": "auth-cyyc-f82d4799-0018",
+            "category": "departure",
+            "scheduledTime": "23:18",
+            "spawnPatternKey": "f82d4799"
+        },
+        {
+            "id": "auth-cyyc-4dcddd7a-0025",
+            "category": "departure",
+            "scheduledTime": "23:20",
+            "spawnPatternKey": "4dcddd7a"
+        },
+        {
+            "id": "auth-cyyc-62699f13-0021",
+            "category": "departure",
+            "scheduledTime": "23:23",
+            "spawnPatternKey": "62699f13"
+        },
+        {
+            "id": "auth-cyyc-7331e3ec-0018",
+            "category": "departure",
+            "scheduledTime": "23:23",
+            "spawnPatternKey": "7331e3ec"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0008",
+            "category": "arrival",
+            "scheduledTime": "23:24",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0043",
+            "category": "arrival",
+            "scheduledTime": "23:25",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0062",
+            "category": "arrival",
+            "scheduledTime": "23:26",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-ef71d209-0021",
+            "category": "departure",
+            "scheduledTime": "23:27",
+            "spawnPatternKey": "ef71d209"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0019",
+            "category": "arrival",
+            "scheduledTime": "23:30",
+            "spawnPatternKey": "f70a1b35"
+        },
+        {
+            "id": "auth-cyyc-96e06c92-0001",
+            "category": "departure",
+            "scheduledTime": "23:33",
+            "spawnPatternKey": "96e06c92"
+        },
+        {
+            "id": "auth-cyyc-8610cc5f-0014",
+            "category": "departure",
+            "scheduledTime": "23:42",
+            "spawnPatternKey": "8610cc5f"
+        },
+        {
+            "id": "auth-cyyc-c22b5e82-0009",
+            "category": "arrival",
+            "scheduledTime": "23:45",
+            "spawnPatternKey": "c22b5e82"
+        },
+        {
+            "id": "auth-cyyc-aefd1622-0044",
+            "category": "arrival",
+            "scheduledTime": "23:46",
+            "spawnPatternKey": "aefd1622"
+        },
+        {
+            "id": "auth-cyyc-0e884cdf-0063",
+            "category": "arrival",
+            "scheduledTime": "23:47",
+            "spawnPatternKey": "0e884cdf"
+        },
+        {
+            "id": "auth-cyyc-0bd4f1e4-0003",
+            "category": "departure",
+            "scheduledTime": "23:51",
+            "spawnPatternKey": "0bd4f1e4"
+        },
+        {
+            "id": "auth-cyyc-f70a1b35-0020",
+            "category": "arrival",
+            "scheduledTime": "23:52",
+            "spawnPatternKey": "f70a1b35"
+        }
+    ]
+}

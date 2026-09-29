@@ -1,0 +1,4972 @@
+{
+    "schemaVersion": 2,
+    "profileType": "authored",
+    "airportIcao": "KFLL",
+    "timezone": "America/New_York",
+    "sampleDate": "2026-09-28",
+    "source": {
+        "name": "stringofpearls airport-authored spawn patterns",
+        "url": "https://github.com/blairhoddinott/stringofpearls/tree/master/assets/airports",
+        "retrievedAt": "2026-09-28",
+        "license": "MIT",
+        "coverage": "Deterministic representative profile compiled from reviewed airport-authored rates, routes, geometry, and airline rules; movements are generated and are not observed historical flights."
+    },
+    "flights": [
+        {
+            "id": "auth-kfll-b1143b5f-0001",
+            "category": "arrival",
+            "scheduledTime": "00:02",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0042",
+            "category": "arrival",
+            "scheduledTime": "00:02",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0031",
+            "category": "arrival",
+            "scheduledTime": "00:03",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-e2cbdc96-0010",
+            "category": "departure",
+            "scheduledTime": "00:06",
+            "spawnPatternKey": "e2cbdc96"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0040",
+            "category": "arrival",
+            "scheduledTime": "00:08",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-f9e02189-0006",
+            "category": "departure",
+            "scheduledTime": "00:09",
+            "spawnPatternKey": "f9e02189"
+        },
+        {
+            "id": "auth-kfll-44961adf-0040",
+            "category": "arrival",
+            "scheduledTime": "00:11",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-3ec9c835-0012",
+            "category": "departure",
+            "scheduledTime": "00:18",
+            "spawnPatternKey": "3ec9c835"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0012",
+            "category": "arrival",
+            "scheduledTime": "00:18",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-b08c84f1-0011",
+            "category": "departure",
+            "scheduledTime": "00:21",
+            "spawnPatternKey": "b08c84f1"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0031",
+            "category": "arrival",
+            "scheduledTime": "00:24",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-1f7993fd-0006",
+            "category": "departure",
+            "scheduledTime": "00:25",
+            "spawnPatternKey": "1f7993fd"
+        },
+        {
+            "id": "auth-kfll-e00d8d9e-0002",
+            "category": "departure",
+            "scheduledTime": "00:27",
+            "spawnPatternKey": "e00d8d9e"
+        },
+        {
+            "id": "auth-kfll-1f77c059-0011",
+            "category": "departure",
+            "scheduledTime": "00:28",
+            "spawnPatternKey": "1f77c059"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0022",
+            "category": "arrival",
+            "scheduledTime": "00:28",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-de997cfa-0002",
+            "category": "departure",
+            "scheduledTime": "00:30",
+            "spawnPatternKey": "de997cfa"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0028",
+            "category": "arrival",
+            "scheduledTime": "00:31",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0002",
+            "category": "arrival",
+            "scheduledTime": "00:33",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0043",
+            "category": "arrival",
+            "scheduledTime": "00:33",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0032",
+            "category": "arrival",
+            "scheduledTime": "00:34",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-a7bac871-0004",
+            "category": "departure",
+            "scheduledTime": "00:36",
+            "spawnPatternKey": "a7bac871"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0041",
+            "category": "arrival",
+            "scheduledTime": "00:40",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-44961adf-0041",
+            "category": "arrival",
+            "scheduledTime": "00:43",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-f422be57-0013",
+            "category": "departure",
+            "scheduledTime": "00:43",
+            "spawnPatternKey": "f422be57"
+        },
+        {
+            "id": "auth-kfll-24bd09ee-0013",
+            "category": "departure",
+            "scheduledTime": "00:49",
+            "spawnPatternKey": "24bd09ee"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0013",
+            "category": "arrival",
+            "scheduledTime": "00:49",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0032",
+            "category": "arrival",
+            "scheduledTime": "00:55",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-03c1c99e-0003",
+            "category": "departure",
+            "scheduledTime": "00:59",
+            "spawnPatternKey": "03c1c99e"
+        },
+        {
+            "id": "auth-kfll-2b2058b9-0010",
+            "category": "departure",
+            "scheduledTime": "01:00",
+            "spawnPatternKey": "2b2058b9"
+        },
+        {
+            "id": "auth-kfll-36e09c09-0014",
+            "category": "departure",
+            "scheduledTime": "01:00",
+            "spawnPatternKey": "36e09c09"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0023",
+            "category": "arrival",
+            "scheduledTime": "01:00",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-1c66f470-0014",
+            "category": "departure",
+            "scheduledTime": "01:01",
+            "spawnPatternKey": "1c66f470"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0029",
+            "category": "arrival",
+            "scheduledTime": "01:02",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-7f75ab51-0016",
+            "category": "departure",
+            "scheduledTime": "01:02",
+            "spawnPatternKey": "7f75ab51"
+        },
+        {
+            "id": "auth-kfll-b2230f55-0012",
+            "category": "departure",
+            "scheduledTime": "01:02",
+            "spawnPatternKey": "b2230f55"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0003",
+            "category": "arrival",
+            "scheduledTime": "01:04",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0033",
+            "category": "arrival",
+            "scheduledTime": "01:05",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-d267f206-0044",
+            "category": "arrival",
+            "scheduledTime": "01:05",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-207a831b-0013",
+            "category": "departure",
+            "scheduledTime": "01:08",
+            "spawnPatternKey": "207a831b"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0042",
+            "category": "arrival",
+            "scheduledTime": "01:11",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-93864e86-0005",
+            "category": "departure",
+            "scheduledTime": "01:13",
+            "spawnPatternKey": "93864e86"
+        },
+        {
+            "id": "auth-kfll-44961adf-0042",
+            "category": "arrival",
+            "scheduledTime": "01:14",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-8ccd3f4b-0006",
+            "category": "departure",
+            "scheduledTime": "01:20",
+            "spawnPatternKey": "8ccd3f4b"
+        },
+        {
+            "id": "auth-kfll-e2c3fc99-0008",
+            "category": "departure",
+            "scheduledTime": "01:20",
+            "spawnPatternKey": "e2c3fc99"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0014",
+            "category": "arrival",
+            "scheduledTime": "01:20",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-e3292279-0004",
+            "category": "departure",
+            "scheduledTime": "01:23",
+            "spawnPatternKey": "e3292279"
+        },
+        {
+            "id": "auth-kfll-e5505691-0014",
+            "category": "departure",
+            "scheduledTime": "01:23",
+            "spawnPatternKey": "e5505691"
+        },
+        {
+            "id": "auth-kfll-209e7de3-0003",
+            "category": "departure",
+            "scheduledTime": "01:24",
+            "spawnPatternKey": "209e7de3"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0033",
+            "category": "arrival",
+            "scheduledTime": "01:26",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-e2cbdc96-0011",
+            "category": "departure",
+            "scheduledTime": "01:31",
+            "spawnPatternKey": "e2cbdc96"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0024",
+            "category": "arrival",
+            "scheduledTime": "01:32",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0030",
+            "category": "arrival",
+            "scheduledTime": "01:33",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-f9e02189-0007",
+            "category": "departure",
+            "scheduledTime": "01:34",
+            "spawnPatternKey": "f9e02189"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0004",
+            "category": "arrival",
+            "scheduledTime": "01:35",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0045",
+            "category": "arrival",
+            "scheduledTime": "01:36",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0034",
+            "category": "arrival",
+            "scheduledTime": "01:37",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0043",
+            "category": "arrival",
+            "scheduledTime": "01:42",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-3ec9c835-0013",
+            "category": "departure",
+            "scheduledTime": "01:43",
+            "spawnPatternKey": "3ec9c835"
+        },
+        {
+            "id": "auth-kfll-1f7993fd-0007",
+            "category": "departure",
+            "scheduledTime": "01:45",
+            "spawnPatternKey": "1f7993fd"
+        },
+        {
+            "id": "auth-kfll-44961adf-0043",
+            "category": "arrival",
+            "scheduledTime": "01:45",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-b08c84f1-0012",
+            "category": "departure",
+            "scheduledTime": "01:45",
+            "spawnPatternKey": "b08c84f1"
+        },
+        {
+            "id": "auth-kfll-1f77c059-0012",
+            "category": "departure",
+            "scheduledTime": "01:48",
+            "spawnPatternKey": "1f77c059"
+        },
+        {
+            "id": "auth-kfll-e00d8d9e-0003",
+            "category": "departure",
+            "scheduledTime": "01:52",
+            "spawnPatternKey": "e00d8d9e"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0015",
+            "category": "arrival",
+            "scheduledTime": "01:52",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-de997cfa-0003",
+            "category": "departure",
+            "scheduledTime": "01:55",
+            "spawnPatternKey": "de997cfa"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0034",
+            "category": "arrival",
+            "scheduledTime": "01:58",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-a7bac871-0005",
+            "category": "departure",
+            "scheduledTime": "02:00",
+            "spawnPatternKey": "a7bac871"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0025",
+            "category": "arrival",
+            "scheduledTime": "02:04",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0031",
+            "category": "arrival",
+            "scheduledTime": "02:05",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0005",
+            "category": "arrival",
+            "scheduledTime": "02:07",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0046",
+            "category": "arrival",
+            "scheduledTime": "02:07",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0035",
+            "category": "arrival",
+            "scheduledTime": "02:08",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-f422be57-0014",
+            "category": "departure",
+            "scheduledTime": "02:08",
+            "spawnPatternKey": "f422be57"
+        },
+        {
+            "id": "auth-kfll-24bd09ee-0014",
+            "category": "departure",
+            "scheduledTime": "02:14",
+            "spawnPatternKey": "24bd09ee"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0044",
+            "category": "arrival",
+            "scheduledTime": "02:14",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-44961adf-0044",
+            "category": "arrival",
+            "scheduledTime": "02:17",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-03c1c99e-0004",
+            "category": "departure",
+            "scheduledTime": "02:19",
+            "spawnPatternKey": "03c1c99e"
+        },
+        {
+            "id": "auth-kfll-1c66f470-0015",
+            "category": "departure",
+            "scheduledTime": "02:21",
+            "spawnPatternKey": "1c66f470"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0016",
+            "category": "arrival",
+            "scheduledTime": "02:23",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-36e09c09-0015",
+            "category": "departure",
+            "scheduledTime": "02:24",
+            "spawnPatternKey": "36e09c09"
+        },
+        {
+            "id": "auth-kfll-2b2058b9-0011",
+            "category": "departure",
+            "scheduledTime": "02:25",
+            "spawnPatternKey": "2b2058b9"
+        },
+        {
+            "id": "auth-kfll-7f75ab51-0017",
+            "category": "departure",
+            "scheduledTime": "02:27",
+            "spawnPatternKey": "7f75ab51"
+        },
+        {
+            "id": "auth-kfll-b2230f55-0013",
+            "category": "departure",
+            "scheduledTime": "02:27",
+            "spawnPatternKey": "b2230f55"
+        },
+        {
+            "id": "auth-kfll-207a831b-0014",
+            "category": "departure",
+            "scheduledTime": "02:28",
+            "spawnPatternKey": "207a831b"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0035",
+            "category": "arrival",
+            "scheduledTime": "02:29",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0032",
+            "category": "arrival",
+            "scheduledTime": "02:36",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0026",
+            "category": "arrival",
+            "scheduledTime": "02:36",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-93864e86-0006",
+            "category": "departure",
+            "scheduledTime": "02:38",
+            "spawnPatternKey": "93864e86"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0006",
+            "category": "arrival",
+            "scheduledTime": "02:38",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0036",
+            "category": "arrival",
+            "scheduledTime": "02:39",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-d267f206-0001",
+            "category": "arrival",
+            "scheduledTime": "02:39",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0045",
+            "category": "arrival",
+            "scheduledTime": "02:45",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-8ccd3f4b-0007",
+            "category": "departure",
+            "scheduledTime": "02:45",
+            "spawnPatternKey": "8ccd3f4b"
+        },
+        {
+            "id": "auth-kfll-e2c3fc99-0009",
+            "category": "departure",
+            "scheduledTime": "02:45",
+            "spawnPatternKey": "e2c3fc99"
+        },
+        {
+            "id": "auth-kfll-e3292279-0005",
+            "category": "departure",
+            "scheduledTime": "02:47",
+            "spawnPatternKey": "e3292279"
+        },
+        {
+            "id": "auth-kfll-e5505691-0015",
+            "category": "departure",
+            "scheduledTime": "02:47",
+            "spawnPatternKey": "e5505691"
+        },
+        {
+            "id": "auth-kfll-44961adf-0045",
+            "category": "arrival",
+            "scheduledTime": "02:48",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-209e7de3-0004",
+            "category": "departure",
+            "scheduledTime": "02:49",
+            "spawnPatternKey": "209e7de3"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0017",
+            "category": "arrival",
+            "scheduledTime": "02:54",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-e2cbdc96-0012",
+            "category": "departure",
+            "scheduledTime": "02:55",
+            "spawnPatternKey": "e2cbdc96"
+        },
+        {
+            "id": "auth-kfll-f9e02189-0008",
+            "category": "departure",
+            "scheduledTime": "02:58",
+            "spawnPatternKey": "f9e02189"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0036",
+            "category": "arrival",
+            "scheduledTime": "03:00",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-1f7993fd-0008",
+            "category": "departure",
+            "scheduledTime": "03:05",
+            "spawnPatternKey": "1f7993fd"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0033",
+            "category": "arrival",
+            "scheduledTime": "03:07",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-1f77c059-0013",
+            "category": "departure",
+            "scheduledTime": "03:08",
+            "spawnPatternKey": "1f77c059"
+        },
+        {
+            "id": "auth-kfll-3ec9c835-0014",
+            "category": "departure",
+            "scheduledTime": "03:08",
+            "spawnPatternKey": "3ec9c835"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0027",
+            "category": "arrival",
+            "scheduledTime": "03:08",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0007",
+            "category": "arrival",
+            "scheduledTime": "03:09",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0037",
+            "category": "arrival",
+            "scheduledTime": "03:10",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-b08c84f1-0013",
+            "category": "departure",
+            "scheduledTime": "03:10",
+            "spawnPatternKey": "b08c84f1"
+        },
+        {
+            "id": "auth-kfll-d267f206-0002",
+            "category": "arrival",
+            "scheduledTime": "03:10",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0046",
+            "category": "arrival",
+            "scheduledTime": "03:16",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-e00d8d9e-0004",
+            "category": "departure",
+            "scheduledTime": "03:17",
+            "spawnPatternKey": "e00d8d9e"
+        },
+        {
+            "id": "auth-kfll-44961adf-0046",
+            "category": "arrival",
+            "scheduledTime": "03:19",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-de997cfa-0004",
+            "category": "departure",
+            "scheduledTime": "03:20",
+            "spawnPatternKey": "de997cfa"
+        },
+        {
+            "id": "auth-kfll-a7bac871-0006",
+            "category": "departure",
+            "scheduledTime": "03:25",
+            "spawnPatternKey": "a7bac871"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0018",
+            "category": "arrival",
+            "scheduledTime": "03:26",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0037",
+            "category": "arrival",
+            "scheduledTime": "03:31",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-f422be57-0015",
+            "category": "departure",
+            "scheduledTime": "03:32",
+            "spawnPatternKey": "f422be57"
+        },
+        {
+            "id": "auth-kfll-24bd09ee-0015",
+            "category": "departure",
+            "scheduledTime": "03:38",
+            "spawnPatternKey": "24bd09ee"
+        },
+        {
+            "id": "auth-kfll-03c1c99e-0005",
+            "category": "departure",
+            "scheduledTime": "03:39",
+            "spawnPatternKey": "03c1c99e"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0034",
+            "category": "arrival",
+            "scheduledTime": "03:39",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0028",
+            "category": "arrival",
+            "scheduledTime": "03:40",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-1c66f470-0016",
+            "category": "departure",
+            "scheduledTime": "03:41",
+            "spawnPatternKey": "1c66f470"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0008",
+            "category": "arrival",
+            "scheduledTime": "03:41",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0003",
+            "category": "arrival",
+            "scheduledTime": "03:41",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0038",
+            "category": "arrival",
+            "scheduledTime": "03:42",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-207a831b-0015",
+            "category": "departure",
+            "scheduledTime": "03:48",
+            "spawnPatternKey": "207a831b"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0001",
+            "category": "arrival",
+            "scheduledTime": "03:48",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-2b2058b9-0012",
+            "category": "departure",
+            "scheduledTime": "03:49",
+            "spawnPatternKey": "2b2058b9"
+        },
+        {
+            "id": "auth-kfll-36e09c09-0016",
+            "category": "departure",
+            "scheduledTime": "03:49",
+            "spawnPatternKey": "36e09c09"
+        },
+        {
+            "id": "auth-kfll-44961adf-0001",
+            "category": "arrival",
+            "scheduledTime": "03:51",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-7f75ab51-0001",
+            "category": "departure",
+            "scheduledTime": "03:52",
+            "spawnPatternKey": "7f75ab51"
+        },
+        {
+            "id": "auth-kfll-b2230f55-0014",
+            "category": "departure",
+            "scheduledTime": "03:52",
+            "spawnPatternKey": "b2230f55"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0019",
+            "category": "arrival",
+            "scheduledTime": "03:57",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-93864e86-0007",
+            "category": "departure",
+            "scheduledTime": "04:03",
+            "spawnPatternKey": "93864e86"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0038",
+            "category": "arrival",
+            "scheduledTime": "04:03",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-8ccd3f4b-0008",
+            "category": "departure",
+            "scheduledTime": "04:09",
+            "spawnPatternKey": "8ccd3f4b"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0035",
+            "category": "arrival",
+            "scheduledTime": "04:10",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-e2c3fc99-0010",
+            "category": "departure",
+            "scheduledTime": "04:10",
+            "spawnPatternKey": "e2c3fc99"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0009",
+            "category": "arrival",
+            "scheduledTime": "04:12",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0004",
+            "category": "arrival",
+            "scheduledTime": "04:12",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-e3292279-0006",
+            "category": "departure",
+            "scheduledTime": "04:12",
+            "spawnPatternKey": "e3292279"
+        },
+        {
+            "id": "auth-kfll-e5505691-0016",
+            "category": "departure",
+            "scheduledTime": "04:12",
+            "spawnPatternKey": "e5505691"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0029",
+            "category": "arrival",
+            "scheduledTime": "04:12",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-209e7de3-0005",
+            "category": "departure",
+            "scheduledTime": "04:13",
+            "spawnPatternKey": "209e7de3"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0039",
+            "category": "arrival",
+            "scheduledTime": "04:13",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0002",
+            "category": "arrival",
+            "scheduledTime": "04:19",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-e2cbdc96-0013",
+            "category": "departure",
+            "scheduledTime": "04:20",
+            "spawnPatternKey": "e2cbdc96"
+        },
+        {
+            "id": "auth-kfll-44961adf-0002",
+            "category": "arrival",
+            "scheduledTime": "04:22",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-f9e02189-0009",
+            "category": "departure",
+            "scheduledTime": "04:23",
+            "spawnPatternKey": "f9e02189"
+        },
+        {
+            "id": "auth-kfll-1f7993fd-0009",
+            "category": "departure",
+            "scheduledTime": "04:25",
+            "spawnPatternKey": "1f7993fd"
+        },
+        {
+            "id": "auth-kfll-1f77c059-0014",
+            "category": "departure",
+            "scheduledTime": "04:28",
+            "spawnPatternKey": "1f77c059"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0020",
+            "category": "arrival",
+            "scheduledTime": "04:28",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-3ec9c835-0015",
+            "category": "departure",
+            "scheduledTime": "04:32",
+            "spawnPatternKey": "3ec9c835"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0039",
+            "category": "arrival",
+            "scheduledTime": "04:34",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-b08c84f1-0014",
+            "category": "departure",
+            "scheduledTime": "04:35",
+            "spawnPatternKey": "b08c84f1"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0036",
+            "category": "arrival",
+            "scheduledTime": "04:41",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-e00d8d9e-0005",
+            "category": "departure",
+            "scheduledTime": "04:41",
+            "spawnPatternKey": "e00d8d9e"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0010",
+            "category": "arrival",
+            "scheduledTime": "04:43",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0040",
+            "category": "arrival",
+            "scheduledTime": "04:44",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-d267f206-0005",
+            "category": "arrival",
+            "scheduledTime": "04:44",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-de997cfa-0005",
+            "category": "departure",
+            "scheduledTime": "04:44",
+            "spawnPatternKey": "de997cfa"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0030",
+            "category": "arrival",
+            "scheduledTime": "04:44",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0003",
+            "category": "arrival",
+            "scheduledTime": "04:50",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-a7bac871-0007",
+            "category": "departure",
+            "scheduledTime": "04:50",
+            "spawnPatternKey": "a7bac871"
+        },
+        {
+            "id": "auth-kfll-44961adf-0003",
+            "category": "arrival",
+            "scheduledTime": "04:53",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-f422be57-0016",
+            "category": "departure",
+            "scheduledTime": "04:57",
+            "spawnPatternKey": "f422be57"
+        },
+        {
+            "id": "auth-kfll-03c1c99e-0006",
+            "category": "departure",
+            "scheduledTime": "04:59",
+            "spawnPatternKey": "03c1c99e"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0021",
+            "category": "arrival",
+            "scheduledTime": "05:00",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-1c66f470-0017",
+            "category": "departure",
+            "scheduledTime": "05:01",
+            "spawnPatternKey": "1c66f470"
+        },
+        {
+            "id": "auth-kfll-24bd09ee-0016",
+            "category": "departure",
+            "scheduledTime": "05:03",
+            "spawnPatternKey": "24bd09ee"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0040",
+            "category": "arrival",
+            "scheduledTime": "05:05",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-207a831b-0016",
+            "category": "departure",
+            "scheduledTime": "05:08",
+            "spawnPatternKey": "207a831b"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0037",
+            "category": "arrival",
+            "scheduledTime": "05:12",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-2b2058b9-0013",
+            "category": "departure",
+            "scheduledTime": "05:14",
+            "spawnPatternKey": "2b2058b9"
+        },
+        {
+            "id": "auth-kfll-36e09c09-0017",
+            "category": "departure",
+            "scheduledTime": "05:14",
+            "spawnPatternKey": "36e09c09"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0011",
+            "category": "arrival",
+            "scheduledTime": "05:15",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0006",
+            "category": "arrival",
+            "scheduledTime": "05:15",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0041",
+            "category": "arrival",
+            "scheduledTime": "05:16",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-7f75ab51-0002",
+            "category": "departure",
+            "scheduledTime": "05:16",
+            "spawnPatternKey": "7f75ab51"
+        },
+        {
+            "id": "auth-kfll-b2230f55-0015",
+            "category": "departure",
+            "scheduledTime": "05:16",
+            "spawnPatternKey": "b2230f55"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0031",
+            "category": "arrival",
+            "scheduledTime": "05:16",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0004",
+            "category": "arrival",
+            "scheduledTime": "05:21",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-44961adf-0004",
+            "category": "arrival",
+            "scheduledTime": "05:24",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-93864e86-0008",
+            "category": "departure",
+            "scheduledTime": "05:27",
+            "spawnPatternKey": "93864e86"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0022",
+            "category": "arrival",
+            "scheduledTime": "05:31",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-8ccd3f4b-0009",
+            "category": "departure",
+            "scheduledTime": "05:34",
+            "spawnPatternKey": "8ccd3f4b"
+        },
+        {
+            "id": "auth-kfll-e2c3fc99-0011",
+            "category": "departure",
+            "scheduledTime": "05:35",
+            "spawnPatternKey": "e2c3fc99"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0041",
+            "category": "arrival",
+            "scheduledTime": "05:37",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-e3292279-0007",
+            "category": "departure",
+            "scheduledTime": "05:37",
+            "spawnPatternKey": "e3292279"
+        },
+        {
+            "id": "auth-kfll-e5505691-0017",
+            "category": "departure",
+            "scheduledTime": "05:37",
+            "spawnPatternKey": "e5505691"
+        },
+        {
+            "id": "auth-kfll-209e7de3-0006",
+            "category": "departure",
+            "scheduledTime": "05:38",
+            "spawnPatternKey": "209e7de3"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0038",
+            "category": "arrival",
+            "scheduledTime": "05:44",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-1f7993fd-0010",
+            "category": "departure",
+            "scheduledTime": "05:45",
+            "spawnPatternKey": "1f7993fd"
+        },
+        {
+            "id": "auth-kfll-e2cbdc96-0014",
+            "category": "departure",
+            "scheduledTime": "05:45",
+            "spawnPatternKey": "e2cbdc96"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0012",
+            "category": "arrival",
+            "scheduledTime": "05:46",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0007",
+            "category": "arrival",
+            "scheduledTime": "05:46",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0042",
+            "category": "arrival",
+            "scheduledTime": "05:47",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-1f77c059-0015",
+            "category": "departure",
+            "scheduledTime": "05:48",
+            "spawnPatternKey": "1f77c059"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0032",
+            "category": "arrival",
+            "scheduledTime": "05:48",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-f9e02189-0010",
+            "category": "departure",
+            "scheduledTime": "05:48",
+            "spawnPatternKey": "f9e02189"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0005",
+            "category": "arrival",
+            "scheduledTime": "05:53",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-44961adf-0005",
+            "category": "arrival",
+            "scheduledTime": "05:56",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-3ec9c835-0016",
+            "category": "departure",
+            "scheduledTime": "05:57",
+            "spawnPatternKey": "3ec9c835"
+        },
+        {
+            "id": "auth-kfll-b08c84f1-0015",
+            "category": "departure",
+            "scheduledTime": "05:59",
+            "spawnPatternKey": "b08c84f1"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0023",
+            "category": "arrival",
+            "scheduledTime": "06:02",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-e00d8d9e-0006",
+            "category": "departure",
+            "scheduledTime": "06:06",
+            "spawnPatternKey": "e00d8d9e"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0042",
+            "category": "arrival",
+            "scheduledTime": "06:08",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-de997cfa-0006",
+            "category": "departure",
+            "scheduledTime": "06:09",
+            "spawnPatternKey": "de997cfa"
+        },
+        {
+            "id": "auth-kfll-a7bac871-0008",
+            "category": "departure",
+            "scheduledTime": "06:14",
+            "spawnPatternKey": "a7bac871"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0039",
+            "category": "arrival",
+            "scheduledTime": "06:15",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0013",
+            "category": "arrival",
+            "scheduledTime": "06:17",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0043",
+            "category": "arrival",
+            "scheduledTime": "06:18",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-d267f206-0008",
+            "category": "arrival",
+            "scheduledTime": "06:18",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-03c1c99e-0007",
+            "category": "departure",
+            "scheduledTime": "06:19",
+            "spawnPatternKey": "03c1c99e"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0033",
+            "category": "arrival",
+            "scheduledTime": "06:20",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-1c66f470-0018",
+            "category": "departure",
+            "scheduledTime": "06:21",
+            "spawnPatternKey": "1c66f470"
+        },
+        {
+            "id": "auth-kfll-f422be57-0017",
+            "category": "departure",
+            "scheduledTime": "06:22",
+            "spawnPatternKey": "f422be57"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0006",
+            "category": "arrival",
+            "scheduledTime": "06:24",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-44961adf-0006",
+            "category": "arrival",
+            "scheduledTime": "06:27",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-207a831b-0017",
+            "category": "departure",
+            "scheduledTime": "06:28",
+            "spawnPatternKey": "207a831b"
+        },
+        {
+            "id": "auth-kfll-24bd09ee-0017",
+            "category": "departure",
+            "scheduledTime": "06:28",
+            "spawnPatternKey": "24bd09ee"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0024",
+            "category": "arrival",
+            "scheduledTime": "06:34",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-2b2058b9-0014",
+            "category": "departure",
+            "scheduledTime": "06:39",
+            "spawnPatternKey": "2b2058b9"
+        },
+        {
+            "id": "auth-kfll-36e09c09-0001",
+            "category": "departure",
+            "scheduledTime": "06:39",
+            "spawnPatternKey": "36e09c09"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0043",
+            "category": "arrival",
+            "scheduledTime": "06:39",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-7f75ab51-0003",
+            "category": "departure",
+            "scheduledTime": "06:41",
+            "spawnPatternKey": "7f75ab51"
+        },
+        {
+            "id": "auth-kfll-b2230f55-0016",
+            "category": "departure",
+            "scheduledTime": "06:41",
+            "spawnPatternKey": "b2230f55"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0040",
+            "category": "arrival",
+            "scheduledTime": "06:46",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0014",
+            "category": "arrival",
+            "scheduledTime": "06:48",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0009",
+            "category": "arrival",
+            "scheduledTime": "06:49",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0044",
+            "category": "arrival",
+            "scheduledTime": "06:50",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-93864e86-0009",
+            "category": "departure",
+            "scheduledTime": "06:52",
+            "spawnPatternKey": "93864e86"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0034",
+            "category": "arrival",
+            "scheduledTime": "06:52",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0007",
+            "category": "arrival",
+            "scheduledTime": "06:55",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-44961adf-0007",
+            "category": "arrival",
+            "scheduledTime": "06:58",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-8ccd3f4b-0010",
+            "category": "departure",
+            "scheduledTime": "06:59",
+            "spawnPatternKey": "8ccd3f4b"
+        },
+        {
+            "id": "auth-kfll-e2c3fc99-0012",
+            "category": "departure",
+            "scheduledTime": "06:59",
+            "spawnPatternKey": "e2c3fc99"
+        },
+        {
+            "id": "auth-kfll-e3292279-0008",
+            "category": "departure",
+            "scheduledTime": "07:01",
+            "spawnPatternKey": "e3292279"
+        },
+        {
+            "id": "auth-kfll-e5505691-0001",
+            "category": "departure",
+            "scheduledTime": "07:02",
+            "spawnPatternKey": "e5505691"
+        },
+        {
+            "id": "auth-kfll-209e7de3-0007",
+            "category": "departure",
+            "scheduledTime": "07:03",
+            "spawnPatternKey": "209e7de3"
+        },
+        {
+            "id": "auth-kfll-1f7993fd-0011",
+            "category": "departure",
+            "scheduledTime": "07:05",
+            "spawnPatternKey": "1f7993fd"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0025",
+            "category": "arrival",
+            "scheduledTime": "07:05",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-1f77c059-0016",
+            "category": "departure",
+            "scheduledTime": "07:08",
+            "spawnPatternKey": "1f77c059"
+        },
+        {
+            "id": "auth-kfll-e2cbdc96-0015",
+            "category": "departure",
+            "scheduledTime": "07:09",
+            "spawnPatternKey": "e2cbdc96"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0044",
+            "category": "arrival",
+            "scheduledTime": "07:11",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-f9e02189-0011",
+            "category": "departure",
+            "scheduledTime": "07:13",
+            "spawnPatternKey": "f9e02189"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0041",
+            "category": "arrival",
+            "scheduledTime": "07:18",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0015",
+            "category": "arrival",
+            "scheduledTime": "07:20",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0010",
+            "category": "arrival",
+            "scheduledTime": "07:20",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0045",
+            "category": "arrival",
+            "scheduledTime": "07:21",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-3ec9c835-0017",
+            "category": "departure",
+            "scheduledTime": "07:22",
+            "spawnPatternKey": "3ec9c835"
+        },
+        {
+            "id": "auth-kfll-b08c84f1-0016",
+            "category": "departure",
+            "scheduledTime": "07:24",
+            "spawnPatternKey": "b08c84f1"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0035",
+            "category": "arrival",
+            "scheduledTime": "07:24",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0008",
+            "category": "arrival",
+            "scheduledTime": "07:27",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-44961adf-0008",
+            "category": "arrival",
+            "scheduledTime": "07:30",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-e00d8d9e-0007",
+            "category": "departure",
+            "scheduledTime": "07:31",
+            "spawnPatternKey": "e00d8d9e"
+        },
+        {
+            "id": "auth-kfll-de997cfa-0007",
+            "category": "departure",
+            "scheduledTime": "07:34",
+            "spawnPatternKey": "de997cfa"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0026",
+            "category": "arrival",
+            "scheduledTime": "07:36",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-03c1c99e-0008",
+            "category": "departure",
+            "scheduledTime": "07:39",
+            "spawnPatternKey": "03c1c99e"
+        },
+        {
+            "id": "auth-kfll-a7bac871-0009",
+            "category": "departure",
+            "scheduledTime": "07:39",
+            "spawnPatternKey": "a7bac871"
+        },
+        {
+            "id": "auth-kfll-1c66f470-0001",
+            "category": "departure",
+            "scheduledTime": "07:41",
+            "spawnPatternKey": "1c66f470"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0045",
+            "category": "arrival",
+            "scheduledTime": "07:42",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-f422be57-0001",
+            "category": "departure",
+            "scheduledTime": "07:47",
+            "spawnPatternKey": "f422be57"
+        },
+        {
+            "id": "auth-kfll-207a831b-0018",
+            "category": "departure",
+            "scheduledTime": "07:48",
+            "spawnPatternKey": "207a831b"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0042",
+            "category": "arrival",
+            "scheduledTime": "07:49",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0016",
+            "category": "arrival",
+            "scheduledTime": "07:51",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0046",
+            "category": "arrival",
+            "scheduledTime": "07:52",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-d267f206-0011",
+            "category": "arrival",
+            "scheduledTime": "07:52",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-24bd09ee-0001",
+            "category": "departure",
+            "scheduledTime": "07:53",
+            "spawnPatternKey": "24bd09ee"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0036",
+            "category": "arrival",
+            "scheduledTime": "07:56",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0009",
+            "category": "arrival",
+            "scheduledTime": "07:58",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-44961adf-0009",
+            "category": "arrival",
+            "scheduledTime": "08:01",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-2b2058b9-0015",
+            "category": "departure",
+            "scheduledTime": "08:03",
+            "spawnPatternKey": "2b2058b9"
+        },
+        {
+            "id": "auth-kfll-36e09c09-0002",
+            "category": "departure",
+            "scheduledTime": "08:03",
+            "spawnPatternKey": "36e09c09"
+        },
+        {
+            "id": "auth-kfll-7f75ab51-0004",
+            "category": "departure",
+            "scheduledTime": "08:06",
+            "spawnPatternKey": "7f75ab51"
+        },
+        {
+            "id": "auth-kfll-b2230f55-0017",
+            "category": "departure",
+            "scheduledTime": "08:06",
+            "spawnPatternKey": "b2230f55"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0027",
+            "category": "arrival",
+            "scheduledTime": "08:07",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0046",
+            "category": "arrival",
+            "scheduledTime": "08:13",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-93864e86-0010",
+            "category": "departure",
+            "scheduledTime": "08:17",
+            "spawnPatternKey": "93864e86"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0043",
+            "category": "arrival",
+            "scheduledTime": "08:20",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0017",
+            "category": "arrival",
+            "scheduledTime": "08:22",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0012",
+            "category": "arrival",
+            "scheduledTime": "08:23",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0001",
+            "category": "arrival",
+            "scheduledTime": "08:24",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-8ccd3f4b-0011",
+            "category": "departure",
+            "scheduledTime": "08:24",
+            "spawnPatternKey": "8ccd3f4b"
+        },
+        {
+            "id": "auth-kfll-e2c3fc99-0013",
+            "category": "departure",
+            "scheduledTime": "08:24",
+            "spawnPatternKey": "e2c3fc99"
+        },
+        {
+            "id": "auth-kfll-1f7993fd-0012",
+            "category": "departure",
+            "scheduledTime": "08:25",
+            "spawnPatternKey": "1f7993fd"
+        },
+        {
+            "id": "auth-kfll-e3292279-0009",
+            "category": "departure",
+            "scheduledTime": "08:26",
+            "spawnPatternKey": "e3292279"
+        },
+        {
+            "id": "auth-kfll-e5505691-0002",
+            "category": "departure",
+            "scheduledTime": "08:26",
+            "spawnPatternKey": "e5505691"
+        },
+        {
+            "id": "auth-kfll-209e7de3-0008",
+            "category": "departure",
+            "scheduledTime": "08:27",
+            "spawnPatternKey": "209e7de3"
+        },
+        {
+            "id": "auth-kfll-1f77c059-0017",
+            "category": "departure",
+            "scheduledTime": "08:28",
+            "spawnPatternKey": "1f77c059"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0037",
+            "category": "arrival",
+            "scheduledTime": "08:28",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0010",
+            "category": "arrival",
+            "scheduledTime": "08:29",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-44961adf-0010",
+            "category": "arrival",
+            "scheduledTime": "08:32",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-e2cbdc96-0016",
+            "category": "departure",
+            "scheduledTime": "08:34",
+            "spawnPatternKey": "e2cbdc96"
+        },
+        {
+            "id": "auth-kfll-f9e02189-0012",
+            "category": "departure",
+            "scheduledTime": "08:37",
+            "spawnPatternKey": "f9e02189"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0028",
+            "category": "arrival",
+            "scheduledTime": "08:39",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0001",
+            "category": "arrival",
+            "scheduledTime": "08:45",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-3ec9c835-0001",
+            "category": "departure",
+            "scheduledTime": "08:47",
+            "spawnPatternKey": "3ec9c835"
+        },
+        {
+            "id": "auth-kfll-b08c84f1-0017",
+            "category": "departure",
+            "scheduledTime": "08:49",
+            "spawnPatternKey": "b08c84f1"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0044",
+            "category": "arrival",
+            "scheduledTime": "08:52",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0018",
+            "category": "arrival",
+            "scheduledTime": "08:54",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0013",
+            "category": "arrival",
+            "scheduledTime": "08:54",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0002",
+            "category": "arrival",
+            "scheduledTime": "08:55",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-e00d8d9e-0008",
+            "category": "departure",
+            "scheduledTime": "08:55",
+            "spawnPatternKey": "e00d8d9e"
+        },
+        {
+            "id": "auth-kfll-de997cfa-0008",
+            "category": "departure",
+            "scheduledTime": "08:58",
+            "spawnPatternKey": "de997cfa"
+        },
+        {
+            "id": "auth-kfll-03c1c99e-0009",
+            "category": "departure",
+            "scheduledTime": "08:59",
+            "spawnPatternKey": "03c1c99e"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0038",
+            "category": "arrival",
+            "scheduledTime": "09:00",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-1c66f470-0002",
+            "category": "departure",
+            "scheduledTime": "09:01",
+            "spawnPatternKey": "1c66f470"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0011",
+            "category": "arrival",
+            "scheduledTime": "09:01",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-44961adf-0011",
+            "category": "arrival",
+            "scheduledTime": "09:04",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-a7bac871-0010",
+            "category": "departure",
+            "scheduledTime": "09:04",
+            "spawnPatternKey": "a7bac871"
+        },
+        {
+            "id": "auth-kfll-207a831b-0001",
+            "category": "departure",
+            "scheduledTime": "09:08",
+            "spawnPatternKey": "207a831b"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0029",
+            "category": "arrival",
+            "scheduledTime": "09:10",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-f422be57-0002",
+            "category": "departure",
+            "scheduledTime": "09:11",
+            "spawnPatternKey": "f422be57"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0002",
+            "category": "arrival",
+            "scheduledTime": "09:16",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-24bd09ee-0002",
+            "category": "departure",
+            "scheduledTime": "09:17",
+            "spawnPatternKey": "24bd09ee"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0045",
+            "category": "arrival",
+            "scheduledTime": "09:23",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0019",
+            "category": "arrival",
+            "scheduledTime": "09:25",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0014",
+            "category": "arrival",
+            "scheduledTime": "09:25",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0003",
+            "category": "arrival",
+            "scheduledTime": "09:26",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-2b2058b9-0016",
+            "category": "departure",
+            "scheduledTime": "09:28",
+            "spawnPatternKey": "2b2058b9"
+        },
+        {
+            "id": "auth-kfll-36e09c09-0003",
+            "category": "departure",
+            "scheduledTime": "09:28",
+            "spawnPatternKey": "36e09c09"
+        },
+        {
+            "id": "auth-kfll-7f75ab51-0005",
+            "category": "departure",
+            "scheduledTime": "09:30",
+            "spawnPatternKey": "7f75ab51"
+        },
+        {
+            "id": "auth-kfll-b2230f55-0001",
+            "category": "departure",
+            "scheduledTime": "09:31",
+            "spawnPatternKey": "b2230f55"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0012",
+            "category": "arrival",
+            "scheduledTime": "09:32",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0039",
+            "category": "arrival",
+            "scheduledTime": "09:32",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-44961adf-0012",
+            "category": "arrival",
+            "scheduledTime": "09:35",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0030",
+            "category": "arrival",
+            "scheduledTime": "09:41",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-93864e86-0011",
+            "category": "departure",
+            "scheduledTime": "09:42",
+            "spawnPatternKey": "93864e86"
+        },
+        {
+            "id": "auth-kfll-1f7993fd-0013",
+            "category": "departure",
+            "scheduledTime": "09:45",
+            "spawnPatternKey": "1f7993fd"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0003",
+            "category": "arrival",
+            "scheduledTime": "09:47",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-1f77c059-0018",
+            "category": "departure",
+            "scheduledTime": "09:48",
+            "spawnPatternKey": "1f77c059"
+        },
+        {
+            "id": "auth-kfll-8ccd3f4b-0012",
+            "category": "departure",
+            "scheduledTime": "09:48",
+            "spawnPatternKey": "8ccd3f4b"
+        },
+        {
+            "id": "auth-kfll-e2c3fc99-0014",
+            "category": "departure",
+            "scheduledTime": "09:49",
+            "spawnPatternKey": "e2c3fc99"
+        },
+        {
+            "id": "auth-kfll-e3292279-0010",
+            "category": "departure",
+            "scheduledTime": "09:51",
+            "spawnPatternKey": "e3292279"
+        },
+        {
+            "id": "auth-kfll-e5505691-0003",
+            "category": "departure",
+            "scheduledTime": "09:51",
+            "spawnPatternKey": "e5505691"
+        },
+        {
+            "id": "auth-kfll-209e7de3-0009",
+            "category": "departure",
+            "scheduledTime": "09:52",
+            "spawnPatternKey": "209e7de3"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0046",
+            "category": "arrival",
+            "scheduledTime": "09:54",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0020",
+            "category": "arrival",
+            "scheduledTime": "09:56",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0004",
+            "category": "arrival",
+            "scheduledTime": "09:57",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-d267f206-0015",
+            "category": "arrival",
+            "scheduledTime": "09:57",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-e2cbdc96-0017",
+            "category": "departure",
+            "scheduledTime": "09:59",
+            "spawnPatternKey": "e2cbdc96"
+        },
+        {
+            "id": "auth-kfll-f9e02189-0013",
+            "category": "departure",
+            "scheduledTime": "10:02",
+            "spawnPatternKey": "f9e02189"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0013",
+            "category": "arrival",
+            "scheduledTime": "10:03",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0040",
+            "category": "arrival",
+            "scheduledTime": "10:04",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-44961adf-0013",
+            "category": "arrival",
+            "scheduledTime": "10:06",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-3ec9c835-0002",
+            "category": "departure",
+            "scheduledTime": "10:11",
+            "spawnPatternKey": "3ec9c835"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0031",
+            "category": "arrival",
+            "scheduledTime": "10:13",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-b08c84f1-0001",
+            "category": "departure",
+            "scheduledTime": "10:14",
+            "spawnPatternKey": "b08c84f1"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0004",
+            "category": "arrival",
+            "scheduledTime": "10:18",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-03c1c99e-0010",
+            "category": "departure",
+            "scheduledTime": "10:19",
+            "spawnPatternKey": "03c1c99e"
+        },
+        {
+            "id": "auth-kfll-e00d8d9e-0009",
+            "category": "departure",
+            "scheduledTime": "10:20",
+            "spawnPatternKey": "e00d8d9e"
+        },
+        {
+            "id": "auth-kfll-1c66f470-0003",
+            "category": "departure",
+            "scheduledTime": "10:21",
+            "spawnPatternKey": "1c66f470"
+        },
+        {
+            "id": "auth-kfll-de997cfa-0009",
+            "category": "departure",
+            "scheduledTime": "10:23",
+            "spawnPatternKey": "de997cfa"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0001",
+            "category": "arrival",
+            "scheduledTime": "10:26",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-207a831b-0002",
+            "category": "departure",
+            "scheduledTime": "10:28",
+            "spawnPatternKey": "207a831b"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0021",
+            "category": "arrival",
+            "scheduledTime": "10:28",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0016",
+            "category": "arrival",
+            "scheduledTime": "10:28",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0005",
+            "category": "arrival",
+            "scheduledTime": "10:29",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-a7bac871-0011",
+            "category": "departure",
+            "scheduledTime": "10:29",
+            "spawnPatternKey": "a7bac871"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0014",
+            "category": "arrival",
+            "scheduledTime": "10:34",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0041",
+            "category": "arrival",
+            "scheduledTime": "10:36",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-f422be57-0003",
+            "category": "departure",
+            "scheduledTime": "10:36",
+            "spawnPatternKey": "f422be57"
+        },
+        {
+            "id": "auth-kfll-44961adf-0014",
+            "category": "arrival",
+            "scheduledTime": "10:37",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-24bd09ee-0003",
+            "category": "departure",
+            "scheduledTime": "10:42",
+            "spawnPatternKey": "24bd09ee"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0032",
+            "category": "arrival",
+            "scheduledTime": "10:44",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0005",
+            "category": "arrival",
+            "scheduledTime": "10:50",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-2b2058b9-0017",
+            "category": "departure",
+            "scheduledTime": "10:53",
+            "spawnPatternKey": "2b2058b9"
+        },
+        {
+            "id": "auth-kfll-36e09c09-0004",
+            "category": "departure",
+            "scheduledTime": "10:53",
+            "spawnPatternKey": "36e09c09"
+        },
+        {
+            "id": "auth-kfll-7f75ab51-0006",
+            "category": "departure",
+            "scheduledTime": "10:55",
+            "spawnPatternKey": "7f75ab51"
+        },
+        {
+            "id": "auth-kfll-b2230f55-0002",
+            "category": "departure",
+            "scheduledTime": "10:55",
+            "spawnPatternKey": "b2230f55"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0002",
+            "category": "arrival",
+            "scheduledTime": "10:57",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0022",
+            "category": "arrival",
+            "scheduledTime": "10:59",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0017",
+            "category": "arrival",
+            "scheduledTime": "10:59",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0006",
+            "category": "arrival",
+            "scheduledTime": "11:00",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-1f7993fd-0014",
+            "category": "departure",
+            "scheduledTime": "11:05",
+            "spawnPatternKey": "1f7993fd"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0015",
+            "category": "arrival",
+            "scheduledTime": "11:06",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-93864e86-0012",
+            "category": "departure",
+            "scheduledTime": "11:06",
+            "spawnPatternKey": "93864e86"
+        },
+        {
+            "id": "auth-kfll-1f77c059-0001",
+            "category": "departure",
+            "scheduledTime": "11:08",
+            "spawnPatternKey": "1f77c059"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0042",
+            "category": "arrival",
+            "scheduledTime": "11:08",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-44961adf-0015",
+            "category": "arrival",
+            "scheduledTime": "11:09",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-8ccd3f4b-0013",
+            "category": "departure",
+            "scheduledTime": "11:13",
+            "spawnPatternKey": "8ccd3f4b"
+        },
+        {
+            "id": "auth-kfll-e2c3fc99-0015",
+            "category": "departure",
+            "scheduledTime": "11:13",
+            "spawnPatternKey": "e2c3fc99"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0033",
+            "category": "arrival",
+            "scheduledTime": "11:15",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-e3292279-0011",
+            "category": "departure",
+            "scheduledTime": "11:16",
+            "spawnPatternKey": "e3292279"
+        },
+        {
+            "id": "auth-kfll-e5505691-0004",
+            "category": "departure",
+            "scheduledTime": "11:16",
+            "spawnPatternKey": "e5505691"
+        },
+        {
+            "id": "auth-kfll-209e7de3-0010",
+            "category": "departure",
+            "scheduledTime": "11:17",
+            "spawnPatternKey": "209e7de3"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0006",
+            "category": "arrival",
+            "scheduledTime": "11:21",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-e2cbdc96-0001",
+            "category": "departure",
+            "scheduledTime": "11:24",
+            "spawnPatternKey": "e2cbdc96"
+        },
+        {
+            "id": "auth-kfll-f9e02189-0014",
+            "category": "departure",
+            "scheduledTime": "11:27",
+            "spawnPatternKey": "f9e02189"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0003",
+            "category": "arrival",
+            "scheduledTime": "11:28",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0023",
+            "category": "arrival",
+            "scheduledTime": "11:30",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0007",
+            "category": "arrival",
+            "scheduledTime": "11:31",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-d267f206-0018",
+            "category": "arrival",
+            "scheduledTime": "11:31",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-3ec9c835-0003",
+            "category": "departure",
+            "scheduledTime": "11:36",
+            "spawnPatternKey": "3ec9c835"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0016",
+            "category": "arrival",
+            "scheduledTime": "11:37",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-b08c84f1-0002",
+            "category": "departure",
+            "scheduledTime": "11:38",
+            "spawnPatternKey": "b08c84f1"
+        },
+        {
+            "id": "auth-kfll-03c1c99e-0011",
+            "category": "departure",
+            "scheduledTime": "11:39",
+            "spawnPatternKey": "03c1c99e"
+        },
+        {
+            "id": "auth-kfll-44961adf-0016",
+            "category": "arrival",
+            "scheduledTime": "11:40",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0043",
+            "category": "arrival",
+            "scheduledTime": "11:40",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-1c66f470-0004",
+            "category": "departure",
+            "scheduledTime": "11:41",
+            "spawnPatternKey": "1c66f470"
+        },
+        {
+            "id": "auth-kfll-e00d8d9e-0010",
+            "category": "departure",
+            "scheduledTime": "11:45",
+            "spawnPatternKey": "e00d8d9e"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0034",
+            "category": "arrival",
+            "scheduledTime": "11:47",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-207a831b-0003",
+            "category": "departure",
+            "scheduledTime": "11:48",
+            "spawnPatternKey": "207a831b"
+        },
+        {
+            "id": "auth-kfll-de997cfa-0010",
+            "category": "departure",
+            "scheduledTime": "11:48",
+            "spawnPatternKey": "de997cfa"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0007",
+            "category": "arrival",
+            "scheduledTime": "11:52",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-a7bac871-0012",
+            "category": "departure",
+            "scheduledTime": "11:53",
+            "spawnPatternKey": "a7bac871"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0004",
+            "category": "arrival",
+            "scheduledTime": "11:59",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-f422be57-0004",
+            "category": "departure",
+            "scheduledTime": "12:01",
+            "spawnPatternKey": "f422be57"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0024",
+            "category": "arrival",
+            "scheduledTime": "12:02",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0019",
+            "category": "arrival",
+            "scheduledTime": "12:02",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0008",
+            "category": "arrival",
+            "scheduledTime": "12:03",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-24bd09ee-0004",
+            "category": "departure",
+            "scheduledTime": "12:07",
+            "spawnPatternKey": "24bd09ee"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0017",
+            "category": "arrival",
+            "scheduledTime": "12:08",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-44961adf-0017",
+            "category": "arrival",
+            "scheduledTime": "12:11",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0044",
+            "category": "arrival",
+            "scheduledTime": "12:12",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-36e09c09-0005",
+            "category": "departure",
+            "scheduledTime": "12:17",
+            "spawnPatternKey": "36e09c09"
+        },
+        {
+            "id": "auth-kfll-2b2058b9-0001",
+            "category": "departure",
+            "scheduledTime": "12:18",
+            "spawnPatternKey": "2b2058b9"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0035",
+            "category": "arrival",
+            "scheduledTime": "12:18",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-7f75ab51-0007",
+            "category": "departure",
+            "scheduledTime": "12:20",
+            "spawnPatternKey": "7f75ab51"
+        },
+        {
+            "id": "auth-kfll-b2230f55-0003",
+            "category": "departure",
+            "scheduledTime": "12:20",
+            "spawnPatternKey": "b2230f55"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0008",
+            "category": "arrival",
+            "scheduledTime": "12:24",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-1f7993fd-0015",
+            "category": "departure",
+            "scheduledTime": "12:25",
+            "spawnPatternKey": "1f7993fd"
+        },
+        {
+            "id": "auth-kfll-1f77c059-0002",
+            "category": "departure",
+            "scheduledTime": "12:28",
+            "spawnPatternKey": "1f77c059"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0005",
+            "category": "arrival",
+            "scheduledTime": "12:31",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-93864e86-0013",
+            "category": "departure",
+            "scheduledTime": "12:31",
+            "spawnPatternKey": "93864e86"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0025",
+            "category": "arrival",
+            "scheduledTime": "12:33",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0020",
+            "category": "arrival",
+            "scheduledTime": "12:33",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0009",
+            "category": "arrival",
+            "scheduledTime": "12:34",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-8ccd3f4b-0014",
+            "category": "departure",
+            "scheduledTime": "12:38",
+            "spawnPatternKey": "8ccd3f4b"
+        },
+        {
+            "id": "auth-kfll-e2c3fc99-0016",
+            "category": "departure",
+            "scheduledTime": "12:38",
+            "spawnPatternKey": "e2c3fc99"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0018",
+            "category": "arrival",
+            "scheduledTime": "12:40",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-e3292279-0012",
+            "category": "departure",
+            "scheduledTime": "12:40",
+            "spawnPatternKey": "e3292279"
+        },
+        {
+            "id": "auth-kfll-e5505691-0005",
+            "category": "departure",
+            "scheduledTime": "12:40",
+            "spawnPatternKey": "e5505691"
+        },
+        {
+            "id": "auth-kfll-209e7de3-0011",
+            "category": "departure",
+            "scheduledTime": "12:42",
+            "spawnPatternKey": "209e7de3"
+        },
+        {
+            "id": "auth-kfll-44961adf-0018",
+            "category": "arrival",
+            "scheduledTime": "12:43",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0045",
+            "category": "arrival",
+            "scheduledTime": "12:44",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-e2cbdc96-0002",
+            "category": "departure",
+            "scheduledTime": "12:48",
+            "spawnPatternKey": "e2cbdc96"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0036",
+            "category": "arrival",
+            "scheduledTime": "12:49",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-f9e02189-0015",
+            "category": "departure",
+            "scheduledTime": "12:51",
+            "spawnPatternKey": "f9e02189"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0009",
+            "category": "arrival",
+            "scheduledTime": "12:55",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-03c1c99e-0012",
+            "category": "departure",
+            "scheduledTime": "12:59",
+            "spawnPatternKey": "03c1c99e"
+        },
+        {
+            "id": "auth-kfll-1c66f470-0005",
+            "category": "departure",
+            "scheduledTime": "13:01",
+            "spawnPatternKey": "1c66f470"
+        },
+        {
+            "id": "auth-kfll-3ec9c835-0004",
+            "category": "departure",
+            "scheduledTime": "13:01",
+            "spawnPatternKey": "3ec9c835"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0006",
+            "category": "arrival",
+            "scheduledTime": "13:02",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-b08c84f1-0003",
+            "category": "departure",
+            "scheduledTime": "13:03",
+            "spawnPatternKey": "b08c84f1"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0026",
+            "category": "arrival",
+            "scheduledTime": "13:04",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0010",
+            "category": "arrival",
+            "scheduledTime": "13:05",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-d267f206-0021",
+            "category": "arrival",
+            "scheduledTime": "13:05",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-207a831b-0004",
+            "category": "departure",
+            "scheduledTime": "13:08",
+            "spawnPatternKey": "207a831b"
+        },
+        {
+            "id": "auth-kfll-e00d8d9e-0011",
+            "category": "departure",
+            "scheduledTime": "13:10",
+            "spawnPatternKey": "e00d8d9e"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0019",
+            "category": "arrival",
+            "scheduledTime": "13:11",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-de997cfa-0011",
+            "category": "departure",
+            "scheduledTime": "13:13",
+            "spawnPatternKey": "de997cfa"
+        },
+        {
+            "id": "auth-kfll-44961adf-0019",
+            "category": "arrival",
+            "scheduledTime": "13:14",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0001",
+            "category": "arrival",
+            "scheduledTime": "13:16",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-a7bac871-0013",
+            "category": "departure",
+            "scheduledTime": "13:18",
+            "spawnPatternKey": "a7bac871"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0037",
+            "category": "arrival",
+            "scheduledTime": "13:20",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-f422be57-0005",
+            "category": "departure",
+            "scheduledTime": "13:25",
+            "spawnPatternKey": "f422be57"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0010",
+            "category": "arrival",
+            "scheduledTime": "13:26",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-24bd09ee-0005",
+            "category": "departure",
+            "scheduledTime": "13:31",
+            "spawnPatternKey": "24bd09ee"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0007",
+            "category": "arrival",
+            "scheduledTime": "13:33",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0027",
+            "category": "arrival",
+            "scheduledTime": "13:35",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0022",
+            "category": "arrival",
+            "scheduledTime": "13:36",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0011",
+            "category": "arrival",
+            "scheduledTime": "13:37",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-2b2058b9-0002",
+            "category": "departure",
+            "scheduledTime": "13:42",
+            "spawnPatternKey": "2b2058b9"
+        },
+        {
+            "id": "auth-kfll-36e09c09-0006",
+            "category": "departure",
+            "scheduledTime": "13:42",
+            "spawnPatternKey": "36e09c09"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0020",
+            "category": "arrival",
+            "scheduledTime": "13:42",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-7f75ab51-0008",
+            "category": "departure",
+            "scheduledTime": "13:44",
+            "spawnPatternKey": "7f75ab51"
+        },
+        {
+            "id": "auth-kfll-1f7993fd-0016",
+            "category": "departure",
+            "scheduledTime": "13:45",
+            "spawnPatternKey": "1f7993fd"
+        },
+        {
+            "id": "auth-kfll-44961adf-0020",
+            "category": "arrival",
+            "scheduledTime": "13:45",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-b2230f55-0004",
+            "category": "departure",
+            "scheduledTime": "13:45",
+            "spawnPatternKey": "b2230f55"
+        },
+        {
+            "id": "auth-kfll-1f77c059-0003",
+            "category": "departure",
+            "scheduledTime": "13:48",
+            "spawnPatternKey": "1f77c059"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0002",
+            "category": "arrival",
+            "scheduledTime": "13:48",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0038",
+            "category": "arrival",
+            "scheduledTime": "13:52",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-93864e86-0014",
+            "category": "departure",
+            "scheduledTime": "13:56",
+            "spawnPatternKey": "93864e86"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0011",
+            "category": "arrival",
+            "scheduledTime": "13:58",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-8ccd3f4b-0015",
+            "category": "departure",
+            "scheduledTime": "14:02",
+            "spawnPatternKey": "8ccd3f4b"
+        },
+        {
+            "id": "auth-kfll-e2c3fc99-0017",
+            "category": "departure",
+            "scheduledTime": "14:03",
+            "spawnPatternKey": "e2c3fc99"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0008",
+            "category": "arrival",
+            "scheduledTime": "14:05",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-e3292279-0013",
+            "category": "departure",
+            "scheduledTime": "14:05",
+            "spawnPatternKey": "e3292279"
+        },
+        {
+            "id": "auth-kfll-e5505691-0006",
+            "category": "departure",
+            "scheduledTime": "14:05",
+            "spawnPatternKey": "e5505691"
+        },
+        {
+            "id": "auth-kfll-209e7de3-0012",
+            "category": "departure",
+            "scheduledTime": "14:06",
+            "spawnPatternKey": "209e7de3"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0028",
+            "category": "arrival",
+            "scheduledTime": "14:07",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0023",
+            "category": "arrival",
+            "scheduledTime": "14:07",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0012",
+            "category": "arrival",
+            "scheduledTime": "14:08",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-e2cbdc96-0003",
+            "category": "departure",
+            "scheduledTime": "14:13",
+            "spawnPatternKey": "e2cbdc96"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0021",
+            "category": "arrival",
+            "scheduledTime": "14:14",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-f9e02189-0016",
+            "category": "departure",
+            "scheduledTime": "14:16",
+            "spawnPatternKey": "f9e02189"
+        },
+        {
+            "id": "auth-kfll-44961adf-0021",
+            "category": "arrival",
+            "scheduledTime": "14:17",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-03c1c99e-0013",
+            "category": "departure",
+            "scheduledTime": "14:19",
+            "spawnPatternKey": "03c1c99e"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0003",
+            "category": "arrival",
+            "scheduledTime": "14:20",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-1c66f470-0006",
+            "category": "departure",
+            "scheduledTime": "14:21",
+            "spawnPatternKey": "1c66f470"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0039",
+            "category": "arrival",
+            "scheduledTime": "14:23",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-3ec9c835-0005",
+            "category": "departure",
+            "scheduledTime": "14:25",
+            "spawnPatternKey": "3ec9c835"
+        },
+        {
+            "id": "auth-kfll-207a831b-0005",
+            "category": "departure",
+            "scheduledTime": "14:28",
+            "spawnPatternKey": "207a831b"
+        },
+        {
+            "id": "auth-kfll-b08c84f1-0004",
+            "category": "departure",
+            "scheduledTime": "14:28",
+            "spawnPatternKey": "b08c84f1"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0012",
+            "category": "arrival",
+            "scheduledTime": "14:29",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-e00d8d9e-0012",
+            "category": "departure",
+            "scheduledTime": "14:34",
+            "spawnPatternKey": "e00d8d9e"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0009",
+            "category": "arrival",
+            "scheduledTime": "14:36",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-de997cfa-0012",
+            "category": "departure",
+            "scheduledTime": "14:37",
+            "spawnPatternKey": "de997cfa"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0029",
+            "category": "arrival",
+            "scheduledTime": "14:38",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0013",
+            "category": "arrival",
+            "scheduledTime": "14:39",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-d267f206-0024",
+            "category": "arrival",
+            "scheduledTime": "14:39",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-a7bac871-0014",
+            "category": "departure",
+            "scheduledTime": "14:43",
+            "spawnPatternKey": "a7bac871"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0022",
+            "category": "arrival",
+            "scheduledTime": "14:45",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-44961adf-0022",
+            "category": "arrival",
+            "scheduledTime": "14:48",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-f422be57-0006",
+            "category": "departure",
+            "scheduledTime": "14:50",
+            "spawnPatternKey": "f422be57"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0004",
+            "category": "arrival",
+            "scheduledTime": "14:52",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0040",
+            "category": "arrival",
+            "scheduledTime": "14:54",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-24bd09ee-0006",
+            "category": "departure",
+            "scheduledTime": "14:56",
+            "spawnPatternKey": "24bd09ee"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0013",
+            "category": "arrival",
+            "scheduledTime": "15:00",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-1f7993fd-0017",
+            "category": "departure",
+            "scheduledTime": "15:05",
+            "spawnPatternKey": "1f7993fd"
+        },
+        {
+            "id": "auth-kfll-2b2058b9-0003",
+            "category": "departure",
+            "scheduledTime": "15:07",
+            "spawnPatternKey": "2b2058b9"
+        },
+        {
+            "id": "auth-kfll-36e09c09-0007",
+            "category": "departure",
+            "scheduledTime": "15:07",
+            "spawnPatternKey": "36e09c09"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0010",
+            "category": "arrival",
+            "scheduledTime": "15:07",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-1f77c059-0004",
+            "category": "departure",
+            "scheduledTime": "15:08",
+            "spawnPatternKey": "1f77c059"
+        },
+        {
+            "id": "auth-kfll-7f75ab51-0009",
+            "category": "departure",
+            "scheduledTime": "15:09",
+            "spawnPatternKey": "7f75ab51"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0030",
+            "category": "arrival",
+            "scheduledTime": "15:09",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-b2230f55-0005",
+            "category": "departure",
+            "scheduledTime": "15:09",
+            "spawnPatternKey": "b2230f55"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0014",
+            "category": "arrival",
+            "scheduledTime": "15:10",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-d267f206-0025",
+            "category": "arrival",
+            "scheduledTime": "15:10",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0023",
+            "category": "arrival",
+            "scheduledTime": "15:16",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-44961adf-0023",
+            "category": "arrival",
+            "scheduledTime": "15:19",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-93864e86-0015",
+            "category": "departure",
+            "scheduledTime": "15:20",
+            "spawnPatternKey": "93864e86"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0005",
+            "category": "arrival",
+            "scheduledTime": "15:24",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0041",
+            "category": "arrival",
+            "scheduledTime": "15:26",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-8ccd3f4b-0016",
+            "category": "departure",
+            "scheduledTime": "15:27",
+            "spawnPatternKey": "8ccd3f4b"
+        },
+        {
+            "id": "auth-kfll-e2c3fc99-0001",
+            "category": "departure",
+            "scheduledTime": "15:28",
+            "spawnPatternKey": "e2c3fc99"
+        },
+        {
+            "id": "auth-kfll-e3292279-0014",
+            "category": "departure",
+            "scheduledTime": "15:30",
+            "spawnPatternKey": "e3292279"
+        },
+        {
+            "id": "auth-kfll-e5505691-0007",
+            "category": "departure",
+            "scheduledTime": "15:30",
+            "spawnPatternKey": "e5505691"
+        },
+        {
+            "id": "auth-kfll-209e7de3-0013",
+            "category": "departure",
+            "scheduledTime": "15:31",
+            "spawnPatternKey": "209e7de3"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0014",
+            "category": "arrival",
+            "scheduledTime": "15:31",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-e2cbdc96-0004",
+            "category": "departure",
+            "scheduledTime": "15:38",
+            "spawnPatternKey": "e2cbdc96"
+        },
+        {
+            "id": "auth-kfll-03c1c99e-0014",
+            "category": "departure",
+            "scheduledTime": "15:39",
+            "spawnPatternKey": "03c1c99e"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0011",
+            "category": "arrival",
+            "scheduledTime": "15:39",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-1c66f470-0007",
+            "category": "departure",
+            "scheduledTime": "15:41",
+            "spawnPatternKey": "1c66f470"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0031",
+            "category": "arrival",
+            "scheduledTime": "15:41",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0026",
+            "category": "arrival",
+            "scheduledTime": "15:41",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-f9e02189-0017",
+            "category": "departure",
+            "scheduledTime": "15:41",
+            "spawnPatternKey": "f9e02189"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0015",
+            "category": "arrival",
+            "scheduledTime": "15:42",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-207a831b-0006",
+            "category": "departure",
+            "scheduledTime": "15:48",
+            "spawnPatternKey": "207a831b"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0024",
+            "category": "arrival",
+            "scheduledTime": "15:48",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-3ec9c835-0006",
+            "category": "departure",
+            "scheduledTime": "15:50",
+            "spawnPatternKey": "3ec9c835"
+        },
+        {
+            "id": "auth-kfll-44961adf-0024",
+            "category": "arrival",
+            "scheduledTime": "15:51",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-b08c84f1-0005",
+            "category": "departure",
+            "scheduledTime": "15:52",
+            "spawnPatternKey": "b08c84f1"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0006",
+            "category": "arrival",
+            "scheduledTime": "15:56",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0042",
+            "category": "arrival",
+            "scheduledTime": "15:57",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-e00d8d9e-0013",
+            "category": "departure",
+            "scheduledTime": "15:59",
+            "spawnPatternKey": "e00d8d9e"
+        },
+        {
+            "id": "auth-kfll-de997cfa-0013",
+            "category": "departure",
+            "scheduledTime": "16:02",
+            "spawnPatternKey": "de997cfa"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0015",
+            "category": "arrival",
+            "scheduledTime": "16:03",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-a7bac871-0015",
+            "category": "departure",
+            "scheduledTime": "16:07",
+            "spawnPatternKey": "a7bac871"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0012",
+            "category": "arrival",
+            "scheduledTime": "16:10",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0032",
+            "category": "arrival",
+            "scheduledTime": "16:12",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0027",
+            "category": "arrival",
+            "scheduledTime": "16:12",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0016",
+            "category": "arrival",
+            "scheduledTime": "16:13",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-f422be57-0007",
+            "category": "departure",
+            "scheduledTime": "16:15",
+            "spawnPatternKey": "f422be57"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0025",
+            "category": "arrival",
+            "scheduledTime": "16:19",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-24bd09ee-0007",
+            "category": "departure",
+            "scheduledTime": "16:21",
+            "spawnPatternKey": "24bd09ee"
+        },
+        {
+            "id": "auth-kfll-44961adf-0025",
+            "category": "arrival",
+            "scheduledTime": "16:22",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-1f7993fd-0018",
+            "category": "departure",
+            "scheduledTime": "16:25",
+            "spawnPatternKey": "1f7993fd"
+        },
+        {
+            "id": "auth-kfll-1f77c059-0005",
+            "category": "departure",
+            "scheduledTime": "16:28",
+            "spawnPatternKey": "1f77c059"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0043",
+            "category": "arrival",
+            "scheduledTime": "16:28",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0007",
+            "category": "arrival",
+            "scheduledTime": "16:28",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-36e09c09-0008",
+            "category": "departure",
+            "scheduledTime": "16:31",
+            "spawnPatternKey": "36e09c09"
+        },
+        {
+            "id": "auth-kfll-2b2058b9-0004",
+            "category": "departure",
+            "scheduledTime": "16:32",
+            "spawnPatternKey": "2b2058b9"
+        },
+        {
+            "id": "auth-kfll-7f75ab51-0010",
+            "category": "departure",
+            "scheduledTime": "16:34",
+            "spawnPatternKey": "7f75ab51"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0016",
+            "category": "arrival",
+            "scheduledTime": "16:34",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-b2230f55-0006",
+            "category": "departure",
+            "scheduledTime": "16:34",
+            "spawnPatternKey": "b2230f55"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0013",
+            "category": "arrival",
+            "scheduledTime": "16:41",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0033",
+            "category": "arrival",
+            "scheduledTime": "16:43",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0017",
+            "category": "arrival",
+            "scheduledTime": "16:44",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-d267f206-0028",
+            "category": "arrival",
+            "scheduledTime": "16:44",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-93864e86-0016",
+            "category": "departure",
+            "scheduledTime": "16:45",
+            "spawnPatternKey": "93864e86"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0026",
+            "category": "arrival",
+            "scheduledTime": "16:50",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-8ccd3f4b-0017",
+            "category": "departure",
+            "scheduledTime": "16:52",
+            "spawnPatternKey": "8ccd3f4b"
+        },
+        {
+            "id": "auth-kfll-e2c3fc99-0002",
+            "category": "departure",
+            "scheduledTime": "16:52",
+            "spawnPatternKey": "e2c3fc99"
+        },
+        {
+            "id": "auth-kfll-44961adf-0026",
+            "category": "arrival",
+            "scheduledTime": "16:53",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-e3292279-0015",
+            "category": "departure",
+            "scheduledTime": "16:54",
+            "spawnPatternKey": "e3292279"
+        },
+        {
+            "id": "auth-kfll-e5505691-0008",
+            "category": "departure",
+            "scheduledTime": "16:54",
+            "spawnPatternKey": "e5505691"
+        },
+        {
+            "id": "auth-kfll-209e7de3-0014",
+            "category": "departure",
+            "scheduledTime": "16:56",
+            "spawnPatternKey": "209e7de3"
+        },
+        {
+            "id": "auth-kfll-03c1c99e-0015",
+            "category": "departure",
+            "scheduledTime": "16:59",
+            "spawnPatternKey": "03c1c99e"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0044",
+            "category": "arrival",
+            "scheduledTime": "17:00",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0008",
+            "category": "arrival",
+            "scheduledTime": "17:00",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-1c66f470-0008",
+            "category": "departure",
+            "scheduledTime": "17:01",
+            "spawnPatternKey": "1c66f470"
+        },
+        {
+            "id": "auth-kfll-e2cbdc96-0005",
+            "category": "departure",
+            "scheduledTime": "17:02",
+            "spawnPatternKey": "e2cbdc96"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0017",
+            "category": "arrival",
+            "scheduledTime": "17:05",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-f9e02189-0001",
+            "category": "departure",
+            "scheduledTime": "17:06",
+            "spawnPatternKey": "f9e02189"
+        },
+        {
+            "id": "auth-kfll-207a831b-0007",
+            "category": "departure",
+            "scheduledTime": "17:08",
+            "spawnPatternKey": "207a831b"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0014",
+            "category": "arrival",
+            "scheduledTime": "17:12",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-3ec9c835-0007",
+            "category": "departure",
+            "scheduledTime": "17:15",
+            "spawnPatternKey": "3ec9c835"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0034",
+            "category": "arrival",
+            "scheduledTime": "17:15",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0029",
+            "category": "arrival",
+            "scheduledTime": "17:15",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0018",
+            "category": "arrival",
+            "scheduledTime": "17:16",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-b08c84f1-0006",
+            "category": "departure",
+            "scheduledTime": "17:17",
+            "spawnPatternKey": "b08c84f1"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0027",
+            "category": "arrival",
+            "scheduledTime": "17:21",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-44961adf-0027",
+            "category": "arrival",
+            "scheduledTime": "17:24",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-e00d8d9e-0014",
+            "category": "departure",
+            "scheduledTime": "17:24",
+            "spawnPatternKey": "e00d8d9e"
+        },
+        {
+            "id": "auth-kfll-de997cfa-0014",
+            "category": "departure",
+            "scheduledTime": "17:27",
+            "spawnPatternKey": "de997cfa"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0045",
+            "category": "arrival",
+            "scheduledTime": "17:31",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-a7bac871-0016",
+            "category": "departure",
+            "scheduledTime": "17:32",
+            "spawnPatternKey": "a7bac871"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0009",
+            "category": "arrival",
+            "scheduledTime": "17:32",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0018",
+            "category": "arrival",
+            "scheduledTime": "17:37",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-f422be57-0008",
+            "category": "departure",
+            "scheduledTime": "17:39",
+            "spawnPatternKey": "f422be57"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0015",
+            "category": "arrival",
+            "scheduledTime": "17:44",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-1f7993fd-0001",
+            "category": "departure",
+            "scheduledTime": "17:45",
+            "spawnPatternKey": "1f7993fd"
+        },
+        {
+            "id": "auth-kfll-24bd09ee-0008",
+            "category": "departure",
+            "scheduledTime": "17:45",
+            "spawnPatternKey": "24bd09ee"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0035",
+            "category": "arrival",
+            "scheduledTime": "17:46",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0030",
+            "category": "arrival",
+            "scheduledTime": "17:46",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0019",
+            "category": "arrival",
+            "scheduledTime": "17:47",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-1f77c059-0006",
+            "category": "departure",
+            "scheduledTime": "17:48",
+            "spawnPatternKey": "1f77c059"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0028",
+            "category": "arrival",
+            "scheduledTime": "17:53",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-2b2058b9-0005",
+            "category": "departure",
+            "scheduledTime": "17:56",
+            "spawnPatternKey": "2b2058b9"
+        },
+        {
+            "id": "auth-kfll-36e09c09-0009",
+            "category": "departure",
+            "scheduledTime": "17:56",
+            "spawnPatternKey": "36e09c09"
+        },
+        {
+            "id": "auth-kfll-44961adf-0028",
+            "category": "arrival",
+            "scheduledTime": "17:56",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-7f75ab51-0011",
+            "category": "departure",
+            "scheduledTime": "17:59",
+            "spawnPatternKey": "7f75ab51"
+        },
+        {
+            "id": "auth-kfll-b2230f55-0007",
+            "category": "departure",
+            "scheduledTime": "17:59",
+            "spawnPatternKey": "b2230f55"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0046",
+            "category": "arrival",
+            "scheduledTime": "18:02",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0010",
+            "category": "arrival",
+            "scheduledTime": "18:04",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0019",
+            "category": "arrival",
+            "scheduledTime": "18:08",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-93864e86-0017",
+            "category": "departure",
+            "scheduledTime": "18:10",
+            "spawnPatternKey": "93864e86"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0016",
+            "category": "arrival",
+            "scheduledTime": "18:15",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-8ccd3f4b-0001",
+            "category": "departure",
+            "scheduledTime": "18:17",
+            "spawnPatternKey": "8ccd3f4b"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0036",
+            "category": "arrival",
+            "scheduledTime": "18:17",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-e2c3fc99-0003",
+            "category": "departure",
+            "scheduledTime": "18:17",
+            "spawnPatternKey": "e2c3fc99"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0020",
+            "category": "arrival",
+            "scheduledTime": "18:18",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-d267f206-0031",
+            "category": "arrival",
+            "scheduledTime": "18:18",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-03c1c99e-0016",
+            "category": "departure",
+            "scheduledTime": "18:19",
+            "spawnPatternKey": "03c1c99e"
+        },
+        {
+            "id": "auth-kfll-e3292279-0016",
+            "category": "departure",
+            "scheduledTime": "18:19",
+            "spawnPatternKey": "e3292279"
+        },
+        {
+            "id": "auth-kfll-e5505691-0009",
+            "category": "departure",
+            "scheduledTime": "18:19",
+            "spawnPatternKey": "e5505691"
+        },
+        {
+            "id": "auth-kfll-209e7de3-0015",
+            "category": "departure",
+            "scheduledTime": "18:20",
+            "spawnPatternKey": "209e7de3"
+        },
+        {
+            "id": "auth-kfll-1c66f470-0009",
+            "category": "departure",
+            "scheduledTime": "18:21",
+            "spawnPatternKey": "1c66f470"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0029",
+            "category": "arrival",
+            "scheduledTime": "18:24",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-44961adf-0029",
+            "category": "arrival",
+            "scheduledTime": "18:27",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-e2cbdc96-0006",
+            "category": "departure",
+            "scheduledTime": "18:27",
+            "spawnPatternKey": "e2cbdc96"
+        },
+        {
+            "id": "auth-kfll-207a831b-0008",
+            "category": "departure",
+            "scheduledTime": "18:28",
+            "spawnPatternKey": "207a831b"
+        },
+        {
+            "id": "auth-kfll-f9e02189-0002",
+            "category": "departure",
+            "scheduledTime": "18:30",
+            "spawnPatternKey": "f9e02189"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0001",
+            "category": "arrival",
+            "scheduledTime": "18:34",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0011",
+            "category": "arrival",
+            "scheduledTime": "18:36",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-3ec9c835-0008",
+            "category": "departure",
+            "scheduledTime": "18:39",
+            "spawnPatternKey": "3ec9c835"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0020",
+            "category": "arrival",
+            "scheduledTime": "18:39",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-b08c84f1-0007",
+            "category": "departure",
+            "scheduledTime": "18:42",
+            "spawnPatternKey": "b08c84f1"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0017",
+            "category": "arrival",
+            "scheduledTime": "18:46",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0037",
+            "category": "arrival",
+            "scheduledTime": "18:48",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-e00d8d9e-0015",
+            "category": "departure",
+            "scheduledTime": "18:48",
+            "spawnPatternKey": "e00d8d9e"
+        },
+        {
+            "id": "auth-kfll-d267f206-0032",
+            "category": "arrival",
+            "scheduledTime": "18:49",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0021",
+            "category": "arrival",
+            "scheduledTime": "18:50",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-de997cfa-0015",
+            "category": "departure",
+            "scheduledTime": "18:51",
+            "spawnPatternKey": "de997cfa"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0030",
+            "category": "arrival",
+            "scheduledTime": "18:55",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-a7bac871-0017",
+            "category": "departure",
+            "scheduledTime": "18:57",
+            "spawnPatternKey": "a7bac871"
+        },
+        {
+            "id": "auth-kfll-44961adf-0030",
+            "category": "arrival",
+            "scheduledTime": "18:58",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-f422be57-0009",
+            "category": "departure",
+            "scheduledTime": "19:04",
+            "spawnPatternKey": "f422be57"
+        },
+        {
+            "id": "auth-kfll-1f7993fd-0002",
+            "category": "departure",
+            "scheduledTime": "19:05",
+            "spawnPatternKey": "1f7993fd"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0002",
+            "category": "arrival",
+            "scheduledTime": "19:05",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-1f77c059-0007",
+            "category": "departure",
+            "scheduledTime": "19:08",
+            "spawnPatternKey": "1f77c059"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0012",
+            "category": "arrival",
+            "scheduledTime": "19:08",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-24bd09ee-0009",
+            "category": "departure",
+            "scheduledTime": "19:10",
+            "spawnPatternKey": "24bd09ee"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0021",
+            "category": "arrival",
+            "scheduledTime": "19:11",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0018",
+            "category": "arrival",
+            "scheduledTime": "19:18",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0038",
+            "category": "arrival",
+            "scheduledTime": "19:20",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0033",
+            "category": "arrival",
+            "scheduledTime": "19:20",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-2b2058b9-0006",
+            "category": "departure",
+            "scheduledTime": "19:21",
+            "spawnPatternKey": "2b2058b9"
+        },
+        {
+            "id": "auth-kfll-36e09c09-0010",
+            "category": "departure",
+            "scheduledTime": "19:21",
+            "spawnPatternKey": "36e09c09"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0022",
+            "category": "arrival",
+            "scheduledTime": "19:21",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-7f75ab51-0012",
+            "category": "departure",
+            "scheduledTime": "19:23",
+            "spawnPatternKey": "7f75ab51"
+        },
+        {
+            "id": "auth-kfll-b2230f55-0008",
+            "category": "departure",
+            "scheduledTime": "19:23",
+            "spawnPatternKey": "b2230f55"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0031",
+            "category": "arrival",
+            "scheduledTime": "19:27",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-44961adf-0031",
+            "category": "arrival",
+            "scheduledTime": "19:30",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-93864e86-0001",
+            "category": "departure",
+            "scheduledTime": "19:35",
+            "spawnPatternKey": "93864e86"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0003",
+            "category": "arrival",
+            "scheduledTime": "19:36",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-03c1c99e-0017",
+            "category": "departure",
+            "scheduledTime": "19:39",
+            "spawnPatternKey": "03c1c99e"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0013",
+            "category": "arrival",
+            "scheduledTime": "19:40",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-1c66f470-0010",
+            "category": "departure",
+            "scheduledTime": "19:41",
+            "spawnPatternKey": "1c66f470"
+        },
+        {
+            "id": "auth-kfll-8ccd3f4b-0002",
+            "category": "departure",
+            "scheduledTime": "19:41",
+            "spawnPatternKey": "8ccd3f4b"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0022",
+            "category": "arrival",
+            "scheduledTime": "19:42",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-e2c3fc99-0004",
+            "category": "departure",
+            "scheduledTime": "19:42",
+            "spawnPatternKey": "e2c3fc99"
+        },
+        {
+            "id": "auth-kfll-e3292279-0017",
+            "category": "departure",
+            "scheduledTime": "19:44",
+            "spawnPatternKey": "e3292279"
+        },
+        {
+            "id": "auth-kfll-e5505691-0010",
+            "category": "departure",
+            "scheduledTime": "19:44",
+            "spawnPatternKey": "e5505691"
+        },
+        {
+            "id": "auth-kfll-209e7de3-0016",
+            "category": "departure",
+            "scheduledTime": "19:45",
+            "spawnPatternKey": "209e7de3"
+        },
+        {
+            "id": "auth-kfll-207a831b-0009",
+            "category": "departure",
+            "scheduledTime": "19:48",
+            "spawnPatternKey": "207a831b"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0019",
+            "category": "arrival",
+            "scheduledTime": "19:49",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0039",
+            "category": "arrival",
+            "scheduledTime": "19:51",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0023",
+            "category": "arrival",
+            "scheduledTime": "19:52",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-d267f206-0034",
+            "category": "arrival",
+            "scheduledTime": "19:52",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-e2cbdc96-0007",
+            "category": "departure",
+            "scheduledTime": "19:52",
+            "spawnPatternKey": "e2cbdc96"
+        },
+        {
+            "id": "auth-kfll-f9e02189-0003",
+            "category": "departure",
+            "scheduledTime": "19:55",
+            "spawnPatternKey": "f9e02189"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0032",
+            "category": "arrival",
+            "scheduledTime": "19:58",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-44961adf-0032",
+            "category": "arrival",
+            "scheduledTime": "20:01",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-3ec9c835-0009",
+            "category": "departure",
+            "scheduledTime": "20:04",
+            "spawnPatternKey": "3ec9c835"
+        },
+        {
+            "id": "auth-kfll-b08c84f1-0008",
+            "category": "departure",
+            "scheduledTime": "20:06",
+            "spawnPatternKey": "b08c84f1"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0004",
+            "category": "arrival",
+            "scheduledTime": "20:07",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0014",
+            "category": "arrival",
+            "scheduledTime": "20:12",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0023",
+            "category": "arrival",
+            "scheduledTime": "20:13",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-e00d8d9e-0016",
+            "category": "departure",
+            "scheduledTime": "20:13",
+            "spawnPatternKey": "e00d8d9e"
+        },
+        {
+            "id": "auth-kfll-de997cfa-0016",
+            "category": "departure",
+            "scheduledTime": "20:16",
+            "spawnPatternKey": "de997cfa"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0020",
+            "category": "arrival",
+            "scheduledTime": "20:20",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-a7bac871-0001",
+            "category": "departure",
+            "scheduledTime": "20:22",
+            "spawnPatternKey": "a7bac871"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0040",
+            "category": "arrival",
+            "scheduledTime": "20:22",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0035",
+            "category": "arrival",
+            "scheduledTime": "20:23",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0024",
+            "category": "arrival",
+            "scheduledTime": "20:24",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-1f7993fd-0003",
+            "category": "departure",
+            "scheduledTime": "20:25",
+            "spawnPatternKey": "1f7993fd"
+        },
+        {
+            "id": "auth-kfll-1f77c059-0008",
+            "category": "departure",
+            "scheduledTime": "20:28",
+            "spawnPatternKey": "1f77c059"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0033",
+            "category": "arrival",
+            "scheduledTime": "20:29",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-f422be57-0010",
+            "category": "departure",
+            "scheduledTime": "20:29",
+            "spawnPatternKey": "f422be57"
+        },
+        {
+            "id": "auth-kfll-44961adf-0033",
+            "category": "arrival",
+            "scheduledTime": "20:32",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-24bd09ee-0010",
+            "category": "departure",
+            "scheduledTime": "20:35",
+            "spawnPatternKey": "24bd09ee"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0005",
+            "category": "arrival",
+            "scheduledTime": "20:39",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0015",
+            "category": "arrival",
+            "scheduledTime": "20:44",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0024",
+            "category": "arrival",
+            "scheduledTime": "20:45",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-2b2058b9-0007",
+            "category": "departure",
+            "scheduledTime": "20:46",
+            "spawnPatternKey": "2b2058b9"
+        },
+        {
+            "id": "auth-kfll-36e09c09-0011",
+            "category": "departure",
+            "scheduledTime": "20:46",
+            "spawnPatternKey": "36e09c09"
+        },
+        {
+            "id": "auth-kfll-7f75ab51-0013",
+            "category": "departure",
+            "scheduledTime": "20:48",
+            "spawnPatternKey": "7f75ab51"
+        },
+        {
+            "id": "auth-kfll-b2230f55-0009",
+            "category": "departure",
+            "scheduledTime": "20:48",
+            "spawnPatternKey": "b2230f55"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0021",
+            "category": "arrival",
+            "scheduledTime": "20:52",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0041",
+            "category": "arrival",
+            "scheduledTime": "20:54",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0036",
+            "category": "arrival",
+            "scheduledTime": "20:54",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0025",
+            "category": "arrival",
+            "scheduledTime": "20:55",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-03c1c99e-0018",
+            "category": "departure",
+            "scheduledTime": "20:59",
+            "spawnPatternKey": "03c1c99e"
+        },
+        {
+            "id": "auth-kfll-93864e86-0002",
+            "category": "departure",
+            "scheduledTime": "20:59",
+            "spawnPatternKey": "93864e86"
+        },
+        {
+            "id": "auth-kfll-1c66f470-0011",
+            "category": "departure",
+            "scheduledTime": "21:01",
+            "spawnPatternKey": "1c66f470"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0034",
+            "category": "arrival",
+            "scheduledTime": "21:01",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-44961adf-0034",
+            "category": "arrival",
+            "scheduledTime": "21:04",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-8ccd3f4b-0003",
+            "category": "departure",
+            "scheduledTime": "21:06",
+            "spawnPatternKey": "8ccd3f4b"
+        },
+        {
+            "id": "auth-kfll-e2c3fc99-0005",
+            "category": "departure",
+            "scheduledTime": "21:06",
+            "spawnPatternKey": "e2c3fc99"
+        },
+        {
+            "id": "auth-kfll-207a831b-0010",
+            "category": "departure",
+            "scheduledTime": "21:08",
+            "spawnPatternKey": "207a831b"
+        },
+        {
+            "id": "auth-kfll-e3292279-0001",
+            "category": "departure",
+            "scheduledTime": "21:09",
+            "spawnPatternKey": "e3292279"
+        },
+        {
+            "id": "auth-kfll-e5505691-0011",
+            "category": "departure",
+            "scheduledTime": "21:09",
+            "spawnPatternKey": "e5505691"
+        },
+        {
+            "id": "auth-kfll-209e7de3-0017",
+            "category": "departure",
+            "scheduledTime": "21:10",
+            "spawnPatternKey": "209e7de3"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0006",
+            "category": "arrival",
+            "scheduledTime": "21:10",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0025",
+            "category": "arrival",
+            "scheduledTime": "21:16",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-e2cbdc96-0008",
+            "category": "departure",
+            "scheduledTime": "21:16",
+            "spawnPatternKey": "e2cbdc96"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0016",
+            "category": "arrival",
+            "scheduledTime": "21:16",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-f9e02189-0004",
+            "category": "departure",
+            "scheduledTime": "21:20",
+            "spawnPatternKey": "f9e02189"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0022",
+            "category": "arrival",
+            "scheduledTime": "21:23",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0042",
+            "category": "arrival",
+            "scheduledTime": "21:25",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0037",
+            "category": "arrival",
+            "scheduledTime": "21:25",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0026",
+            "category": "arrival",
+            "scheduledTime": "21:26",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-3ec9c835-0010",
+            "category": "departure",
+            "scheduledTime": "21:29",
+            "spawnPatternKey": "3ec9c835"
+        },
+        {
+            "id": "auth-kfll-b08c84f1-0009",
+            "category": "departure",
+            "scheduledTime": "21:31",
+            "spawnPatternKey": "b08c84f1"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0035",
+            "category": "arrival",
+            "scheduledTime": "21:32",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-44961adf-0035",
+            "category": "arrival",
+            "scheduledTime": "21:35",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-e00d8d9e-0017",
+            "category": "departure",
+            "scheduledTime": "21:38",
+            "spawnPatternKey": "e00d8d9e"
+        },
+        {
+            "id": "auth-kfll-de997cfa-0017",
+            "category": "departure",
+            "scheduledTime": "21:41",
+            "spawnPatternKey": "de997cfa"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0007",
+            "category": "arrival",
+            "scheduledTime": "21:41",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-1f7993fd-0004",
+            "category": "departure",
+            "scheduledTime": "21:45",
+            "spawnPatternKey": "1f7993fd"
+        },
+        {
+            "id": "auth-kfll-a7bac871-0002",
+            "category": "departure",
+            "scheduledTime": "21:46",
+            "spawnPatternKey": "a7bac871"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0026",
+            "category": "arrival",
+            "scheduledTime": "21:47",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-1f77c059-0009",
+            "category": "departure",
+            "scheduledTime": "21:48",
+            "spawnPatternKey": "1f77c059"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0017",
+            "category": "arrival",
+            "scheduledTime": "21:48",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0023",
+            "category": "arrival",
+            "scheduledTime": "21:54",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-f422be57-0011",
+            "category": "departure",
+            "scheduledTime": "21:54",
+            "spawnPatternKey": "f422be57"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0043",
+            "category": "arrival",
+            "scheduledTime": "21:56",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0027",
+            "category": "arrival",
+            "scheduledTime": "21:57",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-d267f206-0038",
+            "category": "arrival",
+            "scheduledTime": "21:57",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-24bd09ee-0011",
+            "category": "departure",
+            "scheduledTime": "22:00",
+            "spawnPatternKey": "24bd09ee"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0036",
+            "category": "arrival",
+            "scheduledTime": "22:03",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-44961adf-0036",
+            "category": "arrival",
+            "scheduledTime": "22:06",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-2b2058b9-0008",
+            "category": "departure",
+            "scheduledTime": "22:10",
+            "spawnPatternKey": "2b2058b9"
+        },
+        {
+            "id": "auth-kfll-36e09c09-0012",
+            "category": "departure",
+            "scheduledTime": "22:10",
+            "spawnPatternKey": "36e09c09"
+        },
+        {
+            "id": "auth-kfll-7f75ab51-0014",
+            "category": "departure",
+            "scheduledTime": "22:13",
+            "spawnPatternKey": "7f75ab51"
+        },
+        {
+            "id": "auth-kfll-b2230f55-0010",
+            "category": "departure",
+            "scheduledTime": "22:13",
+            "spawnPatternKey": "b2230f55"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0008",
+            "category": "arrival",
+            "scheduledTime": "22:13",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0027",
+            "category": "arrival",
+            "scheduledTime": "22:18",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-03c1c99e-0001",
+            "category": "departure",
+            "scheduledTime": "22:19",
+            "spawnPatternKey": "03c1c99e"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0018",
+            "category": "arrival",
+            "scheduledTime": "22:20",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-1c66f470-0012",
+            "category": "departure",
+            "scheduledTime": "22:21",
+            "spawnPatternKey": "1c66f470"
+        },
+        {
+            "id": "auth-kfll-93864e86-0003",
+            "category": "departure",
+            "scheduledTime": "22:24",
+            "spawnPatternKey": "93864e86"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0024",
+            "category": "arrival",
+            "scheduledTime": "22:26",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-207a831b-0011",
+            "category": "departure",
+            "scheduledTime": "22:28",
+            "spawnPatternKey": "207a831b"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0044",
+            "category": "arrival",
+            "scheduledTime": "22:28",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0039",
+            "category": "arrival",
+            "scheduledTime": "22:28",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0028",
+            "category": "arrival",
+            "scheduledTime": "22:29",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-8ccd3f4b-0004",
+            "category": "departure",
+            "scheduledTime": "22:31",
+            "spawnPatternKey": "8ccd3f4b"
+        },
+        {
+            "id": "auth-kfll-e2c3fc99-0006",
+            "category": "departure",
+            "scheduledTime": "22:31",
+            "spawnPatternKey": "e2c3fc99"
+        },
+        {
+            "id": "auth-kfll-e3292279-0002",
+            "category": "departure",
+            "scheduledTime": "22:33",
+            "spawnPatternKey": "e3292279"
+        },
+        {
+            "id": "auth-kfll-e5505691-0012",
+            "category": "departure",
+            "scheduledTime": "22:33",
+            "spawnPatternKey": "e5505691"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0037",
+            "category": "arrival",
+            "scheduledTime": "22:34",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-209e7de3-0001",
+            "category": "departure",
+            "scheduledTime": "22:35",
+            "spawnPatternKey": "209e7de3"
+        },
+        {
+            "id": "auth-kfll-44961adf-0037",
+            "category": "arrival",
+            "scheduledTime": "22:37",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-e2cbdc96-0009",
+            "category": "departure",
+            "scheduledTime": "22:41",
+            "spawnPatternKey": "e2cbdc96"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0009",
+            "category": "arrival",
+            "scheduledTime": "22:44",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-f9e02189-0005",
+            "category": "departure",
+            "scheduledTime": "22:44",
+            "spawnPatternKey": "f9e02189"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0028",
+            "category": "arrival",
+            "scheduledTime": "22:50",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0019",
+            "category": "arrival",
+            "scheduledTime": "22:52",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-3ec9c835-0011",
+            "category": "departure",
+            "scheduledTime": "22:54",
+            "spawnPatternKey": "3ec9c835"
+        },
+        {
+            "id": "auth-kfll-b08c84f1-0010",
+            "category": "departure",
+            "scheduledTime": "22:56",
+            "spawnPatternKey": "b08c84f1"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0025",
+            "category": "arrival",
+            "scheduledTime": "22:57",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0045",
+            "category": "arrival",
+            "scheduledTime": "22:59",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-d267f206-0040",
+            "category": "arrival",
+            "scheduledTime": "22:59",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0029",
+            "category": "arrival",
+            "scheduledTime": "23:00",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-e00d8d9e-0001",
+            "category": "departure",
+            "scheduledTime": "23:03",
+            "spawnPatternKey": "e00d8d9e"
+        },
+        {
+            "id": "auth-kfll-1f7993fd-0005",
+            "category": "departure",
+            "scheduledTime": "23:05",
+            "spawnPatternKey": "1f7993fd"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0038",
+            "category": "arrival",
+            "scheduledTime": "23:06",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-de997cfa-0001",
+            "category": "departure",
+            "scheduledTime": "23:06",
+            "spawnPatternKey": "de997cfa"
+        },
+        {
+            "id": "auth-kfll-1f77c059-0010",
+            "category": "departure",
+            "scheduledTime": "23:08",
+            "spawnPatternKey": "1f77c059"
+        },
+        {
+            "id": "auth-kfll-44961adf-0038",
+            "category": "arrival",
+            "scheduledTime": "23:09",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-a7bac871-0003",
+            "category": "departure",
+            "scheduledTime": "23:11",
+            "spawnPatternKey": "a7bac871"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0010",
+            "category": "arrival",
+            "scheduledTime": "23:15",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-f422be57-0012",
+            "category": "departure",
+            "scheduledTime": "23:18",
+            "spawnPatternKey": "f422be57"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0029",
+            "category": "arrival",
+            "scheduledTime": "23:21",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-24bd09ee-0012",
+            "category": "departure",
+            "scheduledTime": "23:24",
+            "spawnPatternKey": "24bd09ee"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0020",
+            "category": "arrival",
+            "scheduledTime": "23:24",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0026",
+            "category": "arrival",
+            "scheduledTime": "23:28",
+            "spawnPatternKey": "3f15a310"
+        },
+        {
+            "id": "auth-kfll-b1143b5f-0046",
+            "category": "arrival",
+            "scheduledTime": "23:30",
+            "spawnPatternKey": "b1143b5f"
+        },
+        {
+            "id": "auth-kfll-50491bcf-0030",
+            "category": "arrival",
+            "scheduledTime": "23:31",
+            "spawnPatternKey": "50491bcf"
+        },
+        {
+            "id": "auth-kfll-d267f206-0041",
+            "category": "arrival",
+            "scheduledTime": "23:31",
+            "spawnPatternKey": "d267f206"
+        },
+        {
+            "id": "auth-kfll-2b2058b9-0009",
+            "category": "departure",
+            "scheduledTime": "23:35",
+            "spawnPatternKey": "2b2058b9"
+        },
+        {
+            "id": "auth-kfll-36e09c09-0013",
+            "category": "departure",
+            "scheduledTime": "23:35",
+            "spawnPatternKey": "36e09c09"
+        },
+        {
+            "id": "auth-kfll-44ddb305-0039",
+            "category": "arrival",
+            "scheduledTime": "23:37",
+            "spawnPatternKey": "44ddb305"
+        },
+        {
+            "id": "auth-kfll-7f75ab51-0015",
+            "category": "departure",
+            "scheduledTime": "23:37",
+            "spawnPatternKey": "7f75ab51"
+        },
+        {
+            "id": "auth-kfll-b2230f55-0011",
+            "category": "departure",
+            "scheduledTime": "23:38",
+            "spawnPatternKey": "b2230f55"
+        },
+        {
+            "id": "auth-kfll-03c1c99e-0002",
+            "category": "departure",
+            "scheduledTime": "23:39",
+            "spawnPatternKey": "03c1c99e"
+        },
+        {
+            "id": "auth-kfll-44961adf-0039",
+            "category": "arrival",
+            "scheduledTime": "23:40",
+            "spawnPatternKey": "44961adf"
+        },
+        {
+            "id": "auth-kfll-1c66f470-0013",
+            "category": "departure",
+            "scheduledTime": "23:41",
+            "spawnPatternKey": "1c66f470"
+        },
+        {
+            "id": "auth-kfll-e93d3211-0011",
+            "category": "arrival",
+            "scheduledTime": "23:47",
+            "spawnPatternKey": "e93d3211"
+        },
+        {
+            "id": "auth-kfll-207a831b-0012",
+            "category": "departure",
+            "scheduledTime": "23:48",
+            "spawnPatternKey": "207a831b"
+        },
+        {
+            "id": "auth-kfll-93864e86-0004",
+            "category": "departure",
+            "scheduledTime": "23:49",
+            "spawnPatternKey": "93864e86"
+        },
+        {
+            "id": "auth-kfll-987cf9c8-0030",
+            "category": "arrival",
+            "scheduledTime": "23:52",
+            "spawnPatternKey": "987cf9c8"
+        },
+        {
+            "id": "auth-kfll-8ccd3f4b-0005",
+            "category": "departure",
+            "scheduledTime": "23:55",
+            "spawnPatternKey": "8ccd3f4b"
+        },
+        {
+            "id": "auth-kfll-e2c3fc99-0007",
+            "category": "departure",
+            "scheduledTime": "23:56",
+            "spawnPatternKey": "e2c3fc99"
+        },
+        {
+            "id": "auth-kfll-f32a8bc1-0021",
+            "category": "arrival",
+            "scheduledTime": "23:56",
+            "spawnPatternKey": "f32a8bc1"
+        },
+        {
+            "id": "auth-kfll-e3292279-0003",
+            "category": "departure",
+            "scheduledTime": "23:58",
+            "spawnPatternKey": "e3292279"
+        },
+        {
+            "id": "auth-kfll-e5505691-0013",
+            "category": "departure",
+            "scheduledTime": "23:58",
+            "spawnPatternKey": "e5505691"
+        },
+        {
+            "id": "auth-kfll-209e7de3-0002",
+            "category": "departure",
+            "scheduledTime": "23:59",
+            "spawnPatternKey": "209e7de3"
+        },
+        {
+            "id": "auth-kfll-3f15a310-0027",
+            "category": "arrival",
+            "scheduledTime": "23:59",
+            "spawnPatternKey": "3f15a310"
+        }
+    ]
+}

@@ -9,7 +9,7 @@
   "packageManager": "npm@11.19.0",
   "scripts": {
     "audit:production": "npm audit --omit=dev --audit-level=low",
-    "airport:test": "node tools/cyyz-airport.test.js",
+    "airport:test": "node tools/cyyz-airport.test.js && node tools/community-airports.test.js && node tools/community-airports-runtime.test.js",
     "build": "node tools/build.js --production",
     "build:dev": "node tools/build.js",
     "build:test": "node tools/build.test.js && npm run airport:test",

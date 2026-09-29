@@ -1,8 +1,8 @@
 {
-  "airports": 65,
-  "flights": 48165,
+  "airports": 73,
+  "flights": 54449,
   "movementsByProfile": {
-    "authored": 24189,
+    "authored": 30473,
     "bts": 23976
   },
   "schedules": [
@@ -11,6 +11,12 @@
       "profile": "authored",
       "flights": 258,
       "sha256": "31d6a64ba7fb94bca3fc184332205f14b8ba06a38facb37843bdb56fb8f9dcde"
+    },
+    {
+      "airport": "CYYC",
+      "profile": "authored",
+      "flights": 540,
+      "sha256": "44f4ee586627cfe1f393a17f99a4d274a85d2d1f5b6fe9a769c79147faa98d66"
     },
     {
       "airport": "CYYZ",
@@ -109,6 +115,12 @@
       "sha256": "7019c4cbb8186296bd0b3858f0643badf0c147c3bc594e4d3a6118bf5bb31f04"
     },
     {
+      "airport": "KCLE",
+      "profile": "authored",
+      "flights": 230,
+      "sha256": "b40351097d67cb95ed6d38a46a237dde316312546f50f083c3d0179b61fb1f60"
+    },
+    {
       "airport": "KCLT",
       "profile": "bts",
       "flights": 1343,
@@ -133,6 +145,12 @@
       "sha256": "0cb709702e0a2d72a42644af40521a1b7b64f2f8a6eb47b83e88fa997e0f0fb1"
     },
     {
+      "airport": "KDEN",
+      "profile": "authored",
+      "flights": 1904,
+      "sha256": "4ddfb707112a80a286f9903cd05ac7a6ecd39f211e22eb49ace5611f851ebb17"
+    },
+    {
       "airport": "KELP",
       "profile": "bts",
       "flights": 106,
@@ -145,6 +163,12 @@
       "sha256": "8d8d1ff909041241390847396aafb692e85faaaaf100594d6a2361266224d9ea"
     },
     {
+      "airport": "KFLL",
+      "profile": "authored",
+      "flights": 826,
+      "sha256": "a75a4c1918003450b1290ee228070c04dc1842fe0a83fbc71c7f0ba54671c284"
+    },
+    {
       "airport": "KGSO",
       "profile": "bts",
       "flights": 102,
@@ -155,6 +179,18 @@
       "profile": "bts",
       "flights": 650,
       "sha256": "ff903f5ec6b0a7b80f2e065700c32a837566060a9e14c829eb631327d676304d"
+    },
+    {
+      "airport": "KIAH",
+      "profile": "authored",
+      "flights": 1225,
+      "sha256": "dfc78d752ca7fc84f34ce90d2b908e76fdc158b72a6f1c6a2e3570f29dd70eed"
+    },
+    {
+      "airport": "KIND",
+      "profile": "authored",
+      "flights": 526,
+      "sha256": "608710faecfc0f3d06f0fd3fb45212aaf888d7df9d17a122fe2348b4c055d507"
     },
     {
       "airport": "KJAX",
@@ -179,6 +215,12 @@
       "profile": "bts",
       "flights": 1400,
       "sha256": "6ab7af7356d820175fb972827ce6eb7112b98bdec26630d34ef6dc7ccf5e0952"
+    },
+    {
+      "airport": "KLGA",
+      "profile": "authored",
+      "flights": 968,
+      "sha256": "a4eeb1d3d605d0bec8fabd6d75537b0f9aea4e0b24b2b0b6601ccb717a289358"
     },
     {
       "airport": "KMCI",
@@ -317,6 +359,12 @@
       "profile": "authored",
       "flights": 1669,
       "sha256": "b8f7c04e7bf3235696c093e0273ac917afd9a9fffb33d11e07c3c12a18110da9"
+    },
+    {
+      "airport": "MKJP",
+      "profile": "authored",
+      "flights": 65,
+      "sha256": "248537131550940147d3b0ac2dc4fbd3bc33eda4f666f4eec6fcf17d38be9516"
     },
     {
       "airport": "OMAA",

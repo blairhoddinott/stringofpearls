@@ -83,7 +83,7 @@ ava('.addRadarTargetModelForAircraftModel() gives audited outside arrivals solid
     t.true(aircraftModel.deferCallUpUntilHandoff);
 });
 
-ava('.addRadarTargetModelForAircraftModel() keeps unaudited outside arrivals player-owned', (t) => {
+ava('.addRadarTargetModelForAircraftModel() gives outside arrivals center ownership without a handoff fix', (t) => {
     const collection = new RadarTargetCollection(THEME.DEFAULT);
     const aircraftModel = Object.assign(
         Object.create(Object.getPrototypeOf(ARRIVAL_AIRCRAFT_MODEL_MOCK)),
@@ -97,11 +97,12 @@ ava('.addRadarTargetModelForAircraftModel() keeps unaudited outside arrivals pla
 
     collection.addRadarTargetModelForAircraftModel(aircraftModel);
 
-    t.is(collection._items[0].handoffModel.state, HANDOFF_STATE.PLAYER_OWNED);
+    t.is(collection._items[0].handoffModel.state, HANDOFF_STATE.CENTER_OWNED);
     t.true(callUpStub.notCalled);
+    t.true(aircraftModel.deferCallUpUntilHandoff);
 });
 
-ava('.addRadarTargetModelForAircraftModel() keeps arrivals player-owned after the handoff fix has passed', (t) => {
+ava('.addRadarTargetModelForAircraftModel() gives outside arrivals center ownership after the handoff fix has passed', (t) => {
     const collection = new RadarTargetCollection(THEME.DEFAULT);
     const fms = Object.assign(
         Object.create(Object.getPrototypeOf(ARRIVAL_AIRCRAFT_MODEL_MOCK.fms)),
@@ -123,8 +124,9 @@ ava('.addRadarTargetModelForAircraftModel() keeps arrivals player-owned after th
 
     collection.addRadarTargetModelForAircraftModel(aircraftModel);
 
-    t.is(collection._items[0].handoffModel.state, HANDOFF_STATE.PLAYER_OWNED);
+    t.is(collection._items[0].handoffModel.state, HANDOFF_STATE.CENTER_OWNED);
     t.true(callUpStub.notCalled);
+    t.true(aircraftModel.deferCallUpUntilHandoff);
 });
 
 ava('.findRadarTargetModelForAircraftModel() returns undefined when aircraft has no corresponding radar target', (t) => {

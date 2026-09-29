@@ -13,6 +13,12 @@
         "disabled": true
     },
     {
+        "icao": "cyyc",
+        "level": "medium",
+        "name": "YYC Calgary International Airport",
+        "premium": false
+    },
+    {
         "icao": "cyyz",
         "level": "medium",
         "name": "Toronto Pearson International Airport",
@@ -179,6 +185,12 @@
         "premium": false
     },
     {
+        "icao": "kcle",
+        "level": "medium",
+        "name": "Cleveland-Hopkins International Airport",
+        "premium": false
+    },
+    {
         "icao": "kclt",
         "level": "hard",
         "name": "Charlotte-Douglas International Airport",
@@ -200,6 +212,12 @@
         "icao": "kdca",
         "level": "easy",
         "name": "Ronald Reagan Washington National Airport",
+        "premium": false
+    },
+    {
+        "icao": "kden",
+        "level": "hard",
+        "name": "Denver International Airport",
         "premium": false
     },
     {
@@ -229,6 +247,12 @@
         "premium": false
     },
     {
+        "icao": "kfll",
+        "level": "hard",
+        "name": "Fort Lauderdale-Hollywood International Airport",
+        "premium": false
+    },
+    {
         "icao": "kgso",
         "level": "easy",
         "name": "Piedmont Triad International Airport",
@@ -238,6 +262,18 @@
         "icao": "kiad",
         "level": "hard",
         "name": "Washington Dulles International Airport",
+        "premium": false
+    },
+    {
+        "icao": "kiah",
+        "level": "hard",
+        "name": "George Bush Houston Intercontinental Airport",
+        "premium": false
+    },
+    {
+        "icao": "kind",
+        "level": "medium",
+        "name": "Indianapolis International Airport",
         "premium": false
     },
     {
@@ -263,6 +299,12 @@
         "icao": "klax",
         "level": "hard",
         "name": "Los Angeles International Airport",
+        "premium": false
+    },
+    {
+        "icao": "klga",
+        "level": "hard",
+        "name": "LaGuardia Airport",
         "premium": false
     },
     {
@@ -459,6 +501,12 @@
         "name": "Aeropuerto Internacional Las Américas",
         "premium": false,
         "disabled": true
+    },
+    {
+        "icao": "mkjp",
+        "level": "easy",
+        "name": "Norman Manley International Airport",
+        "premium": false
     },
     {
         "icao": "omaa",

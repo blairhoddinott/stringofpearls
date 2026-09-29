@@ -110,6 +110,16 @@ ava('offers immediately when a center-owned arrival reaches player airspace afte
     t.is(harness.handoffModel.state, HANDOFF_STATE.CENTER_TO_PLAYER);
 });
 
+ava('offers immediately when a center-owned arrival without a handoff fix reaches player airspace', (t) => {
+    const harness = buildHarness();
+
+    harness.aircraftModel.centerHandoffFix = '';
+    harness.aircraftModel.isControllable = true;
+    harness.coordinator.update(harness.aircraftModel);
+
+    t.is(harness.handoffModel.state, HANDOFF_STATE.CENTER_TO_PLAYER);
+});
+
 ava('does not traverse unresolved waypoints after the handoff fix has passed', (t) => {
     const harness = buildHarness(5);
 

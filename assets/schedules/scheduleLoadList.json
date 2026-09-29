@@ -4,6 +4,10 @@
     "file": "cyhz.json"
   },
   {
+    "icao": "cyyc",
+    "file": "cyyc.json"
+  },
+  {
     "icao": "cyyz",
     "file": "cyyz.json"
   },
@@ -68,6 +72,10 @@
     "file": "kbos.json"
   },
   {
+    "icao": "kcle",
+    "file": "kcle.json"
+  },
+  {
     "icao": "kclt",
     "file": "kclt.json"
   },
@@ -84,6 +92,10 @@
     "file": "kdca.json"
   },
   {
+    "icao": "kden",
+    "file": "kden.json"
+  },
+  {
     "icao": "kelp",
     "file": "kelp.json"
   },
@@ -92,12 +104,24 @@
     "file": "kewr.json"
   },
   {
+    "icao": "kfll",
+    "file": "kfll.json"
+  },
+  {
     "icao": "kgso",
     "file": "kgso.json"
   },
   {
     "icao": "kiad",
     "file": "kiad.json"
+  },
+  {
+    "icao": "kiah",
+    "file": "kiah.json"
+  },
+  {
+    "icao": "kind",
+    "file": "kind.json"
   },
   {
     "icao": "kjax",
@@ -114,6 +138,10 @@
   {
     "icao": "klax",
     "file": "klax.json"
+  },
+  {
+    "icao": "klga",
+    "file": "klga.json"
   },
   {
     "icao": "kmci",
@@ -206,6 +234,10 @@
   {
     "icao": "ltba",
     "file": "ltba.json"
+  },
+  {
+    "icao": "mkjp",
+    "file": "mkjp.json"
   },
   {
     "icao": "omaa",

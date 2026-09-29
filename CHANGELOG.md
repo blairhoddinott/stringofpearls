@@ -12,6 +12,17 @@ at `1.0.0`. New releases use the [Keep a Changelog](https://keepachangelog.com/)
 The `# X.Y.Z (Month D, YYYY)` sections below this preamble are the preserved
 inherited openScope history and are retained verbatim for attribution.
 
+## [1.7.0] - 2026-09-29
+
+### Features
+
+- **airports:** add eight community airports ([`b3e89d7`](https://github.com/blairhoddinott/stringofpearls/commit/b3e89d736d834e1e3500c8d0a46dce64df5a84e3))
+
+### Bug Fixes
+
+- **aircraft:** assign outside arrivals to center ([`4287975`](https://github.com/blairhoddinott/stringofpearls/commit/42879759c55b769750729340fc0a66d3b1a952f0))
+- **airports:** recalibrate community traffic ([`8435ece`](https://github.com/blairhoddinott/stringofpearls/commit/8435ece456caac62c737097b05031571b5ccde6b))
+
 ## [1.6.0] - 2026-09-28
 
 ### Features

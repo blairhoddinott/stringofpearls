@@ -16,6 +16,10 @@ FAA NASR and CIFP publications are the controlling sources for current operation
 
 A direct comparison against the FAA CIFP volume `2609`, effective 3 September 2026, confirmed that all 4 runway ends in the asset match the current coded runway inventory. It also found 3 current SID identifiers and 4 current STAR identifiers not represented by exact name in the historical procedure set. Those differences include revised procedure numbers and, in some cases, different procedure families. They are disclosed rather than papered over by renaming old routes: the committed procedures remain playable historical simulations until their current CIFP legs can be converted and reviewed as complete routes.
 
+### Representative traffic calibration
+
+The Port Authority reports 353,061 aircraft movements at LaGuardia in 2024. The simulator rounds that reviewed scale upward to `968` deterministic movements per representative day, balances arrivals and departures to within one movement, then distributes each direction across the contributed route patterns in proportion to their authored weights. These are synthesized gameplay slots, not a claim that every source movement was a scheduled airline flight.
+
 ## Publication inventory
 
 - runway pairs: 2
@@ -38,3 +42,4 @@ A direct comparison against the FAA CIFP volume `2609`, effective 3 September 20
 1. https://github.com/openscope/openscope/pull/1867 — historical MIT implementation baseline
 2. https://github.com/openscope/openscope/blob/develop/LICENSE.md — openScope MIT licence
 3. https://aeronav.faa.gov/Upload_313-d/cifp/CIFP_260903.zip — FAA CIFP volume 2609, effective 3 September 2026
+4. https://www.panynj.gov/content/dam/airports/statistics/statistics-general-info/annual-atr/ATR_2024.pdf — Port Authority 2024 Airport Traffic Report

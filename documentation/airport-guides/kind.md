@@ -17,7 +17,7 @@ The routes are normalized from the historical openScope contribution and all com
 
 ## Traffic and handoff
 
-The representative random traffic model totals approximately 20 arrivals and 20 departures per hour. Every arrival has an explicit route-entry centre-handoff boundary (`DELHI`, `HAGAL`, `RINTE`, `TERGE`, `USIRE`). The deterministic daily schedule uses `America/Indiana/Indianapolis` and is synthesized from those route weights; it is not a copied airline timetable.
+The representative random traffic model totals approximately 10.9583 arrivals and 10.9583 departures per hour. Every arrival has an explicit route-entry centre-handoff boundary (`DELHI`, `HAGAL`, `RINTE`, `TERGE`, `USIRE`). The deterministic daily schedule uses `America/Indiana/Indianapolis` and is synthesized from those route weights; it is not a copied airline timetable.
 
 ## Maps and terrain
 

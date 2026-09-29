@@ -16,6 +16,10 @@ FAA NASR and CIFP publications are the controlling sources for current operation
 
 A direct comparison against the FAA CIFP volume `2609`, effective 3 September 2026, confirmed that all 4 runway ends in the asset match the current coded runway inventory. It also found 7 current SID identifiers and 5 current STAR identifiers not represented by exact name in the historical procedure set. Those differences include revised procedure numbers and, in some cases, different procedure families. They are disclosed rather than papered over by renaming old routes: the committed procedures remain playable historical simulations until their current CIFP legs can be converted and reviewed as complete routes.
 
+### Representative traffic calibration
+
+The 2024 airport activity benchmark records 301,220 aircraft operations at Fort Lauderdale–Hollywood International. The simulator rounds that reviewed scale upward to `826` deterministic movements per representative day, balances arrivals and departures to within one movement, then distributes each direction across the contributed route patterns in proportion to their authored weights. These are synthesized gameplay slots, not a claim that every source movement was a scheduled airline flight.
+
 ## Publication inventory
 
 - runway pairs: 2
@@ -38,3 +42,4 @@ A direct comparison against the FAA CIFP volume `2609`, effective 3 September 20
 1. https://github.com/openscope/openscope/pull/2089 — historical MIT implementation baseline
 2. https://github.com/openscope/openscope/blob/develop/LICENSE.md — openScope MIT licence
 3. https://aeronav.faa.gov/Upload_313-d/cifp/CIFP_260903.zip — FAA CIFP volume 2609, effective 3 September 2026
+4. https://broward.org/Airport/Business/about/Documents/FLL2024annualreport_11252025.pdf — Broward County Aviation 2024 annual report

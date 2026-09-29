@@ -16,6 +16,10 @@ Jamaica Civil Aviation Authority eAIP publications are the controlling sources f
 
 The Airports Authority of Jamaica's current airport specification confirms the single `12/30` runway pair modeled by the asset. Current procedure legs were not available under a selected reusable bulk-data licence, so the historical procedure set remains explicitly versioned and attributed rather than silently presented as current.
 
+### Representative traffic calibration
+
+JCAA monthly control statistics total 23,590 aircraft movements at Norman Manley in 2024. The simulator rounds that reviewed scale upward to `65` deterministic movements per representative day, balances arrivals and departures to within one movement, then distributes each direction across the contributed route patterns in proportion to their authored weights. These are synthesized gameplay slots, not a claim that every source movement was a scheduled airline flight.
+
 ## Publication inventory
 
 - runway pairs: 1
@@ -40,3 +44,4 @@ The Airports Authority of Jamaica's current airport specification confirms the s
 3. https://github.com/openscope/openscope/tree/7d078f174e15007e5daba1b3fa53fd254c7ed0a2/assets/airports — exact PR snapshot establishing intended top-level map and spawn structure
 4. https://www.jcaa.gov.jm/ — Jamaica Civil Aviation Authority
 5. https://airportsauthorityjamaica.aero/airports-aerodromes/normal-manley-international-airport/ — current airport identity and runway specification
+6. https://www.jcaa.gov.jm/wp-content/uploads/2026/02/JCAA-Statistical-Report-Oct-Dec-2025.pdf — JCAA 2024/2025 monthly movement comparison

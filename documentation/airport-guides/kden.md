@@ -17,7 +17,7 @@ The routes are normalized from the historical openScope contribution and all com
 
 ## Traffic and handoff
 
-The representative random traffic model totals approximately 48 arrivals and 96 departures per hour. Every arrival has an explicit route-entry centre-handoff boundary (`BRWRY`, `BUMMP`, `GNDLA`, `HALEN`, `KAMPR`, `OATHE`, `PORDR`, `TOFUU`). The deterministic daily schedule uses `America/Denver` and is synthesized from those route weights; it is not a copied airline timetable.
+The representative random traffic model totals approximately 39.6667 arrivals and 39.6667 departures per hour. Every arrival has an explicit route-entry centre-handoff boundary (`BRWRY`, `BUMMP`, `GNDLA`, `HALEN`, `KAMPR`, `OATHE`, `PORDR`, `TOFUU`). The deterministic daily schedule uses `America/Denver` and is synthesized from those route weights; it is not a copied airline timetable.
 
 ## Maps and terrain
 

@@ -3284,7 +3284,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 4.125,
+      "rate": 2.4869207773,
       "airlines": [
         [
           "ual/short",
@@ -3332,7 +3332,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 5.625,
+      "rate": 3.3912556054,
       "airlines": [
         [
           "rpa",
@@ -3356,7 +3356,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 0.875,
+      "rate": 0.5275286497,
       "airlines": [
         [
           "ual",
@@ -3380,7 +3380,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 5.25,
+      "rate": 3.1651718984,
       "airlines": [
         [
           "ual/short",
@@ -3428,7 +3428,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 1.375,
+      "rate": 0.8289735924,
       "airlines": [
         [
           "ual/short",
@@ -3472,7 +3472,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 0.875,
+      "rate": 0.5275286497,
       "airlines": [
         [
           "jza",
@@ -3500,7 +3500,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 2.5,
+      "rate": 1.5072247135,
       "airlines": [
         [
           "ual/short",
@@ -3548,7 +3548,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 2.325,
+      "rate": 1.4017189836,
       "airlines": [
         [
           "ual/short",
@@ -3584,7 +3584,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 1.875,
+      "rate": 1.1304185351,
       "airlines": [
         [
           "ual/short",
@@ -3620,7 +3620,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 1.625,
+      "rate": 0.9796960638,
       "airlines": [
         [
           "ual/short",
@@ -3656,7 +3656,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 2.75,
+      "rate": 1.6579471849,
       "airlines": [
         [
           "ual/short",
@@ -3692,7 +3692,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 4.25,
+      "rate": 2.562282013,
       "airlines": [
         [
           "ual/short",
@@ -3734,7 +3734,7 @@
       "altitude": "31000",
       "speed": "290",
       "method": "random",
-      "rate": 12.325,
+      "rate": 7.7794731351,
       "airlines": [
         [
           "ual/short",
@@ -3783,7 +3783,7 @@
       "altitude": "16000",
       "speed": "310",
       "method": "random",
-      "rate": 9.125,
+      "rate": 5.7596504956,
       "airlines": [
         [
           "ual/short",
@@ -3826,7 +3826,7 @@
       "altitude": "37000",
       "speed": "310",
       "method": "random",
-      "rate": 10.5,
+      "rate": 6.627543036,
       "airlines": [
         [
           "ual/short",

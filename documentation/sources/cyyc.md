@@ -16,6 +16,10 @@ NAV CANADA aeronautical publications are the controlling sources for current ope
 
 The current-source review included NAV CANADA's 2026 CYYC publications. The first two historical airspace paths contained repeated vertices and non-adjacent intersections; publication replaces each malformed path with the convex hull of its own contributed vertices. This creates deterministic containment geometry without inventing coordinates, but it is explicitly a simulator control volume rather than a legal TCA boundary.
 
+### Representative traffic calibration
+
+Transport Canada reports 197,000 aircraft movements at Calgary International in 2024. The simulator rounds that reviewed scale upward to `540` deterministic movements per representative day, balances arrivals and departures to within one movement, then distributes each direction across the contributed route patterns in proportion to their authored weights. These are synthesized gameplay slots, not a claim that every source movement was a scheduled airline flight.
+
 ## Publication inventory
 
 - runway pairs: 4
@@ -39,3 +43,4 @@ The current-source review included NAV CANADA's 2026 CYYC publications. The firs
 2. https://github.com/openscope/openscope/blob/develop/LICENSE.md — openScope MIT licence
 3. https://www.navcanada.ca/en/aeronautical-information.aspx — NAV CANADA aeronautical publications
 4. https://navcanada.ca/en/031sup2026en.pdf — 2026 CYYC operational context and runway 11 threshold reference
+5. https://tdih-cdit.tc.canada.ca/sites/default/files/addendum-tables/2024/A6-en.pdf — Transport Canada 2024 aircraft-movement table

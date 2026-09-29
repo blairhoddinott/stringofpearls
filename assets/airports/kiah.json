@@ -4256,7 +4256,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 2,
+      "rate": 1.02,
       "airlines": [
         [
           "amx/b73x",
@@ -4412,7 +4412,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 2,
+      "rate": 1.02,
       "airlines": [
         [
           "amx/b73x",
@@ -4568,7 +4568,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 2,
+      "rate": 1.02,
       "airlines": [
         [
           "amx/b73x",
@@ -4728,7 +4728,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 4,
+      "rate": 2.04,
       "airlines": [
         [
           "amx/b73x",
@@ -4884,7 +4884,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 2,
+      "rate": 1.02,
       "airlines": [
         [
           "amx/b73x",
@@ -5040,7 +5040,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 2,
+      "rate": 1.02,
       "airlines": [
         [
           "amx/b73x",
@@ -5196,7 +5196,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 2,
+      "rate": 1.02,
       "airlines": [
         [
           "amx/b73x",
@@ -5356,7 +5356,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 4,
+      "rate": 2.04,
       "airlines": [
         [
           "amx/b73x",
@@ -5516,7 +5516,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 4,
+      "rate": 2.04,
       "airlines": [
         [
           "amx/b73x",
@@ -5676,7 +5676,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 4,
+      "rate": 2.04,
       "airlines": [
         [
           "amx/b73x",
@@ -5832,7 +5832,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 2,
+      "rate": 1.02,
       "airlines": [
         [
           "amx/b73x",
@@ -5988,7 +5988,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 2,
+      "rate": 1.02,
       "airlines": [
         [
           "amx/b73x",
@@ -6144,7 +6144,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 2,
+      "rate": 1.02,
       "airlines": [
         [
           "amx/b73x",
@@ -6300,7 +6300,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 2,
+      "rate": 1.02,
       "airlines": [
         [
           "amx/b73x",
@@ -6456,7 +6456,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 2,
+      "rate": 1.02,
       "airlines": [
         [
           "amx/b73x",
@@ -6616,7 +6616,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 4,
+      "rate": 2.04,
       "airlines": [
         [
           "amx/b73x",
@@ -6776,7 +6776,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 4,
+      "rate": 2.04,
       "airlines": [
         [
           "amx/b73x",
@@ -6936,7 +6936,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 4,
+      "rate": 2.04,
       "airlines": [
         [
           "amx/b73x",
@@ -7092,7 +7092,7 @@
       "altitude": "34000",
       "speed": "320",
       "method": "random",
-      "rate": 5,
+      "rate": 3.2745726496,
       "airlines": [
         [
           "amx/b73x",
@@ -7249,7 +7249,7 @@
       "altitude": "34000",
       "speed": "320",
       "method": "random",
-      "rate": 6,
+      "rate": 3.9294871795,
       "airlines": [
         [
           "amx/b73x",
@@ -7406,7 +7406,7 @@
       "altitude": "34000",
       "speed": "320",
       "method": "random",
-      "rate": 6,
+      "rate": 3.9294871795,
       "airlines": [
         [
           "amx/b73x",
@@ -7563,7 +7563,7 @@
       "altitude": "34000",
       "speed": "320",
       "method": "random",
-      "rate": 8,
+      "rate": 5.2393162393,
       "airlines": [
         [
           "amx/b73x",
@@ -7720,7 +7720,7 @@
       "altitude": "34000",
       "speed": "320",
       "method": "random",
-      "rate": 8,
+      "rate": 5.2393162393,
       "airlines": [
         [
           "amx/b73x",
@@ -7877,7 +7877,7 @@
       "altitude": "34000",
       "speed": "320",
       "method": "random",
-      "rate": 6,
+      "rate": 3.9294871795,
       "airlines": [
         [
           "amx/b73x",

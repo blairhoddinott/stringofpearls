@@ -13,6 +13,8 @@ const expected = {
         name: 'YYC Calgary International Airport',
         level: 'medium',
         timezone: 'America/Edmonton',
+        annualMovements: 197000,
+        dailyMovements: 540,
         sourcePr: 2056,
         sourceSha: '47c1a0753f6d7fcbc3e1894397d953a5a5adbac6'
     },
@@ -20,6 +22,8 @@ const expected = {
         name: 'Cleveland-Hopkins International Airport',
         level: 'medium',
         timezone: 'America/New_York',
+        annualMovements: 83950,
+        dailyMovements: 230,
         sourcePr: 2013,
         sourceSha: '3dd2d19392a6cfd4aec498f126c472d6243742fb'
     },
@@ -27,6 +31,8 @@ const expected = {
         name: 'Denver International Airport',
         level: 'hard',
         timezone: 'America/Denver',
+        annualMovements: 694900,
+        dailyMovements: 1904,
         sourcePr: 1942,
         sourceSha: '11d4e59567b9683846314605c9a307fcacdd8f2f'
     },
@@ -34,6 +40,8 @@ const expected = {
         name: 'Fort Lauderdale-Hollywood International Airport',
         level: 'hard',
         timezone: 'America/New_York',
+        annualMovements: 301220,
+        dailyMovements: 826,
         sourcePr: 2089,
         sourceSha: 'e64128baeed4fa025f8739a6a0a5ec768a58c12f'
     },
@@ -41,6 +49,8 @@ const expected = {
         name: 'George Bush Houston Intercontinental Airport',
         level: 'hard',
         timezone: 'America/Chicago',
+        annualMovements: 447092,
+        dailyMovements: 1225,
         sourcePr: 2102,
         sourceSha: '6bd83b033a158812f0484b1fb3052a4d5dec9692'
     },
@@ -48,6 +58,8 @@ const expected = {
         name: 'Indianapolis International Airport',
         level: 'medium',
         timezone: 'America/Indiana/Indianapolis',
+        annualMovements: 191846,
+        dailyMovements: 526,
         sourcePr: 2015,
         sourceSha: '25394e804233f46a860ebf38c39e09f26e3dccce'
     },
@@ -55,6 +67,8 @@ const expected = {
         name: 'LaGuardia Airport',
         level: 'hard',
         timezone: 'America/New_York',
+        annualMovements: 353061,
+        dailyMovements: 968,
         sourcePr: 1867,
         sourceSha: '667dc94d13145c168e2220cbc2111dcd47153489'
     },
@@ -62,6 +76,8 @@ const expected = {
         name: 'Norman Manley International Airport',
         level: 'easy',
         timezone: 'America/Jamaica',
+        annualMovements: 23590,
+        dailyMovements: 65,
         sourcePr: 2082,
         sourceSha: '0c31df84e4a45765d0e00b6b3d10779c23f357a9'
     }
@@ -82,6 +98,8 @@ const collectRouteFix = (set, token) => {
 
 for (const [icao, config] of Object.entries(expected)) {
     const upper = icao.toUpperCase();
+    assert.strictEqual(config.dailyMovements, Math.ceil(config.annualMovements / 365),
+        `${upper} representative budget must round its reviewed annual benchmark upward`);
     assert.deepStrictEqual(airportList.find((entry) => entry.icao === icao), {
         icao,
         level: config.level,
@@ -148,8 +166,13 @@ for (const [icao, config] of Object.entries(expected)) {
     const schedule = readJson(`assets/schedules/${icao}.json`);
     assert.strictEqual(schedule.airportIcao, upper);
     assert.strictEqual(schedule.timezone, config.timezone);
+    assert.strictEqual(schedule.flights.length, config.dailyMovements,
+        `${upper} schedule must match its reviewed representative movement budget`);
     assert.ok(schedule.flights.some((flight) => flight.category === 'arrival'));
     assert.ok(schedule.flights.some((flight) => flight.category === 'departure'));
+    const arrivals = schedule.flights.filter((flight) => flight.category === 'arrival').length;
+    const departures = schedule.flights.filter((flight) => flight.category === 'departure').length;
+    assert.ok(Math.abs(arrivals - departures) <= 1, `${upper} schedule must balance arrivals and departures`);
 
     const guidePath = `documentation/airport-guides/${icao}.md`;
     const sourcePath = `documentation/sources/${icao}.md`;
@@ -160,5 +183,9 @@ for (const [icao, config] of Object.entries(expected)) {
     assert.match(sourceText, new RegExp(`openscope/openscope/pull/${config.sourcePr}`));
     assert.match(sourceText, new RegExp(config.sourceSha));
 }
+
+assert.ok(expected.kden.dailyMovements > expected.kiah.dailyMovements);
+assert.ok(expected.kiah.dailyMovements > expected.klga.dailyMovements);
+assert.ok(expected.klga.dailyMovements > expected.kfll.dailyMovements);
 
 console.log('Community airport publication contract passed');

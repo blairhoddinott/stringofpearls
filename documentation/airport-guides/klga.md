@@ -17,7 +17,7 @@ The routes are normalized from the historical openScope contribution and all com
 
 ## Traffic and handoff
 
-The representative random traffic model totals approximately 31.95 arrivals and 33.45 departures per hour. Every arrival has an explicit route-entry centre-handoff boundary (`GERBS`, `PATSS`, `RDU`). The deterministic daily schedule uses `America/New_York` and is synthesized from those route weights; it is not a copied airline timetable.
+The representative random traffic model totals approximately 20.1667 arrivals and 20.1667 departures per hour. Every arrival has an explicit route-entry centre-handoff boundary (`GERBS`, `PATSS`, `RDU`). The deterministic daily schedule uses `America/New_York` and is synthesized from those route weights; it is not a copied airline timetable.
 
 ## Maps and terrain
 

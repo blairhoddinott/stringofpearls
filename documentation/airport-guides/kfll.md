@@ -17,7 +17,7 @@ The routes are normalized from the historical openScope contribution and all com
 
 ## Traffic and handoff
 
-The representative random traffic model totals approximately 45 arrivals and 120 departures per hour. Every arrival has an explicit route-entry centre-handoff boundary (`ACORI`, `EYW`, `HIBAC`, `MAXIM`, `MLB`, `PEACH`, `PIE`, `ZQA`). The deterministic daily schedule uses `America/New_York` and is synthesized from those route weights; it is not a copied airline timetable.
+The representative random traffic model totals approximately 17.2083 arrivals and 17.2083 departures per hour. Every arrival has an explicit route-entry centre-handoff boundary (`ACORI`, `EYW`, `HIBAC`, `MAXIM`, `MLB`, `PEACH`, `PIE`, `ZQA`). The deterministic daily schedule uses `America/New_York` and is synthesized from those route weights; it is not a copied airline timetable.
 
 ## Maps and terrain
 

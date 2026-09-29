@@ -17,7 +17,7 @@ The routes are normalized from the historical openScope contribution and all com
 
 ## Traffic and handoff
 
-The representative random traffic model totals approximately 39 arrivals and 50 departures per hour. Every arrival has an explicit route-entry centre-handoff boundary (`AEX`, `DIESL`, `MQP`, `SJI`, `SWB`, `YEEHA`). The deterministic daily schedule uses `America/Chicago` and is synthesized from those route weights; it is not a copied airline timetable.
+The representative random traffic model totals approximately 25.5417 arrivals and 25.5 departures per hour. Every arrival has an explicit route-entry centre-handoff boundary (`AEX`, `DIESL`, `MQP`, `SJI`, `SWB`, `YEEHA`). The deterministic daily schedule uses `America/Chicago` and is synthesized from those route weights; it is not a copied airline timetable.
 
 ## Maps and terrain
 

@@ -17,7 +17,7 @@ The routes are normalized from the historical openScope contribution and all com
 
 ## Traffic and handoff
 
-The representative random traffic model totals approximately 24 arrivals and 30 departures per hour. Every arrival has an explicit route-entry centre-handoff boundary (`ANTAK`, `MATIR`, `UDPAV`, `VESDO`). The deterministic daily schedule uses `America/Edmonton` and is synthesized from those route weights; it is not a copied airline timetable.
+The representative random traffic model totals approximately 11.25 arrivals and 11.25 departures per hour. Every arrival has an explicit route-entry centre-handoff boundary (`ANTAK`, `MATIR`, `UDPAV`, `VESDO`). The deterministic daily schedule uses `America/Edmonton` and is synthesized from those route weights; it is not a copied airline timetable.
 
 ## Maps and terrain
 

@@ -1,8 +1,8 @@
 {
   "airports": 73,
-  "flights": 64687,
+  "flights": 54449,
   "movementsByProfile": {
-    "authored": 40711,
+    "authored": 30473,
     "bts": 23976
   },
   "schedules": [
@@ -15,8 +15,8 @@
     {
       "airport": "CYYC",
       "profile": "authored",
-      "flights": 1296,
-      "sha256": "c9a8acb35b380e3d82131e756223c3f5ca413bd24d8f080c26ced9abcd87a835"
+      "flights": 540,
+      "sha256": "44f4ee586627cfe1f393a17f99a4d274a85d2d1f5b6fe9a769c79147faa98d66"
     },
     {
       "airport": "CYYZ",
@@ -117,8 +117,8 @@
     {
       "airport": "KCLE",
       "profile": "authored",
-      "flights": 1584,
-      "sha256": "948a9240558d6ca4097ae26b8fbb809e9758596dcf3041a289dd51127d8bd95c"
+      "flights": 230,
+      "sha256": "b40351097d67cb95ed6d38a46a237dde316312546f50f083c3d0179b61fb1f60"
     },
     {
       "airport": "KCLT",
@@ -147,8 +147,8 @@
     {
       "airport": "KDEN",
       "profile": "authored",
-      "flights": 3456,
-      "sha256": "621e3e734f49c38d40e9a0570afe0852a78f847db0acb7b99af0128999e02dfb"
+      "flights": 1904,
+      "sha256": "4ddfb707112a80a286f9903cd05ac7a6ecd39f211e22eb49ace5611f851ebb17"
     },
     {
       "airport": "KELP",
@@ -165,8 +165,8 @@
     {
       "airport": "KFLL",
       "profile": "authored",
-      "flights": 3960,
-      "sha256": "3f1233ceff2a8c89b82f8be9a3031bbc43fd0b4d760375c454e08f0fd6fac704"
+      "flights": 826,
+      "sha256": "a75a4c1918003450b1290ee228070c04dc1842fe0a83fbc71c7f0ba54671c284"
     },
     {
       "airport": "KGSO",
@@ -183,14 +183,14 @@
     {
       "airport": "KIAH",
       "profile": "authored",
-      "flights": 2136,
-      "sha256": "c4d863ce71ee8da963e4b9118fd4832e4a2333a073d5d307bf4cddf7b240a6a4"
+      "flights": 1225,
+      "sha256": "dfc78d752ca7fc84f34ce90d2b908e76fdc158b72a6f1c6a2e3570f29dd70eed"
     },
     {
       "airport": "KIND",
       "profile": "authored",
-      "flights": 960,
-      "sha256": "8f9c0c396a76725fada8c9c98ed8c9737ed83d33457df859769ec29350d32846"
+      "flights": 526,
+      "sha256": "608710faecfc0f3d06f0fd3fb45212aaf888d7df9d17a122fe2348b4c055d507"
     },
     {
       "airport": "KJAX",
@@ -219,8 +219,8 @@
     {
       "airport": "KLGA",
       "profile": "authored",
-      "flights": 1570,
-      "sha256": "c3ebc238cec506a4f55c66ce3b2d523f8f2428e9ead420ffbfe58bc8360833af"
+      "flights": 968,
+      "sha256": "a4eeb1d3d605d0bec8fabd6d75537b0f9aea4e0b24b2b0b6601ccb717a289358"
     },
     {
       "airport": "KMCI",
@@ -363,8 +363,8 @@
     {
       "airport": "MKJP",
       "profile": "authored",
-      "flights": 1560,
-      "sha256": "fd13addd1f7793247a4eca90dfc118c8c79989e91a612f349350406cbe1f37fa"
+      "flights": 65,
+      "sha256": "248537131550940147d3b0ac2dc4fbd3bc33eda4f666f4eec6fcf17d38be9516"
     },
     {
       "airport": "OMAA",

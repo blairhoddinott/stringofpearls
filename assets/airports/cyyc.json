@@ -2382,7 +2382,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 3,
+      "rate": 1.125,
       "airlines": [
         [
           "aal",
@@ -2442,7 +2442,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 3,
+      "rate": 1.125,
       "airlines": [
         [
           "aal",
@@ -2502,7 +2502,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 3,
+      "rate": 1.125,
       "airlines": [
         [
           "aal",
@@ -2562,7 +2562,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 3,
+      "rate": 1.125,
       "airlines": [
         [
           "aal",
@@ -2622,7 +2622,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 3,
+      "rate": 1.125,
       "airlines": [
         [
           "aal",
@@ -2682,7 +2682,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 3,
+      "rate": 1.125,
       "airlines": [
         [
           "aal",
@@ -2742,7 +2742,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 3,
+      "rate": 1.125,
       "airlines": [
         [
           "aal",
@@ -2802,7 +2802,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 3,
+      "rate": 1.125,
       "airlines": [
         [
           "aal",
@@ -2862,7 +2862,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 3,
+      "rate": 1.125,
       "airlines": [
         [
           "aal",
@@ -2922,7 +2922,7 @@
       "altitude": "",
       "speed": "",
       "method": "random",
-      "rate": 3,
+      "rate": 1.125,
       "airlines": [
         [
           "aal",
@@ -2982,7 +2982,7 @@
       "altitude": "28000",
       "speed": "280",
       "method": "random",
-      "rate": 6,
+      "rate": 2.8125,
       "airlines": [
         [
           "aal",
@@ -3043,7 +3043,7 @@
       "altitude": "28000",
       "speed": "280",
       "method": "random",
-      "rate": 6,
+      "rate": 2.8125,
       "airlines": [
         [
           "aal",
@@ -3104,7 +3104,7 @@
       "altitude": "28000",
       "speed": "280",
       "method": "random",
-      "rate": 6,
+      "rate": 2.8125,
       "airlines": [
         [
           "aal",
@@ -3165,7 +3165,7 @@
       "altitude": "28000",
       "speed": "280",
       "method": "random",
-      "rate": 6,
+      "rate": 2.8125,
       "airlines": [
         [
           "aal",
